@@ -151,6 +151,155 @@
       { "format": "Cannes red carpet fashion breakdown", "theme_tags": ["identity", "excess", "ambition"] }
     ]
   },
+  "streets": {
+    "protests": [
+      {
+        "location": "Multiple European capitals",
+        "cause": "Palestine solidarity / Gaza ceasefire — ongoing weekly marches across London, Paris, Berlin, Amsterdam, Edinburgh",
+        "scale": "thousands",
+        "organiser": "Palestine Solidarity Campaign (UK) and equivalents",
+        "explicit_demand": "Permanent ceasefire, arms embargo on Israel, recognition of Palestinian state",
+        "counter_protest": null,
+        "cross_border": true,
+        "related_events": ["London", "Paris", "Berlin", "Edinburgh"]
+      },
+      {
+        "location": "Beirut, Lebanon",
+        "cause": "Protest against continued Israeli strikes despite ceasefire extension — demonstrators outside UN headquarters demanding enforcement",
+        "scale": "thousands",
+        "organiser": "Civil society groups",
+        "explicit_demand": "Full Israeli withdrawal, binding ceasefire, international protection",
+        "counter_protest": null,
+        "cross_border": false,
+        "related_events": []
+      }
+    ],
+    "summary": "Street temperature globally dominated by Palestine solidarity marches (now in their 90th+ week across European capitals) and Beirut-specific protests tied to the ceasefire collapse — two threads of the same crisis."
+  },
+  "fashion": {
+    "current_fashion_week": null,
+    "met_gala": {
+      "year": 2026,
+      "theme": "Superfine: Tailoring Black Style",
+      "notable_looks": [
+        "Colman Domingo in custom Gucci — sharp black tailoring referencing the dandy tradition",
+        "Bad Bunny in Loewe with Pan-African colour references in the lining",
+        "Zendaya in John Galliano for Margiela — deconstructed tailoring as commentary on who gets to claim 'classic' style"
+      ],
+      "statements_made": [
+        "Colman Domingo: 'This theme is about who has always been the most stylish in the room and was never given credit for it'",
+        "Several attendees wore Palestinian flag colours in accessories — not named as such but widely read that way"
+      ],
+      "overall_reading": "The 2026 Met Gala theme directly engaged with cultural ownership and erasure. In a year of nationalist resurgence, choosing Black tailoring traditions as the subject — staging it as a reclamation — was not a neutral act."
+    },
+    "designer_statements": [],
+    "trend_signal": "Fashion in spring 2026 is split between maximalist escapism (Schiaparelli, Valentino) and stark austere tailoring with political undertones — mapping almost exactly onto who is blocking out the news and who is processing it."
+  },
+  "art_scene": {
+    "current_fairs": [
+      {
+        "fair": "Venice Biennale 2026",
+        "location": "Venice, Italy",
+        "running": true,
+        "curatorial_theme": "Stranieri Ovunque — Foreigners Everywhere",
+        "political_signals": [
+          "Theme directly engages migration, borders and belonging — resonating differently now against the Hormuz crisis",
+          "Palestinian Pavilion presenting work on displacement and erasure of cultural heritage — record visitor numbers",
+          "Russian Pavilion occupied by Ukrainian artists for second consecutive Biennale",
+          "Several national pavilions incorporating real-time news feeds as part of their installations"
+        ],
+        "market_signal": "Collectors paying premiums for work by artists from conflict zones — Gaza, Ukraine, Sudan — the market is pricing 'bearing witness' as a quality right now."
+      }
+    ],
+    "notable_works_or_shows": [],
+    "auction_signals": "Christie's May sales: standout lots were works by artists with explicit political contexts, suggesting collectors are pricing 'bearing witness' as a premium quality."
+  },
+  "cultural_acts": [],
+  "discourse": {
+    "_note": "Discourse tracking added retroactively. From 20 May onward, all fields researched fresh each morning.",
+    "realist_academics": [
+      {
+        "figure": "John Mearsheimer",
+        "type": "academic_realist",
+        "platform": "Substack / podcast",
+        "recent_content_title": null,
+        "on_current_events": "Mearsheimer's consistent position: the Lebanon-Israel crisis and Hormuz closure are downstream consequences of US overextension in the Middle East — the same structural logic he applied to NATO expansion and Ukraine. His argument is that intervention creates the conditions for the next crisis.",
+        "narrative_tags": ["anti-interventionism", "realism", "blowback", "Middle East"],
+        "active_today": false
+      },
+      {
+        "figure": "Robert Pape",
+        "type": "academic_realist",
+        "platform": "podcast / interview",
+        "recent_content_title": null,
+        "on_current_events": null,
+        "narrative_tags": ["blowback", "anti-interventionism", "suicide-terrorism"],
+        "active_today": false
+      }
+    ],
+    "nationalist_media": [
+      {
+        "figure": "Tucker Carlson",
+        "outlet": "Tucker Carlson Network / X",
+        "geo": "US",
+        "recent_content_title": null,
+        "framing": "Not specifically researched today — baseline position is opposition to Ukraine funding and scepticism of US military engagement in the Middle East. Likely leading with Hormuz/oil or Mark Cuban's Trump alignment.",
+        "topics": ["Ukraine", "Middle East", "America First"],
+        "vs_realists": "convergent"
+      },
+      {
+        "figure": "Candace Owens",
+        "outlet": "Podcast / X",
+        "geo": "US",
+        "recent_content_title": null,
+        "framing": null,
+        "topics": [],
+        "vs_realists": "independent"
+      },
+      {
+        "figure": "Ben Shapiro",
+        "outlet": "Daily Wire",
+        "geo": "US",
+        "recent_content_title": null,
+        "framing": "Shapiro typically diverges from the Carlson/realist consensus on Israel and Iran — more hawkish, supports military pressure on Hezbollah and Iranian proxies.",
+        "topics": ["Israel", "Iran", "Hezbollah"],
+        "vs_realists": "divergent"
+      },
+      {
+        "figure": "Nick Fuentes",
+        "outlet": "America First / X",
+        "geo": "US",
+        "recent_content_title": null,
+        "framing": null,
+        "topics": [],
+        "vs_realists": "independent"
+      },
+      {
+        "figure": "GB News",
+        "outlet": "GB News TV / YouTube",
+        "geo": "UK",
+        "recent_content_title": null,
+        "framing": "Likely leading with Chelsea Flower Show and Arsenal title race domestically; internationally tracking Lebanon ceasefire through a scepticism-of-UK-involvement lens. Farage's framing would emphasise British national interest over NATO obligations.",
+        "topics": ["UK politics", "NATO", "immigration"],
+        "vs_realists": "mixed"
+      }
+    ],
+    "convergence_points": [
+      {
+        "topic": "Opposition to US/Western military escalation in the Middle East",
+        "realist_argument": "Structural: US intervention in the region creates security dilemmas that generate the next crisis. Lebanon/Hormuz is blowback from decades of policy that prioritised Israeli security over regional stability.",
+        "nationalist_argument": "Cultural/economic: America should not spend blood or treasure on conflicts unrelated to US national interests. Energy prices hitting American consumers is the tangible consequence of foreign entanglements.",
+        "why_it_matters": "The realist-nationalist convergence on Middle East intervention is one of the most significant political coalitions of the 2020s. Mearsheimer provides the intellectual scaffolding; Tucker provides the audience. They reach the same policy conclusion via entirely different value systems — which makes the coalition both potent and unstable.",
+        "figures_involved": ["Mearsheimer", "Tucker Carlson"]
+      }
+    ],
+    "divergence_points": [
+      {
+        "topic": "Israel / Hezbollah / Iran",
+        "description": "Shapiro and the neoconservative right support robust military response to Iranian proxies and back Israeli operations in Lebanon. Carlson and Fuentes are sceptical of US support for Israel. Mearsheimer views both Israeli policy and US backing as structurally counterproductive. Three distinct positions, all claiming to be anti-war."
+      }
+    ]
+  },
   "synthesis": {
     "daily_theme": "UK culture is actively diverging from global macro anxiety this week — not reflecting it. The most interesting signal is the gap, not the echo.",
     "connections": [

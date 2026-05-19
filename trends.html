@@ -122,6 +122,59 @@
   .theme-tile .t-bar { height:3px; background:var(--border); border-radius:2px; margin-top:.4rem; overflow:hidden; }
   .theme-tile .t-fill { height:100%; border-radius:2px; background:var(--text-2); }
 
+  /* ── REGISTER GRID ── */
+  .register-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:.75rem; margin-bottom:2rem; }
+  .register-tile { background:var(--bg-2); border-radius:10px; padding:.9rem 1rem; border-top:3px solid var(--border); }
+  .register-tile.active { border-top-color:var(--teal-fg); }
+  .register-tile.hot { border-top-color:var(--coral-fg); }
+  .register-tile.warm { border-top-color:var(--amber-fg); }
+  .reg-icon { font-size:1.3rem; margin-bottom:.35rem; }
+  .reg-name { font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--text); margin-bottom:.2rem; }
+  .reg-status { font-size:.76rem; color:var(--text-2); line-height:1.4; }
+
+  /* ── STREETS ── */
+  .protest-card { background:var(--bg-2); border-radius:10px; padding:1rem 1.1rem; margin-bottom:.75rem; border-left:3px solid var(--coral-fg); }
+  .protest-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.75rem; margin-bottom:.4rem; }
+  .protest-location { font-size:.88rem; font-weight:800; color:var(--text); }
+  .protest-scale { font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:3px; flex-shrink:0; }
+  .scale-hundreds { background:var(--coral-bg); color:var(--coral-fg); }
+  .scale-tens { background:var(--amber-bg); color:var(--amber-fg); }
+  .scale-thousands { background:var(--blue-bg); color:var(--blue-fg); }
+  .scale-small { background:var(--gray-bg); color:var(--gray-fg); }
+  .protest-cause { font-size:.85rem; color:var(--text-2); line-height:1.5; }
+  .protest-demand { font-size:.8rem; color:var(--text-3); margin-top:.35rem; font-style:italic; }
+
+  /* ── FASHION / ART ── */
+  .fashion-art-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:2rem; }
+  @media (max-width:600px) { .fashion-art-grid { grid-template-columns:1fr; } }
+  .fa-panel { background:var(--bg-2); border-radius:10px; padding:1.1rem; }
+  .fa-panel-label { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); font-weight:800; margin-bottom:.85rem; }
+  .fa-item { margin-bottom:.75rem; padding-bottom:.75rem; border-bottom:1px solid var(--border); font-size:.85rem; }
+  .fa-item:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
+  .fa-item-title { font-weight:700; color:var(--text); margin-bottom:.2rem; font-size:.85rem; }
+  .fa-item-body { color:var(--text-2); line-height:1.5; font-size:.82rem; }
+  .fa-signal { background:var(--bg-3,#eceae3); border-radius:8px; padding:.7rem .85rem; margin-top:.75rem; font-size:.82rem; color:var(--text-2); line-height:1.5; font-style:italic; }
+
+  /* ── DISCOURSE / VOICES ── */
+  .realist-card { background:var(--bg-2); border-radius:10px; padding:1rem 1.1rem; margin-bottom:.75rem; border-left:3px solid var(--purple-fg); }
+  .discourse-grid { display:grid; grid-template-columns:1fr 1fr; gap:.9rem; margin-bottom:1rem; }
+  @media (max-width:600px) { .discourse-grid { grid-template-columns:1fr; } }
+  .voice-card { background:var(--bg-2); border-radius:10px; padding:.9rem 1rem; }
+  .voice-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.6rem; margin-bottom:.45rem; }
+  .voice-name { font-size:.88rem; font-weight:800; color:var(--text); line-height:1.2; }
+  .voice-outlet { font-size:.73rem; color:var(--text-3); margin-top:.1rem; }
+  .voice-framing { font-size:.83rem; color:var(--text-2); line-height:1.5; }
+  .voice-topics { display:flex; flex-wrap:wrap; gap:.3rem; margin-top:.45rem; }
+  .vs-badge { flex-shrink:0; font-size:9px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 6px; border-radius:3px; }
+  .vs-convergent   { background:var(--teal-bg);   color:var(--teal-fg); }
+  .vs-divergent    { background:var(--coral-bg);  color:var(--coral-fg); }
+  .vs-independent  { background:var(--gray-bg);   color:var(--gray-fg); }
+  .vs-mixed        { background:var(--amber-bg);  color:var(--amber-fg); }
+  .convergence-card { background:var(--teal-bg); color:var(--teal-fg); border-radius:10px; padding:1rem 1.1rem; margin-bottom:.75rem; }
+  .convergence-card .c-topic { font-size:.88rem; font-weight:800; margin-bottom:.35rem; }
+  .convergence-card .c-why { font-size:.83rem; line-height:1.55; opacity:.85; }
+  .convergence-card .c-sub { margin-top:.5rem; font-size:.76rem; opacity:.65; line-height:1.5; }
+
   /* ── EMPTY STATE ── */
   .empty { text-align:center; padding:3rem 1rem; color:var(--text-3); }
   .empty h3 { font-size:1rem; font-weight:700; margin-bottom:.5rem; color:var(--text-2); }
@@ -269,6 +322,21 @@ function render() {
     html += `<div style="color:var(--text-3);font-size:.85rem">No culture data recorded.</div>`;
   }
   html += `</div></div>`;
+
+  // ── Cultural Register overview
+  html += renderRegisterOverview(d);
+
+  // ── Cultural Acts
+  html += renderCulturalActs(d);
+
+  // ── Streets
+  html += renderStreets(d);
+
+  // ── Fashion & Art
+  html += renderFashionArt(d);
+
+  // ── Discourse / Voices
+  html += renderDiscourse(d);
 
   // ── Connections
   const connections = d.synthesis?.connections || [];
@@ -463,6 +531,276 @@ function renderCharts() {
       }
     });
   }
+}
+
+function registerHeat(d) {
+  // Returns heat level for each register based on data presence
+  const acts = d.cultural_acts || [];
+  const protests = d.streets?.protests || [];
+  const fashionActs = (d.fashion?.designer_statements || []).length + (d.fashion?.met_gala?.statements_made?.length || 0);
+  const artFairs = (d.art_scene?.current_fairs || []).filter(f=>f.running).length;
+  return {
+    streets:  protests.length > 2 ? 'hot' : protests.length > 0 ? 'warm' : '',
+    artists:  acts.length > 2 ? 'hot' : acts.length > 0 ? 'warm' : '',
+    fashion:  fashionActs > 1 ? 'active' : fashionActs > 0 ? 'warm' : '',
+    art:      artFairs > 0 ? 'active' : '',
+    spectacle: d.fashion?.met_gala?.theme ? 'warm' : '',
+  };
+}
+
+function renderRegisterOverview(d) {
+  const heat = registerHeat(d);
+  const protests = d.streets?.protests || [];
+  const acts = d.cultural_acts || [];
+  const fairs = (d.art_scene?.current_fairs || []).filter(f=>f.running);
+
+  const registers = [
+    { key:'streets', icon:'✊', name:'Streets', heat: heat.streets,
+      status: protests.length ? `${protests.length} protest${protests.length>1?'s':''} tracked` : 'Quiet today' },
+    { key:'artists', icon:'🎤', name:'Cultural Acts', heat: heat.artists,
+      status: acts.length ? `${acts.length} intervention${acts.length>1?'s':''} recorded` : 'No acts recorded' },
+    { key:'fashion', icon:'👗', name:'Fashion', heat: heat.fashion,
+      status: d.fashion?.trend_signal ? d.fashion.trend_signal.slice(0,60)+'…' : 'No fashion signals' },
+    { key:'art', icon:'🎨', name:'Art Scene', heat: heat.art,
+      status: fairs.length ? fairs.map(f=>f.fair).join(' · ') : 'No active fairs' },
+    { key:'music', icon:'🎵', name:'Music', heat: 'active',
+      status: (() => { const t12 = d.culture?.music?.apple_music_uk_top12||[]; return t12[0] ? `#1 ${t12[0].artist}` : 'Chart data'; })() },
+    { key:'spectacle', icon:'💎', name:'Spectacle', heat: heat.spectacle,
+      status: d.fashion?.met_gala?.theme ? `Met Gala: ${d.fashion.met_gala.theme}` : 'No major events' },
+  ];
+
+  let html = `<div class="section-header"><span class="section-num">Registers</span><span class="section-title">Cultural Activity Today</span></div>`;
+  html += `<div class="register-grid">`;
+  registers.forEach(r => {
+    html += `<div class="register-tile ${r.heat}">
+      <div class="reg-icon">${r.icon}</div>
+      <div class="reg-name">${r.name}</div>
+      <div class="reg-status">${r.status}</div>
+    </div>`;
+  });
+  html += `</div>`;
+  return html;
+}
+
+function renderStreets(d) {
+  const protests = d.streets?.protests || [];
+  const summary = d.streets?.summary;
+  if (!protests.length && !summary) return '';
+
+  const scaleClass = { 'hundreds-of-thousands':'scale-hundreds', 'tens-of-thousands':'scale-tens', 'thousands':'scale-thousands', 'small':'scale-small' };
+  const scaleLabel = { 'hundreds-of-thousands':'100k+', 'tens-of-thousands':'10k+', 'thousands':'1k+', 'small':'Small' };
+
+  let html = `<div class="section-header"><span class="section-num">Streets</span><span class="section-title">Protests &amp; Rallies</span></div>`;
+  if (summary) html += `<p style="font-size:.88rem;color:var(--text-2);margin-bottom:1rem;line-height:1.6">${summary}</p>`;
+
+  protests.forEach(p => {
+    const sc = p.scale || 'small';
+    const cross = p.cross_border ? `<span class="tag" style="background:var(--purple-bg);color:var(--purple-fg)">Cross-border</span>` : '';
+    html += `<div class="protest-card">
+      <div class="protest-header">
+        <div class="protest-location">📍 ${p.location}</div>
+        <span class="protest-scale ${scaleClass[sc]||'scale-small'}">${scaleLabel[sc]||sc}</span>
+      </div>
+      <div class="protest-cause">${p.cause}</div>
+      ${p.explicit_demand ? `<div class="protest-demand">Demand: ${p.explicit_demand}</div>` : ''}
+      ${p.counter_protest ? `<div style="font-size:.79rem;color:var(--text-3);margin-top:.3rem;border-top:1px solid var(--border);padding-top:.3rem">Counter: ${p.counter_protest}</div>` : ''}
+      <div style="margin-top:.45rem;display:flex;flex-wrap:wrap;gap:.3rem">
+        ${cross}
+        ${(p.related_events||[]).map(e=>`<span class="tag" style="${tagColor(e)}">${e}</span>`).join('')}
+      </div>
+    </div>`;
+  });
+
+  return html;
+}
+
+function renderFashionArt(d) {
+  const fashion = d.fashion;
+  const art = d.art_scene;
+  if (!fashion && !art) return '';
+
+  let html = `<div class="section-header"><span class="section-num">Fashion &amp; Art</span><span class="section-title">Industry Signals</span></div>`;
+  html += `<div class="fashion-art-grid">`;
+
+  // Fashion panel
+  html += `<div class="fa-panel"><div class="fa-panel-label">👗 Fashion</div>`;
+  const metGala = fashion?.met_gala;
+  if (metGala?.theme) {
+    html += `<div class="fa-item">
+      <div class="fa-item-title">Met Gala ${metGala.year} — ${metGala.theme}</div>
+      ${(metGala.statements_made||[]).map(s=>`<div class="fa-item-body">${s}</div>`).join('')}
+      ${metGala.overall_reading ? `<div class="fa-signal">${metGala.overall_reading}</div>` : ''}
+    </div>`;
+  }
+  (fashion?.designer_statements||[]).forEach(ds => {
+    html += `<div class="fa-item">
+      <div class="fa-item-title">${ds.designer_or_brand}</div>
+      <div class="fa-item-body">${ds.statement_or_collection}</div>
+      ${ds.political_valence ? `<span class="tag" style="${valenceStyle(ds.political_valence)}">${ds.political_valence}</span>` : ''}
+    </div>`;
+  });
+  if (fashion?.trend_signal) {
+    html += `<div class="fa-signal">${fashion.trend_signal}</div>`;
+  }
+  if (!metGala?.theme && !(fashion?.designer_statements||[]).length && !fashion?.trend_signal) {
+    html += `<div style="color:var(--text-3);font-size:.83rem">No fashion signals tracked today.</div>`;
+  }
+  html += `</div>`;
+
+  // Art panel
+  html += `<div class="fa-panel"><div class="fa-panel-label">🎨 Art Scene</div>`;
+  (art?.current_fairs||[]).forEach(fair => {
+    html += `<div class="fa-item">
+      <div class="fa-item-title">${fair.fair}${fair.location ? ` · ${fair.location}` : ''}</div>
+      ${fair.curatorial_theme ? `<div class="fa-item-body" style="font-style:italic;margin-bottom:.3rem">"${fair.curatorial_theme}"</div>` : ''}
+      ${(fair.political_signals||[]).map(s=>`<div class="fa-item-body">· ${s}</div>`).join('')}
+      ${fair.market_signal ? `<div class="fa-signal">${fair.market_signal}</div>` : ''}
+    </div>`;
+  });
+  (art?.notable_works_or_shows||[]).forEach(w => {
+    html += `<div class="fa-item">
+      <div class="fa-item-title">${w.artist}${w.work_or_show ? ` — ${w.work_or_show}` : ''}</div>
+      ${w.venue ? `<div style="font-size:.76rem;color:var(--text-3);margin-bottom:.2rem">${w.venue}</div>` : ''}
+      <div class="fa-item-body">${w.political_reading}</div>
+    </div>`;
+  });
+  if (art?.auction_signals) {
+    html += `<div class="fa-signal">${art.auction_signals}</div>`;
+  }
+  if (!(art?.current_fairs||[]).length && !(art?.notable_works_or_shows||[]).length) {
+    html += `<div style="color:var(--text-3);font-size:.83rem">No art fair or gallery signals tracked today.</div>`;
+  }
+  html += `</div>`;
+
+  html += `</div>`;
+  return html;
+}
+
+const VALENCE_STYLE = {
+  'anti-authoritarian': ['#E1F5EE','#0F6E56'],
+  'nationalist':        ['#FAECE7','#712B13'],
+  'anti-war':           ['#E6F1FB','#0C447C'],
+  'pro-Palestine':      ['#EEEDFE','#3C3489'],
+  'pro-Israel':         ['#FAEEDA','#633806'],
+  'anti-immigration':   ['#FAECE7','#712B13'],
+  'pro-immigration':    ['#E1F5EE','#0F6E56'],
+  'feminist':           ['#EEEDFE','#3C3489'],
+  'climate':            ['#EAF3DE','#27500A'],
+  'anti-establishment': ['#F1EFE8','#444441'],
+};
+function valenceStyle(v) {
+  const [bg,fg] = VALENCE_STYLE[v] || ['#F1EFE8','#444441'];
+  return `background:${bg};color:${fg}`;
+}
+
+function renderCulturalActs(d) {
+  const acts = d.cultural_acts || [];
+  if (!acts.length) return '';
+
+  let html = `<div class="section-header"><span class="section-num">Cultural Acts</span><span class="section-title">Political Interventions by Cultural Figures</span></div>`;
+
+  acts.forEach(act => {
+    const valence = act.political_valence || 'anti-establishment';
+    html += `<div class="connection-card" style="border-left-color:${(VALENCE_STYLE[valence]||['#e8e5df'])[1]}">
+      <div class="connection-header">
+        <div>
+          <div style="font-size:.82rem;font-weight:800;color:var(--text)">${act.figure}</div>
+          <div style="font-size:.76rem;color:var(--text-3);margin-top:.1rem">${act.context}</div>
+        </div>
+        <span class="connection-badge" style="${valenceStyle(valence)}">${valence.replace(/-/g,' ')}</span>
+      </div>
+      <div class="connection-obs" style="margin-bottom:.5rem">${act.event_description}</div>
+      ${act.backlash ? `<div style="font-size:.8rem;color:var(--text-3);border-top:1px solid var(--border);padding-top:.4rem;margin-bottom:.4rem"><strong>Response:</strong> ${act.backlash}</div>` : ''}
+      ${act.vs_discourse ? `<div style="font-size:.8rem;color:var(--text-3);font-style:italic">${act.vs_discourse}</div>` : ''}
+      <div class="connection-tags" style="margin-top:.5rem">
+        ${(act.explicit_targets||[]).map(t=>`<span class="tag" style="background:var(--coral-bg);color:var(--coral-fg)">${t}</span>`).join('')}
+        ${(act.topics||[]).map(t=>`<span class="tag" style="${tagColor(t)}">${t}</span>`).join('')}
+      </div>
+    </div>`;
+  });
+
+  return html;
+}
+
+function renderDiscourse(d) {
+  const disc = d.discourse;
+  if (!disc) return '';
+
+  let html = `<div class="section-header"><span class="section-num">Voices</span><span class="section-title">Realist Critique &amp; Nationalist Amplifiers</span></div>`;
+
+  // Academic realists
+  const realists = (disc.realist_academics || []);
+  realists.forEach(r => {
+    if (!r.on_current_events && !r.recent_content_title) return;
+    html += `<div class="realist-card">
+      <div class="voice-card-header">
+        <div>
+          <div class="voice-name">${r.figure}</div>
+          <div class="voice-outlet">${r.platform || 'Podcast / Substack'} · Academic Realist</div>
+        </div>
+        <span class="tag" style="background:var(--purple-bg);color:var(--purple-fg)">Realist</span>
+      </div>
+      ${r.recent_content_title ? `<div style="font-size:.79rem;color:var(--text-3);margin-bottom:.3rem;font-style:italic">"${r.recent_content_title}"</div>` : ''}
+      ${r.on_current_events ? `<div class="voice-framing">${r.on_current_events}</div>` : ''}
+      <div class="voice-topics">${(r.narrative_tags||[]).map(t=>`<span class="tag" style="${tagColor(t)}">${t}</span>`).join('')}</div>
+    </div>`;
+  });
+
+  // Nationalist media grid
+  const nationalists = (disc.nationalist_media || []);
+  if (nationalists.length) {
+    html += `<div class="discourse-grid">`;
+    nationalists.forEach(v => {
+      const vs = v.vs_realists || 'independent';
+      const vsLabel = { convergent:'Convergent', divergent:'Divergent', mixed:'Mixed', independent:'Independent' }[vs] || 'Independent';
+      html += `<div class="voice-card">
+        <div class="voice-card-header">
+          <div>
+            <div class="voice-name">${v.figure}</div>
+            <div class="voice-outlet">${v.outlet} · ${v.geo}</div>
+          </div>
+          <span class="vs-badge vs-${vs}">${vsLabel}</span>
+        </div>
+        ${v.recent_content_title ? `<div style="font-size:.77rem;color:var(--text-3);margin-bottom:.25rem;font-style:italic">"${v.recent_content_title}"</div>` : ''}
+        <div class="voice-framing">${v.framing || '<span style="color:var(--text-3)">Not tracked today.</span>'}</div>
+        <div class="voice-topics">${(v.topics||[]).map(t=>`<span class="tag" style="${tagColor(t)}">${t}</span>`).join('')}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // Convergence points
+  const convergences = (disc.convergence_points || []);
+  if (convergences.length) {
+    html += `<div style="margin:.25rem 0 .6rem;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);font-weight:700">Where they agree — for different reasons</div>`;
+    convergences.forEach(c => {
+      html += `<div class="convergence-card">
+        <div class="c-topic">📍 ${c.topic}</div>
+        <div class="c-why">${c.why_it_matters}</div>
+        <div class="c-sub">
+          Realist argument: ${c.realist_argument}<br>
+          Nationalist argument: ${c.nationalist_argument}
+        </div>
+        <div style="margin-top:.5rem;display:flex;flex-wrap:wrap;gap:.3rem">
+          ${(c.figures_involved||[]).map(f=>`<span class="tag" style="background:rgba(15,110,86,.15);color:var(--teal-fg)">${f}</span>`).join('')}
+        </div>
+      </div>`;
+    });
+  }
+
+  // Divergence points
+  const divergences = (disc.divergence_points || []);
+  if (divergences.length) {
+    html += `<div style="margin:.25rem 0 .6rem;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);font-weight:700">Where they split</div>`;
+    divergences.forEach(dv => {
+      html += `<div style="background:var(--bg-2);border-radius:8px;padding:.75rem 1rem;margin-bottom:.5rem;border-left:3px solid var(--coral-fg)">
+        <div style="font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.2rem">${dv.topic}</div>
+        <div style="font-size:.82rem;color:var(--text-2)">${dv.description}</div>
+      </div>`;
+    });
+  }
+
+  return html;
 }
 
 function selectDay(i) {
