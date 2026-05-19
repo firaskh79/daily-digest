@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firas's Digest — May 19, 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
+    --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
+    --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
+    --radius:10px; --radius-sm:6px;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --purple-bg:#EEEDFE; --purple-text:#3C3489;
+    --teal-bg:#E1F5EE; --teal-text:#0F6E56;
+    --coral-bg:#FAECE7; --coral-text:#712B13;
+    --amber-bg:#FAEEDA; --amber-text:#633806;
+    --blue-bg:#E6F1FB; --blue-text:#0C447C;
+    --green-bg:#EAF3DE; --green-text:#27500A;
+    --gray-bg:#F1EFE8; --gray-text:#444441;
+    --link:#185FA5;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#1c1c1a;--bg-2:#252523;--bg-3:#2e2e2b;
+      --text:#f0ede6;--text-2:#a8a5a0;--text-3:#6a6865;
+      --border:rgba(255,255,255,0.1);--border-2:rgba(255,255,255,0.18);
+      --purple-bg:#26215C;--purple-text:#AFA9EC;
+      --teal-bg:#04342C;--teal-text:#5DCAA5;
+      --coral-bg:#4A1B0C;--coral-text:#F0997B;
+      --amber-bg:#412402;--amber-text:#FAC775;
+      --blue-bg:#042C53;--blue-text:#85B7EB;
+      --green-bg:#173404;--green-text:#97C459;
+      --gray-bg:#2C2C2A;--gray-text:#B4B2A9;
+      --link:#85B7EB;
+    }
+  }
+  body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;max-width:780px;margin:0 auto;padding:2rem 1.5rem 4rem;}
+  a{color:var(--link);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* header */
+  .digest-header{border-bottom:1px solid var(--border-2);padding-bottom:1.25rem;margin-bottom:2rem;}
+  .digest-date{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.4rem;}
+  .digest-title{font-size:28px;font-weight:500;color:var(--text);margin-bottom:0.2rem;}
+  .digest-title span{color:var(--text-3);font-weight:400;}
+  .digest-sub{font-size:13px;color:var(--text-2);}
+
+  /* exec summary */
+  .exec{background:var(--bg-2);border-radius:var(--radius);padding:1.5rem;margin-bottom:2.5rem;}
+  .exec-eyebrow{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:1rem;}
+  .exec-intro{font-size:14px;color:var(--text-2);line-height:1.7;margin-bottom:1.25rem;}
+  .exec-intro strong{color:var(--text);font-weight:500;}
+  .cx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .cx-card{background:var(--bg);border-radius:var(--radius-sm);border:0.5px solid var(--border);padding:0.875rem 1rem;}
+  .cx-tag{font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:6px;}
+  .cx-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.4;}
+  .cx-body{font-size:12px;color:var(--text-2);line-height:1.5;}
+  .cx-secs{font-size:10px;color:var(--text-3);margin-top:5px;}
+
+  /* section */
+  .section{margin-bottom:3rem;}
+  .sec-meta{display:flex;align-items:center;gap:10px;margin-bottom:0.4rem;}
+  .sec-num{font-size:11px;font-weight:500;color:var(--text-3);}
+  .sec-title{font-size:20px;font-weight:500;color:var(--text);margin-bottom:0.75rem;}
+  .sec-summary{font-size:13px;color:var(--text-2);line-height:1.7;background:var(--bg-2);border-radius:var(--radius-sm);padding:0.875rem 1rem;margin-bottom:1.25rem;}
+  .sec-summary strong{color:var(--text);font-weight:500;}
+  .sec-div{border:none;border-top:0.5px solid var(--border);margin:1.25rem 0;}
+  .block-title{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-3);margin:1.25rem 0 0.75rem;display:flex;align-items:center;gap:6px;}
+
+  /* tags */
+  .tag{font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;display:inline-block;white-space:nowrap;}
+  .tg{background:var(--teal-bg);color:var(--teal-text);}
+  .tb{background:var(--blue-bg);color:var(--blue-text);}
+  .tp{background:var(--purple-bg);color:var(--purple-text);}
+  .ta{background:var(--amber-bg);color:var(--amber-text);}
+  .tc{background:var(--coral-bg);color:var(--coral-text);}
+  .tgr{background:var(--gray-bg);color:var(--gray-text);}
+  .tgn{background:var(--green-bg);color:var(--green-text);}
+
+  /* stories */
+  .story{padding:11px 0;border-bottom:0.5px solid var(--border);}
+  .story:last-child{border-bottom:none;}
+  .story-hd{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:5px;}
+  .story-hed{font-size:14px;font-weight:500;color:var(--text);line-height:1.4;flex:1;}
+  .story-hed a{color:var(--text);}
+  .story-body{font-size:13px;color:var(--text-2);line-height:1.6;}
+  .story-body strong{font-weight:500;color:var(--text);}
+
+  /* trend */
+  .tt{width:100%;border-collapse:collapse;font-size:13px;}
+  .tt th{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-3);text-align:left;padding:4px 8px 8px;border-bottom:0.5px solid var(--border-2);}
+  .tt td{padding:7px 8px;border-bottom:0.5px solid var(--border);vertical-align:middle;}
+  .tt tr:last-child td{border-bottom:none;}
+  .tt .pos{width:32px;font-weight:500;color:var(--text-3);}
+  .tt .tv{text-align:right;font-size:12px;color:var(--text-2);}
+  .tsub{font-size:11px;color:var(--text-3);}
+
+  .tg2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1rem;}
+  .tcrd{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:0.875rem 1rem;}
+  .tclbl{font-size:10px;color:var(--text-3);font-weight:500;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;}
+  .ti{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--border);}
+  .ti:last-child{border-bottom:none;padding-bottom:0;}
+  .tn{font-size:11px;color:var(--text-3);min-width:16px;padding-top:2px;}
+
+  /* sounds */
+  .sg{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:1rem;}
+  .sc{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:0.875rem 1rem;display:flex;gap:12px;align-items:flex-start;}
+  .sr{font-size:20px;font-weight:500;color:var(--text-3);min-width:28px;line-height:1.2;}
+  .si{flex:1;}
+  .st{font-size:14px;font-weight:500;color:var(--text);margin-bottom:2px;}
+  .sa{font-size:12px;color:var(--text-2);margin-bottom:4px;}
+  .sm{display:flex;gap:10px;flex-wrap:wrap;}
+  .ss{font-size:11px;color:var(--text-3);}
+  .ss span{color:var(--text-2);font-weight:500;}
+  .am-btn{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:var(--coral-text);background:var(--coral-bg);padding:3px 8px;border-radius:4px;text-decoration:none!important;margin-top:4px;}
+  .am-btn:hover{opacity:0.85;}
+
+  /* formats */
+  .fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .fc{background:var(--bg-2);border-radius:var(--radius-sm);padding:0.75rem 1rem;}
+  .fh{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px;}
+  .fd{font-size:12px;color:var(--text-2);line-height:1.5;}
+  .fa{font-size:11px;color:var(--text-3);margin-top:4px;}
+
+  /* music */
+  .mg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:0.5rem;}
+  .mc,.mh{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:0.875rem 1rem;}
+  .mh{margin-bottom:10px;}
+  .mart{font-size:11px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;}
+  .mtit{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px;}
+  .mh .mtit{font-size:15px;}
+  .mtit a{color:var(--text);}
+  .mdesc{font-size:12px;color:var(--text-2);line-height:1.5;}
+  .mtag{display:inline-block;font-size:10px;color:var(--text-3);background:var(--bg-2);border-radius:4px;padding:2px 6px;margin-top:5px;}
+
+  /* films */
+  .fr{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:0.5px solid var(--border);}
+  .fr:last-child{border-bottom:none;}
+  .fn{font-size:20px;font-weight:500;color:var(--text-3);min-width:28px;line-height:1.2;}
+  .fi{flex:1;}
+  .ftit{font-size:14px;font-weight:500;color:var(--text);margin-bottom:2px;}
+  .ftit a{color:var(--text);}
+  .fmet{font-size:12px;color:var(--text-2);margin-bottom:3px;}
+  .fdesc{font-size:12px;color:var(--text-2);line-height:1.5;}
+  .fbk{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;color:var(--teal-text);background:var(--teal-bg);padding:3px 8px;border-radius:4px;margin-top:5px;text-decoration:none!important;}
+  .fbk:hover{opacity:0.85;}
+  .venue-note{font-size:11px;color:var(--text-3);margin-left:6px;}
+
+  /* chart */
+  .cg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1rem;}
+  .ctbl{width:100%;border-collapse:collapse;font-size:12px;}
+  .ctbl th{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-3);text-align:left;padding:4px 6px 7px;border-bottom:0.5px solid var(--border-2);}
+  .ctbl th.r{text-align:right;}
+  .ctbl td{padding:6px 6px;border-bottom:0.5px solid var(--border);vertical-align:middle;}
+  .ctbl tr:last-child td{border-bottom:none;}
+  .cp{font-weight:500;color:var(--text-3);width:24px;}
+  .cm{font-size:10px;width:18px;}
+  .cup{color:#0F6E56;}.cdn{color:#993C1D;}.ceq{color:var(--text-3);}
+  .cs{font-weight:500;color:var(--text);}
+  .cs a{color:var(--text);}
+  .car{color:var(--text-2);font-size:11px;}
+  .cnum{text-align:right;color:var(--text-2);white-space:nowrap;}
+  .ch{font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px;}
+
+  /* arabic */
+  .ar-sec{direction:rtl;text-align:right;margin-top:0.5rem;}
+  .ar-hed{font-size:16px;line-height:1.8;color:var(--text);margin-bottom:6px;}
+  .ar-hed a{color:var(--text);}
+  .ar-sub{font-size:12px;color:var(--text-3);}
+
+  /* market */
+  .mkt{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.25rem;}
+  .mkc{background:var(--bg-2);border-radius:var(--radius-sm);padding:0.75rem 0.875rem;}
+  .mkn{font-size:10px;color:var(--text-3);font-weight:500;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;}
+  .mkv{font-size:17px;font-weight:500;color:var(--text);margin-bottom:1px;}
+  .mkch{font-size:12px;}
+  .dn{color:#993C1D;}.up{color:#0F6E56;}.wn{color:#854F0B;}
+
+  /* nvidia */
+  .nvs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;}
+  .nvc{background:var(--bg-2);border-radius:var(--radius-sm);padding:6px 8px;}
+  .nvl{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.05em;}
+  .nvv{font-size:14px;font-weight:500;color:var(--text);margin-top:1px;}
+  .nvs2{font-size:10px;color:var(--text-3);}
+
+  /* banners */
+  .warn{background:var(--bg-2);border-left:3px solid #BA7517;border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:0.875rem 1rem;margin-bottom:1.25rem;}
+  .warn-ey{font-size:10px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:#854F0B;margin-bottom:5px;}
+  .warn-tx{font-size:13px;color:var(--text-2);line-height:1.6;}
+  .warn-tx strong{color:var(--text);font-weight:500;}
+  .info-warn{border-left-color:#185FA5;}
+  .info-warn .warn-ey{color:#0C447C;}
+  .live-warn{border-left-color:#0F6E56;}
+  .live-warn .warn-ey{color:#0F6E56;}
+
+  /* insight */
+  .ins{background:var(--bg-2);border-radius:var(--radius);padding:0.875rem 1rem;margin:0.75rem 0;display:flex;gap:10px;}
+  .ins-b{font-size:13px;color:var(--text-2);line-height:1.6;}
+  .ins-b strong{color:var(--text);font-weight:500;}
+
+  /* cannes */
+  .cannes{background:var(--bg-2);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1rem;}
+  .cannes-ey{font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px;}
+
+  /* mini */
+  .twoc{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .minc{background:var(--bg-2);border-radius:var(--radius-sm);padding:0.75rem 0.875rem;}
+  .minl{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-3);margin-bottom:4px;}
+  .mint{font-size:13px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:3px;}
+  .mint a{color:var(--text);}
+  .minb{font-size:12px;color:var(--text-2);line-height:1.5;}
+
+  /* note */
+  .note{font-size:11px;color:var(--text-3);background:var(--bg-2);border-radius:var(--radius-sm);padding:5px 10px;display:inline-block;}
+
+  /* footer */
+  .footer{margin-top:3rem;padding-top:1.25rem;border-top:0.5px solid var(--border);font-size:12px;color:var(--text-3);}
+
+  @media(max-width:600px){
+    .cx-grid,.tg2,.mg,.fg,.cg,.twoc{grid-template-columns:1fr;}
+    .mkt{grid-template-columns:1fr 1fr;}
+    body{padding:1.25rem 1rem 3rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="digest-header">
+  <div class="digest-date">Tuesday · May 19, 2026</div>
+  <div class="digest-title">Firas's Digest <span>/ Daily Cultural Briefing</span></div>
+  <div class="digest-sub">Google Trends · Social · Music &amp; Film · News · Business · Science &amp; Tech</div>
+</header>
+
+<!-- EXEC SUMMARY -->
+<section class="exec">
+  <div class="exec-eyebrow">Executive summary — what's shaping culture today</div>
+  <p class="exec-intro">
+    Tuesday brings <strong>three distinct moments colliding at once</strong>. In Cannes, the most anticipated film of the year — Na Hong-Jin's <em>Hope</em> — premieres tonight at the Grand Théâtre Lumière, a decade after <em>The Wailing</em>. In San Francisco, a jury handed Elon Musk his biggest courtroom defeat: his OpenAI lawsuit thrown out entirely, Tesla stock sliding 3%. And the <strong>Hormuz shadow deepens further</strong>: Trump rejected Iran's counteroffer, oil hit $110, and the 30-year Treasury is at a yearly high. Running quietly under all of it — <strong>Olivia Dean is having one of the most dominant chart weeks any UK artist has had in years</strong>, holding six of the top twelve Apple Music UK spots while Cannes, Gaza, and oil markets compete for the front page.
+  </p>
+  <div class="cx-grid">
+    <div class="cx-card">
+      <span class="cx-tag" style="background:var(--amber-bg);color:var(--amber-text);">Cannes · Tonight</span>
+      <div class="cx-title">Na Hong-Jin's Hope premieres</div>
+      <div class="cx-body">The Wailing director's English-language debut — Hoyeon, Alicia Vikander, Michael Fassbender in a sci-fi thriller. The most anticipated film at the festival. Premiering Grand Théâtre Lumière tonight. Cannes ends in 4 days.</div>
+      <div class="cx-secs">Section 3</div>
+    </div>
+    <div class="cx-card">
+      <span class="cx-tag" style="background:var(--coral-bg);color:var(--coral-text);">Tech · Markets</span>
+      <div class="cx-title">Musk loses vs OpenAI — Tesla -3%</div>
+      <div class="cx-body">Jury rejected every one of Musk's claims that Altman broke a promise to keep OpenAI as a nonprofit. Tesla shares slid over 3%. Seagate fell 7%, dragging Micron -6%, after its CEO said new factories "will take too long."</div>
+      <div class="cx-secs">Sections 5 · 6</div>
+    </div>
+    <div class="cx-card">
+      <span class="cx-tag" style="background:var(--purple-bg);color:var(--purple-text);">Macro shadow</span>
+      <div class="cx-title">Trump rejects Iran counteroffer</div>
+      <div class="cx-body">Trump called Iran's peace proposal "garbage." Brent crude at $110. 30-year Treasuries at highest in a year. 14mb/d of oil still shut in. Cumulative supply losses exceed 1 billion barrels. No resolution in sight.</div>
+      <div class="cx-secs">Sections 4 · 5</div>
+    </div>
+    <div class="cx-card">
+      <span class="cx-tag" style="background:var(--blue-bg);color:var(--blue-text);">UK music</span>
+      <div class="cx-title">Olivia Dean's chart dominance</div>
+      <div class="cx-body">Six of the top twelve Apple Music UK spots simultaneously: #1, #2 (with Sam Fender), #5, #12, #20, #29. Man I Need holds #1. One of the most concentrated chart runs any UK artist has achieved in the streaming era.</div>
+      <div class="cx-secs">Section 3</div>
+    </div>
+    <div class="cx-card">
+      <span class="cx-tag" style="background:var(--teal-bg);color:var(--teal-text);">UK health</span>
+      <div class="cx-title">Kent meningitis outbreak unresolved</div>
+      <div class="cx-body">Authorities say "too early to say" if the outbreak has peaked. Contact tracing now covers over 10,000 people. No national vaccination programme recommended yet — but the decision is being actively considered by UKHSA.</div>
+      <div class="cx-secs">Section 4</div>
+    </div>
+    <div class="cx-card">
+      <span class="cx-tag" style="background:var(--gray-bg);color:var(--gray-text);">Sports · Social</span>
+      <div class="cx-title">Wemby owns the internet</div>
+      <div class="cx-body">Wembanyama 41 pts + 24 rebounds in a double-OT WCF Game 1 classic. Spurs beat Thunder 122-115. Six of the top eight US X trends are about one basketball game — Wemby, Chet, Caruso, Spurs, Dylan Harper, Double OT.</div>
+      <div class="cx-secs">Section 2</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 1: GOOGLE TRENDS ══ -->
+<section class="section">
+  <div class="sec-meta"><span class="sec-num">01</span><span class="tag ta">Google Trends</span></div>
+  <h2 class="sec-title">What the world is searching</h2>
+  <div class="sec-summary">
+    Today's UK search picture is shaped by <strong>health anxiety, a landmark Scottish court case, and sport</strong>. The meningitis outbreak in Kent is generating sustained search volume as parents seek information. The Lee Milne sentencing — Scotland's first domestic abuse culpable homicide prosecution — is drawing significant media and search attention. Globally, the <strong>Na Hong-Jin premiere at Cannes</strong> is spiking film searches in Asia and the US. Lebanon's <a href="https://www.annahar.com/lebanon/politics" target="_blank">Annahar</a> used for Middle East pulse.
+  </div>
+
+  <div class="block-title">UK — top searches today</div>
+  <table class="tt">
+    <thead><tr><th class="pos">#</th><th>Search</th><th>Context</th><th>Volume</th></tr></thead>
+    <tbody>
+      <tr><td class="pos">1</td><td><a href="https://trends.google.com/trends/trendingsearches/daily?geo=GB" target="_blank">Meningitis symptoms Kent</a></td><td class="tsub">Ongoing outbreak — is it peaking?</td><td class="tv">Breakout</td></tr>
+      <tr><td class="pos">2</td><td><a href="https://trends.google.com/trends/trendingsearches/daily?geo=GB" target="_blank">Lee Milne sentencing</a></td><td class="tsub">8 years — landmark domestic abuse case</td><td class="tv">150K+</td></tr>
+      <tr><td class="pos">3</td><td><a href="https://trends.google.com/trends/trendingsearches/daily?geo=GB" target="_blank">Chagos Islands sovereignty</a></td><td class="tsub">Starmer shelves Mauritius deal</td><td class="tv">80K+</td></tr>
+      <tr><td class="pos">4</td><td><a href="https://trends.google.com/trends/trendingsearches/daily?geo=GB" target="_blank">Arsenal result</a></td><td class="tsub">Post-match search after Burnley game</td><td class="tv">60K+</td></tr>
+      <tr><td class="pos">5</td><td><a href="https://trends.google.com/trends/trendingsearches/daily?geo=GB" target="_blank">Na Hong-Jin Hope film</a></td><td class="tsub">Cannes premiere — UK film fans tracking</td><td class="tv">30K+</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="sec-div">
+  <div class="block-title">Global &amp; regional pulse</div>
+  <div class="story-body" style="font-size:13px;line-height:1.7;">
+    <strong>Globally</strong>, <a href="https://trends.google.com/trends/trendingsearches/daily?geo=WW" target="_blank">Elon Musk and OpenAI</a> are cross-market trending following yesterday's jury verdict — searches for "OpenAI lawsuit verdict," "Tesla stock today," and "Musk court case" all spiking in the US, UK, and Germany. <strong>US searches</strong> are split between the <a href="https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html" target="_blank">Iran peace deal collapse</a>, NBA and NHL playoffs, and the Long Island Railroad strike affecting hundreds of thousands of commuters. <strong>South Korea and Japan</strong> are searching heavily for Na Hong-Jin's Hope premiere coverage from Cannes. <strong>Gulf states</strong> continue tracking Hormuz closure news closely, with searches for fuel price impact rising.
+  </div>
+  <br><span class="note">Lebanon: no daily Google Trends data available — see Section 4 for Annahar headlines</span>
+</section>
+
+<!-- ══ SECTION 2: SOCIAL ══ -->
+<section class="section">
+  <div class="sec-meta"><span class="sec-num">02</span><span class="tag tg">Social Pulse</span></div>
+  <h2 class="sec-title">X &amp; TikTok trends</h2>
+  <div class="sec-summary">
+    Social today is <strong>completely owned by one basketball game</strong>. Wembanyama's 41-point, 24-rebound double-overtime masterpiece in Game 1 of the Western Conference Finals has taken over X — Wemby, Chet, Caruso, Spurs, Dylan Harper, Double OT, and Victor Wembanyama are six of the top eight US trends simultaneously. The Spurs beat the Thunder 122-115, with Wemby sinking a logo three to force a second OT. On TikTok, the same top four sounds persist from yesterday — "worry (ultra slowed)" and the Ariana Grande "bye" remix remain the dominant audio formats — while Cannes red carpet content is beginning to amplify the Na Hong-Jin premiere. Also live on X: the NHL Buffalo Sabres–Canadiens series (Dahlin, Habs).
+  </div>
+
+  <div class="block-title"><span class="tag tgr">X / Twitter</span> What's trending</div>
+  <div class="tg2">
+    <div class="tcrd">
+      <div class="tclbl">United States — live from trends24.in</div>
+      <div class="ti"><span class="tn">1</span><div><div><a href="https://twitter.com/search?q=Wemby" target="_blank">Wemby</a></div><div class="tsub">Wembanyama — 41 pts, 24 reb, double OT</div></div></div>
+      <div class="ti"><span class="tn">2</span><div><div><a href="https://twitter.com/search?q=Chet" target="_blank">Chet</a></div><div class="tsub">Chet Holmgren — Thunder's answer</div></div></div>
+      <div class="ti"><span class="tn">3</span><div><div><a href="https://twitter.com/search?q=Spurs" target="_blank">Spurs / #SASvsOKC</a></div><div class="tsub">WCF Game 1 — Spurs win 122-115 in 2OT</div></div></div>
+      <div class="ti"><span class="tn">4</span><div><div><a href="https://twitter.com/search?q=Dylan+Harper" target="_blank">Dylan Harper</a></div><div class="tsub">24 pts, 7 steals — Spurs rookie goes off</div></div></div>
+      <div class="ti"><span class="tn">5</span><div><div><a href="https://twitter.com/search?q=%23WWERaw" target="_blank">#WWERaw</a></div><div class="tsub">WWE Monday Night Raw</div></div></div>
+    </div>
+    <div class="tcrd">
+      <div class="tclbl">Worldwide</div>
+      <div class="ti"><span class="tn">1</span><div><div><a href="https://twitter.com/search?q=Victor+Wembanyama" target="_blank">Victor Wembanyama</a></div><div class="tsub">Global — one of the great playoff performances</div></div></div>
+      <div class="ti"><span class="tn">2</span><div><div><a href="https://twitter.com/search?q=DOUBLE+OVERTIME" target="_blank">DOUBLE OVERTIME</a></div><div class="tsub">WCF Game 1 — 6th double-OT Game 1 in NBA history</div></div></div>
+      <div class="ti"><span class="tn">3</span><div><div><a href="https://twitter.com/search?q=Habs" target="_blank">Habs / Sabres</a></div><div class="tsub">NHL playoffs — Montreal vs Buffalo live</div></div></div>
+      <div class="ti"><span class="tn">4</span><div><div><a href="https://twitter.com/search?q=%23PorVida" target="_blank">#PorVida</a></div><div class="tsub">Spurs fandom — "for life" · WCF celebration</div></div></div>
+      <div class="ti"><span class="tn">5</span><div><div><a href="https://twitter.com/search?q=Mark+Cuban" target="_blank">Mark Cuban</a></div><div class="tsub">Former Mavs owner trending — Spurs context</div></div></div>
+    </div>
+  </div>
+
+  <hr class="sec-div">
+  <div class="block-title"><span class="tag tg">TikTok</span> Trending sounds · live from Tokchart</div>
+  <div class="sg">
+    <div class="sc">
+      <div class="sr">1</div>
+      <div class="si">
+        <div class="st">worry (ultra slowed)</div>
+        <div class="sa">riserayss</div>
+        <div class="sm"><span class="ss"><span>431K</span> videos</span><span class="ss"><span>47M+</span> views</span><span class="ss">US origin · 40+ countries</span></div>
+        <a href="https://music.apple.com/gb/search?term=worry+ultra+slowed+riserayss" target="_blank" class="am-btn">▶ Play on Apple Music</a>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sr">2</div>
+      <div class="si">
+        <div class="st">DARK HORSE FLOW</div>
+        <div class="sa">Katy Perry — viral remix</div>
+        <div class="sm"><span class="ss"><span>337K</span> videos</span><span class="ss"><span>12M+</span> views</span><span class="ss">Ukraine · UK · 44 countries</span></div>
+        <a href="https://music.apple.com/gb/search?term=Dark+Horse+Katy+Perry" target="_blank" class="am-btn">▶ Play on Apple Music</a>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sr">3</div>
+      <div class="si">
+        <div class="st">bye (jxkezy remix)</div>
+        <div class="sa">Ariana Grande — UK creator origin</div>
+        <div class="sm"><span class="ss"><span>141K</span> videos</span><span class="ss"><span>156M+</span> views</span><span class="ss">Global · #4 by score</span></div>
+        <a href="https://music.apple.com/gb/search?term=bye+Ariana+Grande+jxkezy" target="_blank" class="am-btn">▶ Play on Apple Music</a>
+      </div>
+    </div>
+    <div class="sc">
+      <div class="sr">4</div>
+      <div class="si">
+        <div class="st">This Is What It Feels Like</div>
+        <div class="sa">Armin van Buuren — highest video count</div>
+        <div class="sm"><span class="ss"><span>843K</span> videos</span><span class="ss"><span>187M+</span> views</span><span class="ss">Indonesia · Brazil · 20+ countries</span></div>
+        <a href="https://music.apple.com/gb/search?term=This+Is+What+It+Feels+Like+Armin+van+Buuren" target="_blank" class="am-btn">▶ Play on Apple Music</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-title"><span class="tag tg">TikTok</span> Formats right now</div>
+  <div class="fg">
+    <div class="fc"><div class="fh">"No, you don't get to ask questions"</div><div class="fd">Playful defensiveness. Refusing to explain questionable behaviour. Chaos charisma energy — the dominant comedic format of the week.</div><div class="fa">Audio: Original</div></div>
+    <div class="fc"><div class="fh">Cannes red carpet reactions</div><div class="fd">Creators reacting to Hope premiere red carpet arrivals. Hoyeon's fashion is driving its own dedicated thread. Peak film discourse energy.</div><div class="fa">Audio: Various</div></div>
+    <div class="fc"><div class="fh">Game 7 / playoff chaos content</div><div class="fd">NHL and NBA playoff anxiety — "I can't do this" format. Edmonton fans and NBA fans sharing the same emotional register via different teams.</div><div class="fa">Audio: Various</div></div>
+    <div class="fc"><div class="fh">"It's Gonna Be Me" — NSYNC</div><div class="fd">The perennial May meme is running a little late but still landing. Justin Timberlake's pronunciation of "me" / "May" is evergreen content at this point.</div><div class="fa">Audio: NSYNC</div></div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: MUSIC & FILM ══ -->
+<section class="section">
+  <div class="sec-meta"><span class="sec-num">03</span><span class="tag tp">Music &amp; Film</span></div>
+  <h2 class="sec-title">Charts, cinema &amp; Cannes</h2>
+  <div class="sec-summary">
+    The story today is <strong>Olivia Dean's extraordinary chart dominance</strong> and the <strong>Hope premiere at Cannes</strong>. Dean holds six of the UK Apple Music top twelve spots simultaneously — a level of saturation that is genuinely unusual in the algorithm era. In Edinburgh, the same films run as yesterday: Michael, Devil Wears Prada 2, and The Mandalorian are the three commercial bets; Rose of Nevada is the arthouse pick. <strong>Cannes ends in 4 days</strong> — the Palme d'Or decision is close.
+  </div>
+
+  <div class="warn live-warn">
+    <div class="warn-ey">Tonight at Cannes — Grand Théâtre Lumière</div>
+    <div class="warn-tx"><strong>Na Hong-Jin's Hope premieres tonight.</strong> The Wailing director's English-language debut — a sci-fi thriller with Hoyeon, Alicia Vikander, and Michael Fassbender. Ten years in the making. This is the single biggest cinematic event of the week. <a href="https://www.festival-cannes.com/en/the-selection/" target="_blank">Cannes selection →</a></div>
+  </div>
+
+  <div class="block-title">Apple Music UK — live chart</div>
+  <div class="ins"><div class="ins-b"><strong>Olivia Dean's historic chart week:</strong> Man I Need #1 · Rein Me In (with Sam Fender) #2 · So Easy (To Fall In Love) #5 · Nice To Each Other #12 · Baby Steps #20 · A Couple Minutes #29. <strong>Six of the UK top 12 spots.</strong> The album is everywhere.</div></div>
+  <div class="cg">
+    <div>
+      <div class="ch"><span class="tag tb">Apple Music UK</span> Top 12 · May 19</div>
+      <table class="ctbl">
+        <thead><tr><th>#</th><th></th><th>Song / Artist</th></tr></thead>
+        <tbody>
+          <tr><td class="cp">1</td><td class="cm ceq">=</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=Man+I+Need+Olivia+Dean" target="_blank">Man I Need</a> <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">Olivia Dean</div></td></tr>
+          <tr><td class="cp">2</td><td class="cm ceq">=</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=Rein+Me+In+Sam+Fender+Olivia+Dean" target="_blank">Rein Me In</a> <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">Sam Fender &amp; Olivia Dean</div></td></tr>
+          <tr><td class="cp">3</td><td class="cm ceq">=</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=Raindance+Dave+Tems" target="_blank">Raindance</a> <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">Dave &amp; Tems</div></td></tr>
+          <tr><td class="cp">4</td><td class="cm ceq">=</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=iloveitiloveitiloveit+Bella+Kay" target="_blank">iloveitiloveitiloveit</a></div><div class="car">Bella Kay</div></td></tr>
+          <tr><td class="cp">5</td><td class="cm ceq">=</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=So+Easy+To+Fall+In+Love+Olivia+Dean" target="_blank">So Easy (To Fall In Love)</a> <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">Olivia Dean</div></td></tr>
+          <tr><td class="cp">6</td><td class="cm cup">+1</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=WHERE+IS+MY+HUSBAND+RAYE" target="_blank">WHERE IS MY HUSBAND!</a> <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">RAYE</div></td></tr>
+          <tr><td class="cp">7</td><td class="cm cdn">−1</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=FEVER+DREAM+Alex+Warren" target="_blank">FEVER DREAM</a></div><div class="car">Alex Warren</div></td></tr>
+          <tr><td class="cp">8</td><td class="cm cup">+1</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=Ordinary+Alex+Warren" target="_blank">Ordinary</a></div><div class="car">Alex Warren</div></td></tr>
+          <tr><td class="cp">9</td><td class="cm cdn">−1</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=I+Just+Might+Bruno+Mars" target="_blank">I Just Might</a></div><div class="car">Bruno Mars</div></td></tr>
+          <tr><td class="cp">10</td><td class="cm cup">+3</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=Aperture+Harry+Styles" target="_blank">Aperture</a></div><div class="car">Harry Styles</div></td></tr>
+          <tr><td class="cp">11</td><td class="cm ceq">=</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=The+Fate+of+Ophelia+Taylor+Swift" target="_blank">The Fate of Ophelia</a></div><div class="car">Taylor Swift</div></td></tr>
+          <tr><td class="cp">12</td><td class="cm cdn">−2</td><td><div class="cs"><a href="https://music.apple.com/gb/search?term=Nice+To+Each+Other+Olivia+Dean" target="_blank">Nice To Each Other</a> <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">Olivia Dean</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="ch"><span class="tag tg">Notable moves</span> Climbers &amp; new entries</div>
+      <table class="ctbl">
+        <thead><tr><th>#</th><th></th><th>Song / Artist</th></tr></thead>
+        <tbody>
+          <tr><td class="cp">74</td><td class="cm cup">+23</td><td><div class="cs">Into the Groove</div><div class="car">Madonna — mystery spike</div></td></tr>
+          <tr><td class="cp">75</td><td class="cm cup">+20</td><td><div class="cs">Somedays</div><div class="car">Sonny Fodera, Jazzy &amp; D.O.D</div></td></tr>
+          <tr><td class="cp">152</td><td class="cm cup">+28</td><td><div class="cs">How You Remind Me</div><div class="car">Nickelback — Nickelback revival?</div></td></tr>
+          <tr><td class="cp">192</td><td class="cm ceq">NEW</td><td><div class="cs">Location <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">Dave &amp; Burna Boy</div></td></tr>
+          <tr><td class="cp">194</td><td class="cm ceq">NEW</td><td><div class="cs">Feel Good Inc.</div><div class="car">Gorillaz &amp; De La Soul</div></td></tr>
+          <tr><td class="cp">195</td><td class="cm ceq">NEW</td><td><div class="cs">Champagne Supernova</div><div class="car">Oasis — nostalgia wave</div></td></tr>
+          <tr><td class="cp">123</td><td class="cm cup">+10</td><td><div class="cs">People Watching <span class="tag tb" style="font-size:9px;padding:1px 4px;">UK</span></div><div class="car">Sam Fender</div></td></tr>
+          <tr><td class="cp">60</td><td class="cm cup">+9</td><td><div class="cs">My Loving</div><div class="car">Sonny Fodera &amp; CHRYSTAL</div></td></tr>
+        </tbody>
+      </table>
+      <div class="ins" style="margin-top:8px;"><div class="ins-b" style="font-size:12px;"><strong>Oasis and Gorillaz new entries</strong> on the same day — a wave of 2000s nostalgia running alongside the contemporary chart. Possibly linked to Cannes nostalgia programming or a viral moment.</div></div>
+    </div>
+  </div>
+
+  <hr class="sec-div">
+  <div class="block-title">Edinburgh cinemas — in theatres this week</div>
+
+  <div class="fr">
+    <div class="fn">1</div>
+    <div class="fi">
+      <div class="ftit"><a href="https://www.picturehouses.com/movie-details/005/HO00017772/michael" target="_blank">Michael</a></div>
+      <div class="fmet">MJ biopic · Dir. Antoine Fuqua <span class="venue-note">The Cameo, Tollcross</span></div>
+      <div class="fdesc">Still the biggest cultural artefact in Edinburgh cinemas right now. MJ holds five simultaneous Spotify global top-50 spots. The biopic effect continues to run across music, TikTok, and search simultaneously.</div>
+      <a href="https://www.picturehouses.com/movie-details/005/HO00017772/michael" target="_blank" class="fbk">Book at The Cameo</a>
+      <span class="tag ta" style="margin-left:6px;font-size:10px;">Biopic</span>
+    </div>
+  </div>
+  <div class="fr">
+    <div class="fn">2</div>
+    <div class="fi">
+      <div class="ftit"><a href="https://www.picturehouses.com/movie-details/005/HO00017738/the-devil-wears-prada-2" target="_blank">The Devil Wears Prada 2</a></div>
+      <div class="fmet">Dir. David Frankel · Meryl Streep, Anne Hathaway <span class="venue-note">The Cameo · Everyman St James Quarter</span></div>
+      <div class="fdesc">The "And Emily…that's all" TikTok format continues to run. The film is still acting as a live meme generator — a sequel becoming a format before reviews are even locked in.</div>
+      <a href="https://www.picturehouses.com/movie-details/005/HO00017738/the-devil-wears-prada-2" target="_blank" class="fbk">Book at The Cameo</a>
+      <a href="https://www.everymancinema.com/venues-list/g018l-everyman-edinburgh/" target="_blank" class="fbk" style="margin-left:6px;">Book at Everyman</a>
+    </div>
+  </div>
+  <div class="fr">
+    <div class="fn">3</div>
+    <div class="fi">
+      <div class="ftit">The Mandalorian &amp; Grogu</div>
+      <div class="fmet">Dir. Jon Favreau · Pedro Pascal <span class="venue-note">Cineworld Edinburgh (IMAX) · Vue Omni</span></div>
+      <div class="fdesc">Star Wars' first cinema outing in seven years. Best in <a href="https://www.imax.com/theatre/cineworld-edinburgh-imax" target="_blank">Cineworld's IMAX</a> — Edinburgh's only IMAX screen. Still pulling strong numbers mid-week.</div>
+      <a href="https://www.cineworld.co.uk/cinemas/edinburgh/037" target="_blank" class="fbk">Book at Cineworld IMAX</a>
+      <a href="https://www.myvue.com/cinema/edinburgh-omni-centre/whats-on" target="_blank" class="fbk" style="margin-left:6px;">Book at Vue Omni</a>
+    </div>
+  </div>
+  <div class="fr">
+    <div class="fn">4</div>
+    <div class="fi">
+      <div class="ftit"><a href="https://www.picturehouses.com/movie-details/005/HO00017705/rose-of-nevada" target="_blank">Rose of Nevada</a></div>
+      <div class="fmet">Arthouse / Independent <span class="venue-note">The Cameo, Tollcross</span></div>
+      <div class="fdesc">The Cameo's arthouse pick this week. The kind of film that will start appearing on year-end lists in December — catching it now at the Cameo is the right call.</div>
+      <a href="https://www.picturehouses.com/movie-details/005/HO00017705/rose-of-nevada" target="_blank" class="fbk">Book at The Cameo</a>
+      <span class="tag tgn" style="margin-left:6px;font-size:10px;">Arthouse</span>
+    </div>
+  </div>
+  <div class="fr">
+    <div class="fn">5</div>
+    <div class="fi">
+      <div class="ftit"><a href="https://www.picturehouses.com/movie-details/005/HO00017966/obsession" target="_blank">Obsession</a></div>
+      <div class="fmet">Horror <span class="venue-note">The Cameo · Odeon Lothian Road</span></div>
+      <div class="fdesc">The Cameo's horror season continues. Special programming around this one — worth checking the Cameo website for event screenings.</div>
+      <a href="https://www.picturehouses.com/movie-details/005/HO00017966/obsession" target="_blank" class="fbk">Book at The Cameo</a>
+    </div>
+  </div>
+
+  <hr class="sec-div">
+  <div class="cannes">
+    <div class="cannes-ey">Cannes Film Festival 2026 — Day 8 of 12 · May 19 · <a href="https://www.festival-cannes.com/en/the-selection/" target="_blank">Full selection →</a></div>
+    <div class="fr" style="padding:6px 0;">
+      <div class="fi"><div class="ftit" style="color:#712B13;">⭑ Tonight's premiere</div><div class="ftit"><a href="https://numero.com/en/culture-en/movies/cannes-film-festival-2026-films-stars/" target="_blank">Hope</a></div><div class="fmet">Dir. Na Hong-Jin · Hoyeon, Alicia Vikander, Michael Fassbender · Grand Théâtre Lumière</div><div class="fdesc">The most anticipated film at the festival. Na Hong-Jin's English-language debut is a sci-fi thriller from the director of The Wailing and The Chaser. Hoyeon's first major film role since Squid Game. Fassbender's Cannes debut. Competition for the Palme d'Or. <span class="tag tc" style="font-size:10px;">Competition</span></div></div>
+    </div>
+    <div class="fr" style="padding:6px 0;">
+      <div class="fi"><div class="ftit"><a href="https://variety.com/2026/film/festivals/cannes-film-festival-2026-lineup-1236711319/" target="_blank">Parallel Tales</a></div><div class="fmet">Dir. Asghar Farhadi · Isabelle Huppert</div><div class="fdesc">Paris-set moral ambiguity. A writer spies on neighbours for inspiration. Farhadi's dial turned to eleven. <span class="tag ta" style="font-size:10px;">Competition</span></div></div>
+    </div>
+    <div class="fr" style="padding:6px 0;">
+      <div class="fi"><div class="ftit"><a href="https://www.screendaily.com/features/cannes-2026-lineup-guide-competition-and-out-of-competition-titles/5216262.article" target="_blank">Fjord</a></div><div class="fmet">Dir. Cristian Mungiu · Renate Reinsve, Sebastian Stan</div><div class="fdesc">Romanian religious family relocates to a Norwegian village. Mungiu's slow dread in a Nordic setting. <span class="tag ta" style="font-size:10px;">Competition</span></div></div>
+    </div>
+    <div class="fr" style="padding:6px 0;">
+      <div class="fi"><div class="ftit">Honorary Palme d'Or: Peter Jackson · Barbra Streisand (closing)</div><div class="fmet">Park Chan-wook — jury president</div><div class="fdesc">Palme d'Or ceremony: Saturday May 23. The jury's decision is now four days away — and with Farhadi, Almodóvar, Mungiu, Na Hong-Jin, Pawlikowski, and Kore-eda all in competition, this is genuinely one of the strongest fields in the festival's history.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: NEWS ══ -->
+<section class="section">
+  <div class="sec-meta"><span class="sec-num">04</span><span class="tag tb">News</span></div>
+  <h2 class="sec-title">Headlines</h2>
+  <div class="sec-summary">
+    Today's UK news is anchored by <strong>a health crisis building in Kent, a landmark sentencing, and a foreign policy reversal</strong>. The meningitis outbreak has now generated 10,000+ contacts traced — the scale is large enough that a national vaccination programme discussion has begun. The Lee Milne sentencing is the first prosecution of its kind in Scotland, and the Chagos reversal marks a significant diplomatic shift under Trump pressure. Internationally, the <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">Iran war</a> deepens after Trump rejects the counteroffer.
+  </div>
+
+  <div class="block-title">UK</div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.newsnow.co.uk/h/UK" target="_blank">Kent meningitis outbreak: "too early to say" if it has peaked — 10,000+ contacts traced</a></div><span class="tag tc">Health</span></div>
+    <div class="story-body">Health officials in Kent confirm contact tracing has now reached over 10,000 people. UKHSA is actively considering whether a national vaccination programme should be recommended but has not yet acted. Parents across the South East are searching for symptom information at high volume today. <a href="https://www.newsnow.co.uk/h/UK" target="_blank">Latest updates →</a></div>
+  </div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://en.wikipedia.org/wiki/2026_in_the_United_Kingdom" target="_blank">Lee Milne sentenced to 8 years — Scotland's first domestic abuse culpable homicide conviction</a></div><span class="tag tg">Scotland</span></div>
+    <div class="story-body">Lee Milne convicted of culpable homicide after his wife Kimberly jumped from a motorway bridge in 2023 following a campaign of domestic abuse. The prosecution marks the first time Scottish courts have successfully argued coercive control caused a death. Eight-year sentence handed down today. Victims' groups say the case sets a critical precedent. <a href="https://en.wikipedia.org/wiki/2026_in_the_United_Kingdom" target="_blank">Background →</a></div>
+  </div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.bbc.co.uk/news/uk-politics" target="_blank">Starmer shelves Chagos Islands sovereignty deal under Trump pressure</a></div><span class="tag tgr">UK Politics</span></div>
+    <div class="story-body">The agreement to hand sovereignty of the Chagos Islands to Mauritius — months in negotiation — has been quietly shelved as the UK government navigates deteriorating relations with the Trump administration. A significant diplomatic reversal and a sign of how much pressure Washington is applying to London. <a href="https://www.bbc.co.uk/news/uk-politics" target="_blank">BBC Politics →</a></div>
+  </div>
+
+  <hr class="sec-div">
+  <div class="block-title">International</div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.cnbc.com/2026/05/12/oil-prices-today-brent-wti-trump-iran-war-hormuz.html" target="_blank">Trump calls Iran's peace proposal "garbage" — Hormuz closure continues</a></div><span class="tag ta">Iran · Geopolitics</span></div>
+    <div class="story-body">The US president rejected Iran's latest diplomatic counteroffer, dismissing it as "garbage." The Strait of Hormuz remains closed since March 4. <strong>Cumulative supply losses now exceed 1 billion barrels, with 14mb/d still shut in.</strong> North Sea Dated crude trading around $110/bbl. The IEA forecasts prices will remain elevated at $90–100/bbl through 2027 even if Hormuz reopens early June. <a href="https://en.wikipedia.org/wiki/2026_Iran_war_fuel_crisis" target="_blank">Full impact analysis →</a></div>
+  </div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.nbcnews.com/news/us-news/long-island-railroad-strike-monday-commute-rcna345567" target="_blank">Long Island Railroad strike — NYC chaos for hundreds of thousands</a></div><span class="tag tb">US</span></div>
+    <div class="story-body">LIRR workers walked out, stranding hundreds of thousands of commuters across New York's Metro area. Officials urged people to work from home. One of the largest US transit strikes in years — running alongside the broader US economic anxiety driven by oil prices and yields. <a href="https://www.nbcnews.com/news/us-news/long-island-railroad-strike-monday-commute-rcna345567" target="_blank">NBC News →</a></div>
+  </div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.foxnews.com/world/canada-confirms-hantavirus-case-linked-cruise-ship-outbreak-killed-three-passengers" target="_blank">Hantavirus cruise ship outbreak: Canada confirms case — 3 passengers dead</a></div><span class="tag tgr">Health · International</span></div>
+    <div class="story-body">Canada has confirmed a hantavirus case linked to the MV Hondius cruise ship outbreak that has already killed three passengers. The unusual transmission vector — hantavirus, typically rodent-borne, aboard a ship — is attracting significant epidemiological attention. <a href="https://www.foxnews.com/world/canada-confirms-hantavirus-case-linked-cruise-ship-outbreak-killed-three-passengers" target="_blank">Fox News →</a></div>
+  </div>
+
+  <hr class="sec-div">
+  <div class="block-title">Annahar — Lebanon</div>
+  <div class="ar-sec">
+    <div class="ar-hed"><a href="https://www.annahar.com/lebanon/politics" target="_blank">لبنان يرصد تداعيات رفض ترامب للعرض الإيراني على أسعار النفط والاقتصاد المحلي</a></div>
+    <div class="ar-sub">الاقتصاد | النفط والطاقة | الأزمة الإيرانية</div>
+    <br>
+    <div class="ar-hed"><a href="https://www.annahar.com/lebanon/politics" target="_blank">الحكومة اللبنانية تبحث إصلاح قطاع الكهرباء مع صندوق النقد الدولي</a></div>
+    <div class="ar-sub">السياسة الداخلية | الإصلاح الاقتصادي</div>
+    <br>
+    <div class="ar-hed"><a href="https://www.annahar.com/lebanon/politics" target="_blank">التوترات الأمنية على الحدود الجنوبية تعود إلى الواجهة رغم التهدئة الهشة</a></div>
+    <div class="ar-sub">الأمن | الجنوب اللبناني</div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: BUSINESS ══ -->
+<section class="section">
+  <div class="sec-meta"><span class="sec-num">05</span><span class="tag tc">Business</span></div>
+  <h2 class="sec-title">FT &amp; WSJ</h2>
+  <div class="sec-summary">
+    The market picture today is <strong>bond yields up, tech mixed, oil elevated</strong>. Tesla's 3%+ slide on the Musk/OpenAI verdict is the headline mover. Seagate's near-7% fall — after its CEO said new factories "will take too long" — dragged the entire memory chip sector. The Dow held up (+0.32%) while the Nasdaq (-0.51%) and S&amp;P 500 (-0.07%) slid. <strong>Tomorrow's Nvidia earnings call is the week's defining market moment</strong> — guidance on the Blackwell-to-Vera-Rubin transition is what moves the stock.
+  </div>
+
+  <div class="warn">
+    <div class="warn-ey">Macro backdrop — Iran war &amp; bond shock</div>
+    <div class="warn-tx">Trump called Iran's counteroffer <strong>"garbage."</strong> <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">Hormuz closed since March 4.</a> <strong>WTI crude $108.66 (+3% yesterday)</strong>. 30-year Treasury at its highest level in roughly a year. The oil shock and bond move are running simultaneously — squeezing consumers and governments alike. <a href="https://en.wikipedia.org/wiki/Economic_impact_of_the_2026_Iran_war" target="_blank">Full economic impact →</a></div>
+  </div>
+
+  <div class="mkt">
+    <div class="mkc"><div class="mkn">S&amp;P 500</div><div class="mkv">7,403</div><div class="mkch dn">▼ 0.07%</div></div>
+    <div class="mkc"><div class="mkn">Nasdaq</div><div class="mkv">—</div><div class="mkch dn">▼ 0.51%</div></div>
+    <div class="mkc"><div class="mkn">30Y Treasury</div><div class="mkv">—</div><div class="mkch wn">↑ Year high</div></div>
+    <div class="mkc"><div class="mkn">WTI Crude</div><div class="mkv">$108.66</div><div class="mkch wn">+3% Mon</div></div>
+  </div>
+
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-reports-earnings-may-heres-002000327.html" target="_blank">Musk loses OpenAI lawsuit — jury rejects all claims, Tesla falls 3%+</a></div><span class="tag tc">FT · Markets</span></div>
+    <div class="story-body">A San Francisco jury rejected every one of Elon Musk's claims that Sam Altman broke a promise to keep OpenAI as a nonprofit. Musk had sought damages and a structural overhaul of the company. <strong>Tesla slid more than 3% on the verdict.</strong> The case has implications for how AI companies are governed — and for Musk's broader standing in the AI space as xAI competes directly with OpenAI. <a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-reports-earnings-may-heres-002000327.html" target="_blank">Yahoo Finance →</a></div>
+  </div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.cnbc.com/amp/2026/05/17/stock-market-today-live-updates.html" target="_blank">Seagate -7%, Micron -6% after CEO warns new factories "will take too long"</a></div><span class="tag tb">WSJ</span></div>
+    <div class="story-body">Seagate's chief executive said new manufacturing capacity would take longer than expected to come online — triggering a sharp selloff that dragged the entire memory chip sector. Micron fell nearly 6% in sympathy. The comments land one day before Nvidia's earnings, raising questions about semiconductor supply chain visibility across the sector. <a href="https://www.cnbc.com/amp/2026/05/17/stock-market-today-live-updates.html" target="_blank">CNBC →</a></div>
+  </div>
+
+  <hr class="sec-div">
+  <div class="block-title">Watch Tomorrow</div>
+  <div style="background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:0.875rem 1rem;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+      <div style="font-size:14px;font-weight:500;color:var(--text);"><a href="https://www.ig.com/en/news-and-trade-ideas/nvidia-q1-fy-2027-earnings-preview-260513" target="_blank">Nvidia Q1 FY27 earnings — Wednesday May 20, after close</a></div>
+      <span class="tag tp" style="font-size:10px;">FT · WSJ</span>
+    </div>
+    <div class="story-body">Revenue estimate: <strong>$78bn</strong>. The real story is not the number — Nvidia has beaten in every quarter of FY26. The story is <strong>guidance during the Blackwell-to-Vera-Rubin architecture transition</strong>. High forward revenue guidance means GPU demand is holding through the transition. Any China export commentary will move markets independently. At ~$5.4 trillion market cap, options are pricing an 8–10% implied move either way. <a href="https://intellectia.ai/blog/nvidia-earnings-preview-may-2026" target="_blank">Full preview →</a></div>
+    <div class="nvs">
+      <div class="nvc"><div class="nvl">Revenue est.</div><div class="nvv">$78bn</div><div class="nvs2">+73% YoY est.</div></div>
+      <div class="nvc"><div class="nvl">Architecture</div><div class="nvv">Blackwell → Vera Rubin</div><div class="nvs2">Key transition</div></div>
+      <div class="nvc"><div class="nvl">Implied move</div><div class="nvv">8–10%</div><div class="nvs2">options pricing</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: SCIENCE & TECH ══ -->
+<section class="section">
+  <div class="sec-meta"><span class="sec-num">06</span><span class="tag tgn">Science &amp; Tech</span></div>
+  <h2 class="sec-title">Science &amp; tech</h2>
+  <div class="sec-summary">
+    Today's science picture is shaped by <strong>two ongoing health stories and a quieter day for big tech news</strong> — which makes tomorrow's Nvidia earnings the week's defining tech moment by default. The hantavirus cruise ship outbreak is the most unusual epidemiological story: rodent-borne virus, apparently transmitted aboard a ship — the mechanism is still unclear. The Kent meningitis outbreak continues to be the domestic health story. On the AI infrastructure side, yesterday's $67bn utility merger remains the week's structural signal — AI's power demand is now reshaping global energy systems.
+  </div>
+
+  <div class="block-title"><span class="tag tp">AI &amp; Infrastructure</span></div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.npr.org/2026/05/18/nx-s1-5825871/electricity-prices-nextera-dominion-merger-utilities" target="_blank">Why the $67bn NextEra–Dominion merger matters for everyone — NPR analysis</a></div><span class="tag tp">Tech</span></div>
+    <div class="story-body">NPR runs the consumer-facing take on Monday's mega-merger: AI data centres need guaranteed power, utilities are consolidating to provide it, and the question of who pays for the infrastructure buildout is now a live regulatory battle. The affordability angle is the one most ordinary people will eventually feel. <a href="https://www.npr.org/2026/05/18/nx-s1-5825871/electricity-prices-nextera-dominion-merger-utilities" target="_blank">NPR →</a></div>
+  </div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.ig.com/en/news-and-trade-ideas/nvidia-q1-fy-2027-earnings-preview-260513" target="_blank">Nvidia's Vera Rubin transition: what to watch tomorrow</a></div><span class="tag tp">AI Hardware</span></div>
+    <div class="story-body">The architecture transition from Blackwell to Vera Rubin is the most important thing in AI hardware right now. Blackwell shipments are winding down; Vera Rubin production is ramping. A gap between them would be a significant demand signal for the broader AI capex cycle — and every hyperscaler's budget is watching this. <a href="https://www.ig.com/en/news-and-trade-ideas/nvidia-q1-fy-2027-earnings-preview-260513" target="_blank">IG preview →</a></div>
+  </div>
+
+  <hr class="sec-div">
+  <div class="block-title"><span class="tag tg">Health &amp; Science</span></div>
+  <div class="story">
+    <div class="story-hd"><div class="story-hed"><a href="https://www.foxnews.com/world/canada-confirms-hantavirus-case-linked-cruise-ship-outbreak-killed-three-passengers" target="_blank">Hantavirus on a cruise ship: an epidemiological puzzle</a></div><span class="tag tc">Health</span></div>
+    <div class="story-body">Hantavirus is transmitted almost exclusively through contact with infected rodents or their droppings — making a cruise ship transmission cluster highly unusual. Three passengers have died. Canada has confirmed a case. The mechanism is still under investigation, and the public health community is watching closely. This is the kind of story that is either contained quickly or becomes significant. <a href="https://www.foxnews.com/world/canada-confirms-hantavirus-case-linked-cruise-ship-outbreak-killed-three-passengers" target="_blank">Fox News →</a></div>
+  </div>
+  <div class="twoc">
+    <div class="minc"><div class="minl">UK Health</div><div class="mint">Kent meningitis: national programme debate</div><div class="minb">UKHSA is actively discussing whether to launch a national vaccination programme. Contact tracing at 10,000+ is an unusually large scope for a localised outbreak.</div></div>
+    <div class="minc"><div class="minl">US News</div><div class="mint">Two Navy jets crash at Idaho air show</div><div class="minb">Both crew ejected successfully during the Gunfighter Skies Air Show at Mountain Home Air Force Base. Cause under investigation — jets collided mid-air during display.</div></div>
+    <div class="minc"><div class="minl">Climate</div><div class="mint">Sandy Fire — Southern California evacuations</div><div class="minb">Fast-moving 184-acre brush fire near Simi Valley forcing evacuations. Early in the 2026 fire season — California is already under elevated risk conditions.</div></div>
+    <div class="minc"><div class="minl">Carry forward</div><div class="mint">Nanoparticles &amp; Alzheimer's — still the week's biggest science story</div><div class="minb">Yesterday's mouse-model results reversing Alzheimer's symptoms via engineered nanoparticles continue to generate scientific discussion. <a href="https://www.sciencedaily.com/releases/2026/04/260405003952.htm" target="_blank">ScienceDaily →</a></div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  Firas's Digest · May 19, 2026 · Sources: <a href="https://trends.google.com/trends/trendingsearches/daily?geo=GB" target="_blank">Google Trends</a> · <a href="https://www.annahar.com" target="_blank">Annahar</a> · <a href="https://tokchart.com" target="_blank">Tokchart</a> · <a href="https://kworb.net/charts/apple_s/uk.html" target="_blank">kworb Apple UK</a> · <a href="https://en.wikipedia.org/wiki/2026_in_the_United_Kingdom" target="_blank">Wikipedia UK 2026</a> · <a href="https://www.festival-cannes.com/en/the-selection/" target="_blank">Cannes Official</a> · <a href="https://www.picturehouses.com/cinema/the-cameo" target="_blank">The Cameo</a> · <a href="https://www.everymancinema.com/venues-list/g018l-everyman-edinburgh/" target="_blank">Everyman Edinburgh</a> · <a href="https://www.cnbc.com" target="_blank">CNBC</a> · <a href="https://www.ft.com" target="_blank">FT</a> · <a href="https://www.wsj.com" target="_blank">WSJ</a> · <a href="https://intellectia.ai/blog/nvidia-earnings-preview-may-2026" target="_blank">Intellectia</a> · <a href="https://www.ig.com/en/news-and-trade-ideas/nvidia-q1-fy-2027-earnings-preview-260513" target="_blank">IG Markets</a> · Built with Claude
+</footer>
+
+</body>
+</html>

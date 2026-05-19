@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firas's Daily Digest</title>
+<style>
+  :root { --bg:#ffffff; --bg2:#f6f5f0; --text:#1a1a18; --text2:#5a5956; --text3:#9a9894; --border:#e8e5df; --blue-bg:#E6F1FB; --blue-fg:#0C447C; }
+  @media (prefers-color-scheme:dark) { :root { --bg:#18181a; --bg2:#222225; --text:#ede9e2; --text2:#9a9794; --text3:#5e5c58; --border:#32302c; --blue-bg:#0a1e30; --blue-fg:#7bbef5; } }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+  .page { max-width:640px; margin:0 auto; padding:3rem 2rem; }
+  .eyebrow { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--text3); margin-bottom:.4rem; }
+  h1 { font-size:1.8rem; font-weight:800; letter-spacing:-.02em; }
+  .sub { color:var(--text2); margin-top:.4rem; font-size:.95rem; }
+  .divider { height:1px; background:var(--border); margin:2rem 0; }
+  .digest-list { list-style:none; }
+  .digest-list li { margin-bottom:.75rem; }
+  .digest-list a {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:.9rem 1.1rem; background:var(--bg2); border-radius:8px;
+    text-decoration:none; color:var(--text); font-weight:600; font-size:.95rem;
+    transition:background .15s;
+  }
+  .digest-list a:hover { background:var(--blue-bg); color:var(--blue-fg); }
+  .digest-list .date { font-size:.8rem; color:var(--text3); font-weight:400; }
+  .arrow { color:var(--text3); font-size:1rem; }
+  .empty { color:var(--text3); font-size:.9rem; padding:1rem 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Firas Khnaisser</div>
+  <h1>Daily Digest</h1>
+  <p class="sub">A personal briefing covering culture, news, music, film, business &amp; science. Published every morning.</p>
+  <div class="divider"></div>
+  <ul class="digest-list" id="list">
+    <li class="empty">Loading digests...</li>
+  </ul>
+</div>
+<script>
+  // Scan for digest files linked from this page
+  // Files follow the pattern daily-digest-YYYY-MM-DD.html
+  const files = DIGEST_FILES_PLACEHOLDER;
+
+  const list = document.getElementById('list');
+  if (files.length === 0) {
+    list.innerHTML = '<li class="empty">No digests published yet — check back tomorrow.</li>';
+  } else {
+    list.innerHTML = files.map(f => {
+      const d = f.replace('daily-digest-','').replace('.html','');
+      const date = new Date(d);
+      const label = date.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+      return `<li><a href="${f}"><span>${label}</span><span class="arrow">→</span></a></li>`;
+    }).join('');
+  }
+</script>
+</body>
+</html>
