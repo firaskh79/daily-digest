@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultural Intelligence · Firas's Digest</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#eceae3;
+    --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
+    --border:#e8e5df;
+    --purple-bg:#EEEDFE; --purple-fg:#3C3489;
+    --teal-bg:#E1F5EE;   --teal-fg:#0F6E56;
+    --coral-bg:#FAECE7;  --coral-fg:#712B13;
+    --amber-bg:#FAEEDA;  --amber-fg:#633806;
+    --blue-bg:#E6F1FB;   --blue-fg:#0C447C;
+    --green-bg:#EAF3DE;  --green-fg:#27500A;
+    --gray-bg:#F1EFE8;   --gray-fg:#444441;
+  }
+  @media (prefers-color-scheme:dark) {
+    :root {
+      --bg:#18181a; --bg-2:#222225; --bg-3:#2a2a2e;
+      --text:#ede9e2; --text-2:#9a9794; --text-3:#5e5c58;
+      --border:#32302c;
+      --purple-bg:#1e1b3a; --purple-fg:#a99ff5;
+      --teal-bg:#0f2820;   --teal-fg:#5dd4a8;
+      --coral-bg:#2a1510;  --coral-fg:#f4917a;
+      --amber-bg:#271a08;  --amber-fg:#f2c07a;
+      --blue-bg:#0a1e30;   --blue-fg:#7bbef5;
+      --green-bg:#111f08;  --green-fg:#8ed45a;
+      --gray-bg:#202020;   --gray-fg:#c0bdb7;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:15px; line-height:1.6; }
+
+  .page { max-width:900px; margin:0 auto; padding:0 1.5rem 5rem; }
+
+  /* ── HEADER ── */
+  .header { padding:2.5rem 0 1.5rem; border-bottom:2px solid var(--text); margin-bottom:2rem; }
+  .header-eyebrow { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); margin-bottom:.3rem; }
+  .header h1 { font-size:1.8rem; font-weight:800; letter-spacing:-.02em; }
+  .header-sub { color:var(--text-2); font-size:.9rem; margin-top:.3rem; }
+  .back-link { float:right; font-size:.82rem; color:var(--text-3); text-decoration:none; padding-top:.3rem; }
+  .back-link:hover { color:var(--text); }
+
+  /* ── MOOD BANNER ── */
+  .mood-banner { border-radius:10px; padding:1.1rem 1.3rem; margin-bottom:1.5rem; }
+  .mood-label { font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:800; margin-bottom:.3rem; }
+  .mood-theme { font-size:.95rem; font-weight:600; line-height:1.4; }
+  .mood-anxious      { background:var(--amber-bg); color:var(--amber-fg); }
+  .mood-celebratory  { background:var(--green-bg);  color:var(--green-fg); }
+  .mood-reflective   { background:var(--purple-bg); color:var(--purple-fg); }
+  .mood-escapist     { background:var(--blue-bg);   color:var(--blue-fg); }
+  .mood-energised    { background:var(--teal-bg);   color:var(--teal-fg); }
+  .mood-melancholic  { background:var(--gray-bg);   color:var(--gray-fg); }
+  .mood-conflicted   { background:var(--coral-bg);  color:var(--coral-fg); }
+
+  /* ── DAY SELECTOR ── */
+  .day-selector { display:flex; gap:.5rem; overflow-x:auto; padding-bottom:.75rem; margin-bottom:2rem; scrollbar-width:none; }
+  .day-selector::-webkit-scrollbar { display:none; }
+  .day-chip { flex-shrink:0; padding:.5rem .9rem; border-radius:20px; font-size:.82rem; font-weight:700; cursor:pointer; border:2px solid transparent; transition:all .15s; white-space:nowrap; }
+  .day-chip.active { border-color:var(--text); }
+  .day-chip-anxious     { background:var(--amber-bg); color:var(--amber-fg); }
+  .day-chip-celebratory { background:var(--green-bg); color:var(--green-fg); }
+  .day-chip-reflective  { background:var(--purple-bg); color:var(--purple-fg); }
+  .day-chip-escapist    { background:var(--blue-bg); color:var(--blue-fg); }
+  .day-chip-energised   { background:var(--teal-bg); color:var(--teal-fg); }
+  .day-chip-melancholic { background:var(--gray-bg); color:var(--gray-fg); }
+  .day-chip-conflicted  { background:var(--coral-bg); color:var(--coral-fg); }
+  .day-chip-unknown     { background:var(--bg-2); color:var(--text-3); }
+
+  /* ── SECTION HEADER ── */
+  .section-header { display:flex; align-items:baseline; gap:.6rem; margin-bottom:1.1rem; padding-bottom:.5rem; border-bottom:1px solid var(--border); }
+  .section-num { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); }
+  .section-title { font-size:1rem; font-weight:700; }
+
+  /* ── DUAL TRACK ── */
+  .dual-track { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:2rem; }
+  @media (max-width:600px) { .dual-track { grid-template-columns:1fr; } }
+  .track { background:var(--bg-2); border-radius:10px; padding:1.1rem; }
+  .track-label { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-3); font-weight:800; margin-bottom:.9rem; }
+  .track-item { margin-bottom:.85rem; padding-bottom:.85rem; border-bottom:1px solid var(--border); }
+  .track-item:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
+  .track-item-headline { font-size:.88rem; font-weight:700; color:var(--text); margin-bottom:.25rem; line-height:1.3; }
+  .track-item-tags { display:flex; flex-wrap:wrap; gap:.3rem; margin-top:.35rem; }
+  .tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:2px 6px; border-radius:3px; }
+  .intensity-bar { height:3px; border-radius:2px; background:var(--border); margin-top:.4rem; overflow:hidden; }
+  .intensity-fill { height:100%; border-radius:2px; background:var(--text-2); }
+
+  /* ── CONNECTIONS ── */
+  .connections-section { margin-bottom:2rem; }
+  .connection-card { background:var(--bg-2); border-radius:10px; padding:1.1rem 1.2rem; margin-bottom:.9rem; border-left:3px solid var(--border); }
+  .connection-card.strong    { border-left-color:var(--teal-fg); }
+  .connection-card.moderate  { border-left-color:var(--amber-fg); }
+  .connection-card.speculative { border-left-color:var(--text-3); }
+  .connection-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:.6rem; }
+  .connection-pair { font-size:.85rem; font-weight:700; color:var(--text); line-height:1.3; }
+  .connection-pair span { color:var(--text-3); font-weight:400; }
+  .connection-badge { flex-shrink:0; font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 7px; border-radius:3px; }
+  .badge-strong     { background:var(--teal-bg); color:var(--teal-fg); }
+  .badge-moderate   { background:var(--amber-bg); color:var(--amber-fg); }
+  .badge-speculative { background:var(--gray-bg); color:var(--gray-fg); }
+  .connection-obs { font-size:.85rem; color:var(--text-2); line-height:1.6; }
+  .connection-tags { margin-top:.5rem; display:flex; flex-wrap:wrap; gap:.3rem; }
+
+  /* ── CHARTS ── */
+  .charts-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:2rem; }
+  @media (max-width:640px) { .charts-grid { grid-template-columns:1fr; } }
+  .chart-card { background:var(--bg-2); border-radius:10px; padding:1.1rem; }
+  .chart-card h3 { font-size:.88rem; font-weight:700; margin-bottom:1rem; color:var(--text); }
+  .chart-card canvas { max-height:220px; }
+  .chart-full { grid-column:1/-1; }
+
+  /* ── RECURRING THEMES ── */
+  .theme-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:.6rem; margin-bottom:2rem; }
+  .theme-tile { background:var(--bg-2); border-radius:8px; padding:.75rem .9rem; }
+  .theme-tile .t-name { font-size:.85rem; font-weight:700; margin-bottom:.25rem; }
+  .theme-tile .t-count { font-size:.78rem; color:var(--text-3); }
+  .theme-tile .t-bar { height:3px; background:var(--border); border-radius:2px; margin-top:.4rem; overflow:hidden; }
+  .theme-tile .t-fill { height:100%; border-radius:2px; background:var(--text-2); }
+
+  /* ── EMPTY STATE ── */
+  .empty { text-align:center; padding:3rem 1rem; color:var(--text-3); }
+  .empty h3 { font-size:1rem; font-weight:700; margin-bottom:.5rem; color:var(--text-2); }
+  .empty p { font-size:.88rem; line-height:1.6; }
+
+  /* ── LOADING ── */
+  .loading { text-align:center; padding:4rem 1rem; color:var(--text-3); font-size:.9rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <a class="back-link" href="index.html">← All digests</a>
+    <div class="header-eyebrow">Firas Khnaisser</div>
+    <h1>Cultural Intelligence</h1>
+    <p class="header-sub">How politics, economics and world events shape music, film and content — tracked daily.</p>
+  </header>
+
+  <div id="app"><div class="loading">Loading intelligence data…</div></div>
+
+</div>
+
+<script>
+const BASE = 'https://firaskh79.github.io/daily-digest/';
+const MOOD_COLORS = {
+  anxious:     { bg:'#FAEEDA', fg:'#633806' },
+  celebratory: { bg:'#EAF3DE', fg:'#27500A' },
+  reflective:  { bg:'#EEEDFE', fg:'#3C3489' },
+  escapist:    { bg:'#E6F1FB', fg:'#0C447C' },
+  energised:   { bg:'#E1F5EE', fg:'#0F6E56' },
+  melancholic: { bg:'#F1EFE8', fg:'#444441' },
+  conflicted:  { bg:'#FAECE7', fg:'#712B13' },
+  unknown:     { bg:'#f6f5f0', fg:'#9a9894'  }
+};
+const TAG_COLORS = [
+  ['#EEEDFE','#3C3489'], ['#E1F5EE','#0F6E56'], ['#FAECE7','#712B13'],
+  ['#FAEEDA','#633806'], ['#E6F1FB','#0C447C'], ['#EAF3DE','#27500A']
+];
+function tagColor(tag) {
+  let h = 0; for (const c of tag) h = (h * 31 + c.charCodeAt(0)) & 0xffff;
+  const [bg,fg] = TAG_COLORS[h % TAG_COLORS.length];
+  return `background:${bg};color:${fg}`;
+}
+
+let allData = [];
+let selectedIdx = 0;
+let charts = {};
+
+async function init() {
+  try {
+    // Load index file
+    const idxRes = await fetch(BASE + 'data/index.json?v=' + Date.now());
+    if (!idxRes.ok) throw new Error('No data yet');
+    const idx = await idxRes.json();
+    const files = (idx.files || []).sort().reverse(); // newest first
+    if (!files.length) throw new Error('No data yet');
+
+    // Load all data files
+    const results = await Promise.all(files.map(f =>
+      fetch(BASE + 'data/' + f + '?v=' + Date.now())
+        .then(r => r.ok ? r.json() : null)
+        .catch(() => null)
+    ));
+    allData = results.filter(Boolean).sort((a,b) => b.date.localeCompare(a.date));
+    if (!allData.length) throw new Error('No data yet');
+
+    render();
+  } catch (e) {
+    document.getElementById('app').innerHTML = `
+      <div class="empty">
+        <h3>No data yet</h3>
+        <p>The first JSON file will appear tomorrow morning after the 5am digest run.<br>
+        Come back then — this dashboard gets more interesting every day.</p>
+      </div>`;
+  }
+}
+
+function render() {
+  const app = document.getElementById('app');
+  const d = allData[selectedIdx];
+  const mood = d.mood_of_day || 'unknown';
+  const mc = MOOD_COLORS[mood] || MOOD_COLORS.unknown;
+
+  let html = '';
+
+  // ── Mood banner
+  html += `
+    <div class="mood-banner mood-${mood}">
+      <div class="mood-label">${formatDate(d.date)} · Mood of the day: ${mood}</div>
+      <div class="mood-theme">${d.synthesis?.daily_theme || 'No theme recorded.'}</div>
+    </div>`;
+
+  // ── Day selector
+  html += `<div class="day-selector">`;
+  allData.forEach((day, i) => {
+    const m = day.mood_of_day || 'unknown';
+    const label = shortDate(day.date);
+    html += `<div class="day-chip day-chip-${m} ${i===selectedIdx?'active':''}" onclick="selectDay(${i})">${label}</div>`;
+  });
+  html += `</div>`;
+
+  // ── Dual track
+  html += `<div class="section-header"><span class="section-num">World vs Culture</span><span class="section-title">Today's Two Tracks</span></div>`;
+  html += `<div class="dual-track">`;
+
+  // World track
+  html += `<div class="track"><div class="track-label">🌍 World — Politics &amp; Economics</div>`;
+  const politics = d.macro?.politics || [];
+  const economics = d.macro?.economics || [];
+  const macroItems = [...politics, ...economics];
+  if (macroItems.length) {
+    macroItems.forEach(item => {
+      const intensity = item.intensity || 5;
+      html += `<div class="track-item">
+        <div class="track-item-headline">${item.headline}</div>
+        <div class="intensity-bar"><div class="intensity-fill" style="width:${intensity*10}%"></div></div>
+        <div class="track-item-tags">${(item.tags||[]).map(t=>`<span class="tag" style="${tagColor(t)}">${t}</span>`).join('')}</div>
+      </div>`;
+    });
+  } else {
+    html += `<div style="color:var(--text-3);font-size:.85rem">No macro data recorded.</div>`;
+  }
+  html += `</div>`;
+
+  // Culture track
+  html += `<div class="track"><div class="track-label">🎵 Culture — Music, Film &amp; Content</div>`;
+  const tracks12 = d.culture?.music?.apple_music_uk_top12 || [];
+  const tiktoks = d.culture?.music?.tiktok_sounds || [];
+  const formats = d.culture?.tiktok_formats || [];
+  const cultureItems = [
+    ...tracks12.slice(0,3).map(t => ({ headline: `#${t.pos} ${t.artist} — ${t.title}`, tags: [...(t.mood_tags||[]), ...(t.theme_tags||[])], intensity: 10 - (t.pos-1) })),
+    ...tiktoks.slice(0,2).map(t => ({ headline: `TikTok: "${t.title}" · score ${t.score}`, tags: [...(t.mood_tags||[]), ...(t.theme_tags||[])], intensity: Math.round(t.score/100) }))
+  ];
+  if (cultureItems.length) {
+    cultureItems.forEach(item => {
+      const intensity = Math.min(item.intensity||5, 10);
+      html += `<div class="track-item">
+        <div class="track-item-headline">${item.headline}</div>
+        <div class="intensity-bar"><div class="intensity-fill" style="width:${intensity*10}%"></div></div>
+        <div class="track-item-tags">${(item.tags||[]).map(t=>`<span class="tag" style="${tagColor(t)}">${t}</span>`).join('')}</div>
+      </div>`;
+    });
+  } else {
+    html += `<div style="color:var(--text-3);font-size:.85rem">No culture data recorded.</div>`;
+  }
+  html += `</div></div>`;
+
+  // ── Connections
+  const connections = d.synthesis?.connections || [];
+  if (connections.length) {
+    html += `<div class="section-header"><span class="section-num">Synthesis</span><span class="section-title">World → Culture Connections</span></div>`;
+    html += `<div class="connections-section">`;
+    connections.forEach(c => {
+      const conf = c.confidence || 'speculative';
+      html += `<div class="connection-card ${conf}">
+        <div class="connection-header">
+          <div class="connection-pair">
+            ${c.macro_event} <span>→</span> ${c.cultural_response}
+          </div>
+          <span class="connection-badge badge-${conf}">${conf}</span>
+        </div>
+        <div class="connection-obs">${c.observation}</div>
+        <div class="connection-tags">${(c.tags||[]).map(t=>`<span class="tag" style="${tagColor(t)}">${t}</span>`).join('')}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // ── Charts (only when we have multiple days)
+  if (allData.length >= 2) {
+    html += `<div class="section-header"><span class="section-num">Over Time</span><span class="section-title">Trends &amp; Patterns</span></div>`;
+    html += `<div class="charts-grid">
+      <div class="chart-card chart-full"><h3>Apple Music UK — Artist Position Tracker</h3><canvas id="artistChart"></canvas></div>
+      <div class="chart-card"><h3>TikTok Sound Momentum (score)</h3><canvas id="tiktokChart"></canvas></div>
+      <div class="chart-card"><h3>Macro Intensity by Day</h3><canvas id="macroChart"></canvas></div>
+    </div>`;
+
+    // Recurring themes across all days
+    const themeCounts = {};
+    allData.forEach(day => {
+      const allTags = [
+        ...(day.macro?.politics||[]).flatMap(p=>p.tags||[]),
+        ...(day.macro?.economics||[]).flatMap(p=>p.tags||[]),
+        ...(day.culture?.music?.tiktok_sounds||[]).flatMap(t=>[...(t.mood_tags||[]),...(t.theme_tags||[])]),
+        ...(day.synthesis?.connections||[]).flatMap(c=>c.tags||[])
+      ];
+      allTags.forEach(t => { themeCounts[t] = (themeCounts[t]||0) + 1; });
+    });
+    const topThemes = Object.entries(themeCounts).sort((a,b)=>b[1]-a[1]).slice(0,12);
+    const maxCount = topThemes[0]?.[1] || 1;
+    if (topThemes.length) {
+      html += `<div class="section-header"><span class="section-num">Recurring</span><span class="section-title">Most Persistent Themes</span></div>`;
+      html += `<div class="theme-grid">`;
+      topThemes.forEach(([tag, count]) => {
+        html += `<div class="theme-tile">
+          <div class="t-name">${tag}</div>
+          <div class="t-count">${count} day${count>1?'s':''}</div>
+          <div class="t-bar"><div class="t-fill" style="width:${Math.round(count/maxCount*100)}%"></div></div>
+        </div>`;
+      });
+      html += `</div>`;
+    }
+  } else {
+    html += `<div class="empty" style="padding:1.5rem 0 2.5rem">
+      <h3>Charts appear after 2+ days</h3>
+      <p>Come back tomorrow — trends, patterns and charts will appear as data accumulates.</p>
+    </div>`;
+  }
+
+  app.innerHTML = html;
+
+  // Render charts
+  if (allData.length >= 2) {
+    renderCharts();
+  }
+}
+
+function renderCharts() {
+  const dates = allData.map(d => shortDate(d.date)).reverse();
+
+  // ── Artist position chart
+  // Collect all artists appearing in any day's top 12
+  const artistSets = {};
+  allData.forEach(day => {
+    (day.culture?.music?.apple_music_uk_top12 || []).forEach(t => {
+      if (!artistSets[t.artist]) artistSets[t.artist] = {};
+      artistSets[t.artist][day.date] = t.pos;
+    });
+  });
+  // Pick top 5 artists by most frequent appearances
+  const topArtists = Object.entries(artistSets)
+    .sort((a,b) => Object.keys(b[1]).length - Object.keys(a[1]).length)
+    .slice(0, 5);
+
+  const CHART_COLORS = ['#3C3489','#0F6E56','#712B13','#633806','#0C447C'];
+  const sortedDates = allData.map(d=>d.date).sort();
+
+  if (document.getElementById('artistChart')) {
+    if (charts.artist) charts.artist.destroy();
+    charts.artist = new Chart(document.getElementById('artistChart'), {
+      type: 'line',
+      data: {
+        labels: sortedDates.map(shortDate),
+        datasets: topArtists.map(([artist, byDate], i) => ({
+          label: artist,
+          data: sortedDates.map(d => byDate[d] || null),
+          borderColor: CHART_COLORS[i],
+          backgroundColor: CHART_COLORS[i] + '22',
+          tension: 0.3,
+          spanGaps: true,
+          pointRadius: 4,
+        }))
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { reverse: true, min: 1, max: 20, title: { display: true, text: 'Chart position' }, ticks: { color: '#9a9894' }, grid: { color: '#e8e5df' } },
+          x: { ticks: { color: '#9a9894' }, grid: { color: '#e8e5df' } }
+        },
+        plugins: { legend: { labels: { color: '#5a5956', font: { size: 11 } } } }
+      }
+    });
+  }
+
+  // ── TikTok momentum chart
+  const soundSets = {};
+  allData.forEach(day => {
+    (day.culture?.music?.tiktok_sounds || []).forEach(s => {
+      if (!soundSets[s.title]) soundSets[s.title] = {};
+      soundSets[s.title][day.date] = s.score;
+    });
+  });
+  const topSounds = Object.entries(soundSets)
+    .sort((a,b) => Math.max(...Object.values(b[1])) - Math.max(...Object.values(a[1])))
+    .slice(0, 4);
+
+  if (document.getElementById('tiktokChart')) {
+    if (charts.tiktok) charts.tiktok.destroy();
+    charts.tiktok = new Chart(document.getElementById('tiktokChart'), {
+      type: 'line',
+      data: {
+        labels: sortedDates.map(shortDate),
+        datasets: topSounds.map(([sound, byDate], i) => ({
+          label: sound.length > 22 ? sound.slice(0,22)+'…' : sound,
+          data: sortedDates.map(d => byDate[d] || null),
+          borderColor: CHART_COLORS[i],
+          tension: 0.3,
+          spanGaps: true,
+          pointRadius: 4,
+        }))
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { title: { display: true, text: 'Score' }, ticks: { color: '#9a9894' }, grid: { color: '#e8e5df' } },
+          x: { ticks: { color: '#9a9894' }, grid: { color: '#e8e5df' } }
+        },
+        plugins: { legend: { labels: { color: '#5a5956', font: { size: 11 } } } }
+      }
+    });
+  }
+
+  // ── Macro intensity chart
+  if (document.getElementById('macroChart')) {
+    if (charts.macro) charts.macro.destroy();
+    const macroByDay = sortedDates.map(date => {
+      const day = allData.find(d=>d.date===date);
+      if (!day) return 0;
+      const items = [...(day.macro?.politics||[]), ...(day.macro?.economics||[])];
+      return items.length ? items.reduce((s,i)=>s+(i.intensity||5),0)/items.length : 0;
+    });
+    charts.macro = new Chart(document.getElementById('macroChart'), {
+      type: 'bar',
+      data: {
+        labels: sortedDates.map(shortDate),
+        datasets: [{
+          label: 'Avg macro intensity',
+          data: macroByDay,
+          backgroundColor: sortedDates.map((date,i) => {
+            const day = allData.find(d=>d.date===date);
+            return MOOD_COLORS[day?.mood_of_day||'unknown']?.bg || '#f6f5f0';
+          }),
+          borderColor: sortedDates.map((date,i) => {
+            const day = allData.find(d=>d.date===date);
+            return MOOD_COLORS[day?.mood_of_day||'unknown']?.fg || '#9a9894';
+          }),
+          borderWidth: 2,
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { min:0, max:10, title:{ display:true, text:'Intensity (0–10)' }, ticks:{color:'#9a9894'}, grid:{color:'#e8e5df'} },
+          x: { ticks:{color:'#9a9894'}, grid:{color:'#e8e5df'} }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+  }
+}
+
+function selectDay(i) {
+  selectedIdx = i;
+  render();
+}
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+}
+function shortDate(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+}
+
+init();
+</script>
+</body>
+</html>
