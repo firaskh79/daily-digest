@@ -214,6 +214,131 @@
     "notable_works_or_shows": [],
     "auction_signals": "Christie's May sales: standout lots were works by artists with explicit political contexts, suggesting collectors are pricing 'bearing witness' as a premium quality."
   },
+  "podcasts": [
+    {
+      "show": "Intercepted",
+      "host": "Jeremy Scahill",
+      "political_lean": "far-left",
+      "geo": "US",
+      "recent_episode_title": null,
+      "topic": "US complicity in Israeli operations in Lebanon — arms transfers and diplomatic cover",
+      "framing": "Frames the ceasefire collapse as a predictable outcome of US refusal to apply genuine pressure on Israel, and documents specific weapons transfers",
+      "signal_type": "reactive",
+      "vs_mainstream": "challenging"
+    },
+    {
+      "show": "The Ezra Klein Show",
+      "host": "Ezra Klein",
+      "political_lean": "liberal-left",
+      "geo": "US",
+      "recent_episode_title": null,
+      "topic": "AI capability vs economic returns — why the benchmark week didn't move markets",
+      "framing": "Argues the market's scepticism of AI returns reflects a genuine structural problem: capability is advancing faster than deployment models, and the gap may persist for years",
+      "signal_type": "leading",
+      "vs_mainstream": "challenging"
+    },
+    {
+      "show": "The Rest Is Politics",
+      "host": "Rory Stewart & Alastair Campbell",
+      "political_lean": "centrist",
+      "geo": "UK",
+      "recent_episode_title": null,
+      "topic": "Lebanon ceasefire collapse and UK foreign policy passivity",
+      "framing": "Bipartisan UK centrist frustration at British diplomatic irrelevance in the Middle East — both hosts agree the UK has no meaningful foreign policy leverage",
+      "signal_type": "reactive",
+      "vs_mainstream": "challenging"
+    },
+    {
+      "show": "Making Sense",
+      "host": "Sam Harris",
+      "political_lean": "heterodox",
+      "geo": "US",
+      "recent_episode_title": null,
+      "topic": "AI consciousness and the GPT-5.4 benchmark — what it means and what it doesn't",
+      "framing": "Sceptical of the benchmark framing but takes the capability seriously; argues public discourse is simultaneously over- and under-estimating AI risk",
+      "signal_type": "leading",
+      "vs_mainstream": "challenging"
+    },
+    {
+      "show": "Tucker Carlson Network",
+      "host": "Tucker Carlson",
+      "political_lean": "nationalist",
+      "geo": "US",
+      "recent_episode_title": null,
+      "topic": "Oil prices and Hormuz — the cost of foreign entanglements for American consumers",
+      "framing": "Frames the Hormuz closure and energy price spike as direct consequence of US Middle East policy — echoing the realist argument but through a domestic-cost-to-Americans lens",
+      "signal_type": "reactive",
+      "vs_mainstream": "challenging"
+    },
+    {
+      "show": "The Take",
+      "host": "Al Jazeera",
+      "political_lean": "international",
+      "geo": "Qatar / Global South",
+      "recent_episode_title": null,
+      "topic": "Lebanon ceasefire collapse — what Joseph Aoun's framework means for the region",
+      "framing": "Centres Lebanese sovereignty and the army commander's position rather than Israeli or US framing; treats the ceasefire extension as a fig leaf for continued occupation",
+      "signal_type": "reactive",
+      "vs_mainstream": "challenging"
+    },
+    {
+      "show": "Triggernometry",
+      "host": "Konstantin Kisin & Francis Foster",
+      "political_lean": "heterodox",
+      "geo": "UK",
+      "recent_episode_title": null,
+      "topic": "Mark Cuban / Trump alignment — what it reveals about the collapse of political tribalism",
+      "framing": "Uses Cuban's TrumpRx endorsement to argue traditional left-right coalitions are dissolving; frames this as healthy rather than alarming",
+      "signal_type": "reactive",
+      "vs_mainstream": "challenging"
+    }
+  ],
+  "media_framing": [
+    {
+      "outlet": "Al Jazeera",
+      "geo": "Qatar / Global South",
+      "political_lean": "pan-Arab / progressive",
+      "lead_story": "Israeli strikes continue in south Lebanon despite third ceasefire extension",
+      "framing": "Leads with the Lebanese civilian perspective and frames the strikes as violations of international law — the ceasefire is described as effectively non-existent rather than 'extended'",
+      "diverges_from_anglophone": true,
+      "divergence_note": "BBC/NYT frame this as a 'fragile ceasefire' — Al Jazeera frames it as a ceasefire that doesn't exist. The same strikes are presented as news vs. as war crimes."
+    },
+    {
+      "outlet": "Haaretz",
+      "geo": "Israel (left-liberal)",
+      "political_lean": "Israeli left-liberal",
+      "lead_story": "Internal Israeli debate over Lebanon operations as ceasefire frays",
+      "framing": "Critical of the Netanyahu government's handling; notes military voices questioning the strategic value of continued strikes with no clear political endgame",
+      "diverges_from_anglophone": true,
+      "divergence_note": "Gives significant space to Israeli dissenting voices — military and political critics of the current operation — which are largely absent from UK/US mainstream coverage."
+    },
+    {
+      "outlet": "Le Monde",
+      "geo": "France",
+      "political_lean": "liberal / centre-left",
+      "lead_story": "Cannes enters final week as festival tackles questions of artistic freedom and geopolitics",
+      "framing": "French press leads on Cannes itself as a cultural-political event rather than treating it purely as entertainment — the festival's political statements are reported as news",
+      "diverges_from_anglophone": true,
+      "divergence_note": "UK/US press treats Cannes primarily as celebrity/entertainment coverage; Le Monde treats it as a cultural-political institution whose statements carry diplomatic weight."
+    },
+    {
+      "outlet": "Annahar",
+      "geo": "Lebanon",
+      "political_lean": "Lebanese centrist / independent",
+      "lead_story": "جوزف عون: الانسحاب الإسرائيلي الكامل شرط لا تفاوض عليه",
+      "framing": "Centres Joseph Aoun's position as the legitimate Lebanese state voice — frames the ceasefire not as bilateral but as a question of Lebanese sovereignty vs Israeli occupation",
+      "diverges_from_anglophone": true,
+      "divergence_note": "Western press frames this as an Israel-Hezbollah negotiation; Annahar frames it as Lebanon (the state, the army) asserting sovereignty — Hezbollah is secondary to their framing."
+    }
+  ],
+  "silence_detector": [
+    {
+      "macro_event": "WHO declares global health emergency over new Ebola outbreak",
+      "intensity": 7,
+      "registers_silent": ["fashion", "art", "music", "streets", "podcasts"],
+      "observation": "Despite being a WHO-level global health emergency, the Ebola outbreak has produced zero cultural response across any tracked register. This is likely a combination of geographic distance (West Africa, not Europe), Ebola fatigue from previous outbreaks, and competition for attention from more proximate crises. Worth watching: if it spreads or reaches Europe, the cultural response will be rapid and disproportionate compared to the lack of engagement now."
+    }
+  ],
   "cultural_acts": [],
   "discourse": {
     "_note": "Discourse tracking added retroactively. From 20 May onward, all fields researched fresh each morning.",
@@ -302,6 +427,12 @@
   },
   "synthesis": {
     "daily_theme": "UK culture is actively diverging from global macro anxiety this week — not reflecting it. The most interesting signal is the gap, not the echo.",
+    "mechanism": "UK listeners are not processing the Lebanon/Hormuz crisis through music because the economic consequences (energy prices, mortgage rates) haven't yet reached household-level salience in a way that changes listening behaviour. The cultural narrowing toward intimacy and domestic warmth is more likely driven by post-pandemic settlement — people returning to home and relationship as primary meaning-making contexts — than by any specific geopolitical event.",
+    "leading_signals": [
+      "Venice Biennale's 'Foreigners Everywhere' theme — curated 2+ years ago — is now arriving into a political moment where border politics and migration have intensified dramatically. The art world was anticipating this before the politicians caught up.",
+      "The Met Gala's focus on Black tailoring traditions as cultural reclamation prefigures a broader reckoning with who gets credited for aesthetic innovation — likely to manifest in mainstream fashion and music discourse over the next 12–18 months.",
+      "The fashion split between maximalist escapism and stark political tailoring is a leading indicator of a coming culture war within the industry itself over whether fashion should engage with politics at all."
+    ],
     "connections": [
       {
         "macro_event": "GPT-5.4 crosses human expert threshold on GDPVal; AI consumer value estimated at $172bn — a landmark capability week",

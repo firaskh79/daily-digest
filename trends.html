@@ -122,6 +122,58 @@
   .theme-tile .t-bar { height:3px; background:var(--border); border-radius:2px; margin-top:.4rem; overflow:hidden; }
   .theme-tile .t-fill { height:100%; border-radius:2px; background:var(--text-2); }
 
+  /* ── SIGNAL TYPE BADGES ── */
+  .sig-badge { display:inline-block; font-size:9px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:1px 5px; border-radius:3px; margin-left:.4rem; vertical-align:middle; }
+  .sig-leading     { background:#EEEDFE; color:#3C3489; }
+  .sig-reactive    { background:#E1F5EE; color:#0F6E56; }
+  .sig-lagging     { background:#F1EFE8; color:#444441; }
+  .sig-divergence  { background:#FAEEDA; color:#633806; }
+
+  /* ── CROSS-REGISTER MATRIX ── */
+  .matrix-wrap { overflow-x:auto; margin-bottom:2rem; }
+  .matrix-table { border-collapse:collapse; min-width:100%; font-size:.78rem; }
+  .matrix-table th { text-align:left; padding:.35rem .6rem; font-size:10px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--text-3); border-bottom:2px solid var(--border); white-space:nowrap; }
+  .matrix-table th.reg-col { text-align:center; min-width:72px; }
+  .matrix-table td { padding:.4rem .6rem; border-bottom:1px solid var(--border); color:var(--text-2); font-size:.8rem; }
+  .matrix-table td.reg-cell { text-align:center; }
+  .heat-0 { background:transparent; }
+  .heat-1 { background:rgba(15,110,86,.12); border-radius:4px; }
+  .heat-2 { background:rgba(15,110,86,.28); border-radius:4px; }
+  .heat-3 { background:rgba(15,110,86,.50); border-radius:4px; color:#fff; font-weight:700; }
+
+  /* ── SILENCE DETECTOR ── */
+  .silence-alert { background:var(--amber-bg); color:var(--amber-fg); border-radius:10px; padding:1rem 1.2rem; margin-bottom:1rem; display:flex; gap:.75rem; align-items:flex-start; }
+  .silence-icon { font-size:1.2rem; flex-shrink:0; margin-top:.05rem; }
+  .silence-event { font-size:.88rem; font-weight:700; margin-bottom:.2rem; }
+  .silence-obs { font-size:.82rem; line-height:1.5; opacity:.85; }
+  .silence-registers { margin-top:.4rem; display:flex; flex-wrap:wrap; gap:.3rem; }
+
+  /* ── PODCAST GRID ── */
+  .podcast-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.75rem; margin-bottom:2rem; }
+  .podcast-card { background:var(--bg-2); border-radius:10px; padding:.9rem 1rem; border-top:3px solid var(--border); }
+  .podcast-card.lean-far-left      { border-top-color:#712B13; }
+  .podcast-card.lean-progressive   { border-top-color:#0F6E56; }
+  .podcast-card.lean-liberal-left  { border-top-color:#0C447C; }
+  .podcast-card.lean-centrist      { border-top-color:#9a9894; }
+  .podcast-card.lean-heterodox     { border-top-color:#633806; }
+  .podcast-card.lean-center-right  { border-top-color:#444441; }
+  .podcast-card.lean-right         { border-top-color:#3C3489; }
+  .podcast-card.lean-nationalist   { border-top-color:#712B13; }
+  .podcast-card.lean-international { border-top-color:#0F6E56; }
+  .podcast-show { font-size:.82rem; font-weight:800; color:var(--text); margin-bottom:.15rem; }
+  .podcast-host { font-size:.73rem; color:var(--text-3); margin-bottom:.4rem; }
+  .podcast-topic { font-size:.82rem; color:var(--text-2); line-height:1.45; }
+  .podcast-lean { font-size:9px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 5px; border-radius:3px; margin-top:.4rem; display:inline-block; }
+
+  /* ── MEDIA FRAMING ── */
+  .framing-grid { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:2rem; }
+  @media (max-width:600px) { .framing-grid { grid-template-columns:1fr; } }
+  .framing-card { background:var(--bg-2); border-radius:10px; padding:.9rem 1rem; }
+  .framing-outlet { font-size:.82rem; font-weight:800; color:var(--text); margin-bottom:.1rem; }
+  .framing-geo { font-size:.72rem; color:var(--text-3); margin-bottom:.35rem; }
+  .framing-lead { font-size:.82rem; color:var(--text-2); line-height:1.45; margin-bottom:.35rem; font-style:italic; }
+  .framing-div { font-size:.78rem; color:var(--text-3); line-height:1.4; padding-top:.35rem; border-top:1px solid var(--border); }
+
   /* ── REGISTER GRID ── */
   .register-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:.75rem; margin-bottom:2rem; }
   .register-tile { background:var(--bg-2); border-radius:10px; padding:.9rem 1rem; border-top:3px solid var(--border); }
@@ -323,6 +375,12 @@ function render() {
   }
   html += `</div></div>`;
 
+  // ── Cross-register matrix
+  html += renderMatrix(d);
+
+  // ── Silence detector
+  html += renderSilence(d);
+
   // ── Cultural Register overview
   html += renderRegisterOverview(d);
 
@@ -335,23 +393,45 @@ function render() {
   // ── Fashion & Art
   html += renderFashionArt(d);
 
+  // ── Podcasts
+  html += renderPodcasts(d);
+
+  // ── International media framing
+  html += renderMediaFraming(d);
+
   // ── Discourse / Voices
   html += renderDiscourse(d);
 
   // ── Connections
   const connections = d.synthesis?.connections || [];
+  const leadingSignals = d.synthesis?.leading_signals || [];
   if (connections.length) {
     html += `<div class="section-header"><span class="section-num">Synthesis</span><span class="section-title">World → Culture Connections</span></div>`;
+    if (d.synthesis?.mechanism) {
+      html += `<div style="background:var(--bg-2);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:1rem;font-size:.88rem;color:var(--text-2);line-height:1.6;border-left:3px solid var(--purple-fg)"><strong style="color:var(--text)">Today's mechanism:</strong> ${d.synthesis.mechanism}</div>`;
+    }
+    if (leadingSignals.length) {
+      html += `<div style="background:var(--purple-bg);color:var(--purple-fg);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:1rem">
+        <div style="font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.4rem">🔮 Leading Signals — Where Culture Is Heading</div>
+        ${leadingSignals.map(s=>`<div style="font-size:.83rem;line-height:1.5;margin-bottom:.25rem">· ${s}</div>`).join('')}
+      </div>`;
+    }
     html += `<div class="connections-section">`;
+    const sigLabel = { leading:'🔮 Leading', reactive:'⚡ Reactive', lagging:'📊 Lagging', divergence:'↕ Divergence' };
     connections.forEach(c => {
       const conf = c.confidence || 'speculative';
+      const sig = c.signal_type;
       html += `<div class="connection-card ${conf}">
         <div class="connection-header">
           <div class="connection-pair">
             ${c.macro_event} <span>→</span> ${c.cultural_response}
           </div>
-          <span class="connection-badge badge-${conf}">${conf}</span>
+          <div style="display:flex;gap:.4rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end">
+            ${sig ? `<span class="sig-badge sig-${sig}">${sigLabel[sig]||sig}</span>` : ''}
+            <span class="connection-badge badge-${conf}">${conf}</span>
+          </div>
         </div>
+        ${c.mechanism ? `<div style="font-size:.8rem;color:var(--text-3);margin-bottom:.4rem;font-style:italic;border-left:2px solid var(--border);padding-left:.5rem">Mechanism: ${c.mechanism}</div>` : ''}
         <div class="connection-obs">${c.observation}</div>
         <div class="connection-tags">${(c.tags||[]).map(t=>`<span class="tag" style="${tagColor(t)}">${t}</span>`).join('')}</div>
       </div>`;
@@ -531,6 +611,121 @@ function renderCharts() {
       }
     });
   }
+}
+
+// ── Cross-register matrix ────────────────────────────────────
+function renderMatrix(d) {
+  // Collect all tags per register
+  const registers = [
+    { key:'streets',  label:'Streets',       icon:'✊', tags: (d.streets?.protests||[]).flatMap(p=>[p.cause,...(p.related_events||[])]) },
+    { key:'acts',     label:'Cultural Acts', icon:'🎤', tags: (d.cultural_acts||[]).flatMap(a=>[...(a.topics||[]),a.political_valence].filter(Boolean)) },
+    { key:'fashion',  label:'Fashion',       icon:'👗', tags: [...(d.fashion?.designer_statements||[]).flatMap(ds=>[ds.political_valence]).filter(Boolean), ...(d.fashion?.met_gala?.statements_made||[]).length ? ['spectacle'] : []] },
+    { key:'art',      label:'Art',           icon:'🎨', tags: (d.art_scene?.current_fairs||[]).flatMap(f=>(f.political_signals||[]).map(s=>s.split(' ').slice(0,2).join('-').toLowerCase())) },
+    { key:'music',    label:'Music',         icon:'🎵', tags: [...(d.culture?.music?.apple_music_uk_top12||[]).flatMap(t=>[...(t.mood_tags||[]),...(t.theme_tags||[])]), ...(d.culture?.music?.tiktok_sounds||[]).flatMap(t=>[...(t.mood_tags||[]),...(t.theme_tags||[])])] },
+    { key:'podcasts', label:'Podcasts',      icon:'🎙', tags: (d.podcasts||[]).flatMap(p=>(p.topic||'').toLowerCase().split(/[\s,]+/).slice(0,3)) },
+    { key:'macro',    label:'World',         icon:'🌍', tags: [...(d.macro?.politics||[]).flatMap(p=>p.tags||[]),...(d.macro?.economics||[]).flatMap(e=>e.tags||[])] },
+  ];
+
+  // Build theme frequency map across all registers
+  const allTags = {};
+  registers.forEach(r => r.tags.forEach(t => { if(t && t.length > 2) allTags[t] = (allTags[t]||0)+1; }));
+  const topThemes = Object.entries(allTags).sort((a,b)=>b[1]-a[1]).slice(0,8).map(([t])=>t);
+  if (!topThemes.length) return '';
+
+  // Count per register × theme
+  function countHeat(regTags, theme) {
+    return regTags.filter(t => t && t.includes(theme.slice(0,6))).length;
+  }
+
+  let html = `<div class="section-header"><span class="section-num">Matrix</span><span class="section-title">Theme × Register</span></div>`;
+  html += `<div class="matrix-wrap"><table class="matrix-table"><thead><tr><th>Register</th>`;
+  topThemes.forEach(t => html += `<th class="reg-col">${t}</th>`);
+  html += `</tr></thead><tbody>`;
+  registers.forEach(r => {
+    html += `<tr><td>${r.icon} ${r.label}</td>`;
+    topThemes.forEach(theme => {
+      const h = Math.min(countHeat(r.tags, theme), 3);
+      html += `<td class="reg-cell heat-${h}">${h > 0 ? h : ''}</td>`;
+    });
+    html += `</tr>`;
+  });
+  html += `</tbody></table></div>`;
+  return html;
+}
+
+// ── Silence detector ─────────────────────────────────────────
+function renderSilence(d) {
+  const silences = d.silence_detector || [];
+  if (!silences.length) return '';
+  let html = '';
+  silences.forEach(s => {
+    html += `<div class="silence-alert">
+      <div class="silence-icon">🔇</div>
+      <div>
+        <div class="silence-event">${s.macro_event}</div>
+        <div class="silence-obs">${s.observation}</div>
+        <div class="silence-registers">${(s.registers_silent||[]).map(r=>`<span class="tag" style="background:rgba(0,0,0,.08);color:var(--amber-fg)">${r} silent</span>`).join('')}</div>
+      </div>
+    </div>`;
+  });
+  return html;
+}
+
+// ── Podcasts ─────────────────────────────────────────────────
+const LEAN_LABEL = {
+  'far-left':'Far Left','progressive':'Progressive','liberal-left':'Liberal Left',
+  'centrist':'Centrist','heterodox':'Heterodox','center-right':'Centre Right',
+  'right':'Right','nationalist':'Nationalist','academic':'Academic','international':'International'
+};
+const LEAN_STYLE = {
+  'far-left':'background:#FAECE7;color:#712B13','progressive':'background:#E1F5EE;color:#0F6E56',
+  'liberal-left':'background:#E6F1FB;color:#0C447C','centrist':'background:#F1EFE8;color:#444441',
+  'heterodox':'background:#FAEEDA;color:#633806','center-right':'background:#F1EFE8;color:#444441',
+  'right':'background:#EEEDFE;color:#3C3489','nationalist':'background:#FAECE7;color:#712B13',
+  'academic':'background:#EAF3DE;color:#27500A','international':'background:#E1F5EE;color:#0F6E56'
+};
+
+function renderPodcasts(d) {
+  const pods = (d.podcasts||[]).filter(p => p.topic || p.framing);
+  if (!pods.length) return '';
+  const sigLabel = { leading:'🔮 Leading', reactive:'⚡ Reactive', lagging:'📊 Lagging' };
+
+  let html = `<div class="section-header"><span class="section-num">Podcasts</span><span class="section-title">Long-form Narrative Tracker</span></div>`;
+  html += `<div class="podcast-grid">`;
+  pods.forEach(p => {
+    const lean = p.political_lean || 'centrist';
+    const leanStyle = LEAN_STYLE[lean] || LEAN_STYLE.centrist;
+    const sig = p.signal_type;
+    html += `<div class="podcast-card lean-${lean}">
+      <div class="podcast-show">${p.show}${sig ? `<span class="sig-badge sig-${sig}">${sigLabel[sig]||sig}</span>` : ''}</div>
+      <div class="podcast-host">${p.host || ''} · ${p.geo || ''}</div>
+      <div class="podcast-topic">${p.framing || p.topic || ''}</div>
+      ${p.recent_episode_title ? `<div style="font-size:.72rem;color:var(--text-3);margin-top:.3rem;font-style:italic">"${p.recent_episode_title}"</div>` : ''}
+      <span class="podcast-lean" style="${leanStyle}">${LEAN_LABEL[lean]||lean}</span>
+      ${p.vs_mainstream ? `<span class="tag" style="margin-left:.3rem;${p.vs_mainstream==='challenging'?'background:#E1F5EE;color:#0F6E56':p.vs_mainstream==='amplifying'?'background:#FAEEDA;color:#633806':'background:#F1EFE8;color:#444441'}">${p.vs_mainstream}</span>` : ''}
+    </div>`;
+  });
+  html += `</div>`;
+  return html;
+}
+
+// ── International media framing ──────────────────────────────
+function renderMediaFraming(d) {
+  const frames = (d.media_framing||[]).filter(f => f.lead_story || f.framing);
+  if (!frames.length) return '';
+  let html = `<div class="section-header"><span class="section-num">Media Framing</span><span class="section-title">Same Event, Different Worlds</span></div>`;
+  html += `<div class="framing-grid">`;
+  frames.forEach(f => {
+    html += `<div class="framing-card">
+      <div class="framing-outlet">${f.outlet}</div>
+      <div class="framing-geo">${f.geo} · ${f.political_lean||''}</div>
+      ${f.lead_story ? `<div class="framing-lead">"${f.lead_story}"</div>` : ''}
+      ${f.framing ? `<div style="font-size:.82rem;color:var(--text-2);line-height:1.5;margin-bottom:.35rem">${f.framing}</div>` : ''}
+      ${f.diverges_from_anglophone && f.divergence_note ? `<div class="framing-div">↕ ${f.divergence_note}</div>` : ''}
+    </div>`;
+  });
+  html += `</div>`;
+  return html;
 }
 
 function registerHeat(d) {
