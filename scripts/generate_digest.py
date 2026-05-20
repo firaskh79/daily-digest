@@ -204,12 +204,43 @@ Return ONLY valid JSON (no markdown fences, no explanation) matching this schema
     "auction_signals": "..."
   }},
   "discourse": {{
-    "realist_academics": [],
-    "nationalist_media": [
-      {{"figure": "...", "outlet": "...", "geo": "UK", "framing": "...", "topics": ["..."], "vs_realists": "independent"}}
+    "key_topics": ["Iran/intervention", "Israel-Palestine", "Ukraine", "domestic-economy"],
+    "narrative_positions": [
+      {{
+        "figure": "...",
+        "type": "academic_realist OR nationalist OR progressive OR mainstream",
+        "platform": "...",
+        "positions": {{
+          "Iran/intervention": {{
+            "stance": "anti-intervention OR pro-intervention OR neutral",
+            "framing": "one sentence — how they frame this position",
+            "classical_alignment": "what the classical expectation for this figure-type would be",
+            "unexpected": true
+          }}
+        }}
+      }}
     ],
-    "convergence_points": [],
-    "divergence_points": []
+    "convergence_points": [
+      {{
+        "topic": "...",
+        "converging_figures": ["...", "..."],
+        "converging_types": ["academic_realist", "nationalist"],
+        "shared_position": "...",
+        "classical_fault_line": "what the expected division would be",
+        "why_significant": "...",
+        "realist_argument": "...",
+        "nationalist_argument": "...",
+        "why_it_matters": "..."
+      }}
+    ],
+    "divergence_points": [
+      {{
+        "topic": "...",
+        "description": "...",
+        "figures_pro": ["..."],
+        "figures_against": ["..."]
+      }}
+    ]
   }},
   "podcasts": [],
   "media_framing": [

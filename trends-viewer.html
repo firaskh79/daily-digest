@@ -270,8 +270,73 @@ async function loadDays(){
 function renderLongitudinal(days){
   let html='';
 
+  // ── CONVERGENCE — front and centre ──────────────────────────────────────────
+  const allConvergence=[];
+  days.forEach(d=>{
+    (d.discourse?.convergence_points||[]).forEach(c=>{
+      allConvergence.push({date:d.date,data:c});
+    });
+  });
+  if(allConvergence.length){
+    html+=`<div class="sec" style="color:var(--green)">⚡ Convergence — Where the Spectrum Agrees</div>`;
+    html+=`<div style="font-size:.78rem;color:var(--muted);margin-bottom:12px;margin-top:-10px">These are the rarest signals: topics where realists, nationalists, and the left arrive at the same conclusion from different directions.</div>`;
+    allConvergence.forEach(({date,data:c})=>{
+      html+=`<div class="card" style="border-color:var(--green)33;background:var(--green)07;margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+          <div style="font-size:.95rem;font-weight:700;color:var(--green)">${esc(c.topic)}</div>
+          <div style="font-size:.65rem;color:var(--muted);flex-shrink:0;margin-left:12px">${date}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:10px">
+          <div class="card-body"><span style="color:var(--blue);font-weight:600">Realist: </span>${esc(c.realist_argument)}</div>
+          <div class="card-body"><span style="color:var(--amber);font-weight:600">Nationalist: </span>${esc(c.nationalist_argument)}</div>
+        </div>
+        <div style="padding:10px 14px;background:var(--green)11;border-radius:8px;font-size:.82rem;color:#86efac;line-height:1.6">
+          <strong>Why this matters:</strong> ${esc(c.why_it_matters)}
+        </div>
+        ${c.figures_involved?.length?`<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">${c.figures_involved.map(f=>`<span class="badge badge-muted">${esc(f)}</span>`).join('')}</div>`:''}
+      </div>`;
+    });
+  }
+
+  // ── SILENCE DETECTOR — front and centre ────────────────────────────────────
+  const allSilences=[];
+  days.forEach(d=>{
+    (d.silence_detector||[]).forEach(s=>{
+      allSilences.push({date:d.date,data:s});
+    });
+  });
+  // Group repeated silences (same macro_event across days)
+  const silenceMap={};
+  allSilences.forEach(({date,data:s})=>{
+    const key=s.macro_event;
+    if(!silenceMap[key])silenceMap[key]={event:s.macro_event,observation:s.observation,intensity:s.intensity,registers:s.registers_silent,dates:[]};
+    silenceMap[key].dates.push(date);
+  });
+  const silences=Object.values(silenceMap).sort((a,b)=>b.dates.length-a.dates.length||b.intensity-a.intensity);
+  if(silences.length){
+    html+=`<div class="sec" style="color:var(--red);margin-top:28px">🔇 Silence — What Culture Is Not Talking About</div>`;
+    html+=`<div style="font-size:.78rem;color:var(--muted);margin-bottom:12px;margin-top:-10px">Events of high intensity that have produced no signal in music, fashion, art, or social media. Absence is data.</div>`;
+    silences.forEach(s=>{
+      const persistent=s.dates.length>1;
+      html+=`<div class="card" style="border-color:var(--red)33;background:var(--red)07;margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+          <div style="font-size:.92rem;font-weight:700;color:#fca5a5">${esc(s.event)}</div>
+          <div style="display:flex;gap:6px;align-items:center;flex-shrink:0;margin-left:12px">
+            ${persistent?`<span class="badge badge-red">${s.dates.length} days silent</span>`:`<span style="font-size:.65rem;color:var(--muted)">${s.dates[0]}</span>`}
+          </div>
+        </div>
+        <div class="card-body" style="margin-bottom:10px">${esc(s.observation)}</div>
+        <div style="font-size:.72rem;color:var(--muted)">Silent in: ${(s.registers||[]).map(r=>`<span class="tag">${esc(r)}</span>`).join(' ')}</div>
+        <div style="margin-top:8px">
+          <div style="font-size:.65rem;color:var(--muted);margin-bottom:4px">Intensity</div>
+          <div class="intensity-bar" style="max-width:200px"><div class="intensity-fill" style="width:${s.intensity*10}%;background:var(--red)"></div></div>
+        </div>
+      </div>`;
+    });
+  }
+
   // ── Mood timeline
-  html+=`<div class="sec">Mood of the Day</div>`;
+  html+=`<div class="sec" style="margin-top:28px">Mood of the Day</div>`;
   html+=`<div class="card"><div class="mood-timeline">`;
   days.forEach(d=>{
     const dt=new Date(d.date+'T00:00:00Z');
@@ -366,31 +431,140 @@ function renderLongitudinal(days){
   });
   html+=`</div></div>`;
 
-  // ── Persistent discourse figures
-  html+=`<div class="sec">Discourse Figures — Who Keeps Appearing</div>`;
-  const figCounts={};
+  // ── Narrative Landscape — position tracking across figures and time
+  html+=`<div class="sec" style="margin-top:28px">🗺️ Narrative Landscape — Where the Fault Lines Actually Are</div>`;
+  html+=`<div style="font-size:.78rem;color:var(--muted);margin-bottom:16px;margin-top:-10px">Not who is producing content — but where their positions converge unexpectedly or diverge from classical alignment. ⚡ = breaks the classical expectation.</div>`;
+
+  // Collect all key topics and all figures with positions across days
+  const topicSet=new Set();
+  const figurePositions={}; // figurePositions[figure][topic] = [{date, stance, framing, unexpected}]
+
   days.forEach(d=>{
-    [...(d.discourse?.realist_academics||[]),...(d.discourse?.nationalist_media||[]),...(d.cultural_acts||[])].forEach(f=>{
-      const name=f.figure||f.host||'';
-      if(name)figCounts[name]=(figCounts[name]||0)+1;
+    const topics=d.discourse?.key_topics||[];
+    topics.forEach(t=>topicSet.add(t));
+    (d.discourse?.narrative_positions||[]).forEach(fp=>{
+      if(!figurePositions[fp.figure])figurePositions[fp.figure]={type:fp.type,positions:{}};
+      Object.entries(fp.positions||{}).forEach(([topic,pos])=>{
+        topicSet.add(topic);
+        if(!figurePositions[fp.figure].positions[topic])figurePositions[fp.figure].positions[topic]=[];
+        figurePositions[fp.figure].positions[topic].push({date:d.date,...pos});
+      });
     });
   });
-  const sortedFigs=Object.entries(figCounts).sort((a,b)=>b[1]-a[1]).slice(0,12);
-  html+=`<div class="figure-grid">`;
-  sortedFigs.forEach(([name,count])=>{
-    const initials=name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-    html+=`<div class="figure-card">
-      <div style="width:36px;height:36px;border-radius:50%;background:var(--purple)22;border:1px solid var(--purple)44;
-        display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:var(--purple);margin-bottom:8px">${initials}</div>
-      <div class="figure-name">${esc(name)}</div>
-      <div class="figure-days">Appeared ${count} of ${days.length} day${days.length>1?'s':''}</div>
-      <div class="persist-bar">${days.map((d,i)=>{
-        const appears=[...(d.discourse?.realist_academics||[]),...(d.discourse?.nationalist_media||[]),...(d.cultural_acts||[])].some(f=>(f.figure||f.host||'')==name);
-        return `<div class="persist-seg ${appears?'on':'off'}"></div>`;
-      }).join('')}</div>
-    </div>`;
-  });
-  html+=`</div>`;
+
+  const topics=[...topicSet];
+  const figures=Object.entries(figurePositions);
+
+  if(figures.length && topics.length){
+    // For each topic: show who holds what position and flag unexpected ones
+    topics.forEach(topic=>{
+      const figuresOnTopic=figures.filter(([,fp])=>fp.positions[topic]?.length);
+      if(!figuresOnTopic.length)return;
+
+      // Group by stance (most recent day)
+      const stanceGroups={};
+      figuresOnTopic.forEach(([name,fp])=>{
+        const latest=fp.positions[topic][0]; // most recent
+        const stance=latest.stance||'unknown';
+        if(!stanceGroups[stance])stanceGroups[stance]=[];
+        stanceGroups[stance].push({name,type:fp.type,latest,all:fp.positions[topic]});
+      });
+
+      // Check for unexpected convergence (different types, same stance)
+      const stances=Object.keys(stanceGroups);
+      let hasUnexpected=false;
+      stances.forEach(stance=>{
+        const types=stanceGroups[stance].map(f=>f.type);
+        const hasMultipleTypes=new Set(types).size>1;
+        const anyUnexpected=stanceGroups[stance].some(f=>f.latest.unexpected);
+        if(hasMultipleTypes&&anyUnexpected)hasUnexpected=true;
+      });
+
+      const borderColor=hasUnexpected?'var(--amber)':'var(--border)';
+      const bgColor=hasUnexpected?'var(--amber)07':'transparent';
+
+      html+=`<div class="card" style="border-color:${borderColor};background:${bgColor};margin-bottom:12px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <div style="font-size:.95rem;font-weight:700">${esc(topic)}</div>
+          ${hasUnexpected?`<span class="badge badge-amber">⚡ unexpected convergence</span>`:''}
+        </div>`;
+
+      // Show each stance group
+      Object.entries(stanceGroups).forEach(([stance,figs])=>{
+        const types=[...new Set(figs.map(f=>f.type))];
+        const crossIdeological=types.length>1;
+        const anyUnexpected=figs.some(f=>f.latest.unexpected);
+
+        html+=`<div style="margin-bottom:12px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+              color:${stance.includes('anti')||stance.includes('pro-Palestine')||stance.includes('critical')?'var(--red)':'var(--blue)'}">${esc(stance)}</div>
+            ${crossIdeological&&anyUnexpected?`<span style="font-size:.65rem;color:var(--amber)">⚡ cross-ideological</span>`:''}
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">`;
+
+        figs.forEach(f=>{
+          const typeColor=f.type.includes('realist')?'var(--blue)':f.type.includes('nationalist')||f.type.includes('far_right')?'var(--amber)':f.type.includes('progressive')?'var(--green)':'var(--muted)';
+          // Show drift if position changed across days
+          const allStances=[...new Set(f.all.map(p=>p.stance))];
+          const hasDrift=allStances.length>1;
+
+          html+=`<div style="display:flex;gap:10px;align-items:flex-start;padding:8px 10px;
+            background:var(--surface2);border-radius:8px;
+            ${f.latest.unexpected?'border-left:2px solid var(--amber)':''}">
+            <div style="flex-shrink:0">
+              <div style="font-size:.82rem;font-weight:600">${esc(f.name)}</div>
+              <div style="font-size:.65rem;color:${typeColor};margin-top:1px">${esc(f.type.replace(/_/g,' '))}</div>
+            </div>
+            <div style="flex:1;font-size:.78rem;color:#a8a6a4;line-height:1.5">${esc(f.latest.framing)}</div>
+            <div style="flex-shrink:0;text-align:right">
+              ${f.latest.unexpected?`<div style="font-size:.65rem;color:var(--amber)">⚡ breaks classical</div>`:''}
+              ${hasDrift?`<div style="font-size:.65rem;color:var(--purple)">↕ shifting</div>`:''}
+            </div>
+          </div>`;
+        });
+
+        html+=`</div></div>`;
+      });
+
+      // Classical fault line note if any unexpected
+      const latestDay=days[0];
+      const conv=latestDay?.discourse?.convergence_points?.find(c=>c.topic.toLowerCase().includes(topic.toLowerCase().split('/')[0]));
+      if(conv?.classical_fault_line){
+        html+=`<div style="margin-top:6px;padding:8px 12px;background:#ffffff08;border-radius:6px;font-size:.75rem;color:var(--muted)">
+          <strong style="color:var(--text)">Classical expectation:</strong> ${esc(conv.classical_fault_line)}
+        </div>`;
+      }
+      if(conv?.why_significant){
+        html+=`<div style="margin-top:6px;padding:10px 14px;background:var(--amber)09;border:1px solid var(--amber)22;border-radius:8px;font-size:.8rem;color:#fde68a;line-height:1.6">
+          ${esc(conv.why_significant)}
+        </div>`;
+      }
+
+      html+=`</div>`;
+    });
+
+    // Divergence points
+    const allDivergence=[];
+    days.forEach(d=>(d.discourse?.divergence_points||[]).forEach(dp=>allDivergence.push({date:d.date,data:dp})));
+    if(allDivergence.length){
+      html+=`<div class="sec" style="margin-top:20px;color:var(--red)">🔀 Fracture Lines — Where the Right Is Splitting</div>`;
+      allDivergence.forEach(({date,data:dp})=>{
+        html+=`<div class="card" style="border-color:var(--red)33;background:var(--red)07">
+          <div style="font-size:.95rem;font-weight:700;margin-bottom:8px">${esc(dp.topic)}</div>
+          <div class="card-body" style="margin-bottom:12px">${esc(dp.description)}</div>
+          <div style="display:flex;gap:16px;flex-wrap:wrap">
+            ${dp.figures_pro?.length?`<div><div style="font-size:.65rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">Pro</div>
+              ${dp.figures_pro.map(f=>`<span class="badge badge-muted" style="margin-right:4px">${esc(f)}</span>`).join('')}</div>`:''}
+            ${dp.figures_against?.length?`<div><div style="font-size:.65rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">Against</div>
+              ${dp.figures_against.map(f=>`<span class="badge badge-muted" style="margin-right:4px">${esc(f)}</span>`).join('')}</div>`:''}
+          </div>
+        </div>`;
+      });
+    }
+  } else {
+    html+=`<div class="card" style="color:var(--muted);text-align:center;padding:30px">Position data not yet available — will appear from tomorrow's digest.</div>`;
+  }
 
   // ── Leading signals across the week
   html+=`<div class="sec">Leading Signals This Week</div>`;
