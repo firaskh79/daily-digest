@@ -377,7 +377,8 @@ function renderMusic(d) {
       const chg = t.change > 0 ? `<span style="color:#34d399">▲${t.change}</span>` :
                   t.change < 0 ? `<span style="color:#f87171">▼${Math.abs(t.change)}</span>` :
                   `<span style="color:#6b7280">—</span>`;
-      html += `<div class="chart-row">
+      const url = t.apple_music_url || `https://music.apple.com/gb/search?term=${encodeURIComponent((t.artist||'') + ' ' + (t.title||''))}`;
+      html += `<a class="chart-row" href="${url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid var(--border);border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#ffffff08'" onmouseout="this.style.background='none'">
         <div class="pos-num ${t.pos<=3?'top3':''}">${t.pos}</div>
         <div class="change-badge">${chg}</div>
         <div class="track-info">
@@ -385,7 +386,8 @@ function renderMusic(d) {
           <div class="track-artist">${esc(t.artist)}</div>
           <div class="mood-tags-inline">${(t.mood_tags||[]).join(' · ')}</div>
         </div>
-      </div>`;
+        <div style="color:#6b7280;font-size:0.8rem;flex-shrink:0">▶</div>
+      </a>`;
     });
     html += `</div>`;
   }

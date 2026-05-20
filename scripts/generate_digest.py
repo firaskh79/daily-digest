@@ -161,7 +161,7 @@ Return ONLY valid JSON (no markdown fences, no explanation) matching this schema
   "culture": {{
     "music": {{
       "apple_music_uk_top12": [
-        {{"pos": 1, "artist": "...", "title": "...", "change": 0, "uk_artist": true, "mood_tags": ["intimate"], "theme_tags": ["love"]}}
+        {{"pos": 1, "artist": "...", "title": "...", "change": 0, "uk_artist": true, "mood_tags": ["intimate"], "theme_tags": ["love"], "apple_music_url": "https://music.apple.com/gb/search?term=artist+title"}}
       ],
       "tiktok_sounds": [
         {{"title": "...", "artist": "...", "score": 950, "videos": 0, "views": 0, "mood_tags": ["melancholic"], "theme_tags": ["longing"]}}
@@ -277,7 +277,7 @@ SECTIONS (in this order):
 2. Executive Summary — 3-4 bullet signals, one-paragraph synthesis
 3. Political & Economic Pulse — cards with intensity bars (coloured by severity), tags
 4. Google Trends UK — grid of rank cards
-5. Music — Apple Music UK chart (pos number, change arrow, artist, title, UK badge if UK artist, mood tags), then TikTok sounds
+5. Music — Apple Music UK chart (pos number, change arrow, artist, title, UK badge if uk_artist=true, mood tags). Each track row must be a clickable link using the apple_music_url field — wrap the entire row in an <a href="..."> tag that opens in a new tab. Then TikTok sounds.
 6. Cultural Acts & Statements — cards with figure name, context, description, backlash note if any, reach badge
 7. Streets & Protests — location, scale, cause, demand
 8. Discourse & Media Framing — academics and media outlets, then Annahar section with Arabic RTL text, right-aligned, in a purple-bordered card
