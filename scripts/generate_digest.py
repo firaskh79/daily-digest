@@ -264,33 +264,58 @@ Today is {DATE}. Here is the full cultural intelligence data:
 
 {json.dumps(data, indent=2)}
 
-Generate a complete HTML page. Requirements:
-
-DESIGN SYSTEM (use CSS variables):
---bg: #0a0a0f | --surface: #13131a | --border: #1f1f2e
+DESIGN SYSTEM (CSS variables, dark theme):
+--bg: #0a0a0f | --surface: #13131a | --border: #1f1f2e | --border-hover: #2e2e44
+--text: #e8e6e3 | --muted: #6b7280
 --purple: #a78bfa | --blue: #60a5fa | --green: #34d399 | --amber: #fbbf24 | --red: #f87171
-Font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
-Dark background, light text (#e8e6e3), subtle card borders, hover effects
+Font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif. Max-width 860px, centered.
 
-SECTIONS (in this order):
-1. Header — gradient title "Cultural Intelligence", date, mood badge with colour matching mood
-2. Executive Summary — 3-4 bullet signals, one-paragraph synthesis
-3. Political & Economic Pulse — cards with intensity bars (coloured by severity), tags
-4. Google Trends UK — grid of rank cards
-5. Music — Apple Music UK chart (pos number, change arrow, artist, title, UK badge if uk_artist=true, mood tags). Each track row must be a clickable link using the apple_music_url field — wrap the entire row in an <a href="..."> tag that opens in a new tab. Then TikTok sounds.
-6. Cultural Acts & Statements — cards with figure name, context, description, backlash note if any, reach badge
-7. Streets & Protests — location, scale, cause, demand
-8. Discourse & Media Framing — academics and media outlets, then Annahar section with Arabic RTL text, right-aligned, in a purple-bordered card
-9. Synthesis — highlighted theme quote, connections with confidence badges (strong=green, moderate=amber, speculative=grey), leading signals
+PAGE STRUCTURE — strictly in this order:
+
+━━━ 1. HEADER ━━━
+Small label "CULTURAL INTELLIGENCE" in muted caps. Large date. Mood badge (coloured pill).
+One-line nav: anchor links to each section below.
+
+━━━ 2. SYNTHESIS HERO ━━━ ← THIS IS THE OPENING, NOT THE CLOSING
+This is the most important section. Give it visual weight.
+- The daily_theme as a large pull-quote (font-size 1.4rem, purple left border, generous padding)
+- The mechanism as a paragraph of prose beneath it (not a bullet list)
+- Leading signals as 3 distinct signal cards in a row, each with a 📡 icon and a confidence colour (green=strong, amber=moderate, grey=speculative)
+- The 2-3 strongest connections as full narrative cards: macro event → cultural response → why it matters. Confidence badge top-right. These are the analytical core — write them with editorial weight, not as data fields.
+
+━━━ 3. POLITICAL & ECONOMIC PULSE ━━━
+Two columns (politics left, economics right, stack on mobile).
+Each story: headline, intensity bar (red ≥8, amber ≥6, green otherwise), sentiment badge, tags.
+Google Trends UK below as a 5-column grid of rank cards.
+
+━━━ 4. MUSIC ━━━
+Section label "WHAT THE UK IS LISTENING TO".
+Apple Music UK Top 12 as a chart list. Each row is an <a> tag linking to apple_music_url (open in new tab).
+Row contains: position number (gold if top 3), change arrow (▲green / ▼red / —grey), track title, artist, UK badge if uk_artist=true, mood tags in small muted text.
+Below the chart: TikTok trending sounds as horizontal cards with score badge.
+
+━━━ 5. CULTURAL ACTS ━━━
+Full-width cards. Each card: figure name + reach badge top row, context in muted text, then the full event_description as prose. Backlash in a red-tinted note box if present. vs_discourse in italic muted text. Topic tags at bottom.
+
+━━━ 6. STREETS ━━━
+Summary paragraph first (styled as a blockquote). Then protest cards: location, scale badge, cause, demand, counter-protest note if any.
+
+━━━ 7. DISCOURSE & MEDIA ━━━
+Two sub-sections: Realist Academics (blue tint) and Nationalist/Partisan Media (amber tint).
+Below those: Media Framing cards per outlet, with divergence note in a blue info box.
+Annahar card last: purple border, dir="rtl", Arabic headlines right-aligned, with an English framing note below.
+
+━━━ 8. SILENCE DETECTOR ━━━
+Red-tinted card. "What culture isn't talking about." Event, observation, silent registers as tags.
 
 RULES:
-- No external dependencies (no CDN, no Google Fonts — use system fonts)
-- Fully self-contained single HTML file
-- All data must come from the JSON above — do not invent anything
-- Arabic text must be in a dir="rtl" container
-- Intensity bars: 1-10 scale, color red if ≥8, amber if ≥6, green otherwise
+- No external dependencies. Fully self-contained.
+- All data from the JSON only — invent nothing.
+- Synthesis leads. It is not a summary at the end — it is the editorial opening that frames everything that follows.
+- The page should feel like reading a smart analyst's morning brief, not browsing a dashboard.
+- Arabic text in dir="rtl" container.
 
-Return ONLY the complete HTML starting with <!DOCTYPE html>. No explanation, no markdown."""
+Return ONLY complete HTML starting with <!DOCTYPE html>. No explanation, no markdown."""
 
     response = client.messages.create(
         model="claude-sonnet-4-6",

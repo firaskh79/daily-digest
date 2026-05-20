@@ -3,694 +3,613 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cultural Intelligence — Trends</title>
+<title>Cultural Trends</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #0a0a0f;
-    --surface: #13131a;
-    --border: #1f1f2e;
-    --border-hover: #2e2e44;
-    --text: #e8e6e3;
-    --muted: #6b7280;
-    --purple: #a78bfa;
-    --blue: #60a5fa;
-    --green: #34d399;
-    --amber: #fbbf24;
-    --red: #f87171;
-    --pink: #f472b6;
+    --bg:#0a0a0f; --surface:#13131a; --surface2:#1a1a24;
+    --border:#1f1f2e; --border2:#2e2e44;
+    --text:#e8e6e3; --muted:#6b7280; --muted2:#4b5563;
+    --purple:#a78bfa; --blue:#60a5fa; --green:#34d399;
+    --amber:#fbbf24; --red:#f87171; --pink:#f472b6;
   }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 48px 24px 80px;
-    line-height: 1.6;
-  }
-  .container { max-width: 860px; margin: 0 auto; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--bg);color:var(--text);min-height:100vh;padding:40px 24px 80px;}
+  .wrap{max-width:900px;margin:0 auto;}
 
   /* Header */
-  .page-header { margin-bottom: 48px; }
-  .back-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    color: var(--muted); text-decoration: none; font-size: 0.85rem;
-    margin-bottom: 20px; transition: color 0.2s;
-  }
-  .back-link:hover { color: var(--text); }
-  h1 {
-    font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
-    background: linear-gradient(135deg, var(--purple), var(--blue));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    margin-bottom: 6px;
-  }
-  .date-sub { color: var(--muted); font-size: 0.95rem; }
-  .mood-badge {
-    display: inline-block; margin-top: 12px;
-    padding: 4px 14px; border-radius: 20px; font-size: 0.8rem;
-    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-  }
+  .page-header{margin-bottom:40px;}
+  .back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);
+    text-decoration:none;font-size:0.83rem;margin-bottom:18px;transition:color .2s;}
+  .back:hover{color:var(--text);}
+  h1{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;
+    background:linear-gradient(135deg,var(--purple),var(--blue));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;}
+  .header-sub{color:var(--muted);font-size:0.88rem;}
 
-  /* Nav tabs */
-  .tabs {
-    display: flex; gap: 4px; flex-wrap: wrap;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 36px; padding-bottom: 0;
-  }
-  .tab-btn {
-    background: none; border: none; cursor: pointer;
-    color: var(--muted); font-size: 0.85rem; font-weight: 500;
-    padding: 10px 16px; border-radius: 8px 8px 0 0;
-    transition: color 0.2s, background 0.2s;
-    border-bottom: 2px solid transparent; margin-bottom: -1px;
-  }
-  .tab-btn:hover { color: var(--text); background: var(--surface); }
-  .tab-btn.active { color: var(--purple); border-bottom-color: var(--purple); }
+  /* Tabs */
+  .tabs{display:flex;gap:2px;border-bottom:1px solid var(--border);margin-bottom:32px;}
+  .tab{background:none;border:none;cursor:pointer;color:var(--muted);
+    font-size:0.85rem;font-weight:500;padding:10px 18px;
+    border-bottom:2px solid transparent;margin-bottom:-1px;
+    border-radius:6px 6px 0 0;transition:color .2s,background .2s;}
+  .tab:hover{color:var(--text);background:var(--surface);}
+  .tab.active{color:var(--purple);border-bottom-color:var(--purple);}
 
-  /* Sections */
-  .section { display: none; }
-  .section.active { display: block; }
+  .panel{display:none;} .panel.active{display:block;}
+
+  /* Section titles */
+  .sec{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:14px;margin-top:28px;}
+  .sec:first-child{margin-top:0;}
 
   /* Cards */
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; padding: 20px; margin-bottom: 14px;
-    transition: border-color 0.2s;
-  }
-  .card:hover { border-color: var(--border-hover); }
-  .card-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-  .card-headline { font-size: 1rem; font-weight: 600; color: var(--text);
-    margin-bottom: 10px; line-height: 1.4; }
-  .card-body { font-size: 0.9rem; color: #a8a6a4; line-height: 1.65; }
+  .card{background:var(--surface);border:1px solid var(--border);
+    border-radius:12px;padding:18px;margin-bottom:12px;transition:border-color .2s;}
+  .card:hover{border-color:var(--border2);}
 
-  /* Tags */
-  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-  .tag {
-    display: inline-block; padding: 3px 10px; border-radius: 20px;
-    font-size: 0.72rem; font-weight: 500;
-    background: #ffffff0d; color: var(--muted); border: 1px solid var(--border);
-  }
+  /* ── LONGITUDINAL ──────────────────────────────────── */
 
-  /* Intensity bar */
-  .intensity-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
-  .intensity-label { font-size: 0.75rem; color: var(--muted); width: 60px; }
-  .intensity-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; }
-  .intensity-fill { height: 100%; border-radius: 2px; }
+  /* Mood timeline */
+  .mood-timeline{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px;}
+  .mood-day{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:80px;}
+  .mood-date{font-size:.65rem;color:var(--muted);}
+  .mood-pill{padding:4px 12px;border-radius:20px;font-size:.72rem;
+    font-weight:700;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
+  .mood-theme{font-size:.7rem;color:var(--muted);text-align:center;
+    max-width:90px;line-height:1.3;margin-top:2px;}
 
-  /* Music chart */
-  .chart-row {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 16px; border-bottom: 1px solid var(--border);
-    transition: background 0.15s; border-radius: 8px;
-  }
-  .chart-row:last-child { border-bottom: none; }
-  .chart-row:hover { background: #ffffff05; }
-  .pos-num { font-size: 0.85rem; font-weight: 700; color: var(--muted); width: 24px; text-align: right; }
-  .pos-num.top3 { color: var(--amber); }
-  .change-badge { font-size: 0.7rem; width: 20px; text-align: center; }
-  .track-info { flex: 1; }
-  .track-title { font-size: 0.95rem; font-weight: 600; }
-  .track-artist { font-size: 0.82rem; color: var(--muted); }
-  .uk-badge { font-size: 0.65rem; background: var(--blue)22; color: var(--blue);
-    border: 1px solid var(--blue)44; padding: 2px 7px; border-radius: 10px; margin-left: 6px; }
-  .mood-tags-inline { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+  /* Synthesis timeline */
+  .synth-timeline{display:flex;flex-direction:column;gap:0;}
+  .synth-item{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);}
+  .synth-item:last-child{border-bottom:none;}
+  .synth-date-col{flex-shrink:0;width:88px;}
+  .synth-date{font-size:.75rem;font-weight:600;color:var(--muted);}
+  .synth-day-label{font-size:.65rem;color:var(--muted2);}
+  .synth-theme{font-size:.9rem;font-weight:500;line-height:1.5;color:var(--text);}
+  .synth-new{font-size:.65rem;background:var(--purple)22;color:var(--purple);
+    border:1px solid var(--purple)44;padding:1px 7px;border-radius:10px;
+    margin-left:8px;vertical-align:middle;}
 
-  /* Trends grid */
-  .trends-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-  .trend-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 16px;
-  }
-  .trend-rank { font-size: 1.5rem; font-weight: 800; color: var(--purple); margin-bottom: 4px; }
-  .trend-term { font-size: 0.9rem; font-weight: 600; }
-  .trend-vol { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+  /* Music chart momentum */
+  .chart-table{width:100%;border-collapse:collapse;}
+  .chart-table th{font-size:.65rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);padding:6px 8px;
+    border-bottom:1px solid var(--border);text-align:left;}
+  .chart-table th.center{text-align:center;}
+  .chart-table td{padding:10px 8px;border-bottom:1px solid var(--border);
+    font-size:.85rem;vertical-align:middle;}
+  .chart-table tr:last-child td{border-bottom:none;}
+  .chart-table tr:hover td{background:#ffffff04;}
+  .track-name{font-weight:600;}
+  .track-artist{font-size:.75rem;color:var(--muted);}
+  .uk-dot{display:inline-block;width:7px;height:7px;border-radius:50%;
+    background:var(--blue);margin-right:5px;vertical-align:middle;}
 
-  /* TikTok */
-  .tiktok-card { display: flex; gap: 14px; align-items: flex-start; }
-  .tiktok-score {
-    flex-shrink: 0; width: 54px; height: 54px; border-radius: 12px;
-    background: linear-gradient(135deg, #ff006644, #ff69b444);
-    border: 1px solid #ff006644;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; font-weight: 800; color: var(--pink);
-  }
-  .tiktok-meta { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+  /* Sparkline cell */
+  .spark-cell{text-align:center;}
+  .pos-dot{display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:6px;font-size:.72rem;font-weight:700;}
+  .pos-1{background:var(--amber)33;color:var(--amber);}
+  .pos-top{background:var(--purple)22;color:var(--purple);}
+  .pos-mid{background:var(--surface2);color:var(--muted);}
+  .pos-absent{color:var(--muted2);font-size:.7rem;}
 
-  /* Cultural acts */
-  .act-header { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
-  .act-avatar {
-    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
-    background: linear-gradient(135deg, var(--purple)44, var(--blue)44);
-    border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; font-weight: 700; color: var(--purple);
-  }
-  .act-name { font-size: 1rem; font-weight: 700; }
-  .act-context { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
-  .reach-badge {
-    display: inline-block; margin-left: 8px; padding: 2px 8px;
-    border-radius: 10px; font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.05em; text-transform: uppercase; vertical-align: middle;
-  }
-  .reach-viral { background: #f4725022; color: #f47250; border: 1px solid #f4725044; }
-  .reach-major { background: var(--amber)22; color: var(--amber); border: 1px solid var(--amber)44; }
-  .reach-industry { background: var(--muted)22; color: var(--muted); border: 1px solid var(--muted)44; }
-  .backlash-note {
-    margin-top: 10px; padding: 10px 14px;
-    background: var(--red)11; border: 1px solid var(--red)33;
-    border-radius: 8px; font-size: 0.82rem; color: #fca5a5;
-  }
+  /* Persistence bar */
+  .persist-bar{display:flex;gap:3px;align-items:center;}
+  .persist-seg{height:6px;flex:1;border-radius:2px;}
+  .persist-seg.on{background:var(--purple);}
+  .persist-seg.off{background:var(--border2);}
+  .persist-count{font-size:.72rem;color:var(--muted);margin-left:6px;flex-shrink:0;}
 
-  /* Streets */
-  .protest-scale {
-    display: inline-block; padding: 3px 10px; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 600;
-    background: var(--amber)22; color: var(--amber); border: 1px solid var(--amber)44;
-    margin-bottom: 8px;
-  }
+  /* Tag frequency */
+  .tag-freq{display:flex;flex-direction:column;gap:8px;}
+  .tag-freq-row{display:flex;align-items:center;gap:10px;}
+  .tag-freq-name{font-size:.82rem;width:160px;flex-shrink:0;}
+  .tag-freq-bar-wrap{flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden;}
+  .tag-freq-fill{height:100%;border-radius:4px;background:var(--purple);}
+  .tag-freq-count{font-size:.72rem;color:var(--muted);width:30px;text-align:right;}
 
-  /* Discourse */
-  .figure-card { display: flex; gap: 14px; }
-  .figure-lean {
-    flex-shrink: 0; padding: 4px 10px; border-radius: 6px;
-    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.06em; align-self: flex-start; margin-top: 2px;
-  }
-  .lean-academic { background: var(--blue)22; color: var(--blue); border: 1px solid var(--blue)44; }
-  .lean-nationalist { background: var(--amber)22; color: var(--amber); border: 1px solid var(--amber)44; }
-  .convergent { background: var(--green)22; color: var(--green); border: 1px solid var(--green)44; }
-  .divergent { background: var(--red)22; color: var(--red); border: 1px solid var(--red)44; }
+  /* Figures */
+  .figure-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;}
+  .figure-card{background:var(--surface);border:1px solid var(--border);
+    border-radius:10px;padding:14px;}
+  .figure-name{font-size:.88rem;font-weight:600;margin-bottom:6px;}
+  .figure-days{font-size:.72rem;color:var(--muted);margin-bottom:6px;}
 
-  /* Synthesis */
-  .synthesis-theme {
-    font-size: 1.1rem; font-weight: 600; line-height: 1.5;
-    padding: 20px; background: var(--purple)11; border: 1px solid var(--purple)33;
-    border-radius: 12px; margin-bottom: 20px; color: #d8b4fe;
-  }
-  .connection-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; padding: 20px; margin-bottom: 14px;
-  }
-  .connection-row { display: flex; gap: 10px; margin-bottom: 10px; }
-  .connection-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--muted); width: 90px; flex-shrink: 0; padding-top: 2px; }
-  .connection-val { font-size: 0.9rem; color: var(--text); }
-  .confidence-badge {
-    display: inline-block; margin-left: 8px; padding: 2px 8px;
-    border-radius: 10px; font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.05em; text-transform: uppercase;
-  }
-  .conf-strong { background: var(--green)22; color: var(--green); border: 1px solid var(--green)44; }
-  .conf-moderate { background: var(--amber)22; color: var(--amber); border: 1px solid var(--amber)44; }
-  .conf-speculative { background: var(--muted)22; color: var(--muted); border: 1px solid var(--muted)44; }
+  /* ── TODAY PANEL ────────────────────────────────────── */
+  .today-tabs{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:20px;}
+  .today-tab{background:none;border:1px solid var(--border);cursor:pointer;
+    color:var(--muted);font-size:.78rem;padding:6px 12px;border-radius:20px;
+    transition:all .2s;}
+  .today-tab.active,.today-tab:hover{background:var(--purple)22;
+    color:var(--purple);border-color:var(--purple)44;}
+  .today-panel{display:none;} .today-panel.active{display:block;}
 
-  /* Leading signals */
-  .signal-item {
-    display: flex; gap: 14px; padding: 14px;
-    background: var(--green)09; border: 1px solid var(--green)22;
-    border-radius: 10px; margin-bottom: 10px;
-  }
-  .signal-icon { font-size: 1.2rem; flex-shrink: 0; }
-  .signal-text { font-size: 0.9rem; color: #a8a6a4; line-height: 1.6; }
-
-  /* Silence */
-  .silence-card {
-    background: #ff000009; border: 1px solid var(--red)22;
-    border-radius: 12px; padding: 20px;
-  }
-  .silence-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
-
-  /* Media */
-  .media-card { }
-  .geo-badge {
-    display: inline-block; padding: 2px 9px; border-radius: 10px;
-    font-size: 0.7rem; font-weight: 600;
-    background: var(--surface); border: 1px solid var(--border); color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .diverges-note {
-    margin-top: 10px; padding: 10px 14px;
-    background: var(--blue)09; border: 1px solid var(--blue)22;
-    border-radius: 8px; font-size: 0.82rem; color: #93c5fd;
-  }
-
-  .loading { color: var(--muted); text-align: center; padding: 80px 0; font-size: 0.95rem; }
-  .error-msg { color: var(--red); text-align: center; padding: 80px 0; }
-
-  /* Section title */
-  .section-title {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 16px; margin-top: 28px;
-  }
-  .section-title:first-child { margin-top: 0; }
+  /* Shared small bits */
+  .tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+  .tag{display:inline-block;padding:2px 9px;border-radius:12px;font-size:.68rem;
+    background:#ffffff0d;color:var(--muted);border:1px solid var(--border);}
+  .badge{display:inline-block;padding:2px 9px;border-radius:12px;font-size:.68rem;font-weight:600;}
+  .badge-purple{background:var(--purple)22;color:var(--purple);border:1px solid var(--purple)44;}
+  .badge-green{background:var(--green)22;color:var(--green);border:1px solid var(--green)44;}
+  .badge-amber{background:var(--amber)22;color:var(--amber);border:1px solid var(--amber)44;}
+  .badge-red{background:var(--red)22;color:var(--red);border:1px solid var(--red)44;}
+  .badge-muted{background:var(--muted)11;color:var(--muted);border:1px solid var(--border);}
+  .intensity-wrap{display:flex;align-items:center;gap:8px;margin-top:8px;}
+  .intensity-bar{flex:1;height:4px;background:var(--border);border-radius:2px;}
+  .intensity-fill{height:100%;border-radius:2px;}
+  .card-hl{font-size:.95rem;font-weight:600;line-height:1.4;margin-bottom:8px;}
+  .card-body{font-size:.85rem;color:#a8a6a4;line-height:1.65;}
+  .note-red{margin-top:10px;padding:10px 14px;background:var(--red)11;
+    border:1px solid var(--red)33;border-radius:8px;font-size:.8rem;color:#fca5a5;}
+  .note-blue{margin-top:10px;padding:10px 14px;background:var(--blue)09;
+    border:1px solid var(--blue)22;border-radius:8px;font-size:.8rem;color:#93c5fd;}
+  .chart-link{display:flex;align-items:center;gap:12px;padding:11px 14px;
+    border-bottom:1px solid var(--border);text-decoration:none;color:inherit;
+    border-radius:8px;transition:background .15s;}
+  .chart-link:last-child{border-bottom:none;}
+  .chart-link:hover{background:#ffffff06;}
+  .pos-n{font-size:.85rem;font-weight:700;color:var(--muted);width:22px;text-align:right;}
+  .pos-n.gold{color:var(--amber);}
+  .chg{font-size:.7rem;width:20px;text-align:center;}
+  .track-inf{flex:1;}
+  .t-title{font-size:.88rem;font-weight:600;}
+  .t-artist{font-size:.75rem;color:var(--muted);}
+  .t-mood{font-size:.7rem;color:var(--muted);margin-top:2px;}
+  .uk-badge{font-size:.6rem;background:var(--blue)22;color:var(--blue);
+    border:1px solid var(--blue)44;padding:1px 6px;border-radius:8px;margin-left:5px;}
+  .play-icon{color:var(--muted);font-size:.75rem;flex-shrink:0;}
+  .loading{color:var(--muted);text-align:center;padding:60px 0;font-size:.9rem;}
+  .rtl-block{direction:rtl;text-align:right;font-size:.88rem;line-height:1.8;color:var(--text);}
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
   <div class="page-header">
-    <a class="back-link" href="../index.html">← All Digests</a>
-    <h1 id="page-title">Cultural Intelligence</h1>
-    <div class="date-sub" id="page-date">Loading...</div>
-    <div id="mood-badge"></div>
+    <a class="back" href="index.html">← All Digests</a>
+    <h1>Cultural Trends</h1>
+    <div class="header-sub" id="header-sub">Loading...</div>
   </div>
 
-  <div class="tabs" id="tabs"></div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchMain('longitudinal')">📈 7-Day View</button>
+    <button class="tab" onclick="switchMain('today')">📅 Today</button>
+  </div>
 
-  <div id="content"><div class="loading">Loading trends data…</div></div>
+  <!-- ═══ LONGITUDINAL PANEL ═══════════════════════════════════════ -->
+  <div class="panel active" id="panel-longitudinal">
+    <div id="long-content"><div class="loading">Loading last 7 days…</div></div>
+  </div>
+
+  <!-- ═══ TODAY PANEL ═══════════════════════════════════════════════ -->
+  <div class="panel" id="panel-today">
+    <div class="today-tabs">
+      <button class="today-tab active" onclick="switchToday('macro')">🌍 Macro</button>
+      <button class="today-tab" onclick="switchToday('music')">🎵 Music</button>
+      <button class="today-tab" onclick="switchToday('acts')">🎭 Acts</button>
+      <button class="today-tab" onclick="switchToday('streets')">✊ Streets</button>
+      <button class="today-tab" onclick="switchToday('discourse')">💬 Discourse</button>
+      <button class="today-tab" onclick="switchToday('media')">📰 Media</button>
+      <button class="today-tab" onclick="switchToday('synthesis')">🔭 Synthesis</button>
+    </div>
+    <div id="today-content"><div class="loading">Loading…</div></div>
+  </div>
 </div>
 
 <script>
-const TABS = [
-  { id: 'macro', label: '🌍 Macro' },
-  { id: 'music', label: '🎵 Music' },
-  { id: 'acts', label: '🎭 Cultural Acts' },
-  { id: 'streets', label: '✊ Streets' },
-  { id: 'discourse', label: '💬 Discourse' },
-  { id: 'media', label: '📰 Media' },
-  { id: 'synthesis', label: '🔭 Synthesis' },
-];
+// ─── Routing ──────────────────────────────────────────────────────────────────
+function switchMain(id) {
+  document.querySelectorAll('.tabs .tab').forEach((b,i)=>b.classList.toggle('active',['longitudinal','today'][i]===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='panel-'+id));
+}
+let currentToday='macro';
+function switchToday(id) {
+  currentToday=id;
+  document.querySelectorAll('.today-tab').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase().includes(id.slice(0,4))||b.onclick.toString().includes(`'${id}'`)));
+  if(allData.length) renderToday(allData[0]);
+}
 
-const moodColors = {
-  conflicted: { bg: '#f47250', text: '#fff', bgLight: '#f4725022', border: '#f4725044' },
-  anxious:    { bg: '#fbbf24', text: '#000', bgLight: '#fbbf2422', border: '#fbbf2444' },
-  volatile:   { bg: '#f87171', text: '#fff', bgLight: '#f8717122', border: '#f8717144' },
-  defiant:    { bg: '#a78bfa', text: '#fff', bgLight: '#a78bfa22', border: '#a78bfa44' },
-  hopeful:    { bg: '#34d399', text: '#000', bgLight: '#34d39922', border: '#34d39944' },
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const iColor=n=>n>=8?'var(--red)':n>=6?'var(--amber)':'var(--green)';
+function tagsHtml(arr){return arr&&arr.length?`<div class="tags">${arr.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:''}
+const moodColors={
+  conflicted:{bg:'#f4725022',border:'#f4725044',text:'#f47250'},
+  anxious:{bg:'var(--amber)22',border:'var(--amber)44',text:'var(--amber)'},
+  volatile:{bg:'var(--red)22',border:'var(--red)44',text:'var(--red)'},
+  defiant:{bg:'var(--purple)22',border:'var(--purple)44',text:'var(--purple)'},
+  hopeful:{bg:'var(--green)22',border:'var(--green)44',text:'var(--green)'},
+  melancholic:{bg:'var(--blue)22',border:'var(--blue)44',text:'var(--blue)'},
 };
+function moodStyle(m){const c=moodColors[m]||{bg:'#ffffff11',border:'#ffffff22',text:'var(--muted)'};
+  return `background:${c.bg};border:1px solid ${c.border};color:${c.text}`;}
+const DAY_NAMES=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
-function intensityColor(n) {
-  if (n >= 8) return '#f87171';
-  if (n >= 6) return '#fbbf24';
-  return '#34d399';
-}
+// ─── Data loading ─────────────────────────────────────────────────────────────
+let allData=[];
 
-function esc(s) {
-  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
+async function loadDays(){
+  const params=new URLSearchParams(location.search);
+  // Try to find today's date from param or use UTC today
+  let anchor=params.get('date');
+  if(!anchor){const n=new Date();anchor=n.toISOString().slice(0,10);}
 
-function tags(arr) {
-  if (!arr || !arr.length) return '';
-  return `<div class="tags">${arr.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`;
-}
-
-function reachClass(r) {
-  if (!r) return '';
-  if (r.includes('viral')) return 'reach-viral';
-  if (r.includes('major')) return 'reach-major';
-  return 'reach-industry';
-}
-
-function confidenceClass(c) {
-  if (!c) return '';
-  if (c === 'strong') return 'conf-strong';
-  if (c === 'moderate') return 'conf-moderate';
-  return 'conf-speculative';
-}
-
-function renderMacro(d) {
-  const m = d.macro;
-  let html = '';
-
-  // Google Trends
-  if (m.google_trends_uk && m.google_trends_uk.length) {
-    html += `<div class="section-title">Google Trends UK</div>`;
-    html += `<div class="trends-grid">`;
-    m.google_trends_uk.forEach(t => {
-      html += `<div class="trend-card">
-        <div class="trend-rank">#${t.rank}</div>
-        <div class="trend-term">${esc(t.term)}</div>
-        <div class="trend-vol">${esc(t.volume_est)}</div>
-      </div>`;
-    });
-    html += `</div>`;
+  const dates=[];
+  const d=new Date(anchor+'T00:00:00Z');
+  for(let i=0;i<7;i++){
+    dates.push(d.toISOString().slice(0,10));
+    d.setUTCDate(d.getUTCDate()-1);
   }
 
-  // Politics
-  if (m.politics && m.politics.length) {
-    html += `<div class="section-title">Politics</div>`;
-    m.politics.forEach(p => {
-      const col = intensityColor(p.intensity);
-      html += `<div class="card">
-        <div class="card-headline">${esc(p.headline)}</div>
-        <div class="intensity-row">
-          <span class="intensity-label" style="color:${col}">Intensity ${p.intensity}/10</span>
-          <div class="intensity-bar"><div class="intensity-fill" style="width:${p.intensity*10}%;background:${col}"></div></div>
-          <span class="tag">${esc(p.sentiment)}</span>
-        </div>
-        ${tags(p.tags)}
-      </div>`;
-    });
-  }
+  const results=await Promise.all(dates.map(async date=>{
+    try{
+      const r=await fetch(`data/trends-${date}.json`);
+      if(!r.ok)return null;
+      const j=await r.json();
+      return j;
+    }catch{return null;}
+  }));
 
-  // Economics
-  if (m.economics && m.economics.length) {
-    html += `<div class="section-title">Economics</div>`;
-    m.economics.forEach(e => {
-      const col = intensityColor(e.intensity);
-      html += `<div class="card">
-        <div class="card-headline">${esc(e.headline)}</div>
-        <div class="intensity-row">
-          <span class="intensity-label" style="color:${col}">Intensity ${e.intensity}/10</span>
-          <div class="intensity-bar"><div class="intensity-fill" style="width:${e.intensity*10}%;background:${col}"></div></div>
-          <span class="tag">${esc(e.sentiment)}</span>
-        </div>
-        ${tags(e.tags)}
-      </div>`;
-    });
-  }
+  allData=results.filter(Boolean);
 
-  return html;
-}
-
-function renderMusic(d) {
-  const mu = d.culture.music;
-  let html = '';
-
-  // Apple Music chart
-  if (mu.apple_music_uk_top12 && mu.apple_music_uk_top12.length) {
-    html += `<div class="section-title">Apple Music UK Top 12</div>`;
-    html += `<div class="card" style="padding:8px 4px">`;
-    mu.apple_music_uk_top12.forEach(t => {
-      const chg = t.change > 0 ? `<span style="color:#34d399">▲${t.change}</span>` :
-                  t.change < 0 ? `<span style="color:#f87171">▼${Math.abs(t.change)}</span>` :
-                  `<span style="color:#6b7280">—</span>`;
-      const url = t.apple_music_url || `https://music.apple.com/gb/search?term=${encodeURIComponent((t.artist||'') + ' ' + (t.title||''))}`;
-      html += `<a class="chart-row" href="${url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid var(--border);border-radius:8px;transition:background 0.15s;" onmouseover="this.style.background='#ffffff08'" onmouseout="this.style.background='none'">
-        <div class="pos-num ${t.pos<=3?'top3':''}">${t.pos}</div>
-        <div class="change-badge">${chg}</div>
-        <div class="track-info">
-          <div class="track-title">${esc(t.title)}${t.uk_artist?'<span class="uk-badge">UK</span>':''}</div>
-          <div class="track-artist">${esc(t.artist)}</div>
-          <div class="mood-tags-inline">${(t.mood_tags||[]).join(' · ')}</div>
-        </div>
-        <div style="color:#6b7280;font-size:0.8rem;flex-shrink:0">▶</div>
-      </a>`;
-    });
-    html += `</div>`;
-  }
-
-  // TikTok sounds
-  if (mu.tiktok_sounds && mu.tiktok_sounds.length) {
-    html += `<div class="section-title">TikTok Sounds</div>`;
-    mu.tiktok_sounds.forEach(s => {
-      html += `<div class="card">
-        <div class="tiktok-card">
-          <div class="tiktok-score">${s.score}</div>
-          <div>
-            <div class="track-title">${esc(s.title)}</div>
-            <div class="track-artist">${esc(s.artist)}</div>
-            <div class="tiktok-meta">${(s.videos||0).toLocaleString()} videos · ${(s.views||0).toLocaleString()} views</div>
-            ${tags(s.mood_tags)}
-          </div>
-        </div>
-      </div>`;
-    });
-  }
-
-  // New releases
-  if (mu.new_releases && mu.new_releases.length) {
-    html += `<div class="section-title">Upcoming Releases</div>`;
-    mu.new_releases.forEach(r => {
-      html += `<div class="card">
-        <div class="card-title">${esc(r.release_date)}</div>
-        <div class="card-headline">${esc(r.artist)} — <em>${esc(r.title)}</em></div>
-        ${tags(r.tags)}
-      </div>`;
-    });
-  }
-
-  // Film
-  if (d.culture.film) {
-    const f = d.culture.film;
-    if (f.cannes_picks && f.cannes_picks.length) {
-      html += `<div class="section-title">Cannes Picks</div>`;
-      f.cannes_picks.forEach(p => {
-        html += `<div class="card">
-          <div class="card-headline">${esc(p.title)}</div>
-          <div class="card-body">dir. ${esc(p.director)}</div>
-          ${tags(p.theme_tags)}
-        </div>`;
-      });
-    }
-  }
-
-  return html;
-}
-
-function renderActs(d) {
-  if (!d.cultural_acts || !d.cultural_acts.length) return '<div class="loading">No cultural acts data.</div>';
-  let html = '';
-  d.cultural_acts.forEach(a => {
-    const initials = a.figure.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-    const reach = a.reach || '';
-    html += `<div class="card">
-      <div class="act-header">
-        <div class="act-avatar">${initials}</div>
-        <div>
-          <div class="act-name">${esc(a.figure)}
-            ${reach ? `<span class="reach-badge ${reachClass(reach)}">${esc(reach)}</span>` : ''}
-          </div>
-          <div class="act-context">${esc(a.context)}</div>
-        </div>
-      </div>
-      <div class="card-body">${esc(a.event_description)}</div>
-      ${a.backlash ? `<div class="backlash-note">⚡ ${esc(a.backlash)}</div>` : ''}
-      ${a.vs_discourse ? `<div class="card-body" style="margin-top:10px;font-style:italic;color:#9ca3af">${esc(a.vs_discourse)}</div>` : ''}
-      ${tags(a.topics)}
-    </div>`;
-  });
-  return html;
-}
-
-function renderStreets(d) {
-  if (!d.streets) return '<div class="loading">No streets data.</div>';
-  let html = '';
-  if (d.streets.summary) {
-    html += `<div class="synthesis-theme">${esc(d.streets.summary)}</div>`;
-  }
-  (d.streets.protests || []).forEach(p => {
-    html += `<div class="card">
-      <div class="card-title">${esc(p.location)}</div>
-      <div class="card-headline">${esc(p.cause)}</div>
-      <div class="protest-scale">${esc(p.scale)}</div>
-      <div class="card-body">${esc(p.explicit_demand)}</div>
-      ${p.counter_protest ? `<div class="card-body" style="margin-top:8px;color:#9ca3af">Counter: ${esc(p.counter_protest)}</div>` : ''}
-    </div>`;
-  });
-  return html;
-}
-
-function renderDiscourse(d) {
-  if (!d.discourse) return '<div class="loading">No discourse data.</div>';
-  let html = '';
-
-  if (d.discourse.convergence_points && d.discourse.convergence_points.length) {
-    html += `<div class="section-title">Convergence Points</div>`;
-    d.discourse.convergence_points.forEach(c => {
-      html += `<div class="card" style="border-color:#34d39922;background:#34d39907">
-        <div class="card-title">Convergent: ${esc(c.topic)}</div>
-        <div class="card-body" style="margin-bottom:8px"><strong style="color:#e8e6e3">Realist:</strong> ${esc(c.realist_argument)}</div>
-        <div class="card-body" style="margin-bottom:8px"><strong style="color:#e8e6e3">Nationalist:</strong> ${esc(c.nationalist_argument)}</div>
-        <div class="card-body" style="font-style:italic;color:#9ca3af">${esc(c.why_it_matters)}</div>
-      </div>`;
-    });
-  }
-
-  if (d.discourse.realist_academics && d.discourse.realist_academics.length) {
-    html += `<div class="section-title">Realist Academics</div>`;
-    d.discourse.realist_academics.forEach(f => {
-      html += `<div class="card">
-        <div class="figure-card">
-          <span class="figure-lean lean-academic">Academic</span>
-          <div>
-            <div class="act-name">${esc(f.figure)}</div>
-            <div class="act-context">${esc(f.platform)}</div>
-            ${f.recent_content_title ? `<div class="card-body" style="margin-top:6px;font-style:italic">"${esc(f.recent_content_title)}"</div>` : ''}
-            <div class="card-body" style="margin-top:8px">${esc(f.on_current_events)}</div>
-            ${tags(f.narrative_tags)}
-          </div>
-        </div>
-      </div>`;
-    });
-  }
-
-  if (d.discourse.nationalist_media && d.discourse.nationalist_media.length) {
-    html += `<div class="section-title">Nationalist / Partisan Media</div>`;
-    d.discourse.nationalist_media.forEach(f => {
-      html += `<div class="card">
-        <div class="figure-card">
-          <span class="figure-lean lean-nationalist">Media</span>
-          <div>
-            <div class="act-name">${esc(f.figure)} <span style="color:var(--muted);font-weight:400;font-size:0.85rem">— ${esc(f.outlet)}</span></div>
-            <div class="card-body" style="margin-top:8px">${esc(f.framing)}</div>
-            ${tags(f.topics)}
-          </div>
-        </div>
-      </div>`;
-    });
-  }
-
-  return html;
-}
-
-function renderMedia(d) {
-  let html = '';
-  if (d.media_framing && d.media_framing.length) {
-    html += `<div class="section-title">Media Framing</div>`;
-    d.media_framing.forEach(m => {
-      html += `<div class="card">
-        <div class="geo-badge">${esc(m.geo)}</div>
-        <div class="card-title">${esc(m.outlet)}</div>
-        <div class="card-headline">${esc(m.lead_story)}</div>
-        <div class="card-body">${esc(m.framing)}</div>
-        ${m.divergence_note ? `<div class="diverges-note">ℹ️ ${esc(m.divergence_note)}</div>` : ''}
-      </div>`;
-    });
-  }
-
-  if (d.silence_detector && d.silence_detector.length) {
-    html += `<div class="section-title">Silence Detector</div>`;
-    d.silence_detector.forEach(s => {
-      html += `<div class="silence-card">
-        <div class="silence-title">🔇 What culture is not talking about</div>
-        <div class="card-headline">${esc(s.macro_event)}</div>
-        <div class="card-body" style="margin-top:8px">${esc(s.observation)}</div>
-        ${tags(s.registers_silent)}
-      </div>`;
-    });
-  }
-
-  return html;
-}
-
-function renderSynthesis(d) {
-  if (!d.synthesis) return '<div class="loading">No synthesis data.</div>';
-  const s = d.synthesis;
-  let html = '';
-
-  html += `<div class="synthesis-theme">${esc(s.daily_theme)}</div>`;
-
-  if (s.mechanism) {
-    html += `<div class="card">
-      <div class="section-title">Mechanism</div>
-      <div class="card-body">${esc(s.mechanism)}</div>
-    </div>`;
-  }
-
-  if (s.leading_signals && s.leading_signals.length) {
-    html += `<div class="section-title">Leading Signals</div>`;
-    s.leading_signals.forEach(sig => {
-      html += `<div class="signal-item">
-        <div class="signal-icon">📡</div>
-        <div class="signal-text">${esc(sig)}</div>
-      </div>`;
-    });
-  }
-
-  if (s.connections && s.connections.length) {
-    html += `<div class="section-title">Connections</div>`;
-    s.connections.forEach(c => {
-      const confClass = confidenceClass(c.confidence);
-      html += `<div class="connection-card">
-        <div class="connection-row">
-          <div class="connection-label">Event</div>
-          <div class="connection-val">${esc(c.macro_event)}</div>
-        </div>
-        <div class="connection-row">
-          <div class="connection-label">Response</div>
-          <div class="connection-val">${esc(c.cultural_response)}</div>
-        </div>
-        <div class="connection-row">
-          <div class="connection-label">Mechanism</div>
-          <div class="connection-val" style="color:#a8a6a4">${esc(c.mechanism)}</div>
-        </div>
-        <div class="connection-row">
-          <div class="connection-label">Observation</div>
-          <div class="connection-val" style="color:#9ca3af;font-style:italic">${esc(c.observation)}</div>
-        </div>
-        <div class="tags" style="margin-top:8px">
-          ${confClass ? `<span class="confidence-badge ${confClass}">${esc(c.confidence)}</span>` : ''}
-          ${(c.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}
-        </div>
-      </div>`;
-    });
-  }
-
-  return html;
-}
-
-const RENDERERS = {
-  macro: renderMacro,
-  music: renderMusic,
-  acts: renderActs,
-  streets: renderStreets,
-  discourse: renderDiscourse,
-  media: renderMedia,
-  synthesis: renderSynthesis,
-};
-
-function switchTab(id) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
-  document.querySelectorAll('.section').forEach(s => s.classList.toggle('active', s.id === 'sec-' + id));
-}
-
-async function init() {
-  const params = new URLSearchParams(window.location.search);
-  let date = params.get('date');
-  if (!date) {
-    // Try to infer from referrer or use today
-    const today = new Date();
-    date = today.toISOString().slice(0,10);
-  }
-
-  const jsonUrl = `data/trends-${date}.json`;
-
-  let data;
-  try {
-    const res = await fetch(jsonUrl);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    data = await res.json();
-  } catch (e) {
-    document.getElementById('content').innerHTML = `<div class="error-msg">Could not load trends data for ${date}.<br><small>${e.message}</small></div>`;
+  if(!allData.length){
+    document.getElementById('long-content').innerHTML='<div class="loading">No trend data found.</div>';
+    document.getElementById('today-content').innerHTML='<div class="loading">No data.</div>';
     return;
   }
 
-  // Header
-  document.title = `Cultural Intelligence — ${date}`;
-  document.getElementById('page-title').textContent = 'Cultural Intelligence';
-  document.getElementById('page-date').textContent = date;
-  const mood = data.mood_of_day || '';
-  if (mood) {
-    const mc = moodColors[mood] || { bgLight: '#ffffff11', border: '#ffffff22', text: '#e8e6e3' };
-    document.getElementById('mood-badge').innerHTML =
-      `<span class="mood-badge" style="background:${mc.bgLight};border:1px solid ${mc.border};color:${mc.text || '#e8e6e3'}">${mood}</span>`;
-  }
+  document.getElementById('header-sub').textContent=
+    `${allData.length} day${allData.length>1?'s':''} of cultural intelligence`;
 
-  // Build tabs + sections
-  const tabsEl = document.getElementById('tabs');
-  const contentEl = document.getElementById('content');
-  contentEl.innerHTML = '';
-
-  TABS.forEach((t, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'tab-btn' + (i === 0 ? ' active' : '');
-    btn.dataset.tab = t.id;
-    btn.textContent = t.label;
-    btn.onclick = () => switchTab(t.id);
-    tabsEl.appendChild(btn);
-
-    const sec = document.createElement('div');
-    sec.className = 'section' + (i === 0 ? ' active' : '');
-    sec.id = 'sec-' + t.id;
-    sec.innerHTML = RENDERERS[t.id] ? RENDERERS[t.id](data) : '<div class="loading">No data.</div>';
-    contentEl.appendChild(sec);
-  });
+  renderLongitudinal(allData);
+  renderToday(allData[0]);
 }
 
-init();
+// ─── LONGITUDINAL VIEW ────────────────────────────────────────────────────────
+function renderLongitudinal(days){
+  let html='';
+
+  // ── Mood timeline
+  html+=`<div class="sec">Mood of the Day</div>`;
+  html+=`<div class="card"><div class="mood-timeline">`;
+  days.forEach(d=>{
+    const dt=new Date(d.date+'T00:00:00Z');
+    const dayLabel=DAY_NAMES[dt.getUTCDay()];
+    const mood=d.mood_of_day||'';
+    html+=`<div class="mood-day">
+      <div class="mood-date">${d.date.slice(5)} ${dayLabel}</div>
+      <div class="mood-pill" style="${moodStyle(mood)}">${esc(mood)}</div>
+    </div>`;
+  });
+  html+=`</div></div>`;
+
+  // ── Synthesis timeline
+  html+=`<div class="sec">Daily Synthesis — What Each Day Meant</div>`;
+  html+=`<div class="card"><div class="synth-timeline">`;
+  days.forEach((d,i)=>{
+    const dt=new Date(d.date+'T00:00:00Z');
+    html+=`<div class="synth-item">
+      <div class="synth-date-col">
+        <div class="synth-date">${d.date.slice(5)}</div>
+        <div class="synth-day-label">${DAY_NAMES[dt.getUTCDay()]}</div>
+      </div>
+      <div>
+        <span class="synth-theme">${esc(d.synthesis?.daily_theme||'—')}</span>
+        ${i===0?'<span class="synth-new">today</span>':''}
+      </div>
+    </div>`;
+  });
+  html+=`</div></div>`;
+
+  // ── Music chart — 7-day positions
+  html+=`<div class="sec">Music — Chart Positions Over Time</div>`;
+  const trackMap={};
+  days.forEach((d,di)=>{
+    (d.culture?.music?.apple_music_uk_top12||[]).forEach(t=>{
+      const key=`${t.artist}|||${t.title}`;
+      if(!trackMap[key])trackMap[key]={artist:t.artist,title:t.title,uk:t.uk_artist,url:t.apple_music_url,days:new Array(days.length).fill(null)};
+      trackMap[key].days[di]=t.pos;
+    });
+  });
+  // Sort by most recent position (today's chart order), then by appearances
+  const tracks=Object.values(trackMap).sort((a,b)=>{
+    const ap=a.days[0]||99, bp=b.days[0]||99;
+    if(ap!==bp)return ap-bp;
+    const aa=a.days.filter(Boolean).length, ba=b.days.filter(Boolean).length;
+    return ba-aa;
+  });
+
+  html+=`<div class="card" style="padding:8px 0;overflow-x:auto">`;
+  html+=`<table class="chart-table"><thead><tr>
+    <th>Track</th>
+    ${days.map(d=>`<th class="center">${d.date.slice(5)}</th>`).join('')}
+    <th>Days in chart</th>
+  </tr></thead><tbody>`;
+  tracks.forEach(t=>{
+    const appearances=t.days.filter(Boolean).length;
+    const posClass=p=>p===1?'pos-1':p<=5?'pos-top':'pos-mid';
+    html+=`<tr>
+      <td><div class="track-name">${t.uk?'<span class="uk-dot"></span>':''}<a href="${esc(t.url||`https://music.apple.com/gb/search?term=${encodeURIComponent((t.artist||'')+' '+(t.title||''))}`)+'"'} target="_blank" style="color:inherit;text-decoration:none;">${esc(t.title)}</a></div>
+        <div class="track-artist">${esc(t.artist)}</div></td>
+      ${t.days.map(p=>p
+        ?`<td class="spark-cell"><div class="pos-dot ${posClass(p)}">${p}</div></td>`
+        :`<td class="spark-cell"><span class="pos-absent">·</span></td>`
+      ).join('')}
+      <td>
+        <div class="persist-bar">
+          ${t.days.map(p=>`<div class="persist-seg ${p?'on':'off'}"></div>`).join('')}
+          <span class="persist-count">${appearances}d</span>
+        </div>
+      </td>
+    </tr>`;
+  });
+  html+=`</tbody></table></div>`;
+
+  // ── Recurring political themes
+  html+=`<div class="sec">Recurring Political Themes</div>`;
+  const tagCounts={};
+  days.forEach(d=>{
+    [...(d.macro?.politics||[]),...(d.macro?.economics||[])].forEach(item=>{
+      (item.tags||[]).forEach(tag=>{tagCounts[tag]=(tagCounts[tag]||0)+1;});
+    });
+  });
+  const sortedTags=Object.entries(tagCounts).sort((a,b)=>b[1]-a[1]).slice(0,15);
+  const maxTag=sortedTags[0]?.[1]||1;
+  html+=`<div class="card"><div class="tag-freq">`;
+  sortedTags.forEach(([tag,count])=>{
+    html+=`<div class="tag-freq-row">
+      <div class="tag-freq-name">${esc(tag)}</div>
+      <div class="tag-freq-bar-wrap"><div class="tag-freq-fill" style="width:${(count/maxTag*100).toFixed(0)}%"></div></div>
+      <div class="tag-freq-count">${count}d</div>
+    </div>`;
+  });
+  html+=`</div></div>`;
+
+  // ── Persistent discourse figures
+  html+=`<div class="sec">Discourse Figures — Who Keeps Appearing</div>`;
+  const figCounts={};
+  days.forEach(d=>{
+    [...(d.discourse?.realist_academics||[]),...(d.discourse?.nationalist_media||[]),...(d.cultural_acts||[])].forEach(f=>{
+      const name=f.figure||f.host||'';
+      if(name)figCounts[name]=(figCounts[name]||0)+1;
+    });
+  });
+  const sortedFigs=Object.entries(figCounts).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  html+=`<div class="figure-grid">`;
+  sortedFigs.forEach(([name,count])=>{
+    const initials=name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    html+=`<div class="figure-card">
+      <div style="width:36px;height:36px;border-radius:50%;background:var(--purple)22;border:1px solid var(--purple)44;
+        display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:var(--purple);margin-bottom:8px">${initials}</div>
+      <div class="figure-name">${esc(name)}</div>
+      <div class="figure-days">Appeared ${count} of ${days.length} day${days.length>1?'s':''}</div>
+      <div class="persist-bar">${days.map((d,i)=>{
+        const appears=[...(d.discourse?.realist_academics||[]),...(d.discourse?.nationalist_media||[]),...(d.cultural_acts||[])].some(f=>(f.figure||f.host||'')==name);
+        return `<div class="persist-seg ${appears?'on':'off'}"></div>`;
+      }).join('')}</div>
+    </div>`;
+  });
+  html+=`</div>`;
+
+  // ── Leading signals across the week
+  html+=`<div class="sec">Leading Signals This Week</div>`;
+  const allSignals=[];
+  days.forEach(d=>{
+    (d.synthesis?.leading_signals||[]).forEach(s=>{
+      allSignals.push({date:d.date,signal:s});
+    });
+  });
+  html+=`<div style="display:flex;flex-direction:column;gap:8px">`;
+  allSignals.slice(0,8).forEach(({date,signal})=>{
+    html+=`<div style="display:flex;gap:12px;padding:14px;background:var(--green)09;border:1px solid var(--green)22;border-radius:10px;">
+      <div style="font-size:.65rem;color:var(--muted);flex-shrink:0;padding-top:2px;width:42px">${date.slice(5)}</div>
+      <div style="font-size:.85rem;color:#a8a6a4;line-height:1.6">📡 ${esc(signal)}</div>
+    </div>`;
+  });
+  html+=`</div>`;
+
+  document.getElementById('long-content').innerHTML=html;
+}
+
+// ─── TODAY VIEW ───────────────────────────────────────────────────────────────
+function renderToday(d){
+  const renderers={macro:renderMacro,music:renderMusic,acts:renderActs,
+    streets:renderStreets,discourse:renderDiscourse,media:renderMedia,synthesis:renderSynthesis};
+  const fn=renderers[currentToday];
+  document.getElementById('today-content').innerHTML=fn?fn(d):'<div class="loading">No renderer.</div>';
+}
+
+function renderMacro(d){
+  const m=d.macro; let html='';
+  if(m.google_trends_uk?.length){
+    html+=`<div class="sec">Google Trends UK</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:20px">`;
+    m.google_trends_uk.forEach(t=>{html+=`<div class="card" style="padding:14px">
+      <div style="font-size:1.3rem;font-weight:800;color:var(--purple)">#${t.rank}</div>
+      <div style="font-size:.85rem;font-weight:600;margin-top:4px">${esc(t.term)}</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">${esc(t.volume_est)}</div>
+    </div>`;});
+    html+=`</div>`;
+  }
+  if(m.politics?.length){
+    html+=`<div class="sec">Politics</div>`;
+    m.politics.forEach(p=>{html+=`<div class="card">
+      <div class="card-hl">${esc(p.headline)}</div>
+      <div class="intensity-wrap">
+        <div class="intensity-bar"><div class="intensity-fill" style="width:${p.intensity*10}%;background:${iColor(p.intensity)}"></div></div>
+        <span class="badge badge-muted">${esc(p.sentiment)}</span>
+      </div>${tagsHtml(p.tags)}</div>`;});
+  }
+  if(m.economics?.length){
+    html+=`<div class="sec">Economics</div>`;
+    m.economics.forEach(e=>{html+=`<div class="card">
+      <div class="card-hl">${esc(e.headline)}</div>
+      <div class="intensity-wrap">
+        <div class="intensity-bar"><div class="intensity-fill" style="width:${e.intensity*10}%;background:${iColor(e.intensity)}"></div></div>
+        <span class="badge badge-muted">${esc(e.sentiment)}</span>
+      </div>${tagsHtml(e.tags)}</div>`;});
+  }
+  return html;
+}
+
+function renderMusic(d){
+  const mu=d.culture?.music; let html='';
+  if(mu?.apple_music_uk_top12?.length){
+    html+=`<div class="sec">Apple Music UK Top 12</div><div class="card" style="padding:6px 2px">`;
+    mu.apple_music_uk_top12.forEach(t=>{
+      const chg=t.change>0?`<span style="color:var(--green)">▲${t.change}</span>`:
+        t.change<0?`<span style="color:var(--red)">▼${Math.abs(t.change)}</span>`:`<span style="color:var(--muted)">—</span>`;
+      const url=t.apple_music_url||`https://music.apple.com/gb/search?term=${encodeURIComponent((t.artist||'')+' '+(t.title||''))}`;
+      html+=`<a class="chart-link" href="${esc(url)}" target="_blank" rel="noopener">
+        <div class="pos-n ${t.pos<=3?'gold':''}">${t.pos}</div>
+        <div class="chg">${chg}</div>
+        <div class="track-inf">
+          <div class="t-title">${esc(t.title)}${t.uk_artist?'<span class="uk-badge">UK</span>':''}</div>
+          <div class="t-artist">${esc(t.artist)}</div>
+          <div class="t-mood">${(t.mood_tags||[]).join(' · ')}</div>
+        </div>
+        <div class="play-icon">▶</div>
+      </a>`;
+    });
+    html+=`</div>`;
+  }
+  if(mu?.tiktok_sounds?.length){
+    html+=`<div class="sec">TikTok Trending Sounds</div>`;
+    mu.tiktok_sounds.forEach(s=>{html+=`<div class="card">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="flex-shrink:0;width:48px;height:48px;border-radius:10px;background:var(--pink)22;border:1px solid var(--pink)44;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:800;color:var(--pink)">${s.score}</div>
+        <div><div class="t-title">${esc(s.title)}</div>
+        <div class="t-artist">${esc(s.artist)}</div>
+        ${s.videos?`<div style="font-size:.72rem;color:var(--muted);margin-top:3px">${s.videos.toLocaleString()} videos · ${s.views.toLocaleString()} views</div>`:''}
+        ${tagsHtml(s.mood_tags)}</div>
+      </div></div>`;});
+  }
+  return html||'<div class="loading">No music data.</div>';
+}
+
+function renderActs(d){
+  if(!d.cultural_acts?.length)return'<div class="loading">No cultural acts.</div>';
+  return d.cultural_acts.map(a=>{
+    const init=a.figure.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const reachCls=a.reach?.includes('viral')?'badge-red':a.reach?.includes('major')?'badge-amber':'badge-muted';
+    return `<div class="card">
+      <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:10px">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--purple)22;border:1px solid var(--purple)44;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:var(--purple);flex-shrink:0">${init}</div>
+        <div><div style="font-size:.95rem;font-weight:700">${esc(a.figure)} <span class="badge ${reachCls}">${esc(a.reach)}</span></div>
+        <div style="font-size:.78rem;color:var(--muted)">${esc(a.context)}</div></div>
+      </div>
+      <div class="card-body">${esc(a.event_description)}</div>
+      ${a.backlash?`<div class="note-red">⚡ ${esc(a.backlash)}</div>`:''}
+      ${a.vs_discourse?`<div class="card-body" style="margin-top:10px;font-style:italic;color:#9ca3af">${esc(a.vs_discourse)}</div>`:''}
+      ${tagsHtml(a.topics)}
+    </div>`;
+  }).join('');
+}
+
+function renderStreets(d){
+  if(!d.streets)return'<div class="loading">No streets data.</div>';
+  let html='';
+  if(d.streets.summary)html+=`<div class="card" style="border-color:var(--amber)33;background:var(--amber)07;font-size:.9rem;line-height:1.6">${esc(d.streets.summary)}</div>`;
+  (d.streets.protests||[]).forEach(p=>{html+=`<div class="card">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">${esc(p.location)}</div>
+    <div class="card-hl">${esc(p.cause)}</div>
+    <span class="badge badge-amber">${esc(p.scale)}</span>
+    <div class="card-body" style="margin-top:8px">${esc(p.explicit_demand)}</div>
+    ${p.counter_protest?`<div class="card-body" style="margin-top:6px;color:#9ca3af">Counter: ${esc(p.counter_protest)}</div>`:''}
+  </div>`;});
+  return html||'<div class="loading">No data.</div>';
+}
+
+function renderDiscourse(d){
+  if(!d.discourse)return'<div class="loading">No discourse data.</div>';
+  let html='';
+  if(d.discourse.convergence_points?.length){
+    html+=`<div class="sec">Convergence</div>`;
+    d.discourse.convergence_points.forEach(c=>{html+=`<div class="card" style="border-color:var(--green)22;background:var(--green)07">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:8px">Convergent: ${esc(c.topic)}</div>
+      <div class="card-body" style="margin-bottom:6px"><strong style="color:var(--text)">Realist:</strong> ${esc(c.realist_argument)}</div>
+      <div class="card-body" style="margin-bottom:6px"><strong style="color:var(--text)">Nationalist:</strong> ${esc(c.nationalist_argument)}</div>
+      <div class="card-body" style="font-style:italic;color:#9ca3af">${esc(c.why_it_matters)}</div>
+    </div>`;});
+  }
+  if(d.discourse.realist_academics?.length){
+    html+=`<div class="sec">Realist Academics</div>`;
+    d.discourse.realist_academics.forEach(f=>{html+=`<div class="card">
+      <div style="font-size:.95rem;font-weight:700">${esc(f.figure)}</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-bottom:8px">${esc(f.platform)}</div>
+      ${f.recent_content_title?`<div class="card-body" style="font-style:italic;margin-bottom:6px">"${esc(f.recent_content_title)}"</div>`:''}
+      <div class="card-body">${esc(f.on_current_events)}</div>
+      ${tagsHtml(f.narrative_tags)}
+    </div>`;});
+  }
+  if(d.discourse.nationalist_media?.length){
+    html+=`<div class="sec">Partisan / Nationalist Media</div>`;
+    d.discourse.nationalist_media.forEach(f=>{html+=`<div class="card">
+      <div style="font-size:.95rem;font-weight:700">${esc(f.figure)} <span style="font-weight:400;font-size:.82rem;color:var(--muted)">— ${esc(f.outlet)}</span></div>
+      <div class="card-body" style="margin-top:8px">${esc(f.framing)}</div>
+      ${tagsHtml(f.topics)}
+    </div>`;});
+  }
+  return html||'<div class="loading">No discourse data.</div>';
+}
+
+function renderMedia(d){
+  let html='';
+  if(d.media_framing?.length){
+    html+=`<div class="sec">Media Framing</div>`;
+    d.media_framing.forEach(m=>{html+=`<div class="card">
+      <div style="display:inline-block;padding:2px 9px;border-radius:10px;font-size:.7rem;font-weight:600;background:var(--surface2);border:1px solid var(--border);color:var(--muted);margin-bottom:8px">${esc(m.geo)}</div>
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">${esc(m.outlet)}</div>
+      <div class="card-hl">${esc(m.lead_story)}</div>
+      <div class="card-body">${esc(m.framing)}</div>
+      ${m.divergence_note?`<div class="note-blue">ℹ️ ${esc(m.divergence_note)}</div>`:''}
+    </div>`;});
+  }
+  if(d.silence_detector?.length){
+    html+=`<div class="sec">Silence Detector</div>`;
+    d.silence_detector.forEach(s=>{html+=`<div class="card" style="background:var(--red)09;border-color:var(--red)22">
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:8px">🔇 What culture isn't talking about</div>
+      <div class="card-hl">${esc(s.macro_event)}</div>
+      <div class="card-body" style="margin-top:6px">${esc(s.observation)}</div>
+      ${tagsHtml(s.registers_silent)}
+    </div>`;});
+  }
+  return html||'<div class="loading">No media data.</div>';
+}
+
+function renderSynthesis(d){
+  if(!d.synthesis)return'<div class="loading">No synthesis.</div>';
+  const s=d.synthesis; let html='';
+  html+=`<div style="font-size:1.05rem;font-weight:500;line-height:1.6;padding:20px;background:var(--purple)11;border:1px solid var(--purple)33;border-radius:12px;margin-bottom:20px;color:#d8b4fe">${esc(s.daily_theme)}</div>`;
+  if(s.mechanism)html+=`<div class="card"><div class="sec" style="margin-bottom:8px">Mechanism</div><div class="card-body">${esc(s.mechanism)}</div></div>`;
+  if(s.leading_signals?.length){
+    html+=`<div class="sec">Leading Signals</div>`;
+    s.leading_signals.forEach(sig=>{html+=`<div style="display:flex;gap:12px;padding:14px;background:var(--green)09;border:1px solid var(--green)22;border-radius:10px;margin-bottom:8px">
+      <div>📡</div><div class="card-body">${esc(sig)}</div></div>`;});
+  }
+  if(s.connections?.length){
+    html+=`<div class="sec">Connections</div>`;
+    s.connections.forEach(c=>{
+      const confCls=c.confidence==='strong'?'badge-green':c.confidence==='moderate'?'badge-amber':'badge-muted';
+      html+=`<div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+          <div style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Connection</div>
+          <span class="badge ${confCls}">${esc(c.confidence)}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div><span style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Event</span><div class="card-body" style="margin-top:2px">${esc(c.macro_event)}</div></div>
+          <div><span style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Response</span><div class="card-body" style="margin-top:2px">${esc(c.cultural_response)}</div></div>
+          <div><span style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Why it matters</span><div class="card-body" style="margin-top:2px;font-style:italic;color:#9ca3af">${esc(c.observation)}</div></div>
+        </div>
+        ${tagsHtml(c.tags)}
+      </div>`;
+    });
+  }
+  return html;
+}
+
+loadDays();
 </script>
 </body>
 </html>
