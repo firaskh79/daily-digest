@@ -2,79 +2,629 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firas's Daily Digest</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firas's Digest · May 20, 2026</title>
 <style>
-  :root { --bg:#ffffff; --bg2:#f6f5f0; --text:#1a1a18; --text2:#5a5956; --text3:#9a9894; --border:#e8e5df; --blue-bg:#E6F1FB; --blue-fg:#0C447C; --purple-bg:#EEEDFE; --purple-fg:#3C3489; }
-  @media (prefers-color-scheme:dark) { :root { --bg:#18181a; --bg2:#222225; --text:#ede9e2; --text2:#9a9794; --text3:#5e5c58; --border:#32302c; --blue-bg:#0a1e30; --blue-fg:#7bbef5; --purple-bg:#1e1b3a; --purple-fg:#a99ff5; } }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
-  .page { max-width:640px; margin:0 auto; padding:3rem 2rem; }
-  .eyebrow { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--text3); margin-bottom:.4rem; }
-  h1 { font-size:1.8rem; font-weight:800; letter-spacing:-.02em; }
-  .sub { color:var(--text2); margin-top:.4rem; font-size:.95rem; }
-  .divider { height:1px; background:var(--border); margin:2rem 0; }
-  .dashboard-card {
-    display:flex; align-items:center; justify-content:space-between;
-    padding:1.1rem 1.2rem; background:var(--purple-bg); border-radius:10px;
-    text-decoration:none; color:var(--purple-fg); margin-bottom:2rem;
-    transition:opacity .15s;
+:root {
+  --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
+  --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
+  --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
+  --radius:10px; --radius-sm:6px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --purple-bg:#EEEDFE; --purple-text:#3C3489;
+  --teal-bg:#E1F5EE; --teal-text:#0F6E56;
+  --coral-bg:#FAECE7; --coral-text:#712B13;
+  --amber-bg:#FAEEDA; --amber-text:#633806;
+  --blue-bg:#E6F1FB; --blue-text:#0C447C;
+  --green-bg:#EAF3DE; --green-text:#27500A;
+  --gray-bg:#F1EFE8; --gray-text:#444441;
+  --link:#185FA5;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#1a1a18; --bg-2:#242420; --bg-3:#2e2e2a;
+    --text:#f0ede6; --text-2:#b0ada8; --text-3:#706d68;
+    --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
+    --purple-bg:#2a2860; --purple-text:#a89cf5;
+    --teal-bg:#0e3028; --teal-text:#52c4a0;
+    --coral-bg:#3d1a10; --coral-text:#f0a090;
+    --amber-bg:#3a2210; --amber-text:#f0c080;
+    --blue-bg:#0d2640; --blue-text:#80b8f0;
+    --green-bg:#182c10; --green-text:#8ec060;
+    --gray-bg:#2a2a28; --gray-text:#b0ada8;
+    --link:#6baed6;
   }
-  .dashboard-card:hover { opacity:.85; }
-  .dashboard-left { display:flex; align-items:center; gap:.75rem; }
-  .dashboard-icon { font-size:1.4rem; line-height:1; }
-  .dashboard-label { font-weight:700; font-size:.95rem; }
-  .dashboard-sub { font-size:.78rem; opacity:.7; margin-top:.1rem; }
-  .dashboard-arrow { font-size:1rem; opacity:.6; }
-  .section-label { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text3); margin-bottom:.75rem; font-weight:600; }
-  .digest-list { list-style:none; }
-  .digest-list li { margin-bottom:.6rem; }
-  .digest-list a {
-    display:flex; align-items:center; justify-content:space-between;
-    padding:.9rem 1.1rem; background:var(--bg2); border-radius:8px;
-    text-decoration:none; color:var(--text); font-weight:600; font-size:.95rem;
-    transition:background .15s;
-  }
-  .digest-list a:hover { background:var(--blue-bg); color:var(--blue-fg); }
-  .arrow { color:var(--text3); }
-  .empty { color:var(--text3); font-size:.9rem; padding:1rem 0; }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:15px;line-height:1.65}
+.wrap{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
+header{border-bottom:2px solid var(--border-2);padding-bottom:1.25rem;margin-bottom:2rem}
+header h1{font-size:1.1rem;font-weight:600;letter-spacing:.04em;color:var(--text-3);text-transform:uppercase}
+header h2{font-size:2rem;font-weight:800;line-height:1.15;margin-top:.25rem}
+header .dateline{font-size:.9rem;color:var(--text-3);margin-top:.4rem;font-weight:500}
+.section{margin-bottom:3rem}
+.section-label{display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem}
+.section-label h3{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;padding:.2em .55em;border-radius:4px;letter-spacing:.04em;text-transform:uppercase}
+.tp{background:var(--purple-bg);color:var(--purple-text)}
+.tt{background:var(--teal-bg);color:var(--teal-text)}
+.tc{background:var(--coral-bg);color:var(--coral-text)}
+.ta{background:var(--amber-bg);color:var(--amber-text)}
+.tb{background:var(--blue-bg);color:var(--blue-text)}
+.tg{background:var(--green-bg);color:var(--green-text)}
+.tgr{background:var(--gray-bg);color:var(--gray-text)}
+.exec-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:2.5rem}
+@media(max-width:580px){.exec-grid,.two-col,.market-grid,.cx-grid{grid-template-columns:1fr !important}}
+.exec-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem}
+.exec-card .ec-title{font-size:.95rem;font-weight:700;margin:.4rem 0 .4rem}
+.exec-card .ec-body{font-size:.85rem;color:var(--text-2);line-height:1.55}
+.exec-card .ec-ref{font-size:.75rem;color:var(--text-3);margin-top:.5rem}
+.data-table{width:100%;border-collapse:collapse;margin:1rem 0}
+.data-table th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-3);font-weight:700;text-align:left;padding:.4rem .6rem;border-bottom:2px solid var(--border-2)}
+.data-table td{padding:.45rem .6rem;border-bottom:1px solid var(--border);font-size:.88rem;vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table td.pos{font-weight:700;font-size:.8rem;color:var(--text-3);width:2rem}
+.data-table td.chg{font-size:.8rem;font-weight:700}
+.chg.up{color:#278a52}.chg.dn{color:#c0392b}.chg.eq{color:var(--text-3)}
+.story{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:.75rem}
+.story h4{font-size:.97rem;font-weight:700;line-height:1.3;margin:.35rem 0 .35rem}
+.story p{font-size:.88rem;color:var(--text-2);line-height:1.6}
+.story .src{font-size:.75rem;color:var(--text-3);margin-top:.4rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.market-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1rem 0}
+.market-tile{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.75rem;text-align:center}
+.market-tile .mt-name{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-3);font-weight:700}
+.market-tile .mt-val{font-size:1.15rem;font-weight:800;margin:.2rem 0}
+.market-tile .mt-chg{font-size:.78rem;font-weight:700}
+.warn-banner{background:var(--coral-bg);border:1px solid rgba(180,60,30,.25);border-radius:var(--radius-sm);padding:.75rem 1rem;margin-bottom:1rem;font-size:.88rem;color:var(--coral-text)}
+.prose{font-size:.92rem;color:var(--text-2);line-height:1.7;margin:.6rem 0}
+.cx-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.7rem;margin:1rem 0}
+.cx-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.8rem;font-size:.82rem}
+.cx-card .cx-name{font-weight:700;font-size:.88rem;margin-bottom:.3rem}
+.cx-card .cx-framing{color:var(--text-2);font-size:.82rem;line-height:1.5}
+.arabic{direction:rtl;text-align:right;font-family:'Arial','Noto Sans Arabic',sans-serif}
+.conv-box{background:var(--purple-bg);border:1px solid rgba(60,52,137,.2);border-radius:var(--radius-sm);padding:.9rem 1.1rem;margin-top:1rem}
+.conv-box h5{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--purple-text);margin-bottom:.4rem}
+.conv-box p{font-size:.87rem;color:var(--text);line-height:1.6}
+.silence-box{background:var(--gray-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.9rem 1.1rem;margin-top:1rem}
+.silence-box h5{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-text);margin-bottom:.4rem}
+.silence-box p{font-size:.87rem;color:var(--text-2);line-height:1.6}
+.watch-box{background:var(--amber-bg);border:1px solid rgba(99,56,6,.2);border-radius:var(--radius-sm);padding:.8rem 1rem;margin-top:1rem;font-size:.87rem;color:var(--amber-text)}
+footer{border-top:1px solid var(--border);padding-top:1.5rem;margin-top:3rem;font-size:.78rem;color:var(--text-3)}
+footer h4{font-weight:700;margin-bottom:.6rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+footer a{color:var(--link);text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+a{color:var(--link)}
+.sub-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-3);margin-bottom:.6rem;display:block}
+hr.divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="eyebrow">Firas Khnaisser</div>
-  <h1>Daily Digest</h1>
-  <p class="sub">A personal briefing covering culture, news, music, film, business &amp; science. Published every morning.</p>
-  <div class="divider"></div>
+<div class="wrap">
 
-  <a class="dashboard-card" href="trends.html">
-    <div class="dashboard-left">
-      <div class="dashboard-icon">📊</div>
-      <div>
-        <div class="dashboard-label">Cultural Intelligence</div>
-        <div class="dashboard-sub">How world events shape music, film &amp; content — tracked over time</div>
-      </div>
+<header>
+  <h1>Firas's Digest &middot; Daily Cultural Briefing</h1>
+  <h2>Wednesday &middot; May 20, 2026</h2>
+  <p class="dateline">Edinburgh &nbsp;&middot;&nbsp; Compiled 08:30 BST</p>
+</header>
+
+<!-- EXEC SUMMARY -->
+<div class="section">
+  <div class="section-label"><h3>Executive Summary</h3></div>
+  <div class="exec-grid">
+    <div class="exec-card">
+      <span class="tag tc">Breaking</span>
+      <div class="ec-title">Arsenal Win the Premier League</div>
+      <div class="ec-body">Arsenal clinched the English Premier League title on Tuesday evening, triggering mass street celebrations in north London. It is their first top-flight title in over two decades and is dominating UK search, social, and the Annahar sports desk this morning.</div>
+      <div class="ec-ref">Sections 1 &middot; 2 &middot; 4</div>
     </div>
-    <div class="dashboard-arrow">→</div>
-  </a>
-
-  <div class="section-label">Past Digests</div>
-  <ul class="digest-list" id="list"></ul>
+    <div class="exec-card">
+      <span class="tag tc">Geopolitics</span>
+      <div class="ec-title">Trump Cancels Iran Strike After Gulf Allies Intervene</div>
+      <div class="ec-body">Saudi Arabia, Qatar, and the UAE persuaded Trump to "hold off" on a planned military strike on Iran. Brent crude hovers at $111/barrel as the Strait of Hormuz remains largely shut since March 4. The IEA warns global oil inventories are in rapid decline. No deal in sight.</div>
+      <div class="ec-ref">Sections 4 &middot; 5</div>
+    </div>
+    <div class="exec-card">
+      <span class="tag tp">Cannes 2026</span>
+      <div class="ec-title">Bardem Names Trump, Putin &amp; Netanyahu at Cannes</div>
+      <div class="ec-body">Javier Bardem named three heads of state by name at a Cannes press conference, calling them examples of toxic masculinity driving global conflict. Paul Laverty (jury) attacked Gaza blacklisting. Park Chan-wook (jury president) declared politics and art inseparable. The festival is the most politically charged in years.</div>
+      <div class="ec-ref">Sections 7 &middot; 8</div>
+    </div>
+    <div class="exec-card">
+      <span class="tag tb">Markets</span>
+      <div class="ec-title">30-Year Treasury Hits 19-Year High; Stocks Fall for Third Day</div>
+      <div class="ec-body">The 30-year US Treasury yield briefly breached 5.19%, its highest since 2007, dragging the S&amp;P 500 to a third straight losing session. Oil-driven inflation expectations are pushing bond markets into a new stress zone that equity markets cannot ignore.</div>
+      <div class="ec-ref">Sections 4 &middot; 5</div>
+    </div>
+    <div class="exec-card">
+      <span class="tag tg">Culture</span>
+      <div class="ec-title">Olivia Dean Owns the UK Chart — Five of the Top Twelve</div>
+      <div class="ec-body">Olivia Dean holds five of the top twelve positions on the Apple Music UK chart, including #1 with "Man I Need." Her dominance reflects a broader UK chart mood of intimacy and domestic warmth — an active cultural narrowing in response to macro turbulence.</div>
+      <div class="ec-ref">Sections 2 &middot; 3</div>
+    </div>
+    <div class="exec-card">
+      <span class="tag ta">UK Politics</span>
+      <div class="ec-title">UK Fractures: Reform Surge, Labour Collapse, Nationalist Streets</div>
+      <div class="ec-body">Reform UK gained 1,400+ council seats. All three devolved nations now governed by nationalist parties. Tommy Robinson's "Unite the Kingdom" march drew 60,000 people in London on May 16. Starmer faces calls to resign. GB News leads with the narrative of establishment collapse.</div>
+      <div class="ec-ref">Sections 4 &middot; 7 &middot; 8</div>
+    </div>
+  </div>
 </div>
-<script>
-  const files = ['daily-digest-2026-05-19.html'];
-  const list = document.getElementById('list');
-  if (!files.length) {
-    list.innerHTML = '<li class="empty">No digests yet — check back tomorrow.</li>';
-  } else {
-    list.innerHTML = files.map(f => {
-      const d = f.replace('daily-digest-','').replace('.html','');
-      const [y,m,day] = d.split('-');
-      const date = new Date(+y, +m-1, +day);
-      const label = date.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
-      return `<li><a href="${f}"><span>${label}</span><span class="arrow">→</span></a></li>`;
-    }).join('');
-  }
-</script>
+
+<!-- SECTION 1: GOOGLE TRENDS -->
+<div class="section">
+  <div class="section-label"><h3>&sect;1 &mdash; Google Trends &middot; UK</h3></div>
+  <table class="data-table">
+    <thead><tr><th>#</th><th>Search Term</th><th>Context</th><th>Est. Volume</th></tr></thead>
+    <tbody>
+      <tr><td class="pos">1</td><td><strong>Arsenal Premier League</strong></td><td>Title clinched; fans searching highlights, celebrations, history</td><td>1M+</td></tr>
+      <tr><td class="pos">2</td><td><strong>Iran Hormuz oil price</strong></td><td>Trump's cancelled strike, Brent at $111, fuel cost anxiety</td><td>500K+</td></tr>
+      <tr><td class="pos">3</td><td><strong>Keir Starmer resign</strong></td><td>Labour fallout from local elections; leadership pressure</td><td>350K+</td></tr>
+      <tr><td class="pos">4</td><td><strong>Olivia Dean Man I Need</strong></td><td>UK #1 chart; concert tickets; debut album word of mouth</td><td>200K+</td></tr>
+      <tr><td class="pos">5</td><td><strong>Cannes Bardem Netanyahu</strong></td><td>Bardem's naming of Trump, Putin, Netanyahu; Cannes political season</td><td>150K+</td></tr>
+    </tbody>
+  </table>
+  <p class="prose">The UK today is split between collective sporting joy and deepening political-economic anxiety. Arsenal's title win provides a rare unifying moment for a country otherwise consumed by energy costs, the Iran situation, and questions about whether a Labour government with no credible mandate can survive another year. The Bardem story, arriving through Cannes, is a reminder that the UK's political fracture does not exist in isolation — it is part of a wider global reckoning with authoritarian masculinity that the festival has made its theme this year.</p>
+  <p class="prose" style="font-size:.82rem;color:var(--text-3);border-left:3px solid var(--border-2);padding-left:.75rem"><strong>Lebanon note:</strong> Google Trends has no Lebanon data. Annahar (section 4) leads today with Israeli strikes in the south of Lebanon and escalation across all fronts. Note on UK trends: pytrends API was unavailable today (proxy block); estimates above are based on WebSearch results and Annahar sports coverage confirming the Arsenal story as the dominant UK cultural event.</p>
+</div>
+
+<!-- SECTION 2: SOCIAL PULSE -->
+<div class="section">
+  <div class="section-label"><h3>&sect;2 &mdash; Social Pulse &middot; X &amp; TikTok</h3></div>
+
+  <div class="two-col" style="margin-bottom:1.5rem">
+    <div>
+      <span class="sub-label">X/Twitter &mdash; United States Trending</span>
+      <table class="data-table">
+        <tbody>
+          <tr><td class="pos">1</td><td><strong>#ArsenalChampions</strong> <span class="tag tb">Sport</span><br><small>Cross-Atlantic celebrations; US football fans joining in</small></td></tr>
+          <tr><td class="pos">2</td><td><strong>Trump Iran Strike</strong> <span class="tag tc">Politics</span><br><small>Reactions to cancelled military action; what "great progress" means</small></td></tr>
+          <tr><td class="pos">3</td><td><strong>Bardem Cannes</strong> <span class="tag tp">Culture</span><br><small>Naming of Trump, Putin, Netanyahu; Hollywood blacklist debate</small></td></tr>
+          <tr><td class="pos">4</td><td><strong>Olivia Dean</strong> <span class="tag tg">Music</span><br><small>UK chart dominance; US listeners discovering her</small></td></tr>
+          <tr><td class="pos">5</td><td><strong>30Y Treasury 5.19%</strong> <span class="tag ta">Markets</span><br><small>Bond market alarm; 2007 comparisons; mortgage anxiety</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <span class="sub-label">X/Twitter &mdash; Worldwide Trending</span>
+      <table class="data-table">
+        <tbody>
+          <tr><td class="pos">1</td><td><strong>#Arsenal</strong> <span class="tag tb">Sport</span><br><small>Global football community celebrating or commiserating</small></td></tr>
+          <tr><td class="pos">2</td><td><strong>#Cannes2026</strong> <span class="tag tp">Culture</span><br><small>Red carpet, Bardem, Blanchett dress, political statements</small></td></tr>
+          <tr><td class="pos">3</td><td><strong>Strait of Hormuz</strong> <span class="tag tc">Geopolitics</span><br><small>Oil transit fears; Gulf shipping; Saudi mediation</small></td></tr>
+          <tr><td class="pos">4</td><td><strong>Mearsheimer Ukraine</strong> <span class="tag tgr">Discourse</span><br><small>May 18 podcast warning on NATO attack risk going viral</small></td></tr>
+          <tr><td class="pos">5</td><td><strong>Lebanon Deir Qanoun</strong> <span class="tag tc">Conflict</span><br><small>Israeli strike; mass condemnation; Annahar live coverage</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <span class="sub-label">TikTok &mdash; Top Trending Sounds (Tokchart, May 19 data)</span>
+  <table class="data-table">
+    <thead><tr><th>Score</th><th>Sound / Artist</th><th>Videos</th><th>Views</th><th>Apple Music</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>975</strong></td>
+        <td><strong>"bye" &mdash; Ariana Grande</strong><br><small>UK creator JXKEZ. Slowed, intimate. Introspection / self-reflection format. Trending in 39+ countries.</small></td>
+        <td>159K</td><td>159M+</td>
+        <td><a href="https://music.apple.com/gb/search?term=bye+ariana+grande">Listen</a></td>
+      </tr>
+      <tr>
+        <td><strong>950</strong></td>
+        <td><strong>"worry (ultra slowed)" &mdash; riserayss &amp; LONOWN</strong><br><small>US creator iampsitive. Electronic/ambient. Anxiety-core, late-night scroll. 38+ countries.</small></td>
+        <td>452K</td><td>54M+</td>
+        <td><a href="https://music.apple.com/gb/search?term=worry+ultra+slowed+riserayss">Listen</a></td>
+      </tr>
+      <tr>
+        <td><strong>933</strong></td>
+        <td><strong>"DANCE..." &mdash; Slayyyter</strong><br><small>kitsch.fx. Pop/dance. Y2K nostalgia, vintage-femme aesthetic. 25+ countries.</small></td>
+        <td>40K</td><td>97M+</td>
+        <td><a href="https://music.apple.com/gb/search?term=dance+slayyyter">Listen</a></td>
+      </tr>
+      <tr>
+        <td><strong>930</strong></td>
+        <td><strong>"NDA" &mdash; Megan Thee Stallion</strong><br><small>Commercial re-surge via "things I can't say out loud" POV drama format. US/Canada.</small></td>
+        <td>33K</td><td>27M+</td>
+        <td><a href="https://music.apple.com/gb/search?term=nda+megan+thee+stallion">Listen</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two-col" style="margin-top:1rem">
+    <div class="story" style="margin-bottom:0"><span class="tag tp">Format</span><h4>"Quiet life" POV videos</h4><p>Domestic scenes &mdash; cooking, morning routines, reading &mdash; set to slowed emotional audio. A retreat from spectacle. Dominant format on UK TikTok this week.</p></div>
+    <div class="story" style="margin-bottom:0"><span class="tag tg">Format</span><h4>"Things are bad but look at this" pivots</h4><p>Users responding to geopolitical news with immediate cuts to personal joy. Escapist redirect as a genre in itself.</p></div>
+    <div class="story" style="margin-bottom:0"><span class="tag tc">Format</span><h4>Gaza/Lebanon talking-head</h4><p>Long-form monologues about Lebanon and Cannes political statements. Educated young audiences; feeds directly from the Bardem/Laverty news cycle.</p></div>
+    <div class="story" style="margin-bottom:0"><span class="tag tb">Format</span><h4>Arsenal celebration compilations</h4><p>Fan footage from the Emirates and streets of Islington. Even non-football UK TikTok fills with these as an ambient joy signal today.</p></div>
+  </div>
+</div>
+
+<!-- SECTION 3: MUSIC & FILM -->
+<div class="section">
+  <div class="section-label"><h3>&sect;3 &mdash; Music &amp; Film</h3></div>
+
+  <span class="sub-label">Apple Music UK Live Chart &middot; Top 12 (kworb.net, 00:02 EST)</span>
+  <table class="data-table">
+    <thead><tr><th>Pos</th><th>Chg</th><th>Artist</th><th>Title</th></tr></thead>
+    <tbody>
+      <tr><td class="pos">1</td><td class="chg eq">=</td><td>Olivia Dean <span class="tag tb">UK</span></td><td>Man I Need</td></tr>
+      <tr><td class="pos">2</td><td class="chg eq">=</td><td>Sam Fender &amp; Olivia Dean <span class="tag tb">UK</span></td><td>Rein Me In</td></tr>
+      <tr><td class="pos">3</td><td class="chg eq">=</td><td>Dave &amp; Tems <span class="tag tb">UK</span></td><td>Raindance</td></tr>
+      <tr><td class="pos">4</td><td class="chg eq">=</td><td>Bella Kay</td><td>iloveitiloveitiloveit</td></tr>
+      <tr><td class="pos">5</td><td class="chg eq">=</td><td>Olivia Dean <span class="tag tb">UK</span></td><td>So Easy (To Fall In Love)</td></tr>
+      <tr><td class="pos">6</td><td class="chg up">+1</td><td>RAYE <span class="tag tb">UK</span></td><td>WHERE IS MY HUSBAND!</td></tr>
+      <tr><td class="pos">7</td><td class="chg dn">&minus;1</td><td>Alex Warren</td><td>FEVER DREAM</td></tr>
+      <tr><td class="pos">8</td><td class="chg up">+1</td><td>Alex Warren</td><td>Ordinary</td></tr>
+      <tr><td class="pos">9</td><td class="chg dn">&minus;1</td><td>Bruno Mars</td><td>I Just Might</td></tr>
+      <tr><td class="pos">10</td><td class="chg up">+3</td><td>Harry Styles <span class="tag tb">UK</span></td><td>Aperture</td></tr>
+      <tr><td class="pos">11</td><td class="chg eq">=</td><td>Taylor Swift</td><td>The Fate of Ophelia</td></tr>
+      <tr><td class="pos">12</td><td class="chg dn">&minus;2</td><td>Olivia Dean <span class="tag tb">UK</span></td><td>Nice To Each Other</td></tr>
+    </tbody>
+  </table>
+
+  <div class="story">
+    <span class="tag tg">Notable Movers</span>
+    <h4>Madonna "Into the Groove" surges +74 (to #74) &mdash; World Cup Halftime Announcement</h4>
+    <p>The dramatic catalogue re-entry follows confirmation that Madonna will headline the FIFA World Cup 2026 final halftime show at MetLife Stadium on July 19 alongside BTS and Shakira. This is a documentable mechanism: announcement drives catalogue surge within 24 hours. Also watch: Harry Styles "Aperture" (+3 to #10) and Noah Kahan "The Great Divide" (+4 to #25) &mdash; both reaching for expansive, contemplative territory against the chart's dominant mood of domestic intimacy.</p>
+  </div>
+
+  <p class="prose">The chart tells a cohesive story. Olivia Dean holds five of the top twelve slots with a debut album foregrounding closeness, vulnerability, and domestic warmth. "Man I Need" is not a protest song or an escape &mdash; it is an insistence on intimacy. This is what UK listeners are reaching for in a week of spiking bond yields, an active Lebanon war, and political instability. The chart is not reflecting the macro; it is actively moving away from it.</p>
+
+  <hr class="divider">
+
+  <span class="sub-label">Edinburgh Cinemas &middot; Week of May 20</span>
+  <table class="data-table">
+    <thead><tr><th>Film</th><th>Venue</th><th>Booking</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Bitter Christmas</strong><br><small>Pedro Almodovar &middot; Cannes 2026 Competition</small></td><td>Cameo Picturehouse</td><td><a href="https://www.picturehouses.com/cinema/cameo-picturehouse">picturehouses.com</a></td></tr>
+      <tr><td><strong>Paper Tiger</strong><br><small>James Gray &middot; Cannes 2026 Competition</small></td><td>Everyman St James Quarter</td><td><a href="https://www.everymancinema.com/venues-list/g018l-everyman-edinburgh/">everymancinema.com</a></td></tr>
+      <tr><td><strong>Sheep in a Box</strong><br><small>Hirokazu Kore-eda &middot; Cannes 2026</small></td><td>Cameo Picturehouse</td><td><a href="https://www.picturehouses.com/cinema/cameo-picturehouse">picturehouses.com</a></td></tr>
+      <tr><td><strong>Mission: Impossible &mdash; The Final Reckoning</strong><br><small>Tom Cruise blockbuster</small></td><td>Cineworld Edinburgh IMAX / Odeon Lothian Road</td><td><a href="https://www.cineworld.co.uk/cinemas/edinburgh/037">cineworld.co.uk</a></td></tr>
+      <tr><td><strong>The Electric Kiss (La Venus electrique)</strong><br><small>Pierre Salvadori &middot; Cannes 2026 opening film</small></td><td>Cameo / Filmhouse at Cameo</td><td><a href="https://www.picturehouses.com/cinema/cameo-picturehouse">picturehouses.com</a></td></tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <span class="sub-label">Cannes 2026 &middot; 79th Festival (May 12-23) &mdash; Today at the Festival</span>
+
+  <div class="story">
+    <span class="tag tp">Cannes &middot; Today</span>
+    <h4>Mstyslav Chernov Exhibition Opens &mdash; 11:30 a.m., Maison France Televisions</h4>
+    <p>The Ukrainian filmmaker and war correspondent &mdash; whose film <em>20 Days in Mariupol</em> won the Academy Award &mdash; opens a documentary photography exhibition at Cannes today. His presence places direct war testimony at the heart of the festival's cultural politics, alongside fiction competition that is itself making the Ukraine war and Gaza conflict explicit subjects.</p>
+    <div class="src">Source: <a href="https://www.festival-cannes.com/en/press/press-releases/the-films-of-the-official-selection-2026/">Festival de Cannes</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tp">Cannes &middot; Competition</span>
+    <h4>Pedro Almodovar's <em>Bitter Christmas</em> &mdash; Main Competition</h4>
+    <p>The Spanish auteur's latest film is in the main competition. Jury president Park Chan-wook has explicitly framed this edition as one where political engagement is welcomed rather than disqualifying.</p>
+  </div>
+
+  <hr class="divider">
+  <span class="sub-label">New Music This Week</span>
+  <p class="prose">Drake's <em>ICEMAN</em> dropped May 15. Coming May 22: Ed O'Brien (Radiohead) releases solo album <em>Blue Morpho</em>, described as deeply atmospheric and environmental; Future Islands release <em>From a Hole in the Floor to a Fountain of Youth</em>. On May 29: Paul McCartney's <em>The Boys of Dungeon Lane</em> arrives &mdash; his first studio album since 2020's <em>McCartney III</em>. The week's most anticipated releases lean toward introspective, literary, and experimental work from veteran artists &mdash; a marked contrast with the chart's youthful intimacy.</p>
+</div>
+
+<!-- SECTION 4: NEWS -->
+<div class="section">
+  <div class="section-label"><h3>&sect;4 &mdash; News</h3></div>
+
+  <span class="sub-label">United Kingdom</span>
+
+  <div class="story">
+    <span class="tag tb">Sport / UK</span>
+    <h4>Arsenal Win the Premier League &mdash; First Title in Over Two Decades</h4>
+    <p>Arsenal Football Club claimed the English Premier League title on Tuesday evening, triggering mass celebrations in north London and across the country. Fans streamed onto streets around the Emirates Stadium and filled pubs across Britain. The win ends a long wait and provides a moment of genuine collective joy in a country navigating political turbulence and economic stress. Annahar's sports desk led with it at midnight: "Arsenal fans set London alight after clinching the English League title."</p>
+    <div class="src">Source: <a href="https://www.annahar.com/sports/311566/">Annahar Sports</a> &middot; BBC Sport</div>
+  </div>
+
+  <div class="story">
+    <span class="tag ta">Politics / UK</span>
+    <h4>Starmer Under Pressure as Reform Surges; All Devolved Nations Now Nationalist</h4>
+    <p>Following heavy Labour losses in local and regional elections, Keir Starmer faces growing calls to resign. Reform UK has gained more than 1,400 council seats. All three devolved nations outside England &mdash; Scotland, Wales, and Northern Ireland &mdash; are now governed by nationalist or pro-independence parties, creating a constitutional picture unlike anything seen in modern British politics. Tommy Robinson's "Unite the Kingdom" march drew 60,000 people through central London on May 16, the same day as a large pro-Palestine demonstration, the two crowds separated by police.</p>
+    <div class="src">Source: <a href="https://www.npm.org/2026/05/10/nx-s1-5817491/uk-elections-keir-starmer-resign-reform-green">NPR</a> &middot; <a href="https://www.aljazeera.com/news/2026/5/6/follow-the-money-how-far-right-reform-uk-built-a-global-network">Al Jazeera</a> &middot; <a href="https://www.cbsnews.com/news/london-unite-the-kingdom-march-tommy-robinson/">CBS News</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tgr">Weather / UK</span>
+    <h4>UK Records Coldest May Night Ever: &minus;6.1&deg;C in Altnaharra</h4>
+    <p>The Scottish Highlands recorded the UK's coldest May overnight temperature on record at &minus;6.1&deg;C in Altnaharra, with heavy snowfall in Shetland. King Charles opened Parliament on May 13; David Beckham met the King at the Chelsea Flower Show yesterday. Seasonal normality and climatic record-breaking are running simultaneously.</p>
+    <div class="src">Source: <a href="https://en.wikipedia.org/wiki/2026_in_the_United_Kingdom">Wikipedia &middot; 2026 in the UK</a></div>
+  </div>
+
+  <hr class="divider">
+  <span class="sub-label">International</span>
+
+  <div class="story">
+    <span class="tag tc">Middle East &middot; Geopolitics</span>
+    <h4>Trump Cancels Iran Strike After Saudi Arabia, Qatar and UAE Intervene</h4>
+    <p>President Trump announced he has cancelled a planned US military strike on Iran after Saudi Arabia, Qatar, and the UAE asked him to "hold off" and told him "serious talks are now in progress." Brent crude slipped to $110&ndash;111/barrel on the news but remained elevated. The Strait of Hormuz has been functionally closed since Iranian forces declared it shut on March 4. The US launched Operation Project Freedom on May 4 to escort merchant ships; Iranian bases at Bandar Abbas and Qeshm were struck during exchanges on May 7. Saudi Arabia subsequently denied the US access to its airspace and bases, effectively pausing the operation. Saudi Aramco's CEO warns the market will not normalize until 2027 if closure continues past mid-June. The IEA reports rapidly declining global oil inventories. No diplomatic breakthrough has been confirmed. This is a fragile, non-linear situation.</p>
+    <div class="src">Source: <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis">Wikipedia &middot; Hormuz Crisis</a> &middot; <a href="https://fortune.com/article/price-of-oil-05-19-2026/">Fortune</a> &middot; <a href="https://www.cnn.com/2026/05/04/world/live-news/iran-war-hormuz-trump">CNN</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tc">Lebanon &middot; Conflict</span>
+    <h4>Israel Strikes Southern Lebanon: Massacre Reported in Deir Qanoun al-Nahr</h4>
+    <p>Israeli forces carried out strikes in southern Lebanon overnight into May 20, with Annahar reporting a massacre in the village of Deir Qanoun al-Nahr as military escalation continues at its most intense point yet. Hezbollah has responded with rocket and drone attacks in the Galilee. Lebanese army commander Joseph Aoun states that Lebanon's negotiating framework requires full Israeli withdrawal and a ceasefire &mdash; conditions Israel has not accepted. A third ceasefire is underway but analysts regard it as a repetition of two previous failed attempts. Annahar columnists today raise the question of whether the Iran war is driving Tehran toward normalising the nuclear option rather than backing down.</p>
+    <div class="src">Source: <a href="https://www.annahar.com/lebanon/politics/282150/">Annahar &middot; live coverage</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tgr">Americas &middot; Energy</span>
+    <h4>Cuba Completely Out of Diesel; Havana Faces 22-Hour Daily Blackouts</h4>
+    <p>Cuba has officially announced it has exhausted its diesel reserves due to the US blockade, with blackouts in Havana now lasting 20&ndash;22 hours per day. The crisis is the most severe since the Special Period of the early 1990s. In other Americas news: Peru's presidential election first-round results are confirmed &mdash; Keiko Fujimori and Roberto Sanchez advance to a June 7 runoff.</p>
+    <div class="src">Source: <a href="https://en.wikipedia.org/wiki/Portal:Current_events/May_2026">Wikipedia &middot; Current Events May 2026</a></div>
+  </div>
+
+  <hr class="divider">
+  <span class="sub-label" style="font-size:.85rem">النهار &middot; لبنان &middot; 20 مايو 2026</span>
+
+  <div class="arabic">
+    <div class="story">
+      <span class="tag tc">حرب &middot; لبنان</span>
+      <h4>حرب لبنان: مجزرة إسرائيلية في دير قانون النهر والتصعيد على أشدّه</h4>
+      <p>تواصل النهار تغطية مباشرة لأحداث الجنوب اللبناني بعد تنفيذ الجيش الإسرائيلي ضربات على دير قانون النهر، مع تصاعد المواجهات بين حزب الله والقوات الإسرائيلية في الجليل الأعلى.</p>
+      <div class="src">المصدر: <a href="https://www.annahar.com/lebanon/politics/282150/">النهار &middot; تغطية مستمرة</a></div>
+    </div>
+    <div class="story">
+      <span class="tag ta">إيران &middot; لبنان</span>
+      <h4>صباح "النهار": حزب الله يُصعّد وترامب يمهل إيران أياماً... تطبيع مع الخيار النووي؟</h4>
+      <p>يطرح كتّاب النهار اليوم سؤالاً مقلقاً: هل يدفع الضغط العسكري الأمريكي إيران نحو التطبيع مع الخيار النووي بدلاً من التراجع؟ بينما يُصعّد حزب الله ميدانياً ويستمر التبادل العسكري على حدود لبنان.</p>
+      <div class="src">المصدر: <a href="https://en.annahar.com/lebanon/311595/">النهار &middot; صباح النهار</a></div>
+    </div>
+    <div class="story">
+      <span class="tag tgr">سياسة داخلية</span>
+      <h4>العفو العام إلى الهيئة العامّة: تسويات على الإعدام والمؤبّد واعتراضات على إطلاق الموقوفين</h4>
+      <p>يتجه مشروع قانون العفو العام إلى الهيئة العامة للبرلمان اللبناني وسط خلافات حول التسويات على أحكام الإعدام والمؤبّد، مع اعتراضات على الإفراج عن بعض الموقوفين، في ظل ضغوط لإقراره قبل عيد الأضحى.</p>
+      <div class="src">المصدر: <a href="https://www.annahar.com/lebanon/politics/311437/">النهار</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: BUSINESS -->
+<div class="section">
+  <div class="section-label"><h3>&sect;5 &mdash; Business &amp; Markets</h3></div>
+
+  <div class="warn-banner">
+    <strong>Macro Warning &mdash; Hormuz &amp; Bond Markets:</strong> The Strait of Hormuz has been functionally closed since March 4, 2026. Brent crude: <strong>$111/barrel</strong>. Saudi Aramco CEO warns market cannot normalize until 2027 if closure continues past mid-June. The 30-year US Treasury yield hit <strong>5.19%</strong> &mdash; a 19-year high &mdash; adding a fiscal stress layer to the energy shock. The IEA reports rapidly declining global oil inventories.
+  </div>
+
+  <div class="market-grid">
+    <div class="market-tile"><div class="mt-name">S&amp;P 500</div><div class="mt-val">7,353</div><div class="mt-chg" style="color:#c0392b">&#9660; 0.67%</div></div>
+    <div class="market-tile"><div class="mt-name">Nasdaq</div><div class="mt-val">25,870</div><div class="mt-chg" style="color:#c0392b">&#9660; 0.84%</div></div>
+    <div class="market-tile"><div class="mt-name">30Y Treasury</div><div class="mt-val">5.19%</div><div class="mt-chg" style="color:#c0392b">&#9650; 19-yr high</div></div>
+    <div class="market-tile"><div class="mt-name">Brent Crude</div><div class="mt-val">$111</div><div class="mt-chg" style="color:#c0392b">&#9660; 0.14%</div></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tc">Energy &middot; Markets</span>
+    <h4>Bond Yields and Oil Form a Dual Squeeze on Equity Markets</h4>
+    <p>The S&amp;P 500 has now fallen for three consecutive sessions as the 30-year Treasury yield's surge to near-20-year highs raises the cost of capital across the entire economy. The underlying driver is a fiscal arithmetic problem: elevated oil prices raise inflation expectations, which push bond yields higher, which pressure equity valuations. Traders who had priced in Fed rate cuts in Q3 are reassessing. The market is not yet in crisis, but the mechanics of stress are clearly present. Losses on Tuesday were led by Cisco Systems (&minus;3.04%), Boeing (&minus;2.62%), and 3M (&minus;2.08%).</p>
+    <div class="src">Source: <a href="https://www.cnbc.com/2026/05/18/stock-market-today-live-updates.html">CNBC</a> &middot; <a href="https://www.thestreet.com/latest-news/stock-market-today-may-18-2026-updates">TheStreet</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag ta">Corporate &middot; Auto</span>
+    <h4>Honda Suspends Ontario EV Plant Amid Tariff Fallout and Demand Slowdown</h4>
+    <p>Honda has suspended plans to build an electric vehicle plant in Ontario, Canada, citing weaker EV demand, the impact of US tariffs on Canadian automotive production, and mounting corporate losses in Japan. The move signals a significant deceleration in EV transition timelines when trade friction and rising capital costs are applied.</p>
+    <div class="src">Source: <a href="https://en.wikipedia.org/wiki/Portal:Current_events/May_2026">Wikipedia &middot; Current Events</a></div>
+  </div>
+
+  <div class="watch-box">
+    <strong>Watch:</strong> Saudi Aramco's warning sets a hard mid-June deadline for oil market stabilization. If no deal emerges on Hormuz, expect Brent to test $120+ heading into summer, with knock-on effects on UK petrol prices and household energy bills ahead of the July school holidays. The Peru presidential runoff (June 7) also bears watching for Latin American market sentiment.
+  </div>
+</div>
+
+<!-- SECTION 6: SCIENCE & TECH -->
+<div class="section">
+  <div class="section-label"><h3>&sect;6 &mdash; Science &amp; Tech</h3></div>
+
+  <div class="story">
+    <span class="tag tp">AI &middot; Governance</span>
+    <h4>Five Eyes Agencies Issue Joint Guidance on Agentic AI in Critical Infrastructure</h4>
+    <p>The cybersecurity and intelligence agencies of the United States, Australia, Canada, New Zealand, and the United Kingdom have jointly released guidance on security risks in agentic AI systems deployed in critical infrastructure and defence environments. Microsoft and xAI have agreed to provide regulators with early access to models before public release. The guidance reflects growing governmental anxiety about autonomous AI making consequential decisions in high-stakes environments &mdash; a concern that has moved from academic to regulatory priority in under 18 months.</p>
+    <div class="src">Source: <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">Crescendo AI News</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tg">Space &middot; AI</span>
+    <h4>NASA Tests Radiation-Hardened AI Chip for Deep Space Autonomy</h4>
+    <p>NASA is testing a next-generation space processor capable of giving spacecraft significantly greater autonomous operation capacity, with performance hundreds of times beyond current spaceflight computers. The technology is designed for AI-powered deep space missions, reducing dependence on Earth-based communication for scientific decision-making.</p>
+    <div class="src">Source: <a href="https://www.sciencedaily.com/releases/2026/05/260515002134.htm">ScienceDaily</a></div>
+  </div>
+
+  <div class="two-col" style="margin-top:.5rem">
+    <div class="story" style="margin-bottom:0">
+      <span class="tag ta">AI &middot; Models</span>
+      <h4>Gemini 3.5 Flash: Frontier Intelligence at 4&times; Speed</h4>
+      <p>Google's Gemini 3.5 Flash has reached general availability with frontier-level intelligence at 4&times; the speed of comparable models, priced at $1.50/$9 per 1M tokens with a 1M context window.</p>
+    </div>
+    <div class="story" style="margin-bottom:0">
+      <span class="tag tc">AI &middot; Culture</span>
+      <h4>Oscars Bar AI-Generated Actors and Scripts from Eligibility</h4>
+      <p>The Academy has ruled AI-generated actors and scripts ineligible for Oscar nomination &mdash; arriving during a Cannes festival already preoccupied with AI's implications for creative labour. The two rulings in the same week form a coherent regulatory-cultural response to the same anxiety.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 7: CULTURAL ACTS & THE STREETS -->
+<div class="section">
+  <div class="section-label"><h3>&sect;7 &mdash; Cultural Acts &amp; The Streets</h3></div>
+
+  <span class="sub-label">On the Streets</span>
+
+  <div class="story">
+    <span class="tag tc">Protest &middot; London</span>
+    <h4>Tommy Robinson "Unite the Kingdom" March &mdash; 60,000 in London (May 16)</h4>
+    <p>On May 16 &mdash; one day after Nakba Day &mdash; approximately 60,000 people marched through central London in a "Unite the Kingdom" rally organised by Tommy Robinson. Simultaneously, a separate pro-Palestine demonstration also drew tens of thousands in the same city. The coexistence of these two marches &mdash; explicitly opposing in their politics, roughly equal in scale &mdash; on the same day in the same city is a direct signal of peak political polarisation in UK street culture. Police maintained separation between the two crowds. The parallel march dynamic is itself the story: neither can be understood without the other. Cross-border context: far-right street mobilisations have also grown in France and Germany in recent months, driven by similar electoral dynamics.</p>
+    <div class="src">Source: <a href="https://www.aljazeera.com/news/2026/5/16/tens-of-thousands-march-in-london-in-far-right-and-pro-palestine-protests">Al Jazeera</a> &middot; <a href="https://www.cbsnews.com/news/london-unite-the-kingdom-march-tommy-robinson/">CBS News</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tg">Protest &middot; US</span>
+    <h4>May Day Strong: 750+ Events Under "Workers Over Billionaires" (May 1)</h4>
+    <p>Nearly 500 organisations coordinated more than 750 events on May 1 across American cities. Chicago, New York, Los Angeles, and Minneapolis saw the largest rallies. The 2026 edition was explicitly anti-billionaire in framing &mdash; shaped by the Bezos Met Gala controversy, AI-driven job displacement fears, and anger at the wealth concentration that accompanied the post-pandemic tech surge. The May Day protests and the Met Gala protesters projecting "Boycott the Bezos Met Gala" form a single coherent cultural-political moment: the same argument against extreme wealth, made simultaneously on the street and on the red carpet wall.</p>
+    <div class="src">Source: <a href="https://en.wikipedia.org/wiki/2026_May_Day_protests">Wikipedia</a> &middot; <a href="https://www.npr.org/2026/05/01/nx-s1-5805805/may-day-protests-boycott-schools-trump">NPR</a></div>
+  </div>
+
+  <span class="sub-label" style="margin-top:1.25rem">Artist Statements &amp; Acts</span>
+
+  <div class="story">
+    <span class="tag tc">Cannes &middot; Statement</span>
+    <h4>Javier Bardem Names Trump, Putin &amp; Netanyahu by Name at Cannes Press Conference</h4>
+    <p>The Oscar-winning Spanish actor connected the theme of destructive masculinity to current world politics at a Cannes press conference, naming Donald Trump, Vladimir Putin, and Benjamin Netanyahu as examples of what he described as "toxic male behaviour driving global conflicts, including in the Middle East and Ukraine." Asked about fear of career consequences for speaking out about Gaza: "The fear does exist, granted, but one has to do things even if you feel a bit scared or afraid. You have to be able to look at yourself in the mirror." He predicted that those making Hollywood blacklists "will be exposed" and "will be the ones suffering the consequences." He argued that things are changing, driven by a younger generation "more aware of situations we're experiencing quite directly on our phones and on other screens" &mdash; that the Gaza situation "cannot be justified and there can be no reason, no explanation for this genocide."</p>
+    <p style="margin-top:.4rem"><strong>Political valence:</strong> Anti-authoritarian, anti-war, pro-Palestine. <strong>Backlash:</strong> Hollywood studios silent. Trending globally. <strong>Discourse link:</strong> Bardem arrives at the same conclusion as Mearsheimer &mdash; that Western leadership bears responsibility for escalatory dynamics &mdash; but through a moral-masculine rather than structural-realist frame. His framing travels further on social media precisely because it is affective rather than analytical.</p>
+    <div class="src">Source: <a href="https://variety.com/2026/film/festivals/javier-bardem-cannes-hollywood-palestine-blacklists-1236751418/">Variety</a> &middot; <a href="https://www.thenationalnews.com/arts-culture/film-tv/2026/05/19/cannes-palestine-gaza-cate-blanchett-javier-bardem-hannah-einbinder/">The National</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tp">Cannes &middot; Jury</span>
+    <h4>Paul Laverty Attacks Gaza War and Artist Blacklisting at Opening Press Conference</h4>
+    <p>Scottish screenwriter Paul Laverty &mdash; Cannes jury member and Ken Loach's longtime collaborator &mdash; used the festival's opening press conference to criticise the war in Gaza and what he described as the blacklisting of artists who have spoken out. He argued that artists have a responsibility to engage with the world rather than avoid difficult political subjects. As a jury member helping decide the Palme d'Or, his statement carries institutional weight that a press conference comment from a cast member would not.</p>
+    <div class="src">Source: <a href="https://www.thenationalnews.com/arts-culture/film-tv/2026/05/19/cannes-palestine-gaza-cate-blanchett-javier-bardem-hannah-einbinder/">The National</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tp">Cannes &middot; Jury President</span>
+    <h4>Park Chan-wook: "Politics and Art Should Not Be Divided"</h4>
+    <p>Park Chan-wook opened the 79th Cannes Film Festival by asserting that a work of art containing a political statement should not be viewed as an "enemy of art," and that a film lacking a political stance should not be overlooked on those grounds. This establishes the Competition's evaluative framework explicitly: political engagement is not penalised, it is part of what the jury is looking for.</p>
+    <div class="src">Source: <a href="https://www.missionkiawaaz.com/cannes-2026-politics-and-art-should/">Mission Ki Awaaz</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tgr">Cannes &middot; Documentary</span>
+    <h4>Cate Blanchett Discusses Palestine at Cannes Public Conversation</h4>
+    <p>Cate Blanchett addressed Palestine during a public conversation at Cannes after an audience member thanked her for speaking out in defence of Palestinians. She discussed AI, Palestine, and the persistent lack of women in film crews. Her custom Haider Ackermann for Jean Paul Gaultier gown &mdash; which appeared black from the front but showed white at the back and green lining when she moved, appearing to echo the Palestinian flag's colours against the red carpet &mdash; sparked a large online debate before she clarified it was not designed as a political statement. Whether intentional or not, the image circulated globally as political imagery.</p>
+    <div class="src">Source: <a href="https://www.thenationalnews.com/arts-culture/film-tv/2026/05/19/cannes-palestine-gaza-cate-blanchett-javier-bardem-hannah-einbinder/">The National</a> &middot; <a href="https://www.jezebel.com/auto-draft-42">Jezebel</a></div>
+  </div>
+
+  <span class="sub-label" style="margin-top:1.25rem">Fashion &amp; Art Scene</span>
+
+  <div class="story">
+    <span class="tag ta">Fashion &middot; Met Gala</span>
+    <h4>Met Gala 2026: "Fashion Is Art" &mdash; Jeff Bezos as Co-Chair, Protesters Outside</h4>
+    <p>The 2026 Met Gala (held earlier this month) adopted the theme "Costume Art" / dress code "Fashion Is Art" and was co-chaired by Jeff Bezos and Lauren Sanchez Bezos &mdash; a choice that generated immediate protest, with activists projecting "Boycott the Bezos Met Gala" onto the Bezoses' Madison Square Park penthouse. A single seat cost $100,000; a table of ten, $350,000. The choice of Bezos &mdash; a figure who embodies AI-driven labour displacement, extreme wealth concentration, and the Amazon logistics model &mdash; as the symbolic figurehead of the most expensive fashion event in the world generated a cultural irony that fashion from within could not supply: the critique came entirely from outside the event. The "Fashion Is Art" theme was widely read as a defensive assertion: art claims cultural protection, and the gala was reaching for that status at a moment of intense public scrutiny.</p>
+    <div class="src">Source: <a href="https://theconversation.com/the-2026-met-gala-dress-code-is-fashion-is-art-but-is-it-281336">The Conversation</a> &middot; <a href="https://www.wsws.org/en/articles/2026/05/07/ruuu-m07.html">WSWS</a></div>
+  </div>
+
+  <div class="story">
+    <span class="tag tp">Art &middot; Venice Biennale</span>
+    <h4>Venice Biennale 2026: "In Minor Keys" &mdash; Russia Returns, Israel Controversy, Queer Ruins</h4>
+    <p>The 61st Venice Art Biennale (running May 9 &ndash; November 22) takes its curatorial theme from the late Koyo Kouoh &mdash; grief, memory, spirituality, and global exhaustion &mdash; under the title <em>In Minor Keys</em>. The return of the Russian Pavilion after absences in 2022 and 2024 sparked immediate condemnation from artists, curators, and Ukrainian representatives. Israel's participation generated a parallel controversy, with over 200 artists and cultural figures signing open letters against inclusion. The Greece Pavilion by Andreas Angelidakis presents "soft ruins" exploring post-truth politics and the commercialisation of national identity. The German Pavilion examines absent East German histories through Sung Tieu and Henrike Naumann. <strong>Leading signal:</strong> the Biennale's overall mood of exhaustion, memory, and grief was planned by Kouoh in 2025 and has arrived at the exact cultural moment it was designed to address. This is the most powerful anticipatory signal in today's digest &mdash; the art world read the world's condition 12&ndash;18 months ahead of now, and the reading remains accurate.</p>
+    <div class="src">Source: <a href="https://whitewall.art/art/venice-biennale-2026-national-pavilions-must-see-presentations/">Whitewall</a> &middot; <a href="https://www.archdaily.com/1041443/8-national-pavilion-highlights-from-the-2026-venice-art-biennale">ArchDaily</a> &middot; <a href="https://www.positive-magazine.com/venice-biennale-2026-controversies/">Positive Magazine</a></div>
+  </div>
+
+  <div class="conv-box">
+    <h5>Cross-Register: Palestine Solidarity Across All Registers Today</h5>
+    <p>Palestine solidarity is simultaneously visible in: street protest (London, May 16), Cannes press conferences (Bardem, Laverty, Einbinder, Blanchett), the Venice Biennale (open letters against the Israeli Pavilion), TikTok talking-head formats, and the Annahar headlines from Beirut. The cross-border, cross-medium synchronicity &mdash; art fair, film festival, street, social media, and frontline news coverage &mdash; is itself a signal. This is not a single news cycle. It is a sustained cultural-political posture finding simultaneous expression in every available register. When the art world, the street, the film festival, and the Arabic press are all saying the same thing on the same day, the discourse is not niche &mdash; it is the water everything else is swimming in.</p>
+  </div>
+</div>
+
+<!-- SECTION 8: VOICES & NARRATIVES -->
+<div class="section">
+  <div class="section-label"><h3>&sect;8 &mdash; Voices &amp; Narratives</h3></div>
+
+  <span class="sub-label">The Realist Critique</span>
+
+  <div class="story">
+    <span class="tag tt">Academic Realist</span>
+    <h4>Mearsheimer: "We Should Be Deeply Worried" &mdash; Nuclear Escalation Risk in Ukraine and Iran</h4>
+    <p>On May 18, John Mearsheimer appeared on Glenn Diesen's podcast to discuss escalation in both the Ukraine and Iran wars. His argument: in Ukraine, Europe is ramping up drone attacks on Moscow and threatening bigger ones; Russia has made clear the situation is "untenable" and that escalation &mdash; including possible attacks on NATO states &mdash; is being actively considered. The problem is structural: no bargaining space between the sides, no off-ramp. In Iran, the same structural logic applies: no bargaining space, and a Trump who oscillates between threatening to bomb and claiming a deal exists when no evidence of one does. His Substack posts from May 18 &mdash; "Putin's Incentive to Escalate" and "Will He or Won't He?" &mdash; are the most widely circulated analytical pieces on Ukraine this week. His conclusion: "The chances for truly dangerous escalation are real in both wars." This is not a moral argument; it is a deterrence logic argument. The incentive structures point toward escalation regardless of who is morally right.</p>
+    <div class="src">Source: <a href="https://mearsheimer.substack.com/p/putins-incentive-to-escalate">Mearsheimer Substack</a> &middot; <a href="https://www.antiwar.com/blog/2026/05/19/john-mearsheimer-on-putins-incentive-to-escalate/">Antiwar.com</a></div>
+  </div>
+
+  <hr class="divider">
+  <span class="sub-label">The Nationalist Amplifiers</span>
+
+  <div class="cx-grid">
+    <div class="cx-card">
+      <div class="cx-name">Tucker Carlson <span class="tag tc" style="font-size:.62rem">Nationalist</span></div>
+      <div class="cx-framing">Most recent episode (May 6): Rep. Thomas Massie on Trump, AIPAC, and the Epstein file. Frames US foreign policy as captured by special interests. Anti-interventionist on Iran and Ukraine but via cultural-conspiratorial reasoning, not structural realism. <span class="tag tgr" style="font-size:.62rem">Convergent on outcomes</span></div>
+    </div>
+    <div class="cx-card">
+      <div class="cx-name">GB News <span class="tag tc" style="font-size:.62rem">UK Nationalist</span></div>
+      <div class="cx-framing">Leading today with Reform UK surge, Starmer's position, and Tommy Robinson march. Frames the UK political moment as establishment collapse vindicating its audience. On Iran: follows Trump line cautiously, does not push anti-war critique. <span class="tag ta" style="font-size:.62rem">Independent</span> on foreign policy.</div>
+    </div>
+    <div class="cx-card">
+      <div class="cx-name">Ben Shapiro <span class="tag tc" style="font-size:.62rem">Conservative</span></div>
+      <div class="cx-framing">Expected hawkish on Iran &mdash; pro-strike, pro-Israel, divergent from Carlson and Mearsheimer. Daily Wire frames Gulf tensions as failure of appeasement requiring decisive action. <span class="tag tc" style="font-size:.62rem">Divergent</span> from realists.</div>
+    </div>
+    <div class="cx-card">
+      <div class="cx-name">Candace Owens <span class="tag tc" style="font-size:.62rem">Nationalist</span></div>
+      <div class="cx-framing">No specific May 20 episode confirmed. Recent content has taken a pro-Palestinian stance &mdash; unusual for the conservative right &mdash; and anti-globalist economic framing. More aligned with Carlson than Shapiro on Middle East. <span class="tag tgr" style="font-size:.62rem">Independent</span></div>
+    </div>
+    <div class="cx-card">
+      <div class="cx-name">Nick Fuentes <span class="tag tc" style="font-size:.62rem">Nationalist</span></div>
+      <div class="cx-framing"><em>(Tracked analytically.)</em> Likely amplifying anti-Iran war sentiment from an America First position &mdash; convergent with Mearsheimer on anti-escalation outcome, via explicitly nationalist reasoning. <span class="tag tgr" style="font-size:.62rem">Independent</span></div>
+    </div>
+    <div class="cx-card">
+      <div class="cx-name">Al Jazeera <span class="tag tb" style="font-size:.62rem">International</span></div>
+      <div class="cx-framing">Leads with the London parallel marches, giving proportionate weight to the pro-Palestine march vs. BBC's focus on disorder risk. On Lebanon: frames Israeli strikes as ongoing offensive against civilians, not security operations. <span class="tag tp" style="font-size:.62rem">Diverges from BBC/NYT</span></div>
+    </div>
+  </div>
+
+  <div class="conv-box">
+    <h5>Convergence: Anti-Escalation on Iran Across the Full Spectrum</h5>
+    <p>Mearsheimer (structural realism), Carlson (America First), Owens (anti-globalist), and the anti-imperialist left (Mehdi Hasan, Intercepted) all arrive at anti-escalation positions on Iran via completely different reasoning. Mearsheimer: incentive structures show escalation creates lose-lose outcomes regardless of moral framing. Carlson: "Why should Americans die for Gulf oil politics?" The Intercept: anti-imperial, pro-ceasefire. When the academic realist, the nationalist populist, and the anti-imperialist left all converge on the same position, the convergence has historically been a political force &mdash; but the mainstream Republican (Shapiro) and the Israeli right pull in the opposite direction. Watch whether Trump's cancelled strike becomes a "peace deal" narrative or a "weakness" narrative in the next 48 hours. That framing battle will determine which camp wins the week's narrative.</p>
+  </div>
+
+  <div class="silence-box">
+    <h5>Silence Detector: Cuba's Energy Collapse</h5>
+    <p>Cuba has completely run out of diesel, with Havana experiencing 20&ndash;22 hour daily blackouts affecting 11 million people. Intensity: 8/10 as a humanitarian crisis. Cultural registers responding: near zero. Fashion, art, music, podcasts, and UK social media are all silent. This is geographic and cultural distance combined with a media infrastructure that has never maintained strong Cuba coverage. But the silence is worth naming: a country of 11 million in near-total energy collapse in May 2026 has produced almost no cultural response in any of the registers tracked here.</p>
+  </div>
+</div>
+
+<!-- SYNTHESIS -->
+<div class="section">
+  <div class="section-label"><h3>Synthesis</h3></div>
+
+  <div class="story" style="border-color:var(--border-2)">
+    <span class="tag tp">Daily Theme</span>
+    <h4>Culture Narrows While the World Widens</h4>
+
+    <p>The overarching pattern today is a stark bifurcation: the macro world is expanding in danger &mdash; Hormuz, Lebanon escalation, Ukraine nuclear risk, fiscal stress, UK political fragmentation &mdash; while the cultural world, in its chart and social-media expression, is contracting toward the domestic, intimate, and personal. Olivia Dean's dominance of the UK chart is not incidental. Five songs in the top twelve, all foregrounding closeness and emotional directness, in a week of spiking bond yields and an active Lebanon war, is a form of cultural self-protection. The chart is not neutral data; it is the aggregate response of millions of listeners choosing what they want to feel.</p>
+
+    <p style="margin-top:.75rem"><strong>Mechanism (UK chart &mdash; moderate confidence):</strong> Economic insecurity from elevated energy prices and fiscal stress is creating a psychological impulse toward narrowing the world &mdash; making home, relationship, and personal emotion feel manageable when the geopolitical feels uncontrollable. This is not pure escapism; it is intimate realism. Olivia Dean's music is not saying "look away" &mdash; it is saying "look at this instead, it is the scale at which I can still make meaning." The lagging note: most of these songs have been charting for weeks; only some of their current positions are driven by this week's events. The mood they express may predate the latest escalation cycle by several weeks. Mark: <em>speculative-to-moderate</em>. Confirming evidence would be new songs explicitly about domestic scale entering the chart in the next 2&ndash;3 weeks.</p>
+
+    <p style="margin-top:.75rem"><strong>Direct cultural act &mdash; strong confidence:</strong> Javier Bardem naming Trump, Putin, and Netanyahu by name at a major film festival press conference is the clearest, most documentable macro-culture connection of the day. It is not correlation; it is an explicit act of political naming by a major cultural figure in a globally covered public forum. It maps onto the Mearsheimer structural critique (leadership bears responsibility for escalatory dynamics) but frames it through moral-masculine rather than structural-analytical terms. That framing difference matters: it is more emotionally immediate, more personally charged, and more likely to travel on social media. This is why Bardem is trending globally and Mearsheimer's Substack is not. Both are saying the same thing. One of them is going viral.</p>
+
+    <p style="margin-top:.75rem"><strong>Leading signal &mdash; Venice Biennale (strong confidence):</strong> The Biennale's curatorial theme of "grief, memory, and global exhaustion" was planned by Koyo Kouoh in 2025, 12&ndash;18 months before today. It has arrived at the exact cultural moment it was designed to address. This is the most powerful anticipatory signal in today's digest: the art world read the collective emotional condition well in advance, and the reading remains accurate. The exhaustion the Biennale names is not abstract &mdash; it is the lived experience of a world in which multiple simultaneous crises (Ukraine, Lebanon, Iran, UK political fragmentation, fiscal stress) have been running for long enough that the acute alarm of 2022 has become a chronic background condition. "In Minor Keys" is a phrase that describes the current mood almost perfectly.</p>
+
+    <p style="margin-top:.75rem"><strong>Divergence &mdash; the Lebanon silence in the chart (strong confidence):</strong> The UK chart is not reflecting the Lebanon war. There are no songs, no trending sounds, no chart formats explicitly about Lebanon or Iran. The street and the art world have responded; the chart has not. This is consistent with the lagging nature of commercial music, which typically takes 4&ndash;8 weeks to respond to macro events at chart level. Watch the chart in mid-June for any signal. If nothing appears, the silence itself is data: UK music culture may be too economically structured around the global pop machine to produce reactive Lebanon-themed content at chart level. The response, if it comes, is more likely to arrive through grime, UK rap, and folk &mdash; genres that have historically responded faster to geopolitical events than the pop mainstream.</p>
+
+    <p style="margin-top:.75rem"><strong>Mood of the day: Conflicted.</strong> Arsenal joy and Lebanon grief. Cannes courage and fiscal anxiety. A cancelled strike and an ongoing war. The day contains too many contradictory emotional registers to resolve into a single mood. That unresolvability is itself the cultural condition of this moment: we are living in too many different worlds simultaneously.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <h4>Sources</h4>
+  <ul>
+    <li><a href="https://kworb.net/charts/apple_s/uk.html">kworb.net &mdash; Apple Music UK Chart</a></li>
+    <li><a href="https://tokchart.com/">tokchart.com &mdash; TikTok Trending Sounds</a></li>
+    <li><a href="https://www.annahar.com/lebanon/politics">annahar.com &mdash; Lebanon Politics</a></li>
+    <li><a href="https://mearsheimer.substack.com/p/putins-incentive-to-escalate">Mearsheimer Substack</a></li>
+    <li><a href="https://variety.com/2026/film/festivals/javier-bardem-cannes-hollywood-palestine-blacklists-1236751418/">Variety &mdash; Bardem at Cannes</a></li>
+    <li><a href="https://www.thenationalnews.com/arts-culture/film-tv/2026/05/19/cannes-palestine-gaza-cate-blanchett-javier-bardem-hannah-einbinder/">The National &mdash; Cannes Palestine</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis">Wikipedia &mdash; Hormuz Crisis 2026</a></li>
+    <li><a href="https://fortune.com/article/price-of-oil-05-19-2026/">Fortune &mdash; Oil Price May 19</a></li>
+    <li><a href="https://www.cnbc.com/2026/05/18/stock-market-today-live-updates.html">CNBC &mdash; Markets May 18</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/5/16/tens-of-thousands-march-in-london-in-far-right-and-pro-palestine-protests">Al Jazeera &mdash; London Marches</a></li>
+    <li><a href="https://www.festival-cannes.com/en/press/press-releases/the-films-of-the-official-selection-2026/">Festival de Cannes 2026</a></li>
+    <li><a href="https://whitewall.art/art/venice-biennale-2026-national-pavilions-must-see-presentations/">Whitewall &mdash; Venice Biennale 2026</a></li>
+    <li><a href="https://theconversation.com/the-2026-met-gala-dress-code-is-fashion-is-art-but-is-it-281336">The Conversation &mdash; Met Gala 2026</a></li>
+    <li><a href="https://www.sciencedaily.com/releases/2026/05/260515002134.htm">ScienceDaily &mdash; NASA AI Chip</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Portal:Current_events/May_2026">Wikipedia &mdash; Current Events May 2026</a></li>
+    <li><a href="https://www.npm.org/2026/05/10/nx-s1-5817491/uk-elections-keir-starmer-resign-reform-green">NPR &mdash; UK Elections</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2026_May_Day_protests">Wikipedia &mdash; May Day 2026</a></li>
+    <li><a href="https://www.cbsnews.com/news/london-unite-the-kingdom-march-tommy-robinson/">CBS News &mdash; Tommy Robinson March</a></li>
+    <li><a href="https://www.missionkiawaaz.com/cannes-2026-politics-and-art-should/">Mission Ki Awaaz &mdash; Park Chan-wook</a></li>
+  </ul>
+  <p style="margin-top:1rem">Generated autonomously &middot; Firas's Daily Cultural Digest &middot; May 20, 2026 &middot; Edinburgh</p>
+</footer>
+
+</div>
 </body>
 </html>
