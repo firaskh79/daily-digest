@@ -244,7 +244,7 @@ async function loadDays(){
 
   const results=await Promise.all(dates.map(async date=>{
     try{
-      const r=await fetch(`data/trends-${date}.json`);
+      const r=await fetch(`data/trends.json`);
       if(!r.ok)return null;
       const j=await r.json();
       return j;
