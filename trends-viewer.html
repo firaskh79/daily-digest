@@ -235,23 +235,14 @@ async function loadDays(){
   let anchor=params.get('date');
   if(!anchor){const n=new Date();anchor=n.toISOString().slice(0,10);}
 
-  const dates=[];
-  const d=new Date(anchor+'T00:00:00Z');
-  for(let i=0;i<7;i++){
-    dates.push(d.toISOString().slice(0,10));
-    d.setUTCDate(d.getUTCDate()-1);
-  }
-
-  const results=await Promise.all(dates.map(async date=>{
-    try{
-      const r=await fetch(`data/trends.json`);
-      if(!r.ok)return null;
+  try{
+    const r=await fetch(`data/trends.json`);
+    if(r.ok){
       const j=await r.json();
-      return j;
-    }catch{return null;}
-  }));
+      allData=[j];
+    }
+  }catch{}
 
-  allData=results.filter(Boolean);
 
   if(!allData.length){
     document.getElementById('long-content').innerHTML='<div class="loading">No trend data found.</div>';
