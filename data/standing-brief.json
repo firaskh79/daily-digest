@@ -1,0 +1,111 @@
+{
+  "threads": [
+    {
+      "id": "iran-hormuz",
+      "label": "Iran / Hormuz",
+      "status_line": "Nuclear talks in Geneva; Brent at ~$82; US carrier group in region; no naval incident today",
+      "status": "stable",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-22",
+      "expand_if": [
+        "oil spike above $95",
+        "naval incident in Strait",
+        "talks collapse",
+        "new US or Israeli airstrike",
+        "new sanctions package",
+        "Iranian military mobilisation"
+      ]
+    },
+    {
+      "id": "israel-lebanon",
+      "label": "Israel / Lebanon",
+      "status_line": "Low-level skirmishes continue along Blue Line; UNIFIL present; no full ceasefire",
+      "status": "stable",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-22",
+      "expand_if": [
+        "major Israeli incursion",
+        "Hezbollah rocket barrage",
+        "ceasefire agreement",
+        "UNIFIL withdrawal",
+        "US diplomatic intervention",
+        "civilian casualty event"
+      ]
+    },
+    {
+      "id": "venice-biennale",
+      "label": "Venice Biennale 2026",
+      "status_line": "Running Apr–Nov; Palestinian pavilion drawing attention; no major new incident today",
+      "status": "stable",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-22",
+      "expand_if": [
+        "pavilion closure or protest",
+        "new curator statement on current events",
+        "political intervention at a national pavilion",
+        "Israeli pavilion controversy",
+        "prize announcement with political dimension"
+      ]
+    },
+    {
+      "id": "uk-economic-stress",
+      "label": "UK Economic Stress",
+      "status_line": "30Y gilt at ~5.3%; energy prices elevated; government holding fiscal rules",
+      "status": "stable",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-22",
+      "expand_if": [
+        "gilt yield spike above 5.5%",
+        "energy price cap revision",
+        "recession confirmed",
+        "Bank of England emergency action",
+        "government fiscal statement",
+        "major employer redundancy announcement"
+      ]
+    },
+    {
+      "id": "olivia-dean-chart",
+      "label": "Olivia Dean / UK Chart",
+      "status_line": "Holding in Apple Music UK top 5; chart run entering week 3+",
+      "status": "stable",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-22",
+      "expand_if": [
+        "reaches #1",
+        "drops out of top 10",
+        "new single or album announcement",
+        "tour or major interview",
+        "chart record broken"
+      ]
+    },
+    {
+      "id": "tucker-focus",
+      "label": "Tucker Carlson",
+      "status_line": "Leading with Iran diplomacy framing; convergent with Mearsheimer on US military overreach",
+      "status": "stable",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-22",
+      "expand_if": [
+        "new major interview or guest",
+        "shifts to different topic entirely",
+        "controversy or platform change",
+        "convergence with a new political figure"
+      ]
+    },
+    {
+      "id": "mearsheimer",
+      "label": "Mearsheimer",
+      "status_line": "Arguing US pressure on Iran is counterproductive; Substack active; no new lecture this week",
+      "status": "stable",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-22",
+      "expand_if": [
+        "new Substack post",
+        "new podcast appearance",
+        "new lecture or public statement",
+        "shifts argument on a major topic"
+      ]
+    }
+  ],
+  "last_updated": "2026-05-22"
+}
