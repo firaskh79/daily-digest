@@ -1,245 +1,207 @@
 {
-  "date": "2026-05-21",
+  "date": "2026-05-22",
   "mood_of_day": "conflicted",
   "macro": {
     "politics": [
       {
-        "headline": "Trump halts Iran strike, signals deal possible; Tehran warns of 'surprises'",
-        "tags": ["conflict", "Middle East", "Iran", "diplomacy", "oil", "energy"],
+        "headline": "Israeli strike on south Lebanon health centre kills four",
+        "tags": ["conflict", "Middle East", "Lebanon", "Israel"],
         "sentiment": "anxious",
         "intensity": 9
       },
       {
-        "headline": "ICC seeks arrest warrants for Israeli ministers Ben Gvir and Smotrich",
-        "tags": ["geopolitics", "Israel", "international law", "Palestine"],
-        "sentiment": "volatile",
+        "headline": "US Treasury sanctions Shaibani and Hezbollah/Amal MPs; Iran condemns",
+        "tags": ["sanctions", "Middle East", "Iran", "geopolitics"],
+        "sentiment": "anxious",
         "intensity": 8
       },
       {
-        "headline": "Xi and Putin meet in Beijing, present united front against 'Western hegemony'",
-        "tags": ["geopolitics", "Russia", "China", "diplomacy"],
+        "headline": "Thomas Massie loses Kentucky primary to Trump-backed challenger",
+        "tags": ["election", "US politics", "MAGA", "Israel lobby"],
+        "sentiment": "conflicted",
+        "intensity": 7
+      },
+      {
+        "headline": "Bolivia's President Paz faces mass protests and blockades",
+        "tags": ["protest", "Latin America", "politics", "energy"],
         "sentiment": "anxious",
         "intensity": 7
       },
       {
-        "headline": "Israeli airstrikes continue in South Lebanon; Hezbollah escalates; 3rd ceasefire fragile",
-        "tags": ["conflict", "Lebanon", "Israel", "ceasefire"],
+        "headline": "Ebola outbreak in eastern Congo — 134+ suspected deaths, 500+ cases",
+        "tags": ["health", "Congo", "Ebola", "WHO"],
         "sentiment": "anxious",
-        "intensity": 9
+        "intensity": 8
       },
       {
-        "headline": "Wes Streeting challenges Keir Starmer for Labour leadership",
-        "tags": ["election", "UK", "politics", "Labour"],
-        "sentiment": "volatile",
-        "intensity": 6
-      },
-      {
-        "headline": "WHO declares Ebola international emergency: 130+ dead in DRC",
-        "tags": ["health", "Congo", "WHO"],
+        "headline": "Leaked US State Dept memo reveals threat to revoke Palestinian visas over UN post",
+        "tags": ["diplomacy", "Palestine", "US", "UN"],
         "sentiment": "anxious",
         "intensity": 7
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude at $111.12 — down from recent high but 62.6% above year-ago levels",
-        "tags": ["energy", "oil", "Iran", "Hormuz", "markets"],
+        "headline": "Brent crude at $104.52/bbl (+1.89%) — Iran/Hormuz uncertainty persists",
+        "tags": ["energy", "oil", "Iran", "markets"],
         "sentiment": "volatile",
         "intensity": 8
       },
       {
-        "headline": "S&P 500 at 7,418 (+0.88%), Nasdaq at 26,201 (+1.28%) — markets rally on Iran diplomacy hopes",
-        "tags": ["markets", "equities", "US"],
-        "sentiment": "cautiously optimistic",
+        "headline": "30-year Treasury yield at 5.09% — highest since pre-financial crisis",
+        "tags": ["markets", "inflation", "bonds", "recession-risk"],
+        "sentiment": "anxious",
+        "intensity": 8
+      },
+      {
+        "headline": "S&P 500 on track for 8th straight weekly gain despite bond market stress",
+        "tags": ["markets", "equities", "S&P 500"],
+        "sentiment": "celebratory",
         "intensity": 5
       },
       {
-        "headline": "Meta cuts 8,000 jobs in first wave of 10% workforce reduction alongside AI investment surge",
-        "tags": ["tech", "AI", "labour", "Meta"],
-        "sentiment": "volatile",
+        "headline": "SpaceX files S-1 for potentially largest IPO in US history — $18.7bn revenue",
+        "tags": ["tech", "IPO", "SpaceX", "markets"],
+        "sentiment": "energised",
         "intensity": 7
       },
       {
-        "headline": "JPMorgan formalises AI as core infrastructure: $19.8B tech budget, $2.5B projected annual value",
-        "tags": ["AI", "finance", "tech", "banking"],
+        "headline": "Nvidia guides to $91bn Q2 revenue, announces $80bn buyback",
+        "tags": ["AI", "tech", "markets", "Nvidia"],
         "sentiment": "energised",
-        "intensity": 6
+        "intensity": 7
       }
     ],
     "google_trends_uk": [
-      { "rank": 1, "term": "Arsenal Premier League", "volume_est": "1M+" },
-      { "rank": 2, "term": "Mission Impossible Final Reckoning", "volume_est": "500K+" },
-      { "rank": 3, "term": "Wes Streeting Labour leader", "volume_est": "300K+" },
-      { "rank": 4, "term": "Iran deal Trump", "volume_est": "200K+" },
-      { "rank": 5, "term": "UK coldest May temperature", "volume_est": "150K+" }
+      { "rank": 1, "term": "Olivia Dean", "volume_est": "High — contextual inference" },
+      { "rank": 2, "term": "Cannes 2026", "volume_est": "High — contextual inference" },
+      { "rank": 3, "term": "Altnaharra temperature", "volume_est": "High — contextual inference" },
+      { "rank": 4, "term": "South East Water", "volume_est": "Medium — contextual inference" },
+      { "rank": 5, "term": "Paul McCartney album", "volume_est": "Medium — contextual inference" }
     ],
     "pytrends_uk_live": []
   },
   "culture": {
     "music": {
       "apple_music_uk_top12": [
-        { "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["intimate", "warm", "romantic"], "theme_tags": ["love", "home", "longing"] },
-        { "pos": 2, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["intimate", "contemplative"], "theme_tags": ["love", "belonging", "identity"] },
-        { "pos": 3, "artist": "Dave & Tems", "title": "Raindance", "change": 0, "uk_artist": true, "mood_tags": ["energised", "confident"], "theme_tags": ["ambition", "community", "identity"] },
+        { "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["intimate", "romantic"], "theme_tags": ["love", "longing"] },
+        { "pos": 2, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["contemplative", "intimate"], "theme_tags": ["belonging", "identity"] },
+        { "pos": 3, "artist": "Dave & Tems", "title": "Raindance", "change": 0, "uk_artist": true, "mood_tags": ["energised", "romantic"], "theme_tags": ["love", "community"] },
         { "pos": 4, "artist": "Bella Kay", "title": "iloveitiloveitiloveit", "change": 0, "uk_artist": false, "mood_tags": ["euphoric", "celebratory"], "theme_tags": ["love", "excess"] },
-        { "pos": 5, "artist": "Olivia Dean", "title": "So Easy (To Fall In Love)", "change": 0, "uk_artist": true, "mood_tags": ["romantic", "warm"], "theme_tags": ["love", "longing"] },
-        { "pos": 6, "artist": "RAYE", "title": "WHERE IS MY HUSBAND!", "change": 1, "uk_artist": true, "mood_tags": ["defiant", "energised"], "theme_tags": ["identity", "loss", "resistance"] },
-        { "pos": 7, "artist": "Alex Warren", "title": "FEVER DREAM", "change": -1, "uk_artist": false, "mood_tags": ["melancholic", "contemplative"], "theme_tags": ["loss", "longing"] },
-        { "pos": 8, "artist": "Alex Warren", "title": "Ordinary", "change": 1, "uk_artist": false, "mood_tags": ["nostalgic", "intimate"], "theme_tags": ["home", "simplicity"] },
-        { "pos": 9, "artist": "Bruno Mars", "title": "I Just Might", "change": -1, "uk_artist": false, "mood_tags": ["romantic", "celebratory"], "theme_tags": ["love", "ambition"] },
-        { "pos": 10, "artist": "Harry Styles", "title": "Aperture", "change": 3, "uk_artist": true, "mood_tags": ["contemplative", "romantic"], "theme_tags": ["transformation", "identity"] },
-        { "pos": 11, "artist": "Taylor Swift", "title": "The Fate of Ophelia", "change": 0, "uk_artist": false, "mood_tags": ["melancholic", "contemplative"], "theme_tags": ["loss", "longing", "transformation"] },
-        { "pos": 12, "artist": "Olivia Dean", "title": "Nice To Each Other", "change": -2, "uk_artist": true, "mood_tags": ["warm", "intimate"], "theme_tags": ["community", "belonging"] }
+        { "pos": 5, "artist": "Olivia Dean", "title": "So Easy (To Fall In Love)", "change": 0, "uk_artist": true, "mood_tags": ["romantic", "nostalgic"], "theme_tags": ["love", "belonging"] },
+        { "pos": 6, "artist": "RAYE", "title": "WHERE IS MY HUSBAND!", "change": 1, "uk_artist": true, "mood_tags": ["defiant", "energised"], "theme_tags": ["identity", "community"] },
+        { "pos": 7, "artist": "Alex Warren", "title": "FEVER DREAM", "change": -1, "uk_artist": false, "mood_tags": ["anxious", "melancholic"], "theme_tags": ["loss", "transformation"] },
+        { "pos": 8, "artist": "Alex Warren", "title": "Ordinary", "change": 1, "uk_artist": false, "mood_tags": ["contemplative"], "theme_tags": ["simplicity", "belonging"] },
+        { "pos": 9, "artist": "Bruno Mars", "title": "I Just Might", "change": -1, "uk_artist": false, "mood_tags": ["romantic", "euphoric"], "theme_tags": ["love", "ambition"] },
+        { "pos": 10, "artist": "Harry Styles", "title": "Aperture", "change": 3, "uk_artist": true, "mood_tags": ["contemplative", "energised"], "theme_tags": ["identity", "transformation"] },
+        { "pos": 11, "artist": "Taylor Swift", "title": "The Fate of Ophelia", "change": 0, "uk_artist": false, "mood_tags": ["melancholic", "contemplative"], "theme_tags": ["loss", "identity"] },
+        { "pos": 12, "artist": "Olivia Dean", "title": "Nice To Each Other", "change": -2, "uk_artist": true, "mood_tags": ["intimate", "warm"], "theme_tags": ["community", "simplicity"] }
       ],
       "tiktok_sounds": [
-        {
-          "title": "worry (ultra slowed)",
-          "artist": "riserayss & LONOWN",
-          "score": 973,
-          "videos": 474433,
-          "views": 71975921,
-          "mood_tags": ["anxious", "escapist", "melancholic"],
-          "theme_tags": ["solitude", "introspection", "loss"]
-        },
-        {
-          "title": "bye",
-          "artist": "Ariana Grande",
-          "score": 962,
-          "videos": 166228,
-          "views": 229556847,
-          "mood_tags": ["nostalgic", "bittersweet"],
-          "theme_tags": ["loss", "longing", "transformation"]
-        },
-        {
-          "title": "The One That Got Away",
-          "artist": "Katy Perry",
-          "score": 961,
-          "videos": 1617806,
-          "views": 369225516,
-          "mood_tags": ["nostalgic", "romantic", "melancholic"],
-          "theme_tags": ["love", "loss", "longing"]
-        },
-        {
-          "title": "Hardest Truth",
-          "artist": "Jubet",
-          "score": 961,
-          "videos": 393658,
-          "views": 9497046,
-          "mood_tags": ["defiant", "energised"],
-          "theme_tags": ["resistance", "identity", "community"]
-        }
+        { "title": "Hardest Truth", "artist": "Jubet", "score": 963, "videos": 430381, "views": 11266872, "mood_tags": ["energised", "defiant"], "theme_tags": ["identity", "resistance"] },
+        { "title": "DANCE...", "artist": "Slayyyter", "score": 952, "videos": 51772, "views": 182941736, "mood_tags": ["euphoric", "escapist"], "theme_tags": ["excess", "community"] },
+        { "title": "worry (ultra slowed)", "artist": "riserayss & LONOWN", "score": 939, "videos": 497886, "views": 74069985, "mood_tags": ["anxious", "melancholic"], "theme_tags": ["solitude", "introspection"] },
+        { "title": "Purpose Is Glorious", "artist": "Natalie Holt", "score": 937, "videos": 537588, "views": 36969004, "mood_tags": ["contemplative", "nostalgic"], "theme_tags": ["ambition", "transformation"] }
       ],
       "new_releases": [
-        { "artist": "Ed O'Brien", "title": "Blue Morpho", "tags": ["UK", "ambient", "ecological", "Radiohead", "releasing-tomorrow"] },
-        { "artist": "Kevin Morby", "title": "Little Wide Open", "tags": ["folk-rock", "indie", "released-May-15"] },
-        { "artist": "Peter Frampton", "title": "Carry the Light", "tags": ["classic-rock", "released-May-15"] }
+        { "artist": "Paul McCartney", "title": "The Boys of Dungeon Lane", "tags": ["rock", "classic", "UK"] },
+        { "artist": "Melanie C", "title": "Sweat", "tags": ["pop", "dance", "UK"] },
+        { "artist": "Drake", "title": "Iceman", "tags": ["hip-hop", "R&B"] },
+        { "artist": "The Black Keys", "title": "Peaches!", "tags": ["rock", "US"] }
       ]
     },
     "film": {
       "cannes_picks": [
-        { "title": "Bitter Christmas", "mood_tags": ["political", "drama"], "theme_tags": ["authoritarianism", "resistance"] },
-        { "title": "The Electric Kiss (Opening Film)", "mood_tags": ["comedic", "nostalgic"], "theme_tags": ["love", "history"] }
+        { "title": "Bitter Christmas (Amarga Navidad)", "mood_tags": ["contemplative", "melancholic"], "theme_tags": ["identity", "grief", "community"] },
+        { "title": "Fatherland 1949 (Palme d'Or frontrunner)", "mood_tags": ["defiant", "contemplative"], "theme_tags": ["history", "identity", "conflict"] },
+        { "title": "All of a Sudden", "mood_tags": ["contemplative"], "theme_tags": ["loss", "belonging"] }
       ],
-      "edinburgh_showing": [
-        "Mission: Impossible — The Final Reckoning",
-        "Lilo & Stitch (live action)",
-        "The Mandalorian & Grogu (opens May 22)"
-      ]
+      "edinburgh_showing": ["F1: The Movie", "Bitter Christmas", "Scarlet", "The Secret Agent", "Blue Velvet (Restoration)"]
     },
     "tiktok_formats": [
-      { "format": "Talking-head AI news reaction", "theme_tags": ["conflict", "resistance", "identity"] },
-      { "format": "Diaspora POV ('What I'd be doing in [conflict zone]')", "theme_tags": ["belonging", "home", "loss"] },
-      { "format": "Slowed reverb ambient study content", "theme_tags": ["solitude", "escapism", "introspection"] },
-      { "format": "Classic rock reveal/reaction (young creators)", "theme_tags": ["nostalgia", "community", "transformation"] }
+      { "format": "Ultra-slowed melancholy / bedroom confessional", "theme_tags": ["solitude", "introspection", "anxiety"] },
+      { "format": "Afro-beat UGC dance challenge", "theme_tags": ["community", "energy", "celebration"] },
+      { "format": "Cinematic soundtrack overlay / emotional reveal", "theme_tags": ["nostalgia", "ambition", "transformation"] },
+      { "format": "High-energy pop choreography", "theme_tags": ["euphoria", "escapism", "community"] }
     ]
   },
   "cultural_acts": [
     {
-      "figure": "Pedro Almodóvar",
+      "figure": "Javier Bardem",
       "type": "statement",
-      "context": "Cannes Film Festival press conference — film Bitter Christmas",
-      "event_description": "At the Cannes 79 press conference on May 20, Almodóvar wore a 'Free Palestine' pin, called Trump, Netanyahu, and Putin 'monsters' by name, declared 'Europe must never be subjected to Trump', and said speaking out is artists' 'moral duty'. Drew sustained applause from the international press.",
-      "political_valence": "anti-authoritarian",
-      "topics": ["authoritarianism", "Palestine", "war", "censorship"],
+      "context": "Cannes press conference",
+      "event_description": "Called Gaza a genocide, stated 'if you justify it with your silence or with your support, you are pro-genocide,' named Trump, Putin and Netanyahu as examples of toxic masculinity driving global conflict. Said Hollywood blacklists will backfire on those enforcing them.",
+      "political_valence": "pro-Palestine",
+      "topics": ["Palestine", "Gaza", "toxic-masculinity", "Hollywood-blacklist"],
       "explicit_targets": ["Trump", "Netanyahu", "Putin"],
-      "backlash": "No significant industry backlash as of May 21. Overwhelmingly positive coverage in European and international press.",
-      "vs_discourse": "Aligns with Mearsheimer's anti-interventionist critique of US-Israel war-making, but reaches it through moral humanism rather than structural IR. Diverges from Tucker Carlson on Palestine specifically.",
+      "backlash": "No immediate backlash. Bardem says he continues to receive work offers globally.",
+      "vs_discourse": "Converges with Mearsheimer on structural lobby power; diverges in frame (moral vs. structural). Would be amplified by Democracy Now, Mehdi Hasan/Zeteo.",
       "reach": "major-press"
     },
     {
-      "figure": "Park Chan-wook",
+      "figure": "Pedro Almodovar",
       "type": "statement",
-      "context": "Cannes 79 jury president opening press conference",
-      "event_description": "Declared 'politics and art should not be divided' and set the jury's framework: political content is not an enemy of art, but artistically weak political films are mere propaganda. Set the evaluative tone for 22 competition films.",
-      "political_valence": "anti-authoritarian",
-      "topics": ["censorship", "artistic-freedom", "politics"],
+      "context": "Cannes press conference for Bitter Christmas",
+      "event_description": "Wore Free Palestine pin. Stated: 'Artists have to speak out about the situation in which they live in contemporary society. It's a moral duty.' Film received nine-minute standing ovation.",
+      "political_valence": "pro-Palestine",
+      "topics": ["Palestine", "artistic-responsibility"],
       "explicit_targets": [],
-      "backlash": null,
-      "vs_discourse": "Institutional framing that creates space for the Almodóvar moment. Implicitly challenges both Trump-era arts censorship and the counter-critique that political art is mere propaganda.",
-      "reach": "industry-only"
+      "backlash": "None reported.",
+      "vs_discourse": "Provides moral legitimacy to protest discourse at highest-profile cultural venue.",
+      "reach": "major-press"
     },
     {
-      "figure": "Chris Smalls (Amazon Labour Union)",
-      "type": "walkout",
-      "context": "Met Gala 2026 — outside barricade",
-      "event_description": "Former Amazon Labour Union president jumped a barricade at the Met Gala (where Jeff Bezos was honorary co-chair) and was arrested by police while holding a sign about Amazon's refusal to negotiate a union contract. Footage circulated widely.",
+      "figure": "600 French film industry professionals",
+      "type": "boycott",
+      "context": "Open letter in Liberation at start of Cannes week",
+      "event_description": "Denounced Vincent Bollore's 'tentacular and ideological' hold over French cinema and media through Vivendi/CNews/Canal+.",
       "political_valence": "anti-establishment",
-      "topics": ["labour", "Amazon", "class", "inequality"],
-      "explicit_targets": ["Jeff Bezos", "Amazon"],
-      "backlash": "Arrest footage generated significant support online. No industry backlash against Smalls — some against Bezos co-chair choice.",
-      "vs_discourse": "Directly embodies the Tucker Carlson 'elites getting rich while workers suffer' framing, though from the opposite political tradition.",
-      "reach": "viral"
+      "topics": ["media-concentration", "press-freedom", "cultural-independence"],
+      "explicit_targets": ["Vincent Bollore"],
+      "backlash": "No Bollore response reported.",
+      "vs_discourse": "Independent of realist/nationalist axis — a specifically French media-power argument.",
+      "reach": "major-press"
     }
   ],
   "streets": {
     "protests": [
       {
-        "location": "Multiple US cities",
-        "cause": "May Day / Workers over Billionaires — anti-Trump, pro-labour",
-        "scale": "hundreds-of-thousands",
-        "organiser": "MayDayStrong coalition: 500+ unions, student groups, community orgs",
-        "explicit_demand": "Workers' rights, living wage, anti-ICE, end Iran war",
-        "counter_protest": null,
-        "cross_border": true,
-        "related_events": ["Labour protests in Mexico and Canada on same day", "UK solidarity marches in London and Edinburgh"]
-      },
-      {
-        "location": "Bolivia — multiple cities",
-        "cause": "Political crisis — protests and blockades against President Rodrigo Paz",
+        "location": "La Paz / Sucre, Bolivia",
+        "cause": "Opposition to President Rodrigo Paz; economic frustration, energy cost crisis",
         "scale": "tens-of-thousands",
-        "organiser": "Opposition movements",
-        "explicit_demand": "Government resignation / new elections",
+        "organiser": "Cross-partisan coalition — labour unions, indigenous groups, right-wing opposition",
+        "explicit_demand": "Paz's resignation or early elections",
         "counter_protest": null,
         "cross_border": false,
         "related_events": []
+      },
+      {
+        "location": "Multiple European capitals and US cities",
+        "cause": "Gaza solidarity",
+        "scale": "thousands",
+        "organiser": "Palestine solidarity networks, student unions, BDS-affiliated groups",
+        "explicit_demand": "Ceasefire, arms embargo, recognition of Palestinian state",
+        "counter_protest": "Pro-Israel counter-demonstrations in some cities",
+        "cross_border": true,
+        "related_events": ["Cannes cultural acts amplifying protest messaging", "Venice Biennale jury crisis"]
       }
     ],
-    "summary": "No major protests confirmed specifically for May 21; the dominant recent street expression was May Day (May 1), and ongoing Gaza/Palestine solidarity marches in European capitals continue at moderate scale — the ICC warrant news for Ben Gvir and Smotrich may catalyse fresh action in coming days."
+    "summary": "Gaza solidarity sustaining across Europe and US, amplified by Cannes cultural acts; Bolivia adds a structurally related thread — economic frustration from Iran-war energy price shocks spilling into political crisis."
   },
   "fashion": {
     "current_fashion_week": null,
     "met_gala": {
       "year": 2026,
-      "theme": "Costume Art / Fashion is Art",
+      "theme": "Fashion Is Art / Costume Art",
       "notable_looks": [
-        "Sarah Paulson in Matières Fécales — anti-wealth collection explicitly designed to mock the ultra-rich",
-        "Multiple attendees in looks that deliberately referenced labour and artisan craftsmanship"
+        "Emma Chamberlain — custom Mugler dress hand-painted after Van Gogh's Garden at Arles",
+        "Kim Kardashian — sculptural bodysuit referencing Allen Jones 1960s body art"
       ],
-      "statements_made": [
-        "Zohran Mamdani (NYC Mayor) publicly declined to attend, spent evening with fashion workers instead",
-        "Chris Smalls jumped barricade and was arrested with Amazon union sign while Bezos co-chaired"
-      ],
-      "overall_reading": "The Met Gala 2026 was a class war contained within a spectacle designed to suppress one. The 'Costume Art' theme read as fashion turning inward and self-referential at a moment of external political pressure; but the Bezos co-chair decision ensured the political pressure came inside the tent anyway — in the form of an arrest."
+      "statements_made": [],
+      "overall_reading": "The 2026 Met Gala deliberately looked away from the world — aesthetic formalism and art-historical play rather than political statement. In a year of intense geopolitical crisis, the industry's flagship event chose spectacle. This avoidance is itself a signal."
     },
-    "designer_statements": [
-      {
-        "designer_or_brand": "Matières Fécales",
-        "statement_or_collection": "Fall 2026 collection designed to caricature and mock the ultra-wealthy — worn by Sarah Paulson at Met Gala",
-        "political_valence": "anti-establishment",
-        "context": "Collection note; worn at Met Gala"
-      }
-    ],
-    "trend_signal": "Fashion's dominant political mood in May 2026 is class-conscious and internally conflicted — the industry's most prominent event was co-chaired by the world's richest man and disrupted by a labour activist; the tension between fashion's aspirational economics and its artistic anti-establishment impulses has never been more visible."
+    "designer_statements": [],
+    "trend_signal": "Dominant fashion-political mood is aesthetic retreat — formalism, craft, art-historical reference. Anticipatory signals point toward rupture and reconstruction as themes for 2027 autumn collections."
   },
   "art_scene": {
     "current_fairs": [
@@ -249,31 +211,17 @@
         "running": true,
         "curatorial_theme": "In Minor Keys",
         "political_signals": [
-          "Germany: 'Ruin' — examining the pavilion's Nazi-era redesign and persistent structural violence",
-          "Greece: 'Escape Room' — right-wing nationalism and post-truth politics rendered as fabricated digital construct",
-          "Syria: First national pavilion since civil war — Sara Shamma invokes Palmyra's destruction by ISIS",
-          "Palestine Museum US at Palazzo Mora: blank titled work responding to Gaza — silence as statement",
-          "Belarus Free Theatre: resilience under dictatorship",
-          "Ukraine: Victor Pinchuk Foundation — 'Still Joy — from Ukraine into the World'"
+          "Russian Pavilion returned after 2022/2024 absence — protests from Ukrainian artists and institutions",
+          "200+ cultural figures signed open letters against Israeli Pavilion's inclusion",
+          "Jury ruled artists from countries whose leaders face ICC accusations ineligible for awards",
+          "Entire international jury resigned following that ruling",
+          "Palestinian and Ukrainian activists used opening week as protest platform"
         ],
-        "market_signal": "Strong institutional interest in geopolitically-engaged work; collectors from Gulf states and East Asia active"
+        "market_signal": "Opening defined by political tension rather than market performance — institutional credibility under pressure."
       }
     ],
-    "notable_works_or_shows": [
-      {
-        "artist": "Sara Shamma",
-        "work_or_show": "Syria Pavilion — invocation of Palmyra",
-        "venue": "Venice Biennale 2026 — Syria National Pavilion",
-        "political_reading": "Syria's first national pavilion since the civil war; Palmyra as a site of double erasure — by ISIS and by the West's failure to protect it — is both memorial and accusation"
-      },
-      {
-        "artist": "Palestine Museum US",
-        "work_or_show": "_____________ (untitled / blank)",
-        "venue": "Palazzo Mora, Venice",
-        "political_reading": "Silence and absence as the only honest response to the ongoing destruction of Gaza; the blank title is also an erasure of erasure"
-      }
-    ],
-    "auction_signals": "No major auction results confirmed this week. Christie's and Sotheby's spring sales run in late May/early June — results will follow."
+    "notable_works_or_shows": [],
+    "auction_signals": "No major auction results flagged this week."
   },
   "discourse": {
     "realist_academics": [
@@ -282,8 +230,8 @@
         "type": "academic_realist",
         "platform": "Substack / Glenn Diesen podcast",
         "recent_content_title": "Putin's Incentive to Escalate",
-        "on_current_events": "Published May 19: warns of catastrophic escalation risks in both Ukraine (Russia may attack NATO states) and Iran (no bargaining space, Trump oscillating between deal and strike). Structural argument: neither war has a negotiated off-ramp in sight.",
-        "narrative_tags": ["anti-interventionism", "realism", "Ukraine-skeptic", "Iran-war-skeptic", "escalation-risk"],
+        "on_current_events": "Argues Ukraine/Europe drone escalation against Moscow creates structural pressure for Russian retaliation against NATO states. Warns escalation in both Ukraine and Iran wars is real and underpriced.",
+        "narrative_tags": ["anti-interventionism", "realism", "Ukraine-skeptic", "Iran-war", "escalation-risk"],
         "active_today": true
       },
       {
@@ -291,7 +239,7 @@
         "type": "academic_realist",
         "platform": "podcast / interview",
         "recent_content_title": null,
-        "on_current_events": "No confirmed recent content found for this week. Known position: US military intervention in Iran would generate blowback; suicide terrorism research shows imperial overreach produces the conditions for asymmetric retaliation.",
+        "on_current_events": "No recent content found for this date.",
         "narrative_tags": ["blowback", "anti-interventionism", "terrorism-research"],
         "active_today": false
       }
@@ -299,38 +247,38 @@
     "nationalist_media": [
       {
         "figure": "Tucker Carlson",
-        "outlet": "Tucker Carlson Network / X",
+        "outlet": "Tucker Carlson Network",
         "geo": "US",
-        "recent_content_title": "Iran Update: Israel's Newest Bombing Campaign, the Oncoming War With China and How to Avoid It",
-        "framing": "Iran war is enriching elites and fake markets while ordinary Americans pay — populist anti-war framing from America First, converging with realist conclusion (don't escalate) via completely different reasoning.",
-        "topics": ["Iran", "markets", "elite-capture", "anti-neocon"],
+        "recent_content_title": "Tucker's Official Response to Thomas Massie's Defeat and the Beginning of a New America",
+        "framing": "Massie's defeat is 'the death of MAGA' engineered by 'the Israel lobby' — a betrayal of American national interest.",
+        "topics": ["Thomas Massie", "MAGA", "Israel lobby", "Republican Party"],
         "vs_realists": "convergent"
-      },
-      {
-        "figure": "Ben Shapiro",
-        "outlet": "Daily Wire",
-        "geo": "US",
-        "recent_content_title": null,
-        "framing": "Hawkish on Iran — supports military action to prevent Iranian nuclear capability; frames through Israel security lens. Opposite of Tucker on this question.",
-        "topics": ["Iran", "Israel", "nuclear"],
-        "vs_realists": "divergent"
       },
       {
         "figure": "Candace Owens",
         "outlet": "Podcast / X",
         "geo": "US",
         "recent_content_title": null,
-        "framing": "Not actively shaping Iran narrative this week; focused on US domestic and immigration topics.",
-        "topics": ["immigration", "US-domestic"],
-        "vs_realists": "independent"
+        "framing": "Likely covering Massie story from Black conservative angle; historically aligned with Carlson on Palestine/lobby questions",
+        "topics": ["MAGA", "Republican Party"],
+        "vs_realists": "mixed"
+      },
+      {
+        "figure": "Ben Shapiro",
+        "outlet": "Daily Wire",
+        "geo": "US",
+        "recent_content_title": null,
+        "framing": "Likely frames Massie defeat as Trump consolidation, not lobby manipulation — diverges sharply from Carlson on Israel.",
+        "topics": ["Trump", "Israel", "Republican Party"],
+        "vs_realists": "divergent"
       },
       {
         "figure": "Nick Fuentes",
         "outlet": "America First / X",
         "geo": "US",
         "recent_content_title": null,
-        "framing": "Isolationist on Iran — opposed to military action; anti-Israel alignment from hard-nationalist position. Converges with Tucker on no-war conclusion via more explicit ideological framing.",
-        "topics": ["Iran", "isolationism", "Israel"],
+        "framing": "Would amplify Carlson's 'Israel lobby' framing with explicit ethno-nationalist frame",
+        "topics": ["Israel lobby", "nationalism"],
         "vs_realists": "convergent"
       },
       {
@@ -338,28 +286,28 @@
         "outlet": "GB News TV / YouTube",
         "geo": "UK",
         "recent_content_title": null,
-        "framing": "Leading with Starmer/Streeting Labour crisis and UK energy outlook from Iran negotiations. Sceptical of Trump's diplomatic overture; frames called-off strike as 'weakness'. UK nationalist track, not mirroring US nationalist media directly.",
-        "topics": ["UK-politics", "Labour", "energy", "Iran"],
+        "framing": "Leading with Scotland cold snap, South East Water, Cannes from cultural-conservative angle — not amplifying Massie/Israel lobby story at US nationalist intensity",
+        "topics": ["climate", "water industry", "culture wars"],
         "vs_realists": "independent"
       }
     ],
     "convergence_points": [
       {
-        "topic": "Opposition to escalation in the Iran war",
-        "realist_argument": "No bargaining space exists, military action has no viable end-state, and escalation risk (including nuclear) is structurally real — Mearsheimer via structural IR.",
-        "nationalist_argument": "The war is enriching elites and financial markets while ordinary Americans die; neocons are using the conflict for political and economic gain — Tucker Carlson via populist anti-elite frame.",
-        "why_it_matters": "When structural realism and America First populism reach the same conclusion about a war, the mainstream pro-war consensus faces pressure from both academic and mass-media flanks simultaneously. The political question is who gets credit for the argument when (if) the peace deal comes — Mearsheimer's audience is small; Tucker's is enormous.",
+        "topic": "The structural power of the pro-Israel lobby in US politics",
+        "realist_argument": "Mearsheimer has argued for 20 years that the Israel lobby distorts US foreign policy away from US national interest through institutional capture — an empirical structural observation.",
+        "nationalist_argument": "Tucker Carlson frames Massie's defeat as proof that 'the Israel lobby' can remove an elected official who crosses it — a betrayal narrative for his populist-right audience.",
+        "why_it_matters": "Both Mearsheimer and Carlson are saying the same thing to their respective audiences on the same week. The realist argument is gaining mass populist amplification it has never previously had — with a very different political valence attached.",
         "figures_involved": ["Mearsheimer", "Tucker Carlson", "Nick Fuentes"]
       }
     ],
     "divergence_points": [
       {
-        "topic": "Iran military action",
-        "description": "Ben Shapiro supports strikes to prevent Iranian nuclear capability; Tucker Carlson and Mearsheimer both oppose escalation. Shapiro and Tucker share an audience but are offering opposite foreign policy prescriptions — the nationalist consensus on Iran has not solidified."
+        "topic": "Israel/Iran policy",
+        "description": "Shapiro/Daily Wire are more hawkish on Israel and Iran than Carlson/Fuentes — clearest split within US right-wing media."
       },
       {
-        "topic": "Palestinian solidarity",
-        "description": "Almodóvar, Venice Biennale, and progressive cultural sphere express strong pro-Palestinian solidarity. Ben Shapiro and much of the Daily Wire are explicitly pro-Israel. Tucker occupies an awkward middle position — anti-neocon but not explicitly pro-Palestinian."
+        "topic": "Ukraine escalation urgency",
+        "description": "GB News UK and US nationalist media are on different tracks — UK populist right not amplifying Mearsheimer's escalation risk warnings."
       }
     ]
   },
@@ -369,22 +317,44 @@
       "host": "Tucker Carlson",
       "political_lean": "nationalist",
       "geo": "US",
-      "recent_episode_title": "Iran Update: Israel's Newest Bombing Campaign, the Oncoming War With China and How to Avoid It",
-      "topic": "Iran war, elite enrichment from conflict, anti-neocon framing",
-      "framing": "The Iran war is a racket that enriches elites while ordinary Americans pay — and the US is sleepwalking into a confrontation with China.",
+      "recent_episode_title": "Tucker's Official Response to Thomas Massie's Defeat",
+      "topic": "Thomas Massie primary defeat — Israel lobby, MAGA collapse",
+      "framing": "Massie's loss proves 'the Israel lobby' can remove elected officials — death of MAGA, end of Republican Party as we knew it",
       "signal_type": "reactive",
       "vs_mainstream": "challenging"
     },
     {
-      "show": "Mearsheimer Substack / Glenn Diesen Podcast",
+      "show": "John Mearsheimer Substack / Glenn Diesen Podcast",
       "host": "John Mearsheimer",
       "political_lean": "academic",
       "geo": "US",
       "recent_episode_title": "Putin's Incentive to Escalate",
-      "topic": "Dual escalation risk: Ukraine and Iran",
-      "framing": "Structural IR analysis: both wars lack negotiated off-ramps and the risk of catastrophic escalation — including nuclear — is being systematically underestimated.",
+      "topic": "Ukraine drone escalation risk and Russia's stated willingness to attack NATO states",
+      "framing": "Structural great-power competition logic makes escalation in both Ukraine and Iran wars genuinely dangerous and underpriced",
       "signal_type": "leading",
       "vs_mainstream": "challenging"
+    },
+    {
+      "show": "Democracy Now",
+      "host": "Amy Goodman",
+      "political_lean": "far-left",
+      "geo": "US",
+      "recent_episode_title": null,
+      "topic": "Bardem/Almodovar Cannes statements; Venice Biennale jury crisis",
+      "framing": "Cultural figures naming genocide and perpetrators — framing Cannes and Venice as political acts in a broader solidarity movement",
+      "signal_type": "reactive",
+      "vs_mainstream": "challenging"
+    },
+    {
+      "show": "The Rest Is Politics",
+      "host": "Rory Stewart & Alastair Campbell",
+      "political_lean": "centrist",
+      "geo": "UK",
+      "recent_episode_title": null,
+      "topic": "Likely: Massie/MAGA parallel with UK Conservative collapse; Cannes political atmosphere",
+      "framing": "UK-liberal centrist analysis drawing parallels between US MAGA fractures and British political realignment",
+      "signal_type": "reactive",
+      "vs_mainstream": "amplifying"
     }
   ],
   "media_framing": [
@@ -392,79 +362,79 @@
       "outlet": "Al Jazeera",
       "geo": "Qatar / Global South",
       "political_lean": "pan-Arab / progressive",
-      "lead_story": "Iran warns US of 'many more surprises'; Tehran frames conflict as resistance to US-Israeli aggression",
-      "framing": "Iran is a sovereign nation under siege; Trump's oscillation between deal and strike is presented as coercive pressure, not diplomacy.",
+      "lead_story": "Pakistan's interior minister visits Tehran to help broker US-Iran peace deal",
+      "framing": "Iran conflict as a negotiable diplomatic crisis with active Global South mediation — not a binary confrontation",
       "diverges_from_anglophone": true,
-      "divergence_note": "BBC/NYT frame this as de-escalation diplomacy with progress; Al Jazeera frames it as military coercion with a PR face. The difference is whether you start from Tehran's or Washington's perspective."
+      "divergence_note": "Anglo-American media frames Iran as US pressure vs. Iranian defiance. Al Jazeera foregrounds Pakistani mediation, treating regional diplomacy as a meaningful variable that BBC/NYT systematically erases."
     },
     {
-      "outlet": "Annahar (Lebanon)",
-      "geo": "Lebanon",
-      "political_lean": "centrist Lebanese nationalist / anti-Hezbollah",
-      "lead_story": "Israeli massacre in Deir Qanoun Al-Nahr; 'Is the Iran war normalising the nuclear option?'",
-      "framing": "The Lebanon war is existential and immediate; the Iran deal is framed with deep scepticism about whether Lebanon benefits from any outcome. Hezbollah weapons transfer to Iran is the key negotiating concern.",
+      "outlet": "Annahar",
+      "geo": "Lebanon / Arab world",
+      "political_lean": "Lebanese liberal / independent",
+      "lead_story": "Israeli strike on south Lebanon health centre kills four; US Treasury sanctions on Hezbollah/Amal MPs",
+      "framing": "Lebanese domestic experience of Israeli military operations as ongoing daily reality, not a discrete event",
       "diverges_from_anglophone": true,
-      "divergence_note": "Anglophone media treats Lebanon as a sideshow to the Iran story; Annahar treats Iran as the context for the Lebanon story. The direction of causality is reversed."
-    },
-    {
-      "outlet": "Haaretz",
-      "geo": "Israel",
-      "political_lean": "Israeli left-liberal",
-      "lead_story": "ICC prosecutor seeks warrants for Ben Gvir and Smotrich — reporting treated as serious despite ICC's partial denial",
-      "framing": "Israeli left-liberal press is treating the ICC warrant story as credible and significant; sharply at odds with government response. Implicit critique of Ben Gvir's escalatory rhetoric.",
-      "diverges_from_anglophone": true,
-      "divergence_note": "Mainstream Western press balances Israeli government denial with warrant reports; Haaretz frames through lens of Ben Gvir's pattern of escalation and impunity."
+      "divergence_note": "Western media rarely covers individual Israeli strikes in south Lebanon as major stories. For Annahar readers, these strikes are the fabric of daily life — the divergence in prominence reflects whose bodies are considered newsworthy."
     }
   ],
   "silence_detector": [
     {
-      "macro_event": "WHO Ebola emergency declaration — 130+ dead in DRC",
-      "intensity": 7,
-      "registers_silent": ["fashion", "art", "music", "TikTok", "podcasts"],
-      "observation": "No cultural register has responded to the Ebola emergency. This is partly geographic (DRC, not in Western cultural sightlines) and partly because the Iran/Lebanon/Gaza complex is consuming all available geopolitical attention. The silence likely reflects a combination of news-cycle displacement and the ongoing structural problem of African crises receiving culturally disproportionate non-response."
+      "macro_event": "Ebola outbreak in eastern Congo — 134+ suspected deaths, 500+ cases",
+      "intensity": 8,
+      "registers_silent": ["fashion", "art", "music", "tiktok", "podcasts"],
+      "observation": "A rapidly escalating Ebola outbreak with over 500 cases and 134 suspected deaths in one of the world's most fragile regions is receiving almost no cultural response. This is partly structural (Congo is systematically underrepresented in Western cultural production) and partly cultural lag. The silence at this severity level is a signal about whose suffering receives cultural recognition."
     },
     {
-      "macro_event": "Bolivia political crisis — President Paz under siege from blockades",
+      "macro_event": "30-year Treasury yield at 5.09% — highest since pre-financial crisis",
       "intensity": 7,
-      "registers_silent": ["fashion", "art", "music", "TikTok", "Western podcasts"],
-      "observation": "Latin American political crises receive minimal Western cultural response unless they involve electoral spectacle (elections, coups). A street-siege of a political capital generates no cultural signal in the Western registers tracked here. Cultural lag or geographic indifference — either interpretation reflects a structural blind spot."
+      "registers_silent": ["fashion", "art", "music", "tiktok"],
+      "observation": "Bond market stress of this magnitude would historically trigger cultural anxiety signals in chart music and art — but the chart is dominated by warmth and intimacy. Either culture has not yet processed the yield signal (likely — chart mood typically lags by 2-4 weeks), or UK listeners are retreating into the domestic as a coping mechanism."
     }
   ],
   "synthesis": {
-    "daily_theme": "Explicit political speech and cultural retreat coexist today: the world's most prominent cultural arena (Cannes) produces its most direct political intervention in years, while the UK's most-consumed music is domestic, warm, and deliberately inward-facing.",
-    "mechanism": "The UK chart divergence from political noise is not a direct response to May 21's news — Olivia Dean's dominance has been building for weeks. The mechanism is more plausible as a sustained ambient-stress response: elevated energy bills, an unseasonable cold May, Labour government instability, and continuous news of wars produce a population psychologically narrowing its perimeter to the domestic and intimate. The chart is a lagging signal of a mood that preceded today's events. Almodóvar's Cannes statement, by contrast, is a reactive signal — a filmmaker with nothing to lose, at the world's most visible cultural platform, choosing directness over diplomacy.",
+    "daily_theme": "Culture is naming power explicitly while markets ignore structural contradictions — Cannes, Venice and the streets all point at the same axis of authority; the UK chart retreats into intimacy.",
+    "mechanism": "Two parallel mechanisms operate today. First: a cultural naming cycle — Bardem, Almodovar, the Venice jury, and street protesters explicitly name state actors rather than gesturing at abstract injustice, marking a shift from solidarity aesthetics to accountability naming. Second: a domestic-retreat cycle in the UK music chart — economic anxiety produces not protest music but comfort music, the sound of psychological narrowing when macro threat feels too diffuse to name.",
     "leading_signals": [
-      "Venice Biennale's 'In Minor Keys' curatorial theme: the most politically engaged Biennale in recent memory, with multiple pavilions directly addressing fascism, authoritarianism, Palestinian erasure, and cultural destruction. What Venice frames in 2026 tends to appear in gallery programmes globally through 2027.",
-      "Ed O'Brien's 'Blue Morpho' (releasing tomorrow): ecological grief as the subject of a major British musician's solo project suggests climate melancholy may become a prominent UK musical theme in late 2026.",
-      "Google's full product stack rebuild around Gemini: a leading signal for what consumer digital interfaces will look like by Q4 2026 — AI-generated, adaptive, and likely to transform how news and culture are consumed."
+      "Venice Biennale's 'In Minor Keys' curatorial theme — planned 18+ months ago — now reads as prophetic for this moment of unresolved geopolitical tension.",
+      "Met Gala's deliberate aesthetic retreat into formalism anticipates fashion industry responses that will likely surface as 'reconstruction' and 'rupture' themes in 2027 autumn collections.",
+      "Mearsheimer's Ukraine escalation warnings — if correct — will become mainstream media concern within 4-8 weeks as any Russian escalatory action forces coverage."
     ],
     "connections": [
       {
-        "macro_event": "Iran war, Lebanon conflict, ICC warrant for Israeli ministers, Gaza ongoing",
-        "cultural_response": "Pedro Almodóvar names Trump, Netanyahu, and Putin as 'monsters' at Cannes; wears Free Palestine pin. Venice Biennale Palestine Museum US contributes a blank space as a Gaza response. 'Not Israel' trending on X.",
-        "mechanism": "Political saturation point reached: when the same conflict appears across Lebanon, Iran, Gaza, and ICC simultaneously, cultural figures who have been signalling (pins, statements) cross over into direct speech. Almodóvar's statement is not a response to May 21 specifically — it is the product of months of accumulating political pressure finding its moment at the world's most watched cultural event.",
-        "observation": "The cross-register convergence (Cannes, Venice, X trends, Met Gala's Smalls arrest) on the Palestinian/anti-authoritarian theme on the same day is not coincidence — it reflects the ICC warrant news acting as a catalyst for signals that had been building. When multiple cultural registers respond to the same event on the same day, the political moment has crystallised.",
+        "macro_event": "Israeli military operations in south Lebanon and Gaza; US sanctions on Hezbollah/Amal MPs",
+        "cultural_response": "Bardem and Almodovar make explicit Gaza statements at Cannes; Venice Biennale jury crisis over Israeli/Russian pavilions",
+        "mechanism": "Major international cultural events concentrate global cultural figures with guaranteed press access — the same dynamic that produced AIDS activism at award ceremonies in the 1980s. What is notable today is specificity: figures are naming perpetrators rather than invoking abstract values, marking a shift in cultural activist strategy.",
+        "observation": "This is an established mechanism, not correlation. The specificity of naming — Netanyahu, Putin, Trump, Bollore — marks a shift from solidarity aesthetics to accountability naming that tends to force institutional responses.",
         "confidence": "strong",
         "signal_type": "reactive",
-        "tags": ["conflict", "Palestine", "authoritarianism", "resistance"]
+        "tags": ["Palestine", "Gaza", "Cannes", "Venice", "cultural-acts", "naming-power"]
       },
       {
-        "macro_event": "UK energy prices elevated; Labour government instability; unseasonably cold May",
-        "cultural_response": "Olivia Dean dominates Apple Music UK top 12 with six entries of warm, intimate, domestic music. TikTok dominated by slowed/ambient nostalgic sounds.",
-        "mechanism": "Sustained ambient stress (energy bills, political instability, literal cold) produces psychological narrowing: listeners reach for domestic warmth and intimacy rather than protest or euphoria. This is a lagging signal — the mood that produced this chart was set weeks ago, not today.",
-        "observation": "The UK chart would look similar regardless of today's specific news, which is precisely the point: this is not a reactive signal but a structural one. The question worth tracking is whether Olivia Dean's dominance continues even as conditions improve, or whether a more outward-facing UK musical moment emerges.",
+        "macro_event": "UK economic anxiety — 30yr yields at 5.09%, Brent at $104.52, energy costs elevated",
+        "cultural_response": "Olivia Dean dominates UK Apple Music chart with 8 tracks — all intimate, domestic, love-focused; 'worry (ultra slowed)' is the #3 TikTok sound globally",
+        "mechanism": "Economic insecurity about energy and borrowing costs produces psychological narrowing — retreat into the domestic and intimate as emotional safety-seeking. This is comfort music, not protest music.",
+        "observation": "Chart longevity caution applies: Olivia Dean has been charting for weeks. But the combination of sustained chart domination and the TikTok ultra-slowed trend suggests the underlying mood has been building for several weeks, consistent with the economic trajectory.",
         "confidence": "moderate",
         "signal_type": "lagging",
-        "tags": ["energy", "UK", "escapism", "intimacy"]
+        "tags": ["UK", "economic-anxiety", "intimacy", "domestic", "chart-mood"]
       },
       {
-        "macro_event": "Iran war / US military escalation",
-        "cultural_response": "Tucker Carlson and Mearsheimer both publicly oppose the war from opposite ideological starting points; Shapiro diverges from Tucker on the same audience demographic.",
-        "mechanism": "Anti-war sentiment is finding expression across the full ideological spectrum — from structural realism to America First populism — while the pro-war position consolidates in neoconservative and Zionist-aligned media. This is a discourse fracture, not yet a cultural one, but discourse fractures in long-form audio typically precede TikTok talking-head format adoption by 4–8 weeks.",
-        "observation": "If the Mearsheimer/Tucker convergence on Iran holds and Shapiro's hawkish position loses, watch for anti-war talking-head content to emerge on TikTok in the next 4–6 weeks. The template is already visible in the 'AI news reaction' TikTok format currently trending.",
-        "confidence": "speculative",
+        "macro_event": "Thomas Massie primary defeat — Tucker Carlson calls it 'death of MAGA' and blames 'Israel lobby'",
+        "cultural_response": "Convergence: Mearsheimer's academic realist argument about lobby power meets Tucker Carlson's nationalist populist audience at scale for the first time",
+        "mechanism": "Political events that confirm existing narratives for multiple ideological communities simultaneously produce cross-spectrum amplification. The 'Israel lobby' argument has just entered mainstream nationalist media discourse at full volume — a discourse amplification event.",
+        "observation": "The most significant discourse event of this week is not the defeat itself but the framing Carlson applied to it. If that framing spreads — as it likely will given Carlson's reach — it will reshape how the Republican base thinks about US-Israel relations in a way no academic paper could.",
+        "confidence": "strong",
         "signal_type": "leading",
-        "tags": ["conflict", "Iran", "discourse", "anti-interventionism"]
+        "tags": ["US-politics", "Israel-lobby", "discourse", "convergence", "MAGA"]
+      },
+      {
+        "macro_event": "Ebola in Congo — 500+ cases, 134+ deaths, minimal Western media coverage",
+        "cultural_response": "Complete silence across all cultural registers — fashion, art, music, TikTok, Western podcasts",
+        "mechanism": "Structural absence: Western cultural production has no established pipeline for Congo-specific humanitarian crises. The silence is not avoidance but an absence of cultural infrastructure for representing this category of suffering.",
+        "observation": "The silence detector flags this as the most significant divergence signal of the day — a humanitarian crisis of genuine severity generating zero cultural response. This tells us about which parts of the world have cultural representation in the dominant Western media-cultural complex.",
+        "confidence": "strong",
+        "signal_type": "divergence",
+        "tags": ["Congo", "Ebola", "silence", "representation", "Global-South"]
       }
     ]
   }
