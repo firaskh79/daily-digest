@@ -3,10 +3,10 @@
     {
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
-      "status_line": "Nuclear talks in Geneva; Brent at ~$82; US carrier group in region; no naval incident today",
-      "status": "stable",
+      "status_line": "Rome 5th round fails; Trump 50/50 ultimatum; Brent spikes to $103 from $82",
+      "status": "changed",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-22",
+      "last_changed": "2026-05-23",
       "expand_if": [
         "oil spike above $95",
         "naval incident in Strait",
@@ -19,23 +19,23 @@
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
-      "status_line": "Low-level skirmishes continue along Blue Line; UNIFIL present; no full ceasefire",
-      "status": "stable",
+      "status_line": "Heavy strikes; 10+ killed today incl. 4 paramedics; evacuation orders for 10 villages; death toll 3,073+",
+      "status": "changed",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-22",
+      "last_changed": "2026-05-23",
       "expand_if": [
-        "major Israeli incursion",
-        "Hezbollah rocket barrage",
+        "major Israeli ground incursion",
+        "Hezbollah rocket barrage on Israeli cities",
         "ceasefire agreement",
         "UNIFIL withdrawal",
         "US diplomatic intervention",
-        "civilian casualty event"
+        "mass civilian casualty event"
       ]
     },
     {
       "id": "venice-biennale",
       "label": "Venice Biennale 2026",
-      "status_line": "Running Apr–Nov; Palestinian pavilion drawing attention; no major new incident today",
+      "status_line": "Running Apr–Nov; Palestinian pavilion drawing attention; no major new incident",
       "status": "stable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
@@ -50,13 +50,13 @@
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
-      "status_line": "30Y gilt at ~5.3%; energy prices elevated; government holding fiscal rules",
+      "status_line": "30Y gilt at 5.53% (easing); energy prices elevated; Brent oil spike now a fresh pressure point",
       "status": "stable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
       "expand_if": [
-        "gilt yield spike above 5.5%",
-        "energy price cap revision",
+        "gilt yield spike above 5.5% with upward trajectory",
+        "energy price cap revision announced",
         "recession confirmed",
         "Bank of England emergency action",
         "government fiscal statement",
@@ -66,12 +66,12 @@
     {
       "id": "olivia-dean-chart",
       "label": "Olivia Dean / UK Chart",
-      "status_line": "Holding in Apple Music UK top 5; chart run entering week 3+",
+      "status_line": "Holds #1 ('Man I Need'), #2 (with Sam Fender), #5 simultaneously; chart run continuing",
       "status": "stable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
       "expand_if": [
-        "reaches #1",
+        "reaches or loses #1",
         "drops out of top 10",
         "new single or album announcement",
         "tour or major interview",
@@ -81,31 +81,45 @@
     {
       "id": "tucker-focus",
       "label": "Tucker Carlson",
-      "status_line": "Leading with Iran diplomacy framing; convergent with Mearsheimer on US military overreach",
-      "status": "stable",
+      "status_line": "Post-Trump split (Apr 20); leading 'Iran is Israel's war'; Thomas Massie/MAGA eulogy on May 20",
+      "status": "changed",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-22",
+      "last_changed": "2026-05-23",
       "expand_if": [
         "new major interview or guest",
-        "shifts to different topic entirely",
+        "returns to pro-Trump framing",
         "controversy or platform change",
-        "convergence with a new political figure"
+        "direct confrontation with administration on Iran strikes"
       ]
     },
     {
       "id": "mearsheimer",
       "label": "Mearsheimer",
-      "status_line": "Arguing US pressure on Iran is counterproductive; Substack active; no new lecture this week",
-      "status": "stable",
+      "status_line": "'Eating Humble Pie' post May 20; arguing Iran war already lost; four posts in eight days",
+      "status": "changed",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-22",
+      "last_changed": "2026-05-23",
       "expand_if": [
         "new Substack post",
         "new podcast appearance",
         "new lecture or public statement",
         "shifts argument on a major topic"
       ]
+    },
+    {
+      "id": "cannes-2026",
+      "label": "Cannes 2026",
+      "status_line": "79th festival closes tonight; Palme d'Or ceremony at 20:15 CEST; Pawlikowski/Hamaguchi frontrunners",
+      "status": "new",
+      "first_seen": "2026-05-23",
+      "last_changed": "2026-05-23",
+      "expand_if": [
+        "Palme d'Or announced — follow winner reaction",
+        "political statement from a winner",
+        "controversy at ceremony",
+        "Palestinian/Lebanon dimension in acceptance speech"
+      ]
     }
   ],
-  "last_updated": "2026-05-22"
+  "last_updated": "2026-05-23"
 }
