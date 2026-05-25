@@ -138,21 +138,16 @@
         "shifts argument on a major topic"
       ]
     },
+  ],
+  "retired_threads": [
     {
       "id": "cannes-2026",
       "label": "Cannes 2026",
-      "status": "stable",
-      "status_line": "Festival closed May 23; Palme d'Or to Mungiu's Fjord (Neon); speech: 'pledge against any kind of fundamentalism'; no major follow-up today",
-      "first_seen": "2026-05-23",
-      "last_changed": "2026-05-24",
-      "expand_if": [
-        "Mungiu makes direct political statement in press circuit",
-        "Fjord sparks specific controversy re: conflict framing",
-        "follow-up political statement from any winner"
-      ]
+      "retired_on": "2026-05-25",
+      "retired_because": "Festival closed May 23 — time-bounded event, no ongoing story",
+      "revive_if": "Mungiu or another winner makes a politically significant statement in the press circuit; or Fjord triggers a specific diplomatic controversy"
     }
   ],
-  "retired_threads": [],
   "source_discoveries": [
     {
       "name": "Richard Haass — 'Home & Away' Substack",
