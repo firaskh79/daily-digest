@@ -115,68 +115,62 @@
   .divider { height: 1px; background: var(--border); margin: 1.6rem 0; }
   footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.76rem; color: var(--text-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem; }
 
-  /* ── Collage ── */
-  .collage-wrap {
-    margin: 1.4rem -0.5rem 1.8rem;
-    overflow: hidden;
-  }
-  .collage-inner {
-    position: relative;
-    height: 210px;
-    /* wide enough to hold all 5 cards */
-  }
-  .col-card {
-    position: absolute;
-    left: var(--l);
-    top: var(--t);
-    transform: rotate(var(--r));
-    width: 140px;
-    margin: 0;
-    background: var(--bg);
-    border: 1px solid var(--border-2);
-    border-radius: 3px;
-    padding: 5px 5px 22px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.13), 0 1px 2px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, z-index 0s;
-    z-index: 1;
-    cursor: default;
-  }
-  .col-card:hover {
-    transform: rotate(0deg) scale(1.06);
-    box-shadow: 0 6px 22px rgba(0,0,0,0.22);
-    z-index: 10;
-  }
-  .col-img-wrap {
-    width: 130px;
-    height: 130px;
-    overflow: hidden;
-    background: var(--bg-3);
-    border-radius: 1px;
-  }
-  .col-img-wrap img {
+  /* ── Collage strip ───────────────────────────── */
+  .collage-strip {
+    display: grid;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 460px;
+    gap: 2px;
+    background: #0e0e0d;
+    border-radius: var(--radius);
+    overflow: hidden;
+    grid-template-columns: var(--collage-cols, repeat(6, 1fr));
+    grid-template-rows: 1fr;
+    margin-bottom: 0;
+  }
+  .collage-tile {
+    position: relative;
+    overflow: hidden;
+    background: #1e1e1c;
+  }
+  .collage-tile img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
     display: block;
+    opacity: 0;
+    transition: opacity 0.4s;
   }
-  .col-card figcaption {
-    font-size: 0.65rem;
-    font-family: var(--font);
-    color: var(--text-2);
-    text-align: center;
-    margin-top: 5px;
-    letter-spacing: 0.03em;
+  .collage-tile img.loaded { opacity: 1; }
+  .collage-tile .clbl {
+    position: absolute;
+    bottom: 7px; left: 7px;
+    background: rgba(0,0,0,0.58);
+    color: rgba(255,255,255,0.9);
+    font-size: 7.5px; font-weight: 700;
+    letter-spacing: 0.07em;
+    padding: 2px 5px;
+    border-radius: 3px;
     text-transform: uppercase;
+    pointer-events: none;
   }
-  @media (prefers-color-scheme: dark) {
-    .col-card { background: var(--bg-2); border-color: var(--border-2); }
+  .collage-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    padding-top: 0.4rem;
   }
-  @media (max-width: 600px) {
-    .collage-inner { height: 160px; }
-    .col-card { width: 108px; }
-    .col-img-wrap { width: 98px; height: 98px; }
-    .col-card { left: calc(var(--l) * 0.65) !important; }
+  .collage-footer button {
+    padding: 0.28rem 0.75rem;
+    border: 1px solid var(--border-2);
+    border-radius: 5px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    font-family: var(--font);
+    background: var(--bg-2);
+    color: var(--text-3);
+    transition: background 0.15s;
   }
+  .collage-footer button:hover { background: var(--bg-3); }
 </style>
 </head>
 <body>
@@ -187,50 +181,112 @@
 </header>
 
 <!-- ======= COLLAGE ======= -->
-<div class="collage-wrap" aria-label="Visual digest collage">
-  <div class="collage-inner">
-    <figure class="col-card" style="--r:-3deg;--t:18px;--l:0px">
-      <div class="col-img-wrap">
-        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG&width=340"
-             alt="US Navy vessel in the Strait of Hormuz"
-             onerror="this.parentNode.style.background='var(--amber-bg)'">
-      </div>
-      <figcaption>Iran · Hormuz</figcaption>
-    </figure>
-    <figure class="col-card" style="--r:2.5deg;--t:8px;--l:158px">
-      <div class="col-img-wrap">
-        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Nabatieh_city_center.jpg&width=340"
-             alt="Nabatieh, south Lebanon"
-             onerror="this.parentNode.style.background='var(--coral-bg)'">
-      </div>
-      <figcaption>Lebanon · South</figcaption>
-    </figure>
-    <figure class="col-card" style="--r:-1.5deg;--t:30px;--l:316px">
-      <div class="col-img-wrap">
-        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Ebola_virus_em.jpg&width=340"
-             alt="Ebola virus electron microscopy"
-             onerror="this.parentNode.style.background='var(--teal-bg)'">
-      </div>
-      <figcaption>Ebola · DRC</figcaption>
-    </figure>
-    <figure class="col-card" style="--r:3.5deg;--t:12px;--l:474px">
-      <div class="col-img-wrap">
-        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg&width=340"
-             alt="Ekrem Imamoglu campaigning"
-             onerror="this.parentNode.style.background='var(--blue-bg)'">
-      </div>
-      <figcaption>Turkey · CHP</figcaption>
-    </figure>
-    <figure class="col-card" style="--r:-2deg;--t:22px;--l:632px">
-      <div class="col-img-wrap">
-        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Players%27_tunnel_at_Tottenham_Hotspur_Stadium%2C_view_towards_pitch.jpg&width=340"
-             alt="Tottenham Hotspur Stadium tunnel"
-             onerror="this.parentNode.style.background='var(--purple-bg)'">
-      </div>
-      <figcaption>Final Day · PL</figcaption>
-    </figure>
-  </div>
-</div>
+<div class="collage-strip" id="digest-collage"></div>
+<div class="collage-footer"><button id="collage-btn">↺ Shuffle</button></div>
+
+<script>
+(function() {
+  const POOL = [
+    { f: "USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG",   l: "Iran · Hormuz" },
+    { f: "Hormuz_map.png",                                                  l: "Strait · Map" },
+    { f: "Aerial_View_of_Tehran_and_Tochal.JPG",                           l: "Tehran" },
+    { f: "Aerial_View_of_Tehran_26.11.2008_04-35-03.JPG",                  l: "Tehran · Aerial" },
+    { f: "Azadi_Tower_-_Tehran-_Iran_(1).jpg",                             l: "Tehran · Azadi" },
+    { f: "Lebanese_Armed_Forces.jpg",                                       l: "Lebanon · South" },
+    { f: "2006_Lebanon-Israel_War_Memorial.JPG",                            l: "Lebanon · War" },
+    { f: "Downtown_Beirut_Lebanon.JPG",                                     l: "Beirut" },
+    { f: "Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg",                 l: "İmamoğlu · CHP" },
+    { f: "Recep_Tayyip_Erdogan_portrait.PNG",                              l: "Erdogan" },
+    { f: "Nigel_Farage_(cropped).jpg",                                      l: "Farage" },
+    { f: "Nigel_Farage_MEP_1,_Strasbourg_-_Diliff.jpg",                    l: "Farage · MEP" },
+    { f: "Houses_of_Parliament_-_Palace_of_Westminster.JPG",                l: "Westminster" },
+    { f: "Parliament_at_Sunset.JPG",                                        l: "Parliament" },
+    { f: "Bank_of_England_Building,_London,_UK_-_Diliff.jpg",              l: "Bank of England" },
+    { f: "Bank_of_England,_London.JPG",                                     l: "Gilt · 5.53%" },
+    { f: "Oil_tanker_MV_Houston.JPG",                                       l: "Brent · $105" },
+    { f: "Crude_Oil_Tanker_Pericles_at_BP_Oil_Refinery_Jetty_and_General_Cargo_Ship_Jannes_at_Kwinana_Bulk_Jetty,_December_2020_01.jpg", l: "Oil · Market" },
+    { f: "Ebola_virus_em.jpg",                                              l: "Ebola · DRC" },
+    { f: "View_of_the_City_of_Kinshasa,_DRC.jpg",                          l: "Kinshasa · DRC" },
+    { f: "Olivia_Dean_-_4323.jpg",                                          l: "Olivia Dean · #1" },
+    { f: "Sam_Fender_(2021)_(cropped).jpg",                                 l: "Sam Fender · #2" },
+    { f: "Santan_Dave.jpg",                                                  l: "Dave & Tems · #3" },
+    { f: "2019_Tems_on_NdaniTV_Sssions.jpg",                               l: "Tems · #3" },
+    { f: "Aya_Nakamura_2023.jpg",                                           l: "Aya Nakamura · TT" },
+    { f: "Players'_tunnel_at_Tottenham_Hotspur_Stadium,_view_towards_pitch.jpg", l: "Spurs · Final Day" },
+    { f: "View_of_Goodison_Park_(2).JPG",                                   l: "Everton · Drops" },
+    { f: "Goodisonview1.JPG",                                               l: "Goodison Park" },
+    { f: "Liverpool_fc_everton_stadium.jpg",                                l: "Merseyside" },
+    { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_04.jpg", l: "Etihad · PL" },
+    { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_02.jpg", l: "Man City" },
+    { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_16.jpg", l: "Premier League" },
+    { f: "London_stanford_bridge.JPG",                                      l: "Stamford Bridge" },
+    { f: "Stoke.JPG",                                                       l: "PL Promotion" },
+    { f: "2023_London_Marathon_-_Frank_Lara_(2).jpg",                       l: "London Marathon" },
+    { f: "2023_London_Marathon_-_Sean_Frame_(3).jpg",                       l: "Marathon · Trending" },
+    { f: "2013_London_Marathon_at_Victoria_Embankment_(1).JPG",             l: "Marathon · Embankment" },
+    { f: "Runners_of_the_2013_London_Marathon_(35).JPG",                    l: "Marathon · Runners" },
+    { f: "Mr_Blobby_-_London_Marathon_2011_(5630053777).jpg",               l: "Marathon · Fancy Dress" },
+    { f: "UK_heatwave_weather_warnings_July_2022.jpg",                      l: "UK · Record Heat" },
+    { f: "Brighton_Wheel_on_the_beach_of_Brighton_in_summer_2013_(11).JPG", l: "Brighton · Bank Hol" },
+    { f: "Roney_Villela_at_2025_Cannes_Red_Carpet_for_O_Agente_Secreto_1.jpg", l: "Cannes 2025" },
+    { f: "MKr385841_Golshifteh_Farahani_(Alpha,_Cannes_2025).jpg",          l: "Cannes · Alpha" },
+    { f: "Halle_Berry_at_the_2025_Cannes_Film_Festival_32.jpg",             l: "Cannes · Red Carpet" },
+    { f: "View_of_Glastonbury_Festival_from_the_Park_Stage_as_crowd_arrives_for_Pulp,_2011.jpg", l: "Glastonbury" },
+    { f: "Crowds_for_Brian_Wilson_at_the_Pyramid_(323798990).jpg",          l: "Festival Crowd" },
+    { f: "Israeli_Pavilion,_2024.jpg",                                      l: "Venice Biennale" },
+    { f: "Tsegaye_Kebede,_2013_London_Marathon.JPG",                        l: "Marathon · Elite" },
+    { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_18.jpg", l: "Stadium · Night" },
+    { f: "Bank_underground_station,_Bank_of_England_building_entrance.JPG", l: "City of London" },
+  ];
+
+  const COL_PRESETS = {
+    5: ["1.2fr 1fr 0.85fr 1fr 0.95fr","0.9fr 1.15fr 1fr 0.9fr 1.1fr","1fr 0.9fr 1.2fr 1fr 0.95fr"],
+    6: ["1.1fr 0.9fr 1fr 0.85fr 1fr 1.1fr","0.9fr 1fr 1.15fr 1fr 0.85fr 1.1fr","1fr 1.1fr 0.9fr 1.05fr 0.95fr 1fr"],
+    7: ["1fr 0.85fr 1.1fr 0.9fr 1fr 0.9fr 1.1fr","1.1fr 1fr 0.85fr 1fr 0.9fr 1.1fr 0.95fr"],
+  };
+
+  function imgUrl(f) {
+    return "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/"
+      + encodeURIComponent(f) + "&width=800";
+  }
+  function shuffle(a) {
+    const b = [...a];
+    for (let i = b.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [b[i], b[j]] = [b[j], b[i]];
+    }
+    return b;
+  }
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function render() {
+    const counts = [5, 6, 6, 7];
+    const n = pick(counts);
+    const cols = pick(COL_PRESETS[n]);
+    const images = shuffle(POOL).slice(0, n);
+    const el = document.getElementById('digest-collage');
+    el.style.setProperty('--collage-cols', cols);
+    el.innerHTML = '';
+    images.forEach(item => {
+      const tile = document.createElement('div');
+      tile.className = 'collage-tile';
+      const img = document.createElement('img');
+      img.src = imgUrl(item.f);
+      img.alt = item.l;
+      img.onload = () => img.classList.add('loaded');
+      img.onerror = () => { img.style.display = 'none'; };
+      const lbl = document.createElement('span');
+      lbl.className = 'clbl';
+      lbl.textContent = item.l;
+      tile.append(img, lbl);
+      el.appendChild(tile);
+    });
+  }
+
+  document.getElementById('collage-btn').addEventListener('click', render);
+  render();
+})();
+</script>
 
 <!-- ======= TODAY'S SIGNAL ======= -->
 <div class="section-label">Today's Signal</div>
