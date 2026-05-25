@@ -147,33 +147,16 @@ function shuffle(arr) {
   return a;
 }
 
-// Pick 5 from pool, trying to spread across layers and avoid repeating current set
+// Pick 5 at random, just avoid repeating the exact same set
 let current = [];
 
 function pickFive() {
-  const layers = [...new Set(POOL.map(p => p.layer))];
-  const shuffled = shuffle(POOL);
-  const picked = [];
-  const usedLayers = new Set();
   const usedFiles = new Set(current.map(c => c.file));
-
-  // First pass: one from each layer (prefer items not in current set)
-  for (const layer of shuffle(layers)) {
-    if (picked.length >= 5) break;
-    const candidates = shuffled.filter(p =>
-      p.layer === layer && !usedLayers.has(layer) && !usedFiles.has(p.file)
-    );
-    const fallback = shuffled.filter(p => p.layer === layer && !usedLayers.has(layer));
-    const choice = (candidates[0] || fallback[0]);
-    if (choice) { picked.push(choice); usedLayers.add(layer); }
-  }
-
-  // Second pass: fill remaining slots from anything not yet picked
-  const remaining = shuffled.filter(p => !picked.find(q => q.file === p.file));
-  while (picked.length < 5 && remaining.length) picked.push(remaining.shift());
-
-  current = picked;
-  return picked;
+  const fresh = shuffle(POOL.filter(p => !usedFiles.has(p.file)));
+  // If not enough fresh items, fall back to full shuffled pool
+  const pool = fresh.length >= 5 ? fresh : shuffle(POOL);
+  current = pool.slice(0, 5);
+  return current;
 }
 
 // Apply images to tiles
