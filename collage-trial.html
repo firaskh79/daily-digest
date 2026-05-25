@@ -96,20 +96,41 @@
 <div id="status"></div>
 
 <script>
-// Pool of Wikimedia Commons images — more than 5 so Refresh can pick different sets
-// All filenames verified from Commons search results
+// Pool of Wikimedia Commons images covering all digest layers:
+// geopolitics, politics, music charts, TikTok, sport, markets, weather, health
 const POOL = [
-  { file: "USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG", label: "Iran · Hormuz" },
-  { file: "Hormuz_map.png",                                                label: "Strait · Map" },
-  { file: "Oil_tanker_MV_Houston.JPG",                                     label: "Brent · $105" },
-  { file: "Ebola_virus_em.jpg",                                            label: "Ebola · DRC" },
-  { file: "View_of_the_City_of_Kinshasa,_DRC.jpg",                        label: "Kinshasa · DRC" },
-  { file: "Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg",               label: "Turkey · CHP" },
-  { file: "Players'_tunnel_at_Tottenham_Hotspur_Stadium,_view_towards_pitch.jpg", label: "Final Day · PL" },
-  { file: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_04.jpg", label: "Premier League" },
-  { file: "Lebanese_Armed_Forces.jpg",                                     label: "Lebanon · South" },
-  { file: "2006_Lebanon-Israel_War_Memorial.JPG",                          label: "Lebanon · War" },
-  { file: "Crude_Oil_Tanker_Pericles_at_BP_Oil_Refinery_Jetty_and_General_Cargo_Ship_Jannes_at_Kwinana_Bulk_Jetty,_December_2020_01.jpg", label: "Oil · Market" },
+  // — Geopolitics —
+  { file: "USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG",  label: "Iran · Hormuz",     layer: "geo" },
+  { file: "Hormuz_map.png",                                                 label: "Strait · Map",      layer: "geo" },
+  { file: "Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg",                label: "Turkey · CHP",      layer: "geo" },
+  { file: "Lebanese_Armed_Forces.jpg",                                      label: "Lebanon · South",   layer: "geo" },
+
+  // — UK Politics / trending —
+  { file: "Nigel_Farage_(cropped).jpg",                                     label: "Farage · Trending", layer: "politics" },
+
+  // — Music charts (Apple Music UK top 5) —
+  { file: "Olivia_Dean_-_4323.jpg",                                         label: "Olivia Dean · #1",  layer: "music" },
+  { file: "Sam_Fender_(2021)_(cropped).jpg",                                label: "Sam Fender · #2",   layer: "music" },
+  { file: "Santan_Dave.jpg",                                                 label: "Dave & Tems · #3",  layer: "music" },
+
+  // — TikTok sounds —
+  { file: "Photo_C%C3%A9dric_R%C3%A9mia_Aya_Nakamura.jpg",                 label: "Aya Nakamura · TT", layer: "culture" },
+
+  // — Sport / Google trends —
+  { file: "Players'_tunnel_at_Tottenham_Hotspur_Stadium,_view_towards_pitch.jpg", label: "Spurs · Final Day", layer: "sport" },
+  { file: "View_of_Goodison_Park_(2).JPG",                                  label: "Everton · Drops",   layer: "sport" },
+  { file: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_04.jpg", label: "Premier League", layer: "sport" },
+  { file: "2023_London_Marathon_-_Frank_Lara_(2).jpg",                      label: "London Marathon",   layer: "sport" },
+
+  // — Markets —
+  { file: "Oil_tanker_MV_Houston.JPG",                                      label: "Brent · $105",      layer: "markets" },
+  { file: "Crude_Oil_Tanker_Pericles_at_BP_Oil_Refinery_Jetty_and_General_Cargo_Ship_Jannes_at_Kwinana_Bulk_Jetty,_December_2020_01.jpg", label: "Oil · Market", layer: "markets" },
+
+  // — Weather / social mood —
+  { file: "London_Snow_08_02_07.JPG",                                       label: "UK · Coldest May",  layer: "weather" },
+
+  // — Health —
+  { file: "Ebola_virus_em.jpg",                                             label: "Ebola · DRC",       layer: "health" },
 ];
 
 function redirect(filename) {
@@ -126,16 +147,33 @@ function shuffle(arr) {
   return a;
 }
 
-// Pick 5 random items from pool, avoiding same set as current
+// Pick 5 from pool, trying to spread across layers and avoid repeating current set
 let current = [];
 
 function pickFive() {
+  const layers = [...new Set(POOL.map(p => p.layer))];
   const shuffled = shuffle(POOL);
-  // Try not to repeat the same 5
-  const candidates = shuffled.filter(p => !current.find(c => c.file === p.file));
-  const pick = candidates.length >= 5 ? candidates.slice(0, 5) : shuffled.slice(0, 5);
-  current = pick;
-  return pick;
+  const picked = [];
+  const usedLayers = new Set();
+  const usedFiles = new Set(current.map(c => c.file));
+
+  // First pass: one from each layer (prefer items not in current set)
+  for (const layer of shuffle(layers)) {
+    if (picked.length >= 5) break;
+    const candidates = shuffled.filter(p =>
+      p.layer === layer && !usedLayers.has(layer) && !usedFiles.has(p.file)
+    );
+    const fallback = shuffled.filter(p => p.layer === layer && !usedLayers.has(layer));
+    const choice = (candidates[0] || fallback[0]);
+    if (choice) { picked.push(choice); usedLayers.add(layer); }
+  }
+
+  // Second pass: fill remaining slots from anything not yet picked
+  const remaining = shuffled.filter(p => !picked.find(q => q.file === p.file));
+  while (picked.length < 5 && remaining.length) picked.push(remaining.shift());
+
+  current = picked;
+  return picked;
 }
 
 // Apply images to tiles
