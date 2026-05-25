@@ -114,6 +114,69 @@
 
   .divider { height: 1px; background: var(--border); margin: 1.6rem 0; }
   footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.76rem; color: var(--text-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem; }
+
+  /* ── Collage ── */
+  .collage-wrap {
+    margin: 1.4rem -0.5rem 1.8rem;
+    overflow: hidden;
+  }
+  .collage-inner {
+    position: relative;
+    height: 210px;
+    /* wide enough to hold all 5 cards */
+  }
+  .col-card {
+    position: absolute;
+    left: var(--l);
+    top: var(--t);
+    transform: rotate(var(--r));
+    width: 140px;
+    margin: 0;
+    background: var(--bg);
+    border: 1px solid var(--border-2);
+    border-radius: 3px;
+    padding: 5px 5px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13), 0 1px 2px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, z-index 0s;
+    z-index: 1;
+    cursor: default;
+  }
+  .col-card:hover {
+    transform: rotate(0deg) scale(1.06);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.22);
+    z-index: 10;
+  }
+  .col-img-wrap {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    background: var(--bg-3);
+    border-radius: 1px;
+  }
+  .col-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .col-card figcaption {
+    font-size: 0.65rem;
+    font-family: var(--font);
+    color: var(--text-2);
+    text-align: center;
+    margin-top: 5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  @media (prefers-color-scheme: dark) {
+    .col-card { background: var(--bg-2); border-color: var(--border-2); }
+  }
+  @media (max-width: 600px) {
+    .collage-inner { height: 160px; }
+    .col-card { width: 108px; }
+    .col-img-wrap { width: 98px; height: 98px; }
+    .col-card { left: calc(var(--l) * 0.65) !important; }
+  }
 </style>
 </head>
 <body>
@@ -122,6 +185,52 @@
   <h1>Firas's Digest</h1>
   <div class="dateline">Monday · 25 May 2026 &nbsp;·&nbsp; Spring Bank Holiday &nbsp;·&nbsp; US Memorial Day</div>
 </header>
+
+<!-- ======= COLLAGE ======= -->
+<div class="collage-wrap" aria-label="Visual digest collage">
+  <div class="collage-inner">
+    <figure class="col-card" style="--r:-3deg;--t:18px;--l:0px">
+      <div class="col-img-wrap">
+        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG&width=340"
+             alt="US Navy vessel in the Strait of Hormuz"
+             onerror="this.parentNode.style.background='var(--amber-bg)'">
+      </div>
+      <figcaption>Iran · Hormuz</figcaption>
+    </figure>
+    <figure class="col-card" style="--r:2.5deg;--t:8px;--l:158px">
+      <div class="col-img-wrap">
+        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Nabatieh_city_center.jpg&width=340"
+             alt="Nabatieh, south Lebanon"
+             onerror="this.parentNode.style.background='var(--coral-bg)'">
+      </div>
+      <figcaption>Lebanon · South</figcaption>
+    </figure>
+    <figure class="col-card" style="--r:-1.5deg;--t:30px;--l:316px">
+      <div class="col-img-wrap">
+        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Ebola_virus_em.jpg&width=340"
+             alt="Ebola virus electron microscopy"
+             onerror="this.parentNode.style.background='var(--teal-bg)'">
+      </div>
+      <figcaption>Ebola · DRC</figcaption>
+    </figure>
+    <figure class="col-card" style="--r:3.5deg;--t:12px;--l:474px">
+      <div class="col-img-wrap">
+        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg&width=340"
+             alt="Ekrem Imamoglu campaigning"
+             onerror="this.parentNode.style.background='var(--blue-bg)'">
+      </div>
+      <figcaption>Turkey · CHP</figcaption>
+    </figure>
+    <figure class="col-card" style="--r:-2deg;--t:22px;--l:632px">
+      <div class="col-img-wrap">
+        <img src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Players%27_tunnel_at_Tottenham_Hotspur_Stadium%2C_view_towards_pitch.jpg&width=340"
+             alt="Tottenham Hotspur Stadium tunnel"
+             onerror="this.parentNode.style.background='var(--purple-bg)'">
+      </div>
+      <figcaption>Final Day · PL</figcaption>
+    </figure>
+  </div>
+</div>
 
 <!-- ======= TODAY'S SIGNAL ======= -->
 <div class="section-label">Today's Signal</div>
