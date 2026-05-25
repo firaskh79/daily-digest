@@ -1,64 +1,64 @@
 {
-  "date": "2026-05-24",
-  "mood_of_day": "conflicted",
+  "date": "2026-05-25",
+  "mood_of_day": "anxious",
   "macro": {
     "politics": [
       {
-        "headline": "Trump says Iran Hormuz deal 'largely negotiated,' announcement imminent",
-        "tags": ["Iran", "US", "Strait of Hormuz", "oil", "diplomacy"],
+        "headline": "Iran MOU unsigned; Supreme Leader orders enriched uranium stays in Iran",
+        "tags": ["Iran", "nuclear", "diplomacy", "Hormuz"],
         "sentiment": "anxious",
         "intensity": 9
       },
       {
-        "headline": "Israeli strikes continue in Lebanon; total dead 3,073+; ceasefire in name only",
-        "tags": ["Israel", "Lebanon", "Hezbollah", "conflict"],
+        "headline": "Pentagon takes over Lebanon-Israel security track from UNIFIL/Naqoura",
+        "tags": ["Lebanon", "Israel", "US", "security"],
         "sentiment": "anxious",
         "intensity": 8
       },
       {
-        "headline": "UK immigration officer convicted of working for Chinese intelligence",
-        "tags": ["UK", "espionage", "China", "security"],
-        "sentiment": "anxious",
+        "headline": "France bans Israeli National Security Minister Ben-Gvir",
+        "tags": ["France", "Israel", "EU", "diplomacy"],
+        "sentiment": "conflicted",
         "intensity": 6
       },
       {
-        "headline": "Arsenal win Premier League for first time in 22 years",
-        "tags": ["UK", "football", "Arsenal", "Premier League"],
-        "sentiment": "celebratory",
-        "intensity": 7
+        "headline": "Yemen government and Houthis sign landmark prisoner swap in Amman",
+        "tags": ["Yemen", "Houthis", "diplomacy", "humanitarian"],
+        "sentiment": "cautiously hopeful",
+        "intensity": 6
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude at $103-105 as Iran deal limbo sustains oil premium",
-        "tags": ["oil", "Iran", "Hormuz", "energy"],
+        "headline": "Brent crude above $105 on Iran uranium clause complication",
+        "tags": ["oil", "energy", "Brent", "Iran"],
         "sentiment": "volatile",
         "intensity": 8
       },
       {
-        "headline": "UK 30Y gilt yield at 5.53%, easing slightly but still at historic highs",
-        "tags": ["UK", "gilts", "bonds", "fiscal"],
-        "sentiment": "anxious",
-        "intensity": 6
+        "headline": "UK and US markets closed — Spring Bank Holiday and US Memorial Day",
+        "tags": ["FTSE", "Nasdaq", "markets", "holiday"],
+        "sentiment": "neutral",
+        "intensity": 3
       },
       {
-        "headline": "FTSE 100 closed at 10,466 Friday, Nasdaq 100 at 28,629",
-        "tags": ["markets", "equities", "FTSE", "Nasdaq"],
-        "sentiment": "reflective",
-        "intensity": 4
+        "headline": "UK 30Y gilt at 5.53% — elevated; real test at Tuesday open",
+        "tags": ["gilts", "UK", "debt", "interest rates"],
+        "sentiment": "anxious",
+        "intensity": 7
       }
     ],
     "google_trends_uk": [
-      { "rank": 1, "term": "Arsenal Premier League", "volume_est": "1M+" },
-      { "rank": 2, "term": "Trump Iran deal", "volume_est": "500K+" },
-      { "rank": 3, "term": "Judith Chalmers", "volume_est": "200K+" },
-      { "rank": 4, "term": "Cannes Palme d'Or 2026", "volume_est": "150K+" },
-      { "rank": 5, "term": "Crystal Palace Arsenal", "volume_est": "200K+" },
-      { "rank": 6, "term": "Ederson Man City", "volume_est": "100K+" },
-      { "rank": 7, "term": "Israel Lebanon", "volume_est": "150K+" },
-      { "rank": 8, "term": "Amazon drone delivery UK", "volume_est": "80K+" },
-      { "rank": 9, "term": "UK May cold record", "volume_est": "60K+" },
-      { "rank": 10, "term": "Ugarte Man United", "volume_est": "80K+" }
+      { "rank": 1, "term": "Premier League final day", "volume_est": "300K+" },
+      { "rank": 2, "term": "Spurs final day", "volume_est": "200K+" },
+      { "rank": 3, "term": "Everton relegation", "volume_est": "150K+" },
+      { "rank": 4, "term": "Iran deal latest", "volume_est": "100K+" },
+      { "rank": 5, "term": "Farage", "volume_est": "80K+" },
+      { "rank": 6, "term": "UK coldest May temperature", "volume_est": "60K+" },
+      { "rank": 7, "term": "Brent oil price", "volume_est": "50K+" },
+      { "rank": 8, "term": "Bolton Wanderers", "volume_est": "40K+" },
+      { "rank": 9, "term": "Rights Act UK", "volume_est": "35K+" },
+      { "rank": 10, "term": "London Marathon 2026", "volume_est": "30K+" }
     ],
     "pytrends_uk_live": []
   },
@@ -71,7 +71,7 @@
           "title": "Man I Need",
           "change": 0,
           "uk_artist": true,
-          "mood_tags": ["intimacy", "longing"],
+          "mood_tags": ["warmth", "longing", "intimacy"],
           "theme_tags": ["love", "need", "vulnerability"]
         },
         {
@@ -80,8 +80,8 @@
           "title": "Rein Me In",
           "change": 0,
           "uk_artist": true,
-          "mood_tags": ["warmth", "restraint"],
-          "theme_tags": ["love", "partnership", "holding back"]
+          "mood_tags": ["tension", "warmth", "bittersweet"],
+          "theme_tags": ["relationships", "control", "connection"]
         },
         {
           "pos": 3,
@@ -89,8 +89,8 @@
           "title": "Raindance",
           "change": 0,
           "uk_artist": true,
-          "mood_tags": ["resilience", "energy"],
-          "theme_tags": ["hope", "perseverance", "celebration"]
+          "mood_tags": ["confident", "celebratory", "grounded"],
+          "theme_tags": ["success", "resilience", "Black British identity"]
         },
         {
           "pos": 4,
@@ -98,8 +98,8 @@
           "title": "iloveitiloveitiloveit",
           "change": 0,
           "uk_artist": false,
-          "mood_tags": ["euphoria", "infatuation"],
-          "theme_tags": ["love", "obsession", "joy"]
+          "mood_tags": ["euphoric", "energised"],
+          "theme_tags": ["joy", "love", "obsession"]
         },
         {
           "pos": 5,
@@ -107,118 +107,127 @@
           "title": "So Easy (To Fall In Love)",
           "change": 0,
           "uk_artist": true,
-          "mood_tags": ["tenderness", "ease"],
-          "theme_tags": ["love", "effortlessness", "connection"]
+          "mood_tags": ["tender", "hopeful"],
+          "theme_tags": ["falling in love", "ease", "warmth"]
         }
       ],
       "tiktok_sounds": [
         {
-          "title": "Driftstar",
+          "title": "Copines (via .memescreens)",
+          "artist": "Aya Nakamura & Mc Pepeu",
+          "score": 984,
+          "videos": 253233,
+          "mood_tags": ["confident", "ironic", "playful"],
+          "theme_tags": ["meme", "self-assurance", "social commentary"]
+        },
+        {
+          "title": "Driftstar (via tarasoundtrip)",
           "artist": "Flow-G",
-          "score": 983,
-          "videos": 337418,
-          "mood_tags": ["restlessness", "night energy"],
-          "theme_tags": ["escapism", "aesthetic", "late night"]
+          "score": 981,
+          "videos": 456447,
+          "mood_tags": ["chill", "confident", "aspirational"],
+          "theme_tags": ["success reveal", "lifestyle", "Filipino hip-hop"]
+        },
+        {
+          "title": "Hopelessly Devoted to You (via chafterglow)",
+          "artist": "Studio Sound Group",
+          "score": 976,
+          "videos": 326067,
+          "mood_tags": ["nostalgic", "bittersweet", "romantic"],
+          "theme_tags": ["longing", "relationships", "before and after"]
         },
         {
           "title": "Hardest Truth",
           "artist": "Jubet",
-          "score": 978,
-          "videos": 517857,
-          "mood_tags": ["confidence", "directness"],
-          "theme_tags": ["relationships", "honesty", "self-worth"]
-        },
-        {
-          "title": "Hopelessly Devoted to You",
-          "artist": "Studio Sound Group",
-          "score": 973,
-          "videos": 277055,
-          "mood_tags": ["nostalgia", "longing"],
-          "theme_tags": ["romance", "retrospection", "classic"]
+          "score": 971,
+          "videos": 556865,
+          "mood_tags": ["energised", "celebratory", "proud"],
+          "theme_tags": ["glow-up", "success", "Afrobeat"]
         }
       ]
     },
     "tiktok_formats": [
-      { "format": "Mood-capture aesthetic edits", "theme_tags": ["escapism", "beauty"] },
-      { "format": "Relationship honesty confessionals", "theme_tags": ["vulnerability", "directness"] },
-      { "format": "Nostalgic retrospective montages", "theme_tags": ["nostalgia", "longing"] }
+      { "format": "Things that are objectively true (ironic Copines meme)", "theme_tags": ["irony", "self-assurance", "social commentary"] },
+      { "format": "Lifestyle success reveal / look what I built", "theme_tags": ["aspiration", "achievement", "confidence"] },
+      { "format": "Nostalgic before-and-after relationship (Hopelessly Devoted)", "theme_tags": ["nostalgia", "romance", "longing"] },
+      { "format": "Glow-up / personal transformation reveal", "theme_tags": ["transformation", "pride", "Afrobeat energy"] }
     ]
   },
   "threads": [
     {
       "id": "iran-hormuz",
       "status": "changed",
-      "status_line": "Trump says deal 'largely negotiated,' announcement imminent; Brent at $103-105",
-      "last_changed": "2026-05-24"
+      "status_line": "MOU not yet signed; Brent above $105 after Supreme Leader orders enriched uranium stays in Iran; Rubio says deal could happen today",
+      "last_changed": "2026-05-25"
     },
     {
       "id": "israel-lebanon",
-      "status": "stable",
-      "status_line": "Strikes continue; ceasefire in name only; total dead 3,073+",
-      "last_changed": "2026-05-23"
+      "status": "changed",
+      "status_line": "Pentagon opens direct security track (Naqoura to Washington); IDF soldier killed by drone; Israel approves continued operations",
+      "last_changed": "2026-05-25"
     },
     {
       "id": "venice-biennale",
       "status": "stable",
-      "status_line": "Running Apr-Nov; Palestinian pavilion drawing attention; no new incident",
+      "status_line": "Running Apr-Nov; Palestinian pavilion drawing attention; no major new incident",
       "last_changed": "2026-05-22"
     },
     {
       "id": "uk-economic-stress",
       "status": "stable",
-      "status_line": "30Y gilt 5.53% (easing); FTSE ~10,466; oil at $104 adds pressure",
+      "status_line": "30Y gilt 5.53% (market closed, Bank Holiday); FTSE last 10,466; Brent above $105 adds fresh pressure",
       "last_changed": "2026-05-22"
     },
     {
       "id": "olivia-dean-chart",
       "status": "stable",
-      "status_line": "Holds #1, #2, #5 simultaneously — all positions flat this week",
+      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 — all flat for third consecutive week",
       "last_changed": "2026-05-22"
     },
     {
       "id": "tucker-focus",
       "status": "stable",
-      "status_line": "Told Israeli TV Netanyahu dragged US into war; TCN at record growth",
+      "status_line": "Latest episode May 23; maintains anti-Trump positioning since Apr 20; no new pivot",
       "last_changed": "2026-05-23"
     },
     {
       "id": "mearsheimer",
       "status": "stable",
-      "status_line": "'Eating Humble Pie' May 20; arguing Iran war is US strategic loss; no new post",
+      "status_line": "Munk Debates May 20; no new Substack post since May 22",
       "last_changed": "2026-05-23"
     },
     {
       "id": "cannes-2026",
-      "status": "changed",
-      "status_line": "Palme d'Or to Mungiu's Fjord; speech: 'pledge against any kind of fundamentalism'",
+      "status": "stable",
+      "status_line": "Festival closed May 23; Palme d'Or to Mungiu's Fjord; no major follow-up today",
       "last_changed": "2026-05-24"
     }
   ],
   "synthesis": {
-    "daily_theme": "A world holding its breath: a potential Iran deal has markets on edge, while culture seizes available joy — Arsenal's first title in 22 years, Olivia Dean at #1 — against persistent geopolitical anxiety.",
-    "mechanism": "The Iran deal announcement, if confirmed, would be the most significant de-escalation since the April 8 ceasefire — directly affecting oil, UK energy costs, and global risk sentiment. Meanwhile, UK popular culture (Arsenal's title win, chart dominance by introspective domestic artists) reflects a strong inward turn, consistent with TikTok sound trends that favour escapism, nostalgia, and relational intimacy over political engagement.",
+    "daily_theme": "The world waits on a holiday — the Iran MOU hangs unsigned on a day when Western markets are closed and nobody is officially at work.",
+    "mechanism": "The timing is structurally awkward: the biggest potential market-moving event in months (the Hormuz MOU) is attempting to materialise on a day when both London and New York are dark. Oil can move but equities and bonds cannot respond until Tuesday. Meanwhile, the cultural temperature in the UK is absorbed entirely by the Premier League final day — sport functioning as collective escape from a genuinely anxious geopolitical moment.",
     "connections": [
       {
-        "macro_event": "Iran deal 'largely negotiated' — Brent at $103-105",
-        "cultural_response": "TikTok escapism sounds dominating; UK chart locked in soft, intimate domestic music",
-        "mechanism": "Sustained geopolitical anxiety since February 2026 has produced a cultural turn toward comfort — people seeking emotional resolution in music and short-form content as macro events feel beyond individual control",
-        "observation": "The Olivia Dean monopoly of the UK chart and TikTok's nostalgia-heavy sound trends both reflect the same underlying mood: a desire for warmth and certainty in an uncertain moment. Iran and Lebanon do not appear as explicit cultural content — instead they surface as pressure shaping the emotional register of what people choose to consume.",
-        "confidence": "moderate",
+        "macro_event": "Brent crude above $105 on Iran uranium complication",
+        "cultural_response": "UK Twitter dominated by Premier League final day rather than oil price news",
+        "mechanism": "Bank Holiday + Premier League final day creates a collective attention displacement. The public is emotionally and logistically unavailable for macro anxiety. Sport as temporary escape from geopolitical stress is a well-documented pattern.",
+        "observation": "On any other Monday, a Brent move above $105 would dominate UK trending. Instead, Spurs and Everton lead. This is not ignorance — it is the calendar doing what bank holidays do: suspending the normal flow of anxiety. The oil market will reassert itself Tuesday morning.",
+        "confidence": "strong",
         "signal_type": "reactive"
       },
       {
-        "macro_event": "Arsenal win Premier League for first time in 22 years",
-        "cultural_response": "Mass celebratory moment in a news cycle dominated by conflict and diplomatic uncertainty",
-        "mechanism": "Domestic sporting victories provide nationally shared catharsis — collective emotional events that briefly override ambient anxiety. Arsenal trending above Trump in UK volume is the clearest signal of where public mood wants to be.",
-        "observation": "Arsenal's title eclipses Iran and Lebanon in trending volume today. This is not cognitive dissonance — it is the natural human tendency to seize available joy. The contrast between celebratory energy in south London and the Lebanon death toll is the day's sharpest juxtaposition.",
-        "confidence": "strong",
-        "signal_type": "divergence"
+        "macro_event": "UK coldest May overnight temperature in recorded history — snowfall in Shetland",
+        "cultural_response": "UK social commentary on weather as shared collective irony, especially given Bank Holiday timing",
+        "mechanism": "A record cold snap on the Bank Holiday weekend — traditionally the psychological start of British summer — creates a peculiarly British form of collective irony that generates high social engagement without serious alarm.",
+        "observation": "Snow on the Bank Holiday, Brent at $105, and Spurs in the top trending slot. The juxtaposition encapsulates the UK's current situation with a dry humour that runs through every layer of today's social pulse.",
+        "confidence": "moderate",
+        "signal_type": "lagging"
       },
       {
-        "macro_event": "Cannes Palme d'Or for Fjord — Mungiu's anti-fundamentalism speech",
-        "cultural_response": "High-prestige cultural moment that names the political mood without taking specific sides",
-        "mechanism": "Award-season speeches remain one of the few spaces where culture-war positions are articulated explicitly by credentialed figures. Mungiu names polarisation and fundamentalism as the central problem without directing the statement at any particular actor — a universalising move that may be strategic or may reflect the limits of what a Romanian director at Cannes is willing to say.",
-        "observation": "Mungiu's framing — 'a pledge against any kind of fundamentalism' — will be tested as Fjord enters wider circulation. The absence of specific political naming was notable in a festival taking place amid an active Middle East war.",
+        "macro_event": "TikTok dominated by confident Copines meme and Afrobeat success content",
+        "cultural_response": "Mood diverges from geopolitical anxiety — TikTok leans celebratory and self-assured",
+        "mechanism": "TikTok's algorithm rewards confident, high-energy formats. In periods of geopolitical uncertainty, platforms surface escapist and aspirational content as users self-select away from stress. The Copines irony format and Afrobeat glow-up sounds function as algorithmic mood regulation.",
+        "observation": "The contrast between the macro thread (Iran MOU, oil spike, Lebanese conflict escalation) and the cultural stream (ironic memes, lifestyle reveals, nostalgic romance covers) is sharp today. This divergence — high-anxiety macro, low-anxiety culture — is a pattern worth tracking. When the two converge, the cultural mood shift tends to be abrupt.",
         "confidence": "moderate",
         "signal_type": "leading"
       }

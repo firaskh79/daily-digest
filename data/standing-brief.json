@@ -3,10 +3,10 @@
     {
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
-      "status_line": "Trump says deal 'largely negotiated,' announcement imminent; Brent at $103-105",
+      "status_line": "MOU not yet signed; Brent above $105 after Supreme Leader orders enriched uranium stays in Iran; Rubio says deal could happen 'today'",
       "status": "changed",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-24",
+      "last_changed": "2026-05-25",
       "expand_if": [
         "formal MOU signed",
         "talks collapse again",
@@ -19,10 +19,10 @@
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
-      "status_line": "Strikes continue; ceasefire in name only; total dead 3,073+; evacuation orders for 10 villages",
-      "status": "stable",
+      "status_line": "Pentagon opens direct security track (Naqoura → Washington); IDF soldier killed by drone; Israel approves continued operations; strikes on south Lebanon continue",
+      "status": "changed",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-23",
+      "last_changed": "2026-05-25",
       "expand_if": [
         "major Israeli ground incursion",
         "Hezbollah rocket barrage on Israeli cities",
@@ -50,7 +50,7 @@
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
-      "status_line": "30Y gilt 5.53% (easing); FTSE ~10,466; Brent at $104 adds fresh pressure point",
+      "status_line": "30Y gilt 5.53% (market closed, Bank Holiday); FTSE last 10,466; Brent above $105 adds fresh pressure — real test Tuesday open",
       "status": "stable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
@@ -66,7 +66,7 @@
     {
       "id": "olivia-dean-chart",
       "label": "Olivia Dean / UK Chart",
-      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions flat this week",
+      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions flat for third consecutive week",
       "status": "stable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
@@ -81,7 +81,7 @@
     {
       "id": "tucker-focus",
       "label": "Tucker Carlson",
-      "status_line": "Told Israeli TV Netanyahu dragged US into war; White House: 'fake news'; TCN at record 56.8M views/episode",
+      "status_line": "Latest episode May 23 (126 min); maintains anti-Trump positioning since Apr 20 withdrawal; no new pivot today",
       "status": "stable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-23",
@@ -95,7 +95,7 @@
     {
       "id": "mearsheimer",
       "label": "Mearsheimer",
-      "status_line": "'Eating Humble Pie' (May 20); arguing Iran war is already a strategic loss for the US; no new post since",
+      "status_line": "Debated Nuland/Pompeo at Munk Debates May 20; 'Eating Humble Pie' post May 20 arguing Iran war is strategic loss for US; no new post since May 22",
       "status": "stable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-23",
@@ -109,8 +109,8 @@
     {
       "id": "cannes-2026",
       "label": "Cannes 2026",
-      "status_line": "Palme d'Or to Mungiu's Fjord (Neon's 7th straight); speech: 'pledge against any kind of fundamentalism'",
-      "status": "changed",
+      "status_line": "Festival closed May 23; Palme d'Or to Mungiu's Fjord (Neon); speech: 'pledge against any kind of fundamentalism'; no major follow-up today",
+      "status": "stable",
       "first_seen": "2026-05-23",
       "last_changed": "2026-05-24",
       "expand_if": [
@@ -120,5 +120,5 @@
       ]
     }
   ],
-  "last_updated": "2026-05-24"
+  "last_updated": "2026-05-25"
 }
