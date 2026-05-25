@@ -3,8 +3,8 @@
     {
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
-      "status_line": "MOU not yet signed; Brent above $105 after Supreme Leader orders enriched uranium stays in Iran; Rubio says deal could happen 'today'",
       "status": "changed",
+      "status_line": "Trump shifted to '50/50' odds by afternoon; deal discourse ran ahead of reality all day — announcement was a pressure tactic, not confirmation of agreement",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-25",
       "expand_if": [
@@ -19,8 +19,8 @@
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
-      "status_line": "Pentagon opens direct security track (Naqoura → Washington); IDF soldier killed by drone; Israel approves continued operations; strikes on south Lebanon continue",
       "status": "changed",
+      "status_line": "11 killed in Israeli strike on Sir al-Gharbieh; Nabatieh civil defence centre destroyed; Pentagon direct security track open; IDF soldier killed by drone",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-25",
       "expand_if": [
@@ -33,10 +33,42 @@
       ]
     },
     {
+      "id": "ebola-drc-uganda",
+      "label": "Ebola Bundibugyo — DRC / Uganda",
+      "status": "new",
+      "status_line": "PHEIC declared 17 May; 746 suspected cases, 176 deaths in DRC; cases confirmed in Kampala Uganda — first cross-border spread",
+      "first_seen": "2026-05-25",
+      "last_changed": "2026-05-25",
+      "expand_if": [
+        "cases confirmed outside DRC/Uganda",
+        "WHO raises to highest alert level",
+        "WHO emergency committee reconvenes",
+        "vaccine supply constraint announced",
+        "Kampala cases multiply",
+        "travel restrictions imposed"
+      ]
+    },
+    {
+      "id": "turkey-crackdown",
+      "label": "Turkey — CHP / Opposition",
+      "status": "new",
+      "status_line": "Riot police entered CHP headquarters Istanbul; Imamoglu still detained; constitutional court challenge pending",
+      "first_seen": "2026-05-25",
+      "last_changed": "2026-05-25",
+      "expand_if": [
+        "Imamoglu released or formally charged",
+        "CHP headquarters sealed",
+        "street protests escalate",
+        "EU or US formal condemnation",
+        "constitutional court ruling on Imamoglu detention",
+        "Erdogan statement on opposition"
+      ]
+    },
+    {
       "id": "venice-biennale",
       "label": "Venice Biennale 2026",
-      "status_line": "Running Apr-Nov; Palestinian pavilion drawing attention; no major new incident",
       "status": "stable",
+      "status_line": "Running Apr-Nov; Palestinian pavilion drawing attention; no major new incident",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
       "expand_if": [
@@ -50,8 +82,8 @@
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
-      "status_line": "30Y gilt 5.53% (market closed, Bank Holiday); FTSE last 10,466; Brent above $105 adds fresh pressure — real test Tuesday open",
       "status": "stable",
+      "status_line": "30Y gilt 5.53% (market closed, Bank Holiday); FTSE last 10,466; Brent above $105 adds fresh pressure — real test Tuesday open",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
       "expand_if": [
@@ -66,8 +98,8 @@
     {
       "id": "olivia-dean-chart",
       "label": "Olivia Dean / UK Chart",
-      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions flat for third consecutive week",
       "status": "stable",
+      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions flat for third consecutive week",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
       "expand_if": [
@@ -81,8 +113,8 @@
     {
       "id": "tucker-focus",
       "label": "Tucker Carlson",
-      "status_line": "Latest episode May 23 (126 min); maintains anti-Trump positioning since Apr 20 withdrawal; no new pivot today",
       "status": "stable",
+      "status_line": "Latest episode May 23 (126 min); maintains anti-Trump positioning since Apr 20 withdrawal; no new pivot today",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-23",
       "expand_if": [
@@ -95,8 +127,8 @@
     {
       "id": "mearsheimer",
       "label": "Mearsheimer",
-      "status_line": "Debated Nuland/Pompeo at Munk Debates May 20; 'Eating Humble Pie' post May 20 arguing Iran war is strategic loss for US; no new post since May 22",
       "status": "stable",
+      "status_line": "Debated Nuland/Pompeo at Munk Debates May 20; 'Eating Humble Pie' post May 20 arguing Iran war is strategic loss for US; no new post since May 22",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-23",
       "expand_if": [
@@ -109,8 +141,8 @@
     {
       "id": "cannes-2026",
       "label": "Cannes 2026",
-      "status_line": "Festival closed May 23; Palme d'Or to Mungiu's Fjord (Neon); speech: 'pledge against any kind of fundamentalism'; no major follow-up today",
       "status": "stable",
+      "status_line": "Festival closed May 23; Palme d'Or to Mungiu's Fjord (Neon); speech: 'pledge against any kind of fundamentalism'; no major follow-up today",
       "first_seen": "2026-05-23",
       "last_changed": "2026-05-24",
       "expand_if": [
@@ -118,6 +150,21 @@
         "Fjord sparks specific controversy re: conflict framing",
         "follow-up political statement from any winner"
       ]
+    }
+  ],
+  "retired_threads": [],
+  "source_discoveries": [
+    {
+      "name": "Richard Haass — 'Home & Away' Substack",
+      "url": "https://richardhaass.substack.com",
+      "found_on": "2026-05-25",
+      "why_interesting": "Former CFR president arguing Trump is recreating the JCPOA he destroyed, and that the regime change US hawks wanted produced a more hardline Iranian government — a structural counter-frame to the deal optimism"
+    },
+    {
+      "name": "L'Orient Today",
+      "url": "https://today.lorientlejour.com",
+      "found_on": "2026-05-25",
+      "why_interesting": "English-language edition of L'Orient Le Jour; takes a meaningfully different political line from Al-Nahar on Lebanese politics; useful for south Lebanon coverage that doesn't share Al-Nahar's political framing"
     }
   ],
   "last_updated": "2026-05-25"
