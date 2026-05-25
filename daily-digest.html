@@ -36,126 +36,84 @@
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: var(--font);
-    background: var(--bg);
-    color: var(--text);
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 2rem;
-    line-height: 1.6;
-  }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); max-width: 780px; margin: 0 auto; padding: 2rem; line-height: 1.6; }
   a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
   header { border-bottom: 2px solid var(--border-2); padding-bottom: 1.2rem; margin-bottom: 2rem; }
-  header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
-  header .dateline { font-size: 0.9rem; color: var(--text-3); margin-top: 0.2rem; }
+  header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; }
+  header .dateline { font-size: 0.88rem; color: var(--text-3); margin-top: 0.2rem; }
 
-  .section-label {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--text-3); margin: 2rem 0 0.8rem;
-  }
-  h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
-  h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin: 2rem 0 0.9rem; }
+  h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.3; }
+  h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
+  p { font-size: 0.9rem; color: var(--text-2); margin-bottom: 0.5rem; }
+  p:last-child { margin-bottom: 0; }
+  p strong { color: var(--text); }
 
-  .tag {
-    display: inline-block; font-size: 0.7rem; font-weight: 600;
-    padding: 0.15em 0.55em; border-radius: 4px; letter-spacing: 0.03em;
-  }
+  .tag { display: inline-block; font-size: 0.68rem; font-weight: 600; padding: 0.15em 0.55em; border-radius: 4px; letter-spacing: 0.03em; }
   .tag.stable { background: var(--gray-bg); color: var(--gray-text); }
   .tag.changed { background: var(--amber-bg); color: var(--amber-text); }
   .tag.new { background: var(--purple-bg); color: var(--purple-text); }
   .tag.uk { background: var(--blue-bg); color: var(--blue-text); }
   .tag.tb { background: var(--teal-bg); color: var(--teal-text); }
-  .tag.source { background: var(--bg-3); color: var(--text-2); font-size: 0.68rem; }
+  .tag.source { background: var(--bg-3); color: var(--text-2); font-size: 0.66rem; }
+  .tag.alert { background: var(--coral-bg); color: var(--coral-text); }
 
-  .threads-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin-bottom: 1rem; }
-  .threads-table th {
-    text-align: left; font-size: 0.68rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-3);
-    padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border-2);
-  }
-  .threads-table td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  .threads-table tr:last-child td { border-bottom: none; }
-  .thread-label { font-weight: 600; white-space: nowrap; }
-  .thread-status { white-space: nowrap; }
-  .thread-line { color: var(--text-2); }
-  .thread-date { font-size: 0.78rem; color: var(--text-3); white-space: nowrap; }
+  .signal-card { padding: 1.3rem 0; border-bottom: 1px solid var(--border); }
+  .signal-card:last-child { border-bottom: none; }
+  .signal-card h2 { font-size: 1.05rem; margin-bottom: 0.5rem; }
 
-  .story {
-    background: var(--bg-2); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.2rem 1.4rem; margin-bottom: 1.2rem;
-  }
-  .story .story-meta {
-    font-size: 0.72rem; color: var(--text-3); text-transform: uppercase;
-    letter-spacing: 0.08em; margin-bottom: 0.4rem;
-  }
-  .story h2 { font-size: 1.05rem; margin-bottom: 0.6rem; }
-  .story p { font-size: 0.9rem; color: var(--text-2); margin-bottom: 0.5rem; }
-  .story p:last-child { margin-bottom: 0; }
+  .story { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
+  .story .story-meta { font-size: 0.68rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+  .story h2 { font-size: 1rem; margin-bottom: 0.5rem; }
 
-  .news-item { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); }
-  .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .news-item h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
-  .news-item p { font-size: 0.875rem; color: var(--text-2); margin-bottom: 0.3rem; }
+  .outside-card { border-left: 3px solid var(--purple-text); padding: 0.9rem 0 0.9rem 1.1rem; margin-bottom: 1rem; }
+  .outside-card h3 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--text); }
+  .outside-card .oc-source { font-size: 0.72rem; color: var(--text-3); margin-bottom: 0.3rem; }
 
   .rtl { direction: rtl; text-align: right; }
-  .arabic-headline { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; line-height: 1.5; }
-  .arabic-sub { font-size: 0.82rem; color: var(--text-2); direction: ltr; text-align: left; }
-  .arabic-item { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
-  .arabic-item:last-child { border-bottom: none; }
+  .arabic-item { margin-bottom: 0.9rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--border); }
+  .arabic-item:last-child { border-bottom: none; margin-bottom: 0; }
+  .arabic-headline { font-size: 0.98rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.2rem; }
+  .arabic-sub { font-size: 0.8rem; color: var(--text-2); direction: ltr; text-align: left; }
 
-  .trend-list { list-style: none; }
-  .trend-list li { padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
-  .trend-list li:last-child { border-bottom: none; }
-  .trend-term { font-weight: 600; margin-right: 0.5rem; }
-
-  .tiktok-sound {
-    background: var(--bg-2); border-radius: var(--radius-sm);
-    padding: 0.7rem 0.9rem; margin-bottom: 0.7rem; font-size: 0.875rem;
-  }
-  .tiktok-sound .sound-meta { font-size: 0.75rem; color: var(--text-3); margin-top: 0.3rem; }
+  .culture-block { padding: 0; }
+  .tiktok-row { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+  .tiktok-row:last-child { border-bottom: none; }
+  .tiktok-row .sound-title { font-weight: 600; }
+  .tiktok-row .sound-meta { font-size: 0.74rem; color: var(--text-3); margin-top: 0.15rem; }
 
   .chart-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-  .chart-table td { padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--border); }
+  .chart-table td { padding: 0.45rem 0.35rem; border-bottom: 1px solid var(--border); }
   .chart-table tr:last-child td { border-bottom: none; }
   .pos { font-weight: 700; width: 2rem; }
-  .change { width: 2.5rem; font-size: 0.8rem; color: var(--text-3); }
-  .change.up { color: var(--teal-text); }
-  .change.flat { color: var(--text-3); }
-  .change.down { color: var(--coral-text); }
-  .artist { font-weight: 600; }
-  .title { color: var(--text-2); }
+  .chg { width: 2.5rem; font-size: 0.78rem; color: var(--text-3); }
+  .chg.up { color: var(--teal-text); }
+  .chg.dn { color: var(--coral-text); }
 
-  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.8rem; }
-  .tile {
-    background: var(--bg-2); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 0.9rem 1rem;
-  }
-  .tile .tile-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-3); margin-bottom: 0.3rem; }
-  .tile .tile-value { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; }
-  .tile .tile-note { font-size: 0.75rem; color: var(--text-2); margin-top: 0.2rem; }
+  .trends-list { list-style: none; }
+  .trends-list li { font-size: 0.875rem; padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+  .trends-list li:last-child { border-bottom: none; }
+  .trend-term { font-weight: 600; margin-right: 0.4rem; }
+
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .tile { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; }
+  .tile .tile-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-3); margin-bottom: 0.25rem; }
+  .tile .tile-value { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+  .tile .tile-note { font-size: 0.73rem; color: var(--text-2); margin-top: 0.15rem; }
   .tile.elevated .tile-value { color: var(--amber-text); }
 
-  .tech-block {
-    background: var(--blue-bg); border-radius: var(--radius);
-    padding: 1rem 1.2rem; font-size: 0.9rem; color: var(--blue-text);
-  }
-  .tech-block h3 { color: var(--blue-text); margin-bottom: 0.5rem; }
-  .tech-block p { color: var(--blue-text); opacity: 0.9; }
+  .threads-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .threads-table th { text-align: left; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-3); padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border-2); }
+  .threads-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .threads-table tr:last-child td { border-bottom: none; }
+  .thread-label { font-weight: 600; white-space: nowrap; }
+  .thread-line { color: var(--text-2); font-size: 0.82rem; }
+  .thread-date { font-size: 0.75rem; color: var(--text-3); white-space: nowrap; }
 
-  footer {
-    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
-    font-size: 0.78rem; color: var(--text-3);
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem;
-  }
-  .divider { height: 1px; background: var(--border); margin: 1.8rem 0; }
-  .holiday-note {
-    background: var(--gray-bg); border-radius: var(--radius-sm);
-    padding: 0.5rem 0.8rem; font-size: 0.8rem; color: var(--gray-text);
-    margin-bottom: 1rem; display: inline-block;
-  }
+  .divider { height: 1px; background: var(--border); margin: 1.6rem 0; }
+  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.76rem; color: var(--text-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem; }
 </style>
 </head>
 <body>
@@ -165,276 +123,208 @@
   <div class="dateline">Monday · 25 May 2026 &nbsp;·&nbsp; Spring Bank Holiday &nbsp;·&nbsp; US Memorial Day</div>
 </header>
 
-<!-- RUNNING THREADS -->
-<div class="section-label">Running Threads</div>
+<!-- ======= TODAY'S SIGNAL ======= -->
+<div class="section-label">Today's Signal</div>
 
-<table class="threads-table">
-  <thead>
-    <tr>
-      <th>Thread</th>
-      <th>Status</th>
-      <th>Current status</th>
-      <th>Changed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="thread-label">Iran / Hormuz</td>
-      <td class="thread-status"><span class="tag changed">changed</span></td>
-      <td class="thread-line">MOU not yet signed; Brent above $105 after Supreme Leader orders enriched uranium stays in Iran; Rubio says deal could happen "today"</td>
-      <td class="thread-date">May 25</td>
-    </tr>
-    <tr>
-      <td class="thread-label">Israel / Lebanon</td>
-      <td class="thread-status"><span class="tag changed">changed</span></td>
-      <td class="thread-line">Pentagon opens direct security track (Naqoura→Washington); IDF soldier killed by drone in south Lebanon; Israel approves continued operations</td>
-      <td class="thread-date">May 25</td>
-    </tr>
-    <tr>
-      <td class="thread-label">Venice Biennale 2026</td>
-      <td class="thread-status"><span class="tag stable">stable</span></td>
-      <td class="thread-line">Running Apr–Nov; Palestinian pavilion drawing attention; no major new incident</td>
-      <td class="thread-date">May 22</td>
-    </tr>
-    <tr>
-      <td class="thread-label">UK Economic Stress</td>
-      <td class="thread-status"><span class="tag stable">stable</span></td>
-      <td class="thread-line">30Y gilt 5.53% (market closed, Bank Holiday); FTSE last 10,466; Brent above $105 adds fresh pressure</td>
-      <td class="thread-date">May 22</td>
-    </tr>
-    <tr>
-      <td class="thread-label">Olivia Dean / UK Chart</td>
-      <td class="thread-status"><span class="tag stable">stable</span></td>
-      <td class="thread-line">Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions flat again</td>
-      <td class="thread-date">May 22</td>
-    </tr>
-    <tr>
-      <td class="thread-label">Tucker Carlson</td>
-      <td class="thread-status"><span class="tag stable">stable</span></td>
-      <td class="thread-line">Latest episode May 23 (126 min); maintains anti-Trump positioning since Apr 20 withdrawal; no new pivot today</td>
-      <td class="thread-date">May 23</td>
-    </tr>
-    <tr>
-      <td class="thread-label">Mearsheimer</td>
-      <td class="thread-status"><span class="tag stable">stable</span></td>
-      <td class="thread-line">Debated Nuland/Pompeo at Munk Debates May 20; no new Substack post since May 22</td>
-      <td class="thread-date">May 23</td>
-    </tr>
-    <tr>
-      <td class="thread-label">Cannes 2026</td>
-      <td class="thread-status"><span class="tag stable">stable</span></td>
-      <td class="thread-line">Festival closed May 23; Palme d'Or to Mungiu's <em>Fjord</em>; no major follow-up in press circuit today</td>
-      <td class="thread-date">May 24</td>
-    </tr>
-  </tbody>
-</table>
+<div class="signal-card">
+  <h2>The Iran deal discourse is running ahead of the actual deal</h2>
+  <p>This morning's frame — deal imminent, Rubio says "today" — has already shifted. By this afternoon Trump says he is "50/50" between signing and resuming military strikes, and has told reporters there is "no rush." Iran's IRGC-linked Fars agency has consistently called the deal "incomplete and inconsistent with reality." What's actually happening is a negotiation still stuck on genuinely hard questions: the uranium stockpile, long-term Strait governance, and the sequencing of sanctions relief. The announcement of imminence appears to be a tactic — pressure on Tehran — not a description of where the talks are.</p>
+  <p>The sharpest framing comes from Richard Haass writing on Substack this week: Trump is being forced to negotiate an agreement almost identical to the JCPOA he tore up in his first term. The regime change the war achieved produced <em>a more hardline government</em>, not a more pliable one. Meanwhile, Republican hawks including Lindsey Graham are already attacking any deal that doesn't fully dismantle Iran's nuclear programme — meaning Trump will face domestic opposition from his own coalition the moment he signs. This is the constraint the deal coverage keeps underplaying: the problem isn't just Iran's position, it's what Trump can actually sell at home. <a href="https://richardhaass.substack.com/p/the-irany-of-the-iran-war-may-22">→ Haass, Substack</a></p>
+</div>
 
-<!-- IRAN/HORMUZ story card -->
+<div class="signal-card">
+  <h2>Ebola is a Public Health Emergency of International Concern — and barely in the news</h2>
+  <p>On 17 May, the WHO declared the Bundibugyo Ebola outbreak in the Democratic Republic of Congo and Uganda a PHEIC — the highest level of global health alert. As of 21 May: 746 suspected cases, 176 deaths from suspected cases in DRC, with confirmed cases now in Uganda including Kampala. The Bundibugyo strain has no approved vaccine or specific treatment. The outbreak is occurring in Ituri, Nord-Kivu, and Sud-Kivu — a zone of active conflict with poor infrastructure and high population movement across borders. The WHO has declared seven PHEICs in its history; this is one of them. It is receiving a fraction of the coverage of the Iran deal. <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026">→ WHO</a></p>
+</div>
+
+<div class="signal-card">
+  <h2>Turkey: riot police enter opposition party headquarters</h2>
+  <p>Turkish riot police entered the main opposition CHP (Republican People's Party) headquarters today to evict its ousted leadership — a dramatic escalation in the ongoing fracturing of Turkey's largest opposition party. This is happening as Erdogan's government has intensified pressure on institutional opponents; the CHP leadership dispute is not purely internal but has been shaped by legal and political pressure from above. A story completely absent from UK and US coverage today, buried by the Iran deal and the bank holiday. <a href="https://today.lorientlejour.com/article/1507908/riot-police-enter-opposition-headquarters-to-evict-ousted-leadership-.html">→ L'Orient Today</a></p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ======= CHANGED THREADS ======= -->
+<div class="section-label">Changed Threads</div>
+
 <div class="story">
-  <div class="story-meta">Changed thread · Iran / Hormuz</div>
-  <h2>MOU Still Unsigned — Brent Jumps Above $105 on Uranium Standoff</h2>
-  <p>The US and Iran are in the final stretch of a memorandum of understanding that would pause their conflict for 60 days, reopen the Strait of Hormuz, and begin nuclear talks — but today brings a new complication. Iran's Supreme Leader Mojtaba Khamenei has ordered that Iran's enriched uranium stockpile remain inside the country, a direct sticking point in the draft MOU which calls for the removal or suspension of that stockpile. Oil markets responded immediately: Brent crude climbed above $105, erasing the modest easing of recent days.</p>
-  <p>Secretary of State Rubio said a deal could materialise "today," and both sides have accepted the principle of a 60-day framework including Hormuz reopening and sanctions waivers allowing Iranian oil sales. The remaining disagreements are genuinely hard: timing of sanctions relief, long-term control of the Strait after the 60-day window, and what actually happens to enriched uranium. Iranian state media continues to signal wide gaps; the White House insists the deal is "largely negotiated."</p>
-  <p><strong>What to watch:</strong> A signed MOU — or a breakdown over the uranium clause — likely moves oil by $5–10/barrel in either direction. With UK gilt markets closed today, the real test of how UK borrowing costs absorb this comes Tuesday morning.</p>
+  <div class="story-meta">Iran / Hormuz · changed</div>
+  <h2>Trump Moves to "50/50" — The Announcement Was the Tactic</h2>
+  <p>The morning's "deal today" framing from Rubio has been walked back by Trump himself, who now says he is "50/50" between signing and resuming strikes, and that there is "no rush." The US naval blockade of Iranian ports remains in place. What this tells you: the announcement of imminence was pressure, not fact. The sticking points — uranium stockpile removal, Strait governance post-MOU, sanctions sequencing — remain unresolved, and Iran's official position (per IRGC-linked media) has not changed: the Strait remains "under the monopoly and discretion of the Islamic Republic of Iran."</p>
+  <p>Brent is above $105, reflecting the market pricing in continued uncertainty rather than resolution. The oil market is doing what it always does in these situations: sitting one step ahead of the headlines. The real tell will be whether Brent holds above $105 or begins to drift down — the latter would suggest traders are pricing in a deal regardless of the public statements.</p>
+  <p>L'Orient Today's lead analysis calls Trump "disoriented" — an interesting framing from a Beirut paper that has historically been sympathetic to Western positions. When the Lebanese Christian establishment press starts using that word about the mediator, it's worth noting.</p>
 </div>
 
-<!-- ISRAEL/LEBANON story card -->
 <div class="story">
-  <div class="story-meta">Changed thread · Israel / Lebanon</div>
-  <h2>Pentagon Takes Over the Lebanon-Israel Security Track — A Structural Shift</h2>
-  <p>Security meetings between Lebanese and Israeli officials have shifted from Naqoura — the traditional UNIFIL contact point — to the Pentagon itself. Al-Nahar describes this as a move "from a limited field framework to a US-managed strategic-security track," with Washington now directly chairing the talks rather than serving as a background guarantor. Simultaneously, the Israeli cabinet approved plans to continue military operations in Lebanon, meaning the diplomatic and military tracks are running in parallel rather than as a sequenced handoff.</p>
-  <p>On the ground, Sgt. Nehoray Leizer, 19, from Eilat — a combat engineer in the 601st Brigade — was killed by an explosive drone in south Lebanon, and a second soldier was seriously wounded. Israeli airstrikes targeted Zawtar al-Sharqiyya, Deir Siryan, Al-Mansouri, Arabsalim, and the Kfar Jouz area. Al-Nahar's lead editorial poses the structural question bluntly: does the Hormuz MOU, if signed, include a ceasefire component for south Lebanon, or will Israel be permitted to continue operations while Tehran accepts the broader deal? Hezbollah's acting Secretary-General Naim Qassem, meanwhile, called disarming Hezbollah "extermination" and said the people have the right to topple the government — statements that Al-Nahar notes are generating discomfort in Shia circles.</p>
-  <p><strong>What to watch:</strong> Whether the Pentagon security track produces a framework document this week; whether the Hormuz MOU explicitly addresses Lebanon or leaves it as a side negotiation.</p>
+  <div class="story-meta">Israel / Lebanon · changed</div>
+  <h2>11 Dead in Sir al-Gharbieh; Nabatieh Civil Defence Centre Destroyed; Rescue Workers Targeted</h2>
+  <p>L'Orient Today's live coverage today is significantly darker than the framing in UK and US press. An Israeli strike on Sir al-Gharbieh killed 11 people. The Nabatieh civil defence centre — an emergency services facility — was bombed and completely destroyed. Rescue workers were targeted in the Nabatieh region. The Israeli army simultaneously issued forced displacement orders for approximately 15 villages in south Lebanon and the Bekaa. This is not a ceasefire in any meaningful sense.</p>
+  <p>The Pentagon security track is now running in parallel with this. L'Orient Today's Anthony Samrani has a piece framing Hezbollah as potentially leading Lebanon <em>toward</em> peace with Israel — a provocative and counter-intuitive argument worth reading. The logic: Hezbollah, having lost significant military capability and popular credibility, now has a rational interest in a deal that preserves its political existence even at the cost of demilitarisation. Whether that's plausible depends on how you read the organisation's current internal dynamics. <a href="https://today.lorientlejour.com/article/1507844/episode-vi-when-hezbollah-leads-lebanon-toward-peace-with-israel.html">→ L'Orient Today, Samrani</a></p>
+  <p>Also: a poll published this week by Information International and al-Jadeed found fragmented Lebanese public opinion on negotiations with Israel, normalisation, and the arms monopoly question. The country is not united behind any single position — which complicates both the Hezbollah argument and the Lebanese state's room to manoeuvre at the Pentagon talks.</p>
 </div>
 
 <div class="divider"></div>
 
-<!-- SECTION 1: HEADLINES -->
-<div class="section-label">§1 — Today's Headlines</div>
+<!-- ======= SOCIAL / CULTURAL LAYER ======= -->
+<div class="section-label">The Social / Cultural Layer</div>
 
-<h2>UK</h2>
-<span class="holiday-note">🏖 Spring Bank Holiday — markets and many offices closed</span>
+<p>Today produces a clean case study in divergence. The macro picture is genuinely anxious — a war not quite ended, an Ebola PHEIC nobody is talking about, a Turkish crackdown. The cultural mood in the UK is almost entirely elsewhere. Premier League final day dominates every trending list; the chart has been frozen for three straight weeks; TikTok is serving ironic meme content and nostalgic romance covers at scale. This is not ignorance. It is a Bank Holiday. But the pattern — warmth-seeking, escapist, locked-in content preferences during a period of elevated geopolitical stress — has been consistent for three weeks now, long before today's holiday.</p>
 
-<div class="news-item">
-  <h3>UK records coldest May overnight temperature in history</h3>
-  <p>Altnaharra in the Scottish Highlands dropped to −6.1°C overnight — a new record for any May night. Shetland received heavy snowfall on what is nominally the first day of the Bank Holiday weekend, the traditional launch of the British summer. The cold snap caught forecasters off-guard; southern England stayed largely dry but cool. <span class="tag source">Met Office</span></p>
-</div>
+<p>The Olivia Dean chart lock is the clearest signal. Three tracks simultaneously occupying positions 1, 2, and 5 — all positions flat — for three weeks running. That kind of stasis doesn't happen by accident. It reflects an audience that has found something it wants and is returning to it repeatedly rather than searching for novelty. The emotional register of those tracks (intimacy, warmth, the ease of falling in love, the comfort of staying) is the opposite of what the macro environment is generating. That's the divergence worth watching.</p>
 
-<div class="news-item">
-  <h3>London Marathon 2026 breaks fundraising record at £87.5 million</h3>
-  <p>Organisers confirmed the 2026 race surpassed last year's record of £87.3m, cementing London as the world's single largest annual charity fundraising event. The announcement lands on the Bank Holiday weekend that closes the spring racing season. <span class="tag source">London Marathon</span></p>
-</div>
-
-<div class="news-item">
-  <h3>Unity Cup opens at Charlton Athletic's The Valley</h3>
-  <p>The annual AfroCentric diaspora football tournament kicks off this weekend with Nigeria, Jamaica, Zimbabwe, and India among the competing nations. The event draws tens of thousands across south-east London and has grown markedly since its post-pandemic revival — a quieter Bank Holiday story that nonetheless reflects the shifting demographics of English football fandom. <span class="tag source">Londonist</span></p>
-</div>
-
-<div class="divider"></div>
-
-<h2>International</h2>
-
-<div class="news-item">
-  <h3>Yemen: government and Houthis sign landmark prisoner deal in Amman</h3>
-  <p>The internationally recognised Yemeni government and the Houthi-aligned Supreme Political Council signed an agreement in Amman following 14 weeks of negotiations, covering the release of over 1,600 detainees — the largest prisoner exchange in the civil war's history since 2014. The deal follows the Yemen-adjacent diplomatic pressure created by the broader Hormuz talks; its durability remains uncertain, but it represents the most significant humanitarian breakthrough in the conflict in years. <span class="tag source">MercoPress</span></p>
-</div>
-
-<div class="news-item">
-  <h3>France bans Israeli National Security Minister Ben-Gvir from entering French territory</h3>
-  <p>Paris announced it would bar Itamar Ben-Gvir, citing "unacceptable actions" against activists on a Gaza-bound flotilla. Largely symbolic in isolation, the move reflects a broader willingness among individual EU member states to isolate specific Israeli ministers — a step beyond generic condemnations that would have been politically improbable two years ago. <span class="tag source">Quillki</span></p>
-</div>
-
-<div class="news-item">
-  <h3>India–US relations: high-level talks to re-energise ties</h3>
-  <p>External Affairs Minister-level discussions between India and the United States focused on trade, defence, and technology cooperation, timed to APEC trade ministers reaffirming commitment to resilient supply chains for energy products — a direct response to Strait of Hormuz disruption. <span class="tag source">Quillki / APEC</span></p>
-</div>
-
-<div class="divider"></div>
-
-<h2 class="rtl" style="margin-bottom:0.8rem;">لبنان / النهار</h2>
-
-<div class="arabic-item">
-  <div class="arabic-headline rtl"><a href="https://www.annahar.com/lebanon/politics/313215/صباح-النهار">صباح "النهار": ترقّب لاتفاق أميركي- إيراني ومسار أمني بين لبنان وإسرائيل... الحرب تنتهي بقرار خليجي؟</a></div>
-  <div class="arabic-sub">Morning of Al-Nahar: Anticipation for a US-Iran deal and a security track between Lebanon and Israel — will the war end by Gulf decision?</div>
-</div>
-
-<div class="arabic-item">
-  <div class="arabic-headline rtl"><a href="https://www.annahar.com/lebanon/politics/313060/البنتاغون-يفتح-المسار-الأمني-بين-لبنان-وإسرائيل">البنتاغون يفتح المسار الأمني بين لبنان وإسرائيل</a></div>
-  <div class="arabic-sub">The Pentagon opens the security track between Lebanon and Israel — shift from the Naqoura field framework to a US-managed strategic architecture in Washington.</div>
-</div>
-
-<div class="arabic-item">
-  <div class="arabic-headline rtl"><a href="https://www.annahar.com/articles/annahar-writers/313048/جنوب-لبنان-في-الصفقة-الأميركية--الإيرانية-وقف-النار-وتثبيت-إسرائيل-للمنطقة-العازلة">جنوب لبنان في الصّفقة الأميركية - الإيرانية... وقف النّار وتثبيت إسرائيل للمنطقة العازلة؟</a></div>
-  <div class="arabic-sub">South Lebanon in the US-Iran deal — ceasefire and Israel cementing the buffer zone? Analysis of how the Hormuz framework may lock in Israeli ground positions.</div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 2: SOCIAL PULSE -->
-<div class="section-label">§2 — Social Pulse</div>
-
-<h2>UK Twitter / X Trends</h2>
-<ul class="trend-list">
-  <li><span class="trend-term">Spurs</span> Premier League final day. All 20 clubs play simultaneously at 4pm — relegation spots and European qualification still unresolved. Tottenham's season ends today.</li>
-  <li><span class="trend-term">Tottenham</span> Same story, both forms of the name trending as fans share lineups and pre-match analysis ahead of the simultaneous final kick-off.</li>
-  <li><span class="trend-term">Everton</span> Everton's survival picture is not yet resolved heading into the final day. Could still be in the relegation mix depending on results elsewhere.</li>
-  <li><span class="trend-term">#bwfc</span> Bolton Wanderers FC — Championship football on the Bank Holiday, drawing a parallel commentary thread to the Premier League drama.</li>
-  <li><span class="trend-term">Farage</span> Nigel Farage trending — most likely Reform UK commentary around the Bank Holiday news cycle, particularly the Iran energy implications and UK cost-of-living framing.</li>
-  <li><span class="trend-term">Rights Act</span> Ongoing debate around the UK's proposed Human Rights Act reform surfacing in Bank Holiday op-ed discussions.</li>
-  <li><span class="trend-term">Landlords</span> UK housing crisis discourse intensifying on the long weekend — likely triggered by new data or a high-profile eviction/rent story.</li>
-  <li><span class="trend-term">IPTV</span> Illegal streaming services — a periodic enforcement crackdown story, likely tied to Premier League final day rights protection.</li>
+<h3 style="margin-top:1.2rem; margin-bottom:0.7rem;">UK Twitter / X — Final Day of the Season</h3>
+<ul class="trends-list">
+  <li><span class="trend-term">Spurs / Tottenham</span> Premier League final day, all 20 clubs kicking off simultaneously at 4pm. European qualification still in play.</li>
+  <li><span class="trend-term">Everton</span> Relegation picture unresolved going into today's fixtures.</li>
+  <li><span class="trend-term">#bwfc</span> Bolton Wanderers — Championship football drawing its own Bank Holiday commentary thread.</li>
+  <li><span class="trend-term">Farage</span> Reform UK framing of the Bank Holiday news cycle — energy costs, Iran deal implications for fuel prices.</li>
+  <li><span class="trend-term">Rights Act</span> UK Human Rights Act reform surfacing in op-ed commentary on the long weekend.</li>
+  <li><span class="trend-term">Landlords</span> Housing crisis discourse — likely triggered by new data or a specific eviction story on the bank holiday.</li>
+  <li><span class="trend-term">IPTV</span> Illegal streaming crackdown, timed to Premier League final day rights enforcement.</li>
 </ul>
 
-<div class="divider"></div>
-
-<h2>TikTok Sounds — Trending Now</h2>
-
-<div class="tiktok-sound">
-  <strong>".memescreens" using <em>Copines</em> — Aya Nakamura &amp; Mc Pepeu</strong>
-  <div class="sound-meta">Score 984 · 253K videos · +70K/day · 🇨🇦 · <a href="https://music.apple.com/gb/search?term=Copines+Aya+Nakamura">Apple Music ↗</a></div>
-  <div style="margin-top:0.4rem;font-size:0.85rem;color:var(--text-2);">The biggest mover this week with 38% daily growth. The Aya Nakamura track is being used as an ironic backdrop for "things that are objectively true" meme content — confident, slightly smug energy. Viral across 26+ countries.</div>
-</div>
-
-<div class="tiktok-sound">
-  <strong>"tarasoundtrip / CARL." using <em>Driftstar</em> — Flow-G</strong>
-  <div class="sound-meta">Score 981 · 456K videos · +59K/day · 🇵🇭 · <a href="https://music.apple.com/gb/search?term=Driftstar+Flow-G">Apple Music ↗</a></div>
-  <div style="margin-top:0.4rem;font-size:0.85rem;color:var(--text-2);">Filipino hip-hop from April 2026, the highest-volume sound right now. Chill and confident — used for "look what I built" and lifestyle reveal content. Primarily Philippines/Taiwan but crossing into global feeds.</div>
-</div>
-
-<div class="tiktok-sound">
-  <strong>"chafterglow" using <em>Hopelessly Devoted to You</em> (cover) — Studio Sound Group</strong>
-  <div class="sound-meta">Score 976 · 326K videos · +49K/day · <a href="https://music.apple.com/gb/search?term=Hopelessly+Devoted+to+You">Apple Music ↗</a></div>
-  <div style="margin-top:0.4rem;font-size:0.85rem;color:var(--text-2);">Seven months old and still accelerating — a slow, romantic Grease cover used for nostalgic "before and after" relationship content. Longing, bittersweet. Trending strongly across Italy, Germany, and 26+ countries.</div>
-</div>
-
-<div class="tiktok-sound">
-  <strong>"jubet_jay" · <em>Hardest Truth</em> — Jubet</strong>
-  <div class="sound-meta">Score 971 · 557K videos · +39K/day · 🇺🇸 · <a href="https://music.apple.com/gb/search?term=Hardest+Truth+Jubet">Apple Music ↗</a></div>
-  <div style="margin-top:0.4rem;font-size:0.85rem;color:var(--text-2);">Afrobeat from May 2026, fastest in Kenya and Nigeria. High energy and celebratory — used for success reveals and glow-up content. The most globally diverse sound in today's top five.</div>
-</div>
-
-<div class="divider"></div>
-
-<!-- SECTION 3: MUSIC -->
-<div class="section-label">§3 — Music</div>
-
-<h2>Apple Music UK — Top 5</h2>
+<h3 style="margin-top:1.4rem; margin-bottom:0.7rem;">Apple Music UK — Top 5</h3>
 <table class="chart-table">
   <tbody>
-    <tr>
-      <td class="pos">1</td>
-      <td class="change flat">=</td>
-      <td><span class="artist">Olivia Dean</span> <span class="tag uk">UK</span></td>
-      <td class="title">Man I Need</td>
-    </tr>
-    <tr>
-      <td class="pos">2</td>
-      <td class="change flat">=</td>
-      <td><span class="artist">Sam Fender &amp; Olivia Dean</span> <span class="tag uk">UK</span></td>
-      <td class="title">Rein Me In</td>
-    </tr>
-    <tr>
-      <td class="pos">3</td>
-      <td class="change flat">=</td>
-      <td><span class="artist">Dave &amp; Tems</span> <span class="tag uk">UK</span></td>
-      <td class="title">Raindance</td>
-    </tr>
-    <tr>
-      <td class="pos">4</td>
-      <td class="change flat">=</td>
-      <td><span class="artist">Bella Kay</span></td>
-      <td class="title">iloveitiloveitiloveit</td>
-    </tr>
-    <tr>
-      <td class="pos">5</td>
-      <td class="change flat">=</td>
-      <td><span class="artist">Olivia Dean</span> <span class="tag uk">UK</span></td>
-      <td class="title">So Easy (To Fall In Love)</td>
-    </tr>
+    <tr><td class="pos">1</td><td class="chg">=</td><td><strong>Olivia Dean</strong> <span class="tag tb">UK</span></td><td style="color:var(--text-2)">Man I Need</td></tr>
+    <tr><td class="pos">2</td><td class="chg">=</td><td><strong>Sam Fender &amp; Olivia Dean</strong> <span class="tag tb">UK</span></td><td style="color:var(--text-2)">Rein Me In</td></tr>
+    <tr><td class="pos">3</td><td class="chg">=</td><td><strong>Dave &amp; Tems</strong> <span class="tag tb">UK</span></td><td style="color:var(--text-2)">Raindance</td></tr>
+    <tr><td class="pos">4</td><td class="chg">=</td><td><strong>Bella Kay</strong></td><td style="color:var(--text-2)">iloveitiloveitiloveit</td></tr>
+    <tr><td class="pos">5</td><td class="chg">=</td><td><strong>Olivia Dean</strong> <span class="tag tb">UK</span></td><td style="color:var(--text-2)">So Easy (To Fall In Love)</td></tr>
   </tbody>
 </table>
-<p style="font-size:0.82rem;color:var(--text-2);margin-top:0.7rem;">All five positions flat for the third consecutive week — an unusually static chart. Harry Styles climbs to #10 (+3) with <em>Aperture</em>; RAYE rises to #6 (+1) with <em>WHERE IS MY HUSBAND!</em>. Four of the top five are UK artists, an exceptional concentration for any chart. <a href="https://kworb.net/charts/apple_s/uk.html">Full chart ↗</a></p>
+<p style="margin-top:0.6rem; font-size:0.82rem;">Third consecutive week with all five positions flat. Harry Styles enters at #10 (+3, <em>Aperture</em>). Four of the top five are UK artists. <a href="https://kworb.net/charts/apple_s/uk.html">Full chart ↗</a></p>
+
+<h3 style="margin-top:1.4rem; margin-bottom:0.7rem;">TikTok Sounds</h3>
+<div class="culture-block">
+  <div class="tiktok-row">
+    <span class="sound-title"><em>Copines</em> — Aya Nakamura (via .memescreens)</span>
+    <div class="sound-meta">Score 984 · 253K videos · +70K/day · <a href="https://music.apple.com/gb/search?term=Copines+Aya+Nakamura">Apple Music ↗</a></div>
+    <p style="margin-top:0.3rem; font-size:0.84rem;">The "objectively true" ironic meme format — confident, slightly smug, processing the world through detachment. The biggest mover this week.</p>
+  </div>
+  <div class="tiktok-row">
+    <span class="sound-title"><em>Driftstar</em> — Flow-G (via tarasoundtrip)</span>
+    <div class="sound-meta">Score 981 · 456K videos · +59K/day · <a href="https://music.apple.com/gb/search?term=Driftstar+Flow-G">Apple Music ↗</a></div>
+    <p style="margin-top:0.3rem; font-size:0.84rem;">Filipino hip-hop crossing into global feeds. Chill confidence — lifestyle reveal content. Highest volume sound right now.</p>
+  </div>
+  <div class="tiktok-row">
+    <span class="sound-title"><em>Hopelessly Devoted to You</em> — cover (via chafterglow)</span>
+    <div class="sound-meta">Score 976 · 326K videos · +49K/day · <a href="https://music.apple.com/gb/search?term=Hopelessly+Devoted+to+You">Apple Music ↗</a></div>
+    <p style="margin-top:0.3rem; font-size:0.84rem;">Seven months old, still climbing. Nostalgic romance, before-and-after relationship content. The longing register running in parallel with the chart's warmth register.</p>
+  </div>
+</div>
 
 <div class="divider"></div>
 
-<!-- SECTION 4: BUSINESS -->
-<div class="section-label">§4 — Business Snapshot</div>
+<!-- ======= OUTSIDE THE FRAME ======= -->
+<div class="section-label">Outside the Frame</div>
+
+<div class="outside-card">
+  <div class="oc-source">Richard Haass · Substack · richardhaass.substack.com</div>
+  <h3>The man who designed US foreign policy for a decade says Trump is recreating what he destroyed</h3>
+  <p>Former president of the Council on Foreign Relations, Haass has been writing crisply on Substack since leaving CFR. His piece this week — "The Irany of the Iran War" — makes the structural argument the mainstream coverage keeps missing: the deal Trump is close to signing is functionally a reconstruction of the JCPOA he tore up in his first term. And the regime change the war achieved produced not a pliable successor government but a more hardline one under Mojtaba Khamenei. His proposed "Strait First" framework (treat it as an international waterway with a new collective governance authority including Iran) is the most concrete alternative proposal currently circulating. Worth following. <a href="https://richardhaass.substack.com/p/the-irany-of-the-iran-war-may-22">→ The Irany of the Iran War</a></p>
+</div>
+
+<div class="outside-card">
+  <div class="oc-source">L'Orient Today · today.lorientlejour.com</div>
+  <h3>The best English-language coverage of Lebanon that isn't being read widely enough</h3>
+  <p>L'Orient Today is the English edition of L'Orient-Le Jour — Beirut's French-language newspaper with a distinctly Lebanese Christian establishment perspective, meaning it reads events very differently from Al-Nahar (which leans toward the Lebanese Sunni and centrist frame) and very differently from Al-Mayadeen (which is explicitly pro-resistance axis). Today it has a focus piece — "Iran war reveals limits of Gulf military ambitions" — arguing that the conflict exposed the structural weakness of Gulf states' own defence capabilities, which has received almost no attention in UK or US coverage. It also runs "Chronically Online," a column specifically tracking social media culture from a Lebanese/Middle East perspective — directly relevant to the social layer of this digest. Worth adding as a regular source. <a href="https://today.lorientlejour.com">→ L'Orient Today</a></p>
+</div>
+
+<div class="outside-card">
+  <div class="oc-source">WHO / CDC · declared PHEIC 17 May 2026</div>
+  <h3>Ebola Bundibugyo — a Public Health Emergency of International Concern the size of the 2014 outbreak in its early stages</h3>
+  <p>746 suspected cases, 176 suspected deaths in DRC; confirmed cases now in Kampala, Uganda. Bundibugyo strain: no approved vaccine, no specific treatment. Occurring across active conflict zones in Ituri, Nord-Kivu, Sud-Kivu with high cross-border movement. The WHO has declared seven PHEICs in history. This is one of them, and it has been almost invisible in Western media this week because of the Iran deal coverage. The DRC-Uganda corridor has historically been one of the hardest environments to contain an outbreak; the fact that cases have reached Kampala (a major regional hub with international air connections) is the escalation indicator to watch. <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026">→ WHO situation page</a></p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ======= MARKETS ======= -->
+<div class="section-label">Markets</div>
 
 <div class="tiles">
   <div class="tile">
     <div class="tile-label">FTSE 100</div>
     <div class="tile-value">Closed</div>
-    <div class="tile-note">Spring Bank Holiday · last 10,466</div>
+    <div class="tile-note">Bank Holiday · last 10,466</div>
   </div>
   <div class="tile">
     <div class="tile-label">Nasdaq</div>
     <div class="tile-value">Closed</div>
-    <div class="tile-note">US Memorial Day · last close Fri 22 May</div>
+    <div class="tile-note">Memorial Day · last close Fri 22 May</div>
   </div>
   <div class="tile elevated">
     <div class="tile-label">Brent Crude</div>
     <div class="tile-value">$105+</div>
-    <div class="tile-note">↑ on Iran uranium clause; was $103–104</div>
+    <div class="tile-note">Elevated; watch Tuesday open for deal/no-deal pricing</div>
   </div>
   <div class="tile elevated">
     <div class="tile-label">30Y Gilt</div>
     <div class="tile-value">5.53%</div>
-    <div class="tile-note">Market closed · last reading Fri 22 May · elevated</div>
+    <div class="tile-note">Market closed · elevated · last reading Fri 22</div>
   </div>
 </div>
-<p style="font-size:0.82rem;color:var(--text-2);">Both London and New York markets are dark today. The actionable number is oil: Brent above $105 is the first breach of that level since the early weeks of the Iran conflict, driven by the Supreme Leader's uranium order. Watch Tuesday's open — the gilt market will price in the Brent move and any weekend deal news simultaneously.</p>
 
 <div class="divider"></div>
 
-<!-- SECTION 5: TECH -->
-<div class="section-label">§5 — Tech / Science</div>
+<!-- ======= STATUS TABLE ======= -->
+<div class="section-label">All Active Threads</div>
 
-<div class="tech-block">
-  <h3>Hybrid light-matter particle could transform AI computing energy costs</h3>
-  <p>Researchers at the University of Pennsylvania have created a polariton — a hybrid particle that is simultaneously light and matter — that can perform AI computations dramatically faster than conventional silicon chips while consuming a fraction of the energy. Crucially, it operates at room temperature, removing a major barrier to practical deployment. If the finding survives replication and engineering scale-up, it would reshape the economics of running large models: the energy cost of AI inference, now a serious concern for data centre operators and national grids alike, could fall by orders of magnitude. Published this week in <em>Nature Photonics</em>.</p>
-</div>
-
-<div class="divider"></div>
+<table class="threads-table">
+  <thead>
+    <tr><th>Thread</th><th>Status</th><th>Current status</th><th>Changed</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="thread-label">Iran / Hormuz</td>
+      <td><span class="tag changed">changed</span></td>
+      <td class="thread-line">Trump now "50/50"; blockade stays; no deal signed; Brent above $105</td>
+      <td class="thread-date">May 25</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Israel / Lebanon</td>
+      <td><span class="tag changed">changed</span></td>
+      <td class="thread-line">11 dead in Sir al-Gharbieh strike; Nabatieh civil defence centre destroyed; Pentagon security track running</td>
+      <td class="thread-date">May 25</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Venice Biennale</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="thread-line">Running Apr–Nov; Palestinian pavilion drawing attention; no major new incident</td>
+      <td class="thread-date">May 22</td>
+    </tr>
+    <tr>
+      <td class="thread-label">UK Economic Stress</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="thread-line">30Y gilt 5.53%; FTSE 10,466; Brent pressure real test at Tuesday open</td>
+      <td class="thread-date">May 22</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Olivia Dean / UK Chart</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="thread-line">Holds #1, #2, #5 simultaneously — flat for third consecutive week</td>
+      <td class="thread-date">May 22</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Tucker Carlson</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="thread-line">Latest episode May 23; anti-Trump since Apr 20; no new pivot</td>
+      <td class="thread-date">May 23</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Mearsheimer</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="thread-line">Munk Debates May 20; no new Substack since May 22</td>
+      <td class="thread-date">May 23</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Cannes 2026</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="thread-line">Closed May 23; Palme to Mungiu's <em>Fjord</em>; no major follow-up today</td>
+      <td class="thread-date">May 24</td>
+    </tr>
+  </tbody>
+</table>
 
 <footer>
   <span>Generated 25 May 2026</span>
