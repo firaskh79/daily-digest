@@ -15,8 +15,6 @@
     gap: 1rem;
   }
   h1 { font-size: 0.75rem; color: #9a9894; letter-spacing: 0.1em; text-transform: uppercase; }
-
-  /* 2 rows of 5 — column widths vary slightly per row for organic feel */
   .collage {
     display: grid;
     width: min(820px, 100vw);
@@ -24,101 +22,93 @@
     background: #0e0e0d;
     border-radius: 2px;
     overflow: hidden;
-    grid-template-columns: var(--cols-top, repeat(5, 1fr));
     grid-template-rows: 200px 200px;
+    grid-template-columns: var(--cols, repeat(5, 1fr));
   }
-
-  /* Bottom row tiles override the column widths */
-  .row2 {
-    display: contents;
-  }
-
   .tile {
     position: relative;
     overflow: hidden;
     background: #1e1e1c;
   }
   .tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
     display: block;
-    transition: opacity 0.35s;
     opacity: 0;
+    transition: opacity 0.4s;
   }
   .tile img.loaded { opacity: 1; }
   .tile .lbl {
     position: absolute;
-    bottom: 7px;
-    left: 7px;
+    bottom: 7px; left: 7px;
     background: rgba(0,0,0,0.6);
     color: rgba(255,255,255,0.88);
-    font-size: 8.5px;
-    font-weight: 700;
+    font-size: 8.5px; font-weight: 700;
     letter-spacing: 0.07em;
     padding: 3px 6px;
     border-radius: 3px;
     text-transform: uppercase;
     pointer-events: none;
   }
-
   .controls { display: flex; gap: 0.6rem; }
   button {
     padding: 0.45rem 1.2rem;
-    border: 1px solid #3a3a38;
-    border-radius: 5px;
-    font-size: 0.78rem;
-    cursor: pointer;
+    border: 1px solid #3a3a38; border-radius: 5px;
+    font-size: 0.78rem; cursor: pointer;
     font-family: inherit;
-    background: #2a2a28;
-    color: #e8e6e1;
+    background: #2a2a28; color: #e8e6e1;
     transition: background 0.15s;
   }
   button:hover { background: #3a3a38; }
 </style>
 </head>
 <body>
-
 <h1>Firas's Digest · 25 May 2026</h1>
-
-<div class="collage" id="collage">
-  <!-- 10 tiles, filled by JS -->
-</div>
-
+<div class="collage" id="collage"></div>
 <div class="controls">
-  <button id="btn-reshuffle">↺ Reshuffle</button>
-  <button id="btn-refresh">⟳ New images</button>
+  <button id="btn-shuffle">↺ Shuffle</button>
 </div>
 
 <script>
-// ── Pool ──────────────────────────────────────────────────────────────────────
-// All filenames verified from Wikimedia Commons search results
+// ── 50-image pool ─────────────────────────────────────────────────────────────
 const POOL = [
-  // Geopolitics
+  // Geopolitics — Iran/Hormuz
   { f: "USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG",   l: "Iran · Hormuz" },
   { f: "Hormuz_map.png",                                                  l: "Strait · Map" },
-  { f: "Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg",                 l: "Turkey · CHP" },
+  { f: "Aerial_View_of_Tehran_and_Tochal.JPG",                           l: "Tehran" },
+  { f: "Aerial_View_of_Tehran_26.11.2008_04-35-03.JPG",                  l: "Tehran · Aerial" },
+  { f: "Azadi_Tower_-_Tehran-_Iran_(1).jpg",                             l: "Tehran · Azadi" },
+
+  // Geopolitics — Lebanon/Israel
   { f: "Lebanese_Armed_Forces.jpg",                                       l: "Lebanon · South" },
   { f: "2006_Lebanon-Israel_War_Memorial.JPG",                            l: "Lebanon · War" },
+  { f: "Downtown_Beirut_Lebanon.JPG",                                     l: "Beirut" },
+
+  // Turkey
+  { f: "Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg",                 l: "İmamoğlu · CHP" },
+  { f: "Recep_Tayyip_Erdogan_portrait.PNG",                              l: "Erdogan" },
 
   // UK politics / trending
-  { f: "Nigel_Farage_(cropped).jpg",                                      l: "Farage · Trending" },
-  { f: "Nigel_Farage_MEP_1,_Strasbourg_-_Diliff.jpg",                    l: "Farage · Reform" },
+  { f: "Nigel_Farage_(cropped).jpg",                                      l: "Farage" },
+  { f: "Nigel_Farage_MEP_1,_Strasbourg_-_Diliff.jpg",                    l: "Farage · MEP" },
+  { f: "Houses_of_Parliament_-_Palace_of_Westminster.JPG",                l: "Westminster" },
+  { f: "Parliament_at_Sunset.JPG",                                        l: "Parliament" },
 
-  // Markets / economy
-  { f: "Bank_of_England_Building,_London,_UK_-_Diliff.jpg",              l: "Gilt · 5.53%" },
+  // Markets / UK economy
+  { f: "Bank_of_England_Building,_London,_UK_-_Diliff.jpg",              l: "Bank of England" },
+  { f: "Bank_of_England,_London.JPG",                                     l: "Gilt · 5.53%" },
   { f: "Oil_tanker_MV_Houston.JPG",                                       l: "Brent · $105" },
   { f: "Crude_Oil_Tanker_Pericles_at_BP_Oil_Refinery_Jetty_and_General_Cargo_Ship_Jannes_at_Kwinana_Bulk_Jetty,_December_2020_01.jpg", l: "Oil · Market" },
 
-  // Health
+  // Health — Ebola
   { f: "Ebola_virus_em.jpg",                                              l: "Ebola · DRC" },
   { f: "View_of_the_City_of_Kinshasa,_DRC.jpg",                          l: "Kinshasa · DRC" },
 
-  // UK Charts — Apple Music top 5
+  // Music — Apple Music UK top 5
   { f: "Olivia_Dean_-_4323.jpg",                                          l: "Olivia Dean · #1" },
   { f: "Sam_Fender_(2021)_(cropped).jpg",                                 l: "Sam Fender · #2" },
   { f: "Santan_Dave.jpg",                                                  l: "Dave & Tems · #3" },
+  { f: "2019_Tems_on_NdaniTV_Sssions.jpg",                               l: "Tems · #3" },
 
   // TikTok sounds
   { f: "Aya_Nakamura_2023.jpg",                                           l: "Aya Nakamura · TT" },
@@ -126,17 +116,82 @@ const POOL = [
   // Sport / Google trends
   { f: "Players'_tunnel_at_Tottenham_Hotspur_Stadium,_view_towards_pitch.jpg", l: "Spurs · Final Day" },
   { f: "View_of_Goodison_Park_(2).JPG",                                   l: "Everton · Drops" },
-  { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_04.jpg", l: "Premier League" },
+  { f: "Goodisonview1.JPG",                                               l: "Goodison Park" },
+  { f: "Liverpool_fc_everton_stadium.jpg",                                l: "Merseyside" },
+  { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_04.jpg", l: "Etihad · PL" },
+  { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_02.jpg", l: "Man City" },
+  { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_16.jpg", l: "Premier League" },
+  { f: "London_stanford_bridge.JPG",                                      l: "Stamford Bridge" },
+  { f: "Stoke.JPG",                                                       l: "PL Promotion" },
   { f: "2023_London_Marathon_-_Frank_Lara_(2).jpg",                       l: "London Marathon" },
   { f: "2023_London_Marathon_-_Sean_Frame_(3).jpg",                       l: "Marathon · Trending" },
-  { f: "Goodisonview1.JPG",                                               l: "Goodison Park" },
+  { f: "2013_London_Marathon_at_Victoria_Embankment_(1).JPG",             l: "Marathon · Embankment" },
+  { f: "Runners_of_the_2013_London_Marathon_(35).JPG",                    l: "Marathon · Runners" },
+  { f: "Mr_Blobby_-_London_Marathon_2011_(5630053777).jpg",               l: "Marathon · Fancy Dress" },
 
-  // Weather / social mood
-  { f: "London_Snow_08_02_07.JPG",                                        l: "UK · Coldest May" },
-  { f: "London_trams_in_snow_c2010.JPG",                                  l: "UK · Snow" },
+  // UK weather — record May heat (not cold!)
+  { f: "UK_heatwave_weather_warnings_July_2022.jpg",                      l: "UK · Record Heat" },
+  { f: "Brighton_Wheel_on_the_beach_of_Brighton_in_summer_2013_(11).JPG", l: "Brighton · Bank Hol" },
 
-  // Cultural
+  // Culture / Cannes / music festivals
+  { f: "Roney_Villela_at_2025_Cannes_Red_Carpet_for_O_Agente_Secreto_1.jpg", l: "Cannes 2025" },
+  { f: "MKr385841_Golshifteh_Farahani_(Alpha,_Cannes_2025).jpg",          l: "Cannes · Alpha" },
+  { f: "Halle_Berry_at_the_2025_Cannes_Film_Festival_32.jpg",             l: "Cannes · Red Carpet" },
+  { f: "View_of_Glastonbury_Festival_from_the_Park_Stage_as_crowd_arrives_for_Pulp,_2011.jpg", l: "Glastonbury" },
+  { f: "Crowds_for_Brian_Wilson_at_the_Pyramid_(323798990).jpg",          l: "Festival Crowd" },
   { f: "Israeli_Pavilion,_2024.jpg",                                      l: "Venice Biennale" },
+
+  // Marathon elite + extras
+  { f: "Tsegaye_Kebede,_2013_London_Marathon.JPG",                        l: "Marathon · Elite" },
+  { f: "Etihad_Stadium,_Manchester_City_Football_Club_(Ank_Kumar,_Infosys)_18.jpg", l: "Stadium · Night" },
+  { f: "Bank_underground_station,_Bank_of_England_building_entrance.JPG", l: "City of London" },
+];
+
+// ── Layout presets ─────────────────────────────────────────────────────────────
+// Each layout defines explicit grid-column + grid-row per tile so the collage
+// always fills the 5-column × 2-row (400px tall) canvas with varied tile sizes.
+// Tiles with r:"1/3" span both rows (full height); others span one row only.
+const LAYOUTS = [
+  // A: tall bookends, 3 paired columns in the middle  — 8 tiles
+  {
+    cols: "1.15fr 0.95fr 1fr 0.95fr 1.15fr",
+    tiles: [
+      {c:1, r:"1/3"}, {c:2, r:"1"}, {c:3, r:"1"}, {c:4, r:"1"}, {c:5, r:"1/3"},
+                      {c:2, r:"2"}, {c:3, r:"2"}, {c:4, r:"2"}
+    ]
+  },
+  // B: tall pillars at cols 2 and 4, smalls around them — 8 tiles
+  {
+    cols: "1fr 1.2fr 0.9fr 1.1fr 0.9fr",
+    tiles: [
+      {c:1, r:"1"}, {c:2, r:"1/3"}, {c:3, r:"1"}, {c:4, r:"1/3"}, {c:5, r:"1"},
+      {c:1, r:"2"},                  {c:3, r:"2"},                  {c:5, r:"2"}
+    ]
+  },
+  // C: three tall pillars (cols 1, 3, 5) flanked by pairs — 7 tiles
+  {
+    cols: "1.1fr 0.9fr 1.1fr 0.9fr 1.1fr",
+    tiles: [
+      {c:1, r:"1/3"}, {c:2, r:"1"}, {c:3, r:"1/3"}, {c:4, r:"1"}, {c:5, r:"1/3"},
+                      {c:2, r:"2"},                   {c:4, r:"2"}
+    ]
+  },
+  // D: one commanding tall tile on the left, rest are smalls — 9 tiles
+  {
+    cols: "1.4fr 1fr 0.9fr 1fr 0.9fr",
+    tiles: [
+      {c:1, r:"1/3"}, {c:2, r:"1"}, {c:3, r:"1"}, {c:4, r:"1"}, {c:5, r:"1"},
+                      {c:2, r:"2"}, {c:3, r:"2"}, {c:4, r:"2"}, {c:5, r:"2"}
+    ]
+  },
+  // E: tall centre with varied sides — 8 tiles
+  {
+    cols: "0.9fr 1fr 1.3fr 1fr 0.9fr",
+    tiles: [
+      {c:1, r:"1"}, {c:2, r:"1"}, {c:3, r:"1/3"}, {c:4, r:"1"}, {c:5, r:"1"},
+      {c:1, r:"2"}, {c:2, r:"2"},                  {c:4, r:"2"}, {c:5, r:"2"}
+    ]
+  },
 ];
 
 function url(f) {
@@ -153,64 +208,38 @@ function shuffle(a) {
   return b;
 }
 
-let current = [];
-
-function pickTen() {
-  const used = new Set(current.map(x => x.f));
-  const fresh = shuffle(POOL.filter(x => !used.has(x.f)));
-  const pool = fresh.length >= 10 ? fresh : shuffle(POOL);
-  current = pool.slice(0, 10);
-  return current;
-}
-
-// Vary column widths slightly for an organic, non-grid feel
-const colSets = [
-  "1fr 1.1fr 0.9fr 1fr 1fr",
-  "1.1fr 0.9fr 1fr 1.1fr 0.9fr",
-  "0.9fr 1fr 1.1fr 0.9fr 1.1fr",
-  "1fr 1fr 0.9fr 1.1fr 1fr",
-  "1.1fr 1fr 1fr 0.9fr 1.1fr",
-];
-
-function render(items) {
+function render() {
+  const layout = LAYOUTS[Math.floor(Math.random() * LAYOUTS.length)];
+  const images = shuffle(POOL).slice(0, layout.tiles.length);
   const collage = document.getElementById('collage');
-  // Pick random column widths
-  collage.style.gridTemplateColumns = colSets[Math.floor(Math.random() * colSets.length)];
+
+  collage.style.setProperty('--cols', layout.cols);
   collage.innerHTML = '';
 
-  items.forEach((item, i) => {
+  images.forEach((item, i) => {
+    const pos = layout.tiles[i];
     const tile = document.createElement('div');
     tile.className = 'tile';
+    tile.style.gridColumn = String(pos.c);
+    tile.style.gridRow = pos.r;
 
     const img = document.createElement('img');
     img.src = url(item.f);
     img.alt = item.l;
     img.onload = () => img.classList.add('loaded');
-    img.onerror = () => { img.style.opacity = 0; };
+    img.onerror = () => { img.style.display = 'none'; };
 
     const lbl = document.createElement('span');
     lbl.className = 'lbl';
     lbl.textContent = item.l;
 
-    tile.appendChild(img);
-    tile.appendChild(lbl);
+    tile.append(img, lbl);
     collage.appendChild(tile);
   });
 }
 
-function reshuffle() {
-  render(shuffle(current));
-}
-
-function refresh() {
-  render(pickTen());
-}
-
-document.getElementById('btn-reshuffle').onclick = reshuffle;
-document.getElementById('btn-refresh').onclick = refresh;
-
-// Initial load
-refresh();
+document.getElementById('btn-shuffle').onclick = render;
+render();
 </script>
 </body>
 </html>

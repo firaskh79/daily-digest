@@ -54,7 +54,7 @@
       { "rank": 3, "term": "Everton relegation", "volume_est": "150K+" },
       { "rank": 4, "term": "Iran deal latest", "volume_est": "100K+" },
       { "rank": 5, "term": "Farage", "volume_est": "80K+" },
-      { "rank": 6, "term": "UK coldest May temperature", "volume_est": "60K+" },
+      { "rank": 6, "term": "UK record May heat", "volume_est": "60K+" },
       { "rank": 7, "term": "Brent oil price", "volume_est": "50K+" },
       { "rank": 8, "term": "Bolton Wanderers", "volume_est": "40K+" },
       { "rank": 9, "term": "Rights Act UK", "volume_est": "35K+" },
@@ -216,10 +216,10 @@
         "signal_type": "reactive"
       },
       {
-        "macro_event": "UK coldest May overnight temperature in recorded history — snowfall in Shetland",
-        "cultural_response": "UK social commentary on weather as shared collective irony, especially given Bank Holiday timing",
-        "mechanism": "A record cold snap on the Bank Holiday weekend — traditionally the psychological start of British summer — creates a peculiarly British form of collective irony that generates high social engagement without serious alarm.",
-        "observation": "Snow on the Bank Holiday, Brent at $105, and Spurs in the top trending slot. The juxtaposition encapsulates the UK's current situation with a dry humour that runs through every layer of today's social pulse.",
+        "macro_event": "UK record May heat — temperatures into the high 20s on Bank Holiday weekend, unusually early for the season",
+        "cultural_response": "UK social commentary on the heat: parks packed, beaches rammed, the classic Bank Holiday sun/crowd dynamic amplified by the warm spell arriving ahead of schedule",
+        "mechanism": "A record-warm Bank Holiday weekend — the psychological start of British summer — supercharges the collective outdoor mood. People are already in escapist mode (football final day, end of holiday) and the heat accelerates it further.",
+        "observation": "Record May heat, Brent at $105, and Spurs in the top trending slot. The warmth functions as collective mood-lifter in a weekend that is already absorbing geopolitical anxiety through sport and sunshine.",
         "confidence": "moderate",
         "signal_type": "lagging"
       },
