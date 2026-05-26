@@ -30,15 +30,19 @@
     position: relative;
     overflow: hidden;
     background: #1e1e1c;
+    cursor: zoom-in;
   }
   .tile img {
     width: 100%; height: 100%;
     object-fit: cover; object-position: center;
     display: block;
     opacity: 0;
-    transition: opacity 0.4s;
+    transition: opacity 0.4s, transform 0.3s ease;
   }
   .tile img.loaded { opacity: 1; }
+  .tile:hover img.loaded {
+    transform: scale(1.07);
+  }
   .tile .lbl {
     position: absolute;
     bottom: 8px; left: 8px;
@@ -50,6 +54,57 @@
     border-radius: 3px;
     text-transform: uppercase;
     pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .tile:hover .lbl { opacity: 0; }
+
+  /* Lightbox */
+  #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 92vw;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 60px rgba(0,0,0,0.7);
+    animation: lb-in 0.2s ease;
+  }
+  #lightbox .lb-lbl {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  #lightbox .lb-close {
+    position: fixed;
+    top: 1rem; right: 1.25rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  @keyframes lb-in {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
   }
   .controls { display: flex; gap: 0.6rem; }
   button {
@@ -68,6 +123,13 @@
 <div class="collage" id="collage"></div>
 <div class="controls">
   <button id="btn-shuffle">↺ Shuffle</button>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span class="lb-close" id="lb-close">✕</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-lbl" id="lb-lbl"></div>
 </div>
 
 <script>
@@ -218,9 +280,30 @@ function render() {
     lbl.textContent = item.l;
 
     tile.append(img, lbl);
+
+    // Click to open lightbox
+    tile.addEventListener('click', () => {
+      if (!img.classList.contains('loaded')) return;
+      document.getElementById('lb-img').src = img.src;
+      document.getElementById('lb-lbl').textContent = item.l;
+      document.getElementById('lightbox').classList.add('open');
+    });
+
     collage.appendChild(tile);
   });
 }
+
+// Lightbox close
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
 
 document.getElementById('btn-shuffle').onclick = render;
 render();
