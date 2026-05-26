@@ -4,9 +4,9 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Trump shifted to '50/50' odds by afternoon; deal discourse ran ahead of reality all day — announcement was a pressure tactic, not confirmation of agreement",
+      "status_line": "MOU 'largely negotiated'; Brent below $100; Iran coordinating Strait passage for 26 ships — but Iran denies nuclear commitments and US strikes continue",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-25",
+      "last_changed": "2026-05-26",
       "expand_if": [
         "formal MOU signed",
         "talks collapse again",
@@ -20,48 +20,64 @@
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "changed",
-      "status_line": "11 killed in Israeli strike on Sir al-Gharbieh; Nabatieh civil defence centre destroyed; Pentagon direct security track open; IDF soldier killed by drone",
+      "status_line": "Netanyahu announced intensification; IDF struck 70+ Hezbollah sites; Lebanon ceasefire disputed — Iran says included in deal, Israel says excluded",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-25",
+      "last_changed": "2026-05-26",
       "expand_if": [
         "major Israeli ground incursion",
         "Hezbollah rocket barrage on Israeli cities",
         "ceasefire agreement with teeth",
         "UNIFIL withdrawal",
-        "US diplomatic intervention",
+        "US forces Israel to pause operations",
         "mass civilian casualty event"
       ]
     },
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "new",
-      "status_line": "PHEIC declared 17 May; 746 suspected cases, 176 deaths in DRC; cases confirmed in Kampala Uganda — first cross-border spread",
+      "status": "changed",
+      "status_line": "1,010 suspected cases, 231 deaths as of 24 May — up from 746/176 two days ago; Kampala confirmed; no vaccine for Bundibugyo strain",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-05-25",
+      "last_changed": "2026-05-26",
       "expand_if": [
         "cases confirmed outside DRC/Uganda",
         "WHO raises to highest alert level",
         "WHO emergency committee reconvenes",
         "vaccine supply constraint announced",
-        "Kampala cases multiply",
+        "Kampala cases multiply significantly",
         "travel restrictions imposed"
       ]
     },
     {
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
-      "status": "new",
-      "status_line": "Riot police entered CHP headquarters Istanbul; Imamoglu still detained; constitutional court challenge pending",
+      "status": "changed",
+      "status_line": "Court ousted CHP leadership (annulled 2023 congress); police stormed HQ with tear gas; Özel calls it a coup attempt; Kılıçdaroğlu may return as leader",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-05-25",
+      "last_changed": "2026-05-26",
       "expand_if": [
         "Imamoglu released or formally charged",
-        "CHP headquarters sealed",
-        "street protests escalate",
+        "CHP headquarters sealed permanently",
+        "street protests escalate to general strike",
         "EU or US formal condemnation",
         "constitutional court ruling on Imamoglu detention",
         "Erdogan statement on opposition"
+      ]
+    },
+    {
+      "id": "snp-murrell",
+      "label": "SNP Crisis / Murrell",
+      "status": "new",
+      "status_line": "Peter Murrell guilty plea — £400K embezzled from SNP over 13 years (2010-2023); remanded in custody; sentencing 23 June",
+      "first_seen": "2026-05-26",
+      "last_changed": "2026-05-26",
+      "expand_if": [
+        "Nicola Sturgeon makes public statement",
+        "SNP leadership challenged",
+        "sentencing on 23 June with significant prison term",
+        "new allegations emerge at sentencing",
+        "SNP polling drops significantly in Scotland",
+        "Swinney leadership threatened"
       ]
     },
     {
@@ -82,14 +98,14 @@
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
-      "status": "stable",
-      "status_line": "30Y gilt 5.53% (market closed, Bank Holiday); FTSE last 10,466; Brent above $105 adds fresh pressure — real test Tuesday open",
+      "status": "changed",
+      "status_line": "Brent below $100 for first time in weeks; 10Y gilt below 4.9%; but retail sales -1.3% and PMI in first contraction in a year — easing on weakness, not growth",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-22",
+      "last_changed": "2026-05-26",
       "expand_if": [
         "gilt yield spike above 5.5% with upward trajectory",
         "energy price cap revision announced",
-        "recession confirmed",
+        "recession officially confirmed",
         "Bank of England emergency action",
         "government fiscal statement",
         "major employer redundancy announcement"
@@ -99,7 +115,7 @@
       "id": "olivia-dean-chart",
       "label": "Olivia Dean / UK Chart",
       "status": "stable",
-      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions flat for third consecutive week",
+      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions static for fourth consecutive week",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-22",
       "expand_if": [
@@ -114,7 +130,7 @@
       "id": "tucker-focus",
       "label": "Tucker Carlson",
       "status": "stable",
-      "status_line": "Latest episode May 23 (126 min); maintains anti-Trump positioning since Apr 20 withdrawal; no new pivot today",
+      "status_line": "No new episode since May 23; anti-Trump positioning on Iran maintained; no pivot detected",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-23",
       "expand_if": [
@@ -128,7 +144,7 @@
       "id": "mearsheimer",
       "label": "Mearsheimer",
       "status": "stable",
-      "status_line": "Debated Nuland/Pompeo at Munk Debates May 20; 'Eating Humble Pie' post May 20 arguing Iran war is strategic loss for US; no new post since May 22",
+      "status_line": "No new Substack post since May 22; 'Eating Humble Pie' arguing Iran war is strategic loss for US remains the counter-frame",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-23",
       "expand_if": [
@@ -137,7 +153,7 @@
         "new lecture or public statement",
         "shifts argument on a major topic"
       ]
-    },
+    }
   ],
   "retired_threads": [
     {
@@ -153,14 +169,14 @@
       "name": "Richard Haass — 'Home & Away' Substack",
       "url": "https://richardhaass.substack.com",
       "found_on": "2026-05-25",
-      "why_interesting": "Former CFR president arguing Trump is recreating the JCPOA he destroyed, and that the regime change US hawks wanted produced a more hardline Iranian government — a structural counter-frame to the deal optimism"
+      "why_interesting": "Former CFR president arguing Trump is recreating the JCPOA he destroyed, and that regime change pressure produced a more hardline Iranian government — structural counter-frame to deal optimism, sharpened by today's developments"
     },
     {
       "name": "L'Orient Today",
       "url": "https://today.lorientlejour.com",
       "found_on": "2026-05-25",
-      "why_interesting": "English-language edition of L'Orient Le Jour; takes a meaningfully different political line from Al-Nahar on Lebanese politics; useful for south Lebanon coverage that doesn't share Al-Nahar's political framing"
+      "why_interesting": "English-language edition of L'Orient Le Jour; takes a meaningfully different political line from Al-Nahar on Lebanese politics; useful for south Lebanon coverage"
     }
   ],
-  "last_updated": "2026-05-25"
+  "last_updated": "2026-05-26"
 }
