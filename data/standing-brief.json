@@ -4,55 +4,57 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "MOU 'largely negotiated'; Brent below $100; Iran coordinating Strait passage for 26 ships — but Iran denies nuclear commitments and US strikes continue",
+      "status_line": "Trump Situation Room ended without decision; 60-day MOU agreed at working level but Trump hasn't signed; Iran publicly disputes terms as 'fabricated victory'; Brent at $90.71",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-26",
+      "last_changed": "2026-05-29",
       "expand_if": [
         "formal MOU signed",
         "talks collapse again",
         "oil spike above $110",
         "naval incident in Strait",
         "new US or Israeli strike",
-        "Iranian uranium concession or refusal made public"
+        "Iranian uranium concession or refusal made public",
+        "Netanyahu public statement opposing deal"
       ]
     },
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "changed",
-      "status_line": "Netanyahu announced intensification; IDF struck 70+ Hezbollah sites; Lebanon ceasefire disputed — Iran says included in deal, Israel says excluded",
+      "status_line": "Pentagon trilateral meeting on ceasefire mechanics; UAE covert strikes on Iran revealed (Mirage jets, Wing Loong drones, Lavan Island refinery, coordinating with Israel); 29 killed in Lebanon in 24h",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-26",
+      "last_changed": "2026-05-29",
       "expand_if": [
         "major Israeli ground incursion",
         "Hezbollah rocket barrage on Israeli cities",
         "ceasefire agreement with teeth",
         "UNIFIL withdrawal",
         "US forces Israel to pause operations",
-        "mass civilian casualty event"
+        "mass civilian casualty event",
+        "UAE publicly acknowledges its strikes on Iran"
       ]
     },
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
       "status": "changed",
-      "status_line": "1,010 suspected cases, 231 deaths as of 24 May — up from 746/176 two days ago; Kampala confirmed; no vaccine for Bundibugyo strain",
+      "status_line": "WHO declared PHEIC 17 May; 125 confirmed + 906 suspected cases, 223 suspected deaths as of 28 May; American patient transported to Germany (stable); Uganda 9 confirmed cases",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-05-26",
+      "last_changed": "2026-05-29",
       "expand_if": [
         "cases confirmed outside DRC/Uganda",
-        "WHO raises to highest alert level",
-        "WHO emergency committee reconvenes",
+        "WHO raises alert further",
         "vaccine supply constraint announced",
         "Kampala cases multiply significantly",
-        "travel restrictions imposed"
+        "travel restrictions imposed",
+        "second American or European healthcare worker infected"
       ]
     },
     {
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
-      "status": "changed",
-      "status_line": "Court ousted CHP leadership (annulled 2023 congress); police stormed HQ with tear gas; Özel calls it a coup attempt; Kılıçdaroğlu may return as leader",
+      "status": "stable",
+      "status_line": "Court ousted CHP leadership (annulled 2023 congress); police stormed HQ with tear gas; Özel calls it a coup attempt; Kılıçdaroğlu may return as leader; Imamoglu still imprisoned",
       "first_seen": "2026-05-25",
       "last_changed": "2026-05-26",
       "expand_if": [
@@ -67,8 +69,8 @@
     {
       "id": "snp-murrell",
       "label": "SNP Crisis / Murrell",
-      "status": "new",
-      "status_line": "Peter Murrell guilty plea — £400K embezzled from SNP over 13 years (2010-2023); remanded in custody; sentencing 23 June",
+      "status": "stable",
+      "status_line": "Peter Murrell guilty plea — £400K embezzled from SNP over 13 years (2010–2023); remanded in custody; sentencing 23 June",
       "first_seen": "2026-05-26",
       "last_changed": "2026-05-26",
       "expand_if": [
@@ -81,49 +83,20 @@
       ]
     },
     {
-      "id": "venice-biennale",
-      "label": "Venice Biennale 2026",
-      "status": "stable",
-      "status_line": "Running Apr-Nov; Palestinian pavilion drawing attention; no major new incident",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-05-22",
-      "expand_if": [
-        "pavilion closure or protest",
-        "new curator statement on current events",
-        "political intervention at a national pavilion",
-        "Israeli pavilion controversy",
-        "prize announcement with political dimension"
-      ]
-    },
-    {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "changed",
-      "status_line": "Brent below $100 for first time in weeks; 10Y gilt below 4.9%; but retail sales -1.3% and PMI in first contraction in a year — easing on weakness, not growth",
+      "status_line": "Bailey signals BOE may tolerate above-target inflation to support weak economy; 10Y gilt back above 5% (from <4.9%); Starmer faces 90+ Labour MPs calling for resignation after local election losses",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-26",
+      "last_changed": "2026-05-29",
       "expand_if": [
         "gilt yield spike above 5.5% with upward trajectory",
         "energy price cap revision announced",
         "recession officially confirmed",
         "Bank of England emergency action",
         "government fiscal statement",
-        "major employer redundancy announcement"
-      ]
-    },
-    {
-      "id": "olivia-dean-chart",
-      "label": "Olivia Dean / UK Chart",
-      "status": "stable",
-      "status_line": "Holds #1 (Man I Need), #2 (with Sam Fender), #5 simultaneously — all positions static for fourth consecutive week",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-05-22",
-      "expand_if": [
-        "loses #1",
-        "drops out of top 10",
-        "new single or album announcement",
-        "tour or major interview",
-        "chart record officially noted"
+        "major employer redundancy announcement",
+        "Starmer leadership challenge formally triggered"
       ]
     },
     {
@@ -153,6 +126,22 @@
         "new lecture or public statement",
         "shifts argument on a major topic"
       ]
+    },
+    {
+      "id": "russia-nato-romania",
+      "label": "Russia / NATO / Romania",
+      "status": "new",
+      "status_line": "28th drone incursion struck Galați apartment block injuring 2; Russia ambassador expelled; NATO invokes defence of every inch; Russia to close Bucharest embassy",
+      "first_seen": "2026-05-29",
+      "last_changed": "2026-05-29",
+      "expand_if": [
+        "fatality from a drone strike in NATO territory",
+        "NATO Article 4 consultation formally invoked",
+        "Romania retaliates or requests military reinforcement",
+        "29th incursion confirmed",
+        "NATO considers shoot-down authority for drones over Allied territory",
+        "US statement escalating beyond 'condemnation'"
+      ]
     }
   ],
   "retired_threads": [
@@ -162,6 +151,20 @@
       "retired_on": "2026-05-25",
       "retired_because": "Festival closed May 23 — time-bounded event, no ongoing story",
       "revive_if": "Mungiu or another winner makes a politically significant statement in the press circuit; or Fjord triggers a specific diplomatic controversy"
+    },
+    {
+      "id": "venice-biennale",
+      "label": "Venice Biennale 2026",
+      "retired_on": "2026-05-29",
+      "retired_because": "7 consecutive days stable with last_changed 2026-05-22; no new incident or statement surfaced in today's research",
+      "revive_if": "Pavilion closure, protest, prize announcement with political dimension, or Israeli/Palestinian pavilion controversy"
+    },
+    {
+      "id": "olivia-dean-chart",
+      "label": "Olivia Dean / UK Chart",
+      "retired_on": "2026-05-29",
+      "retired_because": "7 consecutive days stable with last_changed 2026-05-22; chart positions unchanged for fifth consecutive week — divergence already documented, thread no longer generating new signal",
+      "revive_if": "Loses #1, drops out of top 10, new single or album announcement, or chart run officially noted as record-breaking"
     }
   ],
   "source_discoveries": [
@@ -169,7 +172,7 @@
       "name": "Richard Haass — 'Home & Away' Substack",
       "url": "https://richardhaass.substack.com",
       "found_on": "2026-05-25",
-      "why_interesting": "Former CFR president arguing Trump is recreating the JCPOA he destroyed, and that regime change pressure produced a more hardline Iranian government — structural counter-frame to deal optimism, sharpened by today's developments"
+      "why_interesting": "Former CFR president arguing Trump is recreating the JCPOA he destroyed, and that regime change pressure produced a more hardline Iranian government — structural counter-frame to deal optimism"
     },
     {
       "name": "L'Orient Today",
@@ -178,5 +181,5 @@
       "why_interesting": "English-language edition of L'Orient Le Jour; takes a meaningfully different political line from Al-Nahar on Lebanese politics; useful for south Lebanon coverage"
     }
   ],
-  "last_updated": "2026-05-26"
+  "last_updated": "2026-05-29"
 }
