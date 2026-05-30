@@ -48,14 +48,104 @@
   }
   a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  header { margin-bottom: 2.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-2); }
+
+  /* Header */
+  header { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-2); }
   header h1 { font-size: 1.15rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
   header .date { font-size: 0.88rem; color: var(--text-3); margin-top: 0.2rem; }
+
+  /* ── Collage ──────────────────────────────────────────────── */
+  .collage-wrap {
+    margin: 0 -1.5rem 2rem;   /* bleed to edge on mobile */
+  }
+  @media (min-width: 820px) {
+    .collage-wrap { margin: 0 0 2rem; border-radius: var(--radius); overflow: hidden; }
+  }
+  .collage {
+    display: grid;
+    width: 100%;
+    height: var(--h, 300px);
+    gap: 2px;
+    background: #0e0e0d;
+    overflow: hidden;
+    grid-template-columns: var(--cols, repeat(6, 1fr));
+    grid-template-rows: 1fr;
+  }
+  .tile {
+    position: relative; overflow: hidden;
+    background: #1e1e1c; cursor: zoom-in;
+  }
+  .tile img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block; opacity: 0;
+    transition: opacity 0.4s, transform 0.3s ease;
+  }
+  .tile img.loaded { opacity: 1; }
+  .tile:hover img.loaded { transform: scale(1.07); }
+  .tile .lbl {
+    position: absolute; bottom: 7px; left: 7px;
+    background: rgba(0,0,0,0.58);
+    color: rgba(255,255,255,0.88);
+    font-size: 7.5px; font-weight: 700;
+    letter-spacing: 0.07em; padding: 3px 5px;
+    border-radius: 3px; text-transform: uppercase;
+    pointer-events: none; transition: opacity 0.2s;
+  }
+  .tile:hover .lbl { opacity: 0; }
+  .collage-footer {
+    display: flex; align-items: center; justify-content: flex-end;
+    padding: 0.5rem 0 0;
+  }
+  .btn-shuffle {
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--border-2); border-radius: 5px;
+    font-size: 0.75rem; cursor: pointer;
+    font-family: inherit;
+    background: var(--bg-2); color: var(--text-2);
+    transition: background 0.15s;
+  }
+  .btn-shuffle:hover { background: var(--bg-3); }
+
+  /* Lightbox */
+  #lightbox {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.92); z-index: 1000;
+    align-items: center; justify-content: center; cursor: zoom-out;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 92vw; max-height: 92vh;
+    object-fit: contain; border-radius: 4px;
+    box-shadow: 0 8px 60px rgba(0,0,0,0.7);
+    animation: lb-in 0.2s ease;
+  }
+  #lightbox .lb-lbl {
+    position: fixed; bottom: 1.5rem; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.85);
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 4px; pointer-events: none;
+  }
+  #lightbox .lb-close {
+    position: fixed; top: 1rem; right: 1.25rem;
+    color: rgba(255,255,255,0.5); font-size: 1.5rem;
+    line-height: 1; cursor: pointer; pointer-events: all;
+  }
+  @keyframes lb-in {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  /* Section headers */
   h2 {
     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--text-3);
     margin-bottom: 1rem; margin-top: 2.5rem;
   }
+
+  /* Story cards */
   .card {
     background: var(--bg-2); border-radius: var(--radius);
     padding: 1.25rem 1.4rem; margin-bottom: 1rem;
@@ -65,15 +155,19 @@
   .card p { color: var(--text-2); font-size: 0.94rem; margin-bottom: 0.6rem; }
   .card p:last-child { margin-bottom: 0; }
   .watch { font-size: 0.84rem; color: var(--text-3); margin-top: 0.5rem; font-style: italic; }
+
+  /* Tags */
   .tag {
     display: inline-block; font-size: 0.7rem; font-weight: 700;
     padding: 0.2em 0.55em; border-radius: var(--radius-sm);
     margin-right: 0.3rem; letter-spacing: 0.03em; vertical-align: middle;
   }
-  .tag.new { background: var(--purple-bg); color: var(--purple-text); }
-  .tag.changed { background: var(--amber-bg); color: var(--amber-text); }
-  .tag.stable { background: var(--gray-bg); color: var(--gray-text); }
-  .tag.uk { background: var(--blue-bg); color: var(--blue-text); }
+  .tag.new    { background: var(--purple-bg); color: var(--purple-text); }
+  .tag.changed{ background: var(--amber-bg);  color: var(--amber-text); }
+  .tag.stable { background: var(--gray-bg);   color: var(--gray-text); }
+  .tag.uk     { background: var(--blue-bg);   color: var(--blue-text); }
+
+  /* Lead */
   .lead-card {
     border-left: 3px solid var(--amber-text);
     background: var(--bg-2); border-radius: 0 var(--radius) var(--radius) 0;
@@ -81,6 +175,8 @@
   }
   .lead-card p { color: var(--text); font-size: 0.96rem; margin-bottom: 0.75rem; }
   .lead-card p:last-child { margin-bottom: 0; }
+
+  /* Markets grid */
   .markets-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 0.75rem; margin-bottom: 0.75rem;
@@ -94,8 +190,10 @@
   .market-tile .value { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
   .market-tile .change { font-size: 0.78rem; color: var(--text-3); margin-top: 0.15rem; }
   .market-tile .change.down { color: var(--coral-text); }
-  .market-tile .change.up { color: var(--teal-text); }
+  .market-tile .change.up   { color: var(--teal-text); }
   .market-note { font-size: 0.82rem; color: var(--text-3); margin-top: 0.4rem; }
+
+  /* Status table */
   .status-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
   .status-table th {
     text-align: left; padding: 0.5rem 0.75rem;
@@ -108,6 +206,8 @@
   .status-table .thread-label { font-weight: 500; color: var(--text); }
   .status-table .status-line { color: var(--text-2); }
   .status-table .date { color: var(--text-3); white-space: nowrap; }
+
+  /* Outside the frame */
   .frame-card {
     border-left: 3px solid var(--teal-text);
     background: var(--teal-bg); border-radius: 0 var(--radius) var(--radius) 0;
@@ -116,6 +216,7 @@
   .frame-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal-text); margin-bottom: 0.5rem; }
   .frame-card p { color: var(--text); font-size: 0.94rem; margin-bottom: 0.6rem; }
   .frame-card p:last-child { margin-bottom: 0; }
+
   footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-3); }
   footer a { color: var(--text-3); }
 </style>
@@ -126,6 +227,142 @@
   <h1>Firas's Digest</h1>
   <div class="date">Saturday, 30 May 2026</div>
 </header>
+
+<!-- ── Collage ─────────────────────────────────────────────────────────── -->
+<div class="collage-wrap">
+  <div class="collage" id="collage"></div>
+</div>
+<div class="collage-footer">
+  <button class="btn-shuffle" id="btn-shuffle">↺ Shuffle</button>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span class="lb-close" id="lb-close">✕</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-lbl" id="lb-lbl"></div>
+</div>
+
+<script>
+// ── Image pool — keyed to 30 May 2026 active threads ──────────────────────
+const POOL = [
+  // Iran / Hormuz
+  { f: "Hormuz_map.png",                                                    l: "Strait · Map" },
+  { f: "USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG",     l: "Hormuz · USCG" },
+  { f: "Aerial_View_of_Tehran_and_Tochal.JPG",                             l: "Tehran" },
+  { f: "Azadi_Tower_-_Tehran-_Iran_(1).jpg",                               l: "Tehran · Azadi" },
+  { f: "Oil_tanker_MV_Houston.JPG",                                         l: "Brent · $91" },
+  { f: "Crude_Oil_Tanker_Pericles_at_BP_Oil_Refinery_Jetty_and_General_Cargo_Ship_Jannes_at_Kwinana_Bulk_Jetty,_December_2020_01.jpg", l: "Oil · Market" },
+
+  // Russia / NATO / Romania
+  { f: "NATO_headquarters_Brussels.jpg",                                    l: "NATO HQ" },
+  { f: "Bucharest_panoramic_view.jpg",                                      l: "Bucharest" },
+  { f: "Romanian_Athenaeum.jpg",                                            l: "Romania" },
+  { f: "Galati,_Romania.jpg",                                               l: "Galați · Drone" },
+  { f: "Flag_of_NATO.svg",                                                  l: "NATO" },
+  { f: "Flag_of_Romania.svg",                                               l: "Romania · Flag" },
+
+  // Sudan Famine
+  { f: "Darfur_refugee_camp_in_Chad.jpg",                                   l: "Sudan · Darfur" },
+  { f: "Khartoum_from_Air.jpg",                                             l: "Khartoum" },
+  { f: "IDPs_in_Um_Baro,_North_Darfur.jpg",                                l: "Sudan · IDP" },
+  { f: "Sudan_Famine_(2024).jpg",                                           l: "Sudan · Famine" },
+
+  // Ebola DRC / Uganda
+  { f: "Ebola_virus_em.jpg",                                                l: "Ebola · DRC" },
+  { f: "View_of_the_City_of_Kinshasa,_DRC.jpg",                            l: "Kinshasa" },
+
+  // Israel / Lebanon
+  { f: "Downtown_Beirut_Lebanon.JPG",                                       l: "Beirut" },
+  { f: "Lebanese_Armed_Forces.jpg",                                          l: "Lebanon · South" },
+
+  // Turkey CHP
+  { f: "Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg",                   l: "İmamoğlu · CHP" },
+  { f: "Recep_Tayyip_Erdogan_portrait.PNG",                                 l: "Erdoğan" },
+
+  // UK economy
+  { f: "Bank_of_England_Building,_London,_UK_-_Diliff.jpg",                l: "Bank of England" },
+  { f: "Bank_underground_station,_Bank_of_England_building_entrance.JPG",  l: "City of London" },
+  { f: "Houses_of_Parliament_-_Palace_of_Westminster.JPG",                  l: "Westminster" },
+
+  // Music — Apple Music UK
+  { f: "Olivia_Dean_-_4323.jpg",                                            l: "Olivia Dean · #1" },
+  { f: "Sam_Fender_(2021)_(cropped).jpg",                                   l: "Sam Fender · #2" },
+  { f: "Santan_Dave.jpg",                                                    l: "Dave & Tems · #3" },
+  { f: "2019_Tems_on_NdaniTV_Sssions.jpg",                                 l: "Tems · #3" },
+  { f: "Harry_Styles_-_One_Direction_-_Hersheypark_Stadium_(9465384833).jpg", l: "Harry Styles · #10" },
+  { f: "RAYE_at_Glastonbury_2022_(cropped).jpg",                            l: "RAYE · #6" },
+
+  // Roland Garros / Sport
+  { f: "Roland_Garros_stade.jpg",                                           l: "Roland Garros" },
+  { f: "Alexander_Zverev_2019_Roland_Garros_(1).jpg",                       l: "Zverev · Favourite" },
+  { f: "Jannik_Sinner_at_the_2022_Australian_Open_crop.jpg",                l: "Sinner · Out" },
+
+  // Liverpool transfers
+  { f: "Anfield_Main_Stand_exterior.jpg",                                   l: "Liverpool · Konate" },
+];
+
+const COL_PRESETS = {
+  5: ["1.2fr 1fr 0.85fr 1fr 0.95fr","0.9fr 1.15fr 1fr 0.9fr 1.1fr","1fr 0.9fr 1.2fr 1fr 0.95fr"],
+  6: ["1.1fr 0.9fr 1fr 0.85fr 1fr 1.1fr","0.9fr 1fr 1.15fr 1fr 0.85fr 1.1fr","1fr 1.1fr 0.9fr 1.05fr 0.95fr 1fr"],
+  7: ["1fr 0.85fr 1.1fr 0.9fr 1fr 0.9fr 1.1fr","1.1fr 1fr 0.85fr 1fr 0.9fr 1.1fr 0.95fr"],
+};
+const HEIGHTS = [280, 300, 320, 340];
+
+function wikiUrl(f) {
+  return "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/"
+    + encodeURIComponent(f) + "&width=800";
+}
+function shuffle(a) {
+  const b=[...a];
+  for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}
+  return b;
+}
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function render() {
+  const counts=[5,6,6,7];
+  const n=pick(counts);
+  const cols=pick(COL_PRESETS[n]);
+  const h=pick(HEIGHTS);
+  const images=shuffle(POOL).slice(0,n);
+  const collage=document.getElementById('collage');
+  collage.style.setProperty('--cols',cols);
+  collage.style.setProperty('--h',h+'px');
+  collage.innerHTML='';
+  images.forEach(item=>{
+    const tile=document.createElement('div');
+    tile.className='tile';
+    const img=document.createElement('img');
+    img.src=wikiUrl(item.f);
+    img.alt=item.l;
+    img.onload=()=>img.classList.add('loaded');
+    img.onerror=()=>{tile.style.display='none';};
+    const lbl=document.createElement('span');
+    lbl.className='lbl';
+    lbl.textContent=item.l;
+    tile.append(img,lbl);
+    tile.addEventListener('click',()=>{
+      if(!img.classList.contains('loaded'))return;
+      document.getElementById('lb-img').src=img.src;
+      document.getElementById('lb-lbl').textContent=item.l;
+      document.getElementById('lightbox').classList.add('open');
+    });
+    collage.appendChild(tile);
+  });
+}
+
+function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
+document.getElementById('lb-close').addEventListener('click',closeLightbox);
+document.getElementById('lightbox').addEventListener('click',e=>{
+  if(e.target===document.getElementById('lightbox'))closeLightbox();
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeLightbox(); });
+document.getElementById('btn-shuffle').onclick=render;
+render();
+</script>
+
+<!-- ── Content ─────────────────────────────────────────────────────────── -->
 
 <h2>Today's Signal</h2>
 
@@ -165,11 +402,11 @@
 <div class="card">
   <p>The UK Apple Music chart this morning is as static as it has been in weeks. The entire top five is unchanged: Olivia Dean's "Man I Need" at one, the Olivia Dean–Sam Fender duet "Rein Me In" at two, Dave and Tems's "Raindance" at three, Bella Kay at four, another Olivia Dean track at five. <span class="tag uk">UK</span> Six weeks of near-total dominance, with eight Olivia Dean tracks simultaneously in the top 50. This is album-mode listening — the kind of engagement that happens when a record speaks to where people actually are emotionally, not just where the algorithm puts it. <em>Loud</em> has become a comfort object.</p>
 
-  <p>The divergence worth naming: the chart has frozen on intimate, domestic, heartbreak-adjacent music at exactly the moment Romania is trending on UK Twitter because Russian drones are hitting NATO apartment blocks. UK Twitter's other top trends — Konate and Jacquet (Liverpool: Ibrahima Konate confirmed leaving on a free, new signing Jeremy Jacquet dropping hints about his future role); Sinner (knocked out in a stunning second-round upset at Roland Garros by Juan Manuel Cerúndolo, having led 5–1 in the third set); Zverev (now the new men's favourite with Sinner and Djokovic both out) — show a public that is metabolising the macro through sport and transfers, not through the news. This is not apathy. It's the particular way an anxious public manages competing levels of threat: process the controllable (football transfers, a tennis shock) and retreat to the intimate (Olivia Dean) as a buffer against the uncontrollable.</p>
+  <p>The divergence worth naming: the chart has frozen on intimate, domestic, heartbreak-adjacent music at exactly the moment Romania is trending on UK Twitter because Russian drones are hitting NATO apartment blocks. UK Twitter's other top trends — Konate and Jacquet (Liverpool: Ibrahima Konate confirmed leaving on a free, new signing Jeremy Jacquet); Sinner (knocked out in a stunning second-round upset at Roland Garros by Juan Manuel Cerúndolo, having led 5–1 in the third set); Zverev (now the new men's favourite with Sinner and Djokovic both out) — show a public that is metabolising the macro through sport and transfers, not through the news. This is not apathy. It's the particular way an anxious public manages competing levels of threat: process the controllable, retreat to the intimate.</p>
 
-  <p>Harry Styles' <span class="tag uk">UK</span> "Aperture" climbs three places to number 10, his album <em>Kiss All the Time. Disco, Occasionally</em> (the biggest UK album of 2026 so far) maintaining momentum five months after release. More striking: Madonna's "Into the Groove" is up 23 places to 74 — almost certainly TikTok-driven — alongside a broader nostalgia wave in the mid-chart: Nickelback +28, The Cranberries' "Zombie" +10, Fleetwood Mac and early Ed Sheeran drifting upward. People are reaching backward. RAYE <span class="tag uk">UK</span> at number 6 and climbing is the counter-current: she remains one of the few artists in the chart whose sound feels contemporary and forward-facing rather than warm and familiar.</p>
+  <p>Harry Styles' <span class="tag uk">UK</span> "Aperture" climbs three places to number 10, his album <em>Kiss All the Time. Disco, Occasionally</em> (the biggest UK album of 2026 so far) maintaining momentum five months after release. Madonna's "Into the Groove" is up 23 places to 74 — almost certainly TikTok-driven — alongside a broader nostalgia wave in the mid-chart. RAYE <span class="tag uk">UK</span> at number 6 and climbing remains the rare artist in the chart whose sound feels contemporary rather than warm and familiar.</p>
 
-  <p>On TikTok globally, the sounds blowing up are almost entirely non-Anglophone: Flow-G's Filipino hip-hop "Driftstar" (866,000 UGC videos, +15% day-on-day), a Pakistani folk-pop track by Shafaullah Khan Rokhri accelerating at +37%, Aya Nakamura's French-language "Copines" with 614,000 videos. The divergence from the UK Apple Music chart is near-total. What is capturing global creative energy right now exists almost entirely outside the Western media sphere currently absorbed by Iran, Romania, and Ebola. Two parallel worlds of attention, almost no overlap.</p>
+  <p>On TikTok globally, the sounds blowing up are almost entirely non-Anglophone: Flow-G's Filipino hip-hop "Driftstar" (866,000 UGC videos), a Pakistani folk-pop track accelerating at +37% day-on-day, Aya Nakamura's French-language "Copines" with 614,000 videos. The divergence from the Apple Music UK chart is near-total. What is capturing global creative energy exists almost entirely outside the Western media sphere currently absorbed by Iran, Romania, and Ebola.</p>
 </div>
 
 <h2>Outside the Frame</h2>
@@ -177,7 +414,7 @@
 <div class="frame-card">
   <div class="frame-label">Sudan — a story that has fallen off the map</div>
   <p>Sudan is now officially the world's hungriest country, and it has almost entirely disappeared from Western media. The IPC confirmed in May that famine conditions have spread to four areas of Darfur, with nearly 20 million Sudanese — roughly two in five of the population — experiencing crisis-level food insecurity or worse. Some 375,000 people face imminent starvation. The 2026 humanitarian response plan requires $2.9 billion; it has received approximately 5.5% of that.</p>
-  <p>Three years into a war that has killed hundreds of thousands, displaced 14 million, and collapsed the health system entirely, Sudan is living through a famine in near-total media silence — crowded out by Iran, Israel, Romania, and Ebola. The invisibility is structural: African humanitarian crises reliably lose column inches when European-adjacent crises dominate the cycle. The scale here is extraordinary and the funding timeline is months, not years, before the situation becomes irreversible. Opening a new thread on this.</p>
+  <p>Three years into a war that has killed hundreds of thousands, displaced 14 million, and collapsed the health system entirely, Sudan is living through a famine in near-total media silence — crowded out by Iran, Israel, Romania, and Ebola. The invisibility is structural: African humanitarian crises reliably lose column inches when European-adjacent crises dominate the cycle. Opening a new thread on this.</p>
 </div>
 
 <h2>Markets</h2>
@@ -221,13 +458,13 @@
     <tr>
       <td class="thread-label">Iran / Hormuz</td>
       <td><span class="tag changed">changed</span></td>
-      <td class="status-line">MOU text agreed at working level; Trump still hasn't signed after May 29 Situation Room meeting; Iran disputes terms; Brent at $91.37</td>
+      <td class="status-line">MOU text agreed; Trump still hasn't signed after May 29 Situation Room meeting; Iran disputes terms; Brent $91.37</td>
       <td class="date">30 May</td>
     </tr>
     <tr>
       <td class="thread-label">Russia / NATO / Romania</td>
       <td><span class="tag changed">changed</span></td>
-      <td class="status-line">28th drone struck Galati apartment block; Romania expelled Constanta consul; Mearsheimer maps escalation logic to conventional NATO strikes</td>
+      <td class="status-line">28th drone struck Galați apartment block; Romania expelled Constanta consul; Mearsheimer maps escalation logic to conventional NATO strikes</td>
       <td class="date">30 May</td>
     </tr>
     <tr>
@@ -245,7 +482,7 @@
     <tr>
       <td class="thread-label">Sudan Famine</td>
       <td><span class="tag new">new</span></td>
-      <td class="status-line">World's hungriest country; 20M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 5.5% funded; invisible in Western coverage</td>
+      <td class="status-line">World's hungriest country; 20M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 5.5% funded</td>
       <td class="date">30 May</td>
     </tr>
     <tr>
