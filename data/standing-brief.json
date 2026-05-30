@@ -4,9 +4,9 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Trump Situation Room ended without decision; 60-day MOU agreed at working level but Trump hasn't signed; Iran publicly disputes terms as 'fabricated victory'; Brent at $90.71",
+      "status_line": "MOU text agreed at working level; Trump still hasn't signed after May 29 Situation Room meeting; Iran disputes terms; Brent at $91.37",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-29",
+      "last_changed": "2026-05-30",
       "expand_if": [
         "formal MOU signed",
         "talks collapse again",
@@ -18,27 +18,74 @@
       ]
     },
     {
-      "id": "israel-lebanon",
-      "label": "Israel / Lebanon",
+      "id": "russia-nato-romania",
+      "label": "Russia / NATO / Romania",
       "status": "changed",
-      "status_line": "Pentagon trilateral meeting on ceasefire mechanics; UAE covert strikes on Iran revealed (Mirage jets, Wing Loong drones, Lavan Island refinery, coordinating with Israel); 29 killed in Lebanon in 24h",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-05-29",
+      "status_line": "28th drone struck Galati apartment block (2 injured); Romania expelled Constanta consul; EU sanctions prep; Mearsheimer maps escalation logic to conventional NATO strikes",
+      "first_seen": "2026-05-29",
+      "last_changed": "2026-05-30",
       "expand_if": [
-        "major Israeli ground incursion",
-        "Hezbollah rocket barrage on Israeli cities",
-        "ceasefire agreement with teeth",
-        "UNIFIL withdrawal",
-        "US forces Israel to pause operations",
-        "mass civilian casualty event",
-        "UAE publicly acknowledges its strikes on Iran"
+        "fatality from a drone strike in NATO territory",
+        "NATO Article 4 consultation formally invoked",
+        "Romania retaliates or requests military reinforcement",
+        "29th incursion confirmed",
+        "NATO considers shoot-down authority for drones over Allied territory",
+        "US statement escalating beyond condemnation",
+        "Russian conventional strike on NATO infrastructure"
+      ]
+    },
+    {
+      "id": "uk-economic-stress",
+      "label": "UK Economic Stress",
+      "status": "changed",
+      "status_line": "10Y gilt ~4.8% (lowest since April 17, -19bps on month); 30Y at 5.49%; FTSE 100 at 10,433; gilt spike from earlier in May partially unwound",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-30",
+      "expand_if": [
+        "gilt yield spike resumes above 5.5% with upward trajectory",
+        "energy price cap revision announced",
+        "recession officially confirmed",
+        "Bank of England emergency action",
+        "government fiscal statement",
+        "major employer redundancy announcement",
+        "Starmer leadership challenge formally triggered"
+      ]
+    },
+    {
+      "id": "mearsheimer",
+      "label": "Mearsheimer",
+      "status": "changed",
+      "status_line": "New Substack: 'Will Russia Strike Targets in Europe?' — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion if Ukraine campaign continues",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-30",
+      "expand_if": [
+        "new Substack post",
+        "new podcast appearance on NATO escalation",
+        "shifts argument on major topic",
+        "Russia-Europe escalation argument gains mainstream policy traction"
+      ]
+    },
+    {
+      "id": "sudan-famine",
+      "label": "Sudan Famine",
+      "status": "new",
+      "status_line": "World's hungriest country; 20M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 5.5% funded; structurally invisible in Western coverage",
+      "first_seen": "2026-05-30",
+      "last_changed": "2026-05-30",
+      "expand_if": [
+        "IPC declares additional famine zones",
+        "major donor announces significant new funding",
+        "Western government makes Sudan a diplomatic priority",
+        "ceasefire between SAF and RSF",
+        "humanitarian corridor agreement",
+        "death toll receives prominent international media coverage"
       ]
     },
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "changed",
-      "status_line": "WHO declared PHEIC 17 May; 125 confirmed + 906 suspected cases, 223 suspected deaths as of 28 May; American patient transported to Germany (stable); Uganda 9 confirmed cases",
+      "status": "stable",
+      "status_line": "125 confirmed + 906 suspected cases, 223 suspected deaths; WHO head in Kinshasa; no new geographic expansion today",
       "first_seen": "2026-05-25",
       "last_changed": "2026-05-29",
       "expand_if": [
@@ -51,10 +98,28 @@
       ]
     },
     {
+      "id": "israel-lebanon",
+      "label": "Israel / Lebanon",
+      "status": "stable",
+      "status_line": "Ceasefire extended to late June; Pentagon trilateral meeting May 29; peace talks Washington June 2-3; violations ongoing, no significant escalation",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-05-29",
+      "expand_if": [
+        "major Israeli ground incursion",
+        "Hezbollah rocket barrage on Israeli cities",
+        "ceasefire agreement with teeth",
+        "UNIFIL withdrawal",
+        "US forces Israel to pause operations",
+        "mass civilian casualty event",
+        "UAE publicly acknowledges its strikes on Iran",
+        "June 2-3 peace talks collapse or major breakthrough"
+      ]
+    },
+    {
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
       "status": "stable",
-      "status_line": "Court ousted CHP leadership (annulled 2023 congress); police stormed HQ with tear gas; Özel calls it a coup attempt; Kılıçdaroğlu may return as leader; Imamoglu still imprisoned",
+      "status_line": "Court ousted CHP leadership (annulled 2023 congress); Kilicdaroglu returning as leader; police stormed HQ; Imamoglu still imprisoned",
       "first_seen": "2026-05-25",
       "last_changed": "2026-05-26",
       "expand_if": [
@@ -70,7 +135,7 @@
       "id": "snp-murrell",
       "label": "SNP Crisis / Murrell",
       "status": "stable",
-      "status_line": "Peter Murrell guilty plea — £400K embezzled from SNP over 13 years (2010–2023); remanded in custody; sentencing 23 June",
+      "status_line": "Peter Murrell guilty plea — £400K embezzled from SNP over 13 years; remanded in custody; sentencing 23 June",
       "first_seen": "2026-05-26",
       "last_changed": "2026-05-26",
       "expand_if": [
@@ -80,67 +145,6 @@
         "new allegations emerge at sentencing",
         "SNP polling drops significantly in Scotland",
         "Swinney leadership threatened"
-      ]
-    },
-    {
-      "id": "uk-economic-stress",
-      "label": "UK Economic Stress",
-      "status": "changed",
-      "status_line": "Bailey signals BOE may tolerate above-target inflation to support weak economy; 10Y gilt back above 5% (from <4.9%); Starmer faces 90+ Labour MPs calling for resignation after local election losses",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-05-29",
-      "expand_if": [
-        "gilt yield spike above 5.5% with upward trajectory",
-        "energy price cap revision announced",
-        "recession officially confirmed",
-        "Bank of England emergency action",
-        "government fiscal statement",
-        "major employer redundancy announcement",
-        "Starmer leadership challenge formally triggered"
-      ]
-    },
-    {
-      "id": "tucker-focus",
-      "label": "Tucker Carlson",
-      "status": "stable",
-      "status_line": "No new episode since May 23; anti-Trump positioning on Iran maintained; no pivot detected",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-05-23",
-      "expand_if": [
-        "new major interview or guest",
-        "returns to pro-Trump framing on Iran",
-        "controversy or platform change",
-        "direct confrontation with White House escalates"
-      ]
-    },
-    {
-      "id": "mearsheimer",
-      "label": "Mearsheimer",
-      "status": "stable",
-      "status_line": "No new Substack post since May 22; 'Eating Humble Pie' arguing Iran war is strategic loss for US remains the counter-frame",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-05-23",
-      "expand_if": [
-        "new Substack post",
-        "new podcast appearance",
-        "new lecture or public statement",
-        "shifts argument on a major topic"
-      ]
-    },
-    {
-      "id": "russia-nato-romania",
-      "label": "Russia / NATO / Romania",
-      "status": "new",
-      "status_line": "28th drone incursion struck Galați apartment block injuring 2; Russia ambassador expelled; NATO invokes defence of every inch; Russia to close Bucharest embassy",
-      "first_seen": "2026-05-29",
-      "last_changed": "2026-05-29",
-      "expand_if": [
-        "fatality from a drone strike in NATO territory",
-        "NATO Article 4 consultation formally invoked",
-        "Romania retaliates or requests military reinforcement",
-        "29th incursion confirmed",
-        "NATO considers shoot-down authority for drones over Allied territory",
-        "US statement escalating beyond 'condemnation'"
       ]
     }
   ],
@@ -156,15 +160,22 @@
       "id": "venice-biennale",
       "label": "Venice Biennale 2026",
       "retired_on": "2026-05-29",
-      "retired_because": "7 consecutive days stable with last_changed 2026-05-22; no new incident or statement surfaced in today's research",
+      "retired_because": "7 consecutive days stable with last_changed 2026-05-22; no new incident or statement surfaced in research",
       "revive_if": "Pavilion closure, protest, prize announcement with political dimension, or Israeli/Palestinian pavilion controversy"
     },
     {
       "id": "olivia-dean-chart",
       "label": "Olivia Dean / UK Chart",
       "retired_on": "2026-05-29",
-      "retired_because": "7 consecutive days stable with last_changed 2026-05-22; chart positions unchanged for fifth consecutive week — divergence already documented, thread no longer generating new signal",
+      "retired_because": "7 consecutive days stable with last_changed 2026-05-22; chart positions unchanged — divergence already documented",
       "revive_if": "Loses #1, drops out of top 10, new single or album announcement, or chart run officially noted as record-breaking"
+    },
+    {
+      "id": "tucker-focus",
+      "label": "Tucker Carlson",
+      "retired_on": "2026-05-30",
+      "retired_because": "7 consecutive days stable; last changed 2026-05-23; no new episodes or significant statements detected since May 20 Thomas Massie/Israel lobby episode",
+      "revive_if": "New major episode on Iran deal, Russia, or Ukraine; public clash with Trump administration escalates; platform change; returns to pro-Trump framing"
     }
   ],
   "source_discoveries": [
@@ -181,5 +192,5 @@
       "why_interesting": "English-language edition of L'Orient Le Jour; takes a meaningfully different political line from Al-Nahar on Lebanese politics; useful for south Lebanon coverage"
     }
   ],
-  "last_updated": "2026-05-29"
+  "last_updated": "2026-05-30"
 }

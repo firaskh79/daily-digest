@@ -1,154 +1,138 @@
 {
-  "date": "2026-05-29",
-  "mood_of_day": "conflicted",
+  "date": "2026-05-30",
+  "mood_of_day": "anxious",
   "macro": {
     "politics": [
       {
-        "headline": "Trump concludes Situation Room meeting on Iran deal without announcing a decision",
-        "tags": ["Iran", "Trump", "nuclear", "Hormuz", "MOU"],
+        "headline": "Trump declines to sign Iran MOU for second time; negotiators await decision",
+        "tags": ["iran", "trump", "hormuz", "nuclear"],
         "sentiment": "uncertain",
         "intensity": 9
       },
       {
-        "headline": "Russian drone strikes Romanian apartment block — 28th NATO airspace incursion; ambassador expelled",
-        "tags": ["Russia", "Romania", "NATO", "Ukraine"],
+        "headline": "Russian drone hits NATO-member Romania apartment block; 28th airspace incursion",
+        "tags": ["russia", "nato", "romania", "ukraine"],
         "sentiment": "alarming",
         "intensity": 8
       },
       {
-        "headline": "UAE secretly struck Iran during war including after ceasefire, coordinating with Israel — Times of Israel",
-        "tags": ["UAE", "Iran", "Israel", "Abraham Accords", "Gulf"],
-        "sentiment": "revelatory",
-        "intensity": 8
-      },
-      {
-        "headline": "Pentagon trilateral meeting: Lebanon, Israel, US on ceasefire mechanics; 29 killed in Lebanon in 24h",
-        "tags": ["Israel", "Lebanon", "Hezbollah", "Pentagon"],
-        "sentiment": "tense",
+        "headline": "Mearsheimer: 'Will Russia Strike Targets in Europe?' — maps escalation logic from conventional strikes to limited nuclear",
+        "tags": ["russia", "nato", "mearsheimer", "escalation"],
+        "sentiment": "warning",
         "intensity": 7
       },
       {
-        "headline": "Starmer faces demands from 90+ Labour MPs to resign after poor local election performance",
-        "tags": ["UK", "Labour", "Starmer", "politics"],
-        "sentiment": "negative",
-        "intensity": 6
+        "headline": "Israel-Lebanon ceasefire extended; Pentagon trilateral meeting; June 2-3 peace talks scheduled",
+        "tags": ["israel", "lebanon", "ceasefire", "diplomacy"],
+        "sentiment": "cautious",
+        "intensity": 5
+      },
+      {
+        "headline": "Sudan: world's hungriest country; 20M acutely food insecure; $2.9B plan only 5.5% funded",
+        "tags": ["sudan", "famine", "humanitarian", "darfur"],
+        "sentiment": "alarming",
+        "intensity": 8
       }
     ],
     "economics": [
       {
-        "headline": "BOE Governor Bailey signals tolerance for above-target inflation to support weak UK economy",
-        "tags": ["Bank of England", "UK", "inflation", "rates"],
-        "sentiment": "cautionary",
-        "intensity": 7
+        "headline": "UK 10Y gilt at ~4.8%, down 19bps on month — lowest since April 17; 30Y gilt 5.49%",
+        "tags": ["uk", "gilts", "boe", "inflation"],
+        "sentiment": "cautiously positive",
+        "intensity": 5
       },
       {
-        "headline": "UK 10Y gilt back above 5% despite Bailey accommodation signal; Brent at $90.71 (-2.15%)",
-        "tags": ["gilts", "UK", "Brent", "oil", "markets"],
-        "sentiment": "mixed",
+        "headline": "Brent crude $91.37 — markets pricing in Iran deal that hasn't been signed",
+        "tags": ["oil", "brent", "iran", "energy"],
+        "sentiment": "speculative",
         "intensity": 6
       },
       {
-        "headline": "FTSE 100 at 10,415 (-0.10%); market cautious ahead of Iran deal resolution",
-        "tags": ["FTSE", "markets", "UK"],
-        "sentiment": "cautious",
-        "intensity": 4
+        "headline": "FTSE 100 at 10,433 — fell 0.7% Thursday, ended eight-session winning streak",
+        "tags": ["ftse", "uk", "equities"],
+        "sentiment": "neutral",
+        "intensity": 3
+      },
+      {
+        "headline": "Nasdaq at 26,972 — up 0.2% Thursday; tech holding steady",
+        "tags": ["nasdaq", "us", "tech", "equities"],
+        "sentiment": "stable",
+        "intensity": 2
       }
     ],
     "google_trends_uk": [
-      { "rank": 1, "term": "Romania drone NATO", "volume_est": "very high" },
-      { "rank": 2, "term": "Iran deal Trump", "volume_est": "very high" },
-      { "rank": 3, "term": "Manchester Airport trial", "volume_est": "high" },
-      { "rank": 4, "term": "007 First Light PC", "volume_est": "high" },
-      { "rank": 5, "term": "Olivia Dean", "volume_est": "medium" }
+      { "rank": 1, "term": "Romania drone NATO", "volume_est": "high" },
+      { "rank": 2, "term": "Ibrahima Konate Liverpool", "volume_est": "high" },
+      { "rank": 3, "term": "Jeremy Jacquet", "volume_est": "medium" },
+      { "rank": 4, "term": "Sinner Roland Garros", "volume_est": "high" },
+      { "rank": 5, "term": "Zverev French Open", "volume_est": "high" },
+      { "rank": 6, "term": "Unison", "volume_est": "medium" },
+      { "rank": 7, "term": "Henry Nowak", "volume_est": "medium" },
+      { "rank": 8, "term": "Iran deal Trump", "volume_est": "medium" },
+      { "rank": 9, "term": "Sudan famine", "volume_est": "low" },
+      { "rank": 10, "term": "Ebola DRC", "volume_est": "low" }
     ],
     "pytrends_uk_live": []
   },
   "culture": {
     "music": {
       "apple_music_uk_top5": [
-        {
-          "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0,
-          "uk_artist": true, "mood_tags": ["intimate", "longing", "emotional"], "theme_tags": ["relationships", "need", "domestic"]
-        },
-        {
-          "pos": 2, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0,
-          "uk_artist": true, "mood_tags": ["melancholic", "restrained", "yearning"], "theme_tags": ["relationships", "collaboration"]
-        },
-        {
-          "pos": 3, "artist": "Dave & Tems", "title": "Raindance", "change": 0,
-          "uk_artist": true, "mood_tags": ["atmospheric", "introspective"], "theme_tags": ["identity", "belonging"]
-        },
-        {
-          "pos": 4, "artist": "Bella Kay", "title": "iloveitiloveitiloveit", "change": 0,
-          "uk_artist": false, "mood_tags": ["euphoric", "upbeat"], "theme_tags": ["celebration", "pop"]
-        },
-        {
-          "pos": 5, "artist": "Olivia Dean", "title": "So Easy (To Fall In Love)", "change": 0,
-          "uk_artist": true, "mood_tags": ["soft", "romantic"], "theme_tags": ["love", "relationships"]
-        }
+        { "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["intimate", "longing"], "theme_tags": ["heartbreak", "domestic"] },
+        { "pos": 2, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["tender", "restrained"], "theme_tags": ["love", "control"] },
+        { "pos": 3, "artist": "Dave & Tems", "title": "Raindance", "change": 0, "uk_artist": true, "mood_tags": ["confident", "atmospheric"], "theme_tags": ["identity", "success"] },
+        { "pos": 4, "artist": "Bella Kay", "title": "iloveitiloveitiloveit", "change": 0, "uk_artist": false, "mood_tags": ["euphoric", "playful"], "theme_tags": ["love", "infatuation"] },
+        { "pos": 5, "artist": "Olivia Dean", "title": "So Easy (To Fall In Love)", "change": 0, "uk_artist": true, "mood_tags": ["warm", "vulnerable"], "theme_tags": ["love", "ease"] }
       ],
       "tiktok_sounds": [
-        {
-          "title": "Copines", "artist": "Mc Pepeu & Dj Gabriel do Borel feat. Aya Nakamura",
-          "score": 983, "videos": 536397,
-          "mood_tags": ["nostalgic", "danceable"], "theme_tags": ["romance", "French pop", "global nostalgia"]
-        },
-        {
-          "title": "Hopelessly Devoted to You", "artist": "Studio Sound Group (cover)",
-          "score": 967, "videos": 517897,
-          "mood_tags": ["romantic", "nostalgic"], "theme_tags": ["devotion", "retro"]
-        },
-        {
-          "title": "Driftstar", "artist": "Flow-G",
-          "score": 989, "videos": 866608,
-          "mood_tags": ["energetic", "hype"], "theme_tags": ["Philippines hip-hop", "Southeast Asia"]
-        }
+        { "title": "Driftstar", "artist": "Flow-G", "score": 976, "videos": 866608, "mood_tags": ["confident", "smooth"], "theme_tags": ["hip-hop", "philippines", "global-south"] },
+        { "title": "Copines", "artist": "Aya Nakamura", "score": 991, "videos": 614659, "mood_tags": ["playful", "defiant"], "theme_tags": ["afropop", "francophone", "nostalgia"] },
+        { "title": "Tery Bajow Jewan Okhaa", "artist": "Shafaullah Khan Rokhri", "score": 949, "videos": 261803, "mood_tags": ["romantic", "traditional"], "theme_tags": ["folk", "pakistan", "global-south"] },
+        { "title": "Mojando la Rata", "artist": "El Chonta", "score": 927, "videos": 239490, "mood_tags": ["playful", "energetic"], "theme_tags": ["latin-urban", "colombia", "venezuela"] }
       ]
     },
     "tiktok_formats": [
-      { "format": "video game loading screen transformation", "theme_tags": ["escapism", "gaming", "digital identity"] },
-      { "format": "fake World Cup squads", "theme_tags": ["football", "community", "humour"] },
-      { "format": "nostalgia flashback compilations", "theme_tags": ["nostalgia", "escapism", "past"] }
+      { "format": "Nostalgia revival (Madonna, 90s pop, Nickelback)", "theme_tags": ["nostalgia", "escapism", "retro"] },
+      { "format": "Global-South language sounds (Filipino, Pakistani, French-African)", "theme_tags": ["global", "multilingual", "divergence"] }
     ]
   },
   "threads": [
-    { "id": "iran-hormuz", "status": "changed", "status_line": "Trump Situation Room ended without decision; 60-day MOU agreed at working level but not signed; Iran disputes terms", "last_changed": "2026-05-29" },
-    { "id": "israel-lebanon", "status": "changed", "status_line": "Pentagon trilateral meeting; UAE covert strikes revealed; 29 killed in Lebanon in 24h", "last_changed": "2026-05-29" },
-    { "id": "ebola-drc-uganda", "status": "changed", "status_line": "WHO PHEIC declared; 125 confirmed + 906 suspected; American patient in Germany", "last_changed": "2026-05-29" },
-    { "id": "uk-economic-stress", "status": "changed", "status_line": "Bailey tolerates inflation above target; gilts above 5%; Starmer faces 90+ MP resignation calls", "last_changed": "2026-05-29" },
-    { "id": "russia-nato-romania", "status": "new", "status_line": "28th drone incursion hit Galati apartment block; ambassador expelled; NATO vows defence", "last_changed": "2026-05-29" },
-    { "id": "turkey-crackdown", "status": "stable", "status_line": "Court ousted CHP leadership; Imamoglu imprisoned; Kilicdaroglu may return", "last_changed": "2026-05-26" },
-    { "id": "snp-murrell", "status": "stable", "status_line": "Guilty plea; remanded; sentencing 23 June", "last_changed": "2026-05-26" },
-    { "id": "tucker-focus", "status": "stable", "status_line": "No new episode since 23 May", "last_changed": "2026-05-23" },
-    { "id": "mearsheimer", "status": "stable", "status_line": "No new post since 22 May", "last_changed": "2026-05-23" }
+    { "id": "iran-hormuz", "status": "changed", "status_line": "MOU text agreed; Trump still hasn't signed after May 29 Situation Room meeting; Brent $91.37", "last_changed": "2026-05-30" },
+    { "id": "russia-nato-romania", "status": "changed", "status_line": "28th drone hit Galati; Romania expelled Constanta consul; Mearsheimer maps NATO escalation logic", "last_changed": "2026-05-30" },
+    { "id": "uk-economic-stress", "status": "changed", "status_line": "10Y gilt ~4.8% (-19bps month); 30Y 5.49%; FTSE 10,433; spike partially unwound", "last_changed": "2026-05-30" },
+    { "id": "mearsheimer", "status": "changed", "status_line": "New Substack: 'Will Russia Strike Targets in Europe?' — conventional NATO strikes then limited nuclear coercion", "last_changed": "2026-05-30" },
+    { "id": "sudan-famine", "status": "new", "status_line": "World's hungriest country; 20M acutely food insecure; $2.9B plan 5.5% funded", "last_changed": "2026-05-30" },
+    { "id": "ebola-drc-uganda", "status": "stable", "status_line": "125 confirmed + 906 suspected; WHO head in Kinshasa; no expansion", "last_changed": "2026-05-29" },
+    { "id": "israel-lebanon", "status": "stable", "status_line": "Ceasefire extended; June 2-3 talks; violations ongoing", "last_changed": "2026-05-29" },
+    { "id": "turkey-crackdown", "status": "stable", "status_line": "CHP leadership ousted; Kilicdaroglu returning; Imamoglu imprisoned", "last_changed": "2026-05-26" },
+    { "id": "snp-murrell", "status": "stable", "status_line": "Guilty plea; sentencing June 23", "last_changed": "2026-05-26" }
   ],
   "synthesis": {
-    "daily_theme": "Two cliffhangers — an Iran peace deal that cannot close and NATO deterrence being tested with live munitions — while UK culture retreats into nostalgia and domestic intimacy.",
-    "mechanism": "Iran-deal paralysis reflects Trump internal coalition fragility more than bilateral negotiation failure. Romania drone escalation follows 28 incursions with consistently low consequences. Cultural nostalgia surge and Olivia Dean chart stasis are both responses to an unmanageable present.",
+    "daily_theme": "Markets are pricing in a deal that hasn't been signed, while the most structurally significant escalation risk — Russia testing NATO's red lines in Romania — is being processed through Olivia Dean's back catalogue and football transfers.",
+    "mechanism": "Iran deal optimism is suppressing Brent and gilt yields simultaneously, creating a fragile calm that is one unsigned document away from reversing. Meanwhile the Romania drone incursions have crossed from incident to pattern (28 times), and Mearsheimer's publication timing — the same day as the Galati strike — gives the escalation-logic framing unusual salience.",
     "connections": [
       {
-        "macro_event": "Trump Situation Room non-decision on Iran MOU",
-        "cultural_response": "Olivia Dean static at #1 for fifth consecutive week; chart largely frozen",
-        "mechanism": "Extended geopolitical uncertainty with no resolution creates cultural suspension — people are not processing change because change has not arrived",
-        "observation": "The chart's unusual immobility mirrors the political moment's immobility. Nothing is resolving. The music reflects stasis rather than processing.",
-        "confidence": "speculative",
+        "macro_event": "Iran MOU unsigned; Trump stalling",
+        "cultural_response": "UK Apple Music top 5 completely static for sixth consecutive week",
+        "mechanism": "Uncertainty produces emotional retreat to the known and familiar — Olivia Dean's album as comfort object",
+        "observation": "The chart freeze during a period of acute geopolitical uncertainty is not coincidental. When the macro produces no resolution — just sustained tension — cultural consumption tends toward the intimate and repetitive. People aren't updating their playlists because they're not updating their models of the world either.",
+        "confidence": "moderate",
         "signal_type": "divergence"
       },
       {
-        "macro_event": "Russia drone strikes NATO civilian housing in Romania, 28th incursion",
-        "cultural_response": "The Cranberries 'Zombie' +10 on UK Apple Music; Romania trending next to #TOTP and #SmackDown",
-        "mechanism": "'Zombie' was written about IRA civilian bombing; its resurgence during a week of drone strikes on civilian housing may be subconscious cultural processing. The trend list juxtaposition reflects how the UK absorbs geopolitical crises as background noise behind the entertainment schedule.",
-        "observation": "The UK's cultural processing of crisis events is characteristically indirect. Romania trending next to WWE and BBC Four repeats is not irony — it is the actual texture of how these events land in British public attention.",
+        "macro_event": "28th Russian drone incursion into Romania",
+        "cultural_response": "Romania trending on UK Twitter alongside Liverpool transfers and Roland Garros tennis",
+        "mechanism": "The public absorbs existential threat through sport and entertainment adjacency — the threat registers but is processed in the same cognitive frame as a football transfer",
+        "observation": "Romania trending on UK Twitter between Konate/Jacquet and Sinner/Zverev is a precise image of how a NATO-Russia confrontation is being metabolised: not as a separate alarm-triggering category but as one item in a continuous scroll. This normalisation is significant.",
         "confidence": "moderate",
-        "signal_type": "reactive"
+        "signal_type": "divergence"
       },
       {
-        "macro_event": "UK economic stress: Bailey signals inflation tolerance, gilts above 5%, Starmer leadership challenge",
-        "cultural_response": "Nostalgia surge across multiple decades simultaneously — Nickelback, Madonna, Toto, Oasis, Cranberries all climbing",
-        "mechanism": "When the present feels economically and politically unmanageable, cultural retreat into familiar past music is a documented pattern. The breadth spanning 1980s, 1990s, and 2000s simultaneously suggests cross-generational stress.",
-        "observation": "The nostalgia surge is not concentrated in one era — it is collective and diffuse, a mood rather than a demographic signal.",
-        "confidence": "moderate",
-        "signal_type": "reactive"
+        "macro_event": "Sudan becomes world's hungriest country; 5.5% of humanitarian plan funded",
+        "cultural_response": "Sudan absent from UK Twitter trends, UK music charts, TikTok formats",
+        "mechanism": "Structural media invisibility of African humanitarian crises when European-adjacent crises dominate — not indifference but attention architecture",
+        "observation": "The total absence of Sudan from any cultural or social signal while 20 million people face famine is the starkest divergence of the day. The crisis is not absent from the world; it is absent from the attention economy.",
+        "confidence": "strong",
+        "signal_type": "divergence"
       }
     ]
   }

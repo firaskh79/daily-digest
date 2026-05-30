@@ -1,311 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firas's Digest — 29 May 2026</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firas's Digest — 30 May 2026</title>
+<style>
+  :root {
+    --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
+    --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
+    --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
+    --radius:10px; --radius-sm:6px;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --purple-bg:#EEEDFE; --purple-text:#3C3489;
+    --teal-bg:#E1F5EE; --teal-text:#0F6E56;
+    --coral-bg:#FAECE7; --coral-text:#712B13;
+    --amber-bg:#FAEEDA; --amber-text:#633806;
+    --blue-bg:#E6F1FB; --blue-text:#0C447C;
+    --green-bg:#EAF3DE; --green-text:#27500A;
+    --gray-bg:#F1EFE8; --gray-text:#444441;
+    --link:#185FA5;
+  }
+  @media (prefers-color-scheme: dark) {
     :root {
-      --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
-      --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
-      --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
-      --radius:10px; --radius-sm:6px;
-      --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-      --purple-bg:#EEEDFE; --purple-text:#3C3489;
-      --teal-bg:#E1F5EE; --teal-text:#0F6E56;
-      --coral-bg:#FAECE7; --coral-text:#712B13;
-      --amber-bg:#FAEEDA; --amber-text:#633806;
-      --blue-bg:#E6F1FB; --blue-text:#0C447C;
-      --green-bg:#EAF3DE; --green-text:#27500A;
-      --gray-bg:#F1EFE8; --gray-text:#444441;
-      --link:#185FA5;
+      --bg:#141413; --bg-2:#1e1e1b; --bg-3:#252520;
+      --text:#e8e6e1; --text-2:#a0a09a; --text-3:#606058;
+      --border:rgba(255,255,255,0.08); --border-2:rgba(255,255,255,0.14);
+      --purple-bg:#1e1a3a; --purple-text:#a89ff5;
+      --teal-bg:#0d2b22; --teal-text:#6fcfaa;
+      --coral-bg:#2d1208; --coral-text:#f09070;
+      --amber-bg:#2a1a00; --amber-text:#e8a84e;
+      --blue-bg:#0a1e2f; --blue-text:#6aacde;
+      --green-bg:#0d2205; --green-text:#87c85a;
+      --gray-bg:#1e1e1b; --gray-text:#a0a09a;
+      --link:#6aacde;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg:#1a1a18; --bg-2:#232320; --bg-3:#2a2a26;
-        --text:#f0ede6; --text-2:#b0ada8; --text-3:#6a6864;
-        --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
-        --purple-bg:#2a2860; --purple-text:#c0b8ff;
-        --teal-bg:#0d3028; --teal-text:#70d4b0;
-        --coral-bg:#3a1810; --coral-text:#f0a080;
-        --amber-bg:#3a2408; --amber-text:#f0c060;
-        --blue-bg:#0a2040; --blue-text:#80c0f0;
-        --green-bg:#162810; --green-text:#90d060;
-        --gray-bg:#2a2a26; --gray-text:#c0bdb8;
-        --link:#70b0f0;
-      }
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 2rem;
-      line-height: 1.68;
-      font-size: 16px;
-    }
-    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
-    header h1 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; }
-    header p { color: var(--text-2); font-size: 0.88rem; margin-top: 0.25rem; }
-    h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1rem; margin-top: 2.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
-    h3 { font-size: 0.96rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
-    p { margin-bottom: 0.85rem; font-size: 0.94rem; color: var(--text); }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .lead { background: var(--bg-2); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 0.5rem; border: 1px solid var(--border); }
-    .lead h2 { margin-top: 0; border-bottom: none; padding-bottom: 0; }
-
-    .card { background: var(--bg-2); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; border: 1px solid var(--border); }
-    .card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
-    .card-label { font-size: 0.78rem; font-weight: 600; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.05em; }
-    .card p:last-child { margin-bottom: 0; }
-
-    .tag { display: inline-block; padding: 0.2em 0.55em; border-radius: var(--radius-sm); font-size: 0.7rem; font-weight: 700; margin-right: 0.25rem; vertical-align: middle; letter-spacing: 0.02em; }
-    .tag.new { background: var(--purple-bg); color: var(--purple-text); }
-    .tag.changed { background: var(--amber-bg); color: var(--amber-text); }
-    .tag.stable { background: var(--gray-bg); color: var(--gray-text); }
-    .tag.tb { background: var(--teal-bg); color: var(--teal-text); }
-
-    .markets { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin: 1rem 0; }
-    @media (min-width: 520px) { .markets { grid-template-columns: repeat(4, 1fr); } }
-    .market-tile { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.8rem; }
-    .market-tile .m-label { font-size: 0.7rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em; }
-    .market-tile .m-value { font-size: 1.1rem; font-weight: 700; margin-top: 0.2rem; }
-    .market-tile .m-change { font-size: 0.76rem; margin-top: 0.15rem; color: var(--text-2); }
-    .down { color: #c0392b; }
-    .up { color: #219a52; }
-
-    .status-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin-top: 0.5rem; }
-    .status-table th { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border-2); color: var(--text-3); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .status-table td { padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-    .status-table tr:last-child td { border-bottom: none; }
-    .s-line { color: var(--text-2); font-size: 0.81rem; line-height: 1.5; }
-    .s-date { color: var(--text-3); font-size: 0.76rem; white-space: nowrap; }
-
-    .outside-frame { background: var(--blue-bg); border-radius: var(--radius); padding: 1.35rem; margin: 1rem 0; border-left: 3px solid var(--blue-text); }
-    .outside-frame .of-label { font-size: 0.7rem; color: var(--blue-text); text-transform: uppercase; letter-spacing: 0.07em; font-weight: 700; margin-bottom: 0.6rem; }
-    .outside-frame p:last-child { margin-bottom: 0; }
-
-    .data-box { background: var(--bg-3); border-radius: var(--radius-sm); padding: 1rem 1.1rem; margin: 1.25rem 0; font-size: 0.84rem; line-height: 1.85; }
-    .data-box .db-head { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-3); font-weight: 700; display: block; margin-bottom: 0.3rem; margin-top: 0.8rem; }
-    .data-box .db-head:first-child { margin-top: 0; }
-
-    footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-3); }
-    footer a { color: var(--text-3); }
-  </style>
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  header { margin-bottom: 2.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-2); }
+  header h1 { font-size: 1.15rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+  header .date { font-size: 0.88rem; color: var(--text-3); margin-top: 0.2rem; }
+  h2 {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-3);
+    margin-bottom: 1rem; margin-top: 2.5rem;
+  }
+  .card {
+    background: var(--bg-2); border-radius: var(--radius);
+    padding: 1.25rem 1.4rem; margin-bottom: 1rem;
+    border: 1px solid var(--border);
+  }
+  .card-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; color: var(--text); }
+  .card p { color: var(--text-2); font-size: 0.94rem; margin-bottom: 0.6rem; }
+  .card p:last-child { margin-bottom: 0; }
+  .watch { font-size: 0.84rem; color: var(--text-3); margin-top: 0.5rem; font-style: italic; }
+  .tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 700;
+    padding: 0.2em 0.55em; border-radius: var(--radius-sm);
+    margin-right: 0.3rem; letter-spacing: 0.03em; vertical-align: middle;
+  }
+  .tag.new { background: var(--purple-bg); color: var(--purple-text); }
+  .tag.changed { background: var(--amber-bg); color: var(--amber-text); }
+  .tag.stable { background: var(--gray-bg); color: var(--gray-text); }
+  .tag.uk { background: var(--blue-bg); color: var(--blue-text); }
+  .lead-card {
+    border-left: 3px solid var(--amber-text);
+    background: var(--bg-2); border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.4rem; margin-bottom: 1rem;
+  }
+  .lead-card p { color: var(--text); font-size: 0.96rem; margin-bottom: 0.75rem; }
+  .lead-card p:last-child { margin-bottom: 0; }
+  .markets-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem; margin-bottom: 0.75rem;
+  }
+  @media (max-width: 600px) { .markets-grid { grid-template-columns: repeat(2, 1fr); } }
+  .market-tile {
+    background: var(--bg-2); border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem; border: 1px solid var(--border);
+  }
+  .market-tile .label { font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.07em; }
+  .market-tile .value { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+  .market-tile .change { font-size: 0.78rem; color: var(--text-3); margin-top: 0.15rem; }
+  .market-tile .change.down { color: var(--coral-text); }
+  .market-tile .change.up { color: var(--teal-text); }
+  .market-note { font-size: 0.82rem; color: var(--text-3); margin-top: 0.4rem; }
+  .status-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .status-table th {
+    text-align: left; padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border-2);
+    font-size: 0.72rem; color: var(--text-3);
+    text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600;
+  }
+  .status-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .status-table tr:last-child td { border-bottom: none; }
+  .status-table .thread-label { font-weight: 500; color: var(--text); }
+  .status-table .status-line { color: var(--text-2); }
+  .status-table .date { color: var(--text-3); white-space: nowrap; }
+  .frame-card {
+    border-left: 3px solid var(--teal-text);
+    background: var(--teal-bg); border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.4rem; margin-bottom: 1rem;
+  }
+  .frame-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal-text); margin-bottom: 0.5rem; }
+  .frame-card p { color: var(--text); font-size: 0.94rem; margin-bottom: 0.6rem; }
+  .frame-card p:last-child { margin-bottom: 0; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-3); }
+  footer a { color: var(--text-3); }
+</style>
 </head>
 <body>
 
 <header>
   <h1>Firas's Digest</h1>
-  <p>Friday, 29 May 2026</p>
+  <div class="date">Saturday, 30 May 2026</div>
 </header>
 
-<section class="lead">
-  <h2>Today's Signal</h2>
-  <p>Trump went into the Situation Room for a "final determination" on the Iran deal and came out without signing. His negotiators have a text agreed with Tehran — a 60-day MOU, Strait of Hormuz reopened, mines cleared, no tolls, a commitment not to pursue nuclear weapons, and the formal start of talks on enriched uranium disposal. Trump spent two hours in the room and announced nothing. Iran's state media is already calling his public framing a "fabricated victory" and denying several of his characterised terms, particularly around US force withdrawal and port blockades. The deal exists at the technical level; the political will to close it is unresolved. The gap between "agreed by negotiators" and "signed by the principal" has stretched across days and is now the whole story.</p>
-  <p>Separately: Russia flew a drone into Romanian airspace — for the 28th time — and this one hit a residential apartment block in Galați, injuring a woman and a child. Romania expelled the Russian ambassador. NATO vowed to defend every inch of Allied territory. What's notable isn't the response. It's the count. Twenty-eight incursions into NATO territory, each condemned and none deterred, and now the first one that hit a building with people inside it. The question isn't whether there will be a 29th. It's what happens when it kills someone.</p>
-  <p>Two cliffhangers dominate today: a peace process that can't close, and a deterrence posture being tested in real time with live munitions. Both are unresolved tonight.</p>
-</section>
+<h2>Today's Signal</h2>
+
+<div class="lead-card">
+  <p><strong>The Iran gap.</strong> Brent crude has settled at $91.37, down more than a dollar since Tuesday, pricing in a deal that hasn't actually been signed. Working-level negotiators agreed the MOU text last week. Trump met with his team in the Situation Room on May 29 and — for the second time — told mediators he needed more time. Iran has publicly disputed the terms Washington is describing as agreed. The gap between what markets believe is settled and what is actually settled is widening. If Trump signs, oil falls further. If he doesn't by next week, watch for a sharp reversal toward $95+.</p>
+  <p><strong>Mearsheimer publishes the day drones hit NATO.</strong> On the same day a Russian drone struck a residential apartment block in Galați — the 28th time Russian munitions have breached Romanian airspace — Mearsheimer posted "Will Russia Strike Targets in Europe?" His argument: if bombing Kyiv fails to coerce Ukraine into stopping its long-range strikes on Russian territory, Putin will authorize conventional strikes on select NATO targets; and if that doesn't work, limited nuclear coercion becomes the next rung. This is a structural argument about logic, not a prediction of imminent action. But the coincidence of its publication with the Galați incident makes it worth reading now. NATO's "every inch" language and Romania's expulsion of the Russian consul in Constanta are the right responses by the book. Whether they deter further incursions is the live question.</p>
+</div>
 
 <h2>Changed Threads</h2>
 
 <div class="card">
-  <div class="card-header">
-    <span class="tag changed">Changed</span>
-    <span class="card-label">Iran / Hormuz</span>
-  </div>
-  <h3>Situation Room, no signature</h3>
-  <p>VP Vance and Secretary Rubio were in the room with Trump. The session lasted roughly two hours and ended without a public decision or statement from the White House. Axios reports the MOU text is "largely agreed": 60 days, Hormuz open, Iranian mines cleared, nuclear talks begin — first issues being disposal of highly enriched uranium and the shape of future enrichment limits. The US commits to discuss sanctions relief and frozen funds. Iran's Fars news agency denied several of Trump's publicly characterised terms, saying he was trying to "project a fabricated victory." The specific dispute is over whether the text commits the US to withdrawing forces and lifting port blockades — Trump's team says no, Tehran says yes.</p>
-  <p>The pressure is internal as much as bilateral. Hardliners in Trump's orbit want regime change, not a new JCPOA that Iran can bank. Netanyahu's position on whether a deal serves Israeli interests remains conspicuously unspoken. The pattern of the past week — Axios leaks the deal is done, Trump publicly demands something further, Iran publicly denies something central, clock resets — has not yet broken.</p>
-  <p style="color:var(--text-2);font-size:0.84rem;margin-bottom:0;"><strong>Watch:</strong> Any Trump post tonight. An Israeli statement for or against. Whether Iran's public denials harden or soften before the next round.</p>
+  <div class="card-title"><span class="tag changed">changed</span> Iran / Hormuz</div>
+  <p>Trump met with the Situation Room team on May 29 and again declined to sign the MOU. The 60-day ceasefire extension text — which includes Strait of Hormuz reopening, mine clearing, and an Iranian commitment not to pursue a nuclear weapon — was largely agreed at working level, but Trump told mediators he needed more time. Iran is publicly disputing some of the terms Washington is describing as settled, calling certain characterisations "fabricated." CNBC reported that traders' hopes for a nuclear deal this year are fading even if a ceasefire extension is signed. Brent at $91.37 reflects deal optimism the politics haven't yet validated.</p>
+  <p class="watch">Watch: Trump signature this weekend; Iranian public statement on enrichment; Brent reaction if deal stalls.</p>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="tag changed">Changed</span>
-    <span class="card-label">Israel / Lebanon</span>
-  </div>
-  <h3>Pentagon talks, UAE covert war revealed, 29 killed</h3>
-  <p>Military delegations from Lebanon, Israel, and the US met at the Pentagon today to work through the mechanics of de-escalation: IDF withdrawal timelines, Lebanese army deployment south, Hezbollah disarmament, and ceasefire enforcement. That formal meeting is happening while IDF airstrikes continue — the Lebanese health ministry reports 29 people killed in Lebanese territory in the past 24 hours. The diplomatic and operational tracks are running in opposite directions.</p>
-  <p>The more significant story today came from the Times of Israel: the UAE secretly conducted dozens of strikes on Iran during the war and after the ceasefire, including attacks on Iran's Lavan Island oil refinery, coordinating directly with Israel. French Mirage jets and Chinese Wing Loong II drones identified by OSINT researchers over Iranian territory were UAE assets. Iran had launched over 550 ballistic missiles and more than 2,200 drones at the UAE — making it the most-targeted country in the entire conflict, including compared to Israel — and the UAE struck back without ever saying so publicly. The Abraham Accords as passive diplomatic normalisation is a category error. What operated during this war was an active military alliance, and the UAE has still not acknowledged its role in it. See also: Outside the Frame, below.</p>
-  <p style="color:var(--text-2);font-size:0.84rem;margin-bottom:0;"><strong>Watch:</strong> Pentagon talks outcome statement. UAE public response or continued silence. Any Hezbollah position on the disarmament clause.</p>
+  <div class="card-title"><span class="tag changed">changed</span> Russia / NATO / Romania</div>
+  <p>The May 29 drone strike on the Galați apartment block (2 injured, roof fire, evacuations) is the 28th confirmed incursion of Russian munitions into Romanian airspace. Romania's response escalated: the Russian consul in Constanta declared <em>persona non grata</em>, consulate closed. NATO Secretary-General Rutte called Russia's behaviour "a danger to us all." The EU is preparing fresh sanctions. Mearsheimer's new Substack — published the same day — provides the structural logic for how this escalation ladder could extend: conventional Russian strikes on NATO targets as coercive signal, limited nuclear threats if that fails. That is not the current situation. But it maps the trajectory if Ukraine's long-range strike campaign on Russian territory continues without a negotiated off-ramp.</p>
+  <p class="watch">Watch: 29th incursion; NATO discussions on drone shoot-down authority over Allied territory; US statement; Russian embassy status in Bucharest.</p>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="tag changed">Changed</span>
-    <span class="card-label">UK Economic Stress</span>
-  </div>
-  <h3>Bailey signals tolerance for above-target inflation; gilts back above 5%</h3>
-  <p>Bank of England Governor Andrew Bailey said today the BOE may tolerate inflation staying above its 2% target in order to support the weak economy — provided second-round effects don't emerge. This is unusual public framing for a central bank governor: it's advance permission to let prices run. The context is a UK economy where Q1 GDP was +0.6% but retail sales ran at −1.3%, PMI fell into contraction for the first time in a year, and energy costs have been elevated throughout the Iran conflict. The 10-year gilt is trading above 5% today, up from below 4.9% last week. Borrowing costs are rising even as Bailey signals accommodation — markets don't appear to believe the "temporary" framing.</p>
-  <p style="margin-bottom:0;">Keir Starmer is reported to be facing demands from more than 90 Labour MPs to resign following poor local election performance. The UK's two most consequential institutional figures are visibly under pressure simultaneously. The economic easing, if it comes, will be from weakness, not strength.</p>
+  <div class="card-title"><span class="tag changed">changed</span> UK Economic Stress</div>
+  <p>The 10-year gilt yield has fallen to approximately 4.8%, down 19 basis points over the month — its lowest since April 17 — as cooling inflation data and cautious Iran-deal optimism allow the market to price in more BOE flexibility. The 30-year gilt remains elevated at 5.49%. The FTSE 100 fell 0.7% on May 29, ending an eight-session winning streak, closing around 10,433. The immediate gilt market stress that dominated this thread earlier in May has partially unwound. Whether that relief holds depends on whether the Iran deal actually closes, and whether UK activity data continues to cool in a way that gives Bailey room to act.</p>
+  <p class="watch">Watch: Iran deal outcome and its effect on energy-inflation expectations; Starmer backbench pressure; BOE forward guidance.</p>
 </div>
 
 <div class="card">
-  <div class="card-header">
-    <span class="tag changed">Changed</span>
-    <span class="card-label">Ebola — DRC / Uganda</span>
-  </div>
-  <h3>WHO PHEIC declared; American patient in Germany</h3>
-  <p>As of 28 May: 125 confirmed cases, 906 suspected, 223 suspected deaths — slightly revised from the 1,010/231 reported on 26 May, reflecting reclassification. The WHO declared this a Public Health Emergency of International Concern on 17 May. An American healthcare worker who contracted Bundibugyo Ebola in the DRC has been transported to Germany for treatment and is in stable condition — the first export of the outbreak to a high-income country. Uganda has 9 confirmed cases, all linked to DRC travel. No licensed vaccine exists for the Bundibugyo strain. The PHEIC reflects institutional concern that containment is not certain even though spread beyond DRC and Uganda has not yet been confirmed.</p>
-</div>
-
-<h2>New Threads</h2>
-
-<div class="card">
-  <div class="card-header">
-    <span class="tag new">New</span>
-    <span class="card-label">Russia / NATO / Romania</span>
-  </div>
-  <h3>The 28th incursion hit a building with people inside</h3>
-  <p>A Russian drone breached Romanian airspace and struck a 10-storey apartment block in Galați, injuring a woman and a child — the 28th documented incursion into Romanian airspace since Russia began attacking Ukrainian Danube ports. Romania summoned and then effectively expelled the Russian ambassador; Russia responded by announcing the closure of its embassy in Bucharest. NATO described the strike as "reckless" and reiterated Article 5 commitments to defend every inch of Allied territory. The pattern of incursions escalating from near-misses to structural damage to civilian injury is now resolved into its next phase. The question now is whether the diplomatic response — expulsions, condemnations, renewed vows — constitutes a meaningful deterrent or simply confirms that the ceiling for consequences is low enough that the campaign will continue.</p>
-  <p style="color:var(--text-2);font-size:0.84rem;margin-bottom:0;"><strong>Watch:</strong> NATO ambassadorial-level response. Romanian domestic political framing (Bucharest has electoral incentives to project firmness). Whether Russia's Danube corridor drone campaign pauses. Any Article 4 consultation request.</p>
+  <div class="card-title"><span class="tag changed">changed</span> Mearsheimer</div>
+  <p>New Substack post: "Will Russia Strike Targets in Europe?" (May 28). Mearsheimer maps the coercive logic: bombing Kyiv alone is insufficient to stop Ukrainian long-range strikes on Russian territory, so the next step would be conventional Russian strikes on select NATO-territory targets aimed at coercing European capitals directly. If that fails, limited nuclear use becomes the final instrument. He doesn't predict these outcomes; he traces the logic that would produce them. Read alongside the Galați drone strike and NATO's deterrence language, this is the most useful frame for understanding where the Russia-NATO thread could go. Also recent: a May 27 "Forum Focused on Iran" appearance calling the US-Israeli war on Iran "a colossal strategic failure."</p>
+  <p class="watch">Watch: Next Substack post; appearances on the NATO escalation question; whether the Russia-Europe conventional escalation argument gains traction in policy circles.</p>
 </div>
 
 <h2>The Social / Cultural Layer</h2>
 
-<p>The divergence this week is unusually clean. Olivia Dean holds three of the top five positions on the Apple Music UK chart for what is now her fifth consecutive week at #1 — "Man I Need" is an unchanged, unmoving fixture. In a week when Trump sat in the Situation Room unable to decide a deal that could reopen the world's most important oil artery, the most-listened music in the UK is an intimate record about what one person needs from another. The scale mismatch has been running for over a month now.</p>
+<div class="card">
+  <p>The UK Apple Music chart this morning is as static as it has been in weeks. The entire top five is unchanged: Olivia Dean's "Man I Need" at one, the Olivia Dean–Sam Fender duet "Rein Me In" at two, Dave and Tems's "Raindance" at three, Bella Kay at four, another Olivia Dean track at five. <span class="tag uk">UK</span> Six weeks of near-total dominance, with eight Olivia Dean tracks simultaneously in the top 50. This is album-mode listening — the kind of engagement that happens when a record speaks to where people actually are emotionally, not just where the algorithm puts it. <em>Loud</em> has become a comfort object.</p>
 
-<p>Beneath the stasis at the top, something more active is happening lower in the chart. A cluster of nostalgia is surging simultaneously: Nickelback's "How You Remind Me" +28, Madonna's "Into the Groove" +23, The Cranberries' "Zombie" +10, Oasis "Live Forever" +11, Toto "Africa" +10. None of these are chart leaders, but collective backwards motion across multiple decades at once is a pattern worth naming. When people retreat into music that far behind them, the usual read is an unmanageable present. "Zombie" is the specific case worth watching — a song written about IRA bombings in Warrington, resurfacing in the week a drone hit a civilian building inside NATO. Whether anyone streaming it is making that connection consciously is beside the point.</p>
+  <p>The divergence worth naming: the chart has frozen on intimate, domestic, heartbreak-adjacent music at exactly the moment Romania is trending on UK Twitter because Russian drones are hitting NATO apartment blocks. UK Twitter's other top trends — Konate and Jacquet (Liverpool: Ibrahima Konate confirmed leaving on a free, new signing Jeremy Jacquet dropping hints about his future role); Sinner (knocked out in a stunning second-round upset at Roland Garros by Juan Manuel Cerúndolo, having led 5–1 in the third set); Zverev (now the new men's favourite with Sinner and Djokovic both out) — show a public that is metabolising the macro through sport and transfers, not through the news. This is not apathy. It's the particular way an anxious public manages competing levels of threat: process the controllable (football transfers, a tennis shock) and retreat to the intimate (Olivia Dean) as a buffer against the uncontrollable.</p>
 
-<p>Harry Styles' <a href="https://music.apple.com/gb/search?term=Harry+Styles+Aperture">"Aperture"</a> is climbing to #10 (+3), from his March 2026 album <em>Kiss All the Time. Disco, Occasionally</em> — the most visible recent British release that isn't Olivia Dean. Glossy, danceable, retro-aesthetic: it fits the current mood without being obviously about it.</p>
+  <p>Harry Styles' <span class="tag uk">UK</span> "Aperture" climbs three places to number 10, his album <em>Kiss All the Time. Disco, Occasionally</em> (the biggest UK album of 2026 so far) maintaining momentum five months after release. More striking: Madonna's "Into the Groove" is up 23 places to 74 — almost certainly TikTok-driven — alongside a broader nostalgia wave in the mid-chart: Nickelback +28, The Cranberries' "Zombie" +10, Fleetwood Mac and early Ed Sheeran drifting upward. People are reaching backward. RAYE <span class="tag uk">UK</span> at number 6 and climbing is the counter-current: she remains one of the few artists in the chart whose sound feels contemporary and forward-facing rather than warm and familiar.</p>
 
-<p>On UK Twitter today, Romania trended alongside #TOTP (BBC Four Friday repeats), #SmackDown, and #RolandGarros. A Russian drone hitting a NATO apartment block appeared on the same trending list as a WWE show and the French Open. #TwoTierJustice has persisted across the week, likely energised today by the CPS decision on whether to pursue a third trial in the 2024 Manchester Airport brawl case — a right-wing justice grievance frame that keeps activating against a backdrop of institutional strain. The juxtaposition isn't accidental. It's how the UK processes a week this dense.</p>
+  <p>On TikTok globally, the sounds blowing up are almost entirely non-Anglophone: Flow-G's Filipino hip-hop "Driftstar" (866,000 UGC videos, +15% day-on-day), a Pakistani folk-pop track by Shafaullah Khan Rokhri accelerating at +37%, Aya Nakamura's French-language "Copines" with 614,000 videos. The divergence from the UK Apple Music chart is near-total. What is capturing global creative energy right now exists almost entirely outside the Western media sphere currently absorbed by Iran, Romania, and Ebola. Two parallel worlds of attention, almost no overlap.</p>
+</div>
 
-<div class="data-box">
-  <span class="db-head">Apple Music UK Top 5 — 29 May 2026</span>
-  #1 = <a href="https://music.apple.com/gb/search?term=Olivia+Dean+Man+I+Need">Olivia Dean — Man I Need</a> <span class="tag tb">UK</span><br>
-  #2 = <a href="https://music.apple.com/gb/search?term=Sam+Fender+Olivia+Dean+Rein+Me+In">Sam Fender &amp; Olivia Dean — Rein Me In</a> <span class="tag tb">UK</span><br>
-  #3 = <a href="https://music.apple.com/gb/search?term=Dave+Tems+Raindance">Dave &amp; Tems — Raindance</a> <span class="tag tb">UK</span><br>
-  #4 = <a href="https://music.apple.com/gb/search?term=Bella+Kay+iloveitiloveitiloveit">Bella Kay — iloveitiloveitiloveit</a><br>
-  #5 = <a href="https://music.apple.com/gb/search?term=Olivia+Dean+So+Easy">Olivia Dean — So Easy (To Fall In Love)</a> <span class="tag tb">UK</span>
+<h2>Outside the Frame</h2>
 
-  <span class="db-head">Climbing</span>
-  Harry Styles "Aperture" +3 → #10 <span class="tag tb">UK</span> &nbsp;·&nbsp;
-  Nickelback "How You Remind Me" +28 → #152 &nbsp;·&nbsp;
-  Madonna "Into the Groove" +23 → #74 &nbsp;·&nbsp;
-  The Cranberries "Zombie" +10 → #160 &nbsp;·&nbsp;
-  Oasis "Live Forever" +11 → #156 &nbsp;·&nbsp;
-  Toto "Africa" +10 → #162
-
-  <span class="db-head">TikTok global (top public sounds)</span>
-  <em>Copines</em> — Aya Nakamura feat. Mc Pepeu &amp; Dj Gabriel do Borel — 536K UGC videos, +27K/day, 39+ countries (nostalgia wave) &nbsp;·&nbsp;
-  <em>Hopelessly Devoted to You</em> (cover) — 517K videos &nbsp;·&nbsp;
-  Flow-G "Driftstar" — dominant across Southeast Asia
-
-  <span class="db-head">UK Twitter trends — Friday evening</span>
-  Romania &nbsp;·&nbsp; #TOTP &nbsp;·&nbsp; #SmackDown &nbsp;·&nbsp; #RolandGarros &nbsp;·&nbsp; #HIGNFY &nbsp;·&nbsp; #TwoTierJustice &nbsp;·&nbsp; #007FirstLightPC &nbsp;·&nbsp; Sikhs &nbsp;·&nbsp; Manchester Airport &nbsp;·&nbsp; Konate
+<div class="frame-card">
+  <div class="frame-label">Sudan — a story that has fallen off the map</div>
+  <p>Sudan is now officially the world's hungriest country, and it has almost entirely disappeared from Western media. The IPC confirmed in May that famine conditions have spread to four areas of Darfur, with nearly 20 million Sudanese — roughly two in five of the population — experiencing crisis-level food insecurity or worse. Some 375,000 people face imminent starvation. The 2026 humanitarian response plan requires $2.9 billion; it has received approximately 5.5% of that.</p>
+  <p>Three years into a war that has killed hundreds of thousands, displaced 14 million, and collapsed the health system entirely, Sudan is living through a famine in near-total media silence — crowded out by Iran, Israel, Romania, and Ebola. The invisibility is structural: African humanitarian crises reliably lose column inches when European-adjacent crises dominate the cycle. The scale here is extraordinary and the funding timeline is months, not years, before the situation becomes irreversible. Opening a new thread on this.</p>
 </div>
 
 <h2>Markets</h2>
 
-<div class="markets">
+<div class="markets-grid">
   <div class="market-tile">
-    <div class="m-label">FTSE 100</div>
-    <div class="m-value">10,415</div>
-    <div class="m-change down">−0.10%</div>
+    <div class="label">FTSE 100</div>
+    <div class="value">10,433</div>
+    <div class="change down">−0.7% Thu</div>
   </div>
   <div class="market-tile">
-    <div class="m-label">Nasdaq</div>
-    <div class="m-value">~26,900</div>
-    <div class="m-change" style="color:var(--text-3);">range (deal uncertainty)</div>
+    <div class="label">Nasdaq</div>
+    <div class="value">26,972</div>
+    <div class="change up">+0.2% Thu</div>
   </div>
   <div class="market-tile">
-    <div class="m-label">Brent Crude</div>
-    <div class="m-value">$90.71</div>
-    <div class="m-change down">−2.15% on deal hopes</div>
+    <div class="label">Brent Crude</div>
+    <div class="value">$91.37</div>
+    <div class="change down">−1.4% Thu</div>
   </div>
   <div class="market-tile">
-    <div class="m-label">UK 10Y Gilt</div>
-    <div class="m-value">&gt;5.0%</div>
-    <div class="m-change down">↑ from &lt;4.9% last week</div>
+    <div class="label">30Y Gilt</div>
+    <div class="value">5.49%</div>
+    <div class="change">10Y at ~4.8%, −19bps on month</div>
   </div>
 </div>
-<p style="font-size:0.82rem;color:var(--text-2);margin-top:0.1rem;">Brent falling on deal optimism while gilts rise despite Bailey's accommodation signal — a split market reading the same situation in two directions simultaneously.</p>
+<p class="market-note">Gilt yields easing on Iran deal optimism and cooling UK data. Brent reflects a deal markets haven't seen signed. 30Y gilt still elevated vs. April levels.</p>
 
-<h2>Outside the Frame</h2>
-
-<div class="outside-frame">
-  <div class="of-label">Outside the Frame</div>
-  <p>Today's Times of Israel report on the UAE's covert military role in the Iran war deserves more attention than it is getting in Western coverage. The UAE — presented throughout the conflict as a neutral diplomatic hub that happened to be absorbing Iranian missiles — was in fact launching retaliatory strikes of its own, using French Mirage jets and Chinese Wing Loong II drones to hit targets on Iranian soil, including an oil refinery on Lavan Island in the Persian Gulf, coordinating directly with Israel both before and after the April ceasefire. Iran had fired 550 ballistic missiles and 2,200 drones at the UAE, making it the most-targeted country in the entire war by volume. The UAE struck back. It has still not publicly acknowledged any of this.</p>
-  <p>The significance is structural. The Abraham Accords were described as normalisation agreements — trade, tourism, diplomatic relations. What the UAE did during this war is something different: it operated as a military co-belligerent, coordinating targeting with Israel, using assets from two separate great-power supply chains simultaneously (French and Chinese). Anyone modelling the Iran-deal negotiations as a bilateral US–Iran affair should factor in that the regional alignment is deeper and more operationally tested than any public framing suggests. The Gulf is not a bystander that got caught in the crossfire. It is a participant that chose discretion.</p>
-</div>
-
-<h2>Active Threads</h2>
+<h2>Thread Status</h2>
 
 <table class="status-table">
   <thead>
     <tr>
       <th>Thread</th>
       <th>Status</th>
-      <th>Status Line</th>
-      <th>Last Changed</th>
+      <th>One-line status</th>
+      <th>Last changed</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Iran / Hormuz</td>
-      <td><span class="tag changed">Changed</span></td>
-      <td class="s-line">Trump Situation Room ended without decision; 60-day MOU agreed at working level; Iran disputes terms publicly</td>
-      <td class="s-date">29 May</td>
+      <td class="thread-label">Iran / Hormuz</td>
+      <td><span class="tag changed">changed</span></td>
+      <td class="status-line">MOU text agreed at working level; Trump still hasn't signed after May 29 Situation Room meeting; Iran disputes terms; Brent at $91.37</td>
+      <td class="date">30 May</td>
     </tr>
     <tr>
-      <td>Israel / Lebanon</td>
-      <td><span class="tag changed">Changed</span></td>
-      <td class="s-line">Pentagon trilateral meeting; UAE covert strikes on Iran revealed; 29 killed in Lebanon in 24h; IDF operations ongoing</td>
-      <td class="s-date">29 May</td>
+      <td class="thread-label">Russia / NATO / Romania</td>
+      <td><span class="tag changed">changed</span></td>
+      <td class="status-line">28th drone struck Galati apartment block; Romania expelled Constanta consul; Mearsheimer maps escalation logic to conventional NATO strikes</td>
+      <td class="date">30 May</td>
     </tr>
     <tr>
-      <td>UK Economic Stress</td>
-      <td><span class="tag changed">Changed</span></td>
-      <td class="s-line">Bailey signals BOE may tolerate above-target inflation; 10Y gilt back above 5%; Starmer faces 90+ Labour MPs calling for resignation</td>
-      <td class="s-date">29 May</td>
+      <td class="thread-label">UK Economic Stress</td>
+      <td><span class="tag changed">changed</span></td>
+      <td class="status-line">10Y gilt ~4.8% (lowest since April 17, −19bps on month); 30Y at 5.49%; FTSE 100 at 10,433; gilt spike partially unwound</td>
+      <td class="date">30 May</td>
     </tr>
     <tr>
-      <td>Ebola — DRC / Uganda</td>
-      <td><span class="tag changed">Changed</span></td>
-      <td class="s-line">WHO PHEIC declared 17 May; 125 confirmed + 906 suspected; American patient in Germany (stable); Uganda 9 cases</td>
-      <td class="s-date">29 May</td>
+      <td class="thread-label">Mearsheimer</td>
+      <td><span class="tag changed">changed</span></td>
+      <td class="status-line">New Substack: "Will Russia Strike Targets in Europe?" — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion</td>
+      <td class="date">30 May</td>
     </tr>
     <tr>
-      <td>Russia / NATO / Romania</td>
-      <td><span class="tag new">New</span></td>
-      <td class="s-line">28th drone incursion struck Galați apartment block, 2 injured; Russia ambassador expelled; NATO vows to defend every inch</td>
-      <td class="s-date">29 May</td>
+      <td class="thread-label">Sudan Famine</td>
+      <td><span class="tag new">new</span></td>
+      <td class="status-line">World's hungriest country; 20M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 5.5% funded; invisible in Western coverage</td>
+      <td class="date">30 May</td>
     </tr>
     <tr>
-      <td>Turkey — CHP / Opposition</td>
-      <td><span class="tag stable">Stable</span></td>
-      <td class="s-line">Court ousted CHP leadership; police stormed HQ; Özel evicted; Imamoglu still imprisoned; Kılıçdaroğlu may return</td>
-      <td class="s-date">26 May</td>
+      <td class="thread-label">Ebola — DRC / Uganda</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="status-line">125 confirmed + 906 suspected, 223 suspected deaths; WHO head in Kinshasa; no expansion today</td>
+      <td class="date">29 May</td>
     </tr>
     <tr>
-      <td>SNP Crisis / Murrell</td>
-      <td><span class="tag stable">Stable</span></td>
-      <td class="s-line">Guilty plea entered 25 May; remanded in custody; sentencing 23 June</td>
-      <td class="s-date">26 May</td>
+      <td class="thread-label">Israel / Lebanon</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="status-line">Ceasefire extended; Pentagon trilateral meeting May 29; peace talks Washington June 2–3; violations ongoing, no escalation</td>
+      <td class="date">29 May</td>
     </tr>
     <tr>
-      <td>Tucker Carlson</td>
-      <td><span class="tag stable">Stable</span></td>
-      <td class="s-line">No new episode since 23 May; anti-Trump positioning on Iran maintained; no pivot detected</td>
-      <td class="s-date">23 May</td>
+      <td class="thread-label">Turkey — CHP / Opposition</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="status-line">Court ousted CHP leadership; Kılıçdaroğlu returning; Imamoglu still imprisoned; no new developments today</td>
+      <td class="date">26 May</td>
     </tr>
     <tr>
-      <td>Mearsheimer</td>
-      <td><span class="tag stable">Stable</span></td>
-      <td class="s-line">No new Substack post since 22 May; "Eating Humble Pie" remains the live counter-frame on the Iran war</td>
-      <td class="s-date">23 May</td>
+      <td class="thread-label">SNP Crisis / Murrell</td>
+      <td><span class="tag stable">stable</span></td>
+      <td class="status-line">Guilty plea entered; £400K embezzled; remanded in custody; sentencing 23 June</td>
+      <td class="date">26 May</td>
     </tr>
   </tbody>
 </table>
 
 <footer>
-  <p>Generated 29 May 2026 &nbsp;·&nbsp; <a href="https://firaskh79.github.io/daily-digest/" target="_blank">firaskh79.github.io/daily-digest</a></p>
+  Generated 30 May 2026 &middot; <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
 </footer>
 
 </body>
