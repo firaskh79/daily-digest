@@ -244,62 +244,32 @@
 </div>
 
 <script>
-// ── Image pool — keyed to 30 May 2026 active threads ──────────────────────
+// ── Image pool — real wire photos from today's sources ─────────────────────
 const POOL = [
-  // Iran / Hormuz
-  { f: "Hormuz_map.png",                                                    l: "Strait · Map" },
-  { f: "USCGC_Aquidneck_in_Strait_of_Hormuz_201202-N-IE405-2219.JPG",     l: "Hormuz · USCG" },
-  { f: "Aerial_View_of_Tehran_and_Tochal.JPG",                             l: "Tehran" },
-  { f: "Azadi_Tower_-_Tehran-_Iran_(1).jpg",                               l: "Tehran · Azadi" },
-  { f: "Oil_tanker_MV_Houston.JPG",                                         l: "Brent · $91" },
-  { f: "Crude_Oil_Tanker_Pericles_at_BP_Oil_Refinery_Jetty_and_General_Cargo_Ship_Jannes_at_Kwinana_Bulk_Jetty,_December_2020_01.jpg", l: "Oil · Market" },
-
-  // Russia / NATO / Romania
-  { f: "NATO_headquarters_Brussels.jpg",                                    l: "NATO HQ" },
-  { f: "Bucharest_panoramic_view.jpg",                                      l: "Bucharest" },
-  { f: "Romanian_Athenaeum.jpg",                                            l: "Romania" },
-  { f: "Galati,_Romania.jpg",                                               l: "Galați · Drone" },
-  { f: "Flag_of_NATO.svg",                                                  l: "NATO" },
-  { f: "Flag_of_Romania.svg",                                               l: "Romania · Flag" },
-
-  // Sudan Famine
-  { f: "Darfur_refugee_camp_in_Chad.jpg",                                   l: "Sudan · Darfur" },
-  { f: "Khartoum_from_Air.jpg",                                             l: "Khartoum" },
-  { f: "IDPs_in_Um_Baro,_North_Darfur.jpg",                                l: "Sudan · IDP" },
-  { f: "Sudan_Famine_(2024).jpg",                                           l: "Sudan · Famine" },
-
-  // Ebola DRC / Uganda
-  { f: "Ebola_virus_em.jpg",                                                l: "Ebola · DRC" },
-  { f: "View_of_the_City_of_Kinshasa,_DRC.jpg",                            l: "Kinshasa" },
-
-  // Israel / Lebanon
-  { f: "Downtown_Beirut_Lebanon.JPG",                                       l: "Beirut" },
-  { f: "Lebanese_Armed_Forces.jpg",                                          l: "Lebanon · South" },
-
-  // Turkey CHP
-  { f: "Ekrem_Imamoglu_campaigning_on_May_23,_2019.jpg",                   l: "İmamoğlu · CHP" },
-  { f: "Recep_Tayyip_Erdogan_portrait.PNG",                                 l: "Erdoğan" },
-
-  // UK economy
-  { f: "Bank_of_England_Building,_London,_UK_-_Diliff.jpg",                l: "Bank of England" },
-  { f: "Bank_underground_station,_Bank_of_England_building_entrance.JPG",  l: "City of London" },
-  { f: "Houses_of_Parliament_-_Palace_of_Westminster.JPG",                  l: "Westminster" },
-
-  // Music — Apple Music UK
-  { f: "Olivia_Dean_-_4323.jpg",                                            l: "Olivia Dean · #1" },
-  { f: "Sam_Fender_(2021)_(cropped).jpg",                                   l: "Sam Fender · #2" },
-  { f: "Santan_Dave.jpg",                                                    l: "Dave & Tems · #3" },
-  { f: "2019_Tems_on_NdaniTV_Sssions.jpg",                                 l: "Tems · #3" },
-  { f: "Harry_Styles_-_One_Direction_-_Hersheypark_Stadium_(9465384833).jpg", l: "Harry Styles · #10" },
-  { f: "RAYE_at_Glastonbury_2022_(cropped).jpg",                            l: "RAYE · #6" },
-
-  // Roland Garros / Sport
-  { f: "Roland_Garros_stade.jpg",                                           l: "Roland Garros" },
-  { f: "Alexander_Zverev_2019_Roland_Garros_(1).jpg",                       l: "Zverev · Favourite" },
-  { f: "Jannik_Sinner_at_the_2022_Australian_Open_crop.jpg",                l: "Sinner · Out" },
-
-  // Liverpool transfers
-  { f: "Anfield_Main_Stand_exterior.jpg",                                   l: "Liverpool · Konate" },
+  // Romania / NATO — AFP photo of first responders at Galați drone scene
+  { src: "https://www.aljazeera.com/wp-content/uploads/2026/05/afp_6a19358c02a6-1780037004.jpg?resize=1200,800", l: "Romania · Galați · AFP" },
+  // Iran deal — Rubio at New Delhi press conference (AFP/Manan Vatsyayana)
+  { src: "https://www.aljazeera.com/wp-content/uploads/2026/05/afp_6a12b36d5934-1779610477.jpg?resize=1200,675", l: "Iran · Rubio · AFP" },
+  // Iran — Trump, Rubio, Hegseth in Situation Room on Iran
+  { src: "https://www.al-monitor.com/sites/default/files/styles/article_header/public/2026-05/d74bf4dca1261dacdf50072cbc782c55a8f776b2.jpg?h=69f2b9d0&itok=4-JmywXk", l: "Iran · Situation Room" },
+  // Sudan — displaced Darfur families at Chad border (Reuters/Amr Abdallah Dalsh)
+  { src: "https://www.aljazeera.com/wp-content/uploads/2026/04/reuters_69f0ffcd-1777401805.jpg?resize=1200,800", l: "Sudan · Darfur · Reuters" },
+  // Sudan — IDP children collecting water at Al Heshan camp, Port Sudan (AP/Bernat Armangue)
+  { src: "https://www.aljazeera.com/wp-content/uploads/2026/05/ap_6a05efe8a4cf5-1778773992.jpg?resize=1200,800", l: "Sudan · Port Sudan · AP" },
+  // Roland Garros — Sinner cooling down at changeover before collapse
+  { src: "https://images.tennis.com/image/upload/t_16-9_768/f_auto/tenniscom-prd/rnmq3t6pfbjmzmzohgbi.jpg", l: "Sinner · Roland Garros" },
+  // Turkey — Özel addressing CHP rally, Istanbul (AFP/Getty via Al-Monitor)
+  { src: "https://www.al-monitor.com/sites/default/files/styles/social_media_share/public/2025-07/GettyImages-2208747868.jpg?h=a5ae579a&itok=LIWD6t7_", l: "Turkey · CHP · Getty" },
+  // Music — Olivia Dean (Wikipedia, reliable)
+  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Olivia_Dean_-_4323.jpg&width=800", l: "Olivia Dean · #1 UK" },
+  // Music — Sam Fender (Wikipedia, reliable)
+  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Sam_Fender_(2021)_(cropped).jpg&width=800", l: "Sam Fender · #2 UK" },
+  // Music — Dave (Wikipedia, reliable)
+  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Santan_Dave.jpg&width=800", l: "Dave · #3 UK" },
+  // Economy — Bank of England (Wikipedia, reliable)
+  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Bank_of_England_Building,_London,_UK_-_Diliff.jpg&width=800", l: "Bank of England · Gilt 5.49%" },
+  // Hormuz map
+  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Hormuz_map.png&width=800", l: "Strait of Hormuz" },
 ];
 
 const COL_PRESETS = {
@@ -334,7 +304,7 @@ function render() {
     const tile=document.createElement('div');
     tile.className='tile';
     const img=document.createElement('img');
-    img.src=wikiUrl(item.f);
+    img.src=item.src;
     img.alt=item.l;
     img.onload=()=>img.classList.add('loaded');
     img.onerror=()=>{tile.style.display='none';};
