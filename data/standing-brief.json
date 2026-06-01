@@ -4,9 +4,9 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "MOU text agreed at working level; Trump still hasn't signed after May 29 Situation Room meeting; Iran disputes terms; Brent at $91.37",
+      "status_line": "MOU unsigned; Brent climbs to $93.30 (+2% on Iran uncertainty); deal odds fading; Polymarket ~35% by June 30",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-30",
+      "last_changed": "2026-06-01",
       "expand_if": [
         "formal MOU signed",
         "talks collapse again",
@@ -20,8 +20,8 @@
     {
       "id": "russia-nato-romania",
       "label": "Russia / NATO / Romania",
-      "status": "changed",
-      "status_line": "28th drone struck Galati apartment block (2 injured); Romania expelled Constanta consul; EU sanctions prep; Mearsheimer maps escalation logic to conventional NATO strikes",
+      "status": "stable",
+      "status_line": "No new drone incursion since 29 May Galati strike; EU 21st sanctions package prep; NATO 'defend every inch' posture holds",
       "first_seen": "2026-05-29",
       "last_changed": "2026-05-30",
       "expand_if": [
@@ -38,9 +38,9 @@
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "changed",
-      "status_line": "10Y gilt ~4.8% (lowest since April 17, -19bps on month); 30Y at 5.49%; FTSE 100 at 10,433; gilt spike from earlier in May partially unwound",
+      "status_line": "10Y gilt at 4.86% (up from 4.8% low) on Iran/Brent pressure; FTSE 10,409; Brent headwind to 2.8% CPI",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-30",
+      "last_changed": "2026-06-01",
       "expand_if": [
         "gilt yield spike resumes above 5.5% with upward trajectory",
         "energy price cap revision announced",
@@ -54,8 +54,8 @@
     {
       "id": "mearsheimer",
       "label": "Mearsheimer",
-      "status": "changed",
-      "status_line": "New Substack: 'Will Russia Strike Targets in Europe?' — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion if Ukraine campaign continues",
+      "status": "stable",
+      "status_line": "No new post since 29 May 'Will Russia Strike Targets in Europe?' — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-30",
       "expand_if": [
@@ -68,10 +68,10 @@
     {
       "id": "sudan-famine",
       "label": "Sudan Famine",
-      "status": "new",
-      "status_line": "World's hungriest country; 20M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 5.5% funded; structurally invisible in Western coverage",
+      "status": "changed",
+      "status_line": "Lean season begins today (June–September); 19.5M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 20% funded",
       "first_seen": "2026-05-30",
-      "last_changed": "2026-05-30",
+      "last_changed": "2026-06-01",
       "expand_if": [
         "IPC declares additional famine zones",
         "major donor announces significant new funding",
@@ -85,7 +85,7 @@
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
       "status": "stable",
-      "status_line": "125 confirmed + 906 suspected cases, 223 suspected deaths; WHO head in Kinshasa; no new geographic expansion today",
+      "status_line": "125 confirmed + 906 suspected cases, 223 suspected deaths; WHO PHEIC in force; no new geographic expansion; American missionary Dr Peter Stafford in Berlin's Charité hospital",
       "first_seen": "2026-05-25",
       "last_changed": "2026-05-29",
       "expand_if": [
@@ -100,35 +100,35 @@
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
-      "status": "stable",
-      "status_line": "Ceasefire extended to late June; Pentagon trilateral meeting May 29; peace talks Washington June 2-3; violations ongoing, no significant escalation",
+      "status": "changed",
+      "status_line": "Israel seizes Beaufort Castle in south Lebanon ahead of June 2–3 Washington peace talks; ceasefire extended to late June; violations ongoing",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-29",
+      "last_changed": "2026-06-01",
       "expand_if": [
         "major Israeli ground incursion",
         "Hezbollah rocket barrage on Israeli cities",
-        "ceasefire agreement with teeth",
+        "ceasefire agreement with teeth from June 2-3 talks",
         "UNIFIL withdrawal",
         "US forces Israel to pause operations",
         "mass civilian casualty event",
-        "UAE publicly acknowledges its strikes on Iran",
         "June 2-3 peace talks collapse or major breakthrough"
       ]
     },
     {
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
-      "status": "stable",
-      "status_line": "Court ousted CHP leadership (annulled 2023 congress); Kilicdaroglu returning as leader; police stormed HQ; Imamoglu still imprisoned",
+      "status": "changed",
+      "status_line": "Kılıçdaroğlu convening Party Assembly June 1 to form Central Executive Committee under court-ordered leadership; Imamoglu still imprisoned; polls show him 55–45 vs Erdoğan",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-05-26",
+      "last_changed": "2026-06-01",
       "expand_if": [
         "Imamoglu released or formally charged",
         "CHP headquarters sealed permanently",
         "street protests escalate to general strike",
         "EU or US formal condemnation",
         "constitutional court ruling on Imamoglu detention",
-        "Erdogan statement on opposition"
+        "Erdogan statement on opposition",
+        "congress date set"
       ]
     },
     {
@@ -145,6 +145,54 @@
         "new allegations emerge at sentencing",
         "SNP polling drops significantly in Scotland",
         "Swinney leadership threatened"
+      ]
+    },
+    {
+      "id": "ukraine-peace-deadline",
+      "label": "Ukraine Peace Deadline",
+      "status": "new",
+      "status_line": "Trump's June deadline passes today unmet; Russia struck Ukraine with 400+ drones/missiles overnight; no framework; Trump's next move unknown",
+      "first_seen": "2026-06-01",
+      "last_changed": "2026-06-01",
+      "expand_if": [
+        "Trump formally withdraws from mediation",
+        "new deadline set publicly",
+        "ceasefire agreed",
+        "major US pressure on Ukraine (e.g. aid suspension)",
+        "Russia agrees to any settlement framework",
+        "Zelensky concedes territorial compromise publicly"
+      ]
+    },
+    {
+      "id": "colombia-election-2026",
+      "label": "Colombia Election 2026",
+      "status": "new",
+      "status_line": "Far-right outsider de la Espriella leads first round 43.7%; leftist Cepeda 40.93%; runoff June 21",
+      "first_seen": "2026-06-01",
+      "last_changed": "2026-06-01",
+      "expand_if": [
+        "major polling shift before June 21 runoff",
+        "de la Espriella wins runoff",
+        "Cepeda wins runoff",
+        "significant violence or electoral irregularity",
+        "Petro makes major statement endorsing Cepeda",
+        "US or regional reaction to result"
+      ]
+    },
+    {
+      "id": "syria-parliament",
+      "label": "Syria Parliament",
+      "status": "new",
+      "status_line": "First post-Assad parliament convenes June 8; 210 members (70 appointed by President al-Sharaa); 5% women; minority representation low",
+      "first_seen": "2026-06-01",
+      "last_changed": "2026-06-01",
+      "expand_if": [
+        "parliament convenes and passes significant legislation",
+        "major walkout by minority representatives",
+        "constitutional amendment proposed",
+        "international reaction to composition",
+        "parliament renamed from People's Assembly",
+        "Islamist-secular conflict in chamber"
       ]
     }
   ],
@@ -190,7 +238,13 @@
       "url": "https://today.lorientlejour.com",
       "found_on": "2026-05-25",
       "why_interesting": "English-language edition of L'Orient Le Jour; takes a meaningfully different political line from Al-Nahar on Lebanese politics; useful for south Lebanon coverage"
+    },
+    {
+      "name": "Asharq Al-Awsat (English)",
+      "url": "https://english.aawsat.com",
+      "found_on": "2026-06-01",
+      "why_interesting": "Gulf-backed pan-Arab daily; broke the Syria parliament June 8 story before other outlets; consistently ahead on Gulf/Arab political transitions and has senior source access in Beirut and Damascus"
     }
   ],
-  "last_updated": "2026-05-30"
+  "last_updated": "2026-06-01"
 }

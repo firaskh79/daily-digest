@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firas's Digest — 30 May 2026</title>
+<title>Firas's Digest — 1 June 2026</title>
 <style>
   :root {
     --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
@@ -22,17 +22,17 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg:#141413; --bg-2:#1e1e1b; --bg-3:#252520;
-      --text:#e8e6e1; --text-2:#a0a09a; --text-3:#606058;
-      --border:rgba(255,255,255,0.08); --border-2:rgba(255,255,255,0.14);
-      --purple-bg:#1e1a3a; --purple-text:#a89ff5;
-      --teal-bg:#0d2b22; --teal-text:#6fcfaa;
-      --coral-bg:#2d1208; --coral-text:#f09070;
-      --amber-bg:#2a1a00; --amber-text:#e8a84e;
-      --blue-bg:#0a1e2f; --blue-text:#6aacde;
-      --green-bg:#0d2205; --green-text:#87c85a;
-      --gray-bg:#1e1e1b; --gray-text:#a0a09a;
-      --link:#6aacde;
+      --bg:#1a1a18; --bg-2:#242422; --bg-3:#2e2d2a;
+      --text:#e8e6e1; --text-2:#a8a5a0; --text-3:#6a6865;
+      --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
+      --purple-bg:#2a2850; --purple-text:#b0aaf0;
+      --teal-bg:#0d2e24; --teal-text:#6fd4b0;
+      --coral-bg:#2e1510; --coral-text:#f0a090;
+      --amber-bg:#2e1e08; --amber-text:#e8b870;
+      --blue-bg:#0a1e30; --blue-text:#70b8f0;
+      --green-bg:#121e08; --green-text:#90d060;
+      --gray-bg:#2a2a28; --gray-text:#c0bdb8;
+      --link:#5a9fd4;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,448 +43,304 @@
     max-width: 780px;
     margin: 0 auto;
     padding: 2rem 1.5rem 4rem;
-    line-height: 1.65;
     font-size: 16px;
+    line-height: 1.6;
   }
   a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
-
-  /* Header */
-  header { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-2); }
-  header h1 { font-size: 1.15rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
-  header .date { font-size: 0.88rem; color: var(--text-3); margin-top: 0.2rem; }
-
-  /* ── Collage ──────────────────────────────────────────────── */
-  .collage-wrap {
-    margin: 0 -1.5rem 2rem;   /* bleed to edge on mobile */
-  }
-  @media (min-width: 820px) {
-    .collage-wrap { margin: 0 0 2rem; border-radius: var(--radius); overflow: hidden; }
-  }
-  .collage {
-    display: grid;
-    width: 100%;
-    height: var(--h, 300px);
-    gap: 2px;
-    background: #0e0e0d;
-    overflow: hidden;
-    grid-template-columns: var(--cols, repeat(6, 1fr));
-    grid-template-rows: 1fr;
-  }
-  .tile {
-    position: relative; overflow: hidden;
-    background: #1e1e1c; cursor: zoom-in;
-  }
-  .tile img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center;
-    display: block; opacity: 0;
-    transition: opacity 0.4s, transform 0.3s ease;
-  }
-  .tile img.loaded { opacity: 1; }
-  .tile:hover img.loaded { transform: scale(1.07); }
-  .tile .lbl {
-    position: absolute; bottom: 7px; left: 7px;
-    background: rgba(0,0,0,0.58);
-    color: rgba(255,255,255,0.88);
-    font-size: 7.5px; font-weight: 700;
-    letter-spacing: 0.07em; padding: 3px 5px;
-    border-radius: 3px; text-transform: uppercase;
-    pointer-events: none; transition: opacity 0.2s;
-  }
-  .tile:hover .lbl { opacity: 0; }
-  .collage-footer {
-    display: flex; align-items: center; justify-content: flex-end;
-    padding: 0.5rem 0 0;
-  }
-  .btn-shuffle {
-    padding: 0.3rem 0.9rem;
-    border: 1px solid var(--border-2); border-radius: 5px;
-    font-size: 0.75rem; cursor: pointer;
-    font-family: inherit;
-    background: var(--bg-2); color: var(--text-2);
-    transition: background 0.15s;
-  }
-  .btn-shuffle:hover { background: var(--bg-3); }
-
-  /* Lightbox */
-  #lightbox {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.92); z-index: 1000;
-    align-items: center; justify-content: center; cursor: zoom-out;
-  }
-  #lightbox.open { display: flex; }
-  #lightbox img {
-    max-width: 92vw; max-height: 92vh;
-    object-fit: contain; border-radius: 4px;
-    box-shadow: 0 8px 60px rgba(0,0,0,0.7);
-    animation: lb-in 0.2s ease;
-  }
-  #lightbox .lb-lbl {
-    position: fixed; bottom: 1.5rem; left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.85);
-    font-size: 0.72rem; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 4px; pointer-events: none;
-  }
-  #lightbox .lb-close {
-    position: fixed; top: 1rem; right: 1.25rem;
-    color: rgba(255,255,255,0.5); font-size: 1.5rem;
-    line-height: 1; cursor: pointer; pointer-events: all;
-  }
-  @keyframes lb-in {
-    from { opacity: 0; transform: scale(0.96); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-
-  /* Section headers */
-  h2 {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  .header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .header .brand { font-size: 1.1rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.02em; }
+  .header .date { font-size: 1.75rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--text-3);
-    margin-bottom: 1rem; margin-top: 2.5rem;
+    margin-bottom: 0.75rem; margin-top: 2.5rem;
   }
-
-  /* Story cards */
-  .card {
+  .lead-card {
     background: var(--bg-2); border-radius: var(--radius);
-    padding: 1.25rem 1.4rem; margin-bottom: 1rem;
+    padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+    border-left: 3px solid var(--text);
+  }
+  .lead-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+  .lead-card p { color: var(--text-2); font-size: 0.95rem; }
+  .thread-card {
+    background: var(--bg-2); border-radius: var(--radius);
+    padding: 1.25rem 1.5rem; margin-bottom: 1rem;
     border: 1px solid var(--border);
   }
-  .card-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; color: var(--text); }
-  .card p { color: var(--text-2); font-size: 0.94rem; margin-bottom: 0.6rem; }
-  .card p:last-child { margin-bottom: 0; }
-  .watch { font-size: 0.84rem; color: var(--text-3); margin-top: 0.5rem; font-style: italic; }
-
-  /* Tags */
-  .tag {
-    display: inline-block; font-size: 0.7rem; font-weight: 700;
-    padding: 0.2em 0.55em; border-radius: var(--radius-sm);
-    margin-right: 0.3rem; letter-spacing: 0.03em; vertical-align: middle;
+  .thread-card .thread-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+  .thread-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+  .thread-card .body { color: var(--text-2); font-size: 0.92rem; }
+  .thread-card .watch { margin-top: 0.6rem; font-size: 0.82rem; color: var(--text-3); font-style: italic; }
+  .badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 99px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
   }
-  .tag.new    { background: var(--purple-bg); color: var(--purple-text); }
-  .tag.changed{ background: var(--amber-bg);  color: var(--amber-text); }
-  .tag.stable { background: var(--gray-bg);   color: var(--gray-text); }
-  .tag.uk     { background: var(--blue-bg);   color: var(--blue-text); }
-
-  /* Lead */
-  .lead-card {
-    border-left: 3px solid var(--amber-text);
-    background: var(--bg-2); border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 1.25rem 1.4rem; margin-bottom: 1rem;
-  }
-  .lead-card p { color: var(--text); font-size: 0.96rem; margin-bottom: 0.75rem; }
-  .lead-card p:last-child { margin-bottom: 0; }
-
-  /* Markets grid */
-  .markets-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0.75rem; margin-bottom: 0.75rem;
-  }
-  @media (max-width: 600px) { .markets-grid { grid-template-columns: repeat(2, 1fr); } }
+  .badge-new { background: var(--purple-bg); color: var(--purple-text); }
+  .badge-changed { background: var(--amber-bg); color: var(--amber-text); }
+  .badge-stable { background: var(--gray-bg); color: var(--gray-text); }
+  .tag { display: inline-block; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+  .tb { background: var(--teal-bg); color: var(--teal-text); }
+  .markets-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.75rem; }
   .market-tile {
     background: var(--bg-2); border-radius: var(--radius-sm);
-    padding: 0.85rem 1rem; border: 1px solid var(--border);
+    padding: 1rem 1.25rem; border: 1px solid var(--border);
   }
-  .market-tile .label { font-size: 0.72rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.07em; }
-  .market-tile .value { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
-  .market-tile .change { font-size: 0.78rem; color: var(--text-3); margin-top: 0.15rem; }
-  .market-tile .change.down { color: var(--coral-text); }
-  .market-tile .change.up   { color: var(--teal-text); }
-  .market-note { font-size: 0.82rem; color: var(--text-3); margin-top: 0.4rem; }
-
-  /* Status table */
-  .status-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
-  .status-table th {
-    text-align: left; padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid var(--border-2);
-    font-size: 0.72rem; color: var(--text-3);
-    text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600;
+  .market-tile .market-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.3rem; }
+  .market-tile .market-value { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+  .market-tile .market-change { font-size: 0.8rem; margin-top: 0.1rem; }
+  .up { color: #27a060; } .down { color: #c0392b; } .neutral { color: var(--text-3); }
+  .market-note { margin-top: 0.6rem; font-size: 0.82rem; color: var(--text-3); font-style: italic; }
+  .culture-card {
+    background: var(--bg-2); border-radius: var(--radius);
+    padding: 1.25rem 1.5rem; margin-bottom: 1rem; border: 1px solid var(--border);
   }
-  .status-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .culture-card h3 { font-size: 0.88rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); margin-bottom: 0.75rem; }
+  .chart-row { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+  .chart-row:last-child { border-bottom: none; }
+  .pos { font-weight: 700; color: var(--text); min-width: 1.5rem; }
+  .change-up { color: #27a060; font-size: 0.75rem; }
+  .change-down { color: #c0392b; font-size: 0.75rem; }
+  .change-neutral { color: var(--text-3); font-size: 0.75rem; }
+  .track-name { color: var(--text-2); flex: 1; }
+  .trend-item { padding: 0.3rem 0; font-size: 0.88rem; color: var(--text-2); border-bottom: 1px solid var(--border); }
+  .trend-item:last-child { border-bottom: none; }
+  .trend-item strong { color: var(--text); }
+  .status-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+  .status-table th { text-align: left; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border-2); }
+  .status-table td { padding: 0.6rem 0.75rem; vertical-align: top; border-bottom: 1px solid var(--border); color: var(--text-2); }
   .status-table tr:last-child td { border-bottom: none; }
-  .status-table .thread-label { font-weight: 500; color: var(--text); }
-  .status-table .status-line { color: var(--text-2); }
-  .status-table .date { color: var(--text-3); white-space: nowrap; }
-
-  /* Outside the frame */
-  .frame-card {
-    border-left: 3px solid var(--teal-text);
-    background: var(--teal-bg); border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 1.25rem 1.4rem; margin-bottom: 1rem;
+  .status-table .label-cell { color: var(--text); font-weight: 600; }
+  .frame-card { background: var(--blue-bg); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; border: 1px solid rgba(12,68,124,0.15); }
+  .frame-card h3 { color: var(--blue-text); font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .frame-card p { color: var(--text-2); font-size: 0.92rem; }
+  .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-3); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media (max-width: 520px) {
+    body { padding: 1rem 1rem 3rem; }
+    .markets-grid { grid-template-columns: 1fr 1fr; }
+    .header .date { font-size: 1.4rem; }
   }
-  .frame-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal-text); margin-bottom: 0.5rem; }
-  .frame-card p { color: var(--text); font-size: 0.94rem; margin-bottom: 0.6rem; }
-  .frame-card p:last-child { margin-bottom: 0; }
-
-  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-3); }
-  footer a { color: var(--text-3); }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Firas's Digest</h1>
-  <div class="date">Saturday, 30 May 2026</div>
-</header>
-
-<!-- ── Collage ─────────────────────────────────────────────────────────── -->
-<div class="collage-wrap">
-  <div class="collage" id="collage"></div>
-</div>
-<div class="collage-footer">
-  <button class="btn-shuffle" id="btn-shuffle">↺ Shuffle</button>
+<div class="header">
+  <div class="brand">Firas's Digest</div>
+  <div class="date">Monday, 1 June 2026</div>
 </div>
 
-<!-- Lightbox -->
-<div id="lightbox">
-  <span class="lb-close" id="lb-close">✕</span>
-  <img id="lb-img" src="" alt="">
-  <div class="lb-lbl" id="lb-lbl"></div>
-</div>
-
-<script>
-// ── Image pool — real wire photos from today's sources ─────────────────────
-const POOL = [
-  // Romania / NATO — AFP photo of first responders at Galați drone scene
-  { src: "https://www.aljazeera.com/wp-content/uploads/2026/05/afp_6a19358c02a6-1780037004.jpg?resize=1200,800", l: "Romania · Galați · AFP" },
-  // Iran deal — Rubio at New Delhi press conference (AFP/Manan Vatsyayana)
-  { src: "https://www.aljazeera.com/wp-content/uploads/2026/05/afp_6a12b36d5934-1779610477.jpg?resize=1200,675", l: "Iran · Rubio · AFP" },
-  // Iran — Trump, Rubio, Hegseth in Situation Room on Iran
-  { src: "https://www.al-monitor.com/sites/default/files/styles/article_header/public/2026-05/d74bf4dca1261dacdf50072cbc782c55a8f776b2.jpg?h=69f2b9d0&itok=4-JmywXk", l: "Iran · Situation Room" },
-  // Sudan — displaced Darfur families at Chad border (Reuters/Amr Abdallah Dalsh)
-  { src: "https://www.aljazeera.com/wp-content/uploads/2026/04/reuters_69f0ffcd-1777401805.jpg?resize=1200,800", l: "Sudan · Darfur · Reuters" },
-  // Sudan — IDP children collecting water at Al Heshan camp, Port Sudan (AP/Bernat Armangue)
-  { src: "https://www.aljazeera.com/wp-content/uploads/2026/05/ap_6a05efe8a4cf5-1778773992.jpg?resize=1200,800", l: "Sudan · Port Sudan · AP" },
-  // Roland Garros — Sinner cooling down at changeover before collapse
-  { src: "https://images.tennis.com/image/upload/t_16-9_768/f_auto/tenniscom-prd/rnmq3t6pfbjmzmzohgbi.jpg", l: "Sinner · Roland Garros" },
-  // Turkey — Özel addressing CHP rally, Istanbul (AFP/Getty via Al-Monitor)
-  { src: "https://www.al-monitor.com/sites/default/files/styles/social_media_share/public/2025-07/GettyImages-2208747868.jpg?h=a5ae579a&itok=LIWD6t7_", l: "Turkey · CHP · Getty" },
-  // Music — Olivia Dean (Wikipedia, reliable)
-  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Olivia_Dean_-_4323.jpg&width=800", l: "Olivia Dean · #1 UK" },
-  // Music — Sam Fender (Wikipedia, reliable)
-  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Sam_Fender_(2021)_(cropped).jpg&width=800", l: "Sam Fender · #2 UK" },
-  // Music — Dave (Wikipedia, reliable)
-  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Santan_Dave.jpg&width=800", l: "Dave · #3 UK" },
-  // Economy — Bank of England (Wikipedia, reliable)
-  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Bank_of_England_Building,_London,_UK_-_Diliff.jpg&width=800", l: "Bank of England · Gilt 5.49%" },
-  // Hormuz map
-  { src: "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Hormuz_map.png&width=800", l: "Strait of Hormuz" },
-];
-
-const COL_PRESETS = {
-  5: ["1.2fr 1fr 0.85fr 1fr 0.95fr","0.9fr 1.15fr 1fr 0.9fr 1.1fr","1fr 0.9fr 1.2fr 1fr 0.95fr"],
-  6: ["1.1fr 0.9fr 1fr 0.85fr 1fr 1.1fr","0.9fr 1fr 1.15fr 1fr 0.85fr 1.1fr","1fr 1.1fr 0.9fr 1.05fr 0.95fr 1fr"],
-  7: ["1fr 0.85fr 1.1fr 0.9fr 1fr 0.9fr 1.1fr","1.1fr 1fr 0.85fr 1fr 0.9fr 1.1fr 0.95fr"],
-};
-const HEIGHTS = [280, 300, 320, 340];
-
-function wikiUrl(f) {
-  return "https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/"
-    + encodeURIComponent(f) + "&width=800";
-}
-function shuffle(a) {
-  const b=[...a];
-  for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}
-  return b;
-}
-function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
-
-function render() {
-  const counts=[5,6,6,7];
-  const n=pick(counts);
-  const cols=pick(COL_PRESETS[n]);
-  const h=pick(HEIGHTS);
-  const images=shuffle(POOL).slice(0,n);
-  const collage=document.getElementById('collage');
-  collage.style.setProperty('--cols',cols);
-  collage.style.setProperty('--h',h+'px');
-  collage.innerHTML='';
-  images.forEach(item=>{
-    const tile=document.createElement('div');
-    tile.className='tile';
-    const img=document.createElement('img');
-    img.src=item.src;
-    img.alt=item.l;
-    img.onload=()=>img.classList.add('loaded');
-    img.onerror=()=>{tile.style.display='none';};
-    const lbl=document.createElement('span');
-    lbl.className='lbl';
-    lbl.textContent=item.l;
-    tile.append(img,lbl);
-    tile.addEventListener('click',()=>{
-      if(!img.classList.contains('loaded'))return;
-      document.getElementById('lb-img').src=img.src;
-      document.getElementById('lb-lbl').textContent=item.l;
-      document.getElementById('lightbox').classList.add('open');
-    });
-    collage.appendChild(tile);
-  });
-}
-
-function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
-document.getElementById('lb-close').addEventListener('click',closeLightbox);
-document.getElementById('lightbox').addEventListener('click',e=>{
-  if(e.target===document.getElementById('lightbox'))closeLightbox();
-});
-document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeLightbox(); });
-document.getElementById('btn-shuffle').onclick=render;
-render();
-</script>
-
-<!-- ── Content ─────────────────────────────────────────────────────────── -->
-
-<h2>Today's Signal</h2>
+<div class="section-label">Today's Signal</div>
 
 <div class="lead-card">
-  <p><strong>The Iran gap.</strong> Brent crude has settled at $91.37, down more than a dollar since Tuesday, pricing in a deal that hasn't actually been signed. Working-level negotiators agreed the MOU text last week. Trump met with his team in the Situation Room on May 29 and — for the second time — told mediators he needed more time. Iran has publicly disputed the terms Washington is describing as agreed. The gap between what markets believe is settled and what is actually settled is widening. If Trump signs, oil falls further. If he doesn't by next week, watch for a sharp reversal toward $95+.</p>
-  <p><strong>Mearsheimer publishes the day drones hit NATO.</strong> On the same day a Russian drone struck a residential apartment block in Galați — the 28th time Russian munitions have breached Romanian airspace — Mearsheimer posted "Will Russia Strike Targets in Europe?" His argument: if bombing Kyiv fails to coerce Ukraine into stopping its long-range strikes on Russian territory, Putin will authorize conventional strikes on select NATO targets; and if that doesn't work, limited nuclear coercion becomes the next rung. This is a structural argument about logic, not a prediction of imminent action. But the coincidence of its publication with the Galați incident makes it worth reading now. NATO's "every inch" language and Romania's expulsion of the Russian consul in Constanta are the right responses by the book. Whether they deter further incursions is the live question.</p>
+  <h3>The Ukraine peace deadline arrives — and nothing happens</h3>
+  <p>Today is the day. Back in February, Trump announced the US had given Ukraine and Russia a "June deadline" to reach a peace agreement. June is here. There is no agreement, no credible framework, and no sign either side is close to one. Russian forces launched over 400 drones and approximately 40 missiles at Ukrainian targets overnight. Ukraine's counteroffensive has recovered around 400 km² of territory since February, but the front is essentially static. The interesting question now is what Trump does with a deadline he set publicly and missed publicly — escalate pressure on both parties, walk away from mediation, or quietly let the deadline dissolve. His next move on Ukraine will be more telling than anything he has said about it so far.</p>
 </div>
 
-<h2>Changed Threads</h2>
-
-<div class="card">
-  <div class="card-title"><span class="tag changed">changed</span> Iran / Hormuz</div>
-  <p>Trump met with the Situation Room team on May 29 and again declined to sign the MOU. The 60-day ceasefire extension text — which includes Strait of Hormuz reopening, mine clearing, and an Iranian commitment not to pursue a nuclear weapon — was largely agreed at working level, but Trump told mediators he needed more time. Iran is publicly disputing some of the terms Washington is describing as settled, calling certain characterisations "fabricated." CNBC reported that traders' hopes for a nuclear deal this year are fading even if a ceasefire extension is signed. Brent at $91.37 reflects deal optimism the politics haven't yet validated.</p>
-  <p class="watch">Watch: Trump signature this weekend; Iranian public statement on enrichment; Brent reaction if deal stalls.</p>
+<div class="lead-card">
+  <h3>Colombia goes right — and it's more complicated than another Milei moment</h3>
+  <p>In Sunday's first round of Colombia's presidential election, far-right outsider Abelardo de la Espriella took 43.7% of the vote, significantly outperforming polls that had favoured the left's Iván Cepeda. The runoff is June 21. De la Espriella is a criminal defense lawyer who has never held public office; he ran on crime, mega-prisons, ending peace talks with rebel groups, and shrinking the state. The reflex comparison to Milei is understandable but slightly off — Milei was an economist with a theory; de la Espriella is a courtroom operator whose core appeal is law-and-order rather than libertarian economics. What's not ambiguous is the result: four years of Petro's leftist experiment ends with Colombia on the verge of electing someone almost exactly opposite. The race three weeks from now will be a genuine test of whether the 2022 pink tide in Latin America has definitively reversed.</p>
 </div>
 
-<div class="card">
-  <div class="card-title"><span class="tag changed">changed</span> Russia / NATO / Romania</div>
-  <p>The May 29 drone strike on the Galați apartment block (2 injured, roof fire, evacuations) is the 28th confirmed incursion of Russian munitions into Romanian airspace. Romania's response escalated: the Russian consul in Constanta declared <em>persona non grata</em>, consulate closed. NATO Secretary-General Rutte called Russia's behaviour "a danger to us all." The EU is preparing fresh sanctions. Mearsheimer's new Substack — published the same day — provides the structural logic for how this escalation ladder could extend: conventional Russian strikes on NATO targets as coercive signal, limited nuclear threats if that fails. That is not the current situation. But it maps the trajectory if Ukraine's long-range strike campaign on Russian territory continues without a negotiated off-ramp.</p>
-  <p class="watch">Watch: 29th incursion; NATO discussions on drone shoot-down authority over Allied territory; US statement; Russian embassy status in Bucharest.</p>
+<div class="section-label">Changed Threads</div>
+
+<div class="thread-card">
+  <div class="thread-header"><span class="badge badge-changed">Changed</span><h3>Iran / Hormuz</h3></div>
+  <div class="body">Brent crude has climbed to $93.30 — up roughly 2% since Friday — as market confidence that the MOU will be signed before end of May fades. Trump left the Situation Room last Thursday without signing. Iranian officials continue to say core issues are unresolved: the uranium enrichment clause and the mechanism for reopening the Strait. Polymarket now prices a US-Iran deal by June 30 at roughly 35%. Each dollar on Brent feeds directly into UK headline inflation, which is already running at 2.8%.</div>
+  <div class="watch">Watch: Whether Trump publicly resets a signing deadline, or signals he is walking away from the deal process entirely. A deal collapse would push Brent well above $100.</div>
 </div>
 
-<div class="card">
-  <div class="card-title"><span class="tag changed">changed</span> UK Economic Stress</div>
-  <p>The 10-year gilt yield has fallen to approximately 4.8%, down 19 basis points over the month — its lowest since April 17 — as cooling inflation data and cautious Iran-deal optimism allow the market to price in more BOE flexibility. The 30-year gilt remains elevated at 5.49%. The FTSE 100 fell 0.7% on May 29, ending an eight-session winning streak, closing around 10,433. The immediate gilt market stress that dominated this thread earlier in May has partially unwound. Whether that relief holds depends on whether the Iran deal actually closes, and whether UK activity data continues to cool in a way that gives Bailey room to act.</p>
-  <p class="watch">Watch: Iran deal outcome and its effect on energy-inflation expectations; Starmer backbench pressure; BOE forward guidance.</p>
+<div class="thread-card">
+  <div class="thread-header"><span class="badge badge-changed">Changed</span><h3>Sudan Famine</h3></div>
+  <div class="body">June 1 matters here specifically: today is the first day of Sudan's lean season (June–September), the annual period when food shortages consistently worsen. With 19.5 million people in acute food insecurity, famine confirmed in four Darfur areas, 825,000 children under five expected to suffer severe acute malnutrition this year, and only 20% of the $2.9 billion humanitarian response plan funded — the lean season beginning today is not background context. It is the accelerator. The trajectory over the next three months will determine whether the current crisis becomes something far harder to contain.</div>
+  <div class="watch">Watch: Whether the funding gap narrows as lean season conditions intensify coverage, or whether the structural invisibility in Western media holds through the summer.</div>
 </div>
 
-<div class="card">
-  <div class="card-title"><span class="tag changed">changed</span> Mearsheimer</div>
-  <p>New Substack post: "Will Russia Strike Targets in Europe?" (May 28). Mearsheimer maps the coercive logic: bombing Kyiv alone is insufficient to stop Ukrainian long-range strikes on Russian territory, so the next step would be conventional Russian strikes on select NATO-territory targets aimed at coercing European capitals directly. If that fails, limited nuclear use becomes the final instrument. He doesn't predict these outcomes; he traces the logic that would produce them. Read alongside the Galați drone strike and NATO's deterrence language, this is the most useful frame for understanding where the Russia-NATO thread could go. Also recent: a May 27 "Forum Focused on Iran" appearance calling the US-Israeli war on Iran "a colossal strategic failure."</p>
-  <p class="watch">Watch: Next Substack post; appearances on the NATO escalation question; whether the Russia-Europe conventional escalation argument gains traction in policy circles.</p>
+<div class="thread-card">
+  <div class="thread-header"><span class="badge badge-changed">Changed</span><h3>Israel / Lebanon</h3></div>
+  <div class="body">Two things converging on tomorrow's Washington talks. Israel has seized Beaufort Castle — a 12th-century fortification overlooking south Lebanon — signalling an intention to maintain a physical military presence beyond any ceasefire timeline the diplomatic process might produce. The fourth round of talks begins tomorrow in Washington, covering Israeli withdrawal, Lebanese Army deployment in the south, Hezbollah disarmament, and the financing mechanism. The castle seizure and the peace talks are structurally in tension: you do not fortify a position you are planning to vacate. Lebanese officials arrive in Washington knowing this.</div>
+  <div class="watch">Watch: Whether June 2–3 produces a withdrawal timeline with an enforcement mechanism, or whether Israel's military positioning effectively conditions any deal on terms Lebanon cannot accept.</div>
 </div>
 
-<h2>The Social / Cultural Layer</h2>
-
-<div class="card">
-  <p>The UK Apple Music chart this morning is as static as it has been in weeks. The entire top five is unchanged: Olivia Dean's "Man I Need" at one, the Olivia Dean–Sam Fender duet "Rein Me In" at two, Dave and Tems's "Raindance" at three, Bella Kay at four, another Olivia Dean track at five. <span class="tag uk">UK</span> Six weeks of near-total dominance, with eight Olivia Dean tracks simultaneously in the top 50. This is album-mode listening — the kind of engagement that happens when a record speaks to where people actually are emotionally, not just where the algorithm puts it. <em>Loud</em> has become a comfort object.</p>
-
-  <p>The divergence worth naming: the chart has frozen on intimate, domestic, heartbreak-adjacent music at exactly the moment Romania is trending on UK Twitter because Russian drones are hitting NATO apartment blocks. UK Twitter's other top trends — Konate and Jacquet (Liverpool: Ibrahima Konate confirmed leaving on a free, new signing Jeremy Jacquet); Sinner (knocked out in a stunning second-round upset at Roland Garros by Juan Manuel Cerúndolo, having led 5–1 in the third set); Zverev (now the new men's favourite with Sinner and Djokovic both out) — show a public that is metabolising the macro through sport and transfers, not through the news. This is not apathy. It's the particular way an anxious public manages competing levels of threat: process the controllable, retreat to the intimate.</p>
-
-  <p>Harry Styles' <span class="tag uk">UK</span> "Aperture" climbs three places to number 10, his album <em>Kiss All the Time. Disco, Occasionally</em> (the biggest UK album of 2026 so far) maintaining momentum five months after release. Madonna's "Into the Groove" is up 23 places to 74 — almost certainly TikTok-driven — alongside a broader nostalgia wave in the mid-chart. RAYE <span class="tag uk">UK</span> at number 6 and climbing remains the rare artist in the chart whose sound feels contemporary rather than warm and familiar.</p>
-
-  <p>On TikTok globally, the sounds blowing up are almost entirely non-Anglophone: Flow-G's Filipino hip-hop "Driftstar" (866,000 UGC videos), a Pakistani folk-pop track accelerating at +37% day-on-day, Aya Nakamura's French-language "Copines" with 614,000 videos. The divergence from the Apple Music UK chart is near-total. What is capturing global creative energy exists almost entirely outside the Western media sphere currently absorbed by Iran, Romania, and Ebola.</p>
+<div class="thread-card">
+  <div class="thread-header"><span class="badge badge-changed">Changed</span><h3>Turkey — CHP / Opposition</h3></div>
+  <div class="body">Today Kemal Kılıçdaroğlu convenes the CHP's Party Assembly to form his Central Executive Committee — the first formal act of a leadership that exists only because a court ordered it. Özel's faction has said it will not found a new party. The practical question is whether the court-installed leadership can hold a new congress on legal grounds and keep Imamoglu — polling at 55% against Erdoğan in a hypothetical runoff — viable as the 2028 presidential candidate. Every day this runs without Imamoglu's release, the 2028 candidacy question sharpens into something Erdoğan has to answer for.</div>
+  <div class="watch">Watch: Whether Kılıçdaroğlu sets a congress date today, and whether the Constitutional Court moves on Imamoglu's detention before the executive committee is formed.</div>
 </div>
 
-<h2>Outside the Frame</h2>
-
-<div class="frame-card">
-  <div class="frame-label">Sudan — a story that has fallen off the map</div>
-  <p>Sudan is now officially the world's hungriest country, and it has almost entirely disappeared from Western media. The IPC confirmed in May that famine conditions have spread to four areas of Darfur, with nearly 20 million Sudanese — roughly two in five of the population — experiencing crisis-level food insecurity or worse. Some 375,000 people face imminent starvation. The 2026 humanitarian response plan requires $2.9 billion; it has received approximately 5.5% of that.</p>
-  <p>Three years into a war that has killed hundreds of thousands, displaced 14 million, and collapsed the health system entirely, Sudan is living through a famine in near-total media silence — crowded out by Iran, Israel, Romania, and Ebola. The invisibility is structural: African humanitarian crises reliably lose column inches when European-adjacent crises dominate the cycle. Opening a new thread on this.</p>
+<div class="thread-card">
+  <div class="thread-header"><span class="badge badge-changed">Changed</span><h3>UK Economic Stress</h3></div>
+  <div class="body">The 10-year gilt yield has ticked up to 4.86% — off the recent low of 4.8% — driven partly by the Brent move on Iran uncertainty. The FTSE sits at 10,409, essentially flat. The broader picture remains mixed: CPI at 2.8% (down from 3.3% in March), Bank Rate held at 3.75% in April, Q1 services output up 1.4%. The gilt stress from earlier in May has unwound, but the Iran deal's delay restores the upward pressure on energy prices that had been easing. Gilt markets are watching Brent as much as any domestic fiscal signal right now.</div>
+  <div class="watch">Watch: Any renewed gilt spike above 5.0% on 10-year, or Brent breaking through $100 — both would revive the pressure that rattled markets in early May.</div>
 </div>
 
-<h2>Markets</h2>
+<hr>
+<div class="section-label">Social &amp; Cultural Layer</div>
 
+<div class="culture-card">
+  <h3>The Divergence: Frozen Chart, Loud Grief</h3>
+  <p style="color:var(--text-2); font-size:0.93rem; margin-bottom:1rem;">The Apple Music chart has stopped moving. All five songs in the top five show "=" — unchanged positions, unchanged artists. Olivia Dean holds #1, #2 (with Sam Fender), #5, and another four positions further down. The chart has been in this configuration for days. Meanwhile, UK Twitter on Monday morning is entirely consumed by one thing: Arsenal. Paris, Saka, Arsenal, Gabriel, Madueke — the entire top of UK trends is the Champions League final replay, the aftermath of Arsenal losing to PSG on penalties in Budapest on Saturday night.</p>
+  <p style="color:var(--text-2); font-size:0.93rem; margin-bottom:1rem;">This is a clean divergence. The streaming chart shows a population that found its emotional safe space and is not moving. The social layer is processing collective sporting grief at high volume. Two different emotional registers, operating simultaneously, not really talking to each other. Football grief is loud, public, and transient. The Olivia Dean stasis is quiet, personal, and apparently durable — the same intimate songs about love and heartbreak, unchanged through oil market tension, war deadlines, and a summer of geopolitical drift.</p>
+  <p style="color:var(--text-2); font-size:0.93rem;">What is notably absent from both: the macro. Arsenal trending does not mean people are not worried about Brent at $93 or the Ukraine deadline passing today. It means sport provides a container for collective emotion that the news cycle cannot. The grief is real but it is football grief — and it is easier to feel than the alternative.</p>
+</div>
+
+<div class="culture-card">
+  <h3>Apple Music UK — Top 5</h3>
+  <div class="chart-row"><span class="pos">1</span><span class="change-neutral">=</span><span class="track-name">Olivia Dean — <em>Man I Need</em> <span class="tag tb">UK</span></span></div>
+  <div class="chart-row"><span class="pos">2</span><span class="change-neutral">=</span><span class="track-name">Sam Fender &amp; Olivia Dean — <em>Rein Me In</em> <span class="tag tb">UK</span></span></div>
+  <div class="chart-row"><span class="pos">3</span><span class="change-neutral">=</span><span class="track-name">Dave &amp; Tems — <em>Raindance</em> <span class="tag tb">UK</span></span></div>
+  <div class="chart-row"><span class="pos">4</span><span class="change-neutral">=</span><span class="track-name">Bella Kay — <em>iloveitiloveitiloveit</em> <span class="tag tb">UK</span></span></div>
+  <div class="chart-row"><span class="pos">5</span><span class="change-neutral">=</span><span class="track-name">Olivia Dean — <em>So Easy (To Fall In Love)</em> <span class="tag tb">UK</span></span></div>
+  <div style="margin-top:0.6rem; font-size:0.8rem; color:var(--text-3);">Notable: Harry Styles <em>Aperture</em> at #10 (+3) — London Wembley residency opens June 12. Madonna <em>Into the Groove</em> at #74 (+23) and Nickelback <em>How You Remind Me</em> at #152 (+28) are both unexplained nostalgia surges worth monitoring.</div>
+</div>
+
+<div class="culture-card">
+  <h3>TikTok — Top Sounds</h3>
+  <div class="chart-row"><span class="pos">1</span><span class="track-name">"Ad vikāra" — <span class="tag tb">UK</span> origin commercial sound (Score: 999)</span></div>
+  <div class="chart-row"><span class="pos">2</span><span class="track-name">MemeScreens / "Copines" (Aya Nakamura) — 702K videos, +10.4%/day, 50+ countries</span></div>
+  <div class="chart-row"><span class="pos">3</span><span class="track-name">"Hopelessly Devoted to You" (Grease) — 590K videos, +3.6%/day, nostalgia wave</span></div>
+  <div class="chart-row"><span class="pos">4</span><span class="track-name">Stepi (UGC Original) — 384K videos, +23.1%/day, Argentina / Indonesia spread</span></div>
+  <div class="chart-row"><span class="pos">5</span><span class="track-name">"Потеряв Контроль" (Lost Control) — Russian, 274K videos, +13.6%/day</span></div>
+  <div style="margin-top:0.6rem; font-size:0.8rem; color:var(--text-3);">The "Hopelessly Devoted" run is worth one note: a song about helpless attachment to something that is not working out, spreading globally on the same day Trump's Ukraine peace deadline passes unmet and the Iran MOU sits unsigned. The overlap is probably accidental. The resonance is not nothing.</div>
+</div>
+
+<div class="culture-card">
+  <h3>UK Twitter / X — Top Trends</h3>
+  <div class="trend-item"><strong>Arsenal</strong> — Champions League final post-mortem; Arsenal lost to PSG on penalties in Budapest, 30 May</div>
+  <div class="trend-item"><strong>Saka</strong> — Bukayo Saka booked and substituted off in the 83rd minute; first Arsenal UCL final in 20 years</div>
+  <div class="trend-item"><strong>Paris</strong> — PSG as Champions League winners; French football dominance discussion</div>
+  <div class="trend-item"><strong>Gabriel</strong> — Gabriel Magalhães defensive performance under scrutiny</div>
+  <div class="trend-item"><strong>Madueke</strong> — Noni Madueke came on for Saka; performance discussed</div>
+  <div style="margin-top:0.6rem; font-size:0.8rem; color:var(--text-3);">Entire UK social space absorbed by football. First Arsenal final in 20 years; the collective investment was proportionate; the grief is too.</div>
+</div>
+
+<hr>
+<div class="section-label">Markets</div>
+<p style="font-size:0.82rem; color:var(--text-3); margin-bottom:0.75rem;">Friday 29 May close / Monday morning indicative. Markets open today.</p>
 <div class="markets-grid">
   <div class="market-tile">
-    <div class="label">FTSE 100</div>
-    <div class="value">10,433</div>
-    <div class="change down">−0.7% Thu</div>
+    <div class="market-label">FTSE 100</div>
+    <div class="market-value">10,409</div>
+    <div class="market-change down">▼ 0.2% on Friday</div>
   </div>
   <div class="market-tile">
-    <div class="label">Nasdaq</div>
-    <div class="value">26,972</div>
-    <div class="change up">+0.2% Thu</div>
+    <div class="market-label">Nasdaq</div>
+    <div class="market-value">26,973</div>
+    <div class="market-change up">▲ +8% for May — AI rally</div>
   </div>
   <div class="market-tile">
-    <div class="label">Brent Crude</div>
-    <div class="value">$91.37</div>
-    <div class="change down">−1.4% Thu</div>
+    <div class="market-label">Brent Crude</div>
+    <div class="market-value">$93.30</div>
+    <div class="market-change up">▲ +2.4% — Iran MOU delay</div>
   </div>
   <div class="market-tile">
-    <div class="label">30Y Gilt</div>
-    <div class="value">5.49%</div>
-    <div class="change">10Y at ~4.8%, −19bps on month</div>
+    <div class="market-label">UK 30Y Gilt</div>
+    <div class="market-value">5.49%</div>
+    <div class="market-change neutral">10Y: 4.86% ↑ from 4.8% low</div>
   </div>
 </div>
-<p class="market-note">Gilt yields easing on Iran deal optimism and cooling UK data. Brent reflects a deal markets haven't seen signed. 30Y gilt still elevated vs. April levels.</p>
+<p class="market-note">Brent is the flag. The Iran MOU uncertainty is feeding into gilt yields via the inflation channel. If the deal slips further, watch for a resumption of the gilt pressure seen in early May.</p>
 
-<h2>Thread Status</h2>
+<hr>
+<div class="section-label">Outside the Frame</div>
+
+<div class="frame-card">
+  <h3>Syria's first parliament since Assad — June 8</h3>
+  <p>One week from today, Syria's new parliament convenes for the first time since the fall of Bashar al-Assad in December 2024. The 210-member People's Assembly has 140 elected seats and 70 appointed by President Ahmed al-Sharaa. The composition is already drawing criticism: roughly 5% women (down from the 6–13% range under Assad — which is remarkable when that is the comparison point), few religious minorities, and a legislature structurally weighted toward the executive. This is what the post-Assad transition looks like in practice: not a clean democratic break but a managed reconstruction under an Islamist-rooted leadership that emerged from the armed opposition. The parliament will likely propose renaming itself, shedding the Assad-era "People's Assembly" branding. What it does on minority rights and constitutional structure will be the more consequential story. Source: Asharq Al-Awsat, which had this ahead of the event.</p>
+</div>
+
+<hr>
+<div class="section-label">Active Threads</div>
 
 <table class="status-table">
   <thead>
     <tr>
       <th>Thread</th>
       <th>Status</th>
-      <th>One-line status</th>
-      <th>Last changed</th>
+      <th>Current Line</th>
+      <th>Last Changed</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="thread-label">Iran / Hormuz</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">MOU text agreed; Trump still hasn't signed after May 29 Situation Room meeting; Iran disputes terms; Brent $91.37</td>
-      <td class="date">30 May</td>
+      <td class="label-cell">Iran / Hormuz</td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td>MOU unsigned; Brent $93.30 (+2%); Trump still deciding; deal odds fading</td>
+      <td>1 Jun</td>
     </tr>
     <tr>
-      <td class="thread-label">Russia / NATO / Romania</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">28th drone struck Galați apartment block; Romania expelled Constanta consul; Mearsheimer maps escalation logic to conventional NATO strikes</td>
-      <td class="date">30 May</td>
+      <td class="label-cell">Russia / NATO / Romania</td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td>No new drone incursion since 29 May; EU 21st sanctions package prep; NATO posture holds</td>
+      <td>30 May</td>
     </tr>
     <tr>
-      <td class="thread-label">UK Economic Stress</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">10Y gilt ~4.8% (lowest since April 17, −19bps on month); 30Y at 5.49%; FTSE 100 at 10,433; gilt spike partially unwound</td>
-      <td class="date">30 May</td>
+      <td class="label-cell">UK Economic Stress</td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td>10Y gilt 4.86% (rising); FTSE 10,409; Brent headwind to CPI</td>
+      <td>1 Jun</td>
     </tr>
     <tr>
-      <td class="thread-label">Mearsheimer</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">New Substack: "Will Russia Strike Targets in Europe?" — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion</td>
-      <td class="date">30 May</td>
+      <td class="label-cell">Mearsheimer</td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td>No new post since 29 May "Will Russia Strike Targets in Europe?"</td>
+      <td>30 May</td>
     </tr>
     <tr>
-      <td class="thread-label">Sudan Famine</td>
-      <td><span class="tag new">new</span></td>
-      <td class="status-line">World's hungriest country; 20M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 5.5% funded</td>
-      <td class="date">30 May</td>
+      <td class="label-cell">Sudan Famine</td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td>Lean season begins today; 19.5M food insecure; 20% of $2.9B funded</td>
+      <td>1 Jun</td>
     </tr>
     <tr>
-      <td class="thread-label">Ebola — DRC / Uganda</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">125 confirmed + 906 suspected, 223 suspected deaths; WHO head in Kinshasa; no expansion today</td>
-      <td class="date">29 May</td>
+      <td class="label-cell">Ebola — DRC / Uganda</td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td>125 confirmed + 906 suspected; no new geographic spread; American missionary in Berlin</td>
+      <td>29 May</td>
     </tr>
     <tr>
-      <td class="thread-label">Israel / Lebanon</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">Ceasefire extended; Pentagon trilateral meeting May 29; peace talks Washington June 2–3; violations ongoing, no escalation</td>
-      <td class="date">29 May</td>
+      <td class="label-cell">Israel / Lebanon</td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td>Israel seizes Beaufort Castle; June 2–3 Washington talks begin tomorrow</td>
+      <td>1 Jun</td>
     </tr>
     <tr>
-      <td class="thread-label">Turkey — CHP / Opposition</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">Court ousted CHP leadership; Kılıçdaroğlu returning; Imamoglu still imprisoned; no new developments today</td>
-      <td class="date">26 May</td>
+      <td class="label-cell">Turkey — CHP / Opposition</td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td>Kılıçdaroğlu convening Party Assembly today to form executive committee</td>
+      <td>1 Jun</td>
     </tr>
     <tr>
-      <td class="thread-label">SNP Crisis / Murrell</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">Guilty plea entered; £400K embezzled; remanded in custody; sentencing 23 June</td>
-      <td class="date">26 May</td>
+      <td class="label-cell">SNP / Murrell</td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td>Guilty plea; sentencing 23 June; no new developments</td>
+      <td>26 May</td>
+    </tr>
+    <tr>
+      <td class="label-cell">Ukraine Peace Deadline</td>
+      <td><span class="badge badge-new">New</span></td>
+      <td>Trump's June deadline passes today unmet; 400+ drone/missile strikes overnight; no framework</td>
+      <td>1 Jun</td>
+    </tr>
+    <tr>
+      <td class="label-cell">Colombia Election 2026</td>
+      <td><span class="badge badge-new">New</span></td>
+      <td>De la Espriella leads first round 43.7%; Cepeda 40.9%; runoff June 21</td>
+      <td>1 Jun</td>
+    </tr>
+    <tr>
+      <td class="label-cell">Syria Parliament</td>
+      <td><span class="badge badge-new">New</span></td>
+      <td>First post-Assad parliament convenes June 8; 210 seats; al-Sharaa holds 70</td>
+      <td>1 Jun</td>
     </tr>
   </tbody>
 </table>
 
-<footer>
-  Generated 30 May 2026 &middot; <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
-</footer>
+<div class="footer">
+  <span>Generated 1 June 2026</span>
+  <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
+</div>
 
 </body>
 </html>
