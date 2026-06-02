@@ -4,7 +4,7 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "MOU unsigned; Brent climbs to $93.30 (+2% on Iran uncertainty); deal odds fading; Polymarket ~35% by June 30",
+      "status_line": "MOU unsigned; Brent $93.30 (+2% on Iran uncertainty); deal odds ~35% by June 30; uranium clause remains sticking point",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -21,7 +21,7 @@
       "id": "russia-nato-romania",
       "label": "Russia / NATO / Romania",
       "status": "stable",
-      "status_line": "No new drone incursion since 29 May Galati strike; EU 21st sanctions package prep; NATO 'defend every inch' posture holds",
+      "status_line": "No drone incursion since May 29 Galati strike; EU 21st sanctions package prep; NATO 'defend every inch' posture holds",
       "first_seen": "2026-05-29",
       "last_changed": "2026-05-30",
       "expand_if": [
@@ -38,7 +38,7 @@
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "changed",
-      "status_line": "10Y gilt at 4.86% (up from 4.8% low) on Iran/Brent pressure; FTSE 10,409; Brent headwind to 2.8% CPI",
+      "status_line": "10Y gilt 4.86%; FTSE 10,409; Brent headwind to CPI; Mandelson and McFadden trending UK Twitter June 2 — possible trade/fiscal news unconfirmed",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -48,14 +48,15 @@
         "Bank of England emergency action",
         "government fiscal statement",
         "major employer redundancy announcement",
-        "Starmer leadership challenge formally triggered"
+        "Starmer leadership challenge formally triggered",
+        "US-UK trade deal announced"
       ]
     },
     {
       "id": "mearsheimer",
       "label": "Mearsheimer",
       "status": "stable",
-      "status_line": "No new post since 29 May 'Will Russia Strike Targets in Europe?' — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion",
+      "status_line": "No new post since May 29 'Will Russia Strike Targets in Europe?' — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion",
       "first_seen": "2026-05-22",
       "last_changed": "2026-05-30",
       "expand_if": [
@@ -69,7 +70,7 @@
       "id": "sudan-famine",
       "label": "Sudan Famine",
       "status": "changed",
-      "status_line": "Lean season begins today (June–September); 19.5M acutely food insecure; famine in 4 Darfur areas; $2.9B plan only 20% funded",
+      "status_line": "Lean season began June 1 (runs to September); 19.5M acutely food insecure; famine in 4 Darfur areas; $2.9B plan 20% funded; no ceasefire",
       "first_seen": "2026-05-30",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -101,24 +102,24 @@
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "changed",
-      "status_line": "Israel seizes Beaufort Castle in south Lebanon ahead of June 2–3 Washington peace talks; ceasefire extended to late June; violations ongoing",
+      "status_line": "June 2–3 Washington peace talks underway; Israel seized Beaufort Castle ahead of talks; ceasefire extended to late June; Lebanon and Hezbollah trending UK Twitter",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-01",
+      "last_changed": "2026-06-02",
       "expand_if": [
         "major Israeli ground incursion",
         "Hezbollah rocket barrage on Israeli cities",
-        "ceasefire agreement with teeth from June 2-3 talks",
+        "ceasefire agreement with withdrawal timelines from June 2-3 talks",
         "UNIFIL withdrawal",
         "US forces Israel to pause operations",
         "mass civilian casualty event",
-        "June 2-3 peace talks collapse or major breakthrough"
+        "June 2-3 talks collapse or major breakthrough announced"
       ]
     },
     {
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
-      "status": "changed",
-      "status_line": "Kılıçdaroğlu convening Party Assembly June 1 to form Central Executive Committee under court-ordered leadership; Imamoglu still imprisoned; polls show him 55–45 vs Erdoğan",
+      "status": "stable",
+      "status_line": "Party Assembly convened June 1 to form new CEC under Kılıçdaroğlu; Imamoglu still imprisoned; polls show 55–45 vs Erdoğan",
       "first_seen": "2026-05-25",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -132,28 +133,12 @@
       ]
     },
     {
-      "id": "snp-murrell",
-      "label": "SNP Crisis / Murrell",
-      "status": "stable",
-      "status_line": "Peter Murrell guilty plea — £400K embezzled from SNP over 13 years; remanded in custody; sentencing 23 June",
-      "first_seen": "2026-05-26",
-      "last_changed": "2026-05-26",
-      "expand_if": [
-        "Nicola Sturgeon makes public statement",
-        "SNP leadership challenged",
-        "sentencing on 23 June with significant prison term",
-        "new allegations emerge at sentencing",
-        "SNP polling drops significantly in Scotland",
-        "Swinney leadership threatened"
-      ]
-    },
-    {
       "id": "ukraine-peace-deadline",
       "label": "Ukraine Peace Deadline",
-      "status": "new",
-      "status_line": "Trump's June deadline passes today unmet; Russia struck Ukraine with 400+ drones/missiles overnight; no framework; Trump's next move unknown",
+      "status": "changed",
+      "status_line": "Deadline passed June 1 unmet; Russia struck Ukraine with 400+ drones/missiles overnight; no framework; diplomatic vacuum now active; Trump silent",
       "first_seen": "2026-06-01",
-      "last_changed": "2026-06-01",
+      "last_changed": "2026-06-02",
       "expand_if": [
         "Trump formally withdraws from mediation",
         "new deadline set publicly",
@@ -224,6 +209,13 @@
       "retired_on": "2026-05-30",
       "retired_because": "7 consecutive days stable; last changed 2026-05-23; no new episodes or significant statements detected since May 20 Thomas Massie/Israel lobby episode",
       "revive_if": "New major episode on Iran deal, Russia, or Ukraine; public clash with Trump administration escalates; platform change; returns to pro-Trump framing"
+    },
+    {
+      "id": "snp-murrell",
+      "label": "SNP Crisis / Murrell",
+      "retired_on": "2026-06-02",
+      "retired_because": "7 consecutive stable days since last_changed 2026-05-26; guilty plea entered the public record; no new developments. Sentencing June 23 is a known future event.",
+      "revive_if": "June 23 sentencing produces significant prison term or new allegations emerge in court; Nicola Sturgeon makes public statement; SNP leadership formally challenged; new financial allegations against other SNP figures"
     }
   ],
   "source_discoveries": [
@@ -246,5 +238,5 @@
       "why_interesting": "Gulf-backed pan-Arab daily; broke the Syria parliament June 8 story before other outlets; consistently ahead on Gulf/Arab political transitions and has senior source access in Beirut and Damascus"
     }
   ],
-  "last_updated": "2026-06-01"
+  "last_updated": "2026-06-02"
 }

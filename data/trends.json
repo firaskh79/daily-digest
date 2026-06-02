@@ -1,137 +1,128 @@
 {
-  "date": "2026-06-01",
+  "date": "2026-06-02",
   "mood_of_day": "conflicted",
   "macro": {
     "politics": [
       {
-        "headline": "Trump's Ukraine peace deadline arrives today unmet — Russia launched 400+ drones/missiles overnight",
-        "tags": ["ukraine", "russia", "trump", "peace-talks"],
-        "sentiment": "negative",
+        "headline": "Israel-Lebanon peace talks open in Washington June 2–3; Israel seized Beaufort Castle ahead of talks",
+        "tags": ["israel", "lebanon", "hezbollah", "usa", "ceasefire"],
+        "sentiment": "tense",
         "intensity": 8
       },
       {
-        "headline": "Colombia first round: far-right de la Espriella leads 43.7% vs leftist Cepeda 40.93%; runoff June 21",
-        "tags": ["colombia", "election", "latin-america", "far-right"],
-        "sentiment": "mixed",
-        "intensity": 7
+        "headline": "Trump's Ukraine peace deadline passed June 1 unmet; Russia struck overnight with 400+ drones/missiles; no framework",
+        "tags": ["ukraine", "russia", "trump", "diplomacy"],
+        "sentiment": "alarming",
+        "intensity": 9
       },
       {
-        "headline": "Turkey: Kılıçdaroğlu convening CHP Party Assembly today under court-ordered leadership",
-        "tags": ["turkey", "chp", "erdogan", "opposition"],
-        "sentiment": "negative",
+        "headline": "Turkey: CHP Party Assembly convened June 1; Imamoglu still jailed; polls 55–45 vs Erdoğan",
+        "tags": ["turkey", "erdogan", "imamoglu", "opposition"],
+        "sentiment": "concerning",
         "intensity": 6
       },
       {
-        "headline": "Israel seizes Beaufort Castle in south Lebanon ahead of June 2–3 Washington peace talks",
-        "tags": ["israel", "lebanon", "ceasefire"],
-        "sentiment": "negative",
-        "intensity": 6
-      },
-      {
-        "headline": "Syria's first post-Assad parliament to convene June 8 — 70 of 210 seats held by president",
-        "tags": ["syria", "parliament", "transition"],
-        "sentiment": "mixed",
+        "headline": "Colombia first round: de la Espriella 43.7% vs Cepeda 40.93%; runoff June 21",
+        "tags": ["colombia", "election", "latin-america"],
+        "sentiment": "uncertain",
         "intensity": 5
+      },
+      {
+        "headline": "Sudan lean season begins June 1; 19.5M food insecure; plan 20% funded",
+        "tags": ["sudan", "famine", "humanitarian"],
+        "sentiment": "dire",
+        "intensity": 9
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude at $93.30 (+2.4%) on Iran MOU uncertainty; deal odds ~35% by June 30",
-        "tags": ["oil", "iran", "brent", "energy"],
-        "sentiment": "negative",
-        "intensity": 7
-      },
-      {
-        "headline": "UK 10Y gilt edges up to 4.86% from recent 4.8% low — Iran uncertainty feeding inflation channel",
-        "tags": ["uk", "gilts", "inflation", "boe"],
-        "sentiment": "negative",
+        "headline": "Brent crude at $93.30 (+2% on Iran uncertainty); UK 10Y gilt at 4.86%; FTSE 10,409",
+        "tags": ["oil", "gilt", "ftse", "iran"],
+        "sentiment": "elevated",
         "intensity": 6
       },
       {
-        "headline": "Nasdaq up 8% for May; 26,973 at Friday close — AI rally continues",
-        "tags": ["nasdaq", "us-markets", "ai"],
-        "sentiment": "positive",
-        "intensity": 6
-      },
-      {
-        "headline": "Sudan lean season begins today; 20% of $2.9B humanitarian plan funded",
-        "tags": ["sudan", "famine", "humanitarian"],
-        "sentiment": "very-negative",
-        "intensity": 8
+        "headline": "Mandelson (UK Ambassador to US) trending UK Twitter June 2 — possible trade news unconfirmed",
+        "tags": ["uk", "usa", "trade", "mandelson"],
+        "sentiment": "uncertain",
+        "intensity": 4
       }
     ],
     "google_trends_uk": [
-      { "rank": 1, "term": "Arsenal Champions League final", "volume_est": "very high" },
-      { "rank": 2, "term": "Saka", "volume_est": "very high" },
-      { "rank": 3, "term": "PSG", "volume_est": "high" },
-      { "rank": 4, "term": "Gabriel Magalhaes", "volume_est": "high" },
-      { "rank": 5, "term": "Noni Madueke", "volume_est": "high" }
+      { "rank": 1, "term": "#loveisland", "volume_est": "very high" },
+      { "rank": 2, "term": "Henry", "volume_est": "high" },
+      { "rank": 3, "term": "Happy Pride Month", "volume_est": "high" },
+      { "rank": 4, "term": "Lorenzo", "volume_est": "high" },
+      { "rank": 5, "term": "Arsenal", "volume_est": "high" },
+      { "rank": 6, "term": "Robyn", "volume_est": "medium" },
+      { "rank": 7, "term": "Mandelson", "volume_est": "medium" },
+      { "rank": 8, "term": "Jasmine", "volume_est": "medium" },
+      { "rank": 9, "term": "Angelista", "volume_est": "medium" },
+      { "rank": 10, "term": "Sikhs", "volume_est": "medium" }
     ],
     "pytrends_uk_live": []
   },
   "culture": {
     "music": {
       "apple_music_uk_top5": [
-        { "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["intimate", "longing"], "theme_tags": ["love", "need"] },
-        { "pos": 2, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["restrained", "yearning"], "theme_tags": ["relationships", "holding-back"] },
-        { "pos": 3, "artist": "Dave & Tems", "title": "Raindance", "change": 0, "uk_artist": true, "mood_tags": ["celebratory", "grounded"], "theme_tags": ["success", "identity"] },
-        { "pos": 4, "artist": "Bella Kay", "title": "iloveitiloveitiloveit", "change": 0, "uk_artist": true, "mood_tags": ["euphoric", "repetitive"], "theme_tags": ["infatuation", "overwhelm"] },
-        { "pos": 5, "artist": "Olivia Dean", "title": "So Easy (To Fall In Love)", "change": 0, "uk_artist": true, "mood_tags": ["warm", "vulnerable"], "theme_tags": ["love", "ease"] }
+        { "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["melancholic", "intimate"], "theme_tags": ["love", "longing"] },
+        { "pos": 2, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["indie", "emotional"], "theme_tags": ["relationship", "control"] },
+        { "pos": 3, "artist": "Dave & Tems", "title": "Raindance", "change": 0, "uk_artist": true, "mood_tags": ["afrobeats", "anthemic"], "theme_tags": ["celebration", "identity"] },
+        { "pos": 4, "artist": "Bella Kay", "title": "iloveitiloveitiloveit", "change": 0, "uk_artist": false, "mood_tags": ["upbeat", "pop"], "theme_tags": ["joy", "excitement"] },
+        { "pos": 5, "artist": "Olivia Dean", "title": "So Easy (To Fall In Love)", "change": 0, "uk_artist": true, "mood_tags": ["warm", "tender"], "theme_tags": ["love", "ease"] }
       ],
       "tiktok_sounds": [
-        { "title": "Ad vikāra", "artist": "unknown", "score": 999, "videos": 9, "mood_tags": ["unknown"], "theme_tags": [] },
-        { "title": "Copines", "artist": "Aya Nakamura / Mc Pepeu & Dj Gabriel do Borel", "score": 990, "videos": 702928, "mood_tags": ["playful", "upbeat"], "theme_tags": ["meme", "global-spread"] },
-        { "title": "Hopelessly Devoted to You", "artist": "Studio Sound Group (Grease cover)", "score": 972, "videos": 590830, "mood_tags": ["nostalgic", "devoted", "helpless"], "theme_tags": ["nostalgia", "attachment", "escapism"] },
-        { "title": "Stepi (UGC Original)", "artist": "oappmaniss._", "score": 971, "videos": 384538, "mood_tags": ["energetic"], "theme_tags": ["dance", "viral"] },
-        { "title": "Потеряв Контроль (Lost Control)", "artist": "MARTiN Records", "score": 969, "videos": 274620, "mood_tags": ["intense", "emotional"], "theme_tags": ["russian-language", "loss-of-control"] }
+        { "title": "Copines", "artist": "Aya Nakamura / Mc Pepeu & Dj Gabriel do Borel", "score": 990, "videos": 764633, "mood_tags": ["danceable", "french"], "theme_tags": ["friendship", "nostalgia"] },
+        { "title": "Потеряв Контроль (Lost Control)", "artist": "unknown", "score": 975, "videos": 306030, "mood_tags": ["melancholic", "dramatic"], "theme_tags": ["loss", "escape"] },
+        { "title": "QUE LOUCURA", "artist": "DJ EXE & CACAU CHUU", "score": 971, "videos": 404095, "mood_tags": ["energetic", "brazilian"], "theme_tags": ["fun", "absurdity"] }
       ]
     },
     "tiktok_formats": [
-      { "format": "Nostalgic devotion content to 'Hopelessly Devoted to You'", "theme_tags": ["nostalgia", "attachment", "grease"] },
-      { "format": "Meme reactions via MemeScreens 'Copines' sound", "theme_tags": ["meme", "global"] }
+      { "format": "Pride Month montages — personal identity reveals, transition journeys", "theme_tags": ["pride", "lgbtq", "identity"] },
+      { "format": "Love Island reaction content — clip compilations, betting takes", "theme_tags": ["entertainment", "reality-tv"] },
+      { "format": "Russian-language sound viral use — lifestyle and cooking content globally", "theme_tags": ["global", "russian", "unexpected"] }
     ]
   },
   "threads": [
-    { "id": "iran-hormuz", "status": "changed", "status_line": "MOU unsigned; Brent $93.30 (+2%); deal odds fading", "last_changed": "2026-06-01" },
-    { "id": "russia-nato-romania", "status": "stable", "status_line": "No new incursion since 29 May; EU sanctions prep", "last_changed": "2026-05-30" },
-    { "id": "uk-economic-stress", "status": "changed", "status_line": "10Y gilt 4.86%; FTSE 10,409; Brent headwind", "last_changed": "2026-06-01" },
-    { "id": "mearsheimer", "status": "stable", "status_line": "No new post since 29 May", "last_changed": "2026-05-30" },
-    { "id": "sudan-famine", "status": "changed", "status_line": "Lean season begins today; 20% funded", "last_changed": "2026-06-01" },
-    { "id": "ebola-drc-uganda", "status": "stable", "status_line": "No new spread; PHEIC in force", "last_changed": "2026-05-29" },
-    { "id": "israel-lebanon", "status": "changed", "status_line": "Beaufort Castle seized; June 2-3 talks tomorrow", "last_changed": "2026-06-01" },
-    { "id": "turkey-crackdown", "status": "changed", "status_line": "Kılıçdaroğlu convening Party Assembly today", "last_changed": "2026-06-01" },
-    { "id": "snp-murrell", "status": "stable", "status_line": "Sentencing June 23; nothing new", "last_changed": "2026-05-26" },
-    { "id": "ukraine-peace-deadline", "status": "new", "status_line": "Trump deadline passes unmet today; 400+ drone strikes overnight", "last_changed": "2026-06-01" },
-    { "id": "colombia-election-2026", "status": "new", "status_line": "De la Espriella 43.7%; Cepeda 40.93%; runoff June 21", "last_changed": "2026-06-01" },
-    { "id": "syria-parliament", "status": "new", "status_line": "First post-Assad parliament June 8; al-Sharaa holds 70/210 seats", "last_changed": "2026-06-01" }
+    { "id": "israel-lebanon", "status": "changed", "status_line": "Washington peace talks live June 2–3; Beaufort Castle seized; Lebanon & Hezbollah trending UK Twitter", "last_changed": "2026-06-02" },
+    { "id": "ukraine-peace-deadline", "status": "changed", "status_line": "Deadline passed June 1 unmet; 400+ drone strike overnight; diplomatic vacuum active; Trump silent", "last_changed": "2026-06-02" },
+    { "id": "iran-hormuz", "status": "changed", "status_line": "MOU unsigned; Brent $93.30 (+2%); deal odds ~35% by June 30; uranium clause stalled", "last_changed": "2026-06-01" },
+    { "id": "sudan-famine", "status": "changed", "status_line": "Lean season began June 1; 19.5M food insecure; plan 20% funded", "last_changed": "2026-06-01" },
+    { "id": "uk-economic-stress", "status": "changed", "status_line": "Gilt 4.86%; FTSE 10,409; possible UK-US trade news (Mandelson trending)", "last_changed": "2026-06-01" },
+    { "id": "turkey-crackdown", "status": "stable", "status_line": "Party Assembly met June 1; Imamoglu jailed; 55-45 vs Erdogan", "last_changed": "2026-06-01" },
+    { "id": "russia-nato-romania", "status": "stable", "status_line": "No incursion since May 29 Galati strike; sanctions prep ongoing", "last_changed": "2026-05-30" },
+    { "id": "mearsheimer", "status": "stable", "status_line": "No new post since May 29", "last_changed": "2026-05-30" },
+    { "id": "ebola-drc-uganda", "status": "stable", "status_line": "125 confirmed + 906 suspected; PHEIC in force; no expansion", "last_changed": "2026-05-29" },
+    { "id": "colombia-election-2026", "status": "new", "status_line": "De la Espriella 43.7% vs Cepeda 40.93%; runoff June 21", "last_changed": "2026-06-01" },
+    { "id": "syria-parliament", "status": "new", "status_line": "Parliament convenes June 8; 210 members; 70 appointed", "last_changed": "2026-06-01" }
   ],
   "synthesis": {
-    "daily_theme": "Deadlines land without consequence while the UK processes football grief",
-    "mechanism": "Multiple time-sensitive pressures (Trump's Ukraine deadline, Iran MOU signing window, Sudan lean season) have all converged on June 1 and none have produced resolution. The pattern is managed stasis at the macro level while cultural attention fragments toward the emotionally legible (Arsenal's final loss) and away from the structurally important.",
+    "daily_theme": "Diplomatic inflection points in Lebanon and Ukraine coincide with UK summer mode — divergence between geopolitical juncture and cultural attention at its sharpest this cycle",
+    "mechanism": "The Lebanon Washington talks and Ukraine post-deadline vacuum both landed on a day when the UK public is in early-June entertainment mode (Love Island, Pride Month). Attention is structurally elsewhere. The cultural mood is warm and escapist precisely when the macro is at its most uncertain.",
     "connections": [
       {
-        "macro_event": "Trump Ukraine peace deadline passes unmet",
-        "cultural_response": "No cultural processing visible — absent from trends, absent from chart",
-        "mechanism": "War fatigue plus geographic distance means Ukraine does not register as felt experience in UK culture; football grief is more immediate and container-like",
-        "observation": "The UK public has processed Ukraine for four years at an intellectual level without it reaching the emotional register that Arsenal in a Champions League final does. The deadline passing will not change this. What would change it — a direct attack on NATO territory with casualties — is precisely what the Russia/NATO/Romania thread tracks.",
-        "confidence": "strong",
-        "signal_type": "divergence"
-      },
-      {
-        "macro_event": "Apple Music UK chart completely frozen — all top 5 unchanged",
-        "cultural_response": "Olivia Dean stasis continues while X is absorbed by Arsenal grief",
-        "mechanism": "Two parallel emotional containers operating simultaneously: streaming for private repeatable intimacy; social media for collective public grief. Neither intersects with the geopolitical moment.",
-        "observation": "The freezing of the streaming chart while Brent climbs and peace deadlines dissolve is the defining cultural signal of this digest. The UK audience has settled into its emotional comfort position and is not being moved by geopolitics or football, which plays out on a different platform entirely.",
+        "macro_event": "Russia's 400+ drone strike on Ukraine overnight while Trump's deadline passes unmet",
+        "cultural_response": "Russian-language TikTok sound 'Потеряв Контроль' trending globally in 26+ countries",
+        "mechanism": "Cultural circulation and geopolitical accountability operate on entirely disconnected circuits — users in Venezuela and Myanmar engage Russian culture without reference to the war",
+        "observation": "A Russian-language track goes viral across the Global South on the same night Russia runs a 400-drone strike. The people using the sound are not making a political statement — that is exactly the point. The complete disconnection between language-culture circulation and state behaviour is one of the stranger features of the current information environment.",
         "confidence": "moderate",
         "signal_type": "divergence"
       },
       {
-        "macro_event": "Sudan lean season begins",
-        "cultural_response": "Absent from every cultural indicator",
-        "mechanism": "No cultural processing whatsoever — structural invisibility documented previously holds",
-        "observation": "The beginning of the lean season in the world's largest humanitarian crisis produces zero cultural signal in the UK. The gap between scale and attention is itself information.",
+        "macro_event": "Pride Month begins June 1",
+        "cultural_response": "Madonna 'Into the Groove' +23 to #74 on Apple Music UK; LGBTQ, White Lives Matter trending simultaneously",
+        "mechanism": "Annual Pride Month playlist effect revives 80s anthem; far-right counter-trend emerges within hours",
+        "observation": "The Pride Month cultural signal and the White Lives Matter counter-signal appearing in the same morning trend cycle is a recurring structural feature of June's UK social media environment — not new this year, but worth tracking for escalation.",
         "confidence": "strong",
-        "signal_type": "divergence"
+        "signal_type": "reactive"
+      },
+      {
+        "macro_event": "Lebanon Washington talks June 2–3",
+        "cultural_response": "Hezbollah and Lebanon trending at positions 26 and 31 on UK Twitter; Beirut in earlier snapshot",
+        "mechanism": "Active live diplomacy breaks through dominant entertainment cycle but only at mid-table",
+        "observation": "The attention gradient is revealing: Lebanon makes the trend list but doesn't top it. That is the ceiling for geopolitical engagement on social media when a domestic entertainment narrative is in full swing.",
+        "confidence": "strong",
+        "signal_type": "lagging"
       }
     ]
   }
