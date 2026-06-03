@@ -4,73 +4,102 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "MOU unsigned; Brent $93.30 (+2% on Iran uncertainty); deal odds ~35% by June 30; uranium clause remains sticking point",
+      "status_line": "Kuwait airport hit by Iranian drones; Iran suspended ceasefire comms; Brent $101.36; Lebanon is Iran's precondition for returning to talks",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-01",
+      "last_changed": "2026-06-03",
       "expand_if": [
         "formal MOU signed",
-        "talks collapse again",
-        "oil spike above $110",
-        "naval incident in Strait",
-        "new US or Israeli strike",
-        "Iranian uranium concession or refusal made public",
-        "Netanyahu public statement opposing deal"
+        "talks completely collapse (Iran withdraws entirely)",
+        "oil spike above $115",
+        "naval incident closes Strait",
+        "new major US or Israeli strike",
+        "Lebanon ceasefire restores Iran comms",
+        "Trump public ultimatum to Netanyahu"
       ]
     },
     {
-      "id": "russia-nato-romania",
-      "label": "Russia / NATO / Romania",
-      "status": "stable",
-      "status_line": "No drone incursion since May 29 Galati strike; EU 21st sanctions package prep; NATO 'defend every inch' posture holds",
-      "first_seen": "2026-05-29",
-      "last_changed": "2026-05-30",
+      "id": "israel-lebanon",
+      "label": "Israel / Lebanon",
+      "status": "changed",
+      "status_line": "Washington Day 2 talks concluded; Lebanon now the pivot of US-Iran ceasefire linkage; Iran suspended comms until Lebanon fighting stops",
+      "first_seen": "2026-05-22",
+      "last_changed": "2026-06-03",
       "expand_if": [
-        "fatality from a drone strike in NATO territory",
-        "NATO Article 4 consultation formally invoked",
-        "Romania retaliates or requests military reinforcement",
-        "29th incursion confirmed",
-        "NATO considers shoot-down authority for drones over Allied territory",
-        "US statement escalating beyond condemnation",
-        "Russian conventional strike on NATO infrastructure"
+        "major Israeli ground incursion",
+        "Hezbollah rocket barrage on Israeli cities",
+        "ceasefire agreement with withdrawal timelines",
+        "UNIFIL withdrawal",
+        "US forces Israel to pause operations",
+        "mass civilian casualty event",
+        "Trump public demand for Netanyahu to halt Lebanon ops"
+      ]
+    },
+    {
+      "id": "ukraine-peace-deadline",
+      "label": "Ukraine Peace Deadline",
+      "status": "changed",
+      "status_line": "June 1 deadline passed; Russia struck Kyiv Jun 2 (7 dead, 89 wounded); Trump silent; diplomatic vacuum deepens",
+      "first_seen": "2026-06-01",
+      "last_changed": "2026-06-03",
+      "expand_if": [
+        "Trump formally withdraws from mediation",
+        "new public deadline set",
+        "ceasefire agreed",
+        "major US pressure on Ukraine (aid suspension)",
+        "Russia agrees to any settlement framework",
+        "Zelensky concedes territorial compromise publicly"
       ]
     },
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "changed",
-      "status_line": "10Y gilt 4.86%; FTSE 10,409; Brent headwind to CPI; Mandelson and McFadden trending UK Twitter June 2 — possible trade/fiscal news unconfirmed",
+      "status_line": "FTSE 10,338 (-0.68%); 30Y gilt 5.60%; Brent above $100 adds CPI pressure; house prices -0.6% in May",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-01",
+      "last_changed": "2026-06-03",
       "expand_if": [
-        "gilt yield spike resumes above 5.5% with upward trajectory",
+        "gilt yield spike above 5.8% with upward trajectory",
         "energy price cap revision announced",
         "recession officially confirmed",
         "Bank of England emergency action",
         "government fiscal statement",
-        "major employer redundancy announcement",
-        "Starmer leadership challenge formally triggered",
-        "US-UK trade deal announced"
+        "Brent above $115 sustained"
+      ]
+    },
+    {
+      "id": "uk-labour-leadership",
+      "label": "UK Labour Leadership",
+      "status": "new",
+      "status_line": "Burnham cancelled investor call Jun 2; Makerfield by-election Jun 18; Polymarket: Burnham 59% to be PM, Starmer 25% to remain",
+      "first_seen": "2026-06-03",
+      "last_changed": "2026-06-03",
+      "expand_if": [
+        "Burnham wins Makerfield by-election Jun 18",
+        "Formal leadership challenge triggered",
+        "Starmer resigns",
+        "Burnham statement on fiscal rules or Bank of England independence",
+        "Major gilt/sterling reaction to political news",
+        "Burnham or Streeting endorsement from significant cabinet minister"
       ]
     },
     {
       "id": "mearsheimer",
       "label": "Mearsheimer",
-      "status": "stable",
-      "status_line": "No new post since May 29 'Will Russia Strike Targets in Europe?' — argues Putin faces logic of conventional NATO strikes then limited nuclear coercion",
+      "status": "changed",
+      "status_line": "'Trump Lashes Out at Bibi' Jun 2 post: Netanyahu's Lebanon ops are blocking the Iran deal Trump needs; Netanyahu holds effective veto",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-05-30",
+      "last_changed": "2026-06-03",
       "expand_if": [
-        "new Substack post",
-        "new podcast appearance on NATO escalation",
-        "shifts argument on major topic",
-        "Russia-Europe escalation argument gains mainstream policy traction"
+        "new post or appearance shifting the argument",
+        "Trump-Netanyahu public confrontation matches Mearsheimer's framing",
+        "mainstream US policy community engages with the Netanyahu-veto argument"
       ]
     },
     {
       "id": "sudan-famine",
       "label": "Sudan Famine",
-      "status": "changed",
-      "status_line": "Lean season began June 1 (runs to September); 19.5M acutely food insecure; famine in 4 Darfur areas; $2.9B plan 20% funded; no ceasefire",
+      "status": "stable",
+      "status_line": "Lean season active (Jun-Sep); 19.5M acutely food insecure; famine in 4 Darfur areas; $2.9B plan 20% funded; no ceasefire",
       "first_seen": "2026-05-30",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -85,41 +114,39 @@
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "stable",
-      "status_line": "125 confirmed + 906 suspected cases, 223 suspected deaths; WHO PHEIC in force; no new geographic expansion; American missionary Dr Peter Stafford in Berlin's Charité hospital",
+      "status": "changed",
+      "status_line": "344 confirmed cases (was 125), 60 confirmed deaths; US pledged $112M Jun 3; WHO PHEIC in force; no geographic expansion",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-05-29",
+      "last_changed": "2026-06-03",
       "expand_if": [
         "cases confirmed outside DRC/Uganda",
         "WHO raises alert further",
-        "vaccine supply constraint announced",
+        "vaccine supply or pipeline announcement",
         "Kampala cases multiply significantly",
-        "travel restrictions imposed",
         "second American or European healthcare worker infected"
       ]
     },
     {
-      "id": "israel-lebanon",
-      "label": "Israel / Lebanon",
-      "status": "changed",
-      "status_line": "June 2–3 Washington peace talks underway; Israel seized Beaufort Castle ahead of talks; ceasefire extended to late June; Lebanon and Hezbollah trending UK Twitter",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-06-02",
+      "id": "russia-nato-romania",
+      "label": "Russia / NATO / Romania",
+      "status": "stable",
+      "status_line": "No drone incursion since May 29 Galati strike; EU 21st sanctions package prep; NATO posture holds; focus shifted to Ukraine peace track",
+      "first_seen": "2026-05-29",
+      "last_changed": "2026-05-30",
       "expand_if": [
-        "major Israeli ground incursion",
-        "Hezbollah rocket barrage on Israeli cities",
-        "ceasefire agreement with withdrawal timelines from June 2-3 talks",
-        "UNIFIL withdrawal",
-        "US forces Israel to pause operations",
-        "mass civilian casualty event",
-        "June 2-3 talks collapse or major breakthrough announced"
+        "fatality from a drone strike in NATO territory",
+        "NATO Article 4 consultation formally invoked",
+        "Romania retaliates or requests reinforcement",
+        "NATO considers shoot-down authority for drones over Allied territory",
+        "US statement escalating beyond condemnation",
+        "Russian conventional strike on NATO infrastructure"
       ]
     },
     {
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
       "status": "stable",
-      "status_line": "Party Assembly convened June 1 to form new CEC under Kılıçdaroğlu; Imamoglu still imprisoned; polls show 55–45 vs Erdoğan",
+      "status_line": "Party Assembly reconstituted under Kilicdaroglu; Imamoglu still imprisoned; polls show 55-45 vs Erdogan",
       "first_seen": "2026-05-25",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -128,31 +155,14 @@
         "street protests escalate to general strike",
         "EU or US formal condemnation",
         "constitutional court ruling on Imamoglu detention",
-        "Erdogan statement on opposition",
         "congress date set"
-      ]
-    },
-    {
-      "id": "ukraine-peace-deadline",
-      "label": "Ukraine Peace Deadline",
-      "status": "changed",
-      "status_line": "Deadline passed June 1 unmet; Russia struck Ukraine with 400+ drones/missiles overnight; no framework; diplomatic vacuum now active; Trump silent",
-      "first_seen": "2026-06-01",
-      "last_changed": "2026-06-02",
-      "expand_if": [
-        "Trump formally withdraws from mediation",
-        "new deadline set publicly",
-        "ceasefire agreed",
-        "major US pressure on Ukraine (e.g. aid suspension)",
-        "Russia agrees to any settlement framework",
-        "Zelensky concedes territorial compromise publicly"
       ]
     },
     {
       "id": "colombia-election-2026",
       "label": "Colombia Election 2026",
-      "status": "new",
-      "status_line": "Far-right outsider de la Espriella leads first round 43.7%; leftist Cepeda 40.93%; runoff June 21",
+      "status": "stable",
+      "status_line": "Runoff June 21: de la Espriella 43.7% vs Cepeda 40.9%; no major polling shift; Operation Southern Spear a live issue",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -161,14 +171,14 @@
         "Cepeda wins runoff",
         "significant violence or electoral irregularity",
         "Petro makes major statement endorsing Cepeda",
-        "US or regional reaction to result"
+        "US response to Colombia criticism of Operation Southern Spear"
       ]
     },
     {
       "id": "syria-parliament",
       "label": "Syria Parliament",
-      "status": "new",
-      "status_line": "First post-Assad parliament convenes June 8; 210 members (70 appointed by President al-Sharaa); 5% women; minority representation low",
+      "status": "stable",
+      "status_line": "First session June 8; 210 members (70 appointed by al-Sharaa); name change from 'People's Assembly' expected on day one",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -176,7 +186,6 @@
         "major walkout by minority representatives",
         "constitutional amendment proposed",
         "international reaction to composition",
-        "parliament renamed from People's Assembly",
         "Islamist-secular conflict in chamber"
       ]
     }
@@ -238,5 +247,5 @@
       "why_interesting": "Gulf-backed pan-Arab daily; broke the Syria parliament June 8 story before other outlets; consistently ahead on Gulf/Arab political transitions and has senior source access in Beirut and Damascus"
     }
   ],
-  "last_updated": "2026-06-02"
+  "last_updated": "2026-06-03"
 }

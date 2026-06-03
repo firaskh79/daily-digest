@@ -1,128 +1,141 @@
 {
-  "date": "2026-06-02",
-  "mood_of_day": "conflicted",
+  "date": "2026-06-03",
+  "mood_of_day": "anxious",
   "macro": {
     "politics": [
       {
-        "headline": "Israel-Lebanon peace talks open in Washington June 2–3; Israel seized Beaufort Castle ahead of talks",
-        "tags": ["israel", "lebanon", "hezbollah", "usa", "ceasefire"],
+        "headline": "Iran strikes Kuwait airport; suspends ceasefire mediator communications",
+        "tags": ["iran", "kuwait", "ceasefire", "hormuz"],
+        "sentiment": "escalatory",
+        "intensity": 9
+      },
+      {
+        "headline": "UK Labour leadership crisis: Burnham cancels investor call ahead of June 18 by-election",
+        "tags": ["uk", "labour", "burnham", "starmer"],
+        "sentiment": "destabilising",
+        "intensity": 7
+      },
+      {
+        "headline": "Russia strikes Kyiv June 2, killing 7; June 1 peace deadline passed with no framework",
+        "tags": ["ukraine", "russia", "peace", "trump"],
+        "sentiment": "stalled",
+        "intensity": 7
+      },
+      {
+        "headline": "Washington Israel-Lebanon talks Day 2 conclude; Lebanon now Iran ceasefire linchpin",
+        "tags": ["israel", "lebanon", "washington", "hezbollah"],
         "sentiment": "tense",
-        "intensity": 8
-      },
-      {
-        "headline": "Trump's Ukraine peace deadline passed June 1 unmet; Russia struck overnight with 400+ drones/missiles; no framework",
-        "tags": ["ukraine", "russia", "trump", "diplomacy"],
-        "sentiment": "alarming",
-        "intensity": 9
-      },
-      {
-        "headline": "Turkey: CHP Party Assembly convened June 1; Imamoglu still jailed; polls 55–45 vs Erdoğan",
-        "tags": ["turkey", "erdogan", "imamoglu", "opposition"],
-        "sentiment": "concerning",
-        "intensity": 6
-      },
-      {
-        "headline": "Colombia first round: de la Espriella 43.7% vs Cepeda 40.93%; runoff June 21",
-        "tags": ["colombia", "election", "latin-america"],
-        "sentiment": "uncertain",
-        "intensity": 5
-      },
-      {
-        "headline": "Sudan lean season begins June 1; 19.5M food insecure; plan 20% funded",
-        "tags": ["sudan", "famine", "humanitarian"],
-        "sentiment": "dire",
-        "intensity": 9
+        "intensity": 7
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude at $93.30 (+2% on Iran uncertainty); UK 10Y gilt at 4.86%; FTSE 10,409",
-        "tags": ["oil", "gilt", "ftse", "iran"],
+        "headline": "Brent crude hits $101.36 (+$4.71) on Iran escalation and Kuwait airport strike",
+        "tags": ["oil", "brent", "iran", "energy"],
         "sentiment": "elevated",
+        "intensity": 8
+      },
+      {
+        "headline": "FTSE 100 drops 0.68% to 10,338; UK 30Y gilt at 5.60%",
+        "tags": ["ftse", "gilts", "uk", "markets"],
+        "sentiment": "risk-off",
         "intensity": 6
       },
       {
-        "headline": "Mandelson (UK Ambassador to US) trending UK Twitter June 2 — possible trade news unconfirmed",
-        "tags": ["uk", "usa", "trade", "mandelson"],
-        "sentiment": "uncertain",
-        "intensity": 4
+        "headline": "UK house prices fall 0.6% in May (Nationwide) — largest drop since June 2025",
+        "tags": ["uk", "housing", "property"],
+        "sentiment": "declining",
+        "intensity": 5
       }
     ],
-    "google_trends_uk": [
-      { "rank": 1, "term": "#loveisland", "volume_est": "very high" },
-      { "rank": 2, "term": "Henry", "volume_est": "high" },
-      { "rank": 3, "term": "Happy Pride Month", "volume_est": "high" },
-      { "rank": 4, "term": "Lorenzo", "volume_est": "high" },
-      { "rank": 5, "term": "Arsenal", "volume_est": "high" },
-      { "rank": 6, "term": "Robyn", "volume_est": "medium" },
-      { "rank": 7, "term": "Mandelson", "volume_est": "medium" },
-      { "rank": 8, "term": "Jasmine", "volume_est": "medium" },
-      { "rank": 9, "term": "Angelista", "volume_est": "medium" },
-      { "rank": 10, "term": "Sikhs", "volume_est": "medium" }
-    ],
+    "google_trends_uk": [],
     "pytrends_uk_live": []
   },
   "culture": {
     "music": {
       "apple_music_uk_top5": [
-        { "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["melancholic", "intimate"], "theme_tags": ["love", "longing"] },
-        { "pos": 2, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["indie", "emotional"], "theme_tags": ["relationship", "control"] },
-        { "pos": 3, "artist": "Dave & Tems", "title": "Raindance", "change": 0, "uk_artist": true, "mood_tags": ["afrobeats", "anthemic"], "theme_tags": ["celebration", "identity"] },
-        { "pos": 4, "artist": "Bella Kay", "title": "iloveitiloveitiloveit", "change": 0, "uk_artist": false, "mood_tags": ["upbeat", "pop"], "theme_tags": ["joy", "excitement"] },
-        { "pos": 5, "artist": "Olivia Dean", "title": "So Easy (To Fall In Love)", "change": 0, "uk_artist": true, "mood_tags": ["warm", "tender"], "theme_tags": ["love", "ease"] }
+        {
+          "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0,
+          "uk_artist": true, "mood_tags": ["longing", "introspective"], "theme_tags": ["love", "emotional"]
+        },
+        {
+          "pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0,
+          "uk_artist": false, "mood_tags": ["assertive"], "theme_tags": ["hip-hop"]
+        },
+        {
+          "pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0,
+          "uk_artist": false, "mood_tags": ["melancholic"], "theme_tags": ["love", "regret"]
+        },
+        {
+          "pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0,
+          "uk_artist": true, "mood_tags": ["emotional", "British"], "theme_tags": ["indie", "collaboration"]
+        },
+        {
+          "pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0,
+          "uk_artist": true, "mood_tags": ["energised", "nostalgic"], "theme_tags": ["electronic", "rave"]
+        }
       ],
       "tiktok_sounds": [
-        { "title": "Copines", "artist": "Aya Nakamura / Mc Pepeu & Dj Gabriel do Borel", "score": 990, "videos": 764633, "mood_tags": ["danceable", "french"], "theme_tags": ["friendship", "nostalgia"] },
-        { "title": "Потеряв Контроль (Lost Control)", "artist": "unknown", "score": 975, "videos": 306030, "mood_tags": ["melancholic", "dramatic"], "theme_tags": ["loss", "escape"] },
-        { "title": "QUE LOUCURA", "artist": "DJ EXE & CACAU CHUU", "score": 971, "videos": 404095, "mood_tags": ["energetic", "brazilian"], "theme_tags": ["fun", "absurdity"] }
+        {
+          "title": "Stepi", "artist": "oappmaniss._", "score": 981, "videos": 492762,
+          "mood_tags": ["energetic"], "theme_tags": ["dance", "viral"]
+        },
+        {
+          "title": "QUE LOUCURA", "artist": "DJ EXE & CACAU CHUU", "score": 978, "videos": 438784,
+          "mood_tags": ["celebratory", "energetic"], "theme_tags": ["latin", "dance"]
+        },
+        {
+          "title": "Потеряв Контроль", "artist": "MARTiN Records", "score": 976, "videos": 356904,
+          "mood_tags": ["emotional"], "theme_tags": ["Russian", "pop", "viral"]
+        }
       ]
     },
     "tiktok_formats": [
-      { "format": "Pride Month montages — personal identity reveals, transition journeys", "theme_tags": ["pride", "lgbtq", "identity"] },
-      { "format": "Love Island reaction content — clip compilations, betting takes", "theme_tags": ["entertainment", "reality-tv"] },
-      { "format": "Russian-language sound viral use — lifestyle and cooking content globally", "theme_tags": ["global", "russian", "unexpected"] }
+      { "format": "Latin dance challenges (QUE LOUCURA, Stepi)", "theme_tags": ["escapist", "Latin America", "celebratory"] },
+      { "format": "Emotional/nostalgic audio reels (Fleetwood Mac catalogue surge on Apple Music)", "theme_tags": ["nostalgia", "fracture", "UK"] }
     ]
   },
   "threads": [
-    { "id": "israel-lebanon", "status": "changed", "status_line": "Washington peace talks live June 2–3; Beaufort Castle seized; Lebanon & Hezbollah trending UK Twitter", "last_changed": "2026-06-02" },
-    { "id": "ukraine-peace-deadline", "status": "changed", "status_line": "Deadline passed June 1 unmet; 400+ drone strike overnight; diplomatic vacuum active; Trump silent", "last_changed": "2026-06-02" },
-    { "id": "iran-hormuz", "status": "changed", "status_line": "MOU unsigned; Brent $93.30 (+2%); deal odds ~35% by June 30; uranium clause stalled", "last_changed": "2026-06-01" },
-    { "id": "sudan-famine", "status": "changed", "status_line": "Lean season began June 1; 19.5M food insecure; plan 20% funded", "last_changed": "2026-06-01" },
-    { "id": "uk-economic-stress", "status": "changed", "status_line": "Gilt 4.86%; FTSE 10,409; possible UK-US trade news (Mandelson trending)", "last_changed": "2026-06-01" },
-    { "id": "turkey-crackdown", "status": "stable", "status_line": "Party Assembly met June 1; Imamoglu jailed; 55-45 vs Erdogan", "last_changed": "2026-06-01" },
-    { "id": "russia-nato-romania", "status": "stable", "status_line": "No incursion since May 29 Galati strike; sanctions prep ongoing", "last_changed": "2026-05-30" },
-    { "id": "mearsheimer", "status": "stable", "status_line": "No new post since May 29", "last_changed": "2026-05-30" },
-    { "id": "ebola-drc-uganda", "status": "stable", "status_line": "125 confirmed + 906 suspected; PHEIC in force; no expansion", "last_changed": "2026-05-29" },
-    { "id": "colombia-election-2026", "status": "new", "status_line": "De la Espriella 43.7% vs Cepeda 40.93%; runoff June 21", "last_changed": "2026-06-01" },
-    { "id": "syria-parliament", "status": "new", "status_line": "Parliament convenes June 8; 210 members; 70 appointed", "last_changed": "2026-06-01" }
+    { "id": "iran-hormuz", "status": "changed", "status_line": "Kuwait airport hit; Iran suspended ceasefire comms; Brent $101.36; Lebanon is precondition", "last_changed": "2026-06-03" },
+    { "id": "israel-lebanon", "status": "changed", "status_line": "Washington Day 2 talks concluded; Lebanon now pivot of US-Iran ceasefire linkage", "last_changed": "2026-06-03" },
+    { "id": "ukraine-peace-deadline", "status": "changed", "status_line": "June 1 deadline passed; Kyiv struck Jun 2 (7 dead); diplomatic vacuum deepens", "last_changed": "2026-06-03" },
+    { "id": "uk-economic-stress", "status": "changed", "status_line": "FTSE 10,338 (-0.68%); 30Y gilt 5.60%; Brent above $100 adds CPI pressure", "last_changed": "2026-06-03" },
+    { "id": "uk-labour-leadership", "status": "new", "status_line": "Burnham cancelled investor call; Makerfield by-election Jun 18; Polymarket 59% Burnham", "last_changed": "2026-06-03" },
+    { "id": "mearsheimer", "status": "changed", "status_line": "Trump Lashes Out at Bibi — Netanyahu's Lebanon ops blocking Iran deal Trump needs", "last_changed": "2026-06-03" },
+    { "id": "ebola-drc-uganda", "status": "changed", "status_line": "344 confirmed (was 125); 60 deaths; US $112M pledged; no geographic expansion", "last_changed": "2026-06-03" },
+    { "id": "sudan-famine", "status": "stable", "status_line": "Lean season active; 19.5M food insecure; 20% funded", "last_changed": "2026-06-01" },
+    { "id": "russia-nato-romania", "status": "stable", "status_line": "No NATO territory incidents; EU sanctions prep", "last_changed": "2026-05-30" },
+    { "id": "turkey-crackdown", "status": "stable", "status_line": "Imamoglu still imprisoned; Party Assembly reconstituted", "last_changed": "2026-06-01" },
+    { "id": "colombia-election-2026", "status": "stable", "status_line": "Runoff June 21: de la Espriella 43.7% vs Cepeda 40.9%", "last_changed": "2026-06-01" },
+    { "id": "syria-parliament", "status": "stable", "status_line": "First session June 8; name change expected", "last_changed": "2026-06-01" }
   ],
   "synthesis": {
-    "daily_theme": "Diplomatic inflection points in Lebanon and Ukraine coincide with UK summer mode — divergence between geopolitical juncture and cultural attention at its sharpest this cycle",
-    "mechanism": "The Lebanon Washington talks and Ukraine post-deadline vacuum both landed on a day when the UK public is in early-June entertainment mode (Love Island, Pride Month). Attention is structurally elsewhere. The cultural mood is warm and escapist precisely when the macro is at its most uncertain.",
+    "daily_theme": "Iran's escalation has a specific mechanism — Lebanon — and the blocking actor is a US ally",
+    "mechanism": "Iran struck Kuwait airport and suspended ceasefire comms, with Lebanon fighting as the stated precondition for return to talks. Netanyahu won't pause Lebanon operations. Trump cannot close an Iran deal without Netanyahu's cooperation. Mearsheimer's 'Trump Lashes Out at Bibi' post (June 2) makes the structural point explicit: Netanyahu holds an effective veto over Trump's foreign policy on Iran. Brent at $101.36 (+$4.71) is the market expression of this trapped causal chain.",
     "connections": [
       {
-        "macro_event": "Russia's 400+ drone strike on Ukraine overnight while Trump's deadline passes unmet",
-        "cultural_response": "Russian-language TikTok sound 'Потеряв Контроль' trending globally in 26+ countries",
-        "mechanism": "Cultural circulation and geopolitical accountability operate on entirely disconnected circuits — users in Venezuela and Myanmar engage Russian culture without reference to the war",
-        "observation": "A Russian-language track goes viral across the Global South on the same night Russia runs a 400-drone strike. The people using the sound are not making a political statement — that is exactly the point. The complete disconnection between language-culture circulation and state behaviour is one of the stranger features of the current information environment.",
-        "confidence": "moderate",
+        "macro_event": "Iran suspends ceasefire communications; cites Lebanon as precondition",
+        "cultural_response": "Fleetwood Mac Rumours catalogue surging sharply in UK Apple Music (Everywhere +79, Landslide & Little Lies new entries)",
+        "mechanism": "Rumours was built around people processing fracture and irresolution while still having to show up together — its emotional vocabulary maps closely to a week in which Iran, Lebanon, Ukraine, and UK Labour politics are all in states of unresolved fracture with no clean exit",
+        "observation": "The chart top five is frozen (unchanged for days) while the catalogue surges. New music isn't breaking through. People are reaching backward. The Chemical Brothers' 'Go' at #5 — forward-motion rave music — is the outlier in a chart otherwise defined by nostalgia and longing.",
+        "confidence": "speculative",
         "signal_type": "divergence"
       },
       {
-        "macro_event": "Pride Month begins June 1",
-        "cultural_response": "Madonna 'Into the Groove' +23 to #74 on Apple Music UK; LGBTQ, White Lives Matter trending simultaneously",
-        "mechanism": "Annual Pride Month playlist effect revives 80s anthem; far-right counter-trend emerges within hours",
-        "observation": "The Pride Month cultural signal and the White Lives Matter counter-signal appearing in the same morning trend cycle is a recurring structural feature of June's UK social media environment — not new this year, but worth tracking for escalation.",
+        "macro_event": "UK Labour leadership crisis deepens; Burnham cancels investor call",
+        "cultural_response": "UK Twitter dominated by Farage vs. Ben Habib on Question Time; #TwoTierPolicing trending; right-wing factional public confrontation on BBC television",
+        "mechanism": "The right-wing political space is visibly fracturing (Reform vs. Advance UK) on BBC television on the same evening Burnham is positioned to fracture Labour from the centre-left. Both sides of the political spectrum are in simultaneous leadership contests and factional splits. #TwoTierPolicing is the right's persistent grievance channel — it surfaces whenever political instability increases.",
+        "observation": "The political fracture is showing up on television, in Twitter trends, and in the gilt market simultaneously. The cultural mood is not lagging the political mood; it is tracking it.",
         "confidence": "strong",
         "signal_type": "reactive"
       },
       {
-        "macro_event": "Lebanon Washington talks June 2–3",
-        "cultural_response": "Hezbollah and Lebanon trending at positions 26 and 31 on UK Twitter; Beirut in earlier snapshot",
-        "mechanism": "Active live diplomacy breaks through dominant entertainment cycle but only at mid-table",
-        "observation": "The attention gradient is revealing: Lebanon makes the trend list but doesn't top it. That is the ceiling for geopolitical engagement on social media when a domestic entertainment narrative is in full swing.",
-        "confidence": "strong",
-        "signal_type": "lagging"
+        "macro_event": "Operation Southern Spear: 200+ killed in US drug-boat strikes",
+        "cultural_response": "Latin American TikTok sounds dominating globally (Stepi from Argentina at 492K videos; QUE LOUCURA from Brazil/Colombia at 438K)",
+        "mechanism": "Speculative but worth noting: the two globally dominant TikTok sounds are both from Latin American creators, trending most strongly in Argentina and Colombia — the countries most directly affected by or proximate to the US military operations in their waters. The sounds are celebratory and escapist. The divergence between the regional macro reality (US military killing 200+ in their waters) and the cultural export (jubilant dance sounds) is stark.",
+        "observation": "This may be the clearest example today of cultural mood diverging from the macro story: Latin America is producing the world's most viral escapist dance sounds while simultaneously being the site of extrajudicial US military killings that are barely covered in Western media.",
+        "confidence": "speculative",
+        "signal_type": "divergence"
       }
     ]
   }
