@@ -4,9 +4,9 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Kuwait airport hit by Iranian drones; Iran suspended ceasefire comms; Brent $101.36; Lebanon is Iran's precondition for returning to talks",
+      "status_line": "Lebanon ceasefire framework easing pressure; Brent $96.97; Iran-US macro ceasefire intact; Jun 22 talks now the key milestone",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-03",
+      "last_changed": "2026-06-04",
       "expand_if": [
         "formal MOU signed",
         "talks completely collapse (Iran withdraws entirely)",
@@ -21,13 +21,14 @@
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "changed",
-      "status_line": "Washington Day 2 talks concluded; Lebanon now the pivot of US-Iran ceasefire linkage; Iran suspended comms until Lebanon fighting stops",
+      "status_line": "Conditional ceasefire framework agreed Jun 3-4: pilot security zones, LАF exclusive control; Hezbollah rejected partial deal; next talks Jun 22",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-03",
+      "last_changed": "2026-06-04",
       "expand_if": [
+        "Hezbollah formally accepts or rejects pilot zones framework",
         "major Israeli ground incursion",
         "Hezbollah rocket barrage on Israeli cities",
-        "ceasefire agreement with withdrawal timelines",
+        "comprehensive ceasefire agreement with withdrawal timelines",
         "UNIFIL withdrawal",
         "US forces Israel to pause operations",
         "mass civilian casualty event",
@@ -38,9 +39,9 @@
       "id": "ukraine-peace-deadline",
       "label": "Ukraine Peace Deadline",
       "status": "changed",
-      "status_line": "June 1 deadline passed; Russia struck Kyiv Jun 2 (7 dead, 89 wounded); Trump silent; diplomatic vacuum deepens",
+      "status_line": "Diplomatic vacuum continues; Zelensky: window until winter; Tchakarova 'June Opening and Its Limits' published June 4",
       "first_seen": "2026-06-01",
-      "last_changed": "2026-06-03",
+      "last_changed": "2026-06-04",
       "expand_if": [
         "Trump formally withdraws from mediation",
         "new public deadline set",
@@ -54,9 +55,9 @@
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "changed",
-      "status_line": "FTSE 10,338 (-0.68%); 30Y gilt 5.60%; Brent above $100 adds CPI pressure; house prices -0.6% in May",
+      "status_line": "FTSE ~10,400; 30Y gilt 5.60%; 10Y 4.85%; Brent easing to $96.97; BoE first hike priced September",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-03",
+      "last_changed": "2026-06-04",
       "expand_if": [
         "gilt yield spike above 5.8% with upward trajectory",
         "energy price cap revision announced",
@@ -69,10 +70,10 @@
     {
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
-      "status": "new",
-      "status_line": "Burnham cancelled investor call Jun 2; Makerfield by-election Jun 18; Polymarket: Burnham 59% to be PM, Starmer 25% to remain",
+      "status": "changed",
+      "status_line": "PMQs North Korea slip Jun 4; Turner briefing row; Burnham at Makerfield Jun 18; Polymarket: Burnham 59% next PM, Starmer 25% to remain",
       "first_seen": "2026-06-03",
-      "last_changed": "2026-06-03",
+      "last_changed": "2026-06-04",
       "expand_if": [
         "Burnham wins Makerfield by-election Jun 18",
         "Formal leadership challenge triggered",
@@ -86,9 +87,9 @@
       "id": "mearsheimer",
       "label": "Mearsheimer",
       "status": "changed",
-      "status_line": "'Trump Lashes Out at Bibi' Jun 2 post: Netanyahu's Lebanon ops are blocking the Iran deal Trump needs; Netanyahu holds effective veto",
+      "status_line": "Lebanon conditional framework confirms Netanyahu-blocking-Iran-deal thesis; Hezbollah now also proximate blocker, complicating binary framing",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-03",
+      "last_changed": "2026-06-04",
       "expand_if": [
         "new post or appearance shifting the argument",
         "Trump-Netanyahu public confrontation matches Mearsheimer's framing",
@@ -96,10 +97,42 @@
       ]
     },
     {
+      "id": "uk-kirpan-debate",
+      "label": "UK Kirpan Debate",
+      "status": "new",
+      "status_line": "Digwa sentenced Jun 4 (min 21 years for Henry Nowak murder); right-wing calls to repeal kirpan exemption; Sikh community under targeted harassment",
+      "first_seen": "2026-06-04",
+      "last_changed": "2026-06-04",
+      "expand_if": [
+        "Government statement on kirpan exemption review",
+        "Backbench parliamentary bill to repeal exemption tabled",
+        "Further attacks on Sikh individuals escalate to serious violence",
+        "Sikh community organisations make formal complaint to police or EHRC",
+        "Polling published on public attitudes to kirpan exemption",
+        "Farage or Reform make this a formal policy position"
+      ]
+    },
+    {
+      "id": "operation-southern-spear",
+      "label": "Operation Southern Spear",
+      "status": "new",
+      "status_line": "205+ killed in 62 US strikes since Sep 2025; Guardian May 15 found no trafficking evidence in 13 identified victims; no public evidentiary basis released for any strike",
+      "first_seen": "2026-06-04",
+      "last_changed": "2026-06-04",
+      "expand_if": [
+        "Further Guardian or independent investigation identifying victims",
+        "Colombian government or candidate statements on Southern Spear before Jun 21 runoff",
+        "US congressional oversight hearing",
+        "ICC or ICJ referral",
+        "Death toll surpasses 250 with no accountability response",
+        "International court or body formally requests evidence from US"
+      ]
+    },
+    {
       "id": "sudan-famine",
       "label": "Sudan Famine",
       "status": "stable",
-      "status_line": "Lean season active (Jun-Sep); 19.5M acutely food insecure; famine in 4 Darfur areas; $2.9B plan 20% funded; no ceasefire",
+      "status_line": "Lean season active (Jun-Sep); 19.5M acutely food insecure; 825K children facing SAM; $2.9B plan 20% funded; no ceasefire",
       "first_seen": "2026-05-30",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -114,8 +147,8 @@
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "changed",
-      "status_line": "344 confirmed cases (was 125), 60 confirmed deaths; US pledged $112M Jun 3; WHO PHEIC in force; no geographic expansion",
+      "status": "stable",
+      "status_line": "344 confirmed DRC, 15 Uganda, 60 deaths; US $112M pledged; MSF 65-bed centre building in Ituri; WHO PHEIC in force; no geographic expansion",
       "first_seen": "2026-05-25",
       "last_changed": "2026-06-03",
       "expand_if": [
@@ -146,11 +179,11 @@
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
       "status": "stable",
-      "status_line": "Party Assembly reconstituted under Kilicdaroglu; Imamoglu still imprisoned; polls show 55-45 vs Erdogan",
+      "status_line": "Kilicdaroglu reinstated; Imamoglu trial ongoing; Bloomberg Jun 2: Erdogan consolidating grip; polls still 55-45 vs Erdogan",
       "first_seen": "2026-05-25",
       "last_changed": "2026-06-01",
       "expand_if": [
-        "Imamoglu released or formally charged",
+        "Imamoglu released or formally charged with verdict",
         "CHP headquarters sealed permanently",
         "street protests escalate to general strike",
         "EU or US formal condemnation",
@@ -162,7 +195,7 @@
       "id": "colombia-election-2026",
       "label": "Colombia Election 2026",
       "status": "stable",
-      "status_line": "Runoff June 21: de la Espriella 43.7% vs Cepeda 40.9%; no major polling shift; Operation Southern Spear a live issue",
+      "status_line": "Runoff Jun 21: de la Espriella 43.7% vs Cepeda 40.9%; Operation Southern Spear live issue; no major polling shift",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -178,7 +211,7 @@
       "id": "syria-parliament",
       "label": "Syria Parliament",
       "status": "stable",
-      "status_line": "First session June 8; 210 members (70 appointed by al-Sharaa); name change from 'People's Assembly' expected on day one",
+      "status_line": "First session Jun 8 confirmed; 210 members (70 appointed by al-Sharaa); name change from People's Assembly expected on day one",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -245,7 +278,13 @@
       "url": "https://english.aawsat.com",
       "found_on": "2026-06-01",
       "why_interesting": "Gulf-backed pan-Arab daily; broke the Syria parliament June 8 story before other outlets; consistently ahead on Gulf/Arab political transitions and has senior source access in Beirut and Damascus"
+    },
+    {
+      "name": "Velina Tchakarova — Substack",
+      "url": "https://velinatchakarova.substack.com",
+      "found_on": "2026-06-04",
+      "why_interesting": "Vienna-based geopolitical analyst; Austrian/Central European perspective on Ukraine distinct from Washington/London axis; published 'The Ukraine War: The June Opening and Its Limits' Jun 4 — structural frame less invested in Ukrainian optimism or Western hand-wringing"
     }
   ],
-  "last_updated": "2026-06-03"
+  "last_updated": "2026-06-04"
 }

@@ -1,54 +1,65 @@
 {
-  "date": "2026-06-03",
-  "mood_of_day": "anxious",
+  "date": "2026-06-04",
+  "mood_of_day": "conflicted",
   "macro": {
     "politics": [
       {
-        "headline": "Iran strikes Kuwait airport; suspends ceasefire mediator communications",
-        "tags": ["iran", "kuwait", "ceasefire", "hormuz"],
-        "sentiment": "escalatory",
-        "intensity": 9
+        "headline": "Israel-Lebanon conditional ceasefire framework agreed; Hezbollah rejected partial deal; next talks Jun 22",
+        "tags": ["middle-east", "ceasefire", "hezbollah", "israel"],
+        "sentiment": "cautiously optimistic with significant downside risk",
+        "intensity": 8
       },
       {
-        "headline": "UK Labour leadership crisis: Burnham cancels investor call ahead of June 18 by-election",
-        "tags": ["uk", "labour", "burnham", "starmer"],
-        "sentiment": "destabilising",
+        "headline": "UK PMQs: Starmer 'North Korea' slip; Labour MP Karl Turner asks about Downing Street mental health briefings",
+        "tags": ["uk-politics", "labour", "starmer", "pmqs"],
+        "sentiment": "negative",
+        "intensity": 6
+      },
+      {
+        "headline": "Vickrum Digwa sentenced min 21 years for Henry Nowak murder; kirpan exemption debate erupts; Sikh community under harassment",
+        "tags": ["uk", "knife-crime", "religion", "sikh", "identity-politics"],
+        "sentiment": "divisive",
         "intensity": 7
       },
       {
-        "headline": "Russia strikes Kyiv June 2, killing 7; June 1 peace deadline passed with no framework",
-        "tags": ["ukraine", "russia", "peace", "trump"],
-        "sentiment": "stalled",
-        "intensity": 7
-      },
-      {
-        "headline": "Washington Israel-Lebanon talks Day 2 conclude; Lebanon now Iran ceasefire linchpin",
-        "tags": ["israel", "lebanon", "washington", "hezbollah"],
-        "sentiment": "tense",
+        "headline": "Operation Southern Spear: 205+ killed in 62 US strikes; Guardian investigation finds no trafficking evidence in 13 identified victims",
+        "tags": ["us-military", "latin-america", "colombia", "drug-war"],
+        "sentiment": "alarming / underreported",
         "intensity": 7
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude hits $101.36 (+$4.71) on Iran escalation and Kuwait airport strike",
-        "tags": ["oil", "brent", "iran", "energy"],
-        "sentiment": "elevated",
-        "intensity": 8
+        "headline": "Brent crude falls to $96.97 (-0.86%) on Lebanon ceasefire framework pricing",
+        "tags": ["oil", "brent", "middle-east"],
+        "sentiment": "mildly positive",
+        "intensity": 5
       },
       {
-        "headline": "FTSE 100 drops 0.68% to 10,338; UK 30Y gilt at 5.60%",
-        "tags": ["ftse", "gilts", "uk", "markets"],
-        "sentiment": "risk-off",
+        "headline": "Nasdaq futures lower Thursday: Broadcom -14%, CrowdStrike -11% after soft guidance",
+        "tags": ["us-markets", "tech", "earnings"],
+        "sentiment": "negative",
         "intensity": 6
       },
       {
-        "headline": "UK house prices fall 0.6% in May (Nationwide) — largest drop since June 2025",
-        "tags": ["uk", "housing", "property"],
-        "sentiment": "declining",
+        "headline": "UK 30Y gilt 5.60%, 10Y 4.85%; BoE first hike fully priced September",
+        "tags": ["uk-gilts", "boe", "inflation"],
+        "sentiment": "cautionary",
         "intensity": 5
       }
     ],
-    "google_trends_uk": [],
+    "google_trends_uk": [
+      { "rank": 1, "term": "Farage", "volume_est": "high" },
+      { "rank": 2, "term": "Henry Nowak", "volume_est": "high" },
+      { "rank": 3, "term": "kirpan exemption", "volume_est": "medium-high" },
+      { "rank": 4, "term": "George Floyd anniversary", "volume_est": "medium" },
+      { "rank": 5, "term": "Stranger Things finale", "volume_est": "high" },
+      { "rank": 6, "term": "Fleetwood Mac Landslide", "volume_est": "medium-high" },
+      { "rank": 7, "term": "PMQs Starmer", "volume_est": "medium" },
+      { "rank": 8, "term": "Lebanon ceasefire", "volume_est": "medium-high" },
+      { "rank": 9, "term": "NBA Finals", "volume_est": "medium" },
+      { "rank": 10, "term": "God of War", "volume_est": "medium" }
+    ],
     "pytrends_uk_live": []
   },
   "culture": {
@@ -56,86 +67,97 @@
       "apple_music_uk_top5": [
         {
           "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0,
-          "uk_artist": true, "mood_tags": ["longing", "introspective"], "theme_tags": ["love", "emotional"]
+          "uk_artist": true, "mood_tags": ["longing", "intimate"], "theme_tags": ["relationships"]
         },
         {
           "pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0,
-          "uk_artist": false, "mood_tags": ["assertive"], "theme_tags": ["hip-hop"]
+          "uk_artist": false, "mood_tags": ["assertive", "confrontational"], "theme_tags": ["celebrity", "feud"]
         },
         {
           "pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0,
-          "uk_artist": false, "mood_tags": ["melancholic"], "theme_tags": ["love", "regret"]
+          "uk_artist": false, "mood_tags": ["regret", "melancholic"], "theme_tags": ["relationships"]
         },
         {
           "pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0,
-          "uk_artist": true, "mood_tags": ["emotional", "British"], "theme_tags": ["indie", "collaboration"]
+          "uk_artist": true, "mood_tags": ["urgent", "emotive"], "theme_tags": ["relationships", "northern-soul"]
         },
         {
           "pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0,
-          "uk_artist": true, "mood_tags": ["energised", "nostalgic"], "theme_tags": ["electronic", "rave"]
+          "uk_artist": true, "mood_tags": ["energised", "propulsive"], "theme_tags": ["electronic", "rave-heritage"]
         }
       ],
       "tiktok_sounds": [
         {
-          "title": "Stepi", "artist": "oappmaniss._", "score": 981, "videos": 492762,
-          "mood_tags": ["energetic"], "theme_tags": ["dance", "viral"]
+          "title": "Ad vikara", "artist": "unknown (UK origin)", "score": 999, "videos": 13,
+          "mood_tags": ["ambient"], "theme_tags": ["uk-origin", "surging"]
         },
         {
-          "title": "QUE LOUCURA", "artist": "DJ EXE & CACAU CHUU", "score": 978, "videos": 438784,
-          "mood_tags": ["celebratory", "energetic"], "theme_tags": ["latin", "dance"]
+          "title": "Stepi", "artist": "oappmaniss._", "score": 981, "videos": 539281,
+          "mood_tags": ["energetic"], "theme_tags": ["se-asia-led", "ugc"]
         },
         {
-          "title": "Потеряв Контроль", "artist": "MARTiN Records", "score": 976, "videos": 356904,
-          "mood_tags": ["emotional"], "theme_tags": ["Russian", "pop", "viral"]
+          "title": "QUE LOUCURA", "artist": "DJ EXE & CACAU CHUU", "score": 980, "videos": 486184,
+          "mood_tags": ["celebratory", "frenetic"], "theme_tags": ["latin-america", "brazil"]
+        },
+        {
+          "title": "Poteryal Kontrol (Lost Control)", "artist": "MARTiN Records", "score": 966, "videos": 394925,
+          "mood_tags": ["melancholic", "dramatic"], "theme_tags": ["russian", "global-spread"]
+        },
+        {
+          "title": "Delirious", "artist": "Yoshimasa Terui", "score": 956, "videos": 81882,
+          "mood_tags": ["dreamlike"], "theme_tags": ["anime", "perennial", "164m-views"]
         }
       ]
     },
     "tiktok_formats": [
-      { "format": "Latin dance challenges (QUE LOUCURA, Stepi)", "theme_tags": ["escapist", "Latin America", "celebratory"] },
-      { "format": "Emotional/nostalgic audio reels (Fleetwood Mac catalogue surge on Apple Music)", "theme_tags": ["nostalgia", "fracture", "UK"] }
+      { "format": "Stranger Things nostalgia edits", "theme_tags": ["nostalgia", "90s", "farewell"] },
+      { "format": "Kirpan debate response videos", "theme_tags": ["uk-politics", "sikh", "identity"] },
+      { "format": "NBA Finals reaction clips", "theme_tags": ["sports", "basketball"] }
     ]
   },
   "threads": [
-    { "id": "iran-hormuz", "status": "changed", "status_line": "Kuwait airport hit; Iran suspended ceasefire comms; Brent $101.36; Lebanon is precondition", "last_changed": "2026-06-03" },
-    { "id": "israel-lebanon", "status": "changed", "status_line": "Washington Day 2 talks concluded; Lebanon now pivot of US-Iran ceasefire linkage", "last_changed": "2026-06-03" },
-    { "id": "ukraine-peace-deadline", "status": "changed", "status_line": "June 1 deadline passed; Kyiv struck Jun 2 (7 dead); diplomatic vacuum deepens", "last_changed": "2026-06-03" },
-    { "id": "uk-economic-stress", "status": "changed", "status_line": "FTSE 10,338 (-0.68%); 30Y gilt 5.60%; Brent above $100 adds CPI pressure", "last_changed": "2026-06-03" },
-    { "id": "uk-labour-leadership", "status": "new", "status_line": "Burnham cancelled investor call; Makerfield by-election Jun 18; Polymarket 59% Burnham", "last_changed": "2026-06-03" },
-    { "id": "mearsheimer", "status": "changed", "status_line": "Trump Lashes Out at Bibi — Netanyahu's Lebanon ops blocking Iran deal Trump needs", "last_changed": "2026-06-03" },
-    { "id": "ebola-drc-uganda", "status": "changed", "status_line": "344 confirmed (was 125); 60 deaths; US $112M pledged; no geographic expansion", "last_changed": "2026-06-03" },
+    { "id": "israel-lebanon", "status": "changed", "status_line": "Conditional ceasefire framework agreed; Hezbollah rejected; next talks Jun 22", "last_changed": "2026-06-04" },
+    { "id": "iran-hormuz", "status": "changed", "status_line": "Brent $96.97; Lebanon framework easing risk; Iran-US ceasefire intact", "last_changed": "2026-06-04" },
+    { "id": "ukraine-peace-deadline", "status": "changed", "status_line": "Diplomatic vacuum; Zelensky: window until winter; Tchakarova June Opening published", "last_changed": "2026-06-04" },
+    { "id": "uk-economic-stress", "status": "changed", "status_line": "FTSE ~10,400; 30Y gilt 5.60%; Brent easing to $96.97", "last_changed": "2026-06-04" },
+    { "id": "uk-labour-leadership", "status": "changed", "status_line": "PMQs North Korea slip; Turner briefing row; Makerfield Jun 18", "last_changed": "2026-06-04" },
+    { "id": "mearsheimer", "status": "changed", "status_line": "Lebanon framework confirms thesis; Hezbollah now also proximate blocker", "last_changed": "2026-06-04" },
+    { "id": "uk-kirpan-debate", "status": "new", "status_line": "Digwa sentenced; kirpan exemption debate; Sikh community harassment", "last_changed": "2026-06-04" },
+    { "id": "operation-southern-spear", "status": "new", "status_line": "205+ killed; Guardian: no trafficking evidence in 13 identified victims", "last_changed": "2026-06-04" },
+    { "id": "ebola-drc-uganda", "status": "stable", "status_line": "344 confirmed, 60 deaths; MSF centre building; PHEIC in force", "last_changed": "2026-06-03" },
     { "id": "sudan-famine", "status": "stable", "status_line": "Lean season active; 19.5M food insecure; 20% funded", "last_changed": "2026-06-01" },
-    { "id": "russia-nato-romania", "status": "stable", "status_line": "No NATO territory incidents; EU sanctions prep", "last_changed": "2026-05-30" },
-    { "id": "turkey-crackdown", "status": "stable", "status_line": "Imamoglu still imprisoned; Party Assembly reconstituted", "last_changed": "2026-06-01" },
-    { "id": "colombia-election-2026", "status": "stable", "status_line": "Runoff June 21: de la Espriella 43.7% vs Cepeda 40.9%", "last_changed": "2026-06-01" },
-    { "id": "syria-parliament", "status": "stable", "status_line": "First session June 8; name change expected", "last_changed": "2026-06-01" }
+    { "id": "russia-nato-romania", "status": "stable", "status_line": "No drone incursion since May 29; sanctions prep", "last_changed": "2026-05-30" },
+    { "id": "turkey-crackdown", "status": "stable", "status_line": "Kilicdaroglu reinstated; Imamoglu trial ongoing", "last_changed": "2026-06-01" },
+    { "id": "colombia-election-2026", "status": "stable", "status_line": "Runoff Jun 21; Southern Spear live issue", "last_changed": "2026-06-01" },
+    { "id": "syria-parliament", "status": "stable", "status_line": "First session Jun 8 confirmed", "last_changed": "2026-06-01" }
   ],
   "synthesis": {
-    "daily_theme": "Iran's escalation has a specific mechanism — Lebanon — and the blocking actor is a US ally",
-    "mechanism": "Iran struck Kuwait airport and suspended ceasefire comms, with Lebanon fighting as the stated precondition for return to talks. Netanyahu won't pause Lebanon operations. Trump cannot close an Iran deal without Netanyahu's cooperation. Mearsheimer's 'Trump Lashes Out at Bibi' post (June 2) makes the structural point explicit: Netanyahu holds an effective veto over Trump's foreign policy on Iran. Brent at $101.36 (+$4.71) is the market expression of this trapped causal chain.",
+    "daily_theme": "A ceasefire framework in Lebanon unlocks the Iran deal architecture — if Hezbollah lets it",
+    "mechanism": "Lebanon pilot zones framework → Hezbollah stand-down (contingent) → Iran restores ceasefire comms with US → Iran-US talks resume → Brent continues falling. Each link is contested. Hezbollah has already rejected the first step.",
     "connections": [
       {
-        "macro_event": "Iran suspends ceasefire communications; cites Lebanon as precondition",
-        "cultural_response": "Fleetwood Mac Rumours catalogue surging sharply in UK Apple Music (Everywhere +79, Landslide & Little Lies new entries)",
-        "mechanism": "Rumours was built around people processing fracture and irresolution while still having to show up together — its emotional vocabulary maps closely to a week in which Iran, Lebanon, Ukraine, and UK Labour politics are all in states of unresolved fracture with no clean exit",
-        "observation": "The chart top five is frozen (unchanged for days) while the catalogue surges. New music isn't breaking through. People are reaching backward. The Chemical Brothers' 'Go' at #5 — forward-motion rave music — is the outlier in a chart otherwise defined by nostalgia and longing.",
-        "confidence": "speculative",
+        "macro_event": "Stranger Things series finale",
+        "cultural_response": "Fleetwood Mac 'Landslide' NEW on chart; Everywhere +12; Kings of Leon +12; LINKIN PARK +13; Elton John +17; Radiohead +8",
+        "mechanism": "Specific song placements in finale soundtrack directly triggered streaming/purchase activity on Apple Music UK",
+        "observation": "The chart floods backward into late-80s/90s at the same moment UK Twitter splits over identity and belonging. 'Landslide' lands with particular weight when the present feels unstable. The audience knows what they're reaching for.",
+        "confidence": "strong",
         "signal_type": "divergence"
       },
       {
-        "macro_event": "UK Labour leadership crisis deepens; Burnham cancels investor call",
-        "cultural_response": "UK Twitter dominated by Farage vs. Ben Habib on Question Time; #TwoTierPolicing trending; right-wing factional public confrontation on BBC television",
-        "mechanism": "The right-wing political space is visibly fracturing (Reform vs. Advance UK) on BBC television on the same evening Burnham is positioned to fracture Labour from the centre-left. Both sides of the political spectrum are in simultaneous leadership contests and factional splits. #TwoTierPolicing is the right's persistent grievance channel — it surfaces whenever political instability increases.",
-        "observation": "The political fracture is showing up on television, in Twitter trends, and in the gilt market simultaneously. The cultural mood is not lagging the political mood; it is tracking it.",
+        "macro_event": "Digwa sentencing on George Floyd 6th anniversary",
+        "cultural_response": "UK Twitter: Farage, Sikh, Southport, Henry, Southampton, George Floyd all trending simultaneously",
+        "mechanism": "Sentencing date coinciding with BLM anniversary creates charged environment where right-wing mobilisation and counter-memory activate in the same moment",
+        "observation": "The UK culture war compressed into a single day's trending list. Neither side is engaging the other's actual argument. The political system is visibly unable to hold or mediate this.",
         "confidence": "strong",
         "signal_type": "reactive"
       },
       {
-        "macro_event": "Operation Southern Spear: 200+ killed in US drug-boat strikes",
-        "cultural_response": "Latin American TikTok sounds dominating globally (Stepi from Argentina at 492K videos; QUE LOUCURA from Brazil/Colombia at 438K)",
-        "mechanism": "Speculative but worth noting: the two globally dominant TikTok sounds are both from Latin American creators, trending most strongly in Argentina and Colombia — the countries most directly affected by or proximate to the US military operations in their waters. The sounds are celebratory and escapist. The divergence between the regional macro reality (US military killing 200+ in their waters) and the cultural export (jubilant dance sounds) is stark.",
-        "observation": "This may be the clearest example today of cultural mood diverging from the macro story: Latin America is producing the world's most viral escapist dance sounds while simultaneously being the site of extrajudicial US military killings that are barely covered in Western media.",
-        "confidence": "speculative",
-        "signal_type": "divergence"
+        "macro_event": "Operation Southern Spear — 205 dead, minimal Western coverage",
+        "cultural_response": "Story absent from UK trending despite body count exceeding many covered conflicts",
+        "mechanism": "Geographic distance + counter-narcotics framing + alignment with major media's assumptions = near-silence",
+        "observation": "The absence is the signal. The Colombia election — directly implicating this — is 17 days away.",
+        "confidence": "moderate",
+        "signal_type": "lagging"
       }
     ]
   }

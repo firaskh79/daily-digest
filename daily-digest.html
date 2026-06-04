@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firas's Digest — 3 June 2026</title>
+<title>Firas's Digest — 4 June 2026</title>
 <style>
   :root {
     --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
@@ -22,17 +22,17 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg:#1a1a18; --bg-2:#242420; --bg-3:#2e2e2a;
-      --text:#e8e6e0; --text-2:#a0a09a; --text-3:#6a6a64;
-      --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
-      --purple-bg:#2a2845; --purple-text:#a89ef0;
-      --teal-bg:#112e24; --teal-text:#5ecfa4;
-      --coral-bg:#2e1610; --coral-text:#f0906a;
-      --amber-bg:#2a1e0a; --amber-text:#d4954a;
-      --blue-bg:#0e2035; --blue-text:#6aacf0;
-      --green-bg:#142208; --green-text:#88c44a;
-      --gray-bg:#222220; --gray-text:#a0a09a;
-      --link:#5aacf0;
+      --bg:#161614; --bg-2:#1e1e1b; --bg-3:#252521;
+      --text:#e8e6e0; --text-2:#a0998f; --text-3:#6a6560;
+      --border:rgba(255,255,255,0.08); --border-2:rgba(255,255,255,0.15);
+      --purple-bg:#221f4a; --purple-text:#b0a9f8;
+      --teal-bg:#0d2b22; --teal-text:#5ecda8;
+      --coral-bg:#2e140c; --coral-text:#f4a58a;
+      --amber-bg:#2b1c08; --amber-text:#f0be7a;
+      --blue-bg:#0a1f35; --blue-text:#7ab8f0;
+      --green-bg:#131f09; --green-text:#8fc957;
+      --gray-bg:#1c1c19; --gray-text:#b0ada5;
+      --link:#6aabea;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,372 +42,371 @@
     color: var(--text);
     max-width: 780px;
     margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
+    padding: 2rem 1.5rem;
     line-height: 1.65;
+    font-size: 15px;
   }
   a { color: var(--link); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  header { border-bottom: 1px solid var(--border-2); padding-bottom: 1.2rem; margin-bottom: 2rem; }
-  header h1 { font-size: 1.1rem; font-weight: 600; color: var(--text); }
-  header .date { font-size: 0.9rem; color: var(--text-3); margin-top: 0.2rem; }
-  h2 { font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-       color: var(--text-3); margin: 2.5rem 0 1rem; }
-  h3 { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
-  p { margin-bottom: 0.9rem; color: var(--text); font-size: 0.97rem; }
-  .section { margin-bottom: 2.5rem; }
+  .header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.2rem; }
+  .header .label { font-size: 1.05rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.02em; }
+  .header .date { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-top: 0.2rem; }
+  .section-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-3);
+    margin-bottom: 1rem; margin-top: 2.5rem;
+  }
   .card {
-    background: var(--bg-2);
+    background: var(--bg-2); border-radius: var(--radius);
+    padding: 1.2rem 1.4rem; margin-bottom: 1rem;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.1rem 1.3rem;
-    margin-bottom: 1rem;
   }
+  .card h3 { font-size: 1rem; font-weight: 650; margin-bottom: 0.5rem; }
+  .card p { color: var(--text-2); font-size: 0.92rem; margin-bottom: 0.5rem; }
   .card p:last-child { margin-bottom: 0; }
-  .card .label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
-                  letter-spacing: 0.07em; color: var(--text-3); margin-bottom: 0.5rem; }
-  .tag {
-    display: inline-block;
-    font-size: 0.7rem; font-weight: 600;
-    padding: 0.15rem 0.45rem; border-radius: 4px;
-    margin-left: 0.3rem; vertical-align: middle;
-    text-transform: uppercase; letter-spacing: 0.05em;
-  }
-  .tag.tb { background: var(--teal-bg); color: var(--teal-text); }
-  .tag.new { background: var(--purple-bg); color: var(--purple-text); }
-  .tag.changed { background: var(--amber-bg); color: var(--amber-text); }
-  .tag.stable { background: var(--gray-bg); color: var(--gray-text); }
-  .markets-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
-  }
-  @media (max-width: 480px) { .markets-grid { grid-template-columns: 1fr; } }
-  .market-tile {
-    background: var(--bg-2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem;
-  }
-  .market-tile .m-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
-                          letter-spacing: 0.07em; color: var(--text-3); }
-  .market-tile .m-val { font-size: 1.4rem; font-weight: 700; color: var(--text); margin: 0.2rem 0; }
-  .market-tile .m-note { font-size: 0.78rem; color: var(--text-2); }
-  .m-up { color: #b95c1e; }
-  .m-down { color: #1e6eb9; }
+  .card .watch { font-size: 0.82rem; color: var(--text-3); margin-top: 0.6rem; }
+  .card .watch strong { color: var(--text-2); }
   .lead-card {
-    border-left: 3px solid #a07828;
-    padding: 0.8rem 0 0.8rem 1.1rem;
-    margin-bottom: 1.3rem;
+    border-left: 3px solid var(--link);
+    background: var(--bg-2);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.2rem 1.4rem; margin-bottom: 1.2rem;
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
-  .lead-card h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-  th { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 2px solid var(--border-2);
-       color: var(--text-3); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-  .status-line { color: var(--text-2); font-size: 0.82rem; }
-  .last-changed { color: var(--text-3); font-size: 0.78rem; white-space: nowrap; }
-  footer { border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 3rem;
-           font-size: 0.8rem; color: var(--text-3); }
-  footer a { color: var(--text-3); }
-  .chart-row { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.35rem 0;
-               border-bottom: 1px solid var(--border); font-size: 0.88rem; }
-  .chart-row:last-child { border-bottom: none; }
-  .pos { font-weight: 700; color: var(--text-3); width: 1.5rem; text-align: right; flex-shrink: 0; }
-  .change { font-size: 0.75rem; color: var(--text-3); flex-shrink: 0; }
-  .change.up { color: #27500A; }
-  .change.dn { color: #712B13; }
-  .artist-title { flex: 1; }
-  .trend-list { list-style: none; padding: 0; }
-  .trend-list li { padding: 0.3rem 0; border-bottom: 1px solid var(--border);
-                   font-size: 0.88rem; display: flex; gap: 0.5rem; align-items: baseline; }
-  .trend-list li:last-child { border-bottom: none; }
-  .trend-n { font-weight: 700; color: var(--text-3); width: 1.4rem; flex-shrink: 0; }
-  .trend-ctx { color: var(--text-2); font-size: 0.78rem; }
-  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .lead-card h3 { font-size: 1rem; font-weight: 650; margin-bottom: 0.5rem; }
+  .lead-card p { color: var(--text-2); font-size: 0.93rem; margin-bottom: 0.5rem; }
+  .lead-card p:last-child { margin-bottom: 0; }
+  .tag {
+    display: inline-block; font-size: 0.68rem; font-weight: 600;
+    padding: 0.15rem 0.5rem; border-radius: 4px;
+    margin-right: 0.35rem; vertical-align: middle;
+  }
+  .tag.tn { background: var(--purple-bg); color: var(--purple-text); }
+  .tag.tc { background: var(--amber-bg); color: var(--amber-text); }
+  .tag.ts { background: var(--gray-bg); color: var(--gray-text); }
+  .tag.tb { background: var(--teal-bg); color: var(--teal-text); }
+  .markets-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem; margin-top: 0.5rem;
+  }
+  .market-tile {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 0.9rem 1rem;
+  }
+  .market-tile .label { font-size: 0.72rem; color: var(--text-3); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .market-tile .value { font-size: 1.15rem; font-weight: 700; margin-top: 0.2rem; }
+  .market-tile .change { font-size: 0.78rem; margin-top: 0.1rem; }
+  .down { color: #c0392b; }
+  .up { color: #27ae60; }
+  .neutral { color: var(--text-3); }
+  .status-table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; font-size: 0.84rem; }
+  .status-table th { text-align: left; color: var(--text-3); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border-2); }
+  .status-table td { padding: 0.6rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .status-table tr:last-child td { border-bottom: none; }
+  .status-table .thread-label { font-weight: 600; color: var(--text); }
+  .status-table .status-line { color: var(--text-2); }
+  .status-table .last-changed { color: var(--text-3); white-space: nowrap; font-size: 0.78rem; }
+  .social-data { background: var(--bg-3); border-radius: var(--radius); padding: 1rem 1.2rem; margin-top: 0.8rem; border: 1px solid var(--border); }
+  .social-data h4 { font-size: 0.8rem; font-weight: 700; color: var(--text-2); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .social-data ul { list-style: none; }
+  .social-data li { font-size: 0.84rem; color: var(--text-2); padding: 0.18rem 0; }
+  .social-data li .rank { color: var(--text-3); min-width: 1.6rem; display: inline-block; }
+  .music-row { display: flex; align-items: baseline; gap: 0.4rem; font-size: 0.84rem; padding: 0.22rem 0; border-bottom: 1px solid var(--border); }
+  .music-row:last-child { border-bottom: none; }
+  .music-row .pos { color: var(--text-3); min-width: 2.2rem; font-weight: 600; }
+  .music-row .chg { font-size: 0.72rem; min-width: 2.4rem; }
+  .cup { color: #27ae60; } .cdn { color: #c0392b; } .ceq { color: var(--text-3); }
+  .otf-card {
+    background: var(--purple-bg); border-radius: var(--radius);
+    padding: 1.2rem 1.4rem; border: 1px solid rgba(60,52,137,0.2); margin-bottom: 1rem;
+  }
+  .otf-card h3 { color: var(--purple-text); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .otf-card p { color: var(--text-2); font-size: 0.92rem; margin-bottom: 0.4rem; }
+  .otf-card p:last-child { margin-bottom: 0; }
+  .footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Firas's Digest</h1>
-  <div class="date">Wednesday 3 June 2026</div>
-</header>
-
-<h2>Today's Signal</h2>
-
-<div class="lead-card">
-  <h3>Iran is in escalation, and Lebanon is the trigger</h3>
-  <p>Iranian drones struck Kuwait's international airport today, killing at least one person and forcing the suspension of commercial flights. Iran simultaneously stopped communicating with ceasefire mediators, stating a condition: the Lebanon fighting must stop first. Brent crude jumped $4.71 to $101.36. This is the triangular trap Mearsheimer identified in a post published yesterday: Trump needs an Iran deal, Iran has made stopping Lebanon a precondition, and Netanyahu won't stop Lebanon operations. The person blocking resolution is a US ally, not an adversary. Trump is reportedly furious at Netanyahu about exactly this — and still can't move him.</p>
+<div class="header">
+  <div class="label">Firas's Digest</div>
+  <div class="date">Thursday, 4 June 2026</div>
 </div>
 
+<!-- LEAD -->
+<div class="section-label">Today's Signal</div>
+
 <div class="lead-card">
-  <h3>UK politics is closer to the edge than markets are pricing</h3>
-  <p>FTSE down 0.68% to 10,338. The 30-year gilt is at 5.60%, near multi-decade highs. Andy Burnham abruptly cancelled an investor call Monday with no explanation — the FT reported it; CNBC described markets as "underpricing a potential Burnham win." Burnham runs in the Makerfield by-election June 18. If he wins, a formal Labour leadership challenge is expected within days. Polymarket puts him at 59% to become PM this year versus 25% for Starmer remaining. Burnham's economic instincts — strong state intervention, public control of industry and AI — read differently to gilt markets than the Starmer settlement did. The six-month gilt chart doesn't look like markets believe this yet.</p>
+  <h3>A conditional ceasefire in Lebanon — and Hezbollah already rejecting it</h3>
+  <p>After two days of Washington talks, Israel and Lebanon agreed late June 3 to a framework creating "pilot security zones" in southern Lebanon under exclusive Lebanese Armed Forces control, with IDF withdrawal from those zones in exchange. Next talks are scheduled for the week of June 22. On paper this is the most significant diplomatic movement in weeks: it threads the needle between Israel's refusal to include Lebanon in the Iran ceasefire and Iran's insistence that it must be. Brent dropped to $96.97 today, pricing in reduced risk. Trump reiterated the US-Iran ceasefire is still "intact" despite overnight exchanges near Kuwait.</p>
+  <p>But Hezbollah's senior political official Mahmoud Qomati said the group "will not accept a partial ceasefire." Fighting continued on June 4 — at least nine killed in southern Lebanon. The architecture exists; it just needs a party that claims not to want it to stop shooting. The June 22 talks are the real test, not today's announcement.</p>
 </div>
 
 <div class="lead-card">
-  <h3>The Fleetwood Mac signal</h3>
-  <p>Four Fleetwood Mac tracks are sharply surging or newly entering the UK Apple Music chart — "Everywhere" up 79 places, "Landslide" and "Little Lies" entering fresh. The band's Rumours compilation is at #6 on the official albums chart. Rumours was made in 1976 during the band's own internal fracture: every member writing about a relationship that had collapsed, with people still bound together who had stopped trusting each other. The emotional grammar of the album — things falling apart with no clean break, going your own way, landslides bringing you down — is spiking in the same week Iran, Lebanon, Ukraine, and UK Labour politics are all in states of unresolved fracture. That may be coincidence. Or it may be the culture processing something it cannot name directly.</p>
+  <h3>UK Twitter, June 4: the culture war in a single trending list</h3>
+  <p>Today's top UK trends — Farage, Sikh, Southport, Henry, Southampton — converge on one story. Vickrum Digwa was sentenced to a minimum 21 years for the December 2025 murder of 18-year-old finance student Henry Nowak in Southampton, stabbing him with a knife he claimed to carry as a Sikh article of faith. Since the arrest, at least 15 Sikh individuals have been confronted on UK streets with demands of "Have you got a kirpan?" Farage and others are calling for the legal kirpan exemption to be revoked. The Sikh community warns of "collective punishment for one man's actions."</p>
+  <p>The date is not accidental context: June 4, 2026 is the sixth anniversary of the peak of the UK's Black Lives Matter protests — "George Floyd" is also in today's trending list. Right-wing mobilisation around knife crime and religious exemption, and the counter-memory of 2020, are alive simultaneously in the same scroll. The macro story (UK political fragmentation, Starmer's declining authority, Farage's growing reach) expresses itself today as a fight over a ceremonial blade.</p>
 </div>
 
-<hr class="divider">
-
-<h2>Changed Threads</h2>
-
-<div class="card">
-  <div class="label">Iran / Hormuz <span class="tag changed">changed</span></div>
-  <h3>Kuwait airport hit; ceasefire communications suspended</h3>
-  <p>Iranian drones hit Kuwait International Airport today — the latest in a series of back-and-forth strikes with the US. Iran's foreign minister described it as self-defence after the US Navy moved to disable an oil tanker heading to an Iranian port. One Indian national was killed, over 60 injured, commercial flights suspended. Semiofficial Iranian media reported simultaneously that Tehran had stopped all communication with mediators. Iran's stated condition for returning: Lebanon fighting must stop first.</p>
-  <p>Brent is at $101.36, up $4.71. The tentative May 28 agreement to extend the ceasefire 60 days and start nuclear talks is now in serious doubt. The causal chain runs: Netanyahu won't pause Lebanon → Iran won't talk → deal clock stops → Brent rises → UK CPI pressure increases.</p>
-  <p><strong>Watch:</strong> Any Trump statement directly on Netanyahu and Lebanon; Oman-mediated communication channel restored or not; Brent above or below $100 tomorrow morning.</p>
+<div class="lead-card">
+  <h3>PMQs: Starmer said "North Korea" instead of "South Korea"</h3>
+  <p>At today's PMQs, Starmer referred to a new trade deal with "North Korea" before a note corrected him mid-session. Small in itself, but the image — a PM needing a correction note on which Korea his government just signed a deal with — lands differently when the political environment is already corrosive. Labour MP Karl Turner also asked Starmer directly about "hostile briefings about my mental health from No. 10 Downing Street." That is not something governing parties with functioning internal discipline produce in public. Makerfield is 14 days away.</p>
 </div>
 
+<!-- CHANGED THREADS -->
+<div class="section-label">Changed Threads</div>
+
 <div class="card">
-  <div class="label">Israel / Lebanon <span class="tag changed">changed</span></div>
-  <h3>Washington talks Day 2 — but Lebanon is now the Iran deal's pivot</h3>
-  <p>The fourth round of direct Israel-Lebanon talks concluded at the State Department today, the second consecutive day of negotiations. Secretary Rubio testified simultaneously before the House Foreign Affairs Committee. Israeli drones killed at least eight people in Lebanon while the talks were underway. The talks focused on ceasefire terms, Israeli withdrawal from southern Lebanon, and Hezbollah disarmament — significant in themselves, but now secondary to the larger frame.</p>
-  <p>What changed today: Iran has explicitly linked its own ceasefire with the US to stopping the Lebanon fighting. Lebanon is no longer a bilateral sideshow. It is the linchpin of the US-Iran negotiation. Any statement from the Washington talks that doesn't include a concrete Israeli commitment to pause operations doesn't actually move anything.</p>
-  <p><strong>Watch:</strong> Whether any joint statement includes Israeli withdrawal timelines; Trump public pressure on Netanyahu to halt Lebanon operations; Hezbollah's formal response to the Washington process.</p>
+  <h3><span class="tag tc">changed</span> Israel / Lebanon</h3>
+  <p>The Washington Day 3 talks produced a formal conditional framework: Israeli withdrawal from pilot security zones in southern Lebanon in exchange for exclusive Lebanese Armed Forces control and verified Hezbollah evacuation south of the Litani. Contingent on "complete cessation" of attacks by Hezbollah. The <a href="https://www.cfr.org/articles/israel-lebanon-ceasefire-extended-for-three-weeks">CFR frames this</a> as a three-week extension toward a comprehensive agreement rather than a resolution. But Hezbollah's Qomati rejected a partial deal, fighting continued (nine killed June 4), and Hezbollah's structural incentive — maintaining its deterrent posture — is unchanged. Israel gets an IDF pullback framework it can accept; Hezbollah gets nothing from standing down.</p>
+  <p class="watch"><strong>Watch:</strong> Whether Hezbollah field commanders hold fire before June 22; any Iranian statement endorsing the framework; Trump ultimatum to Netanyahu if Lebanon fighting blocks the talks.</p>
 </div>
 
 <div class="card">
-  <div class="label">Ukraine Peace Deadline <span class="tag changed">changed</span></div>
-  <h3>June 1 deadline passed; Russia hits Kyiv, killing 7</h3>
-  <p>Russia launched a major drone and missile attack on Kyiv overnight June 2, killing 7 and wounding 89. Ukraine responded with strikes on Russia's largest oil terminal on the Baltic Sea (St. Petersburg) and a military plant in Tambov. No peace framework emerged around Trump's self-imposed June 1 deadline. Trump has been silent. The June window Zelensky said Trump wanted is now effectively closed.</p>
-  <p>The "90–95% agreed" figure that has been cited traces back to a December 2025 Mar-a-Lago meeting. The remaining 5–10% is territory and security guarantees — the hardest issues. The gap between the diplomatic narrative and the military reality on the ground widened this week.</p>
-  <p><strong>Watch:</strong> Whether Trump sets a new public deadline or quietly withdraws from mediation; any NATO statement distinguishing between support for Ukraine and support for peace talks; Russian territorial movement in Donetsk.</p>
+  <h3><span class="tag tc">changed</span> Iran / Hormuz</h3>
+  <p>Brent at $96.97 (down 0.86%) reflects the market pricing in the Lebanon framework. The Iran-US macro ceasefire holds despite overnight exchanges; Trump is insisting on continuity. The functional picture: Iran and the US are managing a parallel ceasefire at the top while Hezbollah fights below it — and Iran's leverage is that it holds Hezbollah's participation as the price of restoring direct communications with Washington. If the June 22 talks advance, expect Iran to soften its suspension of direct ceasefire comms. Mearsheimer's framing from June 2 ("Netanyahu won't let Trump settle the conflict") is now being tested in real time — today's Lebanon framework is Trump's counter-move.</p>
+  <p class="watch"><strong>Watch:</strong> Hezbollah response to pilot zones; any Iranian public endorsement of the framework; Brent trajectory as ceasefire holds or fractures.</p>
 </div>
 
 <div class="card">
-  <div class="label">UK Economic Stress <span class="tag changed">changed</span></div>
-  <h3>FTSE drops, gilt at 5.60%, Brent above $100 compounds CPI</h3>
-  <p>FTSE 100 fell 0.68% to 10,338. The 30-year gilt is at 5.60%. The immediate driver is Iran-driven oil risk pushing Brent above $100 and raising UK inflation expectations. Two rate hikes are now fully priced in by markets for this year, with the first expected in September. House prices fell 0.6% in May (Nationwide) — the largest monthly drop since June 2025.</p>
-  <p>Brent above $100 is directly relevant to UK household energy costs and the next energy price cap revision. Combined with the gilt yield, the macro environment is tightening in multiple directions simultaneously.</p>
+  <h3><span class="tag tc">changed</span> Ukraine Peace Deadline</h3>
+  <p>No structural change — the diplomatic vacuum continues. But Zelensky said in a May 31 interview that the window for effective talks remains open "until winter 2026," implying Ukraine's battlefield position remains adequate through the summer. Vienna-based analyst Velina Tchakarova published today on her Substack (<a href="https://velinatchakarova.substack.com">"The Ukraine War — The June Opening and Its Limits"</a>) arguing the track is "frozen at the level of structural settlement while remaining active at the level of humanitarian gestures" — the Orthodox Easter truce and prisoner exchange infrastructure prove minimum negotiating conditions exist, but no one has the political cover to use them yet. Worth reading for a non-Anglophone structural frame.</p>
+  <p class="watch"><strong>Watch:</strong> Any Trump statement on resuming mediation; Russian summer offensive moves; Zelensky public shift on territorial concessions.</p>
 </div>
 
 <div class="card">
-  <div class="label">UK Labour Leadership <span class="tag new">new</span></div>
-  <h3>Burnham vs Starmer — June 18 by-election sets the clock</h3>
-  <p>Andy Burnham cancelled an investor-facing call Monday without explanation, per the FT. Burnham is the frontrunner to replace Starmer — Polymarket puts him at 59% versus Starmer's 25% chance of remaining PM through 2026. Burnham is not yet an MP; he's running in the Makerfield by-election June 18. If he wins the seat, a formal leadership challenge is expected within days, with Wes Streeting (resigned as Health Secretary May 14) likely to stand alongside him.</p>
-  <p>Burnham has called for "strong public control" over industry and AI, a position meaningfully to the left of the Starmer fiscal settlement. CNBC analysts said markets are underpricing the probability and the impact of a Burnham premiership. The cancelled investor call — his first public signal of what a Burnham government might look like in practice — suggests he may be deliberately avoiding pre-positioning on fiscal policy. That ambiguity is itself market-relevant.</p>
-  <p><strong>Watch:</strong> Makerfield by-election June 18; any Burnham statement on fiscal rules, Bank of England independence, or gilt market; which MPs publicly endorse Burnham before the vote.</p>
+  <h3><span class="tag tc">changed</span> UK Economic Stress</h3>
+  <p>FTSE 100 recovered slightly to ~10,400 from yesterday's 10,338 close. Brent easing to $96.97 removes some near-term CPI pressure, though the 30Y gilt at 5.60% and the 10Y at 4.85% remain elevated. The Bank of England's first rate hike is fully priced for September. Broadcom's 14% drop and CrowdStrike's 11% drop after soft guidance are pulling Nasdaq futures lower Thursday — a reminder that the US tech sector's earnings season is adding to global risk-off sentiment that feeds through to UK equities.</p>
+  <p class="watch"><strong>Watch:</strong> Any gilt yield move above 5.8%; energy price cap revision; Bank of England communications ahead of September.</p>
 </div>
 
 <div class="card">
-  <div class="label">Mearsheimer <span class="tag changed">changed</span></div>
-  <h3>"Trump Lashes Out at Bibi" — new post, June 2</h3>
-  <p>Mearsheimer appeared on Judging Freedom June 2 and published a new Substack post arguing that Trump is genuinely furious at Netanyahu — not for humanitarian reasons, but because Netanyahu's Lebanon campaign is directly blocking the Iran deal Trump needs. Iran has made stopping Lebanon a precondition for returning to nuclear talks. Mearsheimer argues Netanyahu knows this and is using it as leverage to prevent any US-Iran deal that doesn't serve Israeli interests. The result is Netanyahu's effective veto over Trump's foreign policy — and Trump's growing awareness of that constraint.</p>
-  <p>The structural insight: the Iran-Hormuz thread and the Israel-Lebanon thread are not just connected, they are the same story viewed from different angles. The blocking mechanism is a US ally.</p>
+  <h3><span class="tag tc">changed</span> UK Labour Leadership</h3>
+  <p>PMQs June 4 added another layer to the deterioration portrait: the North Korea slip, the Karl Turner briefing question, and the general atmosphere of a government struggling to control its own narrative. Burnham builds toward Makerfield June 18. Polymarket: Burnham 59% to be next PM, Starmer 25% to remain. The question is now about timing and trigger rather than direction. A bad result or a badly-handled by-election campaign from June 18 onward accelerates the timeline considerably.</p>
+  <p class="watch"><strong>Watch:</strong> Makerfield result June 18 — margin and turnout matter; any cabinet figure making a public statement that reads as positioning; Burnham on fiscal rules or Bank of England independence.</p>
 </div>
 
 <div class="card">
-  <div class="label">Ebola — DRC / Uganda <span class="tag changed">changed</span></div>
-  <h3>Confirmed cases jump to 344; US pledges $112M</h3>
-  <p>Confirmed cases rose to 344 from 125 in the last digest — 322 in Ituri Province across 16 health zones, 19 in North Kivu, 3 in South Kivu. Sixty confirmed deaths. The US State Department today announced $112 million in bilateral assistance: PPE, screening, contact tracing, diagnostics. The UK has pledged £20M. WHO PHEIC remains in force. No confirmed cases outside DRC and Uganda.</p>
-  <p>The critical constraint remains: no licensed vaccine or therapeutic against Bundibugyo virus. The outbreak is in Ituri, where 922,000 people are already internally displaced due to conflict, making contact tracing and containment operationally very difficult.</p>
-  <p><strong>Watch:</strong> Any confirmed case in Kampala or outside DRC/Uganda; WHO vaccine pipeline update; whether operational capacity in Ituri matches the funding commitments.</p>
+  <h3><span class="tag tc">changed</span> Mearsheimer</h3>
+  <p>"Trump Lashes Out at Bibi" (June 2) remains his most recent post, but today's Lebanon ceasefire framework is a direct validation of his structural argument: Trump needs a Lebanon ceasefire to unlock the Iran deal, Netanyahu's Lebanon operations are the obstacle, and the pilot zones framework is Trump's attempt to work around that obstacle. The new wrinkle: Hezbollah is now the proximate blocker, which complicates the Netanyahu-veto narrative slightly. Mearsheimer's frame still holds at the strategic level — Israel doesn't want Iran talks to succeed — but the operational picture is now more multi-party than his binary framing suggests.</p>
+  <p class="watch"><strong>Watch:</strong> New post or appearance responding to the Lebanon framework; whether mainstream US foreign policy community engages with the Netanyahu-veto argument.</p>
 </div>
-
-<hr class="divider">
-
-<h2>The Social / Cultural Layer</h2>
 
 <div class="card">
-  <p>The chart data today is a study in backwards movement. Four Fleetwood Mac tracks are surging or newly entering the UK Apple Music chart — "Everywhere" up 79 places being the sharpest move, "Landslide" and "Little Lies" entering fresh. The band's Rumours compilation is at #6 on the Official Albums Chart. Michael Jackson remains scattered throughout the top 200 (possible ongoing biopic/film cycle). The Chemical Brothers' "Go" sits at #5 — a 2015 rave track, not new, from a band that helped define British forward-motion music.</p>
-
-  <p>The top five has been frozen for days. Olivia Dean, Drake, Ariana Grande — unchanged. Nothing new is breaking through. The new music isn't moving anyone; the catalogue is doing the work. This is the divergence. In a week of genuine turbulence — Iran escalating, UK political structure in flux, Ukraine peace collapsing — the chart is looking backward. Rumours in particular carries specific emotional weight: it was made by people processing fracture and irresolution while still having to show up together. That vocabulary resonates right now in ways that are hard to articulate but not hard to notice.</p>
-
-  <p>UK Twitter is led by domestic political television tonight — Farage, Ben Habib, The BBC, and Question Time trending together, indicating Habib (who split from Reform UK in late 2024 after a public falling-out with Farage and now leads Advance UK) is appearing opposite Farage on Question Time. The right-wing political space is visibly fracturing into factions on national television on the same evening that Burnham is positioned to fracture Labour from the other direction. #TwoTierPolicing is also in the trends — a persistent Reform/hard-right grievance hashtag that has been circulating since the 2024 protests. BTS's 13th anniversary is trending alongside all of this — K-pop fandom as a separate weather system, providing collective warmth in a politically uncomfortable atmosphere.</p>
-
-  <p>On TikTok, the globally dominant sounds this week are mostly non-English — Argentinian, Brazilian, Russian-language. The UK-originating sound at the top of the visible chart is "Ad vikāra" from a UK creator with very low volume. The global TikTok mood is Latin American and Eastern European, not Anglo-dominated. That's worth noting as a counter-frame to the UK-centric chart picture.</p>
-
-  <div style="margin-top:1.2rem;">
-    <strong style="font-size:0.85rem; text-transform: uppercase; letter-spacing:0.06em; color: var(--text-3);">Apple Music UK — Top 5</strong>
-    <div class="chart-row" style="margin-top:0.5rem;">
-      <span class="pos">1</span>
-      <span class="artist-title">Olivia Dean — <em>Man I Need</em> <span class="tag tb">UK</span></span>
-      <span class="change">=</span>
-    </div>
-    <div class="chart-row">
-      <span class="pos">2</span>
-      <span class="artist-title">Drake — <em>Janice STFU</em></span>
-      <span class="change">=</span>
-    </div>
-    <div class="chart-row">
-      <span class="pos">3</span>
-      <span class="artist-title">Ariana Grande — <em>hate that i made you love me</em></span>
-      <span class="change">=</span>
-    </div>
-    <div class="chart-row">
-      <span class="pos">4</span>
-      <span class="artist-title">Sam Fender &amp; Olivia Dean — <em>Rein Me In</em> <span class="tag tb">UK</span></span>
-      <span class="change">=</span>
-    </div>
-    <div class="chart-row">
-      <span class="pos">5</span>
-      <span class="artist-title">The Chemical Brothers — <em>Go</em> <span class="tag tb">UK</span></span>
-      <span class="change">=</span>
-    </div>
-    <div style="margin-top:0.6rem; font-size:0.8rem; color:var(--text-3);">
-      Notable moves: Fleetwood Mac "Everywhere" +79 · "Landslide" &amp; "Little Lies" new entries · Justin Bieber "Sorry" +26 · Linkin Park "In the End" +13 · Fleetwood Mac "Go Your Own Way" +4
-    </div>
-  </div>
-
-  <div style="margin-top:1.2rem;">
-    <strong style="font-size:0.85rem; text-transform: uppercase; letter-spacing:0.06em; color: var(--text-3);">UK Twitter Trends — 19:18 UTC</strong>
-    <ul class="trend-list" style="margin-top:0.5rem;">
-      <li><span class="trend-n">1</span>Kratos <span class="trend-ctx">Masters of the Universe media franchise</span></li>
-      <li><span class="trend-n">2</span>Farage <span class="trend-ctx">Question Time tonight — BBC</span></li>
-      <li><span class="trend-n">3</span>The BBC <span class="trend-ctx">Question Time related</span></li>
-      <li><span class="trend-n">4</span>Ben Habib <span class="trend-ctx">Advance UK leader, ex-Reform; facing Farage on QT</span></li>
-      <li><span class="trend-n">5</span>Question Time <span class="trend-ctx">BBC political show airing tonight</span></li>
-      <li><span class="trend-n">6</span>#BTS13thAnniversary <span class="trend-ctx">K-pop fandom anniversary; global parallel trend</span></li>
-      <li><span class="trend-n">7</span>#thisisfor_london <span class="trend-ctx">Pride Month; London events</span></li>
-      <li><span class="trend-n">8</span>#TwoTierPolicing <span class="trend-ctx">Recurring Reform/hard-right grievance hashtag</span></li>
-    </ul>
-  </div>
-
-  <div style="margin-top:1.2rem;">
-    <strong style="font-size:0.85rem; text-transform: uppercase; letter-spacing:0.06em; color: var(--text-3);">TikTok — Top Visible Sounds (Global, Jun 2–3)</strong>
-    <div style="margin-top:0.5rem; font-size:0.86rem; color: var(--text-2);">
-      <div style="padding:0.3rem 0; border-bottom:1px solid var(--border);">"Stepi" — oappmaniss._ · 492K videos · +10.5%/day · Argentina + 26 countries · <a href="https://music.apple.com/gb/search?term=Stepi" target="_blank">Apple Music</a></div>
-      <div style="padding:0.3rem 0; border-bottom:1px solid var(--border);">"QUE LOUCURA" — DJ EXE &amp; CACAU CHUU · 438K videos · trending Colombia, Argentina · <a href="https://music.apple.com/gb/search?term=QUE+LOUCURA+DJ+EXE" target="_blank">Apple Music</a></div>
-      <div style="padding:0.3rem 0;">"Потеряв Контроль" (Losing Control) — MARTiN Records · 356K videos · +16.6%/day · 24 countries · <a href="https://music.apple.com/gb/search?term=Потеряв+Контроль+MARTiN" target="_blank">Apple Music</a></div>
-    </div>
-    <div style="font-size:0.78rem; color:var(--text-3); margin-top:0.4rem;">Full TikTok breakdown behind paywall; top publicly visible sounds only.</div>
-  </div>
+  <h3><span class="tag tn">new</span> UK Kirpan Debate</h3>
+  <p>Triggered by the June 4 Digwa sentencing. The legal exemption allowing practising Sikhs to carry a kirpan in public is now a live political question. Farage and aligned commentators are calling for repeal; the Sikh community points out this is collective punishment for one individual's crime. The Bishop of Southampton has urged restraint. The debate intersects UK knife crime politics (persistently electorally salient), religious freedom law, and multiculturalism in a way that will not resolve quickly. It has specifically activated right-wing energy on a day already charged by the George Floyd anniversary trend — the combination is combustible.</p>
+  <p class="watch"><strong>Watch:</strong> Government response to repeal calls; further targeting of Sikh individuals; parliamentary bill or debate; polling on the kirpan exemption specifically.</p>
 </div>
 
-<hr class="divider">
+<div class="card">
+  <h3><span class="tag tn">new</span> Operation Southern Spear — Civilian Toll</h3>
+  <p>As of May 8, at least 205 people have been killed in 62 US airstrikes on maritime vessels since September 2025 under Operation Southern Spear. No public evidence has been released for any individual strike. A <a href="https://www.theguardian.com">Guardian</a> investigation (May 15) identified 13 victims and found no evidence any of them were involved in drug trafficking. Just Security has published an analysis arguing the vessels and crews are not valid military targets under international law. This story is receiving almost no sustained Western mainstream coverage relative to its body count. It connects directly to the Colombia election: the June 21 runoff features a far-right candidate who has structurally aligned himself with this kind of US enforcement, and whose framing becomes harder to sustain if the Guardian's findings gain traction.</p>
+  <p class="watch"><strong>Watch:</strong> Further victim identification; Colombian candidate statements on Southern Spear before June 21; any US congressional oversight hearing; ICC or ICJ referral.</p>
+</div>
 
-<h2>Markets</h2>
+<!-- CULTURAL LAYER -->
+<div class="section-label">The Social / Cultural Layer</div>
+
+<div class="card">
+  <h3>The Stranger Things finale and the flood of backward time</h3>
+  <p>The Stranger Things finale has broken the UK music chart open — backward. Fleetwood Mac's "Landslide" debuted as a new entry today, driven by its placement in the finale. "Everywhere" jumped +12 to #79. "Go Your Own Way" up +4 to #86. "Little Lies" NEW at #198. Four Fleetwood Mac tracks charting simultaneously, two of them brand new, is not organic catalogue activity — it is a shared cultural event around a series ending. The wave extends further: Kings of Leon "Sex on Fire" +12, LINKIN PARK "In the End" +13, Elton John "Rocket Man" +17, Radiohead "Creep" +8. Coldplay "Viva La Vida" +6. The chart is rushing toward the late 80s and 90s.</p>
+  <p>The divergence worth naming: this nostalgic movement is happening on a day when UK Twitter is splitting sharply along lines of race, religion, and national belonging. The Stranger Things chart surge is not escapism into nothing — it is a retreat into a specific past, the pre-internet, pre-Brexit, pre-culture-war world that the show is set in and that its final season is presumably saying goodbye to. "Landslide" — a song about standing at a turning point, about time passing and not knowing which way to fall — lands with particular weight when the present feels this unstable. The audience knows what they're reaching for, even if they couldn't articulate it.</p>
+  <p>The top five of the chart has not moved at all: Olivia Dean holds #1 with "Man I Need" <span class="tag tb">UK</span>, Drake at #2, Ariana Grande at #3, Sam Fender &amp; Olivia Dean at #4 <span class="tag tb">UK</span>, The Chemical Brothers at #5 <span class="tag tb">UK</span>. Three British artists in the top five is unusual. The nostalgia wave runs below a stable, contemporary British-led summit — which is itself a mildly interesting structural fact about where UK music is right now.</p>
+</div>
+
+<div class="social-data">
+  <h4>Apple Music UK Top 5</h4>
+  <div class="music-row"><span class="pos">1</span><span class="chg ceq">=</span><b>Olivia Dean</b> — Man I Need <span class="tag tb">UK</span></div>
+  <div class="music-row"><span class="pos">2</span><span class="chg ceq">=</span><b>Drake</b> — Janice STFU</div>
+  <div class="music-row"><span class="pos">3</span><span class="chg ceq">=</span><b>Ariana Grande</b> — hate that i made you love me</div>
+  <div class="music-row"><span class="pos">4</span><span class="chg ceq">=</span><b>Sam Fender &amp; Olivia Dean</b> — Rein Me In <span class="tag tb">UK</span></div>
+  <div class="music-row"><span class="pos">5</span><span class="chg ceq">=</span><b>The Chemical Brothers</b> — Go <span class="tag tb">UK</span></div>
+</div>
+
+<div class="social-data" style="margin-top:0.6rem">
+  <h4>Stranger Things Finale — Chart Movers</h4>
+  <div class="music-row"><span class="pos">#79</span><span class="chg cup">+12</span><b>Fleetwood Mac</b> — Everywhere (2017) <span class="tag tb">UK</span></div>
+  <div class="music-row"><span class="pos">NEW</span><span class="chg cup">●</span><b>Fleetwood Mac</b> — Landslide <span class="tag tb">UK</span></div>
+  <div class="music-row"><span class="pos">#86</span><span class="chg cup">+4</span><b>Fleetwood Mac</b> — Go Your Own Way <span class="tag tb">UK</span></div>
+  <div class="music-row"><span class="pos">#124</span><span class="chg cup">+12</span><b>Kings of Leon</b> — Sex on Fire</div>
+  <div class="music-row"><span class="pos">#154</span><span class="chg cup">+17</span><b>Elton John</b> — Rocket Man <span class="tag tb">UK</span></div>
+  <div class="music-row"><span class="pos">#155</span><span class="chg cup">+8</span><b>Radiohead</b> — Creep <span class="tag tb">UK</span></div>
+  <div class="music-row"><span class="pos">#179</span><span class="chg cup">+13</span><b>LINKIN PARK</b> — In the End</div>
+</div>
+
+<div class="social-data" style="margin-top:0.6rem">
+  <h4>UK Twitter / X Trends — 4 June 2026</h4>
+  <ul>
+    <li><span class="rank">1.</span> <b>Farage</b> — kirpan exemption debate; right-wing mobilisation after Digwa sentencing</li>
+    <li><span class="rank">5.</span> <b>George Floyd</b> — 6th anniversary of UK BLM protest wave peak (June 4–7, 2020)</li>
+    <li><span class="rank">6.</span> <b>#loveisland</b> — ITV2 series underway; cultural baseline escapism</li>
+    <li><span class="rank">8.</span> <b>Sikh</b> — Digwa sentence, kirpan debate, harassment of Sikh community</li>
+    <li><span class="rank">9.</span> <b>Henry / Southampton</b> — Henry Nowak murder; sentencing day</li>
+    <li><span class="rank">11.</span> <b>Starmer / #PMQs</b> — PMQs session, North Korea slip, internal Labour briefing row</li>
+    <li><span class="rank">16.</span> <b>Southport</b> — comparative knife crime discourse triggered by sentencing</li>
+    <li><span class="rank">2–4.</span> <b>Brunson / Knicks / Wemby / #NBAFinals</b> — NBA Finals running live</li>
+    <li><span class="rank">13.</span> <b>Kratos / God of War</b> — gaming: likely new God of War announcement</li>
+  </ul>
+</div>
+
+<div class="social-data" style="margin-top:0.6rem">
+  <h4>TikTok Trending Sounds (Global, June 3–4)</h4>
+  <ul>
+    <li><span class="rank">1.</span> <b>Ad vikāra</b> — UK-origin sound, score 999; <a href="https://music.apple.com/gb/search?term=Ad+vikara">Apple Music</a></li>
+    <li><span class="rank">2.</span> <b>Stepi</b> (oappmaniss._) — 539K UGC videos, +9.4%/day; SE Asia led</li>
+    <li><span class="rank">3.</span> <b>QUE LOUCURA</b> (DJ EXE &amp; CACAU CHUU) — 486K videos, +10.8%/day; Latin America</li>
+    <li><span class="rank">4.</span> Contains <b>Потеряв Контроль</b> — Russian track, 394K videos; trending Myanmar, Colombia, globally</li>
+    <li><span class="rank">5.</span> <b>Delirious</b> (Yoshimasa Terui) — anime sound, 164M views, 2-year-old perennial</li>
+  </ul>
+  <p style="font-size:0.78rem;color:var(--text-3);margin-top:0.5rem">TikTok top sounds are globally distributed: Latin American, Southeast Asian, one Russian track. No Stranger Things sound in visible top results — the Fleetwood Mac surge is Apple Music driven, not TikTok native. Two distinct cultural ecosystems, barely intersecting.</p>
+</div>
+
+<!-- MARKETS -->
+<div class="section-label">Markets</div>
+
 <div class="markets-grid">
   <div class="market-tile">
-    <div class="m-label">FTSE 100</div>
-    <div class="m-val m-down">10,338</div>
-    <div class="m-note">−0.68% · Iran risk-off + gilt pressure</div>
+    <div class="label">FTSE 100</div>
+    <div class="value">~10,400</div>
+    <div class="change neutral">Slight recovery from 10,338 Wed close</div>
   </div>
   <div class="market-tile">
-    <div class="m-label">Brent Crude</div>
-    <div class="m-val m-up">$101.36</div>
-    <div class="m-note">+$4.71 today · Kuwait airport hit; comms suspended</div>
+    <div class="label">Nasdaq</div>
+    <div class="value">–0.89%</div>
+    <div class="change down">Wed close. Thu futures lower: Broadcom –14%, CrowdStrike –11% on soft guidance</div>
   </div>
   <div class="market-tile">
-    <div class="m-label">UK 30Y Gilt</div>
-    <div class="m-val m-up">5.60%</div>
-    <div class="m-note">Near multi-decade highs · Political risk building</div>
+    <div class="label">Brent Crude</div>
+    <div class="value">$96.97</div>
+    <div class="change down">–0.86%. Lebanon ceasefire framework easing. Down from $101+ range this week.</div>
   </div>
   <div class="market-tile">
-    <div class="m-label">UK House Prices</div>
-    <div class="m-val m-down">−0.6%</div>
-    <div class="m-note">May (Nationwide) · Largest drop since Jun 2025</div>
+    <div class="label">30Y Gilt</div>
+    <div class="value">5.60%</div>
+    <div class="change neutral">10Y: 4.85%. BoE first hike priced September. Elevated but not accelerating.</div>
   </div>
 </div>
-<p style="margin-top:0.8rem; font-size:0.82rem; color:var(--text-3);">Brent above $100 feeds directly into UK household energy costs and CPI — compounding the gilt yield pressure ahead of the next energy price cap review.</p>
 
-<hr class="divider">
+<!-- OUTSIDE THE FRAME -->
+<div class="section-label">Outside the Frame</div>
 
-<h2>Outside the Frame</h2>
-
-<div class="card">
-  <h3>Operation Southern Spear: 200+ killed in US drug-boat strikes — barely covered in UK</h3>
-  <p>Since September 2025, the US military has killed more than 200 people in airstrikes on vessels in the Caribbean and Latin American Pacific waters that the Trump administration has alleged — without producing public evidence — were carrying drugs for Tren de Aragua (Venezuela) or Colombia's ELN guerrillas. The operation is called Southern Spear. The first airstrike, announced by Trump on September 2, killed all 11 people aboard a Venezuelan-flagged boat. In one of the most troubling documented incidents, the military killed survivors of the initial strike with a deliberate follow-up attack.</p>
-  <p>Human rights organisations, Colombia, Venezuela, and international legal experts have said the strikes are illegal under US and international law. Democratic lawmakers have called the killings extrajudicial murder. The Trump administration says it is legal and necessary. This story is receiving almost no coverage in UK media.</p>
-  <p>It matters to Firas's map for a direct reason: the Colombia election runoff is June 21. De la Espriella, the Trump-style candidate leading with 43.7%, is likely to accommodate the US posture in Latin American waters. Iván Cepeda (40.9%), continuity with Petro, would challenge it. The outcome of that vote will determine whether Latin America acquiesces or resists — and whether the 200 dead becomes the floor or the ceiling of this operation.</p>
+<div class="otf-card">
+  <h3>New voice: Velina Tchakarova on the Ukraine "June Opening"</h3>
+  <p>Vienna-based geopolitical analyst Velina Tchakarova published today on Substack what is probably the most structurally coherent read of Ukraine's current moment available in English. Her framing: the diplomatic track is "frozen at the level of structural settlement while remaining active at the level of humanitarian gestures" — the prisoner exchange architecture and Orthodox Easter truce prove minimum negotiating infrastructure exists, but no actor has the political cover to use it for a real settlement yet. Her "June Opening" argument is that this month creates a window before summer fighting narrows options again.</p>
+  <p>What makes her worth adding to the reading list: she comes from a Central European analytical tradition rather than the Washington/London axis that dominates English-language Ukraine coverage, and her structural frame is less invested in Ukrainian battlefield optimism or Western hand-wringing. Her <a href="https://velinatchakarova.substack.com">Substack</a> is free to follow. Genuinely a different angle on the same story.</p>
 </div>
 
-<hr class="divider">
+<div class="otf-card">
+  <h3>Operation Southern Spear: 205 dead, almost no press accountability</h3>
+  <p>Since September 2025, the US military has killed at least 205 people in 62 airstrikes on maritime vessels under Operation Southern Spear. No public evidentiary basis has been released for any strike. A <a href="https://www.theguardian.com">Guardian</a> investigation published May 15 identified 13 of the victims and found no evidence of drug trafficking involvement by any of them. Just Security has published a legal analysis arguing the vessels and their crews do not qualify as legitimate military targets under any standard of international law. This story is receiving almost no sustained coverage in mainstream Western outlets relative to its body count — which is larger than many headline conflicts. It connects directly to the Colombia election: de la Espriella, the far-right frontrunner in the June 21 runoff, has structurally aligned himself with this kind of cross-border US enforcement, and his position becomes harder to hold if the Guardian's findings reach Colombian voters.</p>
+</div>
 
-<h2>Thread Status</h2>
-<table>
+<!-- STATUS TABLE -->
+<div class="section-label">All Active Threads</div>
+
+<table class="status-table">
   <thead>
     <tr>
       <th>Thread</th>
       <th>Status</th>
-      <th>One Line</th>
+      <th>Current line</th>
       <th>Changed</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Iran / Hormuz</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">Kuwait airport hit; Iran suspended ceasefire comms; Brent $101.36; Lebanon is the precondition</td>
+      <td class="thread-label">Israel / Lebanon</td>
+      <td><span class="tag tc">changed</span></td>
+      <td class="status-line">Conditional ceasefire framework agreed; pilot security zones; Hezbollah rejected partial deal; next talks Jun 22</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Iran / Hormuz</td>
+      <td><span class="tag tc">changed</span></td>
+      <td class="status-line">Lebanon framework easing risk; Brent $96.97; Iran-US macro ceasefire intact; Jun 22 talks now key</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Ukraine Peace Deadline</td>
+      <td><span class="tag tc">changed</span></td>
+      <td class="status-line">Diplomatic vacuum holds; Zelensky: window until winter; Tchakarova "June Opening and Its Limits" published</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">UK Economic Stress</td>
+      <td><span class="tag tc">changed</span></td>
+      <td class="status-line">FTSE ~10,400; 30Y gilt 5.60%; 10Y 4.85%; Brent easing; BoE hike priced September</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">UK Labour Leadership</td>
+      <td><span class="tag tc">changed</span></td>
+      <td class="status-line">PMQs North Korea slip; Turner briefing row; Burnham at Makerfield Jun 18; Polymarket: Burnham 59% next PM</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Mearsheimer</td>
+      <td><span class="tag tc">changed</span></td>
+      <td class="status-line">Lebanon framework confirms his Netanyahu-blocking-Iran-deal thesis; Hezbollah now also a proximate blocker</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">UK Kirpan Debate</td>
+      <td><span class="tag tn">new</span></td>
+      <td class="status-line">Digwa sentenced Jun 4 (min 21 years); calls to repeal kirpan exemption; Sikh community under harassment</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Operation Southern Spear</td>
+      <td><span class="tag tn">new</span></td>
+      <td class="status-line">205+ killed in 62 US strikes since Sep 2025; Guardian found no trafficking evidence in 13 identified victims</td>
+      <td class="last-changed">Jun 4</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Ebola DRC / Uganda</td>
+      <td><span class="tag ts">stable</span></td>
+      <td class="status-line">344 confirmed DRC, 15 Uganda, 60 deaths; US $112M pledged; MSF 65-bed centre building in Ituri; PHEIC in force</td>
       <td class="last-changed">Jun 3</td>
     </tr>
     <tr>
-      <td>Israel / Lebanon</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">Washington Day 2 talks concluded; Lebanon now the pivot of US-Iran ceasefire linkage</td>
-      <td class="last-changed">Jun 3</td>
-    </tr>
-    <tr>
-      <td>Ukraine Peace Deadline</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">June 1 deadline passed; Kyiv struck Jun 2 (7 dead, 89 wounded); Trump silent; vacuum deepens</td>
-      <td class="last-changed">Jun 3</td>
-    </tr>
-    <tr>
-      <td>UK Economic Stress</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">FTSE 10,338 (−0.68%); 30Y gilt 5.60%; Brent above $100 adds CPI pressure; house prices −0.6% May</td>
-      <td class="last-changed">Jun 3</td>
-    </tr>
-    <tr>
-      <td>UK Labour Leadership</td>
-      <td><span class="tag new">new</span></td>
-      <td class="status-line">Burnham cancelled investor call; Makerfield by-election Jun 18; Polymarket: Burnham 59%, Starmer 25%</td>
-      <td class="last-changed">Jun 3</td>
-    </tr>
-    <tr>
-      <td>Mearsheimer</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">"Trump Lashes Out at Bibi" Jun 2 post: Netanyahu's Lebanon ops block Iran deal Trump needs</td>
-      <td class="last-changed">Jun 3</td>
-    </tr>
-    <tr>
-      <td>Ebola — DRC / Uganda</td>
-      <td><span class="tag changed">changed</span></td>
-      <td class="status-line">344 confirmed cases (was 125); 60 deaths; US $112M pledged today; no geographic expansion</td>
-      <td class="last-changed">Jun 3</td>
-    </tr>
-    <tr>
-      <td>Sudan Famine</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">Lean season active (Jun–Sep); 19.5M acutely food insecure; $2.9B plan 20% funded; no ceasefire</td>
+      <td class="thread-label">Sudan Famine</td>
+      <td><span class="tag ts">stable</span></td>
+      <td class="status-line">Lean season active; 19.5M acutely food insecure; 825K children SAM; 20% funded; no ceasefire</td>
       <td class="last-changed">Jun 1</td>
     </tr>
     <tr>
-      <td>Russia / NATO / Romania</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">No new NATO territory incidents; EU 21st sanctions package prep; focus shifted to Ukraine peace</td>
+      <td class="thread-label">Russia / NATO / Romania</td>
+      <td><span class="tag ts">stable</span></td>
+      <td class="status-line">No drone incursion since May 29 Galati strike; EU 21st sanctions package prep; focus on Ukraine peace track</td>
       <td class="last-changed">May 30</td>
     </tr>
     <tr>
-      <td>Turkey — CHP / Opposition</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">Party Assembly reconstituted under Kılıçdaroğlu; Imamoglu still imprisoned; 55–45 vs Erdogan in polls</td>
+      <td class="thread-label">Turkey — CHP / Opposition</td>
+      <td><span class="tag ts">stable</span></td>
+      <td class="status-line">Kilicdaroglu reinstated; Imamoglu trial ongoing; Bloomberg: Erdogan consolidating grip on opposition</td>
       <td class="last-changed">Jun 1</td>
     </tr>
     <tr>
-      <td>Colombia Election 2026</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">Runoff June 21: de la Espriella 43.7% vs Cepeda 40.9%; no major polling shift</td>
+      <td class="thread-label">Colombia Election 2026</td>
+      <td><span class="tag ts">stable</span></td>
+      <td class="status-line">Runoff Jun 21: de la Espriella 43.7% vs Cepeda 40.9%; Operation Southern Spear live issue; no polling shift</td>
       <td class="last-changed">Jun 1</td>
     </tr>
     <tr>
-      <td>Syria Parliament</td>
-      <td><span class="tag stable">stable</span></td>
-      <td class="status-line">First session June 8; 210 members; name change from "People's Assembly" likely on day one</td>
+      <td class="thread-label">Syria Parliament</td>
+      <td><span class="tag ts">stable</span></td>
+      <td class="status-line">First session Jun 8 confirmed; 210 members (70 al-Sharaa appointed); name change from People's Assembly expected</td>
       <td class="last-changed">Jun 1</td>
     </tr>
   </tbody>
 </table>
 
-<footer>
-  <p>Generated 3 June 2026 &middot; <a href="https://firaskh79.github.io/daily-digest/" target="_blank">firaskh79.github.io/daily-digest</a></p>
-</footer>
+<div class="footer">
+  <span>Generated 4 June 2026</span>
+  <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
+</div>
 
 </body>
 </html>
