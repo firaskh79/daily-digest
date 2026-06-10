@@ -4,9 +4,9 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Jun 7-8: worst Iran-Israel exchanges since Apr ceasefire; both sides pulled back; Brent -3.4% to ~$91; Iran explicit: no US deal without Lebanon ceasefire (Araghchi on Al Mayadeen); Jun 22 talks remain key milestone",
+      "status_line": "Settebello tanker disabled in Gulf of Oman (8th vessel since April blockade); 3 Indian crew missing; Brent +3.44% to $94.60; Trump threatened more strikes; June 22 talks still on calendar but conditions deteriorating",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-09",
+      "last_changed": "2026-06-10",
       "expand_if": [
         "formal MOU signed",
         "talks completely collapse (Iran withdraws entirely)",
@@ -14,14 +14,15 @@
         "naval incident closes Strait",
         "new major US or Israeli strike breaking the pullback",
         "Lebanon ceasefire agreed (would remove Iran's stated precondition)",
-        "Trump public ultimatum to Netanyahu on Lebanon"
+        "Trump public ultimatum to Netanyahu on Lebanon",
+        "India escalates response to missing/killed crew"
       ]
     },
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
-      "status": "changed",
-      "status_line": "Israel struck Beirut suburbs Jun 7, triggering Iran missile response; Hezbollah still rejecting conditional ceasefire (pilot security zones, LAF exclusive control); next talks Jun 22 week",
+      "status": "stable",
+      "status_line": "No new escalation since Jun 7-8 exchange; Hezbollah still rejecting pilot zones; Lebanon ceasefire remains Iran's precondition for US deal; next talks Jun 22 week",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -38,8 +39,8 @@
     {
       "id": "ukraine-peace-deadline",
       "label": "Ukraine Peace Deadline",
-      "status": "changed",
-      "status_line": "Zelensky Jun direct talks + unconditional ceasefire proposal rejected by Putin as pointless; Washington bandwidth absorbed by Iran conflict; Polymarket: deal before Jun 30 very unlikely, before 2027 trader consensus",
+      "status": "stable",
+      "status_line": "Zelensky unconditional ceasefire proposal rejected by Putin; US bandwidth absorbed by Iran conflict; Polymarket: deal before Jun 30 very unlikely, before 2027 trader consensus",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -55,7 +56,7 @@
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "stable",
-      "status_line": "FTSE 10,329; 30Y gilt 5.60%; 10Y 4.92%; Brent easing to ~$91; BoE first hike priced September; Q1 GDP +0.6%; permanent staff placements fell at sharpest rate in 10 months (May, REC/KPMG)",
+      "status_line": "FTSE 10,254 (+0.27%); Brent $94.60 (+3.44%); 30Y gilt 5.60%; 10Y 4.94%; US CPI 4.2% adds regional inflation pressure; BoE first hike priced September; Q1 GDP +0.6%",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -70,8 +71,8 @@
     {
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
-      "status": "changed",
-      "status_line": "95+ Labour MPs calling for Starmer to resign; Burnham officially on Makerfield ballot Jun 18; Streeting resigned cabinet; Starmer: will not walk away; Polymarket: Burnham 59% next PM, Starmer 25% to remain",
+      "status": "stable",
+      "status_line": "95+ Labour MPs calling for Starmer to resign; Burnham on Makerfield ballot Jun 18 (Survation: Burnham 49%, Reform 39%); Streeting resigned cabinet; Starmer: will not walk away",
       "first_seen": "2026-06-03",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -86,8 +87,8 @@
     {
       "id": "mearsheimer",
       "label": "Mearsheimer",
-      "status": "changed",
-      "status_line": "Iran explicitly made Lebanon ceasefire a precondition for US deal (Araghchi on Al Mayadeen Jun 8); Netanyahu-blocking thesis confirmed by Iran's own words; Hezbollah now also proximate blocker, complicating binary framing",
+      "status": "stable",
+      "status_line": "Netanyahu-blocking thesis confirmed by Iran's Lebanon precondition (Araghchi, Jun 8); Settebello adds diplomatic-military contradiction layer Mearsheimer identified; no new post or appearance",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -99,14 +100,14 @@
     {
       "id": "uk-kirpan-debate",
       "label": "UK Kirpan Debate",
-      "status": "changed",
-      "status_line": "Parliament debated Jun 9; Home Secretary defended exemption (no collective punishment); Reform UK pledged repeal; Labour MP Dhesi condemned scapegoating; law unchanged",
+      "status": "stable",
+      "status_line": "Parliament debated Jun 9; Home Secretary defended exemption; law unchanged; 'Sikh' and 'Henry' still trending Jun 10 on UK X; Reform's repeal pledge gaining online traction",
       "first_seen": "2026-06-04",
       "last_changed": "2026-06-09",
       "expand_if": [
         "Government statement on kirpan exemption review",
         "Backbench parliamentary bill to repeal exemption tabled",
-        "Further attacks on Sikh individuals escalate to serious violence",
+        "Further attacks on Sikh individuals",
         "Sikh community organisations make formal complaint to police or EHRC",
         "Polling published on public attitudes to kirpan exemption",
         "Farage or Reform make this a formal policy position"
@@ -115,8 +116,8 @@
     {
       "id": "operation-southern-spear",
       "label": "Operation Southern Spear",
-      "status": "new",
-      "status_line": "Colombia runoff Jun 21: de la Espriella 43.7% vs Cepeda 40.9%; no major polling shift; 205+ killed in 62 US strikes since Sep 2025; Guardian investigation unanswered; no US congressional response",
+      "status": "stable",
+      "status_line": "Colombia runoff Jun 21; US Senate Foreign Relations Committee raised Southern Spear in hemispheric affairs hearing; de la Espriella favoured; no new investigation or casualty figures",
       "first_seen": "2026-06-04",
       "last_changed": "2026-06-04",
       "expand_if": [
@@ -132,22 +133,23 @@
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
       "status": "changed",
-      "status_line": "452 confirmed DRC + 19 Uganda; 88 deaths (as of Jun 6); American HCW transported to Germany for treatment; WHO/Africa CDC $518m plan Jun-Nov; PHEIC in force; no geographic expansion beyond DRC/Uganda",
+      "status_line": "598 confirmed DRC / 115 deaths as of Jun 10 (up from 452/88 on Jun 6); ~37 new cases/day; US State Dept adds $20M for border-state preparedness; PHEIC in force; no spread beyond DRC/Uganda",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-06-09",
+      "last_changed": "2026-06-10",
       "expand_if": [
         "cases confirmed outside DRC/Uganda",
         "WHO raises alert further",
         "vaccine supply or pipeline announcement",
         "Kampala cases multiply significantly",
+        "confirmed case in Burundi, Rwanda, or South Sudan",
         "second American or European healthcare worker infected"
       ]
     },
     {
       "id": "russia-nato-romania",
       "label": "Russia / NATO / Romania",
-      "status": "changed",
-      "status_line": "Ukrainian sea drone exploded in Constanta port Jun 5 (Russian electronic jamming; Kyiv confirmed); Trump silent; NATO foreign ministers meeting to discuss drone incursion protocols; third Russian-adjacent debris event on NATO soil in Romania in 2026",
+      "status": "stable",
+      "status_line": "Constanta port drone Jun 5 confirmed Ukrainian origin via electronic jamming; NATO foreign ministers discussing drone-over-allied-territory protocols; no further incident since Jun 5",
       "first_seen": "2026-05-29",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -163,7 +165,7 @@
       "id": "colombia-election-2026",
       "label": "Colombia Election 2026",
       "status": "stable",
-      "status_line": "Runoff Jun 21: de la Espriella 43.7% vs Cepeda 40.9%; Operation Southern Spear live issue; no major polling shift; 12 days to vote",
+      "status_line": "Runoff Jun 21: de la Espriella ~44% vs Cepeda ~41% (first round); de la Espriella favoured after Paloma Valencia endorsement; Southern Spear raised in US Senate hearing; 11 days to vote",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-01",
       "expand_if": [
@@ -178,8 +180,8 @@
     {
       "id": "syria-parliament",
       "label": "Syria Parliament",
-      "status": "changed",
-      "status_line": "First session did NOT convene Jun 8 as planned; no official invitations issued; al-Sharaa has not named his 70-seat presidential quota; no new date announced",
+      "status": "stable",
+      "status_line": "First session did not convene Jun 8 as planned; al-Sharaa has not named his 70-seat presidential quota; no new date announced; transition timeline slipping",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -189,6 +191,37 @@
         "international reaction to composition",
         "Islamist-secular conflict in chamber",
         "Kurdish/minority representation disputes escalate"
+      ]
+    },
+    {
+      "id": "world-cup-2026",
+      "label": "World Cup 2026",
+      "status": "new",
+      "status_line": "Tournament opens Jun 11 (Mexico vs South Africa); England final friendly Jun 10 vs Costa Rica; England's first match Jun 17 vs Croatia in Dallas; 48-team event runs to Jul 19 final at MetLife Stadium; Fleetwood Mac farewell tour and tournament build-up already visible in charts",
+      "first_seen": "2026-06-10",
+      "last_changed": "2026-06-10",
+      "expand_if": [
+        "England match results (Jun 17, Jun 23, Jun 27)",
+        "major off-field controversy (player, host city, Trump involvement)",
+        "cultural flashpoint around tournament (protest, geopolitical moment)",
+        "England reaches knockout round",
+        "England eliminated"
+      ]
+    },
+    {
+      "id": "taiwan-strait-tension",
+      "label": "Taiwan Strait Tension",
+      "status": "new",
+      "status_line": "Taiwan fired HIMARS into Taiwan Strait for first time Jun 10 (live-fire drill in Taichung City, directed toward China); Trump paused follow-on HIMARS arms deal after Xi summit; China response not yet issued; minimal Western media coverage",
+      "first_seen": "2026-06-10",
+      "last_changed": "2026-06-10",
+      "expand_if": [
+        "China issues formal military response or condemnation",
+        "Trump resumes or formally cancels Taiwan arms deal",
+        "PLA conducts counter-drill or naval exercise near Taiwan",
+        "US diplomatic statement on Taiwan independence or One China policy",
+        "Taiwan announces further HIMARS deployment or expanded capability",
+        "Incident in Taiwan Strait (vessel, aircraft)"
       ]
     }
   ],
@@ -275,5 +308,5 @@
       "why_interesting": "Former senior British diplomat and MI6 officer; argues Hezbollah advises Iran rather than takes orders, inverting the proxy narrative; Jun 2026 pieces frame Iran's posture as calculated 'escalatory deterrence' not desperate deal-seeking — structurally different from any Western mainstream analysis"
     }
   ],
-  "last_updated": "2026-06-09"
+  "last_updated": "2026-06-10"
 }
