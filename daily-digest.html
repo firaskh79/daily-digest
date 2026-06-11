@@ -1,404 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firas's Digest — June 10, 2026</title>
-<style>
-:root {
-  --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
-  --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
-  --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
-  --radius:10px; --radius-sm:6px;
-  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --purple-bg:#EEEDFE; --purple-text:#3C3489;
-  --teal-bg:#E1F5EE; --teal-text:#0F6E56;
-  --coral-bg:#FAECE7; --coral-text:#712B13;
-  --amber-bg:#FAEEDA; --amber-text:#633806;
-  --blue-bg:#E6F1FB; --blue-text:#0C447C;
-  --green-bg:#EAF3DE; --green-text:#27500A;
-  --gray-bg:#F1EFE8; --gray-text:#444441;
-  --link:#185FA5;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:#121210; --bg-2:#1e1e1b; --bg-3:#262621;
-    --text:#e8e6e0; --text-2:#a8a5a0; --text-3:#6a6864;
-    --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
-    --purple-bg:#1e1a40; --purple-text:#a89cf0;
-    --teal-bg:#0d2e24; --teal-text:#5cc4a2;
-    --coral-bg:#2e140e; --coral-text:#f0937a;
-    --amber-bg:#2a1a06; --amber-text:#d4a055;
-    --blue-bg:#0a1e35; --blue-text:#6bacd8;
-    --green-bg:#111f07; --green-text:#7eba52;
-    --gray-bg:#1e1e1b; --gray-text:#b8b5b0;
-    --link:#5ba3d9;
-  }
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 2rem;
-  line-height: 1.65;
-  font-size: 15px;
-}
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-header {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1.25rem;
-  margin-bottom: 2rem;
-}
-header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
-header .date { color: var(--text-3); font-size: 0.85rem; margin-top: 0.25rem; }
-h2 {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 1rem;
-  margin-top: 2.5rem;
-}
-.lead-item {
-  background: var(--bg-2);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1rem;
-  border-left: 3px solid var(--text-3);
-}
-.lead-item.top { border-left-color: var(--text); }
-.lead-item p { color: var(--text); margin-bottom: 0.5rem; }
-.lead-item p:last-child { margin-bottom: 0; }
-.lead-item .label {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem;
-}
-.story-card {
-  background: var(--bg-2); border-radius: var(--radius);
-  padding: 1.25rem 1.5rem; margin-bottom: 1rem;
-}
-.story-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; }
-.story-card p { color: var(--text-2); margin-bottom: 0.5rem; }
-.story-card p:last-child { margin-bottom: 0; }
-.story-card .watch { font-size: 0.8rem; color: var(--text-3); font-style: italic; margin-top: 0.75rem; }
-.tag {
-  display: inline-block; font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.07em; text-transform: uppercase;
-  padding: 0.15em 0.5em; border-radius: 3px;
-  margin-right: 0.3em; vertical-align: middle;
-}
-.tag.tp { background: var(--purple-bg); color: var(--purple-text); }
-.tag.ta { background: var(--amber-bg); color: var(--amber-text); }
-.tag.ts { background: var(--gray-bg); color: var(--gray-text); }
-.tag.tb { background: var(--teal-bg); color: var(--teal-text); }
-.tag.tc { background: var(--coral-bg); color: var(--coral-text); }
-.tag.tbl { background: var(--blue-bg); color: var(--blue-text); }
-.markets-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-@media (max-width: 480px) { .markets-grid { grid-template-columns: 1fr; } }
-.market-tile { background: var(--bg-2); border-radius: var(--radius-sm); padding: 1rem; }
-.market-tile .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.25rem; }
-.market-tile .value { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
-.market-tile .change { font-size: 0.8rem; margin-top: 0.15rem; }
-.up { color: var(--teal-text); }
-.down { color: var(--coral-text); }
-.note { color: var(--text-3); font-size: 0.75rem; margin-top: 0.25rem; }
-.chart-row {
-  display: flex; align-items: baseline; gap: 0.5rem;
-  padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;
-}
-.chart-row:last-child { border-bottom: none; }
-.chart-pos { font-size: 0.75rem; font-weight: 700; color: var(--text-3); min-width: 1.8rem; text-align: right; }
-.chart-change { font-size: 0.7rem; min-width: 2rem; }
-.chart-text { flex: 1; }
-.trend-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-.trend-pill {
-  background: var(--bg-2); border: 1px solid var(--border);
-  border-radius: 20px; padding: 0.25em 0.75em; font-size: 0.8rem; color: var(--text-2);
-}
-.status-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-.status-table th {
-  text-align: left; font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3);
-  padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border-2);
-}
-.status-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-.status-table tr:last-child td { border-bottom: none; }
-.status-table .status-line { color: var(--text-2); font-size: 0.8rem; }
-.status-table .date-col { color: var(--text-3); font-size: 0.75rem; white-space: nowrap; }
-footer {
-  margin-top: 3rem; padding-top: 1.5rem;
-  border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-3);
-}
-.otf-card {
-  background: var(--bg-3); border-radius: var(--radius);
-  padding: 1.25rem 1.5rem; border: 1px solid var(--border);
-}
-.otf-card p { margin-bottom: 0.5rem; }
-.otf-card p:last-child { margin-bottom: 0; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firas's Digest — 11 June 2026</title>
+  <style>
+    :root {
+      --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
+      --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
+      --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
+      --radius:10px; --radius-sm:6px;
+      --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --purple-bg:#EEEDFE; --purple-text:#3C3489;
+      --teal-bg:#E1F5EE; --teal-text:#0F6E56;
+      --coral-bg:#FAECE7; --coral-text:#712B13;
+      --amber-bg:#FAEEDA; --amber-text:#633806;
+      --blue-bg:#E6F1FB; --blue-text:#0C447C;
+      --green-bg:#EAF3DE; --green-text:#27500A;
+      --gray-bg:#F1EFE8; --gray-text:#444441;
+      --link:#185FA5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#121210; --bg-2:#1e1e1b; --bg-3:#282824;
+        --text:#e8e6e0; --text-2:#a0a09a; --text-3:#6a6a64;
+        --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
+        --purple-bg:#2a2655; --purple-text:#b0aaff;
+        --teal-bg:#0e2e24; --teal-text:#7ddbb8;
+        --coral-bg:#3a1508; --coral-text:#f4a585;
+        --amber-bg:#3a2005; --amber-text:#f0bb7a;
+        --blue-bg:#0a2040; --blue-text:#82bef5;
+        --green-bg:#152008; --green-text:#8dc95a;
+        --gray-bg:#222220; --gray-text:#c0bfba;
+        --link:#6aabf5;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+    header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
+    header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
+    header .date { color: var(--text-3); font-size: 0.85rem; margin-top: 0.2rem; }
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .lead-item { margin-bottom: 1.4rem; }
+    .lead-item p { color: var(--text-2); line-height: 1.7; }
+    .lead-item p + p { margin-top: 0.7rem; }
+    .lead-number {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-3);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.05em;
+    }
+    .card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .card-title { font-size: 0.95rem; font-weight: 700; }
+    .card p { color: var(--text-2); font-size: 0.9rem; line-height: 1.65; margin-bottom: 0.5rem; }
+    .card p:last-child { margin-bottom: 0; }
+    .card .watch { font-size: 0.82rem; color: var(--text-3); border-top: 1px solid var(--border); margin-top: 0.7rem; padding-top: 0.7rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.15em 0.55em;
+      border-radius: 4px;
+    }
+    .badge-new { background: var(--purple-bg); color: var(--purple-text); }
+    .badge-changed { background: var(--amber-bg); color: var(--amber-text); }
+    .badge-stable { background: var(--gray-bg); color: var(--gray-text); }
+    .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.12em 0.45em;
+      border-radius: 3px;
+    }
+    .tag.tb { background: var(--teal-bg); color: var(--teal-text); }
+    .markets-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    @media (min-width: 500px) {
+      .markets-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .market-tile {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem 0.9rem;
+    }
+    .market-tile .label { font-size: 0.72rem; color: var(--text-3); margin-bottom: 0.2rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    .market-tile .value { font-size: 1.05rem; font-weight: 700; }
+    .market-tile .change { font-size: 0.8rem; margin-top: 0.1rem; }
+    .up { color: #17924f; }
+    .down { color: #c0392b; }
+    .neutral { color: var(--text-3); }
+    .market-note { font-size: 0.8rem; color: var(--text-2); margin-top: 0.75rem; }
+    .status-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .status-table th {
+      text-align: left;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      padding: 0.4rem 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .status-table td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .status-table tr:last-child td { border-bottom: none; }
+    .status-table .thread-label { font-weight: 600; color: var(--text); }
+    .status-table .status-line { color: var(--text-2); }
+    .status-table .last-changed { color: var(--text-3); white-space: nowrap; font-size: 0.75rem; }
+    .outside-frame {
+      background: var(--bg-2);
+      border-left: 3px solid var(--link);
+      padding: 1rem 1.2rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 1rem;
+    }
+    .outside-frame .frame-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .outside-frame p { font-size: 0.88rem; color: var(--text-2); line-height: 1.65; }
+    .cultural-data { margin-top: 1rem; }
+    .cultural-data table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .cultural-data th { text-align: left; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-3); padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--border); }
+    .cultural-data td { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .cultural-data tr:last-child td { border-bottom: none; }
+    .cultural-data .pos { color: var(--text-3); font-weight: 600; text-align: right; padding-right: 0.5rem; }
+    .cultural-data .change-up { color: #17924f; font-size: 0.75rem; }
+    .cultural-data .change-down { color: #c0392b; font-size: 0.75rem; }
+    .cultural-data .change-new { color: var(--link); font-size: 0.75rem; font-weight: 700; }
+    .cultural-data .change-flat { color: var(--text-3); font-size: 0.75rem; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem; }
+  </style>
 </head>
 <body>
 
 <header>
   <h1>Firas's Digest</h1>
-  <div class="date">Wednesday, June 10, 2026</div>
+  <div class="date">Thursday, 11 June 2026</div>
 </header>
 
-<h2>Today's Signal</h2>
+<!-- LEAD -->
+<section>
+  <h2>Today's Signal</h2>
 
-<div class="lead-item top">
-  <div class="label">Iran · Gulf · Oil</div>
-  <p>The US military struck the M/T Settebello in the Gulf of Oman today — a precision hit on the engine room of an Italian-flagged tanker allegedly transporting Iranian oil. Three Indian crewmembers are missing; 21 were rescued. This is the eighth vessel disabled since the US began blockading Iranian ports in mid-April. Brent jumped 3.4% to $94.60.</p>
-  <p>The structural tension is now unmissable: the US is simultaneously running a naval blockade that kills crews and pursuing a nuclear deal with Iran, with the next round of talks on the calendar for the June 22 week. Every ship disabled is both coercion and deal-wrecker. The collateral cost today landed on India — whose crew are dead or missing — a country that has maintained careful neutrality and is the world's largest buyer of discounted Russian oil. If New Delhi responds with something more than a diplomatic protest, that neutrality may shift.</p>
-</div>
-
-<div class="lead-item">
-  <div class="label">Taiwan · Strait · Quietly Significant</div>
-  <p>While every editorial eye was on the Gulf, Taiwan fired HIMARS rockets into the Taiwan Strait for the first time in history — directed toward China — in a live-fire drill in Taichung City today. The timing deserves attention: Trump paused the follow-on HIMARS arms deal with Taiwan after his Xi summit last month. Taiwan just demonstrated, in public, a capability whose future supply is in diplomatic limbo. Whether this was a signal to Washington or Beijing, it was a signal. It is getting almost no coverage in UK media. It should.</p>
-</div>
-
-<div class="lead-item">
-  <div class="label">Ebola · DRC · Accelerating</div>
-  <p>The Ebola Bundibugyo case count in the DRC has risen to 598 confirmed with 115 deaths — up from 452 cases and 88 deaths just four days ago on June 6. That is roughly 37 new confirmed cases per day, and the rate has clearly accelerated. The US State Department announced an additional $20 million in funding today, bringing total US Ebola response to over $220 million, focused on preparedness in Burundi, Kenya, Rwanda, and South Sudan. Geographic spread beyond DRC and Uganda remains limited. The pace inside Ituri province is now the story to watch.</p>
-</div>
-
-<h2>Changed Threads</h2>
-
-<div class="story-card">
-  <h3><span class="tag ta">Changed</span> Iran / Hormuz</h3>
-  <p>The Settebello incident is the sharpest escalation since the June 7-8 exchange. Brent at $94.60 is the market's read on the risk premium. The ceasefire from April is holding in name only: eight vessels disabled in the oil blockade, Iran pulling back from direct military engagement but not from the conditions it has set. Trump threatened "more strikes" today. The June 22 talks remain the next structural test, but each day the blockade hardens, the deal corridor narrows.</p>
-  <p class="watch">Watch: Indian government response to missing crew; whether Iran links the tanker incident to June 22 talks; oil price move above $97–100.</p>
-</div>
-
-<div class="story-card">
-  <h3><span class="tag ta">Changed</span> Ebola Bundibugyo — DRC / Uganda</h3>
-  <p>598 confirmed DRC cases / 115 deaths today, versus 452 / 88 on June 6 — 146 new cases in four days at roughly 37/day. The WHO PHEIC remains in force. US State Department's additional $20M targets preparedness in the four neighbouring states, which is the right move: geographic containment at the borders is now the priority. No confirmed cases outside DRC and Uganda as of today.</p>
-  <p class="watch">Watch: New health zone entries in North or South Kivu; any confirmed case in Burundi or Rwanda; WHO escalation beyond current PHEIC level.</p>
-</div>
-
-<h2>The Social / Cultural Layer</h2>
-
-<p style="color:var(--text-2); margin-bottom:1.25rem;">The World Cup opens tomorrow — Mexico vs South Africa kicks off June 11, with England's first match against Croatia on June 17. Tonight England played their final pre-tournament friendly against Costa Rica in Orlando. The cultural machinery around the tournament is already visibly running: "Lorenzo" is trending on UK X (Italy squad selection), and the classic English summer anthem cycle is warming up in the charts.</p>
-
-<p style="color:var(--text-2); margin-bottom:1.25rem;">The Killers' "Mr. Brightside" climbed four places to #33 — this song surges so reliably in English tournament summers it has almost become a barometer. Ed Sheeran has multiple songs rising, Harry Styles similarly. The chart is doing what UK charts do before major football.</p>
-
-<p style="color:var(--text-2); margin-bottom:1.25rem;"><strong style="color:var(--text)">But the more interesting signal today is Fleetwood Mac.</strong> "Everywhere" jumped twelve places. "Landslide," "Little Lies," and multiple other catalogue tracks are new entries or climbing sharply. Multiple songs from the same catalogue surging simultaneously almost always means a specific trigger: the band has announced their "Moonlit Mirage" Farewell Tour — their final one — with a companion documentary capturing the process. Rock royalty taking their last formal lap during a summer when the political class is also fragmenting, wars are running in the Gulf, and the economy is under structural pressure. The timing is not causal. But the cultural resonance is there if you want to read it.</p>
-
-<p style="color:var(--text-2); margin-bottom:1.25rem;"><strong style="color:var(--text)">The divergence to name:</strong> the chart is doing comfort and nostalgia — Olivia Dean anchored at #1 for weeks, Fleetwood Mac surging, Chemical Brothers at #5 — while the macro moment is aggressive and anxious. The chart is not reflecting the news. That refusal is itself information.</p>
-
-<p style="color:var(--text-2); margin-bottom:1.5rem;">On TikTok globally, Brazilian/Latin sounds dominate. The UK's Apple Music chart is an island of introspective British indie and nostalgic rock — a different emotional register entirely from what the rest of the world is dancing to.</p>
-
-<div style="background:var(--bg-2); border-radius:var(--radius); padding:1rem 1.25rem; margin-bottom:1rem;">
-  <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.75rem;">Apple Music UK — Top 5</div>
-  <div class="chart-row">
-    <span class="chart-pos">1</span>
-    <span class="chart-change" style="color:var(--text-3)">—</span>
-    <span class="chart-text"><span class="tag tb">UK</span> <strong>Olivia Dean</strong> — Man I Need</span>
+  <div class="lead-item">
+    <div class="lead-number">01</div>
+    <p>On June 10, the US launched a second consecutive day of strikes on Iranian military targets — ports and islands in and around the Strait of Hormuz. Iran responded directly and simultaneously: IRGC missiles and drones hit US bases in Jordan (Azraq), Bahrain (Fifth Fleet), and Kuwait (Ali Al Salem airbase), claiming 21 targets engaged and four destroyed, including an F-35 hangar in Jordan. Jordan shot down five incoming missiles; Bahrain and Kuwait intercepted incoming fire; US officials reported no casualties. Then, Iran's joint military command declared the Strait of Hormuz formally closed to all vessels — with a shoot-on-sight warning for any ship attempting passage. Brent crude crossed $96 this morning.</p>
+    <p>This is the largest US-Iran military exchange since the April ceasefire. Three things matter beyond the raw escalation. First, Crooke's framing published the day before — that Iran had shifted to "escalatory deterrence," meaning any US strike would be matched with a step up the ladder — was confirmed within 24 hours. Second, Iran hit US military infrastructure across three sovereign countries in a single salvo; this is qualitatively different from the Gulf-of-Oman tanker campaign. Third, the June 22 talks are still nominally on the calendar, but their premises are now so degraded that it is worth asking what they would actually be about. The deal structure Trita Parsi described — Trump looking for a "silver bullet" rather than a serious negotiated framework — looks increasingly disconnected from what is actually happening in the Strait.</p>
   </div>
-  <div class="chart-row">
-    <span class="chart-pos">2</span>
-    <span class="chart-change" style="color:var(--text-3)">—</span>
-    <span class="chart-text"><strong>Drake</strong> — Janice STFU</span>
-  </div>
-  <div class="chart-row">
-    <span class="chart-pos">3</span>
-    <span class="chart-change" style="color:var(--text-3)">—</span>
-    <span class="chart-text"><strong>Ariana Grande</strong> — hate that i made you love me</span>
-  </div>
-  <div class="chart-row">
-    <span class="chart-pos">4</span>
-    <span class="chart-change" style="color:var(--text-3)">—</span>
-    <span class="chart-text"><span class="tag tb">UK</span> <strong>Sam Fender &amp; Olivia Dean</strong> — Rein Me In</span>
-  </div>
-  <div class="chart-row">
-    <span class="chart-pos">5</span>
-    <span class="chart-change" style="color:var(--text-3)">—</span>
-    <span class="chart-text"><span class="tag tb">UK</span> <strong>The Chemical Brothers</strong> — Go</span>
-  </div>
-  <div style="margin-top:0.75rem; font-size:0.8rem; color:var(--text-3);">Notable movers: <span class="tag tb">UK</span> Fleetwood Mac "Everywhere" +12→#79 · "Landslide" &amp; "Little Lies" new entries (Farewell Tour effect) · The Killers "Mr. Brightside" +4→#33 · Ed Sheeran "Castle on the Hill" +5→#75 (World Cup build-up)</div>
-</div>
 
-<div style="background:var(--bg-2); border-radius:var(--radius); padding:1rem 1.25rem; margin-bottom:1rem;">
-  <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.75rem;">TikTok Trending Sounds (Global)</div>
-  <div class="chart-row">
-    <span class="chart-pos">1</span>
-    <span class="chart-change up">↑</span>
-    <span class="chart-text"><a href="https://music.apple.com/gb/search?term=QUE+LOUCURA+DJ+EXE"><strong>DJ EXE &amp; Cacau Chuu</strong> — QUE LOUCURA</a> · 670K+ videos, +70K/day · Latin Brazil</span>
+  <div class="lead-item">
+    <div class="lead-number">02</div>
+    <p>The World Cup opened tonight at the Estadio Azteca in Mexico City. Mexico vs South Africa at 8pm BST — the reverse fixture of the 2010 opener that produced Tshabalala's famous goal. Shakira performed the official anthem "Dai Dai" with Burna Boy. The Azteca becomes the first stadium to host three World Cup opening matches (1970, 1986, 2026). England vs Croatia is June 17 in Dallas.</p>
+    <p>The cultural signal is what the opening night says about where collective attention has gone. The UK charts tell it directly: on the day Iran fired missiles at US bases in three countries, Fleetwood Mac climbed twelve positions and Mr. Brightside ticked upward, while the Iran conflict registered nowhere in the top 200. Two parallel registers of public consciousness are running simultaneously — the World Cup is not competing with the news cycle, it is simply occupying a different plane entirely.</p>
   </div>
-  <div class="chart-row">
-    <span class="chart-pos">2</span>
-    <span class="chart-change up">↑</span>
-    <span class="chart-text"><a href="https://music.apple.com/gb/search?term=Buena+Vida+Mala+Fama+Crish+Ramirez"><strong>Crish Ramirez</strong> — Buena Vida Mala Fama (Slow Reverb)</a> · 298K+ videos · Latin Urban</span>
-  </div>
-  <div class="chart-row">
-    <span class="chart-pos">3</span>
-    <span class="chart-change up">↑</span>
-    <span class="chart-text"><a href="https://music.apple.com/gb/search?term=ความรัก+Bodyslam"><strong>Bodyslam</strong> — ความรัก</a> · 212K+ videos, +44%/day · Thai Rock (SE Asia dominant)</span>
-  </div>
-</div>
+</section>
 
-<div style="background:var(--bg-2); border-radius:var(--radius); padding:1rem 1.25rem; margin-bottom:1rem;">
-  <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.6rem;">UK X / Twitter Trends</div>
-  <div class="trend-list">
-    <span class="trend-pill">Lorenzo <span style="color:var(--text-3); font-size:0.75em">(Italy/WC squad)</span></span>
-    <span class="trend-pill">Sikh <span style="color:var(--text-3); font-size:0.75em">(kirpan aftermath)</span></span>
-    <span class="trend-pill">Henry <span style="color:var(--text-3); font-size:0.75em">(Henry Nowak)</span></span>
-    <span class="trend-pill">Farage</span>
-    <span class="trend-pill">Belfast</span>
-    <span class="trend-pill">Sudanese</span>
-    <span class="trend-pill">Rights Act</span>
-    <span class="trend-pill">Landlords</span>
-    <span class="trend-pill">George Floyd</span>
-    <span class="trend-pill">Jasmine</span>
-    <span class="trend-pill">Priya</span>
-    <span class="trend-pill">Kenny</span>
+<!-- CHANGED THREADS -->
+<section>
+  <h2>Changed Threads</h2>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Iran / Hormuz</span>
+      <span class="badge badge-changed">Changed</span>
+    </div>
+    <p><strong>What changed:</strong> US day-2 strikes on Iranian ports and Hormuz-area islands (June 10); Iran retaliates with simultaneous missile and drone strikes on US bases in Jordan, Kuwait, and Bahrain — IRGC claims 21 targets, 4 destroyed including an F-35 hangar at Azraq. All largely intercepted; no US casualties reported. Iran's joint military command then declares the Strait formally closed, threatening to fire on any vessel attempting passage. Brent crosses $96.</p>
+    <p><strong>Why it matters:</strong> Iran hit US military infrastructure across three countries in a single salvo. That is not a tanker campaign — it is a direct strike on allied territory hosting American forces. Jordan, Kuwait, and Bahrain are all US security partners; how they respond publicly to Iran using their territory as a target carries its own diplomatic weight. The "escalatory deterrence" doctrine Crooke described on June 8-10 has been operationalised. The Strait closure threat, previously implicit, is now explicit and formally stated. The ceasefire architecture, already strained, is now structurally questioned.</p>
+    <p><strong>Counter-frame:</strong> Trita Parsi argues Trump "has not acted on his threats" and "backed down" repeatedly because escalating further — targeting Iranian power plants — would send Brent to $200 and devastate the Gulf hosts of US bases. The fire-for-fire exchange may reflect both sides' awareness that neither can afford full escalation. Which paradoxically makes the current pattern stable, at a catastrophically high ongoing cost.</p>
+    <div class="watch">Watch: Whether Jordan formally protests to Iran; whether US conducts day-3 strikes; whether any vessel is fired upon attempting Hormuz passage; whether June 22 talks are cancelled; India's response to 3 crew still missing from Settebello.</div>
   </div>
-  <div style="margin-top:0.6rem; font-size:0.8rem; color:var(--text-3);">"Sikh" and "Henry" in tandem: ongoing anger from the Jun 9 parliamentary kirpan debate. "Farage" and "Rights Act" likely connected — Reform's pledge to repeal the kirpan exemption is gaining online traction. "Lorenzo" is pure football. "George Floyd" trending is unusual and worth monitoring — may be a UK anniversary event or connected to a current US action.</div>
-</div>
 
-<h2>Markets</h2>
-
-<div class="markets-grid">
-  <div class="market-tile">
-    <div class="label">FTSE 100</div>
-    <div class="value">10,254</div>
-    <div class="change up">+0.27% (+27 pts)</div>
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">World Cup 2026</span>
+      <span class="badge badge-changed">Changed</span>
+    </div>
+    <p><strong>What changed:</strong> Tournament opened tonight at Estadio Azteca. Mexico vs South Africa (Group A). Shakira with Burna Boy performed the official anthem; J Balvin, Belinda, and Alejandro Fernandez also featured. The Azteca becomes the first stadium to host three World Cup openers (1970, 1986, 2026). The 48-team format runs to the July 19 final at MetLife Stadium.</p>
+    <p><strong>Why it matters culturally:</strong> The World Cup is now the dominant cultural fact for the next six weeks. England vs Croatia, June 17, Dallas. But the tournament opens against the backdrop of the most serious US-Iran exchange since April. The question of whether geopolitical disruption will intrude on the tournament — through energy costs, travel, security atmosphere, or political protest moments — is worth tracking. So far, the cultural separation is complete: the opening absorbs all attention, the Iran story registers none of it.</p>
+    <div class="watch">Watch: England result June 17; whether any geopolitical or protest moment breaks through the tournament narrative; whether rising energy prices begin appearing in tournament framing.</div>
   </div>
-  <div class="market-tile">
-    <div class="label">Nasdaq</div>
-    <div class="value">−0.42%</div>
-    <div class="change down">US CPI 4.2% YoY · tech &amp; discretionary led lower</div>
+</section>
+
+<!-- CULTURAL LAYER -->
+<section>
+  <h2>The Social / Cultural Layer</h2>
+
+  <p style="color:var(--text-2); margin-bottom:1rem; line-height:1.7;">The chart today is doing two things simultaneously. The top five are completely frozen — Olivia Dean, Drake, Ariana Grande, Sam Fender & Olivia Dean, Chemical Brothers, all unchanged (=). That lock at the top during a week of serious geopolitical escalation follows a familiar pattern: when the macro environment is genuinely threatening, people return to what they already know. The top five are comfort objects.</p>
+
+  <p style="color:var(--text-2); margin-bottom:1rem; line-height:1.7;">Below the top five, the World Cup effect is explicit and accelerating. Fleetwood Mac's "Everywhere" jumped twelve positions to #79; "Landslide," "Little Lies," and "Go Your Own Way" all entered the chart new. Mr. Brightside climbed four places to #33. Kings of Leon's "Sex on Fire" moved twelve to #124. Coldplay's "Viva La Vida" gained six to #99. Ed Sheeran's "Castle on the Hill" moved five places. These are pub-football anthems — the songs that fill the hour before a match — and every one of them is moving in the same direction on the day the Azteca hosted its ceremony. The chart is bifurcating: anxious and frozen at the top, euphoric in the middle.</p>
+
+  <p style="color:var(--text-2); margin-bottom:1.2rem; line-height:1.7;"><strong>The divergence worth naming:</strong> On the day Iran fired missiles at US bases in three countries, UK listeners pushed Fleetwood Mac twelve places up the chart. The conflict is not processing through music at all — no anxiety sound, no political register, no defiance. The energy crisis produces nothing dark in the cultural register. Instead: pure escapist nostalgia and World Cup euphoria, side by side. The gap between the macro story and the cultural mood is as wide as it has been since this digest began.</p>
+
+  <p style="color:var(--text-2); margin-bottom:0.5rem; line-height:1.7;">One UK artist worth watching: <strong>SIENNA SPIRO</strong> <span class="tag tb">UK</span> has two songs moving sharply — "Boston" up eleven to #83, "The Visitor" up eleven to #180. Quiet emergence, consistent. On TikTok, Malcolm Todd's introspective earrings-in-the-bed trend ("staying in your feelings") runs parallel to the World Cup euphoria — two emotional states coexisting without friction. BABYDOLL HOODTRAP by YUKIXDX is the UK Gen Z TikTok dominant sound this week, appearing in gaming clips, sports highlights, and general montage content. Justin Bieber's "Sorry" moved up 26 positions to #121 — the single biggest move in the chart today; likely algorithmic, but worth noting if it sustains.</p>
+
+  <div class="cultural-data">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:2rem">#</th>
+          <th style="width:2rem">Δ</th>
+          <th>Artist — Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pos">1</td>
+          <td class="change-flat">=</td>
+          <td><a href="https://music.apple.com/gb/search?term=Olivia+Dean+Man+I+Need">Olivia Dean — Man I Need</a> <span class="tag tb">UK</span></td>
+        </tr>
+        <tr>
+          <td class="pos">2</td>
+          <td class="change-flat">=</td>
+          <td><a href="https://music.apple.com/gb/search?term=Drake+Janice+STFU">Drake — Janice STFU</a></td>
+        </tr>
+        <tr>
+          <td class="pos">3</td>
+          <td class="change-flat">=</td>
+          <td><a href="https://music.apple.com/gb/search?term=Ariana+Grande+hate+that+i+made+you+love+me">Ariana Grande — hate that i made you love me</a></td>
+        </tr>
+        <tr>
+          <td class="pos">4</td>
+          <td class="change-flat">=</td>
+          <td><a href="https://music.apple.com/gb/search?term=Sam+Fender+Olivia+Dean+Rein+Me+In">Sam Fender &amp; Olivia Dean — Rein Me In</a> <span class="tag tb">UK</span></td>
+        </tr>
+        <tr>
+          <td class="pos">5</td>
+          <td class="change-flat">=</td>
+          <td><a href="https://music.apple.com/gb/search?term=Chemical+Brothers+Go">The Chemical Brothers — Go</a> <span class="tag tb">UK</span></td>
+        </tr>
+        <tr>
+          <td class="pos">33</td>
+          <td class="change-up">+4</td>
+          <td><a href="https://music.apple.com/gb/search?term=The+Killers+Mr+Brightside">The Killers — Mr. Brightside</a> ↑ World Cup</td>
+        </tr>
+        <tr>
+          <td class="pos">60</td>
+          <td class="change-down">−3</td>
+          <td><a href="https://music.apple.com/gb/search?term=Fleetwood+Mac+Dreams">Fleetwood Mac — Dreams</a> <span class="tag tb">UK</span></td>
+        </tr>
+        <tr>
+          <td class="pos">75</td>
+          <td class="change-up">+5</td>
+          <td><a href="https://music.apple.com/gb/search?term=Ed+Sheeran+Castle+on+the+Hill">Ed Sheeran — Castle on the Hill</a> <span class="tag tb">UK</span> ↑ World Cup</td>
+        </tr>
+        <tr>
+          <td class="pos">79</td>
+          <td class="change-up">+12</td>
+          <td><a href="https://music.apple.com/gb/search?term=Fleetwood+Mac+Everywhere">Fleetwood Mac — Everywhere</a> <span class="tag tb">UK</span> ↑ World Cup</td>
+        </tr>
+        <tr>
+          <td class="pos">83</td>
+          <td class="change-up">+11</td>
+          <td><a href="https://music.apple.com/gb/search?term=SIENNA+SPIRO+Boston">SIENNA SPIRO — Boston</a> <span class="tag tb">UK</span> ⬆ emerging</td>
+        </tr>
+        <tr>
+          <td class="pos">99</td>
+          <td class="change-up">+6</td>
+          <td><a href="https://music.apple.com/gb/search?term=Coldplay+Viva+La+Vida">Coldplay — Viva La Vida</a> <span class="tag tb">UK</span> ↑ World Cup</td>
+        </tr>
+        <tr>
+          <td class="pos">121</td>
+          <td class="change-up">+26</td>
+          <td><a href="https://music.apple.com/gb/search?term=Justin+Bieber+Sorry">Justin Bieber — Sorry</a> (biggest single move today)</td>
+        </tr>
+        <tr>
+          <td class="pos">124</td>
+          <td class="change-up">+12</td>
+          <td><a href="https://music.apple.com/gb/search?term=Kings+of+Leon+Sex+on+Fire">Kings of Leon — Sex on Fire</a> ↑ World Cup</td>
+        </tr>
+        <tr>
+          <td class="pos">195</td>
+          <td class="change-new">NEW</td>
+          <td><a href="https://music.apple.com/gb/search?term=Fleetwood+Mac+Landslide">Fleetwood Mac — Landslide</a> <span class="tag tb">UK</span></td>
+        </tr>
+        <tr>
+          <td class="pos">198</td>
+          <td class="change-new">NEW</td>
+          <td><a href="https://music.apple.com/gb/search?term=Fleetwood+Mac+Little+Lies">Fleetwood Mac — Little Lies</a> <span class="tag tb">UK</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="market-tile">
-    <div class="label">Brent Crude</div>
-    <div class="value">$94.60</div>
-    <div class="change up">+3.44% · Settebello tanker strike</div>
-    <div class="note">↑ from ~$91; expand-if threshold still $115</div>
+
+  <p style="color:var(--text-3); font-size:0.78rem; margin-top:0.5rem;">UK X/Twitter trends (approximate): World Cup-adjacent terms, Belfast, Sudanese. pytrends unavailable today.</p>
+</section>
+
+<!-- MARKETS -->
+<section>
+  <h2>Markets</h2>
+  <div class="markets-grid">
+    <div class="market-tile">
+      <div class="label">FTSE 100</div>
+      <div class="value">10,227</div>
+      <div class="change down">−0.3%</div>
+    </div>
+    <div class="market-tile">
+      <div class="label">Nasdaq</div>
+      <div class="value">25,169</div>
+      <div class="change down">−2.0%</div>
+    </div>
+    <div class="market-tile">
+      <div class="label">Brent Crude</div>
+      <div class="value">$96+</div>
+      <div class="change up">↑ from $94.60</div>
+    </div>
+    <div class="market-tile">
+      <div class="label">30Y Gilt</div>
+      <div class="value">5.60%</div>
+      <div class="change neutral">—</div>
+    </div>
   </div>
-  <div class="market-tile">
-    <div class="label">UK 30Y Gilt</div>
-    <div class="value">5.60%</div>
-    <div class="change" style="color:var(--text-2);">10Y at 4.94% · moving with oil/inflation</div>
-    <div class="note">Elevated; inflationary pressure from oil visible in bond market</div>
+  <p class="market-note">Nasdaq down ~2% on risk-off selling following the Iran-US exchange. FTSE defensive positioning cushioning London. Brent ticked above $96 on Strait closure declaration — still well below the initial April shock peak but directionally significant. 10Y gilt holding 4.94%. Watch for UK energy price implications if Brent sustains above $100.</p>
+</section>
+
+<!-- OUTSIDE THE FRAME -->
+<section>
+  <h2>Outside the Frame</h2>
+
+  <div class="outside-frame">
+    <div class="frame-title">Alastair Crooke — "Is the Ceasefire Dead?" / "America's Suez Crisis" (June 10, <a href="https://scheerpost.com/2026/06/10/is-the-ceasefire-dead-w-alastair-crooke-the-chris-hedges-report/">ScheerPost</a>)</div>
+    <p>Published the day before Iran's most direct strike on US military infrastructure, Crooke's June 10 analysis argued Iran had shifted to "escalatory deterrence": match any US strike with a step up the ladder, not a step sideways. That prediction was borne out within 24 hours. His deeper structural frame — "America's Suez Crisis" — argues the US is in Britain's 1956 position: capable of striking, strategically unable to achieve its objectives, with costs mounting and allies uncomfortable. Britain hit Egypt in 1956 and won the battle; the US forced it to withdraw anyway and British imperial authority never recovered. Crooke is arguing the US-Iran war is following that structural path. His specific insight on the political trap: Netanyahu cannot remain in power without continuing to attack Lebanon, and "that is the real problem facing Trump." The June 22 talks are not between two parties that want a deal on the same terms — they are between a party that needs to stay at war (Israel) and a party that needs to be seen ending it (Trump), with Iran running the clock on both.</p>
   </div>
-</div>
 
-<h2>Outside the Frame</h2>
+  <div class="outside-frame">
+    <div class="frame-title">Trita Parsi (Quincy Institute) — "Trump Is Not in a Dominant Position" (<a href="https://www.democracynow.org/2026/5/4/strait_of_hormuz_trita_parsi">Democracy Now</a>, <a href="https://thealtworld.substack.com/p/is-the-ceasefire-dead-the-chris-hedges">Substack</a>)</div>
+    <p>Parsi's consistent frame since April offers a useful counter to both triumphalist and catastrophist readings of today's exchange. His argument: Trump "backed down" from attacking Iranian power plants because doing so would send oil above $200 and devastate the Gulf allies now being used as Iranian missile targets. The US cannot escalate its way out of this conflict. What looks like strength — day-2 strikes — may actually be an acknowledgment of the ceiling: the strikes are calibrated to stay below the threshold that would trigger a response too large to absorb politically and economically. If Parsi is right, the June 10-11 exchange is not the beginning of a genuine escalatory spiral but two parties signalling within a bounded game — simultaneously less catastrophic than it looks and more structurally broken than a genuine ceasefire would be.</p>
+  </div>
+</section>
 
-<div class="otf-card">
-  <p>On the same day the US disabled a tanker in the Gulf of Oman, Taiwan fired HIMARS rockets into the Taiwan Strait for the first time — aimed toward China — during a live-fire drill in Taichung City. The drill was deliberate, public, and clearly signalling. The context: Trump paused Taiwan's follow-on HIMARS arms deal after his Beijing meeting with Xi last month. Taiwan just demonstrated, in front of cameras, a capability whose future supply Washington has put in diplomatic limbo.</p>
-  <p>With US bandwidth entirely consumed by the Iran conflict and the US stock market pricing in 4.2% inflation, the Taiwan signal received almost no airtime. That is precisely why it matters. The Iran war is not pausing China's calculus about Taiwan; if anything, US military overextension is a variable Beijing is actively calculating. The question of whether Taiwan can deter an attack does not pause because everyone is looking elsewhere.</p>
-  <p>Source: <a href="https://www.npr.org/2026/06/10/g-s1-127253/taiwan-drills-with-us-rocket-system-firing-in-chinas-direction">NPR, June 10, 2026</a></p>
-</div>
+<!-- STATUS TABLE -->
+<section>
+  <h2>Active Threads</h2>
 
-<h2>Thread Status</h2>
+  <table class="status-table">
+    <thead>
+      <tr>
+        <th>Thread</th>
+        <th>Status</th>
+        <th>Status line</th>
+        <th>Last changed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="thread-label">Iran / Hormuz</td>
+        <td><span class="badge badge-changed">Changed</span></td>
+        <td class="status-line">US day-2 strikes Jun 10; Iran hits US bases in Jordan/Kuwait/Bahrain (all intercepted, no casualties); Strait formally declared closed with shoot-on-sight threat; Brent $96+; June 22 talks nominally on but structurally degraded</td>
+        <td class="last-changed">11 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">World Cup 2026</td>
+        <td><span class="badge badge-changed">Changed</span></td>
+        <td class="status-line">Tournament opened tonight, Mexico vs South Africa at Azteca (Shakira/Burna Boy ceremony); England vs Croatia Jun 17 in Dallas; 48-team format runs to Jul 19 MetLife final</td>
+        <td class="last-changed">11 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">Ebola DRC/Uganda</td>
+        <td><span class="badge badge-changed">Changed</span></td>
+        <td class="status-line">598 confirmed / 115 deaths DRC as of Jun 10 (up from 452/88 on Jun 6); ~37 new cases/day; US State Dept adds $20M border-state preparedness; PHEIC in force; no spread beyond DRC/Uganda</td>
+        <td class="last-changed">10 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">Taiwan Strait</td>
+        <td><span class="badge badge-new">New</span></td>
+        <td class="status-line">Taiwan's first HIMARS firing into Taiwan Strait Jun 10 confirmed; Trump paused follow-on arms deal after Xi summit; China response not yet issued; minimal Western media coverage</td>
+        <td class="last-changed">10 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">Israel / Lebanon</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">No new escalation since Jun 7-8 exchange; Hezbollah still rejecting pilot zones; Lebanon ceasefire remains Iran's precondition for US deal; next talks Jun 22 week</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">UK Labour Leadership</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">Makerfield by-election Jun 18; Polymarket: Burnham 56% likely next PM vs Starmer 26%; Starmer campaigning for Burnham despite leadership threat dynamic; 95+ MPs calling for resignation</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">UK Economic Stress</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">FTSE ~10,227; Brent $96+ and rising; 30Y gilt 5.60%; 10Y 4.94%; Nasdaq risk-off −2%; BoE first hike still priced September; energy price pass-through risk increasing</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">Ukraine Peace Deadline</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">Zelensky open letter to Putin proposing direct meeting (Jun 5); Putin unlikely to accept; Trump asked Xi to lean on Putin at Beijing summit; US bandwidth consumed by Iran conflict</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">UK Kirpan Debate</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">Parliament debated Jun 9; Home Secretary defended exemption; law unchanged; Reform's repeal pledge gaining online traction</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">Syria Parliament</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">First session did not convene Jun 8 as planned; al-Sharaa has not named his 70-seat presidential quota; no new date announced; transition timeline slipping</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">Russia / NATO / Romania</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">Constanta port drone Jun 5 confirmed Ukrainian origin; NATO foreign ministers discussing drone-over-allied-territory protocols; no further incident since Jun 5</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+      <tr>
+        <td class="thread-label">Mearsheimer</td>
+        <td><span class="badge badge-stable">Stable</span></td>
+        <td class="status-line">Netanyahu-blocking thesis reinforced by Jun 10-11 Iran-US exchange (Israel's Lebanon operation still active, still blocking US deal progress); no new post or appearance</td>
+        <td class="last-changed">9 Jun</td>
+      </tr>
+    </tbody>
+  </table>
 
-<div style="overflow-x:auto;">
-<table class="status-table">
-  <thead>
-    <tr>
-      <th>Thread</th>
-      <th>Status</th>
-      <th>Status Line</th>
-      <th>Changed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Iran / Hormuz</strong></td>
-      <td><span class="tag ta">Changed</span></td>
-      <td class="status-line">Settebello tanker disabled in Gulf of Oman (8th vessel); 3 Indian crew missing; Brent +3.44% to $94.60; June 22 talks still on calendar but conditions deteriorating</td>
-      <td class="date-col">Jun 10</td>
-    </tr>
-    <tr>
-      <td><strong>Israel / Lebanon</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">No new escalation since Jun 7-8; Hezbollah rejecting pilot zones; Lebanon ceasefire still Iran's precondition for US deal; next milestone Jun 22</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>Ukraine Peace Deadline</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">Zelensky ceasefire proposal rejected by Putin; US bandwidth absorbed by Iran; deal before Jun 30 very unlikely on Polymarket</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>UK Economic Stress</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">FTSE 10,254 (+0.27%); Brent $94.60; 30Y gilt 5.60%; 10Y 4.94%; US CPI 4.2% adds regional inflation pressure; BoE first hike still priced September</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>UK Labour Leadership</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">95+ MPs calling for Starmer to resign; Burnham on Makerfield ballot Jun 18 (Survation: Burnham 49%, Reform 39%); Starmer: will not walk away</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>Mearsheimer</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">Netanyahu-blocking thesis confirmed by Iran's Lebanon precondition; Settebello adds diplomatic-military contradiction layer; no new post or appearance</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>UK Kirpan Debate</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">Parliament debated Jun 9; law unchanged; "Sikh" and "Henry" still trending Jun 10; Reform's repeal pledge gaining online traction</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>Operation Southern Spear</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">US Senate Foreign Relations Committee raised Southern Spear in hemispheric hearing; Colombia runoff Jun 21; de la Espriella favoured; no new investigation or casualty figures</td>
-      <td class="date-col">Jun 4</td>
-    </tr>
-    <tr>
-      <td><strong>Ebola — DRC / Uganda</strong></td>
-      <td><span class="tag ta">Changed</span></td>
-      <td class="status-line">598 confirmed DRC / 115 deaths (up from 452/88 on Jun 6); ~37 new cases/day; US adds $20M for border-state preparedness; PHEIC in force; no spread outside DRC/Uganda</td>
-      <td class="date-col">Jun 10</td>
-    </tr>
-    <tr>
-      <td><strong>Russia / NATO / Romania</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">Constanta port drone incident Jun 5 confirmed Ukrainian origin; NATO foreign ministers discussing drone-over-allied-territory protocols; no further incident</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>Colombia Election 2026</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">Runoff Jun 21: de la Espriella vs Cepeda; Southern Spear raised in US Senate hearing; de la Espriella favoured; 11 days to vote</td>
-      <td class="date-col">Jun 1</td>
-    </tr>
-    <tr>
-      <td><strong>Syria Parliament</strong></td>
-      <td><span class="tag ts">Stable</span></td>
-      <td class="status-line">First session did not convene Jun 8; al-Sharaa still has not named his 70-seat quota; no new date set; transition timeline slipping</td>
-      <td class="date-col">Jun 9</td>
-    </tr>
-    <tr>
-      <td><strong>World Cup 2026</strong></td>
-      <td><span class="tag tp">New</span></td>
-      <td class="status-line">Opens Jun 11 (Mexico vs South Africa); England final friendly Jun 10 vs Costa Rica; England opens Jun 17 vs Croatia; 48-team tournament runs to Jul 19 final at MetLife Stadium</td>
-      <td class="date-col">Jun 10</td>
-    </tr>
-    <tr>
-      <td><strong>Taiwan Strait Tension</strong></td>
-      <td><span class="tag tp">New</span></td>
-      <td class="status-line">Taiwan fired HIMARS into Taiwan Strait for first time Jun 10; Trump paused follow-on arms deal after Xi summit; China response not yet issued; minimal Western media coverage</td>
-      <td class="date-col">Jun 10</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+  <p style="color:var(--text-3); font-size:0.78rem; margin-top:0.9rem;"><strong>Retired today:</strong> <em>Operation Southern Spear</em> — 7 days stable; last changed Jun 4; 207 killed in 63 strikes as of Jun 3; no new investigation, casualty surge, or congressional hearing. Revive if: death toll surpasses 300, ICC referral, major new investigation. &nbsp;|&nbsp; <em>Colombia Election 2026</em> — 10 days stable; last changed Jun 1; revive Jun 21 for runoff result (de la Espriella ~44% vs Cepeda ~41%).</p>
+</section>
 
 <footer>
-  <p>Generated June 10, 2026 &nbsp;·&nbsp; <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a></p>
+  <span>Generated 11 June 2026</span>
+  <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
 </footer>
 
 </body>
