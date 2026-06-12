@@ -136,6 +136,42 @@
   .footer a { color: var(--link); }
 
   .subsection-title { font-size: 0.82rem; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; margin-top: 1.2rem; }
+
+  /* ── Audio reader ── */
+  .reader-bar {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: var(--bg-2); border: 1px solid var(--border-2);
+    border-radius: var(--radius); padding: 0.75rem 1rem;
+    margin-top: 1rem; flex-wrap: wrap;
+  }
+  .reader-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 2.2rem; height: 2.2rem; border-radius: 50%;
+    border: none; cursor: pointer; flex-shrink: 0;
+    background: var(--text); color: var(--bg);
+    transition: opacity 0.15s;
+  }
+  .reader-btn:hover { opacity: 0.75; }
+  .reader-btn svg { width: 1rem; height: 1rem; }
+  .reader-progress {
+    flex: 1; min-width: 100px; height: 4px;
+    background: var(--border-2); border-radius: 2px; overflow: hidden;
+  }
+  .reader-progress-fill {
+    height: 100%; width: 0%; background: var(--text);
+    border-radius: 2px; transition: width 0.3s linear;
+  }
+  .reader-label {
+    font-size: 0.78rem; color: var(--text-3); white-space: nowrap;
+    min-width: 5rem; text-align: right;
+  }
+  .reader-speed {
+    font-size: 0.78rem; color: var(--text-2); background: none;
+    border: 1px solid var(--border-2); border-radius: 4px;
+    padding: 0.2em 0.4em; cursor: pointer; font-family: var(--font);
+  }
+  .reader-speed:hover { border-color: var(--text-3); }
+  .reading-highlight { background: var(--amber-bg); border-radius: 2px; }
 </style>
 </head>
 <body>
@@ -144,6 +180,25 @@
   <div class="header">
     <h1>Firas's Digest</h1>
     <div class="date">Friday, 12 June 2026</div>
+  </div>
+
+  <!-- ── Audio reader bar ── -->
+  <div class="reader-bar" id="readerBar">
+    <button class="reader-btn" id="readerPlayBtn" title="Play / Pause" onclick="readerToggle()">
+      <svg id="readerIcon" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2.5l10 5.5-10 5.5V2.5z"/></svg>
+    </button>
+    <button class="reader-btn" id="readerStopBtn" title="Stop" onclick="readerStop()" style="background:var(--bg-3);color:var(--text);width:1.8rem;height:1.8rem;">
+      <svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="3" width="10" height="10" rx="1.5"/></svg>
+    </button>
+    <div class="reader-progress"><div class="reader-progress-fill" id="readerFill"></div></div>
+    <select class="reader-speed" id="readerSpeed" onchange="readerSetSpeed(this.value)" title="Playback speed">
+      <option value="0.85">0.85×</option>
+      <option value="1" selected>1×</option>
+      <option value="1.2">1.2×</option>
+      <option value="1.5">1.5×</option>
+      <option value="1.8">1.8×</option>
+    </select>
+    <div class="reader-label" id="readerLabel">Listen to digest</div>
   </div>
 
   <div class="section-title">Today's Signal</div>
@@ -360,6 +415,160 @@
     Generated: Friday, 12 June 2026 &nbsp;&middot;&nbsp; <a href="https://firaskh79.github.io/daily-digest/" target="_blank">firaskh79.github.io/daily-digest</a>
   </div>
 
+</div>
+
+<script>
+// ── Digest Audio Reader ──────────────────────────────────────────────────
+(function () {
+  var synth = window.speechSynthesis;
+  var utterances = [];
+  var currentIdx = 0;
+  var playing = false;
+  var paused = false;
+  var rate = 1;
+
+  // Sections to read, in order. We skip chart rows, trend items, status table, footer.
+  // Each entry: { label: string, selector: string }
+  var sections = [
+    { label: "Today's Signal",       sel: ".lead-block" },
+    { label: "Changed Threads",      sel: ".card" },
+    { label: "Cultural Layer",       sel: ".culture-block" },
+    { label: "Outside the Frame",    sel: ".otf-block" }
+  ];
+
+  function extractText(el) {
+    // Walk the DOM, skip .watch lines (they're secondary detail), status tables, chart rows
+    var clone = el.cloneNode(true);
+    // Remove sub-elements we don't want read aloud
+    clone.querySelectorAll('.watch, .chart-row, .trend-item, .subsection-title, .tag, a').forEach(function(n){ n.remove(); });
+    var raw = (clone.innerText || clone.textContent || '').replace(/\s+/g, ' ').trim();
+    return raw;
+  }
+
+  function buildScript() {
+    var chunks = [];
+    sections.forEach(function(s) {
+      var els = document.querySelectorAll(s.sel);
+      if (!els.length) return;
+      chunks.push({ text: s.label + '.', label: s.label });
+      els.forEach(function(el) {
+        var t = extractText(el).trim();
+        if (t.length > 10) chunks.push({ text: t, label: s.label });
+      });
+    });
+    return chunks;
+  }
+
+  function updateIcon(isPlaying) {
+    var icon = document.getElementById('readerIcon');
+    if (isPlaying) {
+      icon.innerHTML = '<rect x="3" y="2" width="4" height="12" rx="1"/><rect x="9" y="2" width="4" height="12" rx="1"/>';
+    } else {
+      icon.innerHTML = '<path d="M3 2.5l10 5.5-10 5.5V2.5z"/>';
+    }
+  }
+
+  function updateProgress() {
+    var total = utterances.length;
+    if (!total) return;
+    var pct = Math.round((currentIdx / total) * 100);
+    document.getElementById('readerFill').style.width = pct + '%';
+    var s = sections.find(function(s){ return utterances[currentIdx] && utterances[currentIdx]._label === s.label; });
+    document.getElementById('readerLabel').textContent = (s ? s.label : '') + ' (' + pct + '%)';
+  }
+
+  function buildUtterances() {
+    var chunks = buildScript();
+    utterances = chunks.map(function(c, i) {
+      var u = new SpeechSynthesisUtterance(c.text);
+      u.rate = rate;
+      u.lang = 'en-GB';
+      if (window._readerVoice) u.voice = window._readerVoice;
+      u._label = c.label;
+      u._idx = i;
+      u.onend = function() {
+        currentIdx = i + 1;
+        updateProgress();
+        if (currentIdx >= utterances.length) {
+          readerStop();
+        }
+      };
+      u.onerror = function(e) {
+        if (e.error !== 'interrupted') { currentIdx++; speakNext(); }
+      };
+      return u;
+    });
+  }
+
+  function speakNext() {
+    if (currentIdx >= utterances.length) { readerStop(); return; }
+    var u = utterances[currentIdx];
+    u.rate = rate;
+    updateProgress();
+    synth.speak(u);
+  }
+
+  window.readerToggle = function() {
+    if (!synth) { alert('Sorry — your browser doesn\'t support speech synthesis.'); return; }
+    if (playing && !paused) {
+      synth.pause();
+      paused = true;
+      playing = false;
+      updateIcon(false);
+      document.getElementById('readerLabel').textContent = 'Paused';
+    } else if (paused) {
+      synth.resume();
+      paused = false;
+      playing = true;
+      updateIcon(true);
+    } else {
+      // Fresh start
+      synth.cancel();
+      currentIdx = 0;
+      buildUtterances();
+      playing = true;
+      paused = false;
+      updateIcon(true);
+      speakNext();
+    }
+  };
+
+  window.readerStop = function() {
+    synth.cancel();
+    playing = false;
+    paused = false;
+    currentIdx = 0;
+    updateIcon(false);
+    document.getElementById('readerFill').style.width = '0%';
+    document.getElementById('readerLabel').textContent = 'Listen to digest';
+  };
+
+  window.readerSetSpeed = function(v) {
+    rate = parseFloat(v);
+    if (playing && !paused) {
+      // Restart current utterance at new speed
+      synth.cancel();
+      buildUtterances();
+      speakNext();
+    }
+  };
+
+  // Pick a good English voice when voices load
+  function pickVoice() {
+    var voices = synth.getVoices();
+    var preferred = ['Daniel', 'Google UK English Male', 'Google UK English Female', 'Karen', 'Moira'];
+    var picked = null;
+    preferred.forEach(function(name) {
+      if (!picked) picked = voices.find(function(v){ return v.name.indexOf(name) !== -1; });
+    });
+    if (!picked) picked = voices.find(function(v){ return v.lang === 'en-GB'; });
+    if (!picked) picked = voices.find(function(v){ return v.lang.startsWith('en'); });
+    window._readerVoice = picked || null;
+  }
+  if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pickVoice;
+  pickVoice();
+})();
+</script>
 </div>
 </body>
 </html>
