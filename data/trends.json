@@ -1,242 +1,127 @@
 {
-  "date": "2026-06-11",
+  "date": "2026-06-12",
   "mood_of_day": "conflicted",
   "macro": {
     "politics": [
       {
-        "headline": "US launches day-2 strikes on Iran; Iran retaliates against US bases in Jordan, Kuwait, Bahrain",
-        "tags": ["iran", "us", "hormuz", "escalation"],
+        "headline": "Trump claims US-Iran deal 'settled' during Alabama tele-rally; Brent drops 7% to $89",
+        "tags": ["iran", "trump", "hormuz", "oil"],
+        "sentiment": "cautious optimism (market) / sceptical (analysts)",
+        "intensity": 9
+      },
+      {
+        "headline": "IAEA declares Iran non-compliant with nuclear obligations for first time in 20 years; Iran announces new enrichment facility + Fordow centrifuge upgrade",
+        "tags": ["iran", "nuclear", "iaea", "escalation"],
         "sentiment": "alarming",
         "intensity": 9
       },
       {
-        "headline": "Iran formally declares Strait of Hormuz closed to all shipping with shoot-on-sight warning",
-        "tags": ["iran", "hormuz", "oil", "energy"],
+        "headline": "Belfast riots enter fourth night; anti-immigrant violence spreads to Glasgow, Edinburgh, Southampton",
+        "tags": ["uk", "belfast", "riots", "immigration", "northern-ireland"],
         "sentiment": "alarming",
-        "intensity": 9
-      },
-      {
-        "headline": "World Cup 2026 opens at Estadio Azteca — Mexico vs South Africa",
-        "tags": ["world-cup", "football", "culture"],
-        "sentiment": "celebratory",
         "intensity": 8
       },
       {
-        "headline": "Makerfield by-election June 18 — Burnham 56% likely next PM on Polymarket",
-        "tags": ["uk-politics", "labour", "burnham", "starmer"],
-        "sentiment": "uncertain",
+        "headline": "World Cup 2026 Day 2: Canada vs Bosnia, USA vs Paraguay; opening ceremony panned by UK viewers",
+        "tags": ["world-cup", "football", "culture"],
+        "sentiment": "neutral",
         "intensity": 6
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude crosses $96, Nasdaq -2% on Iran-US exchange risk-off",
-        "tags": ["oil", "markets", "iran", "risk-off"],
-        "sentiment": "negative",
-        "intensity": 7
+        "headline": "Brent crude drops to $89.38 from $96+ on Trump Iran deal optimism — sharpest single-day fall of the crisis",
+        "tags": ["oil", "brent", "iran", "energy"],
+        "sentiment": "relieved (consumers) / uncertain (investors)",
+        "intensity": 8
       },
       {
-        "headline": "FTSE holds near 10,227; 30Y gilt 5.60%; 10Y 4.94%",
-        "tags": ["ftse", "gilts", "uk-economy"],
-        "sentiment": "cautious",
+        "headline": "FTSE 100 ~10,305 (Jun 11 close); likely up Jun 12 on Iran deal news",
+        "tags": ["ftse", "uk-markets"],
+        "sentiment": "cautiously positive",
+        "intensity": 5
+      },
+      {
+        "headline": "30Y UK gilt 5.60%, 10Y ~4.95%; BoE September hike still priced",
+        "tags": ["gilts", "boe", "uk"],
+        "sentiment": "elevated / unchanged",
+        "intensity": 5
+      },
+      {
+        "headline": "Renters Rights Act (abolishes Section 21) moving through Parliament below radar",
+        "tags": ["uk", "housing", "renters", "legislation"],
+        "sentiment": "neutral/contested",
         "intensity": 4
       }
     ],
-    "google_trends_uk": [],
+    "google_trends_uk": [
+      {"rank": 1, "term": "Wolves Rob Edwards", "volume_est": "high"},
+      {"rank": 2, "term": "Iran deal", "volume_est": "high"},
+      {"rank": 3, "term": "Belfast riots", "volume_est": "high"},
+      {"rank": 4, "term": "World Cup 2026 results", "volume_est": "high"},
+      {"rank": 5, "term": "Simba transfer", "volume_est": "medium"},
+      {"rank": 6, "term": "Renters Rights Act", "volume_est": "medium"},
+      {"rank": 7, "term": "IAEA Iran", "volume_est": "medium"},
+      {"rank": 8, "term": "Brent crude", "volume_est": "medium"},
+      {"rank": 9, "term": "Knicks", "volume_est": "medium"},
+      {"rank": 10, "term": "Burnham Belfast", "volume_est": "medium"}
+    ],
     "pytrends_uk_live": []
   },
   "culture": {
     "music": {
       "apple_music_uk_top5": [
-        {
-          "pos": 1,
-          "artist": "Olivia Dean",
-          "title": "Man I Need",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["introspective", "longing"],
-          "theme_tags": ["relationships", "vulnerability"]
-        },
-        {
-          "pos": 2,
-          "artist": "Drake",
-          "title": "Janice STFU",
-          "change": 0,
-          "uk_artist": false,
-          "mood_tags": ["assertive", "confrontational"],
-          "theme_tags": ["relationships"]
-        },
-        {
-          "pos": 3,
-          "artist": "Ariana Grande",
-          "title": "hate that i made you love me",
-          "change": 0,
-          "uk_artist": false,
-          "mood_tags": ["melancholic", "regret"],
-          "theme_tags": ["relationships", "guilt"]
-        },
-        {
-          "pos": 4,
-          "artist": "Sam Fender & Olivia Dean",
-          "title": "Rein Me In",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["emotional", "raw"],
-          "theme_tags": ["relationships", "collaboration"]
-        },
-        {
-          "pos": 5,
-          "artist": "The Chemical Brothers",
-          "title": "Go",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["energised", "euphoric"],
-          "theme_tags": ["dance", "electronic"]
-        }
+        {"pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["longing", "romantic", "stable"], "theme_tags": ["love", "intimacy"]},
+        {"pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0, "uk_artist": false, "mood_tags": ["defiant", "aggressive"], "theme_tags": ["hip-hop", "confrontation"]},
+        {"pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0, "uk_artist": false, "mood_tags": ["regret", "melancholic"], "theme_tags": ["breakup", "love"]},
+        {"pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["restraint", "longing"], "theme_tags": ["relationships"]},
+        {"pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0, "uk_artist": true, "mood_tags": ["energised", "kinetic"], "theme_tags": ["dance", "electronic"]}
       ],
       "tiktok_sounds": [
-        {
-          "title": "The One That Got Away",
-          "artist": "Katy Perry",
-          "score": 8,
-          "videos": 0,
-          "mood_tags": ["nostalgic", "humorous"],
-          "theme_tags": ["list-trend", "relatable-fears", "comedy"]
-        },
-        {
-          "title": "drop dead",
-          "artist": "Olivia Rodrigo",
-          "score": 7,
-          "videos": 0,
-          "mood_tags": ["energised", "defiant"],
-          "theme_tags": ["emotional-release"]
-        },
-        {
-          "title": "BABYDOLL HOODTRAP",
-          "artist": "YUKIXDX",
-          "score": 8,
-          "videos": 0,
-          "mood_tags": ["energised", "assertive"],
-          "theme_tags": ["gen-z", "sports", "gaming", "montage"]
-        },
-        {
-          "title": "Earrings",
-          "artist": "Malcolm Todd",
-          "score": 6,
-          "videos": 0,
-          "mood_tags": ["melancholic", "introspective"],
-          "theme_tags": ["feelings", "loss", "uk-sound"]
-        }
+        {"title": "Ad vikāra", "artist": "Unknown (UK origin)", "score": 999, "videos": 16, "mood_tags": ["micro", "uk-niche"], "theme_tags": []},
+        {"title": "QUE LOUCURA", "artist": "DJ EXE & Cacau Chuu", "score": 989, "videos": 793435, "mood_tags": ["energised", "celebratory"], "theme_tags": ["latin", "brazilian", "world-cup-adjacent"]},
+        {"title": "Buena Vida Mala Fama Slow Reverb", "artist": "Crish Ramirez", "score": 979, "videos": 322786, "mood_tags": ["escapist", "nostalgic"], "theme_tags": ["latin", "lo-fi"]}
       ]
     },
     "tiktok_formats": [
-      {
-        "format": "Top five horror movies (relatable fears as film titles)",
-        "theme_tags": ["comedy", "self-deprecating", "list-trend"]
-      },
-      {
-        "format": "Staying in your feelings (earrings-in-the-bed introspective edits)",
-        "theme_tags": ["melancholic", "introspective", "uk-sound"]
-      },
-      {
-        "format": "Sports/World Cup highlight montages to BABYDOLL HOODTRAP",
-        "theme_tags": ["sports", "world-cup", "gen-z", "energy"]
-      }
+      {"format": "Latin soundscape content (Brazilian/Latin American sounds dominating global TikTok this week)", "theme_tags": ["world-cup", "latin", "global-south"]},
+      {"format": "Heritage British football nostalgia (Fleetwood Mac, Mr Brightside, Sex on Fire rising on Apple Music)", "theme_tags": ["world-cup", "uk", "nostalgia", "football"]}
     ]
   },
   "threads": [
-    {
-      "id": "iran-hormuz",
-      "status": "changed",
-      "status_line": "US day-2 strikes Jun 10; Iran hits US bases in Jordan/Kuwait/Bahrain; Strait formally declared closed; Brent $96+",
-      "last_changed": "2026-06-11"
-    },
-    {
-      "id": "world-cup-2026",
-      "status": "changed",
-      "status_line": "Tournament opened Jun 11 at Azteca; England vs Croatia Jun 17 Dallas",
-      "last_changed": "2026-06-11"
-    },
-    {
-      "id": "ebola-drc-uganda",
-      "status": "changed",
-      "status_line": "598 confirmed / 115 deaths DRC as of Jun 10; ~37 new cases/day",
-      "last_changed": "2026-06-10"
-    },
-    {
-      "id": "taiwan-strait-tension",
-      "status": "new",
-      "status_line": "Taiwan HIMARS firing into Taiwan Strait Jun 10; China response not yet issued",
-      "last_changed": "2026-06-10"
-    },
-    {
-      "id": "israel-lebanon",
-      "status": "stable",
-      "status_line": "No new escalation since Jun 7-8; next talks Jun 22 week",
-      "last_changed": "2026-06-09"
-    },
-    {
-      "id": "uk-labour-leadership",
-      "status": "stable",
-      "status_line": "Makerfield by-election Jun 18; Burnham 56% likely next PM on Polymarket",
-      "last_changed": "2026-06-09"
-    },
-    {
-      "id": "uk-economic-stress",
-      "status": "stable",
-      "status_line": "FTSE ~10,227; Brent $96+; 30Y gilt 5.60%; Nasdaq -2%",
-      "last_changed": "2026-06-09"
-    },
-    {
-      "id": "ukraine-peace-deadline",
-      "status": "stable",
-      "status_line": "Zelensky open letter to Putin Jun 5; talks structurally stalled",
-      "last_changed": "2026-06-09"
-    },
-    {
-      "id": "uk-kirpan-debate",
-      "status": "stable",
-      "status_line": "Parliament debated Jun 9; law unchanged; Reform repeal pledge gaining traction",
-      "last_changed": "2026-06-09"
-    },
-    {
-      "id": "syria-parliament",
-      "status": "stable",
-      "status_line": "First session did not convene Jun 8; timeline slipping",
-      "last_changed": "2026-06-09"
-    },
-    {
-      "id": "russia-nato-romania",
-      "status": "stable",
-      "status_line": "Constanta drone Jun 5 confirmed Ukrainian; no further incident",
-      "last_changed": "2026-06-09"
-    },
-    {
-      "id": "mearsheimer",
-      "status": "stable",
-      "status_line": "Netanyahu-blocking thesis reinforced by Jun 10-11 exchange; no new post",
-      "last_changed": "2026-06-09"
-    }
+    {"id": "iran-hormuz", "status": "changed", "status_line": "Trump claims deal 'settled'; IAEA non-compliance declaration; Iran announces new enrichment; Brent $89", "last_changed": "2026-06-12"},
+    {"id": "belfast-riots", "status": "new", "status_line": "4 nights anti-immigrant riots; 27 homes burned; spreading to Scotland and England; 6 days before Makerfield", "last_changed": "2026-06-12"},
+    {"id": "world-cup-2026", "status": "changed", "status_line": "Day 2 underway; Mexico 2-0 S. Africa Day 1; opening ceremony panned by UK viewers; England Jun 17", "last_changed": "2026-06-12"},
+    {"id": "ebola-drc-uganda", "status": "changed", "status_line": "635 confirmed / 127 deaths (up from 598/115 Jun 10)", "last_changed": "2026-06-12"},
+    {"id": "taiwan-strait-tension", "status": "stable", "status_line": "No China formal response to HIMARS drill", "last_changed": "2026-06-10"},
+    {"id": "israel-lebanon", "status": "stable", "status_line": "No new escalation; Iran MOU would extend ceasefire if real", "last_changed": "2026-06-09"},
+    {"id": "uk-labour-leadership", "status": "stable", "status_line": "Makerfield Jun 18; Belfast riots add immigration pressure to Labour crisis", "last_changed": "2026-06-09"},
+    {"id": "uk-economic-stress", "status": "stable", "status_line": "FTSE ~10,305; Brent $89 (relief); gilts 5.60%/4.95%", "last_changed": "2026-06-09"},
+    {"id": "ukraine-peace-deadline", "status": "stable", "status_line": "Structurally stalled; US bandwidth consumed by Iran", "last_changed": "2026-06-09"},
+    {"id": "syria-parliament", "status": "stable", "status_line": "Not convened; al-Sharaa finalising presidential quota", "last_changed": "2026-06-09"},
+    {"id": "russia-nato-romania", "status": "stable", "status_line": "No new incident since Jun 5 Constanta drone", "last_changed": "2026-06-09"},
+    {"id": "uk-kirpan-debate", "status": "stable", "status_line": "Law unchanged; Belfast riots likely to revive immigration culture-war content", "last_changed": "2026-06-09"},
+    {"id": "mearsheimer", "status": "stable", "status_line": "Netanyahu response to Iran MOU is the live test of the blocking thesis", "last_changed": "2026-06-09"}
   ],
   "synthesis": {
-    "daily_theme": "The World Cup opens as Iran and the US cross a new military threshold — public attention bifurcates completely.",
-    "mechanism": "The Strait closure declaration and missile exchange on June 10-11 represent the largest US-Iran exchange since April; simultaneously the World Cup opening ceremony at the Azteca dominates cultural attention. The chart data shows the two registers are not competing — they occupy entirely separate planes of collective attention. The World Cup effect is producing a surge in nostalgic anthems (Fleetwood Mac, Mr. Brightside, Sex on Fire) while the geopolitical crisis produces no cultural signal whatsoever.",
+    "daily_theme": "The market priced a peace deal; the IAEA published the legal architecture for war — both on the same June 12.",
+    "mechanism": "Trump's verbal deal announcement drove Brent down 7% while Iran's Foreign Ministry, responding to the IAEA non-compliance declaration, announced an expansion of enrichment capacity. Two directly contradictory signals on the same day suggest either extraordinary private progress not yet reflected in public statements, or another iteration of the Trump-claims-deal-Iran-demurs pattern that has repeated four times since May.",
     "connections": [
       {
-        "macro_event": "US-Iran missile exchange; Iran declares Strait closed",
-        "cultural_response": "No cultural response — Iran conflict absent from UK chart entirely",
-        "mechanism": "World Cup opening ceremony completely absorbs emotional and cultural attention; the geopolitical crisis has no aesthetic or sonic processing underway",
-        "observation": "On the day Iran hit US bases in three countries, the UK's biggest chart movers were Fleetwood Mac (+12), Kings of Leon (+12), and Mr. Brightside (+4). The divergence between macro urgency and cultural mood is complete.",
+        "macro_event": "Iran IAEA non-compliance declaration + Trump deal claim",
+        "cultural_response": "Brent crude drops 7%; Apple Music UK top 5 unchanged; World Cup nostalgia surge continues",
+        "mechanism": "Market actors price Trump's verbal announcement; cultural consumption entirely unresponsive to geopolitical signal",
+        "observation": "The complete stability of the Apple Music UK top 5 — fourth consecutive day identical — running alongside Brent's largest single-day drop of the Iran crisis is a textbook divergence. The cultural layer is processing the World Cup, not the Iran deal. Olivia Dean at #1 with a romantic ballad is the cultural fact of this week, not the Strait of Hormuz.",
         "confidence": "strong",
         "signal_type": "divergence"
       },
       {
-        "macro_event": "World Cup 2026 opens at Estadio Azteca",
-        "cultural_response": "Nostalgic UK anthems surge: Fleetwood Mac (multiple titles), Chemical Brothers, Mr. Brightside, Sex on Fire, Viva La Vida, Castle on the Hill all rising",
-        "mechanism": "World Cup triggers collective retrieval of pub-football nostalgic repertoire; Fleetwood Mac 'Everywhere' has become synonymous with tournament buildup across social media",
-        "observation": "The chart movement is pub-anthem classical. Multiple Fleetwood Mac titles entering new suggests an organised nostalgia wave. SIENNA SPIRO emerging quietly below is worth watching as a possible new voice in the tournament sonic landscape.",
-        "confidence": "strong",
-        "signal_type": "reactive"
+        "macro_event": "Belfast anti-immigrant riots (Day 4)",
+        "cultural_response": "UK Twitter trending: Wolves, Simba, Knicks — football dominates; riots not visible in chart or trend data",
+        "mechanism": "World Cup opening provides a collective attention redirect at the moment of domestic ethnic violence; UK cultural consumption absorbed into football rather than riots",
+        "observation": "The riots are absent from the chart data and largely absent from UK Twitter trending. Four nights of violence that burned 27 families out of their homes is being culturally processed below the World Cup's noise floor. This is not indifference — it's displacement. Heritage football songs are rising while Belfast burns. The two cannot be separated from each other.",
+        "confidence": "moderate",
+        "signal_type": "divergence"
       }
     ]
   }

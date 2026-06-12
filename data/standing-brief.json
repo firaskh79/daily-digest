@@ -4,28 +4,44 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "US day-2 strikes Jun 10 on Iranian ports/Hormuz-area islands; Iran retaliates with missile/drone strikes on US bases in Jordan (Azraq), Kuwait (Ali Al Salem), Bahrain (Fifth Fleet) — IRGC claims 21 targets, 4 destroyed including F-35 hangar; all largely intercepted, no US casualties; Iran joint military command formally declares Strait closed with shoot-on-sight threat; Brent $96+; June 22 talks nominally on but conditions severely degraded",
+      "status_line": "Trump claims deal 'settled' Jun 12 (Brent drops to $89); IAEA declares Iran non-compliant for first time in 20 years (Jun 12); Iran responds with new enrichment facility at undisclosed location + Fordow 6th-gen centrifuge upgrade; deal unconfirmed by Iran Foreign Ministry; Jun 22 talks nominally on; war crossed 100 days Jun 8",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-11",
+      "last_changed": "2026-06-12",
       "expand_if": [
-        "formal MOU signed",
-        "talks completely collapse (Iran withdraws entirely)",
-        "oil spike above $115",
-        "vessel fired upon attempting Hormuz passage",
-        "new major US or Israeli strike escalating beyond ports/islands",
-        "Lebanon ceasefire agreed",
-        "India escalates response to missing/killed Settebello crew",
-        "Jordan formally protests to Iran or convenes emergency consultation",
+        "Iranian Foreign Ministry confirms or denies deal terms Trump described",
+        "Brent snaps back above $94 on deal collapse",
+        "UN Security Council motion on IAEA non-compliance declaration",
+        "Netanyahu statement on the MOU (Mearsheimer thesis test)",
+        "Iran withdraws from Jun 22 talks",
+        "New US or Israeli strike following IAEA breach declaration",
+        "Lebanon ceasefire extension confirmed",
         "June 22 talks cancelled"
+      ]
+    },
+    {
+      "id": "belfast-riots",
+      "label": "Belfast Riots / UK Anti-Immigrant Violence",
+      "status": "new",
+      "status_line": "4 nights of anti-immigrant riots in Belfast (Jun 9-12) following Jun 8 stabbing allegedly by Sudanese asylum seeker; 27 homes burned, baby rescued, water cannons deployed Jun 11; spreading to Glasgow, Edinburgh, Southampton; 30-year-old Sudanese man charged with attempted murder; 6 days before Makerfield by-election",
+      "first_seen": "2026-06-12",
+      "last_changed": "2026-06-12",
+      "expand_if": [
+        "Riots spread to additional English cities",
+        "Burnham makes substantive immigration statement before Jun 18",
+        "Reform UK formally exploits riots as policy platform",
+        "Fatality in riots",
+        "Government announces immigration policy change in response",
+        "Further night of severe unrest (5th night+)",
+        "PSNI requests mainland UK police reinforcement"
       ]
     },
     {
       "id": "world-cup-2026",
       "label": "World Cup 2026",
       "status": "changed",
-      "status_line": "Tournament opened Jun 11 at Estadio Azteca — Mexico vs South Africa (Group A, 8pm BST); Shakira/Burna Boy opening ceremony; England vs Croatia Jun 17 in Dallas; 48-team format runs to Jul 19 MetLife final; Fleetwood Mac/Mr Brightside/Sex on Fire chart surge marks World Cup cultural moment",
+      "status_line": "Day 2 Jun 12 (Canada vs Bosnia, USA vs Paraguay); Mexico 2-0 S. Africa Day 1; opening ceremony panned by UK viewers; England vs Croatia Jun 17 Dallas; Fleetwood Mac/Mr Brightside/Sex on Fire World Cup nostalgia surge on Apple Music UK",
       "first_seen": "2026-06-10",
-      "last_changed": "2026-06-11",
+      "last_changed": "2026-06-12",
       "expand_if": [
         "England match results (Jun 17, Jun 23, Jun 27)",
         "major off-field controversy (player, host city, Trump involvement)",
@@ -38,9 +54,9 @@
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
       "status": "changed",
-      "status_line": "598 confirmed DRC / 115 deaths as of Jun 10 (up from 452/88 on Jun 6); ~37 new cases/day; US State Dept adds $20M for border-state preparedness; PHEIC in force; no spread beyond DRC/Uganda",
+      "status_line": "635 confirmed DRC / 127 deaths as of Jun 12 (up from 598/115 on Jun 10); ~37 new cases/day; 260 hospitalised in isolation; Ituri 600 cases from 18 health zones; PHEIC in force; no spread beyond DRC/Uganda",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-06-10",
+      "last_changed": "2026-06-12",
       "expand_if": [
         "cases confirmed outside DRC/Uganda",
         "WHO raises alert further",
@@ -53,8 +69,8 @@
     {
       "id": "taiwan-strait-tension",
       "label": "Taiwan Strait Tension",
-      "status": "new",
-      "status_line": "Taiwan's first HIMARS firing into Taiwan Strait Jun 10 confirmed (live-fire drill directed toward China); Trump paused follow-on HIMARS arms deal after Xi summit; China response not yet issued; minimal Western media coverage",
+      "status": "stable",
+      "status_line": "China has not issued formal military response to Jun 10 HIMARS drill; PLA activity not elevated; Trump arms deal pause continuing; Western media coverage remains minimal",
       "first_seen": "2026-06-10",
       "last_changed": "2026-06-10",
       "expand_if": [
@@ -70,7 +86,7 @@
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "stable",
-      "status_line": "No new escalation since Jun 7-8 exchange; Hezbollah still rejecting pilot zones; Lebanon ceasefire remains Iran's precondition for US deal; next talks Jun 22 week",
+      "status_line": "No new escalation; Iran MOU if real would extend ceasefire 60 days including Lebanon — unconfirmed; Hezbollah still rejecting pilot zones; Jun 22 talks on calendar",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -88,14 +104,14 @@
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
       "status": "stable",
-      "status_line": "Makerfield by-election Jun 18; Polymarket: Burnham 56% likely next PM vs Starmer 26%; Starmer campaigning for Burnham despite leadership threat; 95+ MPs calling for resignation; Streeting resigned cabinet",
+      "status_line": "Makerfield by-election Jun 18; Burnham 56% Polymarket most likely next PM; 95+ MPs calling for resignation; Streeting resigned; Belfast riots add immigration pressure to Labour's crisis week; Burnham response to riots will be watched",
       "first_seen": "2026-06-03",
       "last_changed": "2026-06-09",
       "expand_if": [
         "Burnham wins Makerfield by-election Jun 18",
         "Formal leadership challenge triggered",
         "Starmer resigns",
-        "Burnham statement on fiscal rules or Bank of England independence",
+        "Burnham makes substantive immigration statement ahead of Jun 18",
         "Major gilt/sterling reaction to political news",
         "Burnham or Streeting endorsement from significant cabinet minister"
       ]
@@ -104,7 +120,7 @@
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "stable",
-      "status_line": "FTSE ~10,227 (−0.3%); Brent $96+ (rising from $94.60); 30Y gilt 5.60%; 10Y 4.94%; Nasdaq −2% risk-off; BoE first hike priced September; energy price pass-through risk increasing with Brent trajectory",
+      "status_line": "FTSE ~10,305 (Jun 11); Brent now $89 (relief for energy price-cap if sustained); 30Y gilt 5.60%; 10Y ~4.95%; BoE September hike still priced; Renters Rights Act moving through Parliament below radar",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -113,14 +129,15 @@
         "recession officially confirmed",
         "Bank of England emergency action",
         "government fiscal statement",
-        "Brent above $115 sustained"
+        "Brent above $115 sustained",
+        "Renters Rights Act passes final reading with material amendment"
       ]
     },
     {
       "id": "ukraine-peace-deadline",
       "label": "Ukraine Peace Deadline",
       "status": "stable",
-      "status_line": "Zelensky open letter to Putin proposing direct meeting (Jun 5); Putin unlikely to accept; Trump asked Xi to lean on Putin at Beijing summit; talks structurally stalled; US bandwidth consumed by Iran conflict",
+      "status_line": "Zelensky open letter to Putin proposing direct meeting (Jun 5); Putin unlikely to accept; US bandwidth consumed by Iran; talks structurally stalled",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -136,7 +153,7 @@
       "id": "uk-kirpan-debate",
       "label": "UK Kirpan Debate",
       "status": "stable",
-      "status_line": "Parliament debated Jun 9; Home Secretary defended exemption; law unchanged; Reform's repeal pledge gaining online traction",
+      "status_line": "Parliament debated Jun 9; law unchanged; Reform repeal pledge gaining online traction; Belfast riots likely to revive immigration-adjacent culture-war content",
       "first_seen": "2026-06-04",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -152,7 +169,7 @@
       "id": "syria-parliament",
       "label": "Syria Parliament",
       "status": "stable",
-      "status_line": "First session did not convene Jun 8 as planned; al-Sharaa has not named his 70-seat presidential quota; no new date announced; transition timeline slipping",
+      "status_line": "Still not convened (missed Jun 8); al-Sharaa finalising 70-seat presidential quota; no new date announced; transition timeline slipping",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -168,7 +185,7 @@
       "id": "russia-nato-romania",
       "label": "Russia / NATO / Romania",
       "status": "stable",
-      "status_line": "Constanta port drone Jun 5 confirmed Ukrainian origin via electronic jamming; NATO foreign ministers discussing drone-over-allied-territory protocols; no further incident since Jun 5",
+      "status_line": "No incident since Jun 5 Constanta drone (confirmed Ukrainian origin); NATO drone-over-allied-territory protocols in discussion",
       "first_seen": "2026-05-29",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -184,12 +201,13 @@
       "id": "mearsheimer",
       "label": "Mearsheimer",
       "status": "stable",
-      "status_line": "Netanyahu-blocking thesis reinforced by Jun 10-11 exchange (Israel's Lebanon operation active, blocking US deal progress); Crooke's parallel 'America's Suez Crisis' frame corroborated by Iran's escalatory deterrence; no new Mearsheimer post or appearance",
+      "status_line": "Trump 'deal done' claim is the live test of the Netanyahu-blocking thesis — if Netanyahu torpedoes the MOU, Mearsheimer fully confirmed; Responsible Statecraft/Quincy (Trita Parsi) framing aligns; no new post or appearance",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
         "new post or appearance shifting the argument",
         "Trump-Netanyahu public confrontation matches Mearsheimer's framing",
+        "Netanyahu publicly opposes or delays Iran MOU",
         "mainstream US policy community engages with the Netanyahu-veto argument"
       ]
     }
@@ -291,11 +309,17 @@
       "why_interesting": "Former senior British diplomat and MI6 officer; argues Hezbollah advises Iran rather than takes orders, inverting the proxy narrative; Jun 2026 pieces frame Iran's posture as calculated 'escalatory deterrence' not desperate deal-seeking — 'America's Suez Crisis' thesis argues US is in Britain's 1956 position; prediction confirmed within 24h on Jun 11"
     },
     {
-      "name": "Trita Parsi — Quincy Institute / Democracy Now",
-      "url": "https://www.democracynow.org/2026/5/4/strait_of_hormuz_trita_parsi",
+      "name": "Trita Parsi — Quincy Institute / Responsible Statecraft",
+      "url": "https://responsiblestatecraft.org",
       "found_on": "2026-06-11",
-      "why_interesting": "NIAC founder, Quincy Institute fellow; consistent frame since April that Trump is 'not in a dominant position' and that the fire-for-fire exchange is bounded by both sides' inability to afford full escalation; structurally different from both hawkish and catastrophist Western readings"
+      "why_interesting": "NIAC founder, Quincy Institute fellow; consistent frame since April that Trump is 'not in a dominant position' and that the fire-for-fire exchange is bounded by both sides' inability to afford full escalation; structurally different from both hawkish and catastrophist Western readings; Jun 12 'Warmongers in meltdown' piece names the Washington institutional battle most clearly"
+    },
+    {
+      "name": "Foundation for Defense of Democracies (FDD)",
+      "url": "https://www.fdd.org",
+      "found_on": "2026-06-12",
+      "why_interesting": "Hawkish Washington think tank; published IAEA non-compliance analysis on Jun 12 at same moment Trump claimed deal — explicitly building the legal/institutional case for rejecting any Iran deal as insufficient; useful as real-time counter-weight to Quincy Institute framing; tracks closely with Netanyahu's likely response"
     }
   ],
-  "last_updated": "2026-06-11"
+  "last_updated": "2026-06-12"
 }
