@@ -417,151 +417,108 @@
 
 </div>
 
+<!-- Audio highlights script — written for ears, not eyes. ~2 min. -->
+<script type="text/plain" id="digestAudioScript">
+Three things worth your time today.
+
+First, Trump announced last night that the US has settled with Iran. "Pretty much completed," he said. "We got everything we wanted." Brent crude dropped seven percent to eighty-nine dollars on those words alone. But on the exact same day, the IAEA declared Iran non-compliant with its nuclear obligations — for the first time in twenty years. And Iran's response was not acceptance. They announced a new enrichment facility at a secret location and centrifuge upgrades at Fordow. So the market is pricing a deal that Iran's own foreign ministry hasn't confirmed. The next twenty-four hours matter a lot.
+
+Second, Belfast has been burning since Monday and it's been almost entirely drowned out by the World Cup opening. Four nights of anti-immigrant riots — twenty-seven families burned out of their homes, a two-month-old baby rescued, water cannons deployed, protests spreading to Glasgow, Edinburgh and Southampton. Starmer called it horrific. That's not wrong, but it's not a strategy either. The Makerfield by-election is in six days, and Burnham's response to this will be the first real test of his politics.
+
+On the cultural side — the World Cup is doing what it always does. Fleetwood Mac, Mister Brightside, Sex on Fire all climbing the chart. The nostalgia engine is running. But the top five hasn't moved in four days. Olivia Dean still at number one with a love song, completely unmoved by everything happening underneath it. That stillness is the signal.
+</script>
+
 <script>
-// ── Digest Audio Reader ──────────────────────────────────────────────────
+// ── Digest Audio Reader — highlights only ───────────────────────────────
 (function () {
   var synth = window.speechSynthesis;
-  var utterances = [];
+  var chunks = [];
   var currentIdx = 0;
   var playing = false;
   var paused = false;
   var rate = 1;
 
-  // Sections to read, in order. We skip chart rows, trend items, status table, footer.
-  // Each entry: { label: string, selector: string }
-  var sections = [
-    { label: "Today's Signal",       sel: ".lead-block" },
-    { label: "Changed Threads",      sel: ".card" },
-    { label: "Cultural Layer",       sel: ".culture-block" },
-    { label: "Outside the Frame",    sel: ".otf-block" }
-  ];
-
-  function extractText(el) {
-    // Walk the DOM, skip .watch lines (they're secondary detail), status tables, chart rows
-    var clone = el.cloneNode(true);
-    // Remove sub-elements we don't want read aloud
-    clone.querySelectorAll('.watch, .chart-row, .trend-item, .subsection-title, .tag, a').forEach(function(n){ n.remove(); });
-    var raw = (clone.innerText || clone.textContent || '').replace(/\s+/g, ' ').trim();
-    return raw;
+  function getScript() {
+    var el = document.getElementById('digestAudioScript');
+    return el ? el.textContent.trim() : '';
   }
 
-  function buildScript() {
-    var chunks = [];
-    sections.forEach(function(s) {
-      var els = document.querySelectorAll(s.sel);
-      if (!els.length) return;
-      chunks.push({ text: s.label + '.', label: s.label });
-      els.forEach(function(el) {
-        var t = extractText(el).trim();
-        if (t.length > 10) chunks.push({ text: t, label: s.label });
-      });
-    });
-    return chunks;
+  // Split into sentences for smoother progress tracking
+  function buildChunks() {
+    var text = getScript();
+    // Split on sentence boundaries, keep chunks ~120 chars for smooth progress
+    var sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    chunks = sentences.map(function(s){ return s.trim(); }).filter(function(s){ return s.length > 5; });
   }
 
   function updateIcon(isPlaying) {
     var icon = document.getElementById('readerIcon');
-    if (isPlaying) {
-      icon.innerHTML = '<rect x="3" y="2" width="4" height="12" rx="1"/><rect x="9" y="2" width="4" height="12" rx="1"/>';
-    } else {
-      icon.innerHTML = '<path d="M3 2.5l10 5.5-10 5.5V2.5z"/>';
-    }
+    icon.innerHTML = isPlaying
+      ? '<rect x="3" y="2" width="4" height="12" rx="1"/><rect x="9" y="2" width="4" height="12" rx="1"/>'
+      : '<path d="M3 2.5l10 5.5-10 5.5V2.5z"/>';
   }
 
   function updateProgress() {
-    var total = utterances.length;
-    if (!total) return;
-    var pct = Math.round((currentIdx / total) * 100);
+    var pct = chunks.length ? Math.round((currentIdx / chunks.length) * 100) : 0;
     document.getElementById('readerFill').style.width = pct + '%';
-    var s = sections.find(function(s){ return utterances[currentIdx] && utterances[currentIdx]._label === s.label; });
-    document.getElementById('readerLabel').textContent = (s ? s.label : '') + ' (' + pct + '%)';
+    var labels = ['Today\'s highlights', 'Iran deal', 'Belfast', 'Cultural layer'];
+    var section = pct < 40 ? labels[1] : pct < 70 ? labels[2] : labels[3];
+    document.getElementById('readerLabel').textContent = pct === 0 ? '~2 min' : section + ' · ' + pct + '%';
   }
 
-  function buildUtterances() {
-    var chunks = buildScript();
-    utterances = chunks.map(function(c, i) {
-      var u = new SpeechSynthesisUtterance(c.text);
-      u.rate = rate;
-      u.lang = 'en-GB';
-      if (window._readerVoice) u.voice = window._readerVoice;
-      u._label = c.label;
-      u._idx = i;
-      u.onend = function() {
-        currentIdx = i + 1;
-        updateProgress();
-        if (currentIdx >= utterances.length) {
-          readerStop();
-        } else {
-          speakNext();
-        }
-      };
-      u.onerror = function(e) {
-        if (e.error !== 'interrupted') { currentIdx++; speakNext(); }
-      };
-      return u;
-    });
-  }
-
-  function speakNext() {
-    if (currentIdx >= utterances.length) { readerStop(); return; }
-    var u = utterances[currentIdx];
+  function speakChunk() {
+    if (currentIdx >= chunks.length) { readerStop(); return; }
+    var u = new SpeechSynthesisUtterance(chunks[currentIdx]);
     u.rate = rate;
-    updateProgress();
+    u.lang = 'en-GB';
+    if (window._readerVoice) u.voice = window._readerVoice;
+    var idx = currentIdx;
+    u.onend = function() {
+      currentIdx = idx + 1;
+      updateProgress();
+      if (currentIdx < chunks.length) speakChunk();
+      else readerStop();
+    };
+    u.onerror = function(e) {
+      if (e.error !== 'interrupted') { currentIdx++; speakChunk(); }
+    };
     synth.speak(u);
   }
 
   window.readerToggle = function() {
-    if (!synth) { alert('Sorry — your browser doesn\'t support speech synthesis.'); return; }
+    if (!synth) { alert('Speech not supported in this browser.'); return; }
     if (playing && !paused) {
-      synth.pause();
-      paused = true;
-      playing = false;
+      synth.pause(); paused = true; playing = false;
       updateIcon(false);
       document.getElementById('readerLabel').textContent = 'Paused';
     } else if (paused) {
-      synth.resume();
-      paused = false;
-      playing = true;
+      synth.resume(); paused = false; playing = true;
       updateIcon(true);
     } else {
-      // Fresh start
-      synth.cancel();
-      currentIdx = 0;
-      buildUtterances();
-      playing = true;
-      paused = false;
-      updateIcon(true);
-      speakNext();
+      synth.cancel(); currentIdx = 0;
+      buildChunks(); playing = true; paused = false;
+      updateIcon(true); updateProgress(); speakChunk();
     }
   };
 
   window.readerStop = function() {
-    synth.cancel();
-    playing = false;
-    paused = false;
-    currentIdx = 0;
+    synth.cancel(); playing = false; paused = false; currentIdx = 0;
     updateIcon(false);
     document.getElementById('readerFill').style.width = '0%';
-    document.getElementById('readerLabel').textContent = 'Listen to digest';
+    document.getElementById('readerLabel').textContent = '~2 min';
   };
 
   window.readerSetSpeed = function(v) {
     rate = parseFloat(v);
-    if (playing && !paused) {
-      // Restart current utterance at new speed
-      synth.cancel();
-      buildUtterances();
-      speakNext();
-    }
+    if (playing && !paused) { synth.cancel(); buildChunks(); speakChunk(); }
   };
 
-  // Pick a good English voice when voices load
   function pickVoice() {
     var voices = synth.getVoices();
-    var preferred = ['Daniel', 'Google UK English Male', 'Google UK English Female', 'Karen', 'Moira'];
+    var preferred = ['Daniel', 'Google UK English Male', 'Google UK English Female', 'Rishi', 'Moira'];
     var picked = null;
-    preferred.forEach(function(name) {
-      if (!picked) picked = voices.find(function(v){ return v.name.indexOf(name) !== -1; });
+    preferred.forEach(function(n) {
+      if (!picked) picked = voices.find(function(v){ return v.name.indexOf(n) !== -1; });
     });
     if (!picked) picked = voices.find(function(v){ return v.lang === 'en-GB'; });
     if (!picked) picked = voices.find(function(v){ return v.lang.startsWith('en'); });
@@ -569,6 +526,7 @@
   }
   if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pickVoice;
   pickVoice();
+  updateProgress();
 })();
 </script>
 </div>
