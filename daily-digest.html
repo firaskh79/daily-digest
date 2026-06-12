@@ -491,6 +491,8 @@
         updateProgress();
         if (currentIdx >= utterances.length) {
           readerStop();
+        } else {
+          speakNext();
         }
       };
       u.onerror = function(e) {
