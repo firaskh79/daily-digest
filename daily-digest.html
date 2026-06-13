@@ -3,532 +3,452 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firas's Digest — 12 June 2026</title>
+<title>Firas's Digest — 13 June 2026</title>
 <style>
+:root {
+  --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
+  --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
+  --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
+  --radius:10px; --radius-sm:6px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --purple-bg:#EEEDFE; --purple-text:#3C3489;
+  --teal-bg:#E1F5EE; --teal-text:#0F6E56;
+  --coral-bg:#FAECE7; --coral-text:#712B13;
+  --amber-bg:#FAEEDA; --amber-text:#633806;
+  --blue-bg:#E6F1FB; --blue-text:#0C447C;
+  --green-bg:#EAF3DE; --green-text:#27500A;
+  --gray-bg:#F1EFE8; --gray-text:#444441;
+  --link:#185FA5;
+}
+@media (prefers-color-scheme: dark) {
   :root {
-    --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
-    --text:#1a1a18; --text-2:#5a5956; --text-3:#9a9894;
-    --border:rgba(0,0,0,0.1); --border-2:rgba(0,0,0,0.18);
-    --radius:10px; --radius-sm:6px;
-    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    --purple-bg:#EEEDFE; --purple-text:#3C3489;
-    --teal-bg:#E1F5EE; --teal-text:#0F6E56;
-    --coral-bg:#FAECE7; --coral-text:#712B13;
-    --amber-bg:#FAEEDA; --amber-text:#633806;
-    --blue-bg:#E6F1FB; --blue-text:#0C447C;
-    --green-bg:#EAF3DE; --green-text:#27500A;
-    --gray-bg:#F1EFE8; --gray-text:#444441;
-    --link:#185FA5;
+    --bg:#17171a; --bg-2:#1f1f23; --bg-3:#26262b;
+    --text:#e8e8e4; --text-2:#9a9894; --text-3:#666460;
+    --border:rgba(255,255,255,0.08); --border-2:rgba(255,255,255,0.14);
+    --purple-bg:#2a2860; --purple-text:#b0abf5;
+    --teal-bg:#0c3328; --teal-text:#5dd4aa;
+    --coral-bg:#3a1608; --coral-text:#f59474;
+    --amber-bg:#3a1e04; --amber-text:#f5c27a;
+    --blue-bg:#0a2540; --blue-text:#7ab8f5;
+    --green-bg:#122808; --green-text:#8dd460;
+    --gray-bg:#252525; --gray-text:#aaaaaa;
+    --link:#5aaaff;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg:#111110; --bg-2:#1c1c1a; --bg-3:#252522;
-      --text:#f0ede8; --text-2:#a8a5a0; --text-3:#6a6865;
-      --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
-      --purple-bg:#1e1a40; --purple-text:#b0a8f0;
-      --teal-bg:#0d2c22; --teal-text:#6dd8b0;
-      --coral-bg:#2c1208; --coral-text:#f4a07a;
-      --amber-bg:#2a1a04; --amber-text:#e8b468;
-      --blue-bg:#071e38; --blue-text:#7bbcf4;
-      --green-bg:#111e06; --green-text:#8fc85a;
-      --gray-bg:#1e1e1a; --gray-text:#c0bcb8;
-      --link:#5eaaff;
-    }
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 16px;
-    line-height: 1.65;
-    padding: 2rem 1rem;
-  }
-  .container { max-width: 780px; margin: 0 auto; }
-  a { color: var(--link); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  line-height: 1.65;
+  font-size: 16px;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-  .header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-2); padding-bottom: 1.25rem; }
-  .header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
-  .header .date { color: var(--text-3); font-size: 0.9rem; margin-top: 0.25rem; }
+.header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
+.header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+.header .date { color: var(--text-3); font-size: 0.9rem; margin-top: 0.2rem; }
 
-  .section-title {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em;
-    text-transform: uppercase; color: var(--text-3);
-    margin-bottom: 1rem; margin-top: 2.5rem;
-  }
+h2 { font-size: 1.05rem; font-weight: 600; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.06em; margin: 2.5rem 0 1rem; }
+h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
 
-  .lead-block {
-    background: var(--bg-2); border-radius: var(--radius);
-    padding: 1.4rem 1.5rem; margin-bottom: 1rem;
-    border-left: 3px solid var(--text);
-  }
-  .lead-block p { color: var(--text); margin-bottom: 0.8rem; font-size: 1.01rem; }
-  .lead-block p:last-child { margin-bottom: 0; }
-  .lead-num { font-weight: 700; margin-right: 0.3em; }
+.lead { background: var(--bg-2); border-radius: var(--radius); padding: 1.4rem 1.5rem; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+.lead p { margin-bottom: 0.9rem; color: var(--text); }
+.lead p:last-child { margin-bottom: 0; }
+.lead strong { font-weight: 600; }
 
-  .card {
-    background: var(--bg-2); border-radius: var(--radius);
-    padding: 1.25rem 1.4rem; margin-bottom: 1rem;
-    border: 1px solid var(--border);
-  }
-  .card-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
-  .card-title { font-weight: 600; font-size: 1rem; }
-  .card p { color: var(--text-2); font-size: 0.95rem; margin-bottom: 0.6rem; }
-  .card p:last-child { margin-bottom: 0; }
-  .card .watch { font-size: 0.85rem; color: var(--text-3); font-style: italic; margin-top: 0.5rem; }
+.card { background: var(--bg-2); border-radius: var(--radius); padding: 1.25rem 1.4rem; margin-bottom: 1rem; border: 1px solid var(--border); }
+.card-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0; }
+.card p { color: var(--text-2); margin-bottom: 0.6rem; font-size: 0.95rem; }
+.card p:last-child { margin-bottom: 0; }
+.card .watch { color: var(--text-3); font-size: 0.875rem; border-top: 1px solid var(--border); padding-top: 0.6rem; margin-top: 0.75rem; }
 
-  .tag {
-    display: inline-block; font-size: 0.72rem; font-weight: 600;
-    padding: 0.2em 0.55em; border-radius: 4px; letter-spacing: 0.02em;
-  }
-  .tag.new { background: var(--purple-bg); color: var(--purple-text); }
-  .tag.changed { background: var(--amber-bg); color: var(--amber-text); }
-  .tag.stable { background: var(--gray-bg); color: var(--gray-text); }
-  .tag.uk { background: var(--blue-bg); color: var(--blue-text); }
-  .tag.tb { background: var(--teal-bg); color: var(--teal-text); }
+.tag { display: inline-block; border-radius: 4px; font-size: 0.72rem; font-weight: 600; padding: 0.15em 0.55em; letter-spacing: 0.04em; }
+.tag.new { background: var(--purple-bg); color: var(--purple-text); }
+.tag.changed { background: var(--amber-bg); color: var(--amber-text); }
+.tag.stable { background: var(--gray-bg); color: var(--gray-text); }
+.tag.tb { background: var(--teal-bg); color: var(--teal-text); }
 
-  .markets-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
-  @media (min-width: 520px) { .markets-grid { grid-template-columns: repeat(4, 1fr); } }
-  .market-tile {
-    background: var(--bg-2); border-radius: var(--radius-sm);
-    padding: 0.9rem 1rem; border: 1px solid var(--border);
-  }
-  .market-tile .label { font-size: 0.72rem; color: var(--text-3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
-  .market-tile .value { font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem; }
-  .market-tile .change { font-size: 0.82rem; margin-top: 0.15rem; }
-  .up { color: #1a7a45; } .down { color: #c0392b; }
+.markets-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1rem; }
+@media (min-width: 500px) { .markets-grid { grid-template-columns: repeat(4, 1fr); } }
+.market-tile { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.85rem 1rem; }
+.market-tile .label { font-size: 0.75rem; color: var(--text-3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+.market-tile .value { font-size: 1.1rem; font-weight: 700; margin-top: 0.2rem; }
+.market-tile .change { font-size: 0.8rem; margin-top: 0.1rem; }
+.up { color: #27a060; }
+.down { color: #c0392b; }
+.market-note { color: var(--text-3); font-size: 0.82rem; margin-top: 0.75rem; }
 
-  .culture-block p { color: var(--text-2); font-size: 0.95rem; margin-bottom: 0.7rem; }
+.status-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 1rem; }
+.status-table th { text-align: left; color: var(--text-3); font-weight: 500; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border-2); }
+.status-table td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-2); }
+.status-table tr:last-child td { border-bottom: none; }
+.status-table .thread-label { color: var(--text); font-weight: 500; white-space: nowrap; }
+.status-table .status-line { font-size: 0.82rem; }
 
-  .chart-row {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem;
-  }
-  .chart-row:last-child { border-bottom: none; }
-  .chart-pos { width: 1.8rem; font-weight: 700; color: var(--text-3); text-align: right; flex-shrink: 0; }
-  .chart-change { width: 2.4rem; text-align: right; flex-shrink: 0; font-size: 0.78rem; }
-  .chart-info { flex: 1; }
-  .chart-artist { font-weight: 600; }
-  .chart-title { color: var(--text-2); }
+.cultural-item p { color: var(--text-2); margin-bottom: 0.9rem; font-size: 0.95rem; }
 
-  .trend-item { padding: 0.45rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
-  .trend-item:last-child { border-bottom: none; }
-  .trend-item .term { font-weight: 600; }
-  .trend-item .context { color: var(--text-2); margin-left: 0.5rem; font-size: 0.83rem; }
+.chart-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin-top: 0.75rem; }
+.chart-table th { text-align: left; color: var(--text-3); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.3rem 0.5rem; border-bottom: 1px solid var(--border); }
+.chart-table td { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); }
+.chart-table tr:last-child td { border-bottom: none; }
+.pos { font-weight: 700; color: var(--text); width: 2rem; }
+.chg-up { color: #27a060; font-size: 0.8rem; }
+.chg-dn { color: #c0392b; font-size: 0.8rem; }
+.chg-eq { color: var(--text-3); font-size: 0.8rem; }
+.chg-new { color: var(--purple-text); font-size: 0.8rem; font-weight: 600; }
 
-  .status-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 1rem; }
-  .status-table th { text-align: left; padding: 0.5rem 0.6rem; color: var(--text-3); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border-2); }
-  .status-table td { padding: 0.6rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  .status-table .status-line { color: var(--text-2); }
-  .status-table .last-changed { color: var(--text-3); white-space: nowrap; }
+.outside-frame { background: var(--bg-3); border-left: 3px solid var(--link); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.3rem; margin-top: 0.5rem; }
+.outside-frame p { font-size: 0.95rem; color: var(--text-2); margin-bottom: 0.6rem; }
+.outside-frame p:last-child { margin-bottom: 0; }
 
-  .otf-block {
-    background: var(--bg-3); border-radius: var(--radius);
-    padding: 1.25rem 1.4rem; margin-bottom: 0.75rem;
-    border: 1px solid var(--border);
-  }
-  .otf-block p { color: var(--text-2); font-size: 0.95rem; margin-bottom: 0.6rem; }
-  .otf-block p:last-child { margin-bottom: 0; }
-  .otf-label { font-size: 0.78rem; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+.audio-section { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 2rem 0; }
+.audio-section h2 { margin: 0 0 0.75rem; }
+#audioPlayer { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+#playBtn { background: var(--text); color: var(--bg); border: none; border-radius: 50%; width: 2.2rem; height: 2.2rem; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+#playBtn:hover { opacity: 0.8; }
+#progressBar { flex: 1; min-width: 100px; height: 4px; background: var(--border-2); border-radius: 2px; cursor: pointer; }
+#progressFill { height: 100%; background: var(--link); border-radius: 2px; width: 0%; }
+#timeDisplay { font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+#playerStatus { font-size: 0.8rem; color: var(--text-3); width: 100%; margin-top: 0.4rem; }
 
-  .footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--text-3); }
-  .footer a { color: var(--link); }
-
-  .subsection-title { font-size: 0.82rem; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.6rem; margin-top: 1.2rem; }
-
-  /* ── Audio reader ── */
-  .reader-bar {
-    display: flex; align-items: center; gap: 0.75rem;
-    background: var(--bg-2); border: 1px solid var(--border-2);
-    border-radius: var(--radius); padding: 0.75rem 1rem;
-    margin-top: 1rem; flex-wrap: wrap;
-  }
-  .reader-btn {
-    display: flex; align-items: center; justify-content: center;
-    width: 2.2rem; height: 2.2rem; border-radius: 50%;
-    border: none; cursor: pointer; flex-shrink: 0;
-    background: var(--text); color: var(--bg);
-    transition: opacity 0.15s;
-  }
-  .reader-btn:hover { opacity: 0.75; }
-  .reader-btn svg { width: 1rem; height: 1rem; }
-  .reader-progress {
-    flex: 1; min-width: 100px; height: 4px;
-    background: var(--border-2); border-radius: 2px; overflow: hidden;
-  }
-  .reader-progress-fill {
-    height: 100%; width: 0%; background: var(--text);
-    border-radius: 2px; transition: width 0.3s linear;
-  }
-  .reader-label {
-    font-size: 0.78rem; color: var(--text-3); white-space: nowrap;
-    min-width: 5rem; text-align: right;
-  }
-  .reader-speed {
-    font-size: 0.78rem; color: var(--text-2); background: none;
-    border: 1px solid var(--border-2); border-radius: 4px;
-    padding: 0.2em 0.4em; cursor: pointer; font-family: var(--font);
-  }
-  .reader-speed:hover { border-color: var(--text-3); }
-  .reading-highlight { background: var(--amber-bg); border-radius: 2px; }
+.footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; }
 </style>
 </head>
 <body>
-<div class="container">
 
-  <div class="header">
-    <h1>Firas's Digest</h1>
-    <div class="date">Friday, 12 June 2026</div>
-  </div>
-
-  <!-- ── Audio reader bar ── -->
-  <div class="reader-bar" id="readerBar">
-    <button class="reader-btn" id="readerPlayBtn" title="Play / Pause" onclick="readerToggle()">
-      <svg id="readerIcon" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2.5l10 5.5-10 5.5V2.5z"/></svg>
-    </button>
-    <button class="reader-btn" id="readerStopBtn" title="Stop" onclick="readerStop()" style="background:var(--bg-3);color:var(--text);width:1.8rem;height:1.8rem;">
-      <svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="3" width="10" height="10" rx="1.5"/></svg>
-    </button>
-    <div class="reader-progress"><div class="reader-progress-fill" id="readerFill"></div></div>
-    <select class="reader-speed" id="readerSpeed" onchange="readerSetSpeed(this.value)" title="Playback speed">
-      <option value="0.85">0.85×</option>
-      <option value="1" selected>1×</option>
-      <option value="1.2">1.2×</option>
-      <option value="1.5">1.5×</option>
-      <option value="1.8">1.8×</option>
-    </select>
-    <div class="reader-label" id="readerLabel">Listen to digest</div>
-  </div>
-
-  <div class="section-title">Today's Signal</div>
-
-  <div class="lead-block">
-    <p><span class="lead-num">1.</span> Trump announced during an Alabama tele-rally that the United States has "settled up with Iran" — "pretty much completed," "we got everything we wanted." Brent dropped 7% to $89 within hours. And yet: on the same June 12, the IAEA declared Iran formally non-compliant with its nuclear obligations for the first time in twenty years, and Iran's Foreign Ministry responded not with acceptance but defiance — announcing a new enrichment facility at a secret location and sixth-generation centrifuge upgrades at Fordow. Either Iran is simultaneously closing a deal and announcing a harder nuclear posture (extraordinary compartmentalisation), or the market is pricing peace that one party to the supposed peace hasn't signed. The stakes of getting this wrong are not symmetrical: $89 is cheap oil; oil that was $96 last week and should be $96 again is painful. Watch for any Iranian confirmation or denial in the next 24 hours.</p>
-    <p><span class="lead-num">2.</span> Belfast has been burning since June 9, and that story has been drowned out by the World Cup's opening. A stabbing allegedly committed by a Sudanese asylum seeker triggered four nights of anti-immigrant riots: 62 fire brigade callouts, 27 families made homeless by arsonists going door-to-door looking for immigrants (Ugandan carers, a Ukrainian family, a Romani family), a two-month-old baby rescued from a burning building, water cannons deployed on June 11, protests spreading to Glasgow, Edinburgh, and Southampton. This is not a Northern Ireland story — it is a UK story, with Reform UK taking notes six days before the Makerfield by-election. Starmer called it "horrific." That's not wrong, but it's not a strategy.</p>
-    <p><span class="lead-num">3.</span> The IAEA non-compliance declaration matters beyond today's deal theatre. The last time the IAEA found Iran non-compliant — 2005 — it triggered a UN Security Council referral and years of sanctions escalation. By declaring breach now, the IAEA has armed the legal architecture for maximum pressure, even as Trump claims the diplomatic track is closing. Whoever loses the Iran deal argument in Washington will have this declaration to use as their leverage. The Foundation for Defense of Democracies published their IAEA breach analysis at almost the same moment Trump was claiming victory — these two pieces are aimed at the same Republican base and are pushing in opposite directions.</p>
-  </div>
-
-  <div class="section-title">Changed Threads</div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="tag changed">Changed</span>
-      <span class="card-title">Iran / Hormuz</span>
-    </div>
-    <p>Trump's "deal done" announcement sent Brent to $89 — a $7 drop in a single session, the sharpest single-day fall of the conflict. The claimed MOU framework: Hormuz reopens without tolls; Iran clears mines within 30 days; 60-day ceasefire extended (Lebanon included); nuclear talks on Iran's enriched uranium stockpile; phased sanctions waivers. But on the same day, the IAEA declared Iran non-compliant with nuclear obligations for the first time in twenty years, citing failure to account for undeclared nuclear material at multiple sites. Iran's response to the IAEA: a new enrichment facility at an undisclosed location, Fordow centrifuges upgraded from first to sixth generation.</p>
-    <p>The June 22 talks remain nominally on the calendar but Iran has not confirmed the deal terms Trump described. On June 9, Iran formally rejected the US proposal and offered a counteroffer through Omani mediators. By June 12, Trump says it's done. Either the counteroffer was accepted in private, or this is the same pattern — Trump claiming a deal, Iran demurring, escalation resuming — playing out for the fourth time since May. The war crossed 100 days on June 8.</p>
-    <p class="watch">Watch: Iranian Foreign Ministry confirmation or denial of deal terms; whether Brent holds below $90 or snaps back; any UN Security Council movement on the IAEA non-compliance declaration; Netanyahu's response (Mearsheimer thesis test).</p>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="tag new">New</span>
-      <span class="card-title">Belfast Riots <span class="tag uk" style="margin-left:4px">UK</span></span>
-    </div>
-    <p>Four nights of anti-immigrant riots across Belfast (June 9–12), triggered by a stabbing on June 8 allegedly committed by a Sudanese asylum seeker — the victim, a 44-year-old disabled man, lost an eye. A Sudanese man aged 30 has been charged with attempted murder. The violence has been severe: 62 fire brigade incidents, 27 people made homeless, 12 police officers injured. Rioters went door-to-door identifying immigrant households; victims included Ugandan carers, a Ukrainian family, and a Romani family. A two-month-old baby was rescued from a burning home. Police deployed water cannons on June 11. Protests have spread beyond Northern Ireland to Glasgow, Edinburgh, and Southampton.</p>
-    <p>The political chain reaction: Hilary Benn (Northern Ireland Secretary) described the scenes as "truly shocking." Starmer called them "horrific and abhorrent." Reform UK, whose repeal of the kirpan exemption has been gaining online traction, is six days from the Makerfield by-election. The riots land into a political environment where 95+ Labour MPs are calling for Starmer's resignation and Burnham sits at 56% on Polymarket as most likely next PM. Burnham's response ahead of June 18 will be the first significant test of whether he triangulates on immigration or holds a firm line.</p>
-    <p class="watch">Watch: Burnham's immigration response before June 18; Reform mobilisation; further spread to English cities; Starmer response beyond condemnation; whether the PSNI request for additional UK police support is granted.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="tag changed">Changed</span>
-      <span class="card-title">Ebola — DRC / Uganda</span>
-    </div>
-    <p>As of June 12, the DRC Ministry of Health reports 635 confirmed cases and 127 deaths — up from 598 and 115 on June 10. The rate of new cases (~37/day) is holding. Ituri Province accounts for 600 of those cases across 18 health zones, with 260 individuals hospitalised in isolation. The PHEIC remains in force. No confirmed spread beyond DRC/Uganda.</p>
-    <p class="watch">Watch: Any case confirmed outside DRC/Uganda; weekly WHO update; vaccine pipeline announcement.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <span class="tag changed">Changed</span>
-      <span class="card-title">World Cup 2026</span>
-    </div>
-    <p>Day 2 (June 12): Canada vs. Bosnia-Herzegovina in Toronto and USA vs. Paraguay in Inglewood are today's headline fixtures. Mexico beat South Africa 2–0 on Day 1 at the Azteca; South Korea defeated Czechia. The opening ceremony — Shakira, Burna Boy, Tyla, Alejandro Fernández — was roundly criticised by ITV viewers in the UK, who found it too long and poorly contextualised. The cultural machine is running. England vs. Croatia is June 17 in Dallas — that's when UK engagement will peak.</p>
-    <p>The chart impact is already visible: Fleetwood Mac "Everywhere" jumped 12 places; Kings of Leon "Sex on Fire" up 12; Mr. Brightside up 4. These are the songs English football has claimed as its own over multiple tournaments. Their movement says "World Cup" more clearly than anything in the actual top 5.</p>
-    <p class="watch">Watch: England vs. Croatia result June 17; any geopolitical incident at a host city; Trump/USMNT interaction; whether Mexico's trajectory becomes the emotional centre of a North American World Cup.</p>
-  </div>
-
-  <div class="section-title">The Social / Cultural Layer</div>
-
-  <div class="culture-block">
-    <p>The Apple Music UK top 5 hasn't moved in days. Olivia Dean holds #1 with "Man I Need" — a song of romantic longing, sitting on top of a week in which Belfast burned and Iran deal-or-no-deal played out in real time. The stability of the top 5 is itself the signal: this is the fourth consecutive day of identical positions, a kind of suspended animation in the chart while the world underneath shifts.</p>
-    <p>The more revealing pattern is in the 20–125 band, where the World Cup is operating as a nostalgia engine: Fleetwood Mac "Everywhere" +12 (#79), Kings of Leon "Sex on Fire" +12 (#124), Mr. Brightside +4 (#33), Oasis "Wonderwall" +2 (#102), Coldplay "Viva La Vida" +6 (#99), Ed Sheeran multiple rises across the chart. These are the songs English fans have associated with different tournament summers over the past two decades. Their simultaneous movement is collective memory activation. What's absent is any new World Cup anthem penetrating from below — the tournament hasn't generated its own 2026 sound yet, at least not one that's landed in the UK.</p>
-    <p>The divergence worth naming directly: the World Cup opened on June 11. Belfast was already burning on June 9. The same week that heritage British football anthems climbed the chart, masked men were going door-to-door in north Belfast checking for immigrants. The cultural comfort of the World Cup — the Fleetwood Mac singalong at a pub, the anticipation of England vs. Croatia — is running in exact parallel with ethnic violence on British streets. These are not separate stories. They're the same society expressing two contradictory impulses simultaneously.</p>
-    <p>TikTok's globally trending sounds this week are dominated by Latin content — "QUE LOUCURA" by DJ EXE and Cacau Chuu (793K videos, growing +9%/day from Germany-based creator but with Brazilian reach), along with Brazilian and Latin American sounds making up most of the visible top tier. The World Cup is physically in North America this year, and the cultural gravity is pulling toward Latin sounds rather than into British musical identity. UK viewers complained about the opening ceremony; the global TikTok feed went the other way entirely.</p>
-    <p>UK Twitter trending today: Wolves and Rob Edwards (football management news), Simba (transfer link), Knicks (NBA Finals bleeding into UK trending), Landlords and Rights Act (London-specific: Renters Rights Act moving through Parliament, landlord community reacting).</p>
-  </div>
-
-  <div class="subsection-title">Apple Music UK — Top 5</div>
-  <div class="chart-row"><span class="chart-pos">1</span><span class="chart-change" style="color:var(--text-3)">=</span><div class="chart-info"><span class="chart-artist">Olivia Dean <span class="tag tb">UK</span></span> &mdash; <span class="chart-title">Man I Need</span></div></div>
-  <div class="chart-row"><span class="chart-pos">2</span><span class="chart-change" style="color:var(--text-3)">=</span><div class="chart-info"><span class="chart-artist">Drake</span> &mdash; <span class="chart-title">Janice STFU</span></div></div>
-  <div class="chart-row"><span class="chart-pos">3</span><span class="chart-change" style="color:var(--text-3)">=</span><div class="chart-info"><span class="chart-artist">Ariana Grande</span> &mdash; <span class="chart-title">hate that i made you love me</span></div></div>
-  <div class="chart-row"><span class="chart-pos">4</span><span class="chart-change" style="color:var(--text-3)">=</span><div class="chart-info"><span class="chart-artist">Sam Fender &amp; Olivia Dean <span class="tag tb">UK</span></span> &mdash; <span class="chart-title">Rein Me In</span></div></div>
-  <div class="chart-row"><span class="chart-pos">5</span><span class="chart-change" style="color:var(--text-3)">=</span><div class="chart-info"><span class="chart-artist">The Chemical Brothers <span class="tag tb">UK</span></span> &mdash; <span class="chart-title">Go</span></div></div>
-
-  <div class="subsection-title" style="margin-top:1.4rem">Notable Movers (World Cup + nostalgia)</div>
-  <div class="chart-row"><span class="chart-pos">33</span><span class="chart-change up">+4</span><div class="chart-info"><span class="chart-artist">The Killers</span> &mdash; <span class="chart-title">Mr. Brightside &nbsp;<a href="https://music.apple.com/gb/search?term=Mr+Brightside+Killers" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-  <div class="chart-row"><span class="chart-pos">79</span><span class="chart-change up">+12</span><div class="chart-info"><span class="chart-artist">Fleetwood Mac <span class="tag tb">UK</span></span> &mdash; <span class="chart-title">Everywhere (2017 Remaster) &nbsp;<a href="https://music.apple.com/gb/search?term=Fleetwood+Mac+Everywhere" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-  <div class="chart-row"><span class="chart-pos">99</span><span class="chart-change up">+6</span><div class="chart-info"><span class="chart-artist">Coldplay <span class="tag tb">UK</span></span> &mdash; <span class="chart-title">Viva La Vida &nbsp;<a href="https://music.apple.com/gb/search?term=Coldplay+Viva+La+Vida" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-  <div class="chart-row"><span class="chart-pos">102</span><span class="chart-change up">+2</span><div class="chart-info"><span class="chart-artist">Oasis <span class="tag tb">UK</span></span> &mdash; <span class="chart-title">Wonderwall (Remastered) &nbsp;<a href="https://music.apple.com/gb/search?term=Oasis+Wonderwall" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-  <div class="chart-row"><span class="chart-pos">124</span><span class="chart-change up">+12</span><div class="chart-info"><span class="chart-artist">Kings of Leon</span> &mdash; <span class="chart-title">Sex on Fire &nbsp;<a href="https://music.apple.com/gb/search?term=Kings+of+Leon+Sex+on+Fire" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-  <div class="chart-row"><span class="chart-pos">121</span><span class="chart-change up">+26</span><div class="chart-info"><span class="chart-artist">Justin Bieber</span> &mdash; <span class="chart-title">Sorry &nbsp;<a href="https://music.apple.com/gb/search?term=Justin+Bieber+Sorry" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-
-  <div class="subsection-title" style="margin-top:1.4rem">TikTok — Global Top Sounds</div>
-  <div class="chart-row"><span class="chart-pos" style="width:2.2rem">999</span><span class="chart-change" style="color:var(--text-3)"></span><div class="chart-info"><span class="chart-artist">Ad vikāra (UK-origin sound)</span> &mdash; <span class="chart-title">16 videos, score 999 — micro-UK sound</span></div></div>
-  <div class="chart-row"><span class="chart-pos" style="width:2.2rem">989</span><span class="chart-change" style="color:var(--text-3)"></span><div class="chart-info"><span class="chart-artist">DJ EXE &amp; Cacau Chuu</span> &mdash; <span class="chart-title">QUE LOUCURA — 793K videos, +9%/day <a href="https://music.apple.com/gb/search?term=DJ+EXE+Cacau+Chuu+Que+Loucura" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-  <div class="chart-row"><span class="chart-pos" style="width:2.2rem">979</span><span class="chart-change" style="color:var(--text-3)"></span><div class="chart-info"><span class="chart-artist">Crish Ramirez</span> &mdash; <span class="chart-title">Buena Vida Mala Fama Slow Reverb — 322K videos, 195M views <a href="https://music.apple.com/gb/search?term=Buena+Vida+Mala+Fama" target="_blank" style="font-size:0.78rem">▶</a></span></div></div>
-
-  <div class="subsection-title" style="margin-top:1.4rem">UK Twitter / X Trends</div>
-  <div class="trend-item"><span class="term">Wolves / Rob Edwards</span><span class="context">Wolves manager Rob Edwards — football management activity dominating UK X</span></div>
-  <div class="trend-item"><span class="term">Simba</span><span class="context">Transfer speculation — Sporting Lisbon striker linked to Premier League clubs</span></div>
-  <div class="trend-item"><span class="term">Knicks</span><span class="context">NBA Finals; US sports bleeding into UK trending lists during World Cup week</span></div>
-  <div class="trend-item"><span class="term">Landlords / Rights Act</span><span class="context">London: Renters Rights Act (abolishes Section 21 no-fault evictions) moving through Parliament; landlord community reaction</span></div>
-
-  <div class="section-title">Markets</div>
-  <div class="markets-grid">
-    <div class="market-tile">
-      <div class="label">FTSE 100</div>
-      <div class="value">~10,305</div>
-      <div class="change" style="color:var(--text-3)">Jun 11 close; Jun 12 likely up on Iran deal news</div>
-    </div>
-    <div class="market-tile">
-      <div class="label">Nasdaq</div>
-      <div class="value">&mdash;</div>
-      <div class="change up">Recovering; Iran deal risk-on</div>
-    </div>
-    <div class="market-tile">
-      <div class="label">Brent Crude</div>
-      <div class="value down">$89.38</div>
-      <div class="change down">&#8595;7% from $96 — sharpest single-day drop of the crisis; Trump deal effect</div>
-    </div>
-    <div class="market-tile">
-      <div class="label">30Y Gilt</div>
-      <div class="value">5.60%</div>
-      <div class="change" style="color:var(--text-3)">10Y ~4.95%; elevated</div>
-    </div>
-  </div>
-  <p style="color:var(--text-3); font-size:0.83rem; margin-top:0.5rem;">Brent's drop is the number that matters. $89 prices in peace. If Iran's Foreign Ministry denies the deal terms Trump described, the reversal will be sharp. The gilt market remains unmoved by Iran — its concern is the UK fiscal path and BoE September pricing. A sustained Brent below $90 would reduce energy price-cap pressure — a modest relief for Starmer's political position, though probably not enough.</p>
-
-  <div class="section-title">Outside the Frame</div>
-
-  <div class="otf-block">
-    <div class="otf-label">Responsible Statecraft / Quincy Institute — The Real War in Washington</div>
-    <p>The most interesting piece published today isn't about whether Trump has a deal — it's about who benefits from not having one. Responsible Statecraft ran "Warmongers in meltdown as Trump heralds Iran deal," explicitly naming the Foundation for Defense of Democracies as the institutional force most threatened by any diplomatic resolution. The FDD published their IAEA non-compliance piece at almost the same moment Trump was claiming victory. Both pieces are aimed at the same Republican base. Both are pulling in opposite directions. This is the internal Washington war that will determine whether a deal survives, not the one in the strait.</p>
-    <p>Trita Parsi's frame, consistent since April: Iran had offered major nuclear concessions; Trump could have claimed a strong win; the hawks in his orbit benefit structurally from continued conflict. Today's dual-track — Trump claiming a deal, IAEA declaring breach — is exactly what Parsi predicted. The Quincy Institute's <a href="https://responsiblestatecraft.org/iran-trump-deal-hormuz/" target="_blank">Responsible Statecraft piece</a> is worth reading alongside the FDD analysis for the full picture of how this argument is being contested in real time.</p>
-  </div>
-
-  <div class="section-title">Thread Status</div>
-  <table class="status-table">
-    <thead>
-      <tr>
-        <th>Thread</th>
-        <th>Status</th>
-        <th>Current Position</th>
-        <th>Changed</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Iran / Hormuz</strong></td>
-        <td><span class="tag changed">Changed</span></td>
-        <td class="status-line">Trump claims deal "settled"; IAEA first-in-20-years non-compliance declaration; Iran announces new enrichment facility + Fordow 6th-gen upgrade; Brent $89; deal unconfirmed by Iran; Jun 22 talks nominally on</td>
-        <td class="last-changed">Jun 12</td>
-      </tr>
-      <tr>
-        <td><strong>Belfast Riots</strong></td>
-        <td><span class="tag new">New</span></td>
-        <td class="status-line">4 nights of anti-immigrant riots; 27 homes burned, baby rescued, water cannons Jun 11; spreading to Glasgow, Edinburgh, Southampton; 6 days before Makerfield by-election</td>
-        <td class="last-changed">Jun 12</td>
-      </tr>
-      <tr>
-        <td><strong>World Cup 2026</strong></td>
-        <td><span class="tag changed">Changed</span></td>
-        <td class="status-line">Day 2 underway (Canada vs Bosnia, USA vs Paraguay); Mexico 2–0 S. Africa Day 1; opening ceremony panned by UK viewers; England vs Croatia Jun 17 Dallas</td>
-        <td class="last-changed">Jun 12</td>
-      </tr>
-      <tr>
-        <td><strong>Ebola DRC / Uganda</strong></td>
-        <td><span class="tag changed">Changed</span></td>
-        <td class="status-line">635 confirmed / 127 deaths (up from 598/115 Jun 10); ~37 cases/day; PHEIC in force; no spread beyond DRC/Uganda</td>
-        <td class="last-changed">Jun 12</td>
-      </tr>
-      <tr>
-        <td><strong>Taiwan Strait</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">China has not issued formal response to Jun 10 HIMARS drill; PLA not yet elevated; Trump arms deal pause continuing</td>
-        <td class="last-changed">Jun 10</td>
-      </tr>
-      <tr>
-        <td><strong>UK Labour Leadership</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">Burnham standing in Makerfield Jun 18; 56% Polymarket next PM; 95+ MPs calling for Starmer resignation; Belfast riots add immigration pressure to Labour's crisis week</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-      <tr>
-        <td><strong>UK Economic Stress</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">FTSE ~10,305; Brent now $89 (relief if sustained); 30Y gilt 5.60%; 10Y ~4.95%; BoE September hike still priced; Renters Rights Act moving through Parliament below radar</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-      <tr>
-        <td><strong>Israel / Lebanon</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">No new escalation; Iran MOU if real would extend ceasefire 60 days including Lebanon; Hezbollah still rejecting pilot zones; Jun 22 talks on calendar</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-      <tr>
-        <td><strong>Ukraine Peace</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">Structurally stalled; US bandwidth consumed by Iran; Zelensky direct-meeting proposal to Putin unanswered</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-      <tr>
-        <td><strong>Syria Parliament</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">Still not convened (missed Jun 8); al-Sharaa finalising 70-seat presidential quota; no new date announced; transition timeline slipping</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-      <tr>
-        <td><strong>Russia / NATO / Romania</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">No new incident since Jun 5 Constanta drone; NATO drone-over-allied-territory protocols in discussion</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-      <tr>
-        <td><strong>UK Kirpan Debate</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">Law unchanged; Belfast riots will likely revive immigration-adjacent culture-war content; Reform pledge gaining traction</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-      <tr>
-        <td><strong>Mearsheimer</strong></td>
-        <td><span class="tag stable">Stable</span></td>
-        <td class="status-line">Netanyahu-blocking thesis not yet confirmed; Trump "deal done" claim is the test — if Netanyahu torpedoes the MOU, Mearsheimer is fully confirmed; no new post or appearance</td>
-        <td class="last-changed">Jun 9</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="footer">
-    Generated: Friday, 12 June 2026 &nbsp;&middot;&nbsp; <a href="https://firaskh79.github.io/daily-digest/" target="_blank">firaskh79.github.io/daily-digest</a>
-  </div>
-
+<div class="header">
+  <h1>Firas's Digest</h1>
+  <div class="date">Saturday, 13 June 2026</div>
 </div>
 
-<!-- Audio highlights script — written for ears, not eyes. ~2 min. -->
+<div class="audio-section">
+  <h2>🎧 Listen</h2>
+  <div id="audioPlayer">
+    <button id="playBtn" title="Play / Pause">▶</button>
+    <div id="progressBar"><div id="progressFill"></div></div>
+    <span id="timeDisplay">0:00</span>
+  </div>
+  <p id="playerStatus">Press play to hear a 2-minute audio brief.</p>
+</div>
+
+<h2>Today's Signal</h2>
+
+<div class="lead">
+  <p><strong>Iran deal: hours — or days — away.</strong> Pakistan's Prime Minister Shehbaz Sharif said Saturday that a deal text has been fully agreed and that electronic signing could begin within 24 hours. Iran walked that back slightly — "days, not hours" — but both sides confirm the final missing piece is a formal sign-off from Supreme Leader Mojtaba Khamenei, whom a US official described as "comfortable" with the current text. The framework covers a ceasefire extension, Hormuz reopening within 30 days of signing, sanctions relief, and Iran's commitment never to acquire nuclear weapons. Technical talks on enrichment limits follow in a separate phase. Brent fell below $87 on Friday as markets priced in the deal; Polymarket has a US-Iran deal by July 31 at 61%. If Khamenei signs, this ends 100+ days of Gulf disruption and vindicates the Trump-Oman-Pakistan diplomatic track over the FDD/Netanyahu maximalist pressure line. The hawks are now visibly racing against a fait accompli — the Foundation for Defense of Democracies published the IAEA non-compliance case on the same day Trump declared the deal "settled." Watch for the Iranian Foreign Ministry's formal statement today or tomorrow.</p>
+
+  <p><strong>Burnham aligns with Farage — strategically, not accidentally.</strong> Five days before the Makerfield by-election, Andy Burnham publicly said he agrees with Nigel Farage on housing asylum seekers: deprived communities bear a disproportionate burden, and Britain needs to "make greater use of detention" for those with no valid claim. Bloomberg reported Saturday that if Burnham wins Makerfield on June 18, he is "poised to move quickly" to unseat Starmer. This is not a gaffe — it is a calculated positioning for the post-Starmer Labour electorate, borrowing Reform's language while maintaining Burnham's class-politics framing. The test: whether it helps him with Makerfield voters or costs him with the left he'll need in a leadership race.</p>
+
+  <p><strong>Belfast flipped.</strong> Saturday produced the largest anti-racism rally in Belfast's history outside City Hall — thousands with placards reading "Hate is the only threat to our streets." The counter-narrative arrived faster than in comparable 2025 UK unrest episodes. Amnesty International called it the biggest such demonstration Northern Ireland has ever seen. The riots aren't over, but the political momentum shifted today.</p>
+</div>
+
+<h2>Changed Threads</h2>
+
+<div class="card">
+  <div class="card-meta">
+    <span class="tag changed">CHANGED</span>
+    <h3>Iran / Hormuz</h3>
+  </div>
+  <p>Pakistan's PM declared the deal text "final and agreed" Saturday morning and said electronic signing was being prepared. Iran's foreign ministry said it expected to sign "in coming days" — a deliberate hedge. The last holdout is Khamenei's formal blessing; a senior US official said he is "comfortable." The broader framework: ceasefire extension, Hormuz reopening within 30 days of signing, phased sanctions relief, and an Iranian pledge to renounce nuclear weapons (with technical enrichment caps in a follow-on phase). Brent closed at ~$87 on Friday, down 3.4% on the day — the most significant oil price signal in weeks. The June 22 technical talks remain on the calendar but may become redundant depending on what happens this weekend.</p>
+  <div class="watch">⏺ Watch: Iranian Foreign Ministry formal statement (today/tomorrow) · Netanyahu's public response · Brent above $94 if deal collapses</div>
+</div>
+
+<div class="card">
+  <div class="card-meta">
+    <span class="tag changed">CHANGED</span>
+    <h3>Belfast Riots / UK Anti-Immigrant Violence</h3>
+  </div>
+  <p>Day 5 produced the counter-movement. Thousands gathered at Belfast City Hall in what Amnesty International described as the largest anti-racism demonstration in Northern Ireland's history. The optics matter: the street has now pushed back more visibly than the political class has. Perpetrators in the original riots included children as young as 10; anti-Islam sentiment was a more prominent feature than in comparable 2025 unrest, per Amnesty NI director Patrick Corrigan.</p>
+  <p>The political context remains charged. The Makerfield by-election is June 18. The 30-year-old Sudanese man charged with attempted murder remains the originating case; trial developments will determine whether this story has a second act.</p>
+  <div class="watch">⏺ Watch: Further nights of unrest (or their absence) · Reform UK parliamentary response · Government policy announcement pre-Makerfield</div>
+</div>
+
+<div class="card">
+  <div class="card-meta">
+    <span class="tag changed">CHANGED</span>
+    <h3>UK Labour Leadership</h3>
+  </div>
+  <p>Burnham's immigration statement marks a significant strategic shift. By publicly agreeing with Farage that deprived communities bear too much of the asylum dispersal burden and calling for expanded detention, he has signalled what his Labour leadership pitch will be: class-left economics with hardline immigration control. Bloomberg's Saturday report was explicit: he is prepared to move swiftly after a Makerfield victory. The 95+ MPs demanding Starmer's departure have not moved, but no formal challenge has been triggered. The June 18 by-election is now effectively a primary.</p>
+  <p>The left's dilemma is sharp: if Burnham wins and pivots right on immigration, the alternative in a leadership race is probably someone further right on economics. The soft left has no obvious candidate.</p>
+  <div class="watch">⏺ Watch: Makerfield result Jun 18 · Formal no-confidence mechanism triggered · Starmer's response to Burnham's statement</div>
+</div>
+
+<div class="card">
+  <div class="card-meta">
+    <span class="tag changed">CHANGED</span>
+    <h3>World Cup 2026</h3>
+  </div>
+  <p>Day 3. Afternoon session: Qatar vs Switzerland (Group B), Australia vs Turkey (Group D). Evening headline fixtures: <strong>Brazil vs Morocco</strong> (Group C, 6pm) and <strong>Scotland vs Haiti</strong> (Group C, 9pm). Day 2 results: USA 4-1 Paraguay (emphatic statement from the co-hosts), Canada 1-1 Bosnia and Herzegovina (Canada's first World Cup point ever).</p>
+  <p>England vs Croatia on June 17 in Dallas is the next flashpoint for UK public attention. Chart data (see below) shows the World Cup nostalgia surge is already building in advance.</p>
+  <div class="watch">⏺ Watch: Brazil and Scotland results tonight · England opener Jun 17 Dallas</div>
+</div>
+
+<div class="card">
+  <div class="card-meta">
+    <span class="tag changed">CHANGED</span>
+    <h3>Ebola Bundibugyo — DRC / Uganda</h3>
+  </div>
+  <p>As of June 11 (latest WHO situation report), 676 confirmed cases in the DRC including 136 deaths — up from 635/127 on June 10 — with 262 hospitalised in isolation. Ituri province accounts for 629 cases across 19 health zones. Uganda remains at 19 confirmed, 2 deaths, with no new cases since June 5. Approximately 41 new confirmed cases per day in DRC; the outbreak rate has not decelerated. PHEIC status in force. No cases confirmed outside DRC/Uganda.</p>
+  <div class="watch">⏺ Watch: Case in Burundi, Rwanda or South Sudan · Vaccine supply announcement · DRC acceleration above 50/day</div>
+</div>
+
+<h2>The Social / Cultural Layer</h2>
+
+<div class="cultural-item">
+  <p>The divergence worth naming today: this is the most politically turbulent week Britain has had in years — Belfast burning, a Prime Minister teetering, an Iran deal potentially hours from conclusion — and the UK Apple Music chart is, broadly, going <em>inward</em>. Olivia Dean holds the top position for the fourth consecutive day, a record that is soft, personal, and explicitly about intimacy. Sombr, Noah Kahan, Sam Fender: the chart's texture is introspective, not triumphalist. The collective emotional response to a turbulent moment is retreat, not confrontation.</p>
+
+  <p>The World Cup nostalgia surge is building in the background, but hasn't broken the surface yet. Mr. Brightside is up 4 positions to #33. Kings of Leon's Sex on Fire has climbed 12 places to #124. Fleetwood Mac is now present in four separate slots: "Everywhere" up 12 to #79, "Go Your Own Way" up 4 to #86, and two new entries this week — "Landslide" at #195 and "Little Lies" at #198. This is the classic English football soundtrack activating in advance of the England vs Croatia fixture on June 17. Historically, the Fleetwood Mac surge in the UK chart precedes England fixtures rather than follows them. The chart is warming up.</p>
+
+  <p>On TikTok, the top visible sounds are almost entirely Latin and escapist — Brazilian funk, Latin Urban slowdowns, Ariana Grande pop. Nothing engages with Belfast, Iran, or Labour. The UK social layer is processing a politically intense week by not processing it at all. The sound of collective emotional bypass.</p>
+
+  <p>One observation from deeper in the chart: <strong>Sienna Spiro</strong> <span class="tag tb">UK</span> now has three simultaneous entries — "Material Lover" at #48, "Die On This Hill" (up 11) at #83, and "The Visitor" (up 11) at #180. An unknown act finding three footholds in one week through the streaming algorithm is worth watching.</p>
+</div>
+
+<h3>Apple Music UK — Top 10</h3>
+<table class="chart-table" style="margin-bottom:1.25rem;">
+  <thead><tr><th>#</th><th>Artist — Title</th><th>Move</th></tr></thead>
+  <tbody>
+    <tr><td class="pos">1</td><td>Olivia Dean <span class="tag tb">UK</span> — Man I Need</td><td class="chg-eq">=</td></tr>
+    <tr><td class="pos">2</td><td>Drake — Janice STFU</td><td class="chg-eq">=</td></tr>
+    <tr><td class="pos">3</td><td>Ariana Grande — hate that i made you love me</td><td class="chg-eq">=</td></tr>
+    <tr><td class="pos">4</td><td>Sam Fender &amp; Olivia Dean <span class="tag tb">UK</span> — Rein Me In</td><td class="chg-eq">=</td></tr>
+    <tr><td class="pos">5</td><td>The Chemical Brothers <span class="tag tb">UK</span> — Go</td><td class="chg-eq">=</td></tr>
+    <tr><td class="pos">6</td><td>Olivia Rodrigo — the cure</td><td class="chg-eq">=</td></tr>
+    <tr><td class="pos">7</td><td>Ella Langley — Choosin' Texas</td><td class="chg-up">▲2</td></tr>
+    <tr><td class="pos">8</td><td>Bella Kay — iloveitiloveitiloveit</td><td class="chg-up">▲2</td></tr>
+    <tr><td class="pos">9</td><td>Alex Warren — FEVER DREAM</td><td class="chg-dn">▼2</td></tr>
+    <tr><td class="pos">10</td><td>Michael Jackson — Billie Jean</td><td class="chg-dn">▼2</td></tr>
+  </tbody>
+</table>
+
+<p style="font-size:0.85rem; color:var(--text-3); margin-bottom:1.5rem;">World Cup surge building below the surface: Mr. Brightside ▲4 (#33) · Kings of Leon — Sex on Fire ▲12 (#124) · Fleetwood Mac — Everywhere ▲12 (#79) · Fleetwood Mac — Landslide <span class="chg-new">NEW</span> (#195) · Fleetwood Mac — Little Lies <span class="chg-new">NEW</span> (#198)</p>
+
+<h3>TikTok — Trending Sounds (visible)</h3>
+<table class="chart-table" style="margin-bottom:1.25rem;">
+  <thead><tr><th>Sound / Artist</th><th>UGC Videos</th><th>Mood</th></tr></thead>
+  <tbody>
+    <tr><td>DJ EXE &amp; Cacau Chuu — Que Loucura</td><td>919K+</td><td>Energised / Latin</td></tr>
+    <tr><td>Crish Ramirez — Buena Vida Mala Fama (Slow Reverb)</td><td>379K+</td><td>Escapist / Latin Urban</td></tr>
+    <tr><td>DE GRANACHO — Trust Me Tonight</td><td>216K+</td><td>Escapist / World</td></tr>
+    <tr><td>Ariana Grande — hate that i made you love me</td><td>133K+</td><td>Melancholic / Pop</td></tr>
+  </tbody>
+</table>
+
+<h3>UK X / Twitter — Trending Saturday</h3>
+<p style="font-size:0.875rem; color:var(--text-2); margin-top:0.5rem; margin-bottom:0.4rem;"><strong>Landlords</strong> · <strong>Rights Act</strong> · <strong>IPTV</strong> · <strong>Belfast</strong> · World Cup fixtures</p>
+<p style="font-size:0.85rem; color:var(--text-3);">The Renters Rights Act trending alongside Landlords suggests real-time friction as the legislation moves through Parliament — a story developing below the main political radar.</p>
+
+<h2>Markets</h2>
+<p style="font-size:0.83rem; color:var(--text-3); margin-bottom:0.75rem;">UK and US markets closed (Saturday). Figures are Friday closes.</p>
+<div class="markets-grid">
+  <div class="market-tile">
+    <div class="label">FTSE 100</div>
+    <div class="value">10,462</div>
+    <div class="change up">▲158 pts · +1.53%</div>
+  </div>
+  <div class="market-tile">
+    <div class="label">Nasdaq</div>
+    <div class="value">~25,679</div>
+    <div class="change down">▼0.97% (Thu close)</div>
+  </div>
+  <div class="market-tile">
+    <div class="label">Brent Crude</div>
+    <div class="value">$87.33</div>
+    <div class="change down">▼3.37% · Iran deal</div>
+  </div>
+  <div class="market-tile">
+    <div class="label">30Y Gilt</div>
+    <div class="value">~5.50%</div>
+    <div class="change" style="color:var(--text-3);">Long end 4.7–5.5%</div>
+  </div>
+</div>
+<p class="market-note">Brent's 3.4% Friday drop is the Iran deal's clearest market signal — the sharpest single-day move in weeks. A deal collapse this weekend would likely snap it above $94. The FTSE's Friday rally was led by IAG (+6.65%), Vistry (+6.23%), and Anglo American (+5.21%) — partly the same energy-and-risk trade.</p>
+
+<h2>Outside the Frame</h2>
+<div class="outside-frame">
+  <p><strong>Madagascar's Gen Z rupture — a story nobody is watching.</strong> While Europe's attention has been on Belfast and London, Madagascar has been living through a different kind of political disruption. A social-media-led Gen Z movement toppled former president Andry Rajoelina's government, producing a military-appointed transitional prime minister who is now struggling to incorporate the decentralized, leaderless protest movement into any governance structure. It is a direct parallel to the 2025 Bangladeshi uprising pattern — and to Togo, where a June 6th Movement (M66) of artists and bloggers has been meeting arrests this week.</p>
+  <p>The structural observation worth naming: sub-Saharan and Indian Ocean Gen Z movements are following a common playbook — viral mobilization, no formal leadership, rapid toppling of incumbents, and then an immediate problem of converting disruption into governing power. None of these stories receive sustained Western media attention until they produce a coup or a famine. Madagascar is at the governance-vacuum stage now. The question of what comes after the rupture is the one that matters — and it's the question the West never bothers to ask until it's too late.</p>
+</div>
+
+<h2>Thread Status</h2>
+<table class="status-table">
+  <thead>
+    <tr><th>Thread</th><th>Status</th><th>Current Position</th><th>Since</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="thread-label">Iran / Hormuz</td>
+      <td><span class="tag changed">CHANGED</span></td>
+      <td class="status-line">Deal text "finalized" per Pakistan PM; Iran says "days not hours"; Khamenei sign-off pending; Brent $87; Jun 22 talks may be pre-empted</td>
+      <td>Jun 13</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Belfast / UK Violence</td>
+      <td><span class="tag changed">CHANGED</span></td>
+      <td class="status-line">Largest-ever anti-racism rally Belfast City Hall Jun 13; Burnham made pro-detention immigration statement ahead of Makerfield Jun 18</td>
+      <td>Jun 13</td>
+    </tr>
+    <tr>
+      <td class="thread-label">UK Labour Leadership</td>
+      <td><span class="tag changed">CHANGED</span></td>
+      <td class="status-line">Burnham publicly aligned with Farage on asylum dispersal and detention; Bloomberg: "poised to move quickly" after Makerfield Jun 18</td>
+      <td>Jun 13</td>
+    </tr>
+    <tr>
+      <td class="thread-label">World Cup 2026</td>
+      <td><span class="tag changed">CHANGED</span></td>
+      <td class="status-line">Day 3: Brazil vs Morocco &amp; Scotland vs Haiti tonight; USA 4-1 Paraguay Day 2; England vs Croatia Jun 17 Dallas</td>
+      <td>Jun 13</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Ebola DRC / Uganda</td>
+      <td><span class="tag changed">CHANGED</span></td>
+      <td class="status-line">676 confirmed DRC / 136 deaths (up from 635/127); ~41 new cases/day; Uganda 19 confirmed, stable; PHEIC in force</td>
+      <td>Jun 13</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Israel / Lebanon</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">No new escalation; Iran deal if signed would extend ceasefire 60 days incl. Lebanon; Jun 22 on calendar</td>
+      <td>Jun 9</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Taiwan Strait</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">No PLA response to Jun 10 HIMARS drill; Trump arms deal pause continuing; coverage minimal</td>
+      <td>Jun 10</td>
+    </tr>
+    <tr>
+      <td class="thread-label">UK Economic Stress</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">FTSE 10,462 (Jun 12); Brent $87; 30Y gilt ~5.50%; Renters Rights Act trending UK Twitter</td>
+      <td>Jun 9</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Ukraine Peace</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">No developments; US bandwidth consumed by Iran; talks structurally stalled</td>
+      <td>Jun 9</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Syria Parliament</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">Not convened; Sharaa's 70-seat list finalized but no new session date; transition slipping</td>
+      <td>Jun 9</td>
+    </tr>
+    <tr>
+      <td class="thread-label">UK Kirpan Debate</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">Law unchanged; Belfast riots keeping culture-war framing active; Rights Act trending</td>
+      <td>Jun 9</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Russia / NATO / Romania</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">No incident since Jun 5 Constanta drone; NATO drone protocols in discussion</td>
+      <td>Jun 9</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Mearsheimer</td>
+      <td><span class="tag stable">STABLE</span></td>
+      <td class="status-line">Iran deal emerging without Netanyahu torpedoing it (so far) — complicates the veto thesis; no new post; test ongoing</td>
+      <td>Jun 9</td>
+    </tr>
+    <tr>
+      <td class="thread-label">SpaceX IPO</td>
+      <td><span class="tag new">NEW</span></td>
+      <td class="status-line">$75B raised Jun 11 — record IPO; $1.8T valuation; xAI now part of SpaceX; Musk potentially first trillionaire; Nasdaq debut pending</td>
+      <td>Jun 13</td>
+    </tr>
+    <tr>
+      <td class="thread-label">Colombia Runoff</td>
+      <td><span class="tag new">NEW</span></td>
+      <td class="status-line">De la Espriella (far-right, 44%) vs Cepeda (left, 41%) · Jun 21 runoff · polling diverges on winner · winner takes office Aug 7</td>
+      <td>Jun 13</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  <span>Generated 13 June 2026</span>
+  <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
+</div>
+
 <script type="text/plain" id="digestAudioScript">
-Three things worth your time today.
+The most important story this weekend is one that may close before Monday. Pakistan's Prime Minister says the text of a United States-Iran deal is fully agreed and the electronic signing is being prepared. Iran's foreign ministry says it expects to sign in "coming days" rather than twenty-four hours, but both sides confirm the last variable is a formal sign-off from Supreme Leader Mojtaba Khamenei, whom a US official described as "comfortable" with the text. The deal would reopen the Strait of Hormuz within thirty days, extend the ceasefire, and offer phased sanctions relief. Brent crude dropped three and a half percent on Friday to just under ninety dollars a barrel. The hawks are now visibly racing against a fait accompli — the Foundation for Defense of Democracies published the I-A-E-A non-compliance case on the same day Trump declared the deal settled. Watch for the Iranian foreign ministry statement today or tomorrow.
 
-First, Trump announced last night that the US has settled with Iran. "Pretty much completed," he said. "We got everything we wanted." Brent crude dropped seven percent to eighty-nine dollars on those words alone. But on the exact same day, the IAEA declared Iran non-compliant with its nuclear obligations — for the first time in twenty years. And Iran's response was not acceptance. They announced a new enrichment facility at a secret location and centrifuge upgrades at Fordow. So the market is pricing a deal that Iran's own foreign ministry hasn't confirmed. The next twenty-four hours matter a lot.
+In Britain, two things happened on Saturday that each redraw the political map. First: thousands gathered at Belfast City Hall in what Amnesty International called the largest anti-racism demonstration in Northern Ireland's history, responding to five days of anti-immigrant riots. The counter-narrative arrived faster than in previous UK unrest episodes. Second, and more structurally significant: Andy Burnham, who may be Britain's next Prime Minister, publicly said he agrees with Nigel Farage on housing asylum seekers, and called for expanded use of immigration detention. Five days before the Makerfield by-election on June the eighteenth, that is not an accident. It is a calculated positioning for the post-Starmer Labour electorate. Watch whether it helps him with Makerfield voters or costs him with the left.
 
-Second, Belfast has been burning since Monday and it's been almost entirely drowned out by the World Cup opening. Four nights of anti-immigrant riots — twenty-seven families burned out of their homes, a two-month-old baby rescued, water cannons deployed, protests spreading to Glasgow, Edinburgh and Southampton. Starmer called it horrific. That's not wrong, but it's not a strategy either. The Makerfield by-election is in six days, and Burnham's response to this will be the first real test of his politics.
-
-On the cultural side — the World Cup is doing what it always does. Fleetwood Mac, Mister Brightside, Sex on Fire all climbing the chart. The nostalgia engine is running. But the top five hasn't moved in four days. Olivia Dean still at number one with a love song, completely unmoved by everything happening underneath it. That stillness is the signal.
+The UK Apple Music chart is doing something curious this week — it is going inward during the most turbulent political moment in years. Olivia Dean holds the top position for the fourth consecutive day: intimate, gentle, nothing to do with Belfast or Iran. The World Cup nostalgia surge is building underneath — Mr Brightside up four, Fleetwood Mac up twelve, two new Fleetwood Mac entries this week. Historically, the Fleetwood Mac surge in the UK chart precedes England fixtures rather than follows them. England play Croatia on June the seventeenth. The chart will tell you when the country has emotionally located itself in the tournament.
 </script>
 
 <script>
-// ── Digest Audio Reader — highlights only ───────────────────────────────
-(function () {
-  var synth = window.speechSynthesis;
-  var chunks = [];
-  var currentIdx = 0;
-  var playing = false;
-  var paused = false;
-  var rate = 1;
+(function() {
+  const scriptEl = document.getElementById('digestAudioScript');
+  const text = scriptEl ? scriptEl.textContent.trim() : '';
+  const playBtn = document.getElementById('playBtn');
+  const progressFill = document.getElementById('progressFill');
+  const timeDisplay = document.getElementById('timeDisplay');
+  const statusEl = document.getElementById('playerStatus');
+  let playing = false;
+  let startTime = null;
+  let raf = null;
+  const duration = 135;
 
-  function getScript() {
-    var el = document.getElementById('digestAudioScript');
-    return el ? el.textContent.trim() : '';
+  function fmt(s) {
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60).toString().padStart(2, '0');
+    return m + ':' + sec;
   }
 
-  // Split into sentences for smoother progress tracking
-  function buildChunks() {
-    var text = getScript();
-    // Split on sentence boundaries, keep chunks ~120 chars for smooth progress
-    var sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
-    chunks = sentences.map(function(s){ return s.trim(); }).filter(function(s){ return s.length > 5; });
+  function stop() {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    playing = false;
+    playBtn.textContent = '▶';
+    if (raf) cancelAnimationFrame(raf);
+    statusEl.textContent = 'Paused.';
   }
 
-  function updateIcon(isPlaying) {
-    var icon = document.getElementById('readerIcon');
-    icon.innerHTML = isPlaying
-      ? '<rect x="3" y="2" width="4" height="12" rx="1"/><rect x="9" y="2" width="4" height="12" rx="1"/>'
-      : '<path d="M3 2.5l10 5.5-10 5.5V2.5z"/>';
+  function tick() {
+    if (!playing) return;
+    const elapsed = (Date.now() - startTime) / 1000;
+    progressFill.style.width = Math.min(100, (elapsed / duration) * 100) + '%';
+    timeDisplay.textContent = fmt(elapsed) + ' / ' + fmt(duration);
+    raf = requestAnimationFrame(tick);
   }
 
-  function updateProgress() {
-    var pct = chunks.length ? Math.round((currentIdx / chunks.length) * 100) : 0;
-    document.getElementById('readerFill').style.width = pct + '%';
-    var labels = ['Today\'s highlights', 'Iran deal', 'Belfast', 'Cultural layer'];
-    var section = pct < 40 ? labels[1] : pct < 70 ? labels[2] : labels[3];
-    document.getElementById('readerLabel').textContent = pct === 0 ? '~2 min' : section + ' · ' + pct + '%';
-  }
-
-  function speakChunk() {
-    if (currentIdx >= chunks.length) { readerStop(); return; }
-    var u = new SpeechSynthesisUtterance(chunks[currentIdx]);
-    u.rate = rate;
-    u.lang = 'en-GB';
-    if (window._readerVoice) u.voice = window._readerVoice;
-    var idx = currentIdx;
-    u.onend = function() {
-      currentIdx = idx + 1;
-      updateProgress();
-      if (currentIdx < chunks.length) speakChunk();
-      else readerStop();
+  playBtn.addEventListener('click', function () {
+    if (!text) { statusEl.textContent = 'No script found.'; return; }
+    if (playing) { stop(); return; }
+    if (!window.speechSynthesis) { statusEl.textContent = 'Speech not supported in this browser.'; return; }
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 0.95; u.pitch = 1; u.lang = 'en-GB';
+    const voices = window.speechSynthesis.getVoices();
+    const v = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
+    if (v) u.voice = v;
+    u.onstart = function () {
+      playing = true; playBtn.textContent = '⏸';
+      statusEl.textContent = 'Playing audio brief…';
+      startTime = Date.now(); tick();
     };
-    u.onerror = function(e) {
-      if (e.error !== 'interrupted') { currentIdx++; speakChunk(); }
+    u.onend = function () {
+      playing = false; playBtn.textContent = '▶';
+      if (raf) cancelAnimationFrame(raf);
+      progressFill.style.width = '100%';
+      timeDisplay.textContent = fmt(duration) + ' / ' + fmt(duration);
+      statusEl.textContent = 'Done.';
     };
-    synth.speak(u);
-  }
-
-  window.readerToggle = function() {
-    if (!synth) { alert('Speech not supported in this browser.'); return; }
-    if (playing && !paused) {
-      synth.pause(); paused = true; playing = false;
-      updateIcon(false);
-      document.getElementById('readerLabel').textContent = 'Paused';
-    } else if (paused) {
-      synth.resume(); paused = false; playing = true;
-      updateIcon(true);
-    } else {
-      synth.cancel(); currentIdx = 0;
-      buildChunks(); playing = true; paused = false;
-      updateIcon(true); updateProgress(); speakChunk();
-    }
-  };
-
-  window.readerStop = function() {
-    synth.cancel(); playing = false; paused = false; currentIdx = 0;
-    updateIcon(false);
-    document.getElementById('readerFill').style.width = '0%';
-    document.getElementById('readerLabel').textContent = '~2 min';
-  };
-
-  window.readerSetSpeed = function(v) {
-    rate = parseFloat(v);
-    if (playing && !paused) { synth.cancel(); buildChunks(); speakChunk(); }
-  };
-
-  function pickVoice() {
-    var voices = synth.getVoices();
-    var preferred = ['Daniel', 'Google UK English Male', 'Google UK English Female', 'Rishi', 'Moira'];
-    var picked = null;
-    preferred.forEach(function(n) {
-      if (!picked) picked = voices.find(function(v){ return v.name.indexOf(n) !== -1; });
-    });
-    if (!picked) picked = voices.find(function(v){ return v.lang === 'en-GB'; });
-    if (!picked) picked = voices.find(function(v){ return v.lang.startsWith('en'); });
-    window._readerVoice = picked || null;
-  }
-  if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pickVoice;
-  pickVoice();
-  updateProgress();
+    u.onerror = function () { stop(); statusEl.textContent = 'Playback error — try again.'; };
+    window.speechSynthesis.speak(u);
+  });
 })();
 </script>
-</div>
+
 </body>
 </html>

@@ -4,34 +4,32 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Trump claims deal 'settled' Jun 12 (Brent drops to $89); IAEA declares Iran non-compliant for first time in 20 years (Jun 12); Iran responds with new enrichment facility at undisclosed location + Fordow 6th-gen centrifuge upgrade; deal unconfirmed by Iran Foreign Ministry; Jun 22 talks nominally on; war crossed 100 days Jun 8",
+      "status_line": "Deal text 'finalized' per Pakistan PM Sharif Jun 13; Iran says 'days not hours'; Khamenei sign-off pending but reportedly 'comfortable'; Brent $87 (down 3.4%); Jun 22 talks may be pre-empted; IAEA non-compliance case published Jun 12 by FDD as deal nears",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-12",
+      "last_changed": "2026-06-13",
       "expand_if": [
-        "Iranian Foreign Ministry confirms or denies deal terms Trump described",
+        "Iranian Foreign Ministry confirms formal signing",
+        "Khamenei rejects deal text",
         "Brent snaps back above $94 on deal collapse",
-        "UN Security Council motion on IAEA non-compliance declaration",
-        "Netanyahu statement on the MOU (Mearsheimer thesis test)",
+        "Netanyahu public statement opposing MOU",
+        "UN Security Council motion on IAEA non-compliance",
         "Iran withdraws from Jun 22 talks",
-        "New US or Israeli strike following IAEA breach declaration",
-        "Lebanon ceasefire extension confirmed",
-        "June 22 talks cancelled"
+        "New US or Israeli strike"
       ]
     },
     {
       "id": "belfast-riots",
       "label": "Belfast Riots / UK Anti-Immigrant Violence",
-      "status": "new",
-      "status_line": "4 nights of anti-immigrant riots in Belfast (Jun 9-12) following Jun 8 stabbing allegedly by Sudanese asylum seeker; 27 homes burned, baby rescued, water cannons deployed Jun 11; spreading to Glasgow, Edinburgh, Southampton; 30-year-old Sudanese man charged with attempted murder; 6 days before Makerfield by-election",
+      "status": "changed",
+      "status_line": "Largest-ever anti-racism rally at Belfast City Hall Jun 13 (Amnesty: 'biggest Northern Ireland has seen'); Burnham simultaneously made pro-detention/pro-Farage immigration statement ahead of Makerfield Jun 18; 5 nights of unrest; 27 homes burned; 30yr-old Sudanese man charged with attempted murder",
       "first_seen": "2026-06-12",
-      "last_changed": "2026-06-12",
+      "last_changed": "2026-06-13",
       "expand_if": [
-        "Riots spread to additional English cities",
-        "Burnham makes substantive immigration statement before Jun 18",
-        "Reform UK formally exploits riots as policy platform",
+        "Further nights of severe unrest (6th+)",
         "Fatality in riots",
-        "Government announces immigration policy change in response",
-        "Further night of severe unrest (5th night+)",
+        "Government announces immigration policy change before Jun 18",
+        "Riots spread to additional English cities",
+        "Reform UK formally exploits riots as campaign platform",
         "PSNI requests mainland UK police reinforcement"
       ]
     },
@@ -39,31 +37,30 @@
       "id": "world-cup-2026",
       "label": "World Cup 2026",
       "status": "changed",
-      "status_line": "Day 2 Jun 12 (Canada vs Bosnia, USA vs Paraguay); Mexico 2-0 S. Africa Day 1; opening ceremony panned by UK viewers; England vs Croatia Jun 17 Dallas; Fleetwood Mac/Mr Brightside/Sex on Fire World Cup nostalgia surge on Apple Music UK",
+      "status_line": "Day 3 Jun 13: Brazil vs Morocco & Scotland vs Haiti (Group C, evening); USA 4-1 Paraguay Day 2; Canada 1-1 Bosnia (Canada's first World Cup point); England vs Croatia Jun 17 Dallas; Fleetwood Mac surge building on UK chart ahead of England opener",
       "first_seen": "2026-06-10",
-      "last_changed": "2026-06-12",
+      "last_changed": "2026-06-13",
       "expand_if": [
         "England match results (Jun 17, Jun 23, Jun 27)",
-        "major off-field controversy (player, host city, Trump involvement)",
-        "cultural flashpoint around tournament (protest, geopolitical moment)",
+        "Major off-field controversy",
         "England reaches knockout round",
-        "England eliminated"
+        "England eliminated",
+        "Cultural flashpoint around tournament"
       ]
     },
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
       "status": "changed",
-      "status_line": "635 confirmed DRC / 127 deaths as of Jun 12 (up from 598/115 on Jun 10); ~37 new cases/day; 260 hospitalised in isolation; Ituri 600 cases from 18 health zones; PHEIC in force; no spread beyond DRC/Uganda",
+      "status_line": "676 confirmed DRC / 136 deaths as of Jun 11 (up from 635/127 on Jun 10); ~41 new cases/day; 262 hospitalised in isolation; Ituri 629 cases from 19 health zones; Uganda 19 confirmed, 2 deaths, no new cases since Jun 5; PHEIC in force",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-06-12",
+      "last_changed": "2026-06-13",
       "expand_if": [
-        "cases confirmed outside DRC/Uganda",
+        "Cases confirmed outside DRC/Uganda",
         "WHO raises alert further",
-        "vaccine supply or pipeline announcement",
-        "Kampala cases multiply significantly",
-        "confirmed case in Burundi, Rwanda, or South Sudan",
-        "second American or European healthcare worker infected"
+        "Vaccine supply or pipeline announcement",
+        "DRC daily rate accelerates above 50 new cases/day",
+        "Confirmed case in Burundi, Rwanda, or South Sudan"
       ]
     },
     {
@@ -78,7 +75,6 @@
         "Trump resumes or formally cancels Taiwan arms deal",
         "PLA conducts counter-drill or naval exercise near Taiwan",
         "US diplomatic statement on Taiwan independence or One China policy",
-        "Taiwan announces further HIMARS deployment or expanded capability",
         "Incident in Taiwan Strait (vessel, aircraft)"
       ]
     },
@@ -91,44 +87,42 @@
       "last_changed": "2026-06-09",
       "expand_if": [
         "Hezbollah formally accepts or rejects pilot zones framework",
-        "major Israeli ground incursion",
+        "Major Israeli ground incursion",
         "Hezbollah rocket barrage on Israeli cities",
-        "comprehensive ceasefire agreement with withdrawal timelines",
+        "Comprehensive ceasefire agreement with withdrawal timelines",
         "UNIFIL withdrawal",
         "US forces Israel to pause Lebanon operations",
-        "mass civilian casualty event",
         "Trump public demand for Netanyahu to halt Lebanon ops"
       ]
     },
     {
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
-      "status": "stable",
-      "status_line": "Makerfield by-election Jun 18; Burnham 56% Polymarket most likely next PM; 95+ MPs calling for resignation; Streeting resigned; Belfast riots add immigration pressure to Labour's crisis week; Burnham response to riots will be watched",
+      "status": "changed",
+      "status_line": "Burnham publicly agreed with Farage on asylum dispersal burden and called for expanded detention ahead of Makerfield Jun 18; Bloomberg Jun 13: 'poised to move quickly' if wins; 95+ MPs calling for Starmer's departure; Streeting already resigned",
       "first_seen": "2026-06-03",
-      "last_changed": "2026-06-09",
+      "last_changed": "2026-06-13",
       "expand_if": [
         "Burnham wins Makerfield by-election Jun 18",
         "Formal leadership challenge triggered",
         "Starmer resigns",
-        "Burnham makes substantive immigration statement ahead of Jun 18",
         "Major gilt/sterling reaction to political news",
-        "Burnham or Streeting endorsement from significant cabinet minister"
+        "Soft-left candidate emerges as Burnham alternative"
       ]
     },
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "stable",
-      "status_line": "FTSE ~10,305 (Jun 11); Brent now $89 (relief for energy price-cap if sustained); 30Y gilt 5.60%; 10Y ~4.95%; BoE September hike still priced; Renters Rights Act moving through Parliament below radar",
+      "status_line": "FTSE 10,462 (Jun 12 close, +1.53%); Brent $87 (Iran-optimism driven); 30Y gilt ~5.50%; BoE September hike still priced; Renters Rights Act trending on UK Twitter",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
-        "gilt yield spike above 5.8% with upward trajectory",
-        "energy price cap revision announced",
-        "recession officially confirmed",
+        "Gilt yield spike above 5.8% with upward trajectory",
+        "Energy price cap revision announced",
+        "Recession officially confirmed",
         "Bank of England emergency action",
-        "government fiscal statement",
+        "Government fiscal statement",
         "Brent above $115 sustained",
         "Renters Rights Act passes final reading with material amendment"
       ]
@@ -142,9 +136,9 @@
       "last_changed": "2026-06-09",
       "expand_if": [
         "Trump formally withdraws from mediation",
-        "new public deadline set",
-        "ceasefire agreed",
-        "major US pressure on Ukraine (aid suspension)",
+        "New public deadline set",
+        "Ceasefire agreed",
+        "Major US pressure on Ukraine (aid suspension)",
         "Russia agrees to any settlement framework",
         "Zelensky concedes territorial compromise publicly"
       ]
@@ -153,15 +147,13 @@
       "id": "uk-kirpan-debate",
       "label": "UK Kirpan Debate",
       "status": "stable",
-      "status_line": "Parliament debated Jun 9; law unchanged; Reform repeal pledge gaining online traction; Belfast riots likely to revive immigration-adjacent culture-war content",
+      "status_line": "Parliament debated Jun 9; law unchanged; Reform repeal pledge gaining online traction; Belfast riots keeping immigration/culture-war frame active; Rights Act trending UK Twitter Jun 13",
       "first_seen": "2026-06-04",
       "last_changed": "2026-06-09",
       "expand_if": [
         "Government statement on kirpan exemption review",
         "Backbench parliamentary bill to repeal exemption tabled",
         "Further attacks on Sikh individuals",
-        "Sikh community organisations make formal complaint to police or EHRC",
-        "Polling published on public attitudes to kirpan exemption",
         "Farage or Reform make this a formal policy position"
       ]
     },
@@ -169,14 +161,13 @@
       "id": "syria-parliament",
       "label": "Syria Parliament",
       "status": "stable",
-      "status_line": "Still not convened (missed Jun 8); al-Sharaa finalising 70-seat presidential quota; no new date announced; transition timeline slipping",
+      "status_line": "Sharaa's 70-seat presidential quota list finalized and ready; no new date for convening announced; transition timeline slipping past Jun 8 target",
       "first_seen": "2026-06-01",
       "last_changed": "2026-06-09",
       "expand_if": [
-        "parliament convenes and passes significant legislation",
-        "major walkout by minority representatives",
-        "constitutional amendment proposed",
-        "international reaction to composition",
+        "Parliament convenes and passes significant legislation",
+        "Major walkout by minority representatives",
+        "Constitutional amendment proposed",
         "Islamist-secular conflict in chamber",
         "Kurdish/minority representation disputes escalate"
       ]
@@ -189,11 +180,9 @@
       "first_seen": "2026-05-29",
       "last_changed": "2026-06-09",
       "expand_if": [
-        "fatality from a drone strike in NATO territory",
+        "Fatality from a drone strike in NATO territory",
         "NATO Article 4 consultation formally invoked",
-        "Romania retaliates or requests reinforcement",
         "NATO adopts shoot-down authority for drones over Allied territory",
-        "US statement escalating beyond condemnation",
         "Russian conventional strike on NATO infrastructure"
       ]
     },
@@ -201,14 +190,44 @@
       "id": "mearsheimer",
       "label": "Mearsheimer",
       "status": "stable",
-      "status_line": "Trump 'deal done' claim is the live test of the Netanyahu-blocking thesis — if Netanyahu torpedoes the MOU, Mearsheimer fully confirmed; Responsible Statecraft/Quincy (Trita Parsi) framing aligns; no new post or appearance",
+      "status_line": "Iran deal emerging without Netanyahu torpedoing it (so far) — partially complicates the Netanyahu-veto thesis; if deal signs without Netanyahu publicly opposing it, requires revision of the framing; no new post or appearance",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
-        "new post or appearance shifting the argument",
-        "Trump-Netanyahu public confrontation matches Mearsheimer's framing",
+        "New post or appearance shifting the argument",
         "Netanyahu publicly opposes or delays Iran MOU",
-        "mainstream US policy community engages with the Netanyahu-veto argument"
+        "Trump-Netanyahu public confrontation",
+        "Mainstream US policy community engages with the Netanyahu-veto argument",
+        "Deal collapses and Netanyahu's opposition is cited"
+      ]
+    },
+    {
+      "id": "spacex-ipo",
+      "label": "SpaceX IPO / Musk Political Economy",
+      "status": "new",
+      "status_line": "$75B raised Jun 11 — record-breaking IPO; $1.8T valuation; xAI (Grok) now part of SpaceX; Musk potentially first trillionaire; Nasdaq debut pending; structural question: does trillionaire Musk change his relationship with Trump administration?",
+      "first_seen": "2026-06-13",
+      "last_changed": "2026-06-13",
+      "expand_if": [
+        "Nasdaq debut and first day trading price",
+        "Musk officially declared trillionaire",
+        "Starlink or xAI regulatory decision affected by political relationship",
+        "SpaceX/Musk-Trump relationship publicly strained or amplified after IPO",
+        "Congressional scrutiny of Musk's combined SpaceX/xAI/Starlink power"
+      ]
+    },
+    {
+      "id": "colombia-runoff",
+      "label": "Colombia Runoff — Jun 21",
+      "status": "new",
+      "status_line": "De la Espriella (far-right, 44% first round) vs Cepeda (left, 41%); Jun 21 runoff; polls diverge on winner — Guarumo favours de la Espriella, Invamer unclear; winner takes office Aug 7; US-adjacent geopolitical dimension given de la Espriella's alignment",
+      "first_seen": "2026-06-13",
+      "last_changed": "2026-06-13",
+      "expand_if": [
+        "Jun 21 runoff result",
+        "Significant violence or electoral irregularity before Jun 21",
+        "Major polling shift",
+        "FARC or armed group statement on runoff"
       ]
     }
   ],
@@ -271,10 +290,10 @@
     },
     {
       "id": "colombia-election-2026",
-      "label": "Colombia Election 2026",
+      "label": "Colombia Election 2026 (first round)",
       "retired_on": "2026-06-11",
-      "retired_because": "10 consecutive stable days since last_changed 2026-06-01; no major polling shift, violence, or candidate statement surfaced today; runoff not until Jun 21",
-      "revive_if": "Jun 21 runoff result (de la Espriella ~44% vs Cepeda ~41%); significant violence or electoral irregularity before Jun 21; major polling shift"
+      "retired_because": "10 consecutive stable days since last_changed 2026-06-01; no major polling shift, violence, or candidate statement surfaced today; runoff not until Jun 21 — revived as colombia-runoff thread Jun 13",
+      "revive_if": "Superseded by colombia-runoff thread (opened Jun 13)"
     }
   ],
   "source_discoveries": [
@@ -321,5 +340,5 @@
       "why_interesting": "Hawkish Washington think tank; published IAEA non-compliance analysis on Jun 12 at same moment Trump claimed deal — explicitly building the legal/institutional case for rejecting any Iran deal as insufficient; useful as real-time counter-weight to Quincy Institute framing; tracks closely with Netanyahu's likely response"
     }
   ],
-  "last_updated": "2026-06-12"
+  "last_updated": "2026-06-13"
 }
