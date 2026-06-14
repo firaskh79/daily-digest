@@ -1,65 +1,64 @@
 {
-  "date": "2026-06-13",
+  "date": "2026-06-14",
   "mood_of_day": "escapist",
   "macro": {
     "politics": [
       {
-        "headline": "Pakistan PM declares US-Iran deal text finalised; Khamenei sign-off pending",
-        "tags": ["iran", "us", "pakistan", "gulf", "nuclear"],
-        "sentiment": "cautiously optimistic",
+        "headline": "Trump's Iran MOU birthday signing falls through — Iran refuses to give him the gift",
+        "tags": ["iran", "trump", "hormuz", "nuclear"],
+        "sentiment": "tense-optimistic",
         "intensity": 9
       },
       {
-        "headline": "Largest-ever anti-racism rally at Belfast City Hall; Burnham aligns with Farage on asylum seekers",
-        "tags": ["uk", "belfast", "immigration", "burnham", "labour"],
-        "sentiment": "polarised",
-        "intensity": 8
+        "headline": "Belfast riots sixth night subdued; anti-racism rally largest in NI history",
+        "tags": ["belfast", "immigration", "uk-politics"],
+        "sentiment": "cautiously-stable",
+        "intensity": 7
       },
       {
-        "headline": "Bloomberg: Burnham poised to challenge Starmer if wins Makerfield Jun 18",
-        "tags": ["uk", "labour", "burnham", "starmer", "leadership"],
-        "sentiment": "volatile",
-        "intensity": 8
+        "headline": "Burnham pushes 'go further' on illegal migration ahead of Makerfield Jun 18",
+        "tags": ["labour", "burnham", "immigration", "by-election"],
+        "sentiment": "polarising",
+        "intensity": 7
       },
       {
-        "headline": "World Cup Day 3: Brazil vs Morocco, Scotland vs Haiti tonight",
-        "tags": ["world-cup", "football", "brazil", "scotland"],
-        "sentiment": "energised",
-        "intensity": 6
+        "headline": "FCAS 100B sixth-gen fighter cancelled — European strategic autonomy takes major blow",
+        "tags": ["europe", "defence", "fcas", "france", "germany"],
+        "sentiment": "negative",
+        "intensity": 7
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude falls 3.4% to $87.33 on Iran deal optimism",
-        "tags": ["brent", "oil", "iran", "energy"],
-        "sentiment": "relieved",
+        "headline": "Brent at $87 after 3.4% Friday drop on Iran deal optimism; Monday open first reaction to delay",
+        "tags": ["oil", "brent", "iran", "energy"],
+        "sentiment": "watchful",
         "intensity": 8
       },
       {
-        "headline": "FTSE 100 closes +1.53% at 10,462 led by IAG, Vistry, Anglo American",
-        "tags": ["ftse", "uk", "equities"],
+        "headline": "FTSE 100 closed 10,462 (+1.53% Friday) led by energy and miners",
+        "tags": ["ftse", "equities", "uk"],
         "sentiment": "positive",
         "intensity": 5
       },
       {
-        "headline": "SpaceX raises $75B in record-breaking IPO; Musk potentially first trillionaire",
-        "tags": ["spacex", "musk", "ipo", "nasdaq", "tech"],
-        "sentiment": "bullish",
-        "intensity": 7
-      },
-      {
-        "headline": "Renters Rights Act trending on UK Twitter alongside Landlords",
-        "tags": ["uk", "housing", "renters", "legislation"],
-        "sentiment": "contentious",
-        "intensity": 4
+        "headline": "SpaceX SPCX flat at ~$161 on day 2 after 19% IPO-day surge",
+        "tags": ["spacex", "ipo", "musk", "nasdaq"],
+        "sentiment": "consolidating",
+        "intensity": 6
       }
     ],
     "google_trends_uk": [
-      { "rank": 1, "term": "Belfast anti-racism rally", "volume_est": "High" },
-      { "rank": 2, "term": "World Cup Brazil Morocco", "volume_est": "High" },
-      { "rank": 3, "term": "Burnham Farage immigration", "volume_est": "High" },
-      { "rank": 4, "term": "Iran deal signed", "volume_est": "Medium-High" },
-      { "rank": 5, "term": "Scotland World Cup", "volume_est": "Medium-High" }
+      {"rank": 1, "term": "Scotland", "volume_est": "very high"},
+      {"rank": 2, "term": "Brazil", "volume_est": "very high"},
+      {"rank": 3, "term": "John McGinn", "volume_est": "high"},
+      {"rank": 4, "term": "Haiti", "volume_est": "high"},
+      {"rank": 5, "term": "Knicks", "volume_est": "high"},
+      {"rank": 6, "term": "#NBAFinals", "volume_est": "high"},
+      {"rank": 7, "term": "Australia", "volume_est": "medium"},
+      {"rank": 8, "term": "Igor Thiago", "volume_est": "medium"},
+      {"rank": 9, "term": "Vini", "volume_est": "medium"},
+      {"rank": 10, "term": "Casemiro", "volume_est": "medium"}
     ],
     "pytrends_uk_live": []
   },
@@ -67,124 +66,92 @@
     "music": {
       "apple_music_uk_top5": [
         {
-          "pos": 1,
-          "artist": "Olivia Dean",
-          "title": "Man I Need",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["intimate", "melancholic", "soft"],
-          "theme_tags": ["love", "longing"]
+          "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0,
+          "uk_artist": true, "mood_tags": ["tender", "intimate"], "theme_tags": ["love", "vulnerability"]
         },
         {
-          "pos": 2,
-          "artist": "Drake",
-          "title": "Janice STFU",
-          "change": 0,
-          "uk_artist": false,
-          "mood_tags": ["assertive", "commercial"],
-          "theme_tags": ["hip-hop", "relationships"]
+          "pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0,
+          "uk_artist": false, "mood_tags": ["confrontational", "assertive"], "theme_tags": ["rap", "callout"]
         },
         {
-          "pos": 3,
-          "artist": "Ariana Grande",
-          "title": "hate that i made you love me",
-          "change": 0,
-          "uk_artist": false,
-          "mood_tags": ["melancholic", "pop"],
-          "theme_tags": ["regret", "love"]
+          "pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0,
+          "uk_artist": false, "mood_tags": ["melancholic", "regretful"], "theme_tags": ["breakup", "pop"]
         },
         {
-          "pos": 4,
-          "artist": "Sam Fender & Olivia Dean",
-          "title": "Rein Me In",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["reflective", "folk-pop"],
-          "theme_tags": ["relationship", "UK indie"]
+          "pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0,
+          "uk_artist": true, "mood_tags": ["emotional", "duet"], "theme_tags": ["love", "indie-pop"]
         },
         {
-          "pos": 5,
-          "artist": "The Chemical Brothers",
-          "title": "Go",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["energised", "electronic"],
-          "theme_tags": ["dance", "UK electronic"]
+          "pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0,
+          "uk_artist": true, "mood_tags": ["energised", "rave"], "theme_tags": ["electronic", "90s", "glastonbury-adjacent"]
         }
       ],
       "tiktok_sounds": [
         {
-          "title": "Que Loucura",
-          "artist": "DJ EXE & Cacau Chuu",
-          "score": 989,
-          "videos": 919837,
-          "mood_tags": ["energised", "party"],
-          "theme_tags": ["latin", "Brazilian funk"]
+          "title": "Que Loucura", "artist": "DJ EXE & Cacau Chuu", "score": 989,
+          "videos": 919837, "mood_tags": ["celebratory", "latin"], "theme_tags": ["brazil", "world-cup-adjacent", "funk"]
         },
         {
-          "title": "Buena Vida Mala Fama (Slow Reverb)",
-          "artist": "Crish Ramirez",
-          "score": 971,
-          "videos": 378862,
-          "mood_tags": ["escapist", "slow"],
-          "theme_tags": ["latin urban", "aesthetic"]
+          "title": "hate that i made you love me", "artist": "Ariana Grande", "score": 962,
+          "videos": 132989, "mood_tags": ["melancholic"], "theme_tags": ["breakup", "crossover"]
         },
         {
-          "title": "Trust Me Tonight",
-          "artist": "DE GRANACHO",
-          "score": 970,
-          "videos": 215822,
-          "mood_tags": ["escapist", "romantic"],
-          "theme_tags": ["world", "viral"]
-        },
-        {
-          "title": "hate that i made you love me",
-          "artist": "Ariana Grande",
-          "score": 962,
-          "videos": 132989,
-          "mood_tags": ["melancholic", "pop"],
-          "theme_tags": ["regret", "mainstream"]
+          "title": "Buena Vida Mala Fama Slow Reverb", "artist": "Crish Ramirez", "score": 971,
+          "videos": 378862, "mood_tags": ["nostalgic", "chill"], "theme_tags": ["latin-urban", "slow-reverb"]
         }
       ]
     },
     "tiktok_formats": [
-      { "format": "Latin escapism content (Brazilian funk, slow reverb aesthetics)", "theme_tags": ["escapist", "international", "unrelated-to-news"] },
-      { "format": "World Cup highlight edits and reaction content", "theme_tags": ["football", "World Cup", "national pride"] }
+      {"format": "World Cup reaction content", "theme_tags": ["football", "world-cup", "sports"]},
+      {"format": "Slow reverb Latin sounds over personal montages", "theme_tags": ["nostalgia", "self-reflection"]},
+      {"format": "Pre-match hype reels", "theme_tags": ["football", "england", "anticipation"]}
     ]
   },
   "threads": [
-    { "id": "iran-hormuz", "status": "changed", "status_line": "Deal text finalised per Pakistan PM; Khamenei sign-off pending; Brent $87", "last_changed": "2026-06-13" },
-    { "id": "belfast-riots", "status": "changed", "status_line": "Largest-ever anti-racism rally Belfast City Hall Jun 13; Burnham aligns with Farage on immigration", "last_changed": "2026-06-13" },
-    { "id": "uk-labour-leadership", "status": "changed", "status_line": "Burnham publicly aligned with Farage; Bloomberg: poised to move quickly after Makerfield Jun 18", "last_changed": "2026-06-13" },
-    { "id": "world-cup-2026", "status": "changed", "status_line": "Day 3: Brazil vs Morocco & Scotland vs Haiti tonight; USA 4-1 Paraguay Day 2", "last_changed": "2026-06-13" },
-    { "id": "ebola-drc-uganda", "status": "changed", "status_line": "676 confirmed DRC / 136 deaths; Uganda 19 stable; ~41 new cases/day", "last_changed": "2026-06-13" },
-    { "id": "taiwan-strait-tension", "status": "stable", "status_line": "No PLA response to Jun 10 HIMARS drill", "last_changed": "2026-06-10" },
-    { "id": "israel-lebanon", "status": "stable", "status_line": "No new escalation; Jun 22 talks on calendar", "last_changed": "2026-06-09" },
-    { "id": "uk-economic-stress", "status": "stable", "status_line": "FTSE 10,462; Brent $87; 30Y gilt ~5.50%", "last_changed": "2026-06-09" },
-    { "id": "ukraine-peace-deadline", "status": "stable", "status_line": "Talks stalled; US bandwidth consumed by Iran", "last_changed": "2026-06-09" },
-    { "id": "syria-parliament", "status": "stable", "status_line": "Sharaa's 70-seat list ready; no new date for convening", "last_changed": "2026-06-09" },
-    { "id": "spacex-ipo", "status": "new", "status_line": "$75B IPO Jun 11; Musk potentially trillionaire; Nasdaq debut pending", "last_changed": "2026-06-13" },
-    { "id": "colombia-runoff", "status": "new", "status_line": "De la Espriella vs Cepeda; Jun 21 runoff; polling diverges", "last_changed": "2026-06-13" }
+    {"id": "iran-hormuz", "status": "changed", "status_line": "Deal NOT signed on Trump's 80th birthday; Iran calls it propaganda event; text agreed; signing imminent", "last_changed": "2026-06-14"},
+    {"id": "belfast-riots", "status": "changed", "status_line": "Sixth night subdued; UK Twitter entirely World Cup; Burnham goes further on immigration", "last_changed": "2026-06-14"},
+    {"id": "world-cup-2026", "status": "changed", "status_line": "Scotland 1-0 Haiti; Brazil 1-1 Morocco; England vs Croatia Jun 17", "last_changed": "2026-06-14"},
+    {"id": "spacex-ipo", "status": "changed", "status_line": "SPCX ~$161, flat day 2 after 19% IPO-day surge", "last_changed": "2026-06-14"},
+    {"id": "european-defence-fcas", "status": "new", "status_line": "FCAS cancelled Jun 8-9; European air power future unresolved", "last_changed": "2026-06-14"},
+    {"id": "ebola-drc-uganda", "status": "stable", "status_line": "676 confirmed DRC; Uganda no new cases since Jun 5", "last_changed": "2026-06-13"},
+    {"id": "uk-labour-leadership", "status": "stable", "status_line": "Makerfield Jun 18; Burnham immigration pivot; no formal challenge yet", "last_changed": "2026-06-13"},
+    {"id": "colombia-runoff", "status": "stable", "status_line": "De la Espriella 52.6% vs Cepeda 44.8%; Jun 21 unchanged", "last_changed": "2026-06-13"}
   ],
   "synthesis": {
-    "daily_theme": "A deal that could reorder the Gulf is hours from being signed, while Britain's political crisis accelerates in two simultaneous directions — counter-protest and hard-right triangulation — and the culture retreats into intimacy rather than processing any of it.",
-    "mechanism": "The Iran deal's approach is compressing all the secondary political and market effects into this weekend: Brent at $87, FTSE up, and US-allied political actors having to position before the deal becomes fait accompli. In the UK, Belfast has produced a political crystallisation moment — the counter-rally gives Labour cover to avoid a Reform-led narrative, but Burnham simultaneously moved right on immigration, suggesting the political elite have already internalized Reform's framing regardless of what happens on the street.",
+    "daily_theme": "A birthday snub and a national mood override: Iran plays symbolic games with Trump while the World Cup evacuates UK political attention entirely.",
+    "mechanism": "Iran refuses to sign on Trump's birthday as deliberate signaling — demonstrating the deal is on their terms even while agreeing to it. Simultaneously the World Cup opens a pressure valve on UK domestic politics, displacing Belfast from social attention within 24 hours of the largest anti-racism rally in Northern Ireland's history.",
     "connections": [
       {
-        "macro_event": "Belfast riots + Makerfield by-election pressure",
-        "cultural_response": "UK Apple Music chart stays frozen in Olivia Dean introspection; no nationalist or confrontational sounds emerge",
-        "mechanism": "British political anxiety historically manifests as chart retreat into soft intimacy rather than anthemic defiance",
-        "observation": "The chart's refusal to engage with the political moment is itself a signal. The World Cup nostalgia surge (Fleetwood Mac, Mr. Brightside) is building in the background but has not yet broken the surface. When it does, it will likely be triggered by the England vs Croatia fixture on June 17.",
-        "confidence": "moderate",
+        "macro_event": "Iran refuses birthday deal signing",
+        "cultural_response": "No UK cultural response — displaced by World Cup entirely",
+        "mechanism": "UK attention completely consumed by football; geopolitical story has no cultural echo today",
+        "observation": "The Iran deal is the biggest geopolitical story of the year, yet generates zero UK social signal. The World Cup has a near-total displacement effect on UK political attention, even on stories of this magnitude.",
+        "confidence": "strong",
         "signal_type": "divergence"
       },
       {
-        "macro_event": "Iran deal nearing signature; Brent at $87",
-        "cultural_response": "TikTok entirely Latin escapism; no UK cultural content engaging with Gulf crisis",
-        "mechanism": "The Iran story has been building for 100+ days but never acquired a UK cultural register beyond energy price anxiety; the deal's resolution processes as a market event, not a cultural one",
-        "observation": "The energy price cap won't change until autumn; the lag between macro event and cultural processing is long. This is a consistent pattern in UK culture: distant geopolitical resolutions don't generate cultural artifacts.",
+        "macro_event": "Belfast riots sixth night subdued",
+        "cultural_response": "Belfast entirely absent from UK Twitter despite being top-5 UK trend for 5 days",
+        "mechanism": "World Cup Day 4 (Scotland match) provides an alternative focal point; anti-racism rally narrative closure; social attention resets overnight",
+        "observation": "The speed of social displacement is striking. Five nights of riots, the largest anti-racism rally in NI history — gone from trending in under 24 hours.",
         "confidence": "strong",
-        "signal_type": "lagging"
+        "signal_type": "divergence"
+      },
+      {
+        "macro_event": "England vs Croatia scheduled Jun 17",
+        "cultural_response": "Fleetwood Mac catalog flood; Kings of Leon +12; Mr. Brightside +4; Ed Sheeran anthems rising",
+        "mechanism": "England World Cup matches produce predictable pre-match chart behavior: upbeat nostalgia and stadium rock climb ahead of kickoff",
+        "observation": "The chart is already in England-match mode three days early. 'Everywhere' (upbeat) surges while 'Dreams' (melancholic) slips — the chart chooses optimism pre-match.",
+        "confidence": "strong",
+        "signal_type": "leading"
+      },
+      {
+        "macro_event": "FCAS cancellation June 8-9",
+        "cultural_response": "No UK cultural response detected",
+        "mechanism": "Story buried by Belfast riots and World Cup opening; European defence rarely penetrates UK cultural consciousness",
+        "observation": "The collapse of Europe's flagship defence cooperation program generated almost no UK social signal — a structural blind spot worth tracking as post-Brexit UK defence realignment becomes critical.",
+        "confidence": "moderate",
+        "signal_type": "divergence"
       }
     ]
   }

@@ -4,12 +4,12 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Deal text 'finalized' per Pakistan PM Sharif Jun 13; Iran says 'days not hours'; Khamenei sign-off pending but reportedly 'comfortable'; Brent $87 (down 3.4%); Jun 22 talks may be pre-empted; IAEA non-compliance case published Jun 12 by FDD as deal nears",
+      "status_line": "Deal NOT signed on Trump's 80th birthday (Jun 14); Iran called Sunday date a 'propaganda event'; text agreed, Khamenei approved, Pakistan confirmed final language; Brent $87; signing imminent in coming days; MOU only 'conceptually' addresses uranium stockpiles; hardliners attacking draft",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-13",
+      "last_changed": "2026-06-14",
       "expand_if": [
-        "Iranian Foreign Ministry confirms formal signing",
-        "Khamenei rejects deal text",
+        "Formal signing occurs",
+        "Khamenei rejects deal text publicly",
         "Brent snaps back above $94 on deal collapse",
         "Netanyahu public statement opposing MOU",
         "UN Security Council motion on IAEA non-compliance",
@@ -21,11 +21,11 @@
       "id": "belfast-riots",
       "label": "Belfast Riots / UK Anti-Immigrant Violence",
       "status": "changed",
-      "status_line": "Largest-ever anti-racism rally at Belfast City Hall Jun 13 (Amnesty: 'biggest Northern Ireland has seen'); Burnham simultaneously made pro-detention/pro-Farage immigration statement ahead of Makerfield Jun 18; 5 nights of unrest; 27 homes burned; 30yr-old Sudanese man charged with attempted murder",
+      "status_line": "Sixth night subdued (Jun 14); UK Twitter 100% World Cup — Belfast not trending; anti-racism rally Jun 13 largest in NI history (Amnesty); Burnham 'go further' on immigration ahead of Makerfield Jun 18; PSNI found no paramilitary coordination; Sudanese man charged with attempted murder",
       "first_seen": "2026-06-12",
-      "last_changed": "2026-06-13",
+      "last_changed": "2026-06-14",
       "expand_if": [
-        "Further nights of severe unrest (6th+)",
+        "Further nights of severe unrest (7th+)",
         "Fatality in riots",
         "Government announces immigration policy change before Jun 18",
         "Riots spread to additional English cities",
@@ -37,9 +37,9 @@
       "id": "world-cup-2026",
       "label": "World Cup 2026",
       "status": "changed",
-      "status_line": "Day 3 Jun 13: Brazil vs Morocco & Scotland vs Haiti (Group C, evening); USA 4-1 Paraguay Day 2; Canada 1-1 Bosnia (Canada's first World Cup point); England vs Croatia Jun 17 Dallas; Fleetwood Mac surge building on UK chart ahead of England opener",
+      "status_line": "Day 4 Jun 14: Scotland 1-0 Haiti (McGinn 28') — Scotland's first WC win in a generation; Brazil 1-1 Morocco (Jun 13, Vini anonymous); Germany vs Curaçao + Netherlands vs Japan Jun 14 afternoon ET; England vs Croatia Jun 17 Dallas; Fleetwood Mac catalog surge ahead of England opener",
       "first_seen": "2026-06-10",
-      "last_changed": "2026-06-13",
+      "last_changed": "2026-06-14",
       "expand_if": [
         "England match results (Jun 17, Jun 23, Jun 27)",
         "Major off-field controversy",
@@ -51,8 +51,8 @@
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "changed",
-      "status_line": "676 confirmed DRC / 136 deaths as of Jun 11 (up from 635/127 on Jun 10); ~41 new cases/day; 262 hospitalised in isolation; Ituri 629 cases from 19 health zones; Uganda 19 confirmed, 2 deaths, no new cases since Jun 5; PHEIC in force",
+      "status": "stable",
+      "status_line": "DRC 676 confirmed / 136 deaths as of Jun 11; ~41 new cases/day; 262 hospitalised in isolation; Uganda 19 confirmed / 2 deaths / no new cases since Jun 5; PHEIC in force; no escalation",
       "first_seen": "2026-05-25",
       "last_changed": "2026-06-13",
       "expand_if": [
@@ -82,7 +82,7 @@
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "stable",
-      "status_line": "No new escalation; Iran MOU if real would extend ceasefire 60 days including Lebanon — unconfirmed; Hezbollah still rejecting pilot zones; Jun 22 talks on calendar",
+      "status_line": "No new escalation; Iran MOU if signed extends ceasefire 60 days including Lebanon; Hezbollah still rejecting pilot zones; Jun 22 talks on calendar",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -98,8 +98,8 @@
     {
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
-      "status": "changed",
-      "status_line": "Burnham publicly agreed with Farage on asylum dispersal burden and called for expanded detention ahead of Makerfield Jun 18; Bloomberg Jun 13: 'poised to move quickly' if wins; 95+ MPs calling for Starmer's departure; Streeting already resigned",
+      "status": "stable",
+      "status_line": "Burnham 'go further' on illegal migration ahead of Makerfield Jun 18; Bloomberg: 'poised to move quickly' if wins; 95+ MPs calling for Starmer departure; Streeting already resigned; no formal challenge yet",
       "first_seen": "2026-06-03",
       "last_changed": "2026-06-13",
       "expand_if": [
@@ -114,7 +114,7 @@
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "stable",
-      "status_line": "FTSE 10,462 (Jun 12 close, +1.53%); Brent $87 (Iran-optimism driven); 30Y gilt ~5.50%; BoE September hike still priced; Renters Rights Act trending on UK Twitter",
+      "status_line": "FTSE 10,462 (Jun 12 close, +1.53%); Brent $87; 30Y gilt ~5.50%; BoE September hike still priced; Makerfield by-election and Iran deal signing on Monday watch-list",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -147,7 +147,7 @@
       "id": "uk-kirpan-debate",
       "label": "UK Kirpan Debate",
       "status": "stable",
-      "status_line": "Parliament debated Jun 9; law unchanged; Reform repeal pledge gaining online traction; Belfast riots keeping immigration/culture-war frame active; Rights Act trending UK Twitter Jun 13",
+      "status_line": "Parliament debated Jun 9; law unchanged; Reform repeal pledge gaining online traction; Belfast riots keeping immigration/culture-war frame active",
       "first_seen": "2026-06-04",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -190,7 +190,7 @@
       "id": "mearsheimer",
       "label": "Mearsheimer",
       "status": "stable",
-      "status_line": "Iran deal emerging without Netanyahu torpedoing it (so far) — partially complicates the Netanyahu-veto thesis; if deal signs without Netanyahu publicly opposing it, requires revision of the framing; no new post or appearance",
+      "status_line": "Iran deal emerging without Netanyahu torpedoing it (so far) — partially complicates the Netanyahu-veto thesis; no new post or appearance",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-09",
       "expand_if": [
@@ -204,12 +204,12 @@
     {
       "id": "spacex-ipo",
       "label": "SpaceX IPO / Musk Political Economy",
-      "status": "new",
-      "status_line": "$75B raised Jun 11 — record-breaking IPO; $1.8T valuation; xAI (Grok) now part of SpaceX; Musk potentially first trillionaire; Nasdaq debut pending; structural question: does trillionaire Musk change his relationship with Trump administration?",
+      "status": "changed",
+      "status_line": "SPCX +19% day 1 to ~$161 on $135 IPO (Jun 12); day 2 flat; structural question: does trillionaire Musk change his relationship with Trump now he has independent financial gravity?",
       "first_seen": "2026-06-13",
-      "last_changed": "2026-06-13",
+      "last_changed": "2026-06-14",
       "expand_if": [
-        "Nasdaq debut and first day trading price",
+        "First week SPCX trading shows significant direction",
         "Musk officially declared trillionaire",
         "Starlink or xAI regulatory decision affected by political relationship",
         "SpaceX/Musk-Trump relationship publicly strained or amplified after IPO",
@@ -219,8 +219,8 @@
     {
       "id": "colombia-runoff",
       "label": "Colombia Runoff — Jun 21",
-      "status": "new",
-      "status_line": "De la Espriella (far-right, 44% first round) vs Cepeda (left, 41%); Jun 21 runoff; polls diverge on winner — Guarumo favours de la Espriella, Invamer unclear; winner takes office Aug 7; US-adjacent geopolitical dimension given de la Espriella's alignment",
+      "status": "stable",
+      "status_line": "De la Espriella leads 52.6% vs Cepeda 44.8% (Guarumo/AtlasIntel Jun 10-13); Jun 21 runoff unchanged; no major polling shift, violence, or candidate statement",
       "first_seen": "2026-06-13",
       "last_changed": "2026-06-13",
       "expand_if": [
@@ -228,6 +228,21 @@
         "Significant violence or electoral irregularity before Jun 21",
         "Major polling shift",
         "FARC or armed group statement on runoff"
+      ]
+    },
+    {
+      "id": "european-defence-fcas",
+      "label": "European Defence / FCAS",
+      "status": "new",
+      "status_line": "FCAS €100B sixth-gen fighter officially cancelled Jun 8-9; Airbus-Dassault industrial dispute irresolvable; France needs carrier-capable nuclear-certified aircraft; Germany wanted NATO interoperability; Combat Cloud survives; European air power future unresolved — story underreported due to Belfast/World Cup",
+      "first_seen": "2026-06-14",
+      "last_changed": "2026-06-14",
+      "expand_if": [
+        "France announces alternative bilateral fighter partnership (UK GCAP or Italy/Sweden)",
+        "Germany announces F-35 or US-alternative procurement at scale",
+        "EU defence ministers joint communiqué on post-FCAS strategy",
+        "Macron or Merz public statement on European strategic autonomy implications",
+        "UK invited into new Franco-German defence cooperation framework"
       ]
     }
   ],
@@ -338,7 +353,13 @@
       "url": "https://www.fdd.org",
       "found_on": "2026-06-12",
       "why_interesting": "Hawkish Washington think tank; published IAEA non-compliance analysis on Jun 12 at same moment Trump claimed deal — explicitly building the legal/institutional case for rejecting any Iran deal as insufficient; useful as real-time counter-weight to Quincy Institute framing; tracks closely with Netanyahu's likely response"
+    },
+    {
+      "name": "Hamidreza Azizi — SWP Berlin",
+      "url": "https://www.swp-berlin.org",
+      "found_on": "2026-06-14",
+      "why_interesting": "German-Iranian scholar at the German Institute for International and Security Affairs (SWP); noted that Iranian commentators are openly treating the birthday timing as a significant factor in deal delay — insider read on Iranian domestic discourse not available in Western press; cited by Fortune June 13"
     }
   ],
-  "last_updated": "2026-06-13"
+  "last_updated": "2026-06-14"
 }
