@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firas's Digest — 15 June 2026</title>
+<title>Firas's Digest — 17 June 2026</title>
 <style>
   :root {
     --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
@@ -22,17 +22,17 @@
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg:#111110; --bg-2:#1c1c1a; --bg-3:#252522;
-      --text:#e8e6e0; --text-2:#a0a09a; --text-3:#606059;
-      --border:rgba(255,255,255,0.08); --border-2:rgba(255,255,255,0.15);
-      --purple-bg:#2a2848; --purple-text:#a09de0;
-      --teal-bg:#1a3530; --teal-text:#5dcba4;
-      --coral-bg:#3a1a14; --coral-text:#e8907a;
-      --amber-bg:#3a2810; --amber-text:#d4a060;
-      --blue-bg:#142038; --blue-text:#7ab8f0;
-      --green-bg:#1a2e10; --green-text:#90c85a;
-      --gray-bg:#222220; --gray-text:#b0aea8;
-      --link:#7ab8f0;
+      --bg:#18181a; --bg-2:#222224; --bg-3:#2a2a2d;
+      --text:#e8e8e4; --text-2:#9a9894; --text-3:#5a5956;
+      --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
+      --purple-bg:#1e1a3a; --purple-text:#9d96f0;
+      --teal-bg:#0e2820; --teal-text:#5dd4a8;
+      --coral-bg:#2a1510; --coral-text:#f09070;
+      --amber-bg:#241800; --amber-text:#f0bc70;
+      --blue-bg:#0a1e32; --blue-text:#70b8f0;
+      --green-bg:#0e2006; --green-text:#88cc55;
+      --gray-bg:#222224; --gray-text:#b0b0a8;
+      --link:#5ba0d8;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,492 +40,474 @@
     font-family: var(--font);
     background: var(--bg);
     color: var(--text);
-    line-height: 1.65;
-    font-size: 16px;
-    padding: 2rem 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    line-height: 1.6;
   }
-  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-  /* Header */
-  .header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
-  .header h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
-  .header .date { font-size: 0.85rem; color: var(--text-3); margin-top: 0.25rem; }
+  header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
+  header h1 { font-size: 1.25rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+  header .date { font-size: 0.9rem; color: var(--text-3); margin-top: 0.2rem; }
 
-  /* Audio player */
-  .listen-bar {
-    display: flex; align-items: center; gap: 0.75rem;
-    background: var(--bg-2); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 0.75rem 1rem;
-    margin-bottom: 2.5rem; cursor: pointer;
+  .player-bar {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
   }
-  .listen-bar .play-btn {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--text); color: var(--bg);
-    border: none; cursor: pointer; font-size: 0.75rem;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  .play-btn {
+    width: 36px; height: 36px;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    border: none;
+    cursor: pointer;
   }
-  .listen-bar .listen-label { font-size: 0.85rem; font-weight: 600; color: var(--text); }
-  .listen-bar .listen-sub { font-size: 0.78rem; color: var(--text-3); }
-  .audio-progress { flex: 1; height: 3px; background: var(--border-2); border-radius: 2px; overflow: hidden; }
-  .audio-progress-fill { height: 100%; width: 0%; background: var(--text); transition: width 0.1s; }
-
-  /* Section titles */
-  h2 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 1rem; margin-top: 2.5rem; }
-
-  /* Cards */
-  .card {
-    background: var(--bg-2); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 1.25rem 1.4rem; margin-bottom: 1rem;
+  .player-info { flex: 1; }
+  .player-title { font-size: 0.85rem; font-weight: 600; }
+  .player-sub { font-size: 0.78rem; color: var(--text-3); margin-top: 0.1rem; }
+  .player-progress {
+    flex: 2;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
   }
-  .card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; line-height: 1.35; }
-  .card p { font-size: 0.92rem; color: var(--text-2); line-height: 1.65; margin-bottom: 0.6rem; }
-  .card p:last-child { margin-bottom: 0; }
-  .card a { color: var(--link); text-decoration: none; }
-  .card a:hover { text-decoration: underline; }
-  .card .watch { font-size: 0.8rem; color: var(--text-3); border-top: 1px solid var(--border); padding-top: 0.6rem; margin-top: 0.75rem; }
-  .card .watch strong { color: var(--text-2); }
+  .player-progress .bar { height: 100%; background: var(--text); width: 0%; transition: width 0.3s; }
 
-  /* Lead card */
-  .lead-card { border-left: 3px solid var(--text); }
-  .lead-card h3 { font-size: 1.05rem; }
+  h2 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-3);
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+  }
 
-  /* Tags */
-  .tag { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 0.2em 0.55em; border-radius: 4px; margin-right: 0.3rem; vertical-align: middle; }
+  .lead-item {
+    margin-bottom: 1.4rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .lead-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .lead-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-3); margin-bottom: 0.4rem; }
+  .lead-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.3; }
+  .lead-item p { font-size: 0.92rem; color: var(--text-2); line-height: 1.65; }
+  .lead-item p + p { margin-top: 0.6rem; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
   .tag.tp { background: var(--purple-bg); color: var(--purple-text); }
   .tag.ta { background: var(--amber-bg); color: var(--amber-text); }
   .tag.tg { background: var(--gray-bg); color: var(--gray-text); }
   .tag.tb { background: var(--teal-bg); color: var(--teal-text); }
   .tag.tc { background: var(--coral-bg); color: var(--coral-text); }
-  .tag.tbl { background: var(--blue-bg); color: var(--blue-text); }
 
-  /* Markets grid */
-  .markets-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-  @media (min-width: 500px) { .markets-grid { grid-template-columns: repeat(4, 1fr); } }
-  .market-tile {
-    background: var(--bg-2); border: 1px solid var(--border);
-    border-radius: var(--radius-sm); padding: 0.85rem 1rem;
+  .card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 0.9rem;
   }
-  .market-tile .m-label { font-size: 0.72rem; color: var(--text-3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-  .market-tile .m-value { font-size: 1.15rem; font-weight: 700; color: var(--text); margin: 0.2rem 0 0.1rem; }
-  .market-tile .m-change { font-size: 0.78rem; font-weight: 600; }
-  .m-up { color: #27a35a; }
-  .m-down { color: #d04040; }
-  .markets-note { font-size: 0.8rem; color: var(--text-3); margin-top: 0.75rem; }
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .card-title { font-size: 0.95rem; font-weight: 700; }
+  .card p { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; }
+  .card p + p { margin-top: 0.5rem; }
+  .watch { margin-top: 0.75rem; font-size: 0.81rem; color: var(--text-3); }
+  .watch strong { color: var(--text-2); }
 
-  /* Status table */
-  .status-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-  .status-table th { text-align: left; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); border-bottom: 1px solid var(--border-2); padding: 0.4rem 0.6rem; }
-  .status-table td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-2); line-height: 1.45; }
+  .culture-block { margin-bottom: 1.5rem; }
+  .culture-block h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--text); }
+  .culture-block p { font-size: 0.88rem; color: var(--text-2); line-height: 1.65; }
+  .culture-block p + p { margin-top: 0.5rem; }
+
+  .chart-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.84rem;
+  }
+  .chart-row:last-child { border-bottom: none; }
+  .chart-pos { width: 28px; text-align: right; color: var(--text-3); font-size: 0.8rem; flex-shrink: 0; }
+  .chart-mv { width: 34px; text-align: center; font-size: 0.74rem; font-weight: 700; flex-shrink: 0; }
+  .chart-mv.up { color: #1a8a3c; }
+  .chart-mv.same { color: var(--text-3); }
+  .chart-mv.new-e { color: var(--purple-text); font-size: 0.67rem; }
+  .chart-name { flex: 1; }
+  .chart-name .ar { font-weight: 600; }
+  .chart-name .ti { color: var(--text-2); }
+
+  .markets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .market-tile {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1rem;
+  }
+  .m-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); }
+  .m-value { font-size: 1.2rem; font-weight: 700; margin-top: 0.25rem; }
+  .m-note { font-size: 0.76rem; color: var(--text-3); margin-top: 0.2rem; }
+  .m-up { color: #1a8a3c; }
+  .m-dn { color: #c0392b; }
+  .m-neu { color: var(--text); }
+
+  .status-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .status-table th { text-align: left; font-weight: 700; color: var(--text-3); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border-2); }
+  .status-table td { padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
   .status-table tr:last-child td { border-bottom: none; }
-  .status-table .label-col { font-weight: 600; color: var(--text); white-space: nowrap; }
-  .status-table .date-col { color: var(--text-3); white-space: nowrap; font-size: 0.78rem; }
+  .status-table .sl { color: var(--text-2); }
+  .status-table .lc { color: var(--text-3); font-size: 0.76rem; white-space: nowrap; }
 
-  /* Footer */
-  .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-3); }
-  .footer a { color: var(--link); text-decoration: none; }
+  .outside-frame {
+    background: var(--bg-2);
+    border-left: 3px solid var(--amber-text);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 1rem 1.2rem;
+  }
+  .of-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--amber-text); margin-bottom: 0.4rem; }
+  .outside-frame p { font-size: 0.88rem; color: var(--text-2); line-height: 1.65; }
+  .outside-frame p + p { margin-top: 0.5rem; }
+
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- Header -->
-  <div class="header">
-    <h1>Firas's Digest</h1>
-    <div class="date">Monday, 15 June 2026</div>
+<header>
+  <h1>Firas's Digest</h1>
+  <div class="date">Wednesday, 17 June 2026</div>
+</header>
+
+<div class="player-bar" id="playerBar" onclick="togglePlay()">
+  <button class="play-btn" id="playBtn" aria-label="Play">▶</button>
+  <div class="player-info">
+    <div class="player-title">Listen to today's digest</div>
+    <div class="player-sub" id="playerSub">~2 min · Geneva, Makerfield, the anthemic chart</div>
   </div>
+  <div class="player-progress"><div class="bar" id="progressBar"></div></div>
+</div>
 
-  <!-- Listen bar -->
-  <div class="listen-bar" id="listenBar" onclick="togglePlay()">
-    <button class="play-btn" id="playBtn" aria-label="Play audio digest">&#9654;</button>
-    <div style="flex:1; min-width:0;">
-      <div class="listen-label">Listen to today's digest</div>
-      <div class="listen-sub" id="listenSub">~2 min · tap to play</div>
-    </div>
-    <div class="audio-progress"><div class="audio-progress-fill" id="audioProg"></div></div>
+<h2>Today's Signal</h2>
+
+<div class="lead-item">
+  <div class="lead-label">48 Hours to Geneva</div>
+  <h3>The Iran-US deal signs Thursday — but the text is still hidden and the two sides are describing different agreements</h3>
+  <p>The formal MOU signing in Geneva is two days away, and the closer it gets the more visible the gaps. Iran says the deal requires Israeli forces to leave Lebanon. The US hasn't confirmed that. Neither government has released the actual text. On the nuclear side, both sides have agreed to a freeze-in-place during the 60-day negotiation window, but what "freeze" means for an already-advanced enrichment programme is precisely what those 60 days are supposed to settle — and that is the clause hardliners in Tehran are protesting against, chanting "death to the compromiser" in Mashhad.</p>
+  <p>The Lebanon angle is the live wire before Thursday. Hezbollah continues to reject Israeli "freedom of movement" provisions in Lebanese territory. Lebanon is reportedly inside the MOU, but the provisions haven't been confirmed in detail. President Pezeshkian has now credited Mojtaba Khamenei with directly shaping the deal — a significant legitimation signal — but that doesn't mean Hezbollah takes its cues from Tehran on this. The Carnegie framing from May holds: this defers the nuclear question, it doesn't answer it. The deal is real. What it means is still in negotiation.</p>
+</div>
+
+<div class="lead-item">
+  <div class="lead-label">Tonight · 9pm UK</div>
+  <h3>England vs Croatia in Dallas — the cultural event that pauses everything else today</h3>
+  <p>Group L opens at AT&T Stadium in Arlington, Texas. "Mr Brightside" is up four places on the Apple Music chart — its traditional signal of English tournament readiness — and Ella Langley's "Choosin' Texas" has climbed two spots. Today's earlier results: France beat Senegal 3-1 (Mbappé, Barcola), Norway thrashed Iraq 4-1 (Haaland brace in the first half). The tournament's group stage shape is taking form; England's opener against the side that beat them in Russia 2018 is what today actually hinges on.</p>
+</div>
+
+<div class="lead-item">
+  <div class="lead-label">Tomorrow</div>
+  <h3>Makerfield votes — and the margin is narrower than the seat's design intended</h3>
+  <p>Burnham enters polling day with a five-point lead over Reform UK's Robert Kenyon (Labour 49%, Reform 44%, Opinium). The constituency was vacated specifically to give Burnham this path to Parliament and then to the Labour leadership. A five-point margin in a post-Belfast-riots context, with a nationally activated Reform campaign, is not the comfortable lead the circumstances were meant to produce. A Reform win would be the most destabilising UK political event in months. A narrow Burnham win still accelerates the challenge to Starmer: 95+ MPs are already on record calling for his departure.</p>
+  <p>The figure that matters more than the by-election poll: 42% of Makerfield residents would vote Reform at a general election, versus 34% for Labour. Burnham is expected to win the seat. The margin will tell you more than the result.</p>
+</div>
+
+<h2>Changed Threads</h2>
+
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Iran / Hormuz <span class="tag ta">Changed</span></div>
   </div>
+  <p>Geneva June 19 on schedule. New since last update: President Pezeshkian publicly confirmed Mojtaba Khamenei directly shaped the MOU — a meaningful domestic legitimation signal that places the deal inside the supreme leader's authority. Hardliner protests continue in Mashhad and Tehran. The Lebanon provisions remain the least-confirmed element of the agreement. Hezbollah has not shifted its public position.</p>
+  <div class="watch"><strong>Watch:</strong> Any Hezbollah statement in the next 48h. Whether the full MOU text is released before or after signing. Brent's response to the formal ceremony — a sustained snap back above $94 would signal the market doubts the deal's durability.</div>
+</div>
 
-  <!-- LEAD -->
-  <h2>Today's Signal</h2>
-
-  <div class="card lead-card">
-    <h3>The Iran Deal Is Signed — But the Hard Part Is Still Ahead</h3>
-    <p>JD Vance confirmed this morning that the US-Iran framework agreement was signed digitally on Sunday — Trump, Vance, and Iran's parliament speaker Mohammad Bagher Ghalibaf all put their names to it. The Strait of Hormuz will reopen, the US naval blockade is lifting, and a formal signing ceremony in Geneva is set for Friday. Markets have moved accordingly: Brent crude fell 4.9% to $83, Nasdaq is up 3%, and the FTSE is rallying on energy import relief.</p>
-    <p>But the full text still hasn't been released. What's confirmed: a 60-day technical negotiation window to resolve Iran's uranium stockpile — which, per the Carnegie Endowment, currently sits at 60% enrichment, a short technical step from weapons-grade. The deal's central question — whether Iran actually gives up its path to a bomb — isn't answered, it's been kicked down the road. Vance's framing is deliberately conditional: "sanctions relief for Tehran would depend entirely on compliance." Friday's ceremony in Geneva will be historic theatre. The real deal comes in 60 days.</p>
-    <p>The most important thing to watch right now isn't Netanyahu — who has been conspicuously muted, claiming he "saved Israel from annihilation" rather than attacking the deal — it's the Iranian domestic picture. Hardliners in Tehran and Mashhad are already in the streets shouting "Death to the compromiser" and "Araghchi, have shame, leave the country alone." The new supreme leader Mojtaba Khamenei, who replaced his father after the February 28 strikes, has not publicly blessed the deal. The fragility is on the Iranian side, not the American one.</p>
-    <div class="watch"><strong>Watch:</strong> Full deal text release this week. Khamenei Jr.'s public posture. IAEA access conditions. Whether Iranian hardliner protests spread beyond Tehran and Mashhad. Oil market reaction once Hormuz actually reopens — not just announces.</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Belfast Riots / Makerfield <span class="tag ta">Changed</span></div>
   </div>
+  <p>The street violence has largely subsided; the story has moved from the PSNI to Westminster. Makerfield polls tomorrow. The PSNI's confirmation of no paramilitary coordination in the Belfast riots received less coverage than the original images. Reform UK's national campaign apparatus has been more visibly deployed in this by-election than in any previous constituency contest.</p>
+  <div class="watch"><strong>Watch:</strong> Makerfield result Thursday night. A Reform win — low probability, high consequence. Watch Burnham's victory statement if he wins: whether he positions toward or away from Starmer will signal how fast the leadership challenge moves.</div>
+</div>
 
-  <div class="card">
-    <h3>Makerfield Thursday — Burnham's Entry, Labour's Reckoning</h3>
-    <p>The Makerfield by-election is three days away. Andy Burnham leads Reform UK's candidate 49% to 37% in the latest polling — a margin that looks comfortable but isn't. Reform pulling 37% in a Labour heartland seat would be a landmark even in defeat. Burnham has already positioned himself to Starmer's right on illegal migration; if he wins and enters Parliament, a formal leadership challenge follows within weeks, and the Streeting vacancy sits waiting. The Belfast riots have made immigration the political weather for this race. Starmer has not moved publicly.</p>
-    <div class="watch"><strong>Watch:</strong> Thursday's margin. Reform's share specifically — 37% in Makerfield would itself be the story. Whether Starmer acts before Burnham can define the immigration frame.</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">World Cup 2026 <span class="tag ta">Changed</span></div>
   </div>
+  <p>Day 7. Today's completed results: France 3-1 Senegal (Mbappé, Barcola), Norway 4-1 Iraq (Haaland first-half brace). England vs Croatia kicks off at 9pm UK in Arlington. Ghana vs Panama and Colombia vs Uzbekistan also on today's slate. Germany's dominant performance against Curaçao (Nmecha, Musiala, Brown, Undav, Havertz) has set an early benchmark for goal difference.</p>
+  <div class="watch"><strong>Watch:</strong> England result and scorers — sets the shape of Group L for the remaining matches on June 23 and 27.</div>
+</div>
 
-  <!-- CHANGED THREADS -->
-  <h2>Changed Threads</h2>
-
-  <div class="card">
-    <h3><span class="tag ta">changed</span> Iran / Hormuz</h3>
-    <p>Deal digitally signed Sunday by Trump, Vance, and Ghalibaf. Formal Geneva signing Friday June 19. Hormuz reopening, US naval blockade lifting. 60-day window to negotiate uranium disposition — the hardest part of the actual nuclear question. Brent -4.9% to $83. Iranian hardliners protesting the deal as a "dishonorable compromise." Full text not yet public. Netanyahu muted. Mojtaba Khamenei's position on the agreement unclear.</p>
-    <div class="watch"><strong>What changed:</strong> After weeks of "imminent" language, it actually signed. <strong>Watch:</strong> The uranium negotiation, not the ceremony.</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Ebola — DRC / Uganda <span class="tag ta">Changed</span></div>
   </div>
+  <p>The DRC count has accelerated: 808 confirmed cases and 192 deaths as of June 15, up from 676 confirmed and 136 deaths on June 11. That's 132 new confirmed cases and 56 additional deaths in four days — well above the ~41/day rate previously tracked. The US State Department announced $50 million to CEPI for Bundibugyo medical countermeasures development. Uganda remains stable at 19 confirmed with no new cases since June 5.</p>
+  <div class="watch"><strong>Watch:</strong> Whether the DRC rate sustains above 33 cases per day (the pace implied by this four-day window). Any confirmed case in Burundi or Rwanda changes the calculus immediately.</div>
+</div>
 
-  <div class="card">
-    <h3><span class="tag ta">changed</span> Belfast Riots / UK Anti-Immigrant Violence</h3>
-    <p>The seventh night was subdued — no major incidents. The story is migrating from the streets to politics. The largest anti-racism rally in Northern Ireland's history took place June 13 (Amnesty). PSNI confirmed no paramilitary coordination. Political energy is now entirely pointing toward Makerfield Thursday and what Burnham's positioning on immigration signals about the post-riot settlement.</p>
-    <div class="watch"><strong>Watch:</strong> Makerfield result and what it signals about immigration politics. Whether Starmer moves before Burnham defines the issue.</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">UK Labour Leadership <span class="tag ta">Changed</span></div>
   </div>
+  <p>With Makerfield hours away this moves from stable to changed. The structural conditions for a challenge are assembled: 95+ MPs on record, Streeting already resigned, Bloomberg describing Burnham as "poised to move quickly." The question after tomorrow is whether there is a credible centre-left candidate if Burnham runs from Starmer's right on migration. No such candidate has emerged publicly.</p>
+  <div class="watch"><strong>Watch:</strong> Burnham's victory statement Thursday night. Formal leadership challenge filing timeline.</div>
+</div>
 
-  <div class="card">
-    <h3><span class="tag ta">changed</span> World Cup 2026 — Day 5</h3>
-    <p>Today (June 15): Spain vs Cape Verde, Belgium vs Egypt, Saudi Arabia vs Uruguay, Iran vs New Zealand. From yesterday (June 14): Germany crushed Curaçao emphatically — Nmecha scored in the 6th minute, then Musiala, Nathaniel Brown, Undav, and Havertz all added goals. Manuel Neuer became Germany's oldest-ever major tournament player at 40. Australia delivered the day's biggest shock: 2-0 over Türkiye, with Irankunda and Metcalfe on the scoresheet. Alexander Isak was Team of the Day for Sweden. England vs Croatia is Wednesday, June 17, in Dallas.</p>
-    <div class="watch"><strong>Watch:</strong> England vs Croatia Wednesday — the cultural centrepiece of the tournament for UK audiences. Spain's performance today as an early benchmark. Germany's goal-fest as a possible trend-setter.</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Israel / Lebanon <span class="tag ta">Changed</span></div>
   </div>
+  <p>Holding. Hezbollah continues to reject Israeli "freedom of movement" provisions. June 22 talks remain on calendar. The Geneva signing in 48 hours will force an explicit Hezbollah response to the deal text — once the MOU is public, they can no longer object to summaries.</p>
+  <div class="watch"><strong>Watch:</strong> Hezbollah statement before or after Geneva. June 22 talks.</div>
+</div>
 
-  <div class="card">
-    <h3><span class="tag ta">changed</span> SpaceX IPO / Musk Political Economy</h3>
-    <p>SPCX has continued climbing since the Day 1 close of $161 — trading between $171 and $183 today, giving SpaceX a market cap approaching $2.4 trillion. The structural question this raises hasn't been resolved but is becoming more pointed: Musk now has independent financial mass. His relationship with Trump was forged when he needed regulatory cover; he may need it less now. No public signal yet that anything has changed, but the incentive structure has shifted.</p>
-    <div class="watch"><strong>Watch:</strong> First full week of SPCX trading. Any Musk-Trump tension or unusual silence on geopolitical events where he previously commented.</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">SpaceX IPO / Musk <span class="tag ta">Changed</span></div>
   </div>
+  <p>SPCX closed approximately $201.80 on June 16, up from the $171–183 range at last update and 49% above the $135 IPO price from five days ago. Market cap well above $2.4 trillion; Musk is close to the trillionaire threshold depending on stake calculations. No structural political development yet, but the incentive architecture has shifted: Musk's combined SpaceX/xAI/Starlink power is now priced by the market even if not yet scrutinised by Washington.</p>
+  <div class="watch"><strong>Watch:</strong> Any regulatory decision touching Starlink; Congressional scrutiny of the combined structure; any public divergence from the Trump administration line.</div>
+</div>
 
-  <div class="card">
-    <h3><span class="tag ta">changed</span> UK Economic Stress</h3>
-    <p>The Iran deal changes the energy input picture materially. Brent at $83 is already below last week's close of $87, and Hormuz reopening should keep a lid on further spikes through at least the 60-day negotiation window. The FTSE is up around 1.1% on the day. The 30-year gilt yield remains elevated near 5.5%, but the combination of lower oil and a calmer geopolitical environment removes one significant pressure valve. The underlying UK fiscal picture hasn't changed, but the trajectory has improved.</p>
-    <div class="watch"><strong>Watch:</strong> Gilt yield response through the week. Whether the Chancellor uses the oil reprieve to adjust energy price cap projections.</div>
+<h2>The Social / Cultural Layer</h2>
+
+<div class="culture-block">
+  <h3>The anthemic chart — warm, collective, backward-looking, on a turbulent day</h3>
+  <p>The Apple Music UK chart is functioning today as a mood barometer for England's World Cup opener, and the reading is: anthemic. "Mr Brightside" by The Killers up four places to #33 — the perennial England football anthem, as reliable an indicator of tournament readiness as anything tracked by financial markets. Ella Langley's "Choosin' Texas" up two, a country track whose title alone does the work on a day when England plays in Dallas. Olivia Dean holds #1 with "Man I Need" and occupies three more positions in the top 20, maintaining the emotional-introspective current that has run through the chart for weeks.</p>
+  <p>These two registers — the anthemic and the vulnerable — coexisting before a big match is not unusual. What's more interesting is what they're both doing in the macro context. Iran, Makerfield, Ebola accelerating. The cultural output is almost entirely warm, comforting, communal. That's the divergence of the day: the news is turbulent; what people are listening to is designed to feel like being held.</p>
+</div>
+
+<div class="culture-block">
+  <h3>The Fleetwood Mac wave — memory as permission structure</h3>
+  <p>Fleetwood Mac has five songs moving simultaneously on the UK chart: "Everywhere" (+12), "Landslide" (new entry), "Little Lies" (new entry), "Go Your Own Way" (+5), "The Chain" (charting). This isn't residual catalogue drift. It's being driven by a TikTok format built on a "Silver Springs" / "Piano Man" mashup, structured around: <em>In your twenties, you'll be asked to [X]. It's very important that you say yes.</em> Lindsey Buckingham participated — posting a black-and-white photo of himself with the caption "In your twenties you'll be asked to play guitar in a band. It's very important that you say yes." The format went wide.</p>
+  <p>The content of the trend matters more than its surface. It's about retrospective permission-granting — encouraging the younger self to take the chance. Screen Rant frames it as audiences craving "realness" over AI-produced polish. Another reading: this is what diffuse material and political anxiety looks like in cultural output. Not protest, not defiance — Rumours played softly in a kitchen, fifty years later, as reassurance. The warm feeling is doing real emotional work.</p>
+</div>
+
+<div class="culture-block">
+  <h3>TikTok's World Cup sound is not the official anthem</h3>
+  <p>The FIFA-designated anthem for 2026 is "DNA" by Andrea Bocelli, David Guetta, Megan Thee Stallion, and EJAE. It is not what's running the internet. Shakira and Burna Boy's "Dai Dai" — the organic fan-side anthem — has 640,000 videos, 2 billion views, and is adding 49,000 new videos per day globally. Shakira has done this before (Waka Waka, 2010). Burna Boy gives it African diaspora reach that the institutional track doesn't approach. The curated official soundtrack lost to what actually captured the moment, again.</p>
+</div>
+
+<!-- Apple Music chart snapshot -->
+<div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:2rem;">
+  <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-3);margin-bottom:0.75rem;">Apple Music UK · Selected movements today</div>
+  <div class="chart-row"><div class="chart-pos">1</div><div class="chart-mv same">=</div><div class="chart-name"><span class="ar">Olivia Dean</span> <span class="tag tb">UK</span> <span class="ti">— Man I Need</span></div></div>
+  <div class="chart-row"><div class="chart-pos">4</div><div class="chart-mv same">=</div><div class="chart-name"><span class="ar">Sam Fender &amp; Olivia Dean</span> <span class="tag tb">UK</span> <span class="ti">— Rein Me In</span></div></div>
+  <div class="chart-row"><div class="chart-pos">5</div><div class="chart-mv same">=</div><div class="chart-name"><span class="ar">The Chemical Brothers</span> <span class="tag tb">UK</span> <span class="ti">— Go</span></div></div>
+  <div class="chart-row"><div class="chart-pos">7</div><div class="chart-mv up">+2</div><div class="chart-name"><span class="ar">Ella Langley</span> <span class="ti">— Choosin' Texas</span> <span style="font-size:0.75rem;color:var(--text-3);">(World Cup Texas)</span></div></div>
+  <div class="chart-row"><div class="chart-pos">33</div><div class="chart-mv up">+4</div><div class="chart-name"><span class="ar">The Killers</span> <span class="tag tb">UK</span> <span class="ti">— Mr. Brightside</span> <span style="font-size:0.75rem;color:var(--text-3);">(England anthemometer)</span></div></div>
+  <div class="chart-row"><div class="chart-pos">54</div><div class="chart-mv up">+6</div><div class="chart-name"><span class="ar">STELLA LEFTY</span> <span class="tag tb">UK</span> <span class="ti">— Boston</span></div></div>
+  <div class="chart-row"><div class="chart-pos">75</div><div class="chart-mv up">+5</div><div class="chart-name"><span class="ar">Ed Sheeran</span> <span class="tag tb">UK</span> <span class="ti">— Castle on the Hill</span></div></div>
+  <div class="chart-row"><div class="chart-pos">79</div><div class="chart-mv up">+12</div><div class="chart-name"><span class="ar">Fleetwood Mac</span> <span class="tag tb">UK</span> <span class="ti">— Everywhere</span> <span style="font-size:0.75rem;color:var(--text-3);">(Silver Springs TikTok wave)</span></div></div>
+  <div class="chart-row"><div class="chart-pos">86</div><div class="chart-mv up">+4</div><div class="chart-name"><span class="ar">Fleetwood Mac</span> <span class="tag tb">UK</span> <span class="ti">— Go Your Own Way</span></div></div>
+  <div class="chart-row"><div class="chart-pos">195</div><div class="chart-mv new-e">NEW</div><div class="chart-name"><span class="ar">Fleetwood Mac</span> <span class="tag tb">UK</span> <span class="ti">— Landslide</span></div></div>
+  <div class="chart-row"><div class="chart-pos">—</div><div class="chart-mv up">+49K/d</div><div class="chart-name"><span class="ar">Shakira &amp; Burna Boy</span> <span class="ti">— Dai Dai</span> · <a href="https://music.apple.com/gb/search?term=Dai+Dai+Shakira+Burna+Boy" style="font-size:0.78rem;">TikTok #1 globally</a> · 2B+ views</div></div>
+</div>
+
+<h2>Markets</h2>
+<div class="markets-grid">
+  <div class="market-tile">
+    <div class="m-label">FTSE 100</div>
+    <div class="m-value m-up">10,494</div>
+    <div class="m-note">+0.6% Jun 16 close. Iran deal energy relief holding.</div>
   </div>
-
-  <div class="card">
-    <h3><span class="tag ta">changed</span> Israel / Lebanon</h3>
-    <p>The Iran deal reportedly includes a 60-day ceasefire extension covering Lebanon — the current fragile freeze with Hezbollah gets another window. June 22 talks remain on calendar. Hezbollah has not formally accepted or rejected the pilot zones framework. Nothing structurally has changed, but the deal buys time here too, and the Lebanon provisions of the MOU will be worth reading when the text is published.</p>
-    <div class="watch"><strong>Watch:</strong> Hezbollah's response to the Lebanon provisions when text is released. June 22 talks.</div>
+  <div class="market-tile">
+    <div class="m-label">Nasdaq</div>
+    <div class="m-value m-dn">−1.15%</div>
+    <div class="m-note">Jun 16. Tech profit-taking after semiconductor rally.</div>
   </div>
-
-  <!-- SOCIAL / CULTURAL LAYER -->
-  <h2>The Social / Cultural Layer</h2>
-
-  <div class="card">
-    <h3>The Chart Is Frozen While History Moves</h3>
-    <p>Every single position in the Apple Music UK top 5 is unchanged today — five equals, Olivia Dean's "Man I Need" holding at number 1. That degree of chart stasis is unusual even on quiet news days. Today is not a quiet news day. The US-Iran war just ended via a digital signature, and the UK charts look exactly the same as they did yesterday. The cultural system isn't processing what happened. It's preloading for Wednesday.</p>
-    <p>The Fleetwood Mac surge tells you what people are doing emotionally ahead of England vs Croatia. "Everywhere" jumped 12 places to number 79; "Landslide" and "Little Lies" entered the chart as new entries; "Go Your Own Way" moved up 4. This is the same catalog-nostalgia reflex that runs before every England tournament match — reaching for the music of a particular idea of Englishness. The Chemical Brothers' "Go" sitting at number 5 fits the same pattern: pure kinetic energy, zero news awareness. <span class="tag tb">UK</span> The Killers' "Mr. Brightside" is also climbing (+4 to #33). The pre-match playlist is assembling itself.</p>
-    <p>On TikTok, the World Cup has completely colonised the soundscape. Shakira and Burna Boy's "Dai Dai" has 591,000 UGC videos and over one billion views. A dedicated FIFA World Cup 2026 version is growing at +39.8% day-on-day. This is the tournament's unofficial sound — and it's a Shakira-Burna Boy collaboration, not a particularly English or British thing. UK TikTok is participating in a global World Cup sound, not a national one.</p>
-    <p>UK Twitter is trending on Digital ID, Palestine Action, and Isak (Alexander Isak, Sweden / Liverpool, Team of the Day June 14). The Digital ID and Rights Act cluster points to a running civil liberties undercurrent amplified by the riot aftermath and surveillance debate. The geopolitical news — the Iran deal, Brent falling 5% — is entirely absent from UK trending discourse.</p>
-    <p>The divergence is the signal. A deal that will move energy bills, change UK import costs, and reopen global shipping lanes just signed, and the collective UK cultural mood is: Fleetwood Mac, football, and TikTok. That's not a failure of attention — England play in 48 hours, and that's a reasonable emotional priority. But it's worth naming: the macro shock has happened; the cultural register hasn't caught up. It usually does — once the petrol prices change.</p>
+  <div class="market-tile">
+    <div class="m-label">Brent Crude</div>
+    <div class="m-value m-neu">$83</div>
+    <div class="m-note">Stable. ~5% below pre-deal level. Watch Geneva.</div>
   </div>
-
-  <!-- RAW CULTURAL DATA -->
-  <div class="card" style="background: var(--bg-3);">
-    <h3 style="font-size:0.85rem; color: var(--text-2); font-weight: 600; margin-bottom: 0.85rem;">Apple Music UK Top 5</h3>
-    <table style="width:100%; font-size:0.85rem; border-collapse:collapse;">
-      <tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.35rem 0.5rem; width:2rem; color:var(--text-3); font-weight:700;">1</td>
-        <td style="padding:0.35rem 0.5rem;"><strong>Olivia Dean</strong> — Man I Need <span class="tag tb">UK</span></td>
-        <td style="padding:0.35rem 0.5rem; text-align:right; color:var(--text-3); font-size:0.78rem;">=</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.35rem 0.5rem; color:var(--text-3); font-weight:700;">2</td>
-        <td style="padding:0.35rem 0.5rem;"><strong>Drake</strong> — Janice STFU</td>
-        <td style="padding:0.35rem 0.5rem; text-align:right; color:var(--text-3); font-size:0.78rem;">=</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.35rem 0.5rem; color:var(--text-3); font-weight:700;">3</td>
-        <td style="padding:0.35rem 0.5rem;"><strong>Ariana Grande</strong> — hate that i made you love me</td>
-        <td style="padding:0.35rem 0.5rem; text-align:right; color:var(--text-3); font-size:0.78rem;">=</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.35rem 0.5rem; color:var(--text-3); font-weight:700;">4</td>
-        <td style="padding:0.35rem 0.5rem;"><strong>Sam Fender &amp; Olivia Dean</strong> — Rein Me In <span class="tag tb">UK</span></td>
-        <td style="padding:0.35rem 0.5rem; text-align:right; color:var(--text-3); font-size:0.78rem;">=</td>
-      </tr>
-      <tr>
-        <td style="padding:0.35rem 0.5rem; color:var(--text-3); font-weight:700;">5</td>
-        <td style="padding:0.35rem 0.5rem;"><strong>The Chemical Brothers</strong> — Go <span class="tag tb">UK</span></td>
-        <td style="padding:0.35rem 0.5rem; text-align:right; color:var(--text-3); font-size:0.78rem;">=</td>
-      </tr>
-    </table>
-    <p style="font-size:0.78rem; color:var(--text-3); margin-top:0.75rem; padding-top:0.6rem; border-top:1px solid var(--border);">
-      Notable movers: Fleetwood Mac "Everywhere" +12 (#79) · "Landslide" NEW (#195) · "Little Lies" NEW (#198) · "Go Your Own Way" +4 (#86) — pre-England World Cup surge. The Killers "Mr. Brightside" +4 (#33). Ed Sheeran, Elton John, Kings of Leon, Noah Kahan all climbing.
-    </p>
-
-    <h3 style="font-size:0.85rem; color:var(--text-2); font-weight: 600; margin-top:1rem; margin-bottom: 0.6rem;">TikTok Trending Sounds</h3>
-    <p style="font-size:0.85rem; color:var(--text-2); margin-bottom:0.4rem;">
-      <strong>Shakira &amp; Burna Boy</strong> — <em>Dai Dai</em> · 591K UGC videos · 1B+ views ·
-      <a href="https://music.apple.com/gb/search?term=Dai+Dai+Shakira+Burna+Boy" target="_blank">Apple Music</a>
-    </p>
-    <p style="font-size:0.85rem; color:var(--text-2);">
-      <strong>DAI DAI FIFA WORLD CUP 2026</strong> (Beckham Music) · 360K videos · +39.8% day-on-day ·
-      <a href="https://music.apple.com/gb/search?term=Dai+Dai+FIFA+World+Cup+2026" target="_blank">Apple Music</a>
-    </p>
-
-    <h3 style="font-size:0.85rem; color:var(--text-2); font-weight: 600; margin-top:1rem; margin-bottom: 0.6rem;">UK Twitter / X Trends</h3>
-    <table style="width:100%; font-size:0.83rem; border-collapse:collapse;">
-      <tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.3rem 0.5rem; font-weight:600; color:var(--text); white-space:nowrap;">Digital ID</td>
-        <td style="padding:0.3rem 0.5rem; color:var(--text-3);">Government digital identity proposals; civil liberties pushback amplified by post-riot surveillance debate</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.3rem 0.5rem; font-weight:600; color:var(--text); white-space:nowrap;">Palestine Action</td>
-        <td style="padding:0.3rem 0.5rem; color:var(--text-3);">Activist group targeting defence industry; ongoing legal proceedings</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:0.3rem 0.5rem; font-weight:600; color:var(--text); white-space:nowrap;">Isak</td>
-        <td style="padding:0.3rem 0.5rem; color:var(--text-3);">Alexander Isak (Sweden, now Liverpool) — Team of the Day June 14; World Cup discussion</td>
-      </tr>
-      <tr>
-        <td style="padding:0.3rem 0.5rem; font-weight:600; color:var(--text); white-space:nowrap;">VPNs / Rights Act</td>
-        <td style="padding:0.3rem 0.5rem; color:var(--text-3);">Digital rights cluster alongside Digital ID trend — civil liberties undercurrent</td>
-      </tr>
-    </table>
+  <div class="market-tile">
+    <div class="m-label">30Y Gilt</div>
+    <div class="m-value m-neu">~5.50%</div>
+    <div class="m-note">Elevated but stable. BoE Sep hike still priced.</div>
   </div>
+</div>
 
-  <!-- MARKETS -->
-  <h2>Markets</h2>
-  <div class="markets-grid">
-    <div class="market-tile">
-      <div class="m-label">FTSE 100</div>
-      <div class="m-value">~10,417</div>
-      <div class="m-change m-up">+1.1%</div>
-    </div>
-    <div class="market-tile">
-      <div class="m-label">Nasdaq</div>
-      <div class="m-value">+2.97%</div>
-      <div class="m-change m-up">Risk-on day</div>
-    </div>
-    <div class="market-tile">
-      <div class="m-label">Brent Crude</div>
-      <div class="m-value">$83</div>
-      <div class="m-change m-down">&#8722;4.9%</div>
-    </div>
-    <div class="market-tile">
-      <div class="m-label">30Y Gilt</div>
-      <div class="m-value">~5.50%</div>
-      <div class="m-change" style="color:var(--text-3);">Stable</div>
-    </div>
-  </div>
-  <p class="markets-note">Brent's 5% fall is the mechanical Hormuz-reopening trade. Watch whether it holds as the deal text emerges and Iran's hardliner response becomes clearer. FTSE intraday range 10,302–10,472.</p>
+<h2>Outside the Frame</h2>
+<div class="outside-frame">
+  <div class="of-label">South Africa · what the World Cup coverage is missing</div>
+  <p>More than 8,000 Malawian nationals — the majority women and children — are stranded at a transit site in Durban, waiting for buses to take them home. Since April, a South African movement called "March and March" has organised anti-immigrant demonstrations that turned violent, targeting nationals from Malawi, Zimbabwe, Mozambique, Nigeria, Somalia, and Ethiopia. A June 30 deadline — circulated by mob organisers — has created a fear dynamic: leave by then or face violence. South Africa's government is trying to source 1,000 buses. Malawi has declared the repatriation a national humanitarian emergency. The displacement has contracted regional cross-border trade by 22%.</p>
+  <p>The World Cup irony is direct: South Africa's 2010 tournament was marketed globally as Africa's moment, a continental coming-of-age. Now the continent's largest economy is expelling its neighbours in the weeks that FIFA anthems celebrate African solidarity. Modern Ghana's piece "The Love Is Gone" names this connection explicitly. <a href="https://panafricanvisions.com/2026/06/xenophobia-in-south-africa-what-the-2026-attacks-reveal-about-migration-governance-and-african-solidarity/">Pan African Visions</a> has the structural analysis. <a href="https://www.aljazeera.com/news/2026/6/11/thousands-of-malawians-flee-homes-in-south-africa-amid-xenophobic-threats">Al Jazeera's June 11 report</a> has the human detail. This is being tracked as a new thread from today.</p>
+</div>
 
-  <!-- OUTSIDE THE FRAME -->
-  <h2>Outside the Frame</h2>
+<h2>All Active Threads</h2>
+<div style="overflow-x:auto;">
+<table class="status-table">
+<thead>
+  <tr>
+    <th>Thread</th>
+    <th>Status</th>
+    <th>Current line</th>
+    <th>Last changed</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><strong>Iran / Hormuz</strong></td>
+    <td><span class="tag ta">Changed</span></td>
+    <td class="sl">Geneva Jun 19; contradictory US/Iran statements; deal text not released; Hezbollah rejecting Lebanon provisions; Khamenei credited with shaping MOU</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>Belfast / Makerfield</strong></td>
+    <td><span class="tag ta">Changed</span></td>
+    <td class="sl">Makerfield votes Jun 18; Burnham 5pt lead over Reform UK; PSNI: no paramilitary coordination; story now in Westminster</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>World Cup 2026</strong></td>
+    <td><span class="tag ta">Changed</span></td>
+    <td class="sl">Day 7; England vs Croatia tonight 9pm UK; France 3-1 Senegal; Norway 4-1 Iraq (Haaland brace)</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>Ebola — DRC / Uganda</strong></td>
+    <td><span class="tag ta">Changed</span></td>
+    <td class="sl">DRC 808 confirmed / 192 deaths (up from 676/136 on Jun 11); Uganda stable at 19/2; rate accelerating above prior baseline</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>UK Labour Leadership</strong></td>
+    <td><span class="tag ta">Changed</span></td>
+    <td class="sl">Makerfield polls Jun 18; Burnham expected to enter Parliament; 95+ MPs calling for Starmer departure; no formal challenge yet</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>Israel / Lebanon</strong></td>
+    <td><span class="tag ta">Changed</span></td>
+    <td class="sl">Hezbollah still rejecting pilot zones; Jun 22 talks on calendar; Geneva signing will force explicit Hezbollah response to full deal text</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>SpaceX IPO / Musk</strong></td>
+    <td><span class="tag ta">Changed</span></td>
+    <td class="sl">SPCX ~$201.80 Jun 16; +49% above IPO; approaching trillionaire threshold; no structural political development yet</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>South Africa Xenophobia</strong></td>
+    <td><span class="tag tp">New</span></td>
+    <td class="sl">8,000+ Malawians stranded in Durban; June 30 mob deadline; cross-border trade down 22%; national humanitarian emergency declared; repatriation underway</td>
+    <td class="lc">Jun 17</td>
+  </tr>
+  <tr>
+    <td><strong>UK Economic Stress</strong></td>
+    <td><span class="tag tg">Stable</span></td>
+    <td class="sl">FTSE ~10,494; Brent ~$83; 30Y gilt ~5.50%; Iran deal holding energy risk at bay; BoE Sep hike priced</td>
+    <td class="lc">Jun 15</td>
+  </tr>
+  <tr>
+    <td><strong>Colombia Runoff</strong></td>
+    <td><span class="tag tg">Stable</span></td>
+    <td class="sl">De la Espriella leads 52.6% vs Cepeda 44.8%; Jun 21 runoff unchanged</td>
+    <td class="lc">Jun 13</td>
+  </tr>
+  <tr>
+    <td><strong>European Defence / FCAS</strong></td>
+    <td><span class="tag tg">Stable</span></td>
+    <td class="sl">FCAS cancelled Jun 8-9; no new bilateral announcement; Combat Cloud survives</td>
+    <td class="lc">Jun 14</td>
+  </tr>
+</tbody>
+</table>
+</div>
 
-  <div class="card">
-    <h3>The Assassination Ban Is Gone — and the Deal Makes It Harder to Say So</h3>
-    <p>With the deal signed and the relief rally underway, a thread that deserves holding: <a href="https://www.justsecurity.org/135015/khamenei-killing-perilous-death-assassination-ban/" target="_blank">Just Security's piece</a> on Khamenei's killing and "the perilous death of the assassination ban" has received almost no mainstream attention. The US and Israel killed a sitting head of state on February 28. That's the first time a Western democratic power has done that in the modern era. The deal signing doesn't retroactively answer the question the killing raised — it actually makes the question harder to ask, because the narrative has moved to "it worked." The precedent is now set and apparently endorsed: killing a supreme leader can be part of a diplomatic sequence that ends with a deal. That logic will travel.</p>
-    <p>The Carnegie Endowment's May framing deserves reading alongside it: Iran may conclude that its Hormuz leverage is sufficient deterrence to quietly rebuild its nuclear capabilities without the active program Khamenei was pursuing. The new supreme leader faces different incentives. The 60-day uranium clock is negotiating time, not resolution — and the party most likely to exploit any ambiguity is Tehran's new leadership structure, not its hardliners.</p>
-  </div>
-
-  <!-- STATUS TABLE -->
-  <h2>Thread Status</h2>
-  <div style="overflow-x:auto;">
-    <table class="status-table">
-      <thead>
-        <tr>
-          <th>Thread</th>
-          <th>Status</th>
-          <th>Status Line</th>
-          <th>Last Changed</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="label-col">Iran / Hormuz</td>
-          <td><span class="tag ta">changed</span></td>
-          <td>Deal digitally signed Jun 14 by Trump, Vance &amp; Ghalibaf; formal Geneva signing Jun 19; Hormuz reopening; Brent $83 (-4.9%); 60-day uranium window; Iranian hardliners protesting; full text not yet public</td>
-          <td class="date-col">2026-06-15</td>
-        </tr>
-        <tr>
-          <td class="label-col">Belfast Riots</td>
-          <td><span class="tag ta">changed</span></td>
-          <td>7th night subdued; largest NI anti-racism rally in history Jun 13; story migrating to politics; Makerfield Jun 18 as political focus; PSNI confirms no paramilitary coordination</td>
-          <td class="date-col">2026-06-15</td>
-        </tr>
-        <tr>
-          <td class="label-col">World Cup 2026</td>
-          <td><span class="tag ta">changed</span></td>
-          <td>Day 5 (Jun 15): Spain, Belgium, Saudi Arabia, Iran on schedule; Germany crushed Curaçao Jun 14; Australia 2-0 Turkey (upset); Isak team of the day; England vs Croatia Jun 17 Dallas</td>
-          <td class="date-col">2026-06-15</td>
-        </tr>
-        <tr>
-          <td class="label-col">SpaceX IPO / Musk</td>
-          <td><span class="tag ta">changed</span></td>
-          <td>SPCX $171-183 range, up from $161 IPO close; market cap ~$2.4T; structural shift in political incentives underway but no public signal yet</td>
-          <td class="date-col">2026-06-15</td>
-        </tr>
-        <tr>
-          <td class="label-col">UK Economic Stress</td>
-          <td><span class="tag ta">changed</span></td>
-          <td>Brent $83 (-4.9%); FTSE ~10,417 (+1.1%); 30Y gilt ~5.50%; Iran deal removes energy spike risk; underlying fiscal picture unchanged</td>
-          <td class="date-col">2026-06-15</td>
-        </tr>
-        <tr>
-          <td class="label-col">Israel / Lebanon</td>
-          <td><span class="tag ta">changed</span></td>
-          <td>Iran deal includes 60-day Lebanon ceasefire extension; Hezbollah still not formally accepting pilot zones; Jun 22 talks on calendar</td>
-          <td class="date-col">2026-06-15</td>
-        </tr>
-        <tr>
-          <td class="label-col">UK Labour Leadership</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>Burnham leads 49% vs Reform 37% in Makerfield (Jun 18); formal challenge follows win; Starmer has not moved publicly</td>
-          <td class="date-col">2026-06-13</td>
-        </tr>
-        <tr>
-          <td class="label-col">Ebola — DRC/Uganda</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>DRC 676 confirmed / 136 deaths as of Jun 11; ~41 new cases/day; Uganda no new cases since Jun 5; PHEIC in force</td>
-          <td class="date-col">2026-06-13</td>
-        </tr>
-        <tr>
-          <td class="label-col">Taiwan Strait</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>No Chinese formal response to Jun 10 HIMARS drill; PLA activity not elevated; Trump arms deal pause continuing</td>
-          <td class="date-col">2026-06-10</td>
-        </tr>
-        <tr>
-          <td class="label-col">Ukraine Peace</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>Zelensky open letter to Putin (Jun 5) unanswered; US bandwidth consumed by Iran deal; talks structurally stalled</td>
-          <td class="date-col">2026-06-09</td>
-        </tr>
-        <tr>
-          <td class="label-col">UK Kirpan Debate</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>Parliament debated Jun 9; law unchanged; Belfast riots keeping immigration/culture-war frame active</td>
-          <td class="date-col">2026-06-09</td>
-        </tr>
-        <tr>
-          <td class="label-col">Syria Parliament</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>Sharaa's 70-seat list finalised; no new convening date; transition timeline slipping</td>
-          <td class="date-col">2026-06-09</td>
-        </tr>
-        <tr>
-          <td class="label-col">Russia / NATO / Romania</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>No incident since Jun 5 Constanta drone; NATO drone protocols in discussion</td>
-          <td class="date-col">2026-06-09</td>
-        </tr>
-        <tr>
-          <td class="label-col">Mearsheimer</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>Iran deal emerging without Netanyahu torpedoing it — partially complicates the Netanyahu-veto thesis; no new post or appearance</td>
-          <td class="date-col">2026-06-09</td>
-        </tr>
-        <tr>
-          <td class="label-col">Colombia Runoff</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>De la Espriella 52.6% vs Cepeda 44.8% (Jun 10-13); no major shift; runoff Jun 21</td>
-          <td class="date-col">2026-06-13</td>
-        </tr>
-        <tr>
-          <td class="label-col">European Defence / FCAS</td>
-          <td><span class="tag tg">stable</span></td>
-          <td>&#8364;100B FCAS cancelled Jun 8-9; Combat Cloud survives; no new bilateral announcement from France or Germany</td>
-          <td class="date-col">2026-06-14</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <p>Generated 15 June 2026 &middot; <a href="https://firaskh79.github.io/daily-digest/" target="_blank">firaskh79.github.io/daily-digest</a></p>
-  </div>
-
-</div><!-- /wrap -->
+<footer>
+  <span>Generated 17 June 2026</span>
+  <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
+</footer>
 
 <script type="text/plain" id="digestAudioScript">
-The US-Iran deal was signed digitally yesterday. Vice President Vance confirmed this morning that Trump, Vance, and Iran's parliament speaker Ghalibaf all put their names to it on Sunday. The Strait of Hormuz will reopen, the naval blockade is lifting, and a formal ceremony in Geneva is set for Friday. Brent crude fell nearly five percent to eighty-three dollars, and Wall Street opened up around three percent. But the full deal text still has not been released, and the central question — what happens to Iran's stockpile of sixty-percent-enriched uranium — is deferred into a sixty-day technical negotiation. That uranium is a short technical step from weapons-grade. The deal's real test is not Friday's ceremony; it is whether that negotiation produces something binding. Meanwhile, hardliners in Tehran and Mashhad are already in the streets chanting death to the compromiser, and the new supreme leader Mojtaba Khamenei has not publicly backed the agreement. Watch the deal text when it drops, and watch Iran's domestic politics more closely than the American coverage suggests you need to.
+The Iran-US memorandum of understanding gets formally signed in Geneva this Thursday. Forty-eight hours out, the picture is this: both governments have agreed to sign, but they are describing different deals. Iran says Israeli forces must leave Lebanon. The United States has not confirmed that. The actual text has not been released. What is agreed is a sixty-day negotiation window on nuclear issues, a freeze on enrichment during that window, and the Strait of Hormuz stays open. What is contested is everything else — particularly the Lebanon provisions, which Hezbollah is already rejecting. The key thing to watch before Thursday is whether Hezbollah issues any statement on the deal before the signing, because their position could force a public contradiction between what Iran signed and what its partner will accept on the ground.
 
-Closer to home, the Makerfield by-election is Thursday. Andy Burnham leads Reform U K forty-nine to thirty-seven in the latest polling. A win looks likely, but Reform pulling thirty-seven percent in a Labour heartland seat would itself be a landmark regardless of the outcome. If Burnham wins and enters Parliament, a formal Labour leadership challenge follows within weeks. Starmer's position depends partly on whether he moves on immigration before Burnham can define the issue. Three days.
+Tomorrow, Andy Burnham stands for Parliament in Makerfield. He goes in with a five-point lead over Reform UK, but in a post-Belfast context with a nationally mobilised Reform campaign, five points is not a safe lead. The seat was vacated specifically to give Burnham this path to Parliament and then to the Labour leadership. If he wins, the challenge to Keir Starmer accelerates. If Reform pulls an upset — unlikely but possible — it would be the most destabilising British political event in months. Results come through Thursday morning, about eight hours after England's World Cup opener concludes in Texas.
 
-On the cultural layer, every position in the Apple Music U K top five is unchanged today, including Olivia Dean at number one. The cultural system is not processing the end of the US-Iran war. It is preloading for England versus Croatia on Wednesday. Fleetwood Mac has entered the chart on two new tracks and is climbing on two others. TikTok is flooded with World Cup sounds, led by Shakira and Burna Boy's Dai Dai at over half a million videos and a billion views. The cultural mood and the macro news are on completely different frequencies right now, and that gap usually closes when the petrol prices change.
+Tonight at nine, England play Croatia in Dallas. Mister Brightside is already climbing the charts. Fleetwood Mac has five songs entering or rising simultaneously, driven by a TikTok trend about saying yes to things in your twenties. The global World Cup anthem on TikTok is Shakira and Burna Boy's Dai Dai — two billion views — not the official F-I-F-A track. And the overall mood in British music right now is warm, nostalgic, and anthemic. The actual news today is turbulent: Iran deal fragile, Ebola accelerating in the Congo, eight thousand Malawians stranded in Durban. But the cultural register is almost the opposite — comforting, collective, backward-looking. Watch whether tonight's result shifts that mood, or whether the warmth holds regardless of the score.
 </script>
 
 <script>
-(function() {
-  var utterance = null;
-  var speaking = false;
-  var paused = false;
-  var intervalId = null;
+(function(){
+  var script = document.getElementById('digestAudioScript');
+  if(!script) return;
+  var text = script.textContent.trim();
+  var words = text.split(/\s+/);
+  var wpm = 150;
+  var totalSec = Math.round(words.length / wpm * 60);
+  var synth = window.speechSynthesis;
+  var utt = null;
+  var playing = false;
+  var startTime, elapsed = 0;
+  var raf;
 
-  var scriptEl = document.getElementById('digestAudioScript');
-  var text = scriptEl ? scriptEl.textContent.trim() : '';
-  var playBtn = document.getElementById('playBtn');
-  var listenSub = document.getElementById('listenSub');
-  var audioProg = document.getElementById('audioProg');
+  function fmt(s){ return Math.floor(s/60)+':'+(s%60<10?'0':'')+Math.round(s%60); }
 
-  if (!text || !window.speechSynthesis) {
-    var bar = document.getElementById('listenBar');
-    if (bar) bar.style.display = 'none';
-    return;
+  function tick(){
+    if(!playing) return;
+    var now = (Date.now()-startTime)/1000 + elapsed;
+    var pct = Math.min(now/totalSec*100,100);
+    document.getElementById('progressBar').style.width = pct+'%';
+    document.getElementById('playerSub').textContent = fmt(Math.round(now))+' / '+fmt(totalSec);
+    if(pct < 100) raf = requestAnimationFrame(tick);
   }
 
-  function setProgress(p) {
-    if (audioProg) audioProg.style.width = Math.min(100, Math.max(0, p * 100)) + '%';
-  }
-
-  function startProgress(duration) {
-    var start = Date.now();
-    clearInterval(intervalId);
-    intervalId = setInterval(function() {
-      if (!paused) {
-        var elapsed = (Date.now() - start) / 1000;
-        setProgress(elapsed / duration);
-        if (elapsed >= duration) clearInterval(intervalId);
+  window.togglePlay = function(){
+    if(!synth) return;
+    if(playing){
+      synth.pause();
+      playing = false;
+      elapsed += (Date.now()-startTime)/1000;
+      cancelAnimationFrame(raf);
+      document.getElementById('playBtn').textContent = '▶';
+    } else {
+      if(utt && synth.paused){
+        synth.resume();
+      } else {
+        synth.cancel();
+        utt = new SpeechSynthesisUtterance(text);
+        utt.rate = 0.95; utt.pitch = 1; utt.lang = 'en-GB';
+        utt.onend = function(){ playing=false; elapsed=0; cancelAnimationFrame(raf);
+          document.getElementById('playBtn').textContent='▶';
+          document.getElementById('progressBar').style.width='100%'; };
+        synth.speak(utt);
       }
-    }, 200);
-  }
-
-  function togglePlay() {
-    if (!speaking && !paused) {
-      utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.0;
-      utterance.pitch = 1.0;
-      utterance.lang = 'en-GB';
-      var voices = window.speechSynthesis.getVoices();
-      var preferred = voices.find(function(v) { return v.lang && v.lang.startsWith('en-GB'); })
-                   || voices.find(function(v) { return v.lang && v.lang.startsWith('en'); });
-      if (preferred) utterance.voice = preferred;
-
-      var estDuration = text.length / 14;
-      utterance.onstart = function() {
-        speaking = true; paused = false;
-        playBtn.innerHTML = '&#9646;&#9646;';
-        listenSub.textContent = 'Playing…';
-        startProgress(estDuration);
-      };
-      utterance.onend = function() {
-        speaking = false; paused = false;
-        playBtn.innerHTML = '&#9654;';
-        listenSub.textContent = '~2 min \xb7 tap to play';
-        setProgress(1);
-        clearInterval(intervalId);
-      };
-      utterance.onerror = function() {
-        speaking = false; paused = false;
-        playBtn.innerHTML = '&#9654;';
-        listenSub.textContent = '~2 min \xb7 tap to play';
-        clearInterval(intervalId);
-      };
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(utterance);
-    } else if (speaking && !paused) {
-      window.speechSynthesis.pause();
-      paused = true; speaking = false;
-      playBtn.innerHTML = '&#9654;';
-      listenSub.textContent = 'Paused';
-    } else if (paused) {
-      window.speechSynthesis.resume();
-      paused = false; speaking = true;
-      playBtn.innerHTML = '&#9646;&#9646;';
-      listenSub.textContent = 'Playing…';
+      playing = true;
+      startTime = Date.now();
+      document.getElementById('playBtn').textContent = '⏸';
+      raf = requestAnimationFrame(tick);
     }
-  }
-
-  window.togglePlay = togglePlay;
-
-  if (window.speechSynthesis.onvoiceschanged !== undefined) {
-    window.speechSynthesis.onvoiceschanged = function() {};
-  }
+  };
 })();
 </script>
 

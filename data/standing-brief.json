@@ -4,119 +4,131 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Deal digitally signed Jun 14 by Trump, Vance & Ghalibaf; formal Geneva signing Jun 19; Hormuz reopening; Brent $83 (-4.9%); 60-day uranium window; Iranian hardliners protesting ('Death to the compromiser'); full text not yet public; Mojtaba Khamenei has not publicly backed deal",
+      "status_line": "Geneva signing Jun 19 in 48h; Pezeshkian confirmed Mojtaba Khamenei shaped MOU; deal text still not public; US/Iran contradictory statements on nuclear clause; Hezbollah rejecting Lebanon provisions; Brent ~$83 stable",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-15",
+      "last_changed": "2026-06-17",
       "expand_if": [
-        "Full deal text released and reveals uranium clause details",
-        "Iranian hardliner protests spread or escalate",
-        "Mojtaba Khamenei publicly opposes or endorses deal",
-        "Formal Geneva signing Jun 19 encounters surprise",
+        "Full deal text released before or after Geneva signing",
+        "Hezbollah statement on deal before Jun 19",
+        "Geneva signing cancelled or delayed",
+        "Iranian hardliner protests escalate beyond demonstrations",
+        "Mojtaba Khamenei publicly withdraws support for deal",
         "IAEA access conditions announced or disputed",
-        "Brent snaps back above $94 on deal collapse",
-        "New US or Israeli strike",
-        "60-day uranium negotiation breaks down"
+        "Brent snaps back above $94 on deal fragility",
+        "60-day nuclear negotiation breaks down"
       ]
     },
     {
       "id": "belfast-riots",
       "label": "Belfast Riots / UK Anti-Immigrant Violence",
       "status": "changed",
-      "status_line": "7th night subdued (Jun 15); story migrating from streets to politics; largest NI anti-racism rally in history Jun 13 (Amnesty); PSNI confirmed no paramilitary coordination; Makerfield Jun 18 becoming political focus; Burnham leading 49% vs Reform 37%",
+      "status_line": "Makerfield votes Jun 18; Burnham 5pt lead over Reform UK (Labour 49% vs Reform 44%, Opinium); PSNI confirmed no paramilitary coordination; story now fully in Westminster; Reform UK national apparatus deployed at constituency level",
       "first_seen": "2026-06-12",
-      "last_changed": "2026-06-15",
+      "last_changed": "2026-06-17",
       "expand_if": [
-        "Further nights of severe unrest",
-        "Fatality in riots",
-        "Government announces immigration policy change before Jun 18",
-        "Riots spread to additional English cities",
-        "Reform UK formally exploits riots as campaign platform",
-        "PSNI requests mainland UK police reinforcement",
-        "Burnham wins Makerfield and triggers leadership challenge"
+        "Makerfield result Jun 18 — Reform win is low-probability, high-consequence",
+        "Burnham wins and immediately signals leadership challenge",
+        "Burnham loses and Starmer survives — resetting the political timeline",
+        "Government announces immigration policy change",
+        "Further nights of severe unrest in NI or English cities"
       ]
     },
     {
       "id": "world-cup-2026",
       "label": "World Cup 2026",
       "status": "changed",
-      "status_line": "Day 5 (Jun 15): Spain, Belgium, Saudi Arabia, Iran on schedule; Germany crushed Curaçao Jun 14 (Nmecha 6', Musiala, Brown, Undav, Havertz); Neuer oldest Germany major tournament player at 40; Australia 2-0 Turkey (upset); Isak team of the day for Sweden; England vs Croatia Jun 17 Dallas",
+      "status_line": "Day 7 (Jun 17): England vs Croatia tonight 9pm UK (Arlington); France 3-1 Senegal; Norway 4-1 Iraq (Haaland brace); Germany -5 vs Curaçao Jun 14; Neuer oldest major-tournament Germany player at 40",
       "first_seen": "2026-06-10",
-      "last_changed": "2026-06-15",
+      "last_changed": "2026-06-17",
       "expand_if": [
-        "England match results (Jun 17, Jun 23, Jun 27)",
+        "England result tonight Jun 17",
+        "England subsequent matches Jun 23 and Jun 27",
         "Major off-field controversy",
-        "England reaches knockout round",
-        "England eliminated",
+        "England reaches knockout round or eliminated",
         "Cultural flashpoint around tournament"
       ]
     },
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "stable",
-      "status_line": "DRC 676 confirmed / 136 deaths as of Jun 11; ~41 new cases/day; 262 hospitalised in isolation; Uganda 19 confirmed / 2 deaths / no new cases since Jun 5; PHEIC in force; no escalation",
+      "status": "changed",
+      "status_line": "DRC 808 confirmed / 192 deaths as of Jun 15 (up from 676/136 on Jun 11 — 132 new confirmed cases, 56 new deaths in 4 days); Uganda 19 confirmed / 2 deaths / no new cases since Jun 5; $50M CEPI Bundibugyo countermeasures commitment; rate above prior baseline",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-06-13",
+      "last_changed": "2026-06-17",
       "expand_if": [
         "Cases confirmed outside DRC/Uganda",
-        "WHO raises alert further",
+        "DRC daily rate confirmed above 33 new cases/day sustained",
+        "WHO raises alert further or declares enhanced PHEIC",
         "Vaccine supply or pipeline announcement",
-        "DRC daily rate accelerates above 50 new cases/day",
         "Confirmed case in Burundi, Rwanda, or South Sudan"
-      ]
-    },
-    {
-      "id": "taiwan-strait-tension",
-      "label": "Taiwan Strait Tension",
-      "status": "stable",
-      "status_line": "China has not issued formal military response to Jun 10 HIMARS drill; PLA activity not elevated; Trump arms deal pause continuing; Western media coverage remains minimal",
-      "first_seen": "2026-06-10",
-      "last_changed": "2026-06-10",
-      "expand_if": [
-        "China issues formal military response or condemnation",
-        "Trump resumes or formally cancels Taiwan arms deal",
-        "PLA conducts counter-drill or naval exercise near Taiwan",
-        "US diplomatic statement on Taiwan independence or One China policy",
-        "Incident in Taiwan Strait (vessel, aircraft)"
       ]
     },
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "changed",
-      "status_line": "Iran deal includes 60-day Lebanon ceasefire extension; Hezbollah still rejecting pilot zones; Jun 22 talks on calendar; deal text not yet public so Lebanon provisions unconfirmed in detail",
+      "status_line": "Geneva Jun 19 signing will force explicit Hezbollah response to full deal text; Hezbollah still rejecting pilot zones / 'freedom of movement' provisions; Jun 22 talks on calendar; Lebanon provisions of MOU unconfirmed in detail",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-15",
+      "last_changed": "2026-06-17",
       "expand_if": [
-        "Hezbollah formally accepts or rejects pilot zones framework",
-        "Lebanon provisions of Iran MOU revealed and disputed",
-        "Major Israeli ground incursion",
-        "Hezbollah rocket barrage on Israeli cities",
-        "Comprehensive ceasefire agreement with withdrawal timelines",
-        "UNIFIL withdrawal",
+        "Hezbollah statement before or after Geneva signing",
+        "Lebanon provisions of MOU revealed in full text",
+        "Major Israeli ground incursion or Hezbollah rocket barrage",
+        "Comprehensive ceasefire agreement",
         "Jun 22 talks collapse or produce agreement"
       ]
     },
     {
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
-      "status": "stable",
-      "status_line": "Burnham 49% vs Reform 37% in Makerfield (Jun 18) — Bloomberg: 'poised to move quickly' if wins; 95+ MPs calling for Starmer departure; Streeting already resigned; Burnham positioned to Starmer's right on migration; no formal challenge yet",
+      "status": "changed",
+      "status_line": "Makerfield votes Jun 18; Burnham 5pt lead; expected to enter Parliament; 95+ MPs calling for Starmer departure; Streeting resigned; no formal challenge filed; no credible centre-left alternative to Burnham identified",
       "first_seen": "2026-06-03",
-      "last_changed": "2026-06-13",
+      "last_changed": "2026-06-17",
       "expand_if": [
-        "Burnham wins Makerfield by-election Jun 18",
-        "Formal leadership challenge triggered",
-        "Starmer resigns",
-        "Major gilt/sterling reaction to political news",
-        "Soft-left candidate emerges as Burnham alternative"
+        "Burnham wins Makerfield Jun 18",
+        "Burnham formally enters leadership race",
+        "Starmer resigns before challenge filed",
+        "Centre-left candidate emerges publicly",
+        "Major gilt/sterling reaction to political news"
+      ]
+    },
+    {
+      "id": "spacex-ipo",
+      "label": "SpaceX IPO / Musk Political Economy",
+      "status": "changed",
+      "status_line": "SPCX ~$201.80 Jun 16 (+49% above $135 IPO close Jun 12); market cap well above $2.4T; Musk approaching trillionaire threshold; no public structural political development yet",
+      "first_seen": "2026-06-13",
+      "last_changed": "2026-06-17",
+      "expand_if": [
+        "Musk officially declared trillionaire",
+        "Starlink or xAI regulatory decision affected by political relationship",
+        "SpaceX/Musk-Trump relationship publicly strained or amplified",
+        "Congressional scrutiny of combined SpaceX/xAI/Starlink power",
+        "Musk makes significant public statement deviating from Trump administration line"
+      ]
+    },
+    {
+      "id": "southafrica-xenophobia",
+      "label": "South Africa Xenophobia Crisis",
+      "status": "new",
+      "status_line": "8,000+ Malawians stranded in Durban; June 30 mob deadline for foreign nationals; cross-border trade down 22%; Malawi declared national humanitarian emergency; 'March and March' movement organised violence since April; repatriation underway by bus",
+      "first_seen": "2026-06-17",
+      "last_changed": "2026-06-17",
+      "expand_if": [
+        "June 30 deadline triggers mass violence",
+        "South African government formally criminalises or endorses movement",
+        "UNHCR or AU formal statement",
+        "Cross-border trade contraction exceeds 30%",
+        "Violence spreads to Johannesburg or Cape Town at scale",
+        "Malawi or Zimbabwe recalls ambassador"
       ]
     },
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
-      "status": "changed",
-      "status_line": "Brent $83 (-4.9% on Iran deal); FTSE ~10,417 (+1.1%); 30Y gilt ~5.50%; Iran deal removes energy spike risk for 60-day window; underlying fiscal picture unchanged; BoE September hike still priced",
+      "status": "stable",
+      "status_line": "FTSE ~10,494 (+0.6% Jun 16); Brent ~$83 stable in Iran-deal range; 30Y gilt ~5.50%; Iran deal holding energy-spike risk at bay for 60-day window; BoE September hike still priced",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-15",
       "expand_if": [
@@ -124,98 +136,8 @@
         "Energy price cap revision announced",
         "Recession officially confirmed",
         "Bank of England emergency action",
-        "Government fiscal statement",
         "Brent above $115 sustained",
         "Iran deal collapses and Brent spikes back"
-      ]
-    },
-    {
-      "id": "ukraine-peace-deadline",
-      "label": "Ukraine Peace Deadline",
-      "status": "stable",
-      "status_line": "Zelensky open letter to Putin proposing direct meeting (Jun 5); Putin unlikely to accept; US bandwidth consumed by Iran deal; talks structurally stalled",
-      "first_seen": "2026-06-01",
-      "last_changed": "2026-06-09",
-      "expand_if": [
-        "Trump formally withdraws from mediation",
-        "New public deadline set",
-        "Ceasefire agreed",
-        "Major US pressure on Ukraine (aid suspension)",
-        "Russia agrees to any settlement framework",
-        "Zelensky concedes territorial compromise publicly"
-      ]
-    },
-    {
-      "id": "uk-kirpan-debate",
-      "label": "UK Kirpan Debate",
-      "status": "stable",
-      "status_line": "Parliament debated Jun 9; law unchanged; Reform repeal pledge gaining online traction; Belfast riots keeping immigration/culture-war frame active",
-      "first_seen": "2026-06-04",
-      "last_changed": "2026-06-09",
-      "expand_if": [
-        "Government statement on kirpan exemption review",
-        "Backbench parliamentary bill to repeal exemption tabled",
-        "Further attacks on Sikh individuals",
-        "Farage or Reform make this a formal policy position"
-      ]
-    },
-    {
-      "id": "syria-parliament",
-      "label": "Syria Parliament",
-      "status": "stable",
-      "status_line": "Sharaa's 70-seat presidential quota list finalized and ready; no new date for convening announced; transition timeline slipping past Jun 8 target",
-      "first_seen": "2026-06-01",
-      "last_changed": "2026-06-09",
-      "expand_if": [
-        "Parliament convenes and passes significant legislation",
-        "Major walkout by minority representatives",
-        "Constitutional amendment proposed",
-        "Islamist-secular conflict in chamber",
-        "Kurdish/minority representation disputes escalate"
-      ]
-    },
-    {
-      "id": "russia-nato-romania",
-      "label": "Russia / NATO / Romania",
-      "status": "stable",
-      "status_line": "No incident since Jun 5 Constanta drone (confirmed Ukrainian origin); NATO drone-over-allied-territory protocols in discussion",
-      "first_seen": "2026-05-29",
-      "last_changed": "2026-06-09",
-      "expand_if": [
-        "Fatality from a drone strike in NATO territory",
-        "NATO Article 4 consultation formally invoked",
-        "NATO adopts shoot-down authority for drones over Allied territory",
-        "Russian conventional strike on NATO infrastructure"
-      ]
-    },
-    {
-      "id": "mearsheimer",
-      "label": "Mearsheimer",
-      "status": "stable",
-      "status_line": "Iran deal emerging without Netanyahu torpedoing it (so far) — partially complicates the Netanyahu-veto thesis; Netanyahu muted and not openly opposing deal; no new post or appearance",
-      "first_seen": "2026-05-22",
-      "last_changed": "2026-06-09",
-      "expand_if": [
-        "New post or appearance shifting the argument",
-        "Netanyahu publicly opposes or delays Iran MOU",
-        "Trump-Netanyahu public confrontation",
-        "Mainstream US policy community engages with the Netanyahu-veto argument",
-        "Deal collapses and Netanyahu's opposition is cited"
-      ]
-    },
-    {
-      "id": "spacex-ipo",
-      "label": "SpaceX IPO / Musk Political Economy",
-      "status": "changed",
-      "status_line": "SPCX $171-183 range Jun 15 (up from $161 IPO close Jun 12); market cap ~$2.4T; Musk approaching trillionaire territory; structural shift in political incentives underway — no public signal yet but watch for Musk-Trump dynamics",
-      "first_seen": "2026-06-13",
-      "last_changed": "2026-06-15",
-      "expand_if": [
-        "Musk officially declared trillionaire",
-        "Starlink or xAI regulatory decision affected by political relationship",
-        "SpaceX/Musk-Trump relationship publicly strained or amplified after IPO",
-        "Congressional scrutiny of Musk's combined SpaceX/xAI/Starlink power",
-        "Musk makes significant public statement deviating from Trump administration line"
       ]
     },
     {
@@ -236,14 +158,13 @@
       "id": "european-defence-fcas",
       "label": "European Defence / FCAS",
       "status": "stable",
-      "status_line": "FCAS €100B sixth-gen fighter officially cancelled Jun 8-9; Airbus-Dassault industrial dispute irresolvable; Combat Cloud survives; European air power future unresolved; no new bilateral announcement from France or Germany",
+      "status_line": "FCAS €100B sixth-gen fighter officially cancelled Jun 8-9; Airbus-Dassault industrial dispute irresolvable; Combat Cloud survives; European air power future unresolved; no new bilateral announcement",
       "first_seen": "2026-06-14",
       "last_changed": "2026-06-14",
       "expand_if": [
-        "France announces alternative bilateral fighter partnership (UK GCAP or Italy/Sweden)",
+        "France announces alternative bilateral fighter partnership",
         "Germany announces F-35 or US-alternative procurement at scale",
         "EU defence ministers joint communiqué on post-FCAS strategy",
-        "Macron or Merz public statement on European strategic autonomy implications",
         "UK invited into new Franco-German defence cooperation framework"
       ]
     }
@@ -274,43 +195,85 @@
       "id": "tucker-focus",
       "label": "Tucker Carlson",
       "retired_on": "2026-05-30",
-      "retired_because": "7 consecutive days stable; last changed 2026-05-23; no new episodes or significant statements detected since May 20 Thomas Massie/Israel lobby episode",
-      "revive_if": "New major episode on Iran deal, Russia, or Ukraine; public clash with Trump administration escalates; platform change; returns to pro-Trump framing"
+      "retired_because": "7 consecutive days stable; no new episodes or significant statements detected since May 20 Thomas Massie/Israel lobby episode",
+      "revive_if": "New major episode on Iran deal, Russia, or Ukraine; public clash with Trump administration escalates; platform change"
     },
     {
       "id": "snp-murrell",
       "label": "SNP Crisis / Murrell",
       "retired_on": "2026-06-02",
       "retired_because": "7 consecutive stable days since last_changed 2026-05-26; guilty plea entered the public record; no new developments. Sentencing June 23 is a known future event.",
-      "revive_if": "June 23 sentencing produces significant prison term or new allegations emerge in court; Nicola Sturgeon makes public statement; SNP leadership formally challenged; new financial allegations against other SNP figures"
+      "revive_if": "June 23 sentencing produces significant prison term or new allegations emerge in court; Nicola Sturgeon makes public statement; SNP leadership formally challenged"
     },
     {
       "id": "turkey-crackdown",
       "label": "Turkey — CHP / Opposition",
       "retired_on": "2026-06-09",
       "retired_because": "8 consecutive stable days since last_changed 2026-06-01; Imamoglu corruption trial and espionage trial both ongoing but no verdict, release, or major new development",
-      "revive_if": "Imamoglu released or verdict delivered; CHP headquarters sealed permanently; street protests escalate to general strike; EU or US formal condemnation; constitutional court ruling on Imamoglu detention"
+      "revive_if": "Imamoglu released or verdict delivered; CHP headquarters sealed permanently; street protests escalate to general strike; EU or US formal condemnation"
     },
     {
       "id": "sudan-famine",
       "label": "Sudan Famine",
       "retired_on": "2026-06-09",
       "retired_because": "8 consecutive stable days since last_changed 2026-06-01; lean season started June as projected; no new IPC famine declaration, funding announcement, or ceasefire",
-      "revive_if": "IPC declares additional famine zones beyond the 14 at risk; major donor announces significant new funding; Western government makes Sudan a diplomatic priority; ceasefire between SAF and RSF; humanitarian corridor agreement"
+      "revive_if": "IPC declares additional famine zones; major donor announces significant new funding; ceasefire between SAF and RSF; humanitarian corridor agreement"
     },
     {
       "id": "operation-southern-spear",
       "label": "Operation Southern Spear",
       "retired_on": "2026-06-11",
-      "retired_because": "7 consecutive stable days since last_changed 2026-06-04; 207 killed in 63 strikes as of Jun 3; no new independent investigation, casualty surge above threshold, ICC referral, or US congressional hearing surfaced today",
-      "revive_if": "Death toll surpasses 300 with renewed media coverage; ICC or ICJ referral; Guardian or equivalent major new investigation identifying victims; Colombian government statement on Southern Spear; US congressional oversight hearing scheduled"
+      "retired_because": "7 consecutive stable days since last_changed 2026-06-04; no new investigation, casualty surge, or ICC referral surfaced",
+      "revive_if": "Death toll surpasses 300 with renewed media coverage; ICC or ICJ referral; major new investigation identifying victims; US congressional oversight hearing"
     },
     {
       "id": "colombia-election-2026",
       "label": "Colombia Election 2026 (first round)",
       "retired_on": "2026-06-11",
-      "retired_because": "10 consecutive stable days since last_changed 2026-06-01; no major polling shift, violence, or candidate statement surfaced today; runoff not until Jun 21 — revived as colombia-runoff thread Jun 13",
-      "revive_if": "Superseded by colombia-runoff thread (opened Jun 13)"
+      "retired_because": "Superseded by colombia-runoff thread opened Jun 13",
+      "revive_if": "Superseded by colombia-runoff thread"
+    },
+    {
+      "id": "taiwan-strait-tension",
+      "label": "Taiwan Strait Tension",
+      "retired_on": "2026-06-17",
+      "retired_because": "7 consecutive stable days since last_changed 2026-06-10; PLA activity not elevated; Trump arms deal pause continuing; no new development surfaced",
+      "revive_if": "China issues formal military response; Trump resumes or formally cancels Taiwan arms deal; PLA conducts counter-drill or exercise near Taiwan; incident in Taiwan Strait"
+    },
+    {
+      "id": "ukraine-peace-deadline",
+      "label": "Ukraine Peace Deadline",
+      "retired_on": "2026-06-17",
+      "retired_because": "8 consecutive stable days since last_changed 2026-06-09; Zelensky open letter to Putin still unanswered; US bandwidth consumed by Iran deal; talks structurally stalled with no new development",
+      "revive_if": "Trump formally withdraws from mediation; new public deadline set; ceasefire agreed; major US pressure on Ukraine (aid suspension); Russia agrees to any settlement framework"
+    },
+    {
+      "id": "uk-kirpan-debate",
+      "label": "UK Kirpan Debate",
+      "retired_on": "2026-06-17",
+      "retired_because": "8 consecutive stable days since last_changed 2026-06-09; law unchanged; no new parliamentary bill, government statement, or Farage policy adoption",
+      "revive_if": "Government statement on kirpan exemption review; backbench parliamentary bill tabled; further attacks on Sikh individuals; Reform make this a formal policy position"
+    },
+    {
+      "id": "syria-parliament",
+      "label": "Syria Parliament",
+      "retired_on": "2026-06-17",
+      "retired_because": "8 consecutive stable days since last_changed 2026-06-09; Sharaa's 70-seat list ready but no new date for convening; transition timeline slipping with no movement",
+      "revive_if": "Parliament convenes; major walkout by minority representatives; constitutional amendment proposed; Kurdish/minority representation disputes escalate"
+    },
+    {
+      "id": "russia-nato-romania",
+      "label": "Russia / NATO / Romania",
+      "retired_on": "2026-06-17",
+      "retired_because": "8 consecutive stable days since last_changed 2026-06-09; no incident since Jun 5 Constanta drone; NATO drone protocols still in discussion with no resolution",
+      "revive_if": "Fatality from drone strike in NATO territory; NATO Article 4 consultation invoked; NATO adopts shoot-down authority; Russian conventional strike on NATO infrastructure"
+    },
+    {
+      "id": "mearsheimer",
+      "label": "Mearsheimer",
+      "retired_on": "2026-06-17",
+      "retired_because": "8 consecutive stable days since last_changed 2026-06-09; Iran deal emerged without Netanyahu torpedoing it, partially complicating the Netanyahu-veto thesis, but no new post or appearance from Mearsheimer",
+      "revive_if": "New post or appearance shifting the argument; Netanyahu publicly opposes Iran MOU; Trump-Netanyahu public confrontation; deal collapses and Netanyahu's opposition is cited"
     }
   ],
   "source_discoveries": [
@@ -330,50 +293,56 @@
       "name": "Asharq Al-Awsat (English)",
       "url": "https://english.aawsat.com",
       "found_on": "2026-06-01",
-      "why_interesting": "Gulf-backed pan-Arab daily; broke the Syria parliament June 8 story before other outlets; consistently ahead on Gulf/Arab political transitions and has senior source access in Beirut and Damascus"
+      "why_interesting": "Gulf-backed pan-Arab daily; broke the Syria parliament June 8 story before other outlets; consistently ahead on Gulf/Arab political transitions"
     },
     {
       "name": "Velina Tchakarova — Substack",
       "url": "https://velinatchakarova.substack.com",
       "found_on": "2026-06-04",
-      "why_interesting": "Vienna-based geopolitical analyst; Austrian/Central European perspective on Ukraine distinct from Washington/London axis; published 'The Ukraine War: The June Opening and Its Limits' Jun 4 — structural frame less invested in Ukrainian optimism or Western hand-wringing"
+      "why_interesting": "Vienna-based geopolitical analyst; Austrian/Central European perspective on Ukraine distinct from Washington/London axis"
     },
     {
       "name": "Alastair Crooke — Conflicts Forum Substack",
       "url": "https://conflictsforum.substack.com",
       "found_on": "2026-06-09",
-      "why_interesting": "Former senior British diplomat and MI6 officer; argues Hezbollah advises Iran rather than takes orders, inverting the proxy narrative; Jun 2026 pieces frame Iran's posture as calculated 'escalatory deterrence' not desperate deal-seeking — 'America's Suez Crisis' thesis argues US is in Britain's 1956 position; prediction confirmed within 24h on Jun 11"
+      "why_interesting": "Former senior British diplomat and MI6 officer; argues Hezbollah advises Iran rather than takes orders; 'America's Suez Crisis' thesis; Jun 2026 prediction confirmed within 24h on Jun 11"
     },
     {
       "name": "Trita Parsi — Quincy Institute / Responsible Statecraft",
       "url": "https://responsiblestatecraft.org",
       "found_on": "2026-06-11",
-      "why_interesting": "NIAC founder, Quincy Institute fellow; consistent frame since April that Trump is 'not in a dominant position' and that the fire-for-fire exchange is bounded by both sides' inability to afford full escalation; structurally different from both hawkish and catastrophist Western readings; Jun 12 'Warmongers in meltdown' piece names the Washington institutional battle most clearly"
+      "why_interesting": "NIAC founder, Quincy Institute fellow; consistent frame that Trump is not in a dominant position; Jun 12 'Warmongers in meltdown' piece names the Washington institutional battle most clearly"
     },
     {
       "name": "Foundation for Defense of Democracies (FDD)",
       "url": "https://www.fdd.org",
       "found_on": "2026-06-12",
-      "why_interesting": "Hawkish Washington think tank; published IAEA non-compliance analysis on Jun 12 at same moment Trump claimed deal — explicitly building the legal/institutional case for rejecting any Iran deal as insufficient; useful as real-time counter-weight to Quincy Institute framing; tracks closely with Netanyahu's likely response"
+      "why_interesting": "Hawkish Washington think tank; building legal/institutional case for rejecting any Iran deal as insufficient; tracks closely with Netanyahu's likely response"
     },
     {
       "name": "Hamidreza Azizi — SWP Berlin",
       "url": "https://www.swp-berlin.org",
       "found_on": "2026-06-14",
-      "why_interesting": "German-Iranian scholar at the German Institute for International and Security Affairs (SWP); noted that Iranian commentators are openly treating the birthday timing as a significant factor in deal delay — insider read on Iranian domestic discourse not available in Western press; cited by Fortune June 13"
+      "why_interesting": "German-Iranian scholar at SWP; insider read on Iranian domestic discourse; cited by Fortune June 13 on birthday timing factor in deal delay"
     },
     {
       "name": "Just Security",
       "url": "https://www.justsecurity.org",
       "found_on": "2026-06-15",
-      "why_interesting": "Published 'Khamenei's Killing and the Perilous Death of the Assassination Ban' — the only serious legal/ethical analysis of the Feb 28 killing's precedent implications; argument is that the deal's signing retroactively validates the assassination as diplomatic strategy; this frame is entirely absent from mainstream deal coverage"
+      "why_interesting": "Only serious legal/ethical analysis of the Khamenei assassination's precedent implications; argues deal's signing retroactively validates assassination as diplomatic strategy"
     },
     {
-      "name": "Carnegie Endowment for International Peace — Emissary",
+      "name": "Carnegie Endowment — Emissary",
       "url": "https://carnegieendowment.org/emissary",
       "found_on": "2026-06-15",
-      "why_interesting": "May 2026 piece 'Two Wars Later, Iran's Nuclear Question Is Still on the Table' argues Iran may conclude its Hormuz leverage is sufficient deterrence to quietly rebuild its nuclear program — the deal defers the nuclear question rather than resolving it; published before the digital signing and now more relevant"
+      "why_interesting": "May 2026 piece argues Iran may quietly rebuild nuclear programme once Hormuz leverage is established — the deal defers rather than resolves the nuclear question"
+    },
+    {
+      "name": "Pan African Visions",
+      "url": "https://panafricanvisions.com",
+      "found_on": "2026-06-17",
+      "why_interesting": "June 2026 structural analysis of South Africa xenophobia connecting the crisis to AfCFTA failure and ANC governance collapse; African-perspective framing entirely absent from Western coverage"
     }
   ],
-  "last_updated": "2026-06-15"
+  "last_updated": "2026-06-17"
 }

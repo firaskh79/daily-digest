@@ -1,47 +1,58 @@
 {
-  "date": "2026-06-15",
-  "mood_of_day": "escapist",
+  "date": "2026-06-17",
+  "mood_of_day": "energised",
   "macro": {
     "politics": [
       {
-        "headline": "US-Iran deal digitally signed — Vance confirms Trump, Vance, Ghalibaf signed Sunday; Geneva formal signing Jun 19",
-        "tags": ["iran", "trump", "hormuz", "deal"],
-        "sentiment": "cautiously optimistic (Western markets) / contested (Iranian domestic)",
-        "intensity": 9
+        "headline": "Iran-US MOU Geneva signing in 48 hours; deal text not yet public; US/Iran contradictory statements on nuclear clause and Lebanon",
+        "tags": ["iran", "us", "geneva", "nuclear", "hormuz"],
+        "sentiment": "cautious",
+        "intensity": 8
       },
       {
-        "headline": "Makerfield by-election Thursday — Burnham leads 49% vs Reform 37%; leadership challenge likely to follow win",
-        "tags": ["uk", "labour", "burnham", "reform", "immigration"],
-        "sentiment": "tense",
-        "intensity": 7
+        "headline": "Makerfield by-election June 18; Burnham 5pt lead over Reform UK; result expected to accelerate Labour leadership challenge",
+        "tags": ["uk-politics", "labour", "reform-uk", "burnham", "makerfield"],
+        "sentiment": "volatile",
+        "intensity": 8
       },
       {
-        "headline": "Belfast 7th night subdued; story migrating to political arena; Starmer has not moved on immigration",
-        "tags": ["belfast", "riots", "immigration", "uk"],
-        "sentiment": "uneasy calm",
-        "intensity": 5
+        "headline": "Six threads retired today after 7-8 days stable: Taiwan, Ukraine, Kirpan, Syria, Russia/NATO, Mearsheimer",
+        "tags": ["thread-management"],
+        "sentiment": "neutral",
+        "intensity": 1
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude -4.9% to $83 on Hormuz reopening news; FTSE +1.1%; Nasdaq +2.97%",
-        "tags": ["oil", "brent", "ftse", "markets", "iran"],
-        "sentiment": "relief rally",
-        "intensity": 8
+        "headline": "FTSE 100 10,494 (+0.6% Jun 16); Brent ~$83 stable; Nasdaq -1.15% tech profit-taking; 30Y gilt ~5.50%",
+        "tags": ["ftse", "brent", "nasdaq", "gilt"],
+        "sentiment": "stable",
+        "intensity": 3
       },
       {
-        "headline": "SPCX trading $171-183, up from $161 IPO close; SpaceX market cap ~$2.4T",
-        "tags": ["spacex", "musk", "ipo", "markets"],
+        "headline": "SPCX (SpaceX) ~$201.80 Jun 16, +49% above $135 IPO price; Musk approaching trillionaire threshold",
+        "tags": ["spacex", "ipo", "musk"],
         "sentiment": "bullish",
+        "intensity": 5
+      },
+      {
+        "headline": "South Africa xenophobia crisis: cross-border trade down 22%; 8,000+ Malawians displaced; June 30 mob deadline",
+        "tags": ["south-africa", "malawi", "trade", "xenophobia"],
+        "sentiment": "negative",
         "intensity": 6
       }
     ],
     "google_trends_uk": [
-      { "rank": 1, "term": "Digital ID", "volume_est": "high" },
-      { "rank": 2, "term": "Palestine Action", "volume_est": "high" },
-      { "rank": 3, "term": "Isak", "volume_est": "high" },
-      { "rank": 4, "term": "VPNs", "volume_est": "medium" },
-      { "rank": 5, "term": "Tunisia", "volume_est": "medium" }
+      { "rank": 1, "term": "England Croatia", "volume_est": "Very High" },
+      { "rank": 2, "term": "Makerfield by-election", "volume_est": "High" },
+      { "rank": 3, "term": "Andy Burnham", "volume_est": "High" },
+      { "rank": 4, "term": "Iran deal Geneva", "volume_est": "High" },
+      { "rank": 5, "term": "World Cup 2026", "volume_est": "Very High" },
+      { "rank": 6, "term": "Fleetwood Mac Silver Springs", "volume_est": "Moderate-High" },
+      { "rank": 7, "term": "France Senegal score", "volume_est": "Moderate" },
+      { "rank": 8, "term": "Norway Haaland World Cup", "volume_est": "Moderate" },
+      { "rank": 9, "term": "Ebola DRC", "volume_est": "Low" },
+      { "rank": 10, "term": "SpaceX stock price", "volume_est": "Moderate" }
     ],
     "pytrends_uk_live": []
   },
@@ -49,112 +60,88 @@
     "music": {
       "apple_music_uk_top5": [
         {
-          "pos": 1,
-          "artist": "Olivia Dean",
-          "title": "Man I Need",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["intimate", "longing"],
-          "theme_tags": ["relationship", "vulnerability"]
+          "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0,
+          "uk_artist": true, "mood_tags": ["emotional", "introspective"], "theme_tags": ["longing", "vulnerability"]
         },
         {
-          "pos": 2,
-          "artist": "Drake",
-          "title": "Janice STFU",
-          "change": 0,
-          "uk_artist": false,
-          "mood_tags": ["assertive", "confident"],
-          "theme_tags": ["rap", "confrontation"]
+          "pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0,
+          "uk_artist": false, "mood_tags": ["assertive"], "theme_tags": ["hip-hop"]
         },
         {
-          "pos": 3,
-          "artist": "Ariana Grande",
-          "title": "hate that i made you love me",
-          "change": 0,
-          "uk_artist": false,
-          "mood_tags": ["melancholic", "introspective"],
-          "theme_tags": ["heartbreak", "regret"]
+          "pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0,
+          "uk_artist": false, "mood_tags": ["melancholic"], "theme_tags": ["breakup"]
         },
         {
-          "pos": 4,
-          "artist": "Sam Fender & Olivia Dean",
-          "title": "Rein Me In",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["anthemic", "yearning"],
-          "theme_tags": ["collaboration", "uk-indie"]
+          "pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0,
+          "uk_artist": true, "mood_tags": ["anthemic", "emotional"], "theme_tags": ["collaboration", "brit-rock"]
         },
         {
-          "pos": 5,
-          "artist": "The Chemical Brothers",
-          "title": "Go",
-          "change": 0,
-          "uk_artist": true,
-          "mood_tags": ["energised", "euphoric"],
-          "theme_tags": ["electronic", "pre-match", "world-cup"]
+          "pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0,
+          "uk_artist": true, "mood_tags": ["energised", "electronic"], "theme_tags": ["dance", "rave"]
         }
       ],
       "tiktok_sounds": [
         {
-          "title": "Dai Dai",
-          "artist": "Shakira & Burna Boy",
-          "score": 989,
-          "videos": 591000,
-          "mood_tags": ["celebratory", "energised"],
-          "theme_tags": ["world-cup", "football", "global"]
+          "title": "Dai Dai", "artist": "Shakira & Burna Boy", "score": 988, "videos": 640631,
+          "mood_tags": ["celebratory", "anthemic"], "theme_tags": ["world-cup", "afrobeats", "latin"]
         },
         {
-          "title": "DAI DAI FIFA WORLD CUP 2026",
-          "artist": "Beckham Music & BECKXLKZ & Afro woodz",
-          "score": 988,
-          "videos": 360000,
-          "mood_tags": ["celebratory", "hype"],
-          "theme_tags": ["world-cup", "football", "official"]
+          "title": "Silver Springs / Piano Man mashup", "artist": "Fleetwood Mac / Billy Joel", "score": 970, "videos": 0,
+          "mood_tags": ["nostalgic", "warm"], "theme_tags": ["nostalgia-core", "in-your-20s-trend", "permission-granting"]
         }
       ]
     },
     "tiktok_formats": [
-      { "format": "World Cup reaction content", "theme_tags": ["football", "world-cup", "celebration"] },
-      { "format": "Dai Dai World Cup highlight edits", "theme_tags": ["football", "viral", "global"] }
+      {
+        "format": "'In your twenties, you'll be asked to [X]. It's very important that you say yes.' — retrospective permission-granting using Silver Springs / Piano Man mashup",
+        "theme_tags": ["nostalgia", "life-advice", "twenties", "self-permission"]
+      },
+      {
+        "format": "Dai Dai World Cup goal celebration videos — scoring then pointing at camera",
+        "theme_tags": ["world-cup", "celebration", "football"]
+      }
     ]
   },
   "threads": [
-    { "id": "iran-hormuz", "status": "changed", "status_line": "Deal digitally signed Jun 14; Geneva formal signing Jun 19; Brent $83 (-4.9%); 60-day uranium window; hardliners protesting", "last_changed": "2026-06-15" },
-    { "id": "belfast-riots", "status": "changed", "status_line": "7th night subdued; story migrating to politics; Makerfield Jun 18 as focus", "last_changed": "2026-06-15" },
-    { "id": "world-cup-2026", "status": "changed", "status_line": "Germany crushed Curaçao; Australia 2-0 Turkey upset; England vs Croatia Jun 17", "last_changed": "2026-06-15" },
-    { "id": "spacex-ipo", "status": "changed", "status_line": "SPCX $171-183 range; market cap ~$2.4T", "last_changed": "2026-06-15" },
-    { "id": "uk-economic-stress", "status": "changed", "status_line": "Brent $83 (-4.9%); FTSE +1.1%; 30Y gilt ~5.50%", "last_changed": "2026-06-15" },
-    { "id": "israel-lebanon", "status": "changed", "status_line": "Iran deal includes 60-day Lebanon ceasefire extension; Jun 22 talks on calendar", "last_changed": "2026-06-15" },
-    { "id": "uk-labour-leadership", "status": "stable", "status_line": "Burnham 49% vs Reform 37% in Makerfield Jun 18", "last_changed": "2026-06-13" },
-    { "id": "ebola-drc-uganda", "status": "stable", "status_line": "DRC 676 confirmed / 136 deaths; no escalation", "last_changed": "2026-06-13" },
-    { "id": "taiwan-strait-tension", "status": "stable", "status_line": "No Chinese response to Jun 10 HIMARS drill", "last_changed": "2026-06-10" },
-    { "id": "ukraine-peace-deadline", "status": "stable", "status_line": "Zelensky open letter unanswered; talks stalled", "last_changed": "2026-06-09" },
-    { "id": "uk-kirpan-debate", "status": "stable", "status_line": "Law unchanged; culture-war frame active", "last_changed": "2026-06-09" },
-    { "id": "syria-parliament", "status": "stable", "status_line": "No new convening date; timeline slipping", "last_changed": "2026-06-09" },
-    { "id": "russia-nato-romania", "status": "stable", "status_line": "No incident since Jun 5 Constanta drone", "last_changed": "2026-06-09" },
-    { "id": "mearsheimer", "status": "stable", "status_line": "Netanyahu muted on Iran deal; Netanyahu-veto thesis partially complicated", "last_changed": "2026-06-09" },
-    { "id": "colombia-runoff", "status": "stable", "status_line": "De la Espriella leads 52.6% vs Cepeda 44.8%; Jun 21 runoff", "last_changed": "2026-06-13" },
-    { "id": "european-defence-fcas", "status": "stable", "status_line": "FCAS cancelled Jun 8-9; no new bilateral announcement", "last_changed": "2026-06-14" }
+    { "id": "iran-hormuz", "status": "changed", "status_line": "Geneva Jun 19 in 48h; deal text not public; US/Iran contradictory statements; Hezbollah rejecting Lebanon provisions", "last_changed": "2026-06-17" },
+    { "id": "belfast-riots", "status": "changed", "status_line": "Makerfield votes Jun 18; Burnham 5pt lead over Reform UK; story in Westminster", "last_changed": "2026-06-17" },
+    { "id": "world-cup-2026", "status": "changed", "status_line": "Day 7; England vs Croatia tonight 9pm UK; France 3-1 Senegal; Norway 4-1 Iraq", "last_changed": "2026-06-17" },
+    { "id": "ebola-drc-uganda", "status": "changed", "status_line": "DRC 808/192; rate accelerating; Uganda stable 19/2", "last_changed": "2026-06-17" },
+    { "id": "israel-lebanon", "status": "changed", "status_line": "Hezbollah rejecting pilot zones; Jun 22 talks; Geneva forces explicit response", "last_changed": "2026-06-17" },
+    { "id": "uk-labour-leadership", "status": "changed", "status_line": "Makerfield Jun 18; Burnham expected to enter Parliament", "last_changed": "2026-06-17" },
+    { "id": "spacex-ipo", "status": "changed", "status_line": "SPCX ~$201.80 (+49% above IPO); approaching trillionaire threshold", "last_changed": "2026-06-17" },
+    { "id": "southafrica-xenophobia", "status": "new", "status_line": "8,000+ Malawians stranded Durban; June 30 deadline; 22% trade contraction; national emergency", "last_changed": "2026-06-17" },
+    { "id": "uk-economic-stress", "status": "stable", "status_line": "FTSE 10,494; Brent $83; gilt 5.50%", "last_changed": "2026-06-15" },
+    { "id": "colombia-runoff", "status": "stable", "status_line": "De la Espriella leads 52.6%; Jun 21 runoff unchanged", "last_changed": "2026-06-13" },
+    { "id": "european-defence-fcas", "status": "stable", "status_line": "FCAS cancelled; no new bilateral announcement", "last_changed": "2026-06-14" }
   ],
   "synthesis": {
-    "daily_theme": "The US-Iran war ended on a Sunday afternoon via digital signature — and UK culture didn't notice, because England play Croatia in 48 hours.",
-    "mechanism": "Iran deal triggered a mechanical relief trade (Brent -4.9%, equities up); UK cultural system is entirely preloaded for World Cup, absorbing geopolitical shock with near-zero cultural register.",
+    "daily_theme": "England's World Cup opener, Geneva 48 hours out, and Makerfield tomorrow: three events converging on the same 24-hour window, pulling UK collective attention in opposite directions simultaneously",
+    "mechanism": "The Iran deal creates the macro backdrop (Brent stable, gilt stable) while Makerfield determines UK domestic political trajectory; both are overshadowed culturally by the England match. The cultural response is warm and anthemic — a structural divergence from the turbulent macro picture.",
     "connections": [
       {
-        "macro_event": "US-Iran deal digitally signed; Hormuz to reopen",
-        "cultural_response": "UK Apple Music top 5 completely unchanged (five equals); Fleetwood Mac nostalgia surge; TikTok dominated by World Cup sounds",
-        "mechanism": "England vs Croatia in 48 hours overrides all other emotional bandwidth; Hormuz is geopolitically significant but has no immediate cultural hook for UK audiences",
-        "observation": "The chart stasis on a day this geopolitically consequential is remarkable. Brent fell 5% — that is a direct transmission to UK energy costs — and the cultural register is entirely elsewhere. Pre-match emotional loading with classic-rock nostalgia is the dominant mode. The macro shock will catch up with the cultural mood, but not today.",
+        "macro_event": "England vs Croatia World Cup opener",
+        "cultural_response": "Mr Brightside +4, Ella Langley Choosin' Texas +2, Dai Dai dominating TikTok globally",
+        "mechanism": "Tournament football activates latent national-identity cultural repertoire; the anthemic canon climbs automatically before the match",
+        "observation": "The chart today is functioning as collective mood preparation for the evening match. English football nationalism is highly legible in the streaming data before kick-off.",
         "confidence": "strong",
-        "signal_type": "divergence"
+        "signal_type": "leading"
       },
       {
-        "macro_event": "Belfast riots calming; Makerfield by-election Thursday",
-        "cultural_response": "UK Twitter trending on Digital ID, Palestine Action, civil liberties cluster",
-        "mechanism": "Post-riot political anxiety expressing through adjacent surveillance/rights discourse rather than explicit immigration debate",
-        "observation": "The Digital ID and Rights Act cluster suggests the riot aftermath is being processed through a civil liberties frame rather than an immigration frame — consistent with the counter-protest energy of the June 13 rally. This may indicate that the politics Burnham is betting on runs ahead of where the cultural mood actually is.",
+        "macro_event": "Widespread material anxiety: Iran deal uncertainty, Makerfield volatility, Ebola accelerating",
+        "cultural_response": "Fleetwood Mac 5 songs rising simultaneously via Silver Springs/Piano Man TikTok format; Olivia Dean holding #1",
+        "mechanism": "Cultural nostalgia as defensive register — reaching backward for comfort and permission when the forward view is uncertain",
+        "observation": "The Fleetwood Mac wave is the other half of today's cultural picture alongside the anthemic football surge. Both are warm and backward-looking. The coexistence is not a contradiction — it is two responses to the same underlying uncertainty.",
         "confidence": "moderate",
-        "signal_type": "leading"
+        "signal_type": "reactive"
+      },
+      {
+        "macro_event": "South Africa xenophobia crisis during World Cup",
+        "cultural_response": "Dai Dai by Shakira/Burna Boy dominates as actual fan anthem while FIFA promotes continental solidarity",
+        "mechanism": "Institutional tournament framing (continental unity) directly contradicted by continent's largest economy mass-expelling African nationals; the divergence is invisible in mainstream coverage",
+        "observation": "Burna Boy performing the World Cup's defining viral anthem while South Africa expels thousands of his compatriots is a structural irony that only surfaces if you're tracking both stories simultaneously.",
+        "confidence": "strong",
+        "signal_type": "divergence"
       }
     ]
   }
