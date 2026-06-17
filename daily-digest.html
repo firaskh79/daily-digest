@@ -52,40 +52,6 @@
   header h1 { font-size: 1.25rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
   header .date { font-size: 0.9rem; color: var(--text-3); margin-top: 0.2rem; }
 
-  .player-bar {
-    background: var(--bg-2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 0.85rem 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    margin-bottom: 2rem;
-    cursor: pointer;
-  }
-  .play-btn {
-    width: 36px; height: 36px;
-    background: var(--text);
-    color: var(--bg);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.75rem;
-    flex-shrink: 0;
-    border: none;
-    cursor: pointer;
-  }
-  .player-info { flex: 1; }
-  .player-title { font-size: 0.85rem; font-weight: 600; }
-  .player-sub { font-size: 0.78rem; color: var(--text-3); margin-top: 0.1rem; }
-  .player-progress {
-    flex: 2;
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .player-progress .bar { height: 100%; background: var(--text); width: 0%; transition: width 0.3s; }
-
   h2 {
     font-size: 0.72rem;
     font-weight: 700;
@@ -206,15 +172,6 @@
   <h1>Firas's Digest</h1>
   <div class="date">Wednesday, 17 June 2026</div>
 </header>
-
-<div class="player-bar" id="playerBar" onclick="togglePlay()">
-  <button class="play-btn" id="playBtn" aria-label="Play">▶</button>
-  <div class="player-info">
-    <div class="player-title">Listen to today's digest</div>
-    <div class="player-sub" id="playerSub">~2 min · Geneva, Makerfield, the anthemic chart</div>
-  </div>
-  <div class="player-progress"><div class="bar" id="progressBar"></div></div>
-</div>
 
 <h2>Today's Signal</h2>
 
@@ -449,67 +406,6 @@
   <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
 </footer>
 
-<script type="text/plain" id="digestAudioScript">
-The Iran-US memorandum of understanding gets formally signed in Geneva this Thursday. Forty-eight hours out, the picture is this: both governments have agreed to sign, but they are describing different deals. Iran says Israeli forces must leave Lebanon. The United States has not confirmed that. The actual text has not been released. What is agreed is a sixty-day negotiation window on nuclear issues, a freeze on enrichment during that window, and the Strait of Hormuz stays open. What is contested is everything else — particularly the Lebanon provisions, which Hezbollah is already rejecting. The key thing to watch before Thursday is whether Hezbollah issues any statement on the deal before the signing, because their position could force a public contradiction between what Iran signed and what its partner will accept on the ground.
-
-Tomorrow, Andy Burnham stands for Parliament in Makerfield. He goes in with a five-point lead over Reform UK, but in a post-Belfast context with a nationally mobilised Reform campaign, five points is not a safe lead. The seat was vacated specifically to give Burnham this path to Parliament and then to the Labour leadership. If he wins, the challenge to Keir Starmer accelerates. If Reform pulls an upset — unlikely but possible — it would be the most destabilising British political event in months. Results come through Thursday morning, about eight hours after England's World Cup opener concludes in Texas.
-
-Tonight at nine, England play Croatia in Dallas. Mister Brightside is already climbing the charts. Fleetwood Mac has five songs entering or rising simultaneously, driven by a TikTok trend about saying yes to things in your twenties. The global World Cup anthem on TikTok is Shakira and Burna Boy's Dai Dai — two billion views — not the official F-I-F-A track. And the overall mood in British music right now is warm, nostalgic, and anthemic. The actual news today is turbulent: Iran deal fragile, Ebola accelerating in the Congo, eight thousand Malawians stranded in Durban. But the cultural register is almost the opposite — comforting, collective, backward-looking. Watch whether tonight's result shifts that mood, or whether the warmth holds regardless of the score.
-</script>
-
-<script>
-(function(){
-  var script = document.getElementById('digestAudioScript');
-  if(!script) return;
-  var text = script.textContent.trim();
-  var words = text.split(/\s+/);
-  var wpm = 150;
-  var totalSec = Math.round(words.length / wpm * 60);
-  var synth = window.speechSynthesis;
-  var utt = null;
-  var playing = false;
-  var startTime, elapsed = 0;
-  var raf;
-
-  function fmt(s){ return Math.floor(s/60)+':'+(s%60<10?'0':'')+Math.round(s%60); }
-
-  function tick(){
-    if(!playing) return;
-    var now = (Date.now()-startTime)/1000 + elapsed;
-    var pct = Math.min(now/totalSec*100,100);
-    document.getElementById('progressBar').style.width = pct+'%';
-    document.getElementById('playerSub').textContent = fmt(Math.round(now))+' / '+fmt(totalSec);
-    if(pct < 100) raf = requestAnimationFrame(tick);
-  }
-
-  window.togglePlay = function(){
-    if(!synth) return;
-    if(playing){
-      synth.pause();
-      playing = false;
-      elapsed += (Date.now()-startTime)/1000;
-      cancelAnimationFrame(raf);
-      document.getElementById('playBtn').textContent = '▶';
-    } else {
-      if(utt && synth.paused){
-        synth.resume();
-      } else {
-        synth.cancel();
-        utt = new SpeechSynthesisUtterance(text);
-        utt.rate = 0.95; utt.pitch = 1; utt.lang = 'en-GB';
-        utt.onend = function(){ playing=false; elapsed=0; cancelAnimationFrame(raf);
-          document.getElementById('playBtn').textContent='▶';
-          document.getElementById('progressBar').style.width='100%'; };
-        synth.speak(utt);
-      }
-      playing = true;
-      startTime = Date.now();
-      document.getElementById('playBtn').textContent = '⏸';
-      raf = requestAnimationFrame(tick);
-    }
-  };
-})();
-</script>
 
 </body>
 </html>

@@ -748,25 +748,30 @@ function renderRegisterOverview(d) {
   const protests = d.streets?.protests || [];
   const acts = d.cultural_acts || [];
   const fairs = (d.art_scene?.current_fairs || []).filter(f=>f.running);
+  const top5 = d.culture?.music?.apple_music_uk_top5 || d.culture?.music?.apple_music_uk_top12 || [];
 
   const registers = [
     { key:'streets', icon:'✊', name:'Streets', heat: heat.streets,
-      status: protests.length ? `${protests.length} protest${protests.length>1?'s':''} tracked` : 'Quiet today' },
+      status: protests.length ? `${protests.length} protest${protests.length>1?'s':''} tracked` : '' },
     { key:'artists', icon:'🎤', name:'Cultural Acts', heat: heat.artists,
-      status: acts.length ? `${acts.length} intervention${acts.length>1?'s':''} recorded` : 'No acts recorded' },
+      status: acts.length ? `${acts.length} intervention${acts.length>1?'s':''} recorded` : '' },
     { key:'fashion', icon:'👗', name:'Fashion', heat: heat.fashion,
-      status: d.fashion?.trend_signal ? d.fashion.trend_signal.slice(0,60)+'…' : 'No fashion signals' },
+      status: d.fashion?.trend_signal ? d.fashion.trend_signal.slice(0,60)+'…' : '' },
     { key:'art', icon:'🎨', name:'Art Scene', heat: heat.art,
-      status: fairs.length ? fairs.map(f=>f.fair).join(' · ') : 'No active fairs' },
-    { key:'music', icon:'🎵', name:'Music', heat: 'active',
-      status: (() => { const t12 = d.culture?.music?.apple_music_uk_top12||[]; return t12[0] ? `#1 ${t12[0].artist}` : 'Chart data'; })() },
+      status: fairs.length ? fairs.map(f=>f.fair).join(' · ') : '' },
+    { key:'music', icon:'🎵', name:'Music', heat: top5.length ? 'active' : '',
+      status: top5[0] ? `#1 ${top5[0].artist}` : '' },
     { key:'spectacle', icon:'💎', name:'Spectacle', heat: heat.spectacle,
-      status: d.fashion?.met_gala?.theme ? `Met Gala: ${d.fashion.met_gala.theme}` : 'No major events' },
+      status: d.fashion?.met_gala?.theme ? `Met Gala: ${d.fashion.met_gala.theme}` : '' },
   ];
+
+  // Only show tiles that have actual data
+  const activeTiles = registers.filter(r => r.heat && r.status);
+  if (!activeTiles.length) return '';
 
   let html = `<div class="section-header"><span class="section-num">Registers</span><span class="section-title">Cultural Activity Today</span></div>`;
   html += `<div class="register-grid">`;
-  registers.forEach(r => {
+  activeTiles.forEach(r => {
     html += `<div class="register-tile ${r.heat}">
       <div class="reg-icon">${r.icon}</div>
       <div class="reg-name">${r.name}</div>
@@ -812,60 +817,62 @@ function renderStreets(d) {
 function renderFashionArt(d) {
   const fashion = d.fashion;
   const art = d.art_scene;
-  if (!fashion && !art) return '';
+
+  const metGala = fashion?.met_gala;
+  const hasFashion = metGala?.theme || (fashion?.designer_statements||[]).length || fashion?.trend_signal;
+  const hasArt = (art?.current_fairs||[]).length || (art?.notable_works_or_shows||[]).length || art?.auction_signals;
+
+  if (!hasFashion && !hasArt) return '';
 
   let html = `<div class="section-header"><span class="section-num">Fashion &amp; Art</span><span class="section-title">Industry Signals</span></div>`;
   html += `<div class="fashion-art-grid">`;
 
-  // Fashion panel
-  html += `<div class="fa-panel"><div class="fa-panel-label">👗 Fashion</div>`;
-  const metGala = fashion?.met_gala;
-  if (metGala?.theme) {
-    html += `<div class="fa-item">
-      <div class="fa-item-title">Met Gala ${metGala.year} — ${metGala.theme}</div>
-      ${(metGala.statements_made||[]).map(s=>`<div class="fa-item-body">${s}</div>`).join('')}
-      ${metGala.overall_reading ? `<div class="fa-signal">${metGala.overall_reading}</div>` : ''}
-    </div>`;
+  // Fashion panel — only render if there's content
+  if (hasFashion) {
+    html += `<div class="fa-panel"><div class="fa-panel-label">👗 Fashion</div>`;
+    if (metGala?.theme) {
+      html += `<div class="fa-item">
+        <div class="fa-item-title">Met Gala ${metGala.year} — ${metGala.theme}</div>
+        ${(metGala.statements_made||[]).map(s=>`<div class="fa-item-body">${s}</div>`).join('')}
+        ${metGala.overall_reading ? `<div class="fa-signal">${metGala.overall_reading}</div>` : ''}
+      </div>`;
+    }
+    (fashion?.designer_statements||[]).forEach(ds => {
+      html += `<div class="fa-item">
+        <div class="fa-item-title">${ds.designer_or_brand}</div>
+        <div class="fa-item-body">${ds.statement_or_collection}</div>
+        ${ds.political_valence ? `<span class="tag" style="${valenceStyle(ds.political_valence)}">${ds.political_valence}</span>` : ''}
+      </div>`;
+    });
+    if (fashion?.trend_signal) {
+      html += `<div class="fa-signal">${fashion.trend_signal}</div>`;
+    }
+    html += `</div>`;
   }
-  (fashion?.designer_statements||[]).forEach(ds => {
-    html += `<div class="fa-item">
-      <div class="fa-item-title">${ds.designer_or_brand}</div>
-      <div class="fa-item-body">${ds.statement_or_collection}</div>
-      ${ds.political_valence ? `<span class="tag" style="${valenceStyle(ds.political_valence)}">${ds.political_valence}</span>` : ''}
-    </div>`;
-  });
-  if (fashion?.trend_signal) {
-    html += `<div class="fa-signal">${fashion.trend_signal}</div>`;
-  }
-  if (!metGala?.theme && !(fashion?.designer_statements||[]).length && !fashion?.trend_signal) {
-    html += `<div style="color:var(--text-3);font-size:.83rem">No fashion signals tracked today.</div>`;
-  }
-  html += `</div>`;
 
-  // Art panel
-  html += `<div class="fa-panel"><div class="fa-panel-label">🎨 Art Scene</div>`;
-  (art?.current_fairs||[]).forEach(fair => {
-    html += `<div class="fa-item">
-      <div class="fa-item-title">${fair.fair}${fair.location ? ` · ${fair.location}` : ''}</div>
-      ${fair.curatorial_theme ? `<div class="fa-item-body" style="font-style:italic;margin-bottom:.3rem">"${fair.curatorial_theme}"</div>` : ''}
-      ${(fair.political_signals||[]).map(s=>`<div class="fa-item-body">· ${s}</div>`).join('')}
-      ${fair.market_signal ? `<div class="fa-signal">${fair.market_signal}</div>` : ''}
-    </div>`;
-  });
-  (art?.notable_works_or_shows||[]).forEach(w => {
-    html += `<div class="fa-item">
-      <div class="fa-item-title">${w.artist}${w.work_or_show ? ` — ${w.work_or_show}` : ''}</div>
-      ${w.venue ? `<div style="font-size:.76rem;color:var(--text-3);margin-bottom:.2rem">${w.venue}</div>` : ''}
-      <div class="fa-item-body">${w.political_reading}</div>
-    </div>`;
-  });
-  if (art?.auction_signals) {
-    html += `<div class="fa-signal">${art.auction_signals}</div>`;
+  // Art panel — only render if there's content
+  if (hasArt) {
+    html += `<div class="fa-panel"><div class="fa-panel-label">🎨 Art Scene</div>`;
+    (art?.current_fairs||[]).forEach(fair => {
+      html += `<div class="fa-item">
+        <div class="fa-item-title">${fair.fair}${fair.location ? ` · ${fair.location}` : ''}</div>
+        ${fair.curatorial_theme ? `<div class="fa-item-body" style="font-style:italic;margin-bottom:.3rem">"${fair.curatorial_theme}"</div>` : ''}
+        ${(fair.political_signals||[]).map(s=>`<div class="fa-item-body">· ${s}</div>`).join('')}
+        ${fair.market_signal ? `<div class="fa-signal">${fair.market_signal}</div>` : ''}
+      </div>`;
+    });
+    (art?.notable_works_or_shows||[]).forEach(w => {
+      html += `<div class="fa-item">
+        <div class="fa-item-title">${w.artist}${w.work_or_show ? ` — ${w.work_or_show}` : ''}</div>
+        ${w.venue ? `<div style="font-size:.76rem;color:var(--text-3);margin-bottom:.2rem">${w.venue}</div>` : ''}
+        <div class="fa-item-body">${w.political_reading}</div>
+      </div>`;
+    });
+    if (art?.auction_signals) {
+      html += `<div class="fa-signal">${art.auction_signals}</div>`;
+    }
+    html += `</div>`;
   }
-  if (!(art?.current_fairs||[]).length && !(art?.notable_works_or_shows||[]).length) {
-    html += `<div style="color:var(--text-3);font-size:.83rem">No art fair or gallery signals tracked today.</div>`;
-  }
-  html += `</div>`;
 
   html += `</div>`;
   return html;
