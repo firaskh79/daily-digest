@@ -1,167 +1,122 @@
 {
-  "date": "2026-06-18",
-  "mood_of_day": "conflicted",
+  "date": "2026-06-19",
+  "mood_of_day": "reflective",
   "macro": {
     "politics": [
       {
-        "headline": "Makerfield polls closed 10pm; Burnham expected to win and enter Parliament, triggering Labour leadership challenge against Starmer",
-        "tags": ["UK", "Labour", "Burnham", "Makerfield", "Reform UK"],
-        "sentiment": "tense/uncertain",
+        "headline": "Burgenstock ceremony postponed: Vance delayed, Iran citing Lebanon operations; 60-day nuclear clock started Jun 18 regardless",
+        "tags": ["Iran", "USA", "Vance", "Burgenstock", "Lebanon"],
+        "sentiment": "uncertain",
         "intensity": 9
       },
       {
-        "headline": "Iran-US MOU signing confirmed for Jun 19 at Bürgenstock; Hezbollah shifted from rejection to 'major achievement'; Israel won't withdraw from Lebanon",
-        "tags": ["Iran", "USA", "Geneva", "Hezbollah", "Lebanon", "Middle East"],
-        "sentiment": "cautiously positive / deeply complicated",
-        "intensity": 9
+        "headline": "Burnham wins Makerfield, now in Parliament; Labour leadership challenge to Starmer expected within 48-72h",
+        "tags": ["UK", "Labour", "Burnham", "Starmer", "Makerfield"],
+        "sentiment": "transitional",
+        "intensity": 8
       },
       {
-        "headline": "FDD: 'An MOU is not a peace deal' — Araghchi's own playbook says Iran wins when deal matters more to Washington",
-        "tags": ["Iran", "FDD", "counter-frame", "nuclear"],
-        "sentiment": "skeptical/critical",
+        "headline": "Ukraine's largest-ever drone attack on Moscow Jun 17-18: 555+ drones, Kapotnya refinery struck twice",
+        "tags": ["Ukraine", "Russia", "Moscow", "drones", "war"],
+        "sentiment": "escalatory",
+        "intensity": 8
+      },
+      {
+        "headline": "Hezbollah chief Qassem calls Iran deal great victory; demands Israeli withdrawal as condition for formal talks",
+        "tags": ["Hezbollah", "Iran", "Israel", "Lebanon", "ceasefire"],
+        "sentiment": "confrontational",
         "intensity": 7
-      },
-      {
-        "headline": "SpaceX SPCX down 15% from ATH ($225→$192) in 48h — profit-taking, no structural news",
-        "tags": ["SpaceX", "Musk", "IPO", "markets"],
-        "sentiment": "neutral/corrective",
-        "intensity": 5
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude at $79.49 — down $4 on week as Iran deal priced in pre-signing; 30Y gilt at 5.47% / 10Y at 4.80% (easing)",
-        "tags": ["Brent", "oil", "Iran", "gilts", "UK"],
-        "sentiment": "relief/cautious positive",
-        "intensity": 7
-      },
-      {
-        "headline": "Shell and BP both down 1%+ as energy stocks reprice on Hormuz normalisation expectations",
-        "tags": ["FTSE", "Shell", "BP", "energy"],
-        "sentiment": "negative for energy sector",
+        "headline": "Brent crude $78.72 — stable despite Burgenstock postponement; market treating delay as procedural",
+        "tags": ["Brent", "oil", "Iran", "energy"],
+        "sentiment": "stable",
         "intensity": 5
       },
       {
-        "headline": "Nasdaq opened at 26,494; FTSE 100 at 10,504",
-        "tags": ["Nasdaq", "FTSE", "markets"],
-        "sentiment": "stable",
+        "headline": "BoE holds rates; UK 10Y gilt 4.76% easing; political risk not yet priced into UK assets",
+        "tags": ["BoE", "UK", "gilts", "interest rates"],
+        "sentiment": "calm",
+        "intensity": 4
+      },
+      {
+        "headline": "FTSE 100 ~10,510 open; Nasdaq 26,517 Jun 18 close",
+        "tags": ["FTSE", "Nasdaq", "markets"],
+        "sentiment": "neutral",
         "intensity": 3
       }
     ],
     "google_trends_uk": [
-      {"rank": 1, "term": "Makerfield by-election result", "volume_est": "very high"},
-      {"rank": 2, "term": "England Croatia World Cup", "volume_est": "very high"},
-      {"rank": 3, "term": "Andy Burnham", "volume_est": "high"},
-      {"rank": 4, "term": "Jude Bellingham record", "volume_est": "high"},
-      {"rank": 5, "term": "Iran deal Geneva", "volume_est": "high"},
-      {"rank": 6, "term": "Fleetwood Mac Stranger Things", "volume_est": "high"},
-      {"rank": 7, "term": "Harry Kane goals", "volume_est": "high"},
-      {"rank": 8, "term": "Farage Reform Makerfield", "volume_est": "medium-high"},
-      {"rank": 9, "term": "Brent oil price", "volume_est": "medium"},
-      {"rank": 10, "term": "SpaceX stock price", "volume_est": "medium"}
-    ],
-    "google_trends_global": [
-      {"rank": 1, "term": "FIFA World Cup 2026", "volume_est": "very high", "note": "tournament in full swing"},
-      {"rank": 2, "term": "England vs Croatia", "volume_est": "very high", "note": "4-2 result driving global searches"},
-      {"rank": 3, "term": "Jude Bellingham", "volume_est": "very high", "note": "fastest WC goal in tournament history"},
-      {"rank": 4, "term": "Messi World Cup", "volume_est": "high", "note": "Argentina opening match interest"},
-      {"rank": 5, "term": "Iran US deal Geneva", "volume_est": "high", "note": "MOU signing tomorrow"},
-      {"rank": 6, "term": "Harry Kane", "volume_est": "high", "note": "equalled England WC scoring record"},
-      {"rank": 7, "term": "Dai Dai World Cup song", "volume_est": "high", "note": "Shakira/Burna Boy 1B+ TikTok views"},
-      {"rank": 8, "term": "Hantavirus", "volume_est": "medium-high", "note": "new public health concern entering global top 25"},
-      {"rank": 9, "term": "SpaceX SPCX stock", "volume_est": "medium", "note": "15% pullback from ATH"},
-      {"rank": 10, "term": "Formula 1", "volume_est": "medium", "note": "entering global top 25 for first time this dataset period"}
+      {"rank": 1, "term": "Moscow", "volume_est": "very high - Ukraine drone attack on Moscow oil refinery"},
+      {"rank": 2, "term": "Victor Munoz", "volume_est": "high - Liverpool hijacks Newcastle signing from Osasuna"},
+      {"rank": 3, "term": "GTA 6", "volume_est": "high - pre-orders open June 25 announcement"},
+      {"rank": 4, "term": "Jamie Vardy", "volume_est": "medium - transfer/retirement speculation"},
+      {"rank": 5, "term": "Piers", "volume_est": "medium - media commentary context"},
+      {"rank": 6, "term": "Makerfield", "volume_est": "high - Burnham wins by-election"},
+      {"rank": 7, "term": "Burgenstock", "volume_est": "medium - Iran deal ceremony postponed"}
     ],
     "pytrends_uk_live": []
   },
   "culture": {
     "music": {
       "apple_music_uk_top5": [
-        {
-          "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0,
-          "uk_artist": true, "mood_tags": ["intimate", "longing"], "theme_tags": ["love", "indie-soul"]
-        },
-        {
-          "pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0,
-          "uk_artist": false, "mood_tags": ["confrontational", "assertive"], "theme_tags": ["rap", "beef"]
-        },
-        {
-          "pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0,
-          "uk_artist": false, "mood_tags": ["melancholic", "regretful"], "theme_tags": ["pop", "breakup"]
-        },
-        {
-          "pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0,
-          "uk_artist": true, "mood_tags": ["anthemic", "emotional"], "theme_tags": ["indie-rock", "collaboration"]
-        },
-        {
-          "pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0,
-          "uk_artist": true, "mood_tags": ["energised", "driving"], "theme_tags": ["electronic", "dance"]
-        }
+        {"pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0, "uk_artist": true, "mood_tags": ["intimate", "longing"], "theme_tags": ["love", "need"]},
+        {"pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0, "uk_artist": false, "mood_tags": ["assertive", "confrontational"], "theme_tags": ["relationships"]},
+        {"pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0, "uk_artist": false, "mood_tags": ["regret", "vulnerability"], "theme_tags": ["relationships", "guilt"]},
+        {"pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0, "uk_artist": true, "mood_tags": ["nostalgic", "warm"], "theme_tags": ["partnership"]},
+        {"pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0, "uk_artist": true, "mood_tags": ["energetic", "escapist"], "theme_tags": ["movement", "release"]}
+      ],
+      "notable_movers": [
+        {"pos": 79, "artist": "Fleetwood Mac", "title": "Everywhere", "change": 12, "mood_tags": ["euphoric", "nostalgic"], "theme_tags": ["romance", "optimism"]},
+        {"pos": 83, "artist": "SIENNA SPIRO", "title": "Die On This Hill", "change": 11, "uk_artist": true, "mood_tags": ["defiant", "emotional"], "theme_tags": ["identity"]},
+        {"pos": 86, "artist": "Fleetwood Mac", "title": "Go Your Own Way", "change": 4, "mood_tags": ["defiant", "nostalgic"], "theme_tags": ["separation"]},
+        {"pos": 121, "artist": "Justin Bieber", "title": "Sorry", "change": 26, "mood_tags": ["regret", "pleading"], "theme_tags": ["apology"]},
+        {"pos": 195, "artist": "Fleetwood Mac", "title": "Landslide", "change": "NEW", "mood_tags": ["reflective", "uncertain", "transitional"], "theme_tags": ["change", "seasons", "uncertainty"]},
+        {"pos": 198, "artist": "Fleetwood Mac", "title": "Little Lies", "change": "NEW", "mood_tags": ["bittersweet", "nostalgic"], "theme_tags": ["self-deception"]}
       ],
       "tiktok_sounds": [
-        {
-          "title": "Dai Dai", "artist": "Shakira & Burna Boy", "score": 988, "videos": 688417,
-          "mood_tags": ["celebratory", "global", "festive"], "theme_tags": ["World Cup", "football", "FIFA 2026"]
-        },
-        {
-          "title": "DAI DAI FIFA WORLD CUP 2026", "artist": "Beckham Music / BECKXLKZ", "score": 985, "videos": 462555,
-          "mood_tags": ["anthemic", "tournament"], "theme_tags": ["World Cup", "football"]
-        },
-        {
-          "title": "Fractures of Reality", "artist": "Aetherion Soundscapes", "score": 979, "videos": 447325,
-          "mood_tags": ["anxious", "ambient", "atmospheric"], "theme_tags": ["uncertainty", "geopolitical", "background"]
-        },
-        {
-          "title": "MAFIA", "artist": "Soothewave", "score": 980, "videos": 206074,
-          "mood_tags": ["dark", "intense", "ambient"], "theme_tags": ["mood", "dark-aesthetic"]
-        }
+        {"title": "Paywalled data", "artist": "tokchart.com requires subscription", "score": 0, "videos": 0, "mood_tags": [], "theme_tags": []}
       ]
     },
     "tiktok_formats": [
-      {"format": "World Cup reaction / celebration content", "theme_tags": ["football", "tournament", "national-pride"]},
-      {"format": "Stranger Things finale emotional response / Fleetwood Mac Landslide moments", "theme_tags": ["nostalgia", "endings", "TV", "Fleetwood Mac"]},
-      {"format": "Ambient sound / 'Fractures of Reality' backdrop videos", "theme_tags": ["anxiety", "uncertainty", "Geneva", "waiting"]}
+      {"format": "Fleetwood Mac nostalgia edits (Stranger Things residual effect)", "theme_tags": ["nostalgia", "transition", "uncertainty"]},
+      {"format": "World Cup reaction content (non-England match day)", "theme_tags": ["football", "global", "anticipation"]},
+      {"format": "GTA 6 pre-order countdown content", "theme_tags": ["gaming", "anticipation", "youth culture"]}
     ]
   },
   "threads": [
-    {"id": "iran-hormuz", "status": "changed", "status_line": "Geneva signing Jun 19 confirmed; Brent $79.49; Hezbollah pivoted to 'major achievement'; FDD: MOU ≠ peace deal", "last_changed": "2026-06-18"},
-    {"id": "belfast-riots", "status": "changed", "status_line": "Makerfield polls closed; Burnham 5–12pt lead; result overnight; YouGov: Burnham favourability −11 nationally", "last_changed": "2026-06-18"},
-    {"id": "world-cup-2026", "status": "changed", "status_line": "England 4–2 Croatia; Kane brace; Bellingham historic record; Dai Dai 1B+ views", "last_changed": "2026-06-18"},
-    {"id": "ebola-drc-uganda", "status": "stable", "status_line": "808/192 DRC unchanged; Uganda stable; no cases outside region", "last_changed": "2026-06-17"},
-    {"id": "israel-lebanon", "status": "changed", "status_line": "Hezbollah: deal 'major achievement' + cash injection expected; Israel won't leave Lebanon; Jun 22 talks", "last_changed": "2026-06-18"},
-    {"id": "uk-labour-leadership", "status": "changed", "status_line": "Burnham expected in Parliament tonight; challenge to Starmer within 48–72h", "last_changed": "2026-06-18"},
-    {"id": "spacex-ipo", "status": "changed", "status_line": "SPCX ~$192, down 15% from ATH in 48h; profit-taking", "last_changed": "2026-06-18"},
-    {"id": "southafrica-xenophobia", "status": "stable", "status_line": "Repatriation underway; Jun 30 deadline intact; trade −22%", "last_changed": "2026-06-17"},
-    {"id": "uk-economic-stress", "status": "stable", "status_line": "FTSE 10,504; Brent $79.49; 30Y gilt 5.47%; easing", "last_changed": "2026-06-15"},
-    {"id": "colombia-runoff", "status": "stable", "status_line": "De la Espriella ~50% vs Cepeda ~43%; runoff Sunday Jun 21", "last_changed": "2026-06-13"},
-    {"id": "european-defence-fcas", "status": "stable", "status_line": "FCAS cancelled; no new development", "last_changed": "2026-06-14"}
+    {"id": "iran-hormuz", "status": "changed", "status_line": "Burgenstock POSTPONED; Vance delayed; Iran using Lebanon as leverage; 60-day window started Jun 18; Brent $78.72", "last_changed": "2026-06-19"},
+    {"id": "israel-lebanon", "status": "changed", "status_line": "Hezbollah: deal great victory; Iran demanding Israel withdrawal; Jun 22 talks on calendar", "last_changed": "2026-06-19"},
+    {"id": "uk-labour-leadership", "status": "changed", "status_line": "Burnham WON Makerfield; in Parliament; challenge to Starmer expected 48-72h", "last_changed": "2026-06-19"},
+    {"id": "ebola-drc-uganda", "status": "changed", "status_line": "837/196 DRC (up from 808/192); 29 new cases Jun 17; not declining", "last_changed": "2026-06-19"},
+    {"id": "ukraine-moscow-drone", "status": "new", "status_line": "Largest-ever drone attack on Moscow Jun 17-18; 555+ drones; Kapotnya refinery hit twice", "last_changed": "2026-06-19"},
+    {"id": "world-cup-2026", "status": "stable", "status_line": "Jun 19 fixtures: USA v Australia, Scotland v Morocco, Brazil v Haiti, Turkey v Paraguay", "last_changed": "2026-06-18"},
+    {"id": "spacex-ipo", "status": "stable", "status_line": "SPCX $185; above $180 floor", "last_changed": "2026-06-18"},
+    {"id": "southafrica-xenophobia", "status": "stable", "status_line": "586+ Nigerians repatriated; Jun 30 deadline 11 days away", "last_changed": "2026-06-17"},
+    {"id": "uk-economic-stress", "status": "stable", "status_line": "FTSE ~10,510; Brent $78.72; 10Y gilt 4.76%; BoE holds", "last_changed": "2026-06-15"},
+    {"id": "colombia-runoff", "status": "stable", "status_line": "De la Espriella ~44% vs Cepeda ~41%; runoff Sunday Jun 21", "last_changed": "2026-06-13"},
+    {"id": "european-defence-fcas", "status": "stable", "status_line": "FCAS cancelled; no post-FCAS framework", "last_changed": "2026-06-14"}
   ],
   "synthesis": {
-    "daily_theme": "The world is waiting in two different registers simultaneously: one political (Makerfield result overnight), one geopolitical (Geneva signing tomorrow), and the culture is processing both with nostalgia rather than anticipation.",
-    "mechanism": "Iran deal pre-priced in oil markets; Labour crisis entering decisive phase; England 4–2 Croatia triggering emotional release; Stranger Things finale adding a separate nostalgia wave. The ambient TikTok sounds ('Fractures of Reality') suggest collective anxiety running below the surface of both tournament energy and diplomatic optimism.",
+    "daily_theme": "Three simultaneous pivots — a peace ceremony that didn't happen, a politician who entered Parliament, and a war that escalated under the noise — all on the same day",
+    "mechanism": "The Iran deal's formal theater was held hostage by Lebanon/Israel dynamics Tehran can exploit as leverage; UK domestic politics moved to its next phase as Burnham's by-election win enabled a formal Labour leadership contest; Ukraine's largest-ever drone attack on Moscow was structurally underreported because Western attention was consumed by Geneva/Burgenstock. The cultural mood (Fleetwood Mac flood, nostalgia saturation) diverges from what multiple simultaneous crises would predict.",
     "connections": [
       {
-        "macro_event": "Iran-US MOU signing confirmed for June 19; Brent at $79.49",
-        "cultural_response": "Ambient TikTok sounds ('Fractures of Reality' +43.5%/day) surging as fastest-growing format",
-        "mechanism": "Pre-signing uncertainty — markets have priced the deal but no one knows what the 60-day nuclear talks produce; ambient sound is the cultural form for unresolved tension",
-        "observation": "The fastest-growing TikTok sound this week is called 'Fractures of Reality' and has no lyrics, no artist identity, and no hook. It's being used for 447,000 videos. This isn't a trend that follows a news story — it's a sound people reach for when something large is unresolved. The Geneva signing is the obvious context.",
+        "macro_event": "Burgenstock ceremony postponed — Iran deal stalled on Lebanon",
+        "cultural_response": "Fleetwood Mac Landslide and Everywhere entering UK chart simultaneously",
+        "mechanism": "Speculative but coherent: Landslide (transitional uncertainty) and Everywhere (euphoria too good to trust) entering on the day formal peace theater fails captures the national mood of suspended resolution",
+        "observation": "Five Fleetwood Mac tracks in simultaneous upward movement. The Stranger Things S5 effect started January 2026 and should have faded by June. Something else is sustaining it. The chart is doing what it does in moments of unresolved transition: reaching backward for comfort.",
         "confidence": "speculative",
-        "signal_type": "leading"
+        "signal_type": "divergence"
       },
       {
-        "macro_event": "England 4–2 Croatia in World Cup opener + Stranger Things series finale",
-        "cultural_response": "Fleetwood Mac 'Landslide' new entry (first-ever in 51 years), 'Everywhere' +26; Kings of Leon +12, The Killers +4, Justin Bieber 'Sorry' +26; nostalgia wave across the chart",
-        "mechanism": "Two separate emotional 'endings' or 'beginnings' in the same week (ST finale as cultural farewell; England WC opener as potential beginning) triggering nostalgic catharsis rather than forward-looking celebration",
-        "observation": "The chart is not responding to England's win with triumphant anthem energy. It's responding with Fleetwood Mac, The Killers, Kings of Leon — music that carries a specific emotional register of waiting, longing, and reunion. Stranger Things' finale drove 'Landslide' onto the UK chart for the first time in 51 years. Both the show's ending and England's beginning are being processed through the same nostalgic lens: we've been waiting for something to feel real for a long time.",
+        "macro_event": "Ukraine's largest drone attack on Moscow Jun 17-18",
+        "cultural_response": "Moscow trending on UK Twitter but absent from mainstream UK press",
+        "mechanism": "The Iran deal dominated UK editorial attention, leaving the Moscow story visible only on social media where algorithmic trending captured it without editorial curation",
+        "observation": "One of the largest military escalations of 2026 was effectively invisible in UK mainstream media because it competed with a peace ceremony. The contrast is the kind of structural irony that rarely gets named explicitly.",
         "confidence": "strong",
-        "signal_type": "reactive"
-      },
-      {
-        "macro_event": "Makerfield by-election: polls closed, result overnight; Burnham expected to win but YouGov shows −11 national favourability",
-        "cultural_response": "UK Twitter trending: Farage, Jezza (Corbyn Workers' Party active in campaign), alongside Messi/Ronaldo (World Cup)",
-        "mechanism": "The political drama of potential PM change sits alongside football tournament — both in the same attention space — but the chart is not reflecting the political anxiety in any overt way; the political and cultural registers are running in parallel without connecting",
-        "observation": "The UK chart today doesn't look like a country waiting on a potentially historic political result. It looks like a country processing a football match and a TV show ending. The political anxiety about whether Burnham can actually beat Reform UK is real — YouGov's finding that his favourability fell over the campaign is the counter-narrative nobody's leading with — but it isn't in the music yet. That divergence is worth watching.",
-        "confidence": "moderate",
         "signal_type": "divergence"
       }
     ]

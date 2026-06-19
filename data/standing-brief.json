@@ -4,40 +4,24 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Geneva signing Jun 19 (Bürgenstock) confirmed; Brent at $79.49 (down $4 on week, deal priced in); Hezbollah pivoted from rejection to 'major achievement' + expecting Iran cash injection; FDD counter-frame: MOU ≠ peace deal, Araghchi playbook says Tehran wins when deal matters more to Washington; Israel defence minister: no Lebanon withdrawal; Jun 22 talks on calendar",
+      "status_line": "Bürgenstock ceremony POSTPONED Jun 19 — Vance delayed, Iran citing Israel's Lebanon operations as precondition; Switzerland confirmed talks deferred; 60-day nuclear window started Jun 18 regardless; Hezbollah called deal 'great victory'; full MOU text not publicly released; Brent $78.72 (stable, deal priced in); Jun 22 talks still on calendar",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-18",
+      "last_changed": "2026-06-19",
       "expand_if": [
-        "Deal text released before or after Geneva ceremony",
-        "Trump attends Geneva signing",
-        "Geneva signing cancelled or delayed",
-        "Hezbollah formal statement post-signing",
-        "Israel conducts major strike in Lebanon post-signing",
-        "60-day nuclear talks timeline defined or disputed",
-        "Brent snaps back above $90 on deal fragility",
-        "Iran cash injection to Hezbollah confirmed or blocked"
-      ]
-    },
-    {
-      "id": "belfast-riots",
-      "label": "Belfast Riots / UK Anti-Immigrant Violence",
-      "status": "changed",
-      "status_line": "Makerfield polls closed 10pm Jun 18; result expected 3–4:30am; Burnham 5–12pt lead (Opinium 5pt, Convergent 12pt); YouGov: Burnham national favourability fallen to −11; Reform leads Labour 42–34 nationally in GE intention; PSNI confirmed no paramilitary coordination; story now fully in Westminster electoral frame",
-      "first_seen": "2026-06-12",
-      "last_changed": "2026-06-18",
-      "expand_if": [
-        "Makerfield result Jun 18 — margin over Reform UK is the signal",
-        "Burnham files formal leadership challenge within 48h",
-        "Burnham wins and Burnham's GE viability is questioned by party internally",
-        "Starmer resigns before challenge filed",
-        "Further nights of severe unrest in NI or English cities"
+        "Iran sends delegation to Bürgenstock before Jun 22",
+        "Full MOU text released publicly",
+        "Jun 22 US-Iran talks collapse or produce agreement",
+        "Israeli strike in Lebanon after Jun 19 postponement",
+        "Brent snaps above $90 on deal fragility signal",
+        "Iran demands expand beyond Lebanon to other conditions",
+        "60-day window disputed by either side"
       ]
     },
     {
       "id": "world-cup-2026",
       "label": "World Cup 2026",
-      "status": "changed",
-      "status_line": "England 4–2 Croatia Jun 17 (Kane brace = English WC record equalled; Bellingham historic fastest goal of tournament; Rashford); next England Jun 23 vs Panama; Dai Dai (Shakira/Burna Boy) 1B+ TikTok views; Fleetwood Mac nostalgia wave in UK chart tied to Stranger Things finale + England mood",
+      "status": "stable",
+      "status_line": "Jun 19 fixtures: USA v Australia, Scotland v Morocco, Brazil v Haiti, Turkey v Paraguay; England next Jun 23 v Panama (after 4-2 Croatia win Jun 17, Kane brace = WC record equalled); Fleetwood Mac nostalgia wave tied to England mood + Stranger Things S5 effect continuing",
       "first_seen": "2026-06-10",
       "last_changed": "2026-06-18",
       "expand_if": [
@@ -45,20 +29,20 @@
         "England vs Ghana Jun 27",
         "Major injury to Kane or Bellingham",
         "Major off-field controversy",
-        "Cultural flashpoint around tournament (crowd incidents, political gesture)"
+        "Cultural flashpoint around tournament"
       ]
     },
     {
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "stable",
-      "status_line": "808 confirmed / 192 deaths DRC (unchanged since Jun 16); Uganda 19/2/no new cases since Jun 5; no cases outside DRC/Uganda; $50M CEPI Bundibugyo countermeasures commitment; Bundibugyo has no approved vaccine; rate not accelerating but not declining",
+      "status": "changed",
+      "status_line": "837 confirmed / 196 deaths DRC as of Jun 17 (up from 808/192 on Jun 16); 29 new confirmed cases, 4 new deaths in latest report; Ituri epicentre 767 cases across 20 health zones; Uganda 19/2/no new cases since Jun 5; WHO PHEIC declared May 17; no approved Bundibugyo vaccine; rate not declining",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-06-17",
+      "last_changed": "2026-06-19",
       "expand_if": [
         "Cases confirmed outside DRC/Uganda",
         "DRC daily rate confirmed above 33 new cases/day sustained",
-        "WHO raises alert further or declares enhanced PHEIC",
+        "WHO raises alert further",
         "Vaccine supply or pipeline announcement",
         "Confirmed case in Burundi, Rwanda, or South Sudan"
       ]
@@ -67,37 +51,37 @@
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "changed",
-      "status_line": "Hezbollah called Geneva deal 'major achievement' (shift from rejection), expecting Iran cash injection post-signing; Israel defence minister: will not withdraw from Lebanon; Jun 22 talks on calendar; NBC: renewed fighting could scupper MOU; Lebanon provisions of deal still not fully public",
+      "status_line": "Hezbollah chief Qassem called Geneva deal 'great victory,' linking it to Israeli withdrawal; Iran used Lebanon/Israel war to delay Bürgenstock formal talks Jun 19; Israel's Katz: will not withdraw from Lebanon; Jun 22 bilateral US-Iran talks still on calendar; Lebanon provisions of MOU still not publicly released; Iran-Hezbollah cash injection post-deal pending",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-18",
+      "last_changed": "2026-06-19",
       "expand_if": [
-        "Hezbollah formal statement post-Geneva signing",
+        "Major Israeli ground incursion or Hezbollah rocket barrage before Jun 22",
         "Lebanon provisions of MOU revealed in full text",
-        "Major Israeli ground incursion or Hezbollah rocket barrage post-signing",
-        "Jun 22 talks collapse or produce agreement",
-        "Iran cash injection to Hezbollah confirmed publicly"
+        "Jun 22 talks collapse or produce agreement on Lebanon",
+        "Iran cash injection to Hezbollah confirmed publicly",
+        "Hezbollah-Israel full ceasefire formally negotiated"
       ]
     },
     {
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
       "status": "changed",
-      "status_line": "Makerfield polls closed Jun 18; Burnham expected in Parliament; formal challenge to Starmer likely within 48–72h; YouGov: Burnham national favourability −11 (most popular Labour politician but still net negative); Reform leads Labour 42–34 nationally; no credible centre-left alternative identified; 95+ MPs calling for Starmer departure",
+      "status_line": "Burnham WON Makerfield Jun 18-19; now in Parliament; formal challenge to Starmer expected within 48-72h; YouGov: Burnham national favourability -11 (most popular Labour politician but net negative); Reform leads Labour 42-34 nationally; 95+ MPs calling for Starmer departure; no credible centre-left alternative declared",
       "first_seen": "2026-06-03",
-      "last_changed": "2026-06-18",
+      "last_changed": "2026-06-19",
       "expand_if": [
-        "Burnham wins Makerfield Jun 18 (expected)",
         "Burnham formally enters leadership race",
         "Starmer resigns before challenge filed",
         "Centre-left candidate emerges publicly",
-        "Major gilt/sterling reaction to political uncertainty"
+        "Major gilt/sterling reaction to political uncertainty",
+        "Starmer announces departure date"
       ]
     },
     {
       "id": "spacex-ipo",
       "label": "SpaceX IPO / Musk Political Economy",
-      "status": "changed",
-      "status_line": "SPCX ~$192 Jun 18 (down from ATH $225.64 Jun 16, −15% in 48h); profit-taking not structural; market cap ~$2.53T; still +42% above $135 IPO close Jun 12; no Musk political/regulatory development",
+      "status": "stable",
+      "status_line": "SPCX $185 Jun 19 (range $172-190); previous close $191.82; above $180 floor; +37% on $135 IPO close Jun 12; market cap ~$2.44T; profit-taking stabilising; no Musk political/regulatory development",
       "first_seen": "2026-06-13",
       "last_changed": "2026-06-18",
       "expand_if": [
@@ -112,13 +96,13 @@
       "id": "southafrica-xenophobia",
       "label": "South Africa Xenophobia Crisis",
       "status": "stable",
-      "status_line": "Repatriation underway by bus (Malawi, Ghana, Nigeria, Mozambique, Kenya); Durban transit camps clearing; June 30 deadline not revoked; cross-border trade −22%; justice minister acknowledged international damage; UN Secretary General and WHO chief formally condemned attacks",
+      "status_line": "586+ Nigerians repatriated; Malawians, Kenyans, Ghanaians in repatriation; Durban transit camps clearing; June 30 deadline 11 days away; cross-border trade -22%; justice minister acknowledged international damage; UN Secretary General and WHO chief condemned attacks",
       "first_seen": "2026-06-17",
       "last_changed": "2026-06-17",
       "expand_if": [
         "June 30 deadline triggers mass violence",
         "South African government formally criminalises or endorses movement",
-        "UNHCR or AU formal statement",
+        "AU formal condemnation or UNHCR emergency declaration",
         "Cross-border trade contraction exceeds 30%",
         "Violence spreads to Johannesburg or Cape Town at scale",
         "Malawi or Zimbabwe recalls ambassador"
@@ -128,7 +112,7 @@
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "stable",
-      "status_line": "FTSE ~10,504; Brent $79.49 (Iran deal relief trade, down $4 on week); 30Y gilt 5.47% / 10Y gilt 4.80% (easing); Shell/BP both down 1%+; BoE hike expectations softening on lower energy-inflation outlook; Iran deal 60-day window holding energy-spike risk at bay",
+      "status_line": "FTSE ~10,510 (open Jun 19); Brent $78.72 (Iran deal relief trade holding); 10Y gilt 4.76% (easing); BoE holds rates Jun 19; political risk premium not yet priced into UK assets despite Labour leadership uncertainty; Iran deal 60-day window protecting energy-spike risk",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-15",
       "expand_if": [
@@ -144,7 +128,7 @@
       "id": "colombia-runoff",
       "label": "Colombia Runoff — Jun 21",
       "status": "stable",
-      "status_line": "De la Espriella ~50% vs Cepeda ~43% (latest polls); runoff Sunday Jun 21; no major polling shift, violence, or candidate statement",
+      "status_line": "De la Espriella ~44% vs Cepeda ~41% first round; Trump endorsed De la Espriella; runoff Sunday Jun 21; tight race amid extreme polarisation; no major polling shift, violence, or candidate statement",
       "first_seen": "2026-06-13",
       "last_changed": "2026-06-13",
       "expand_if": [
@@ -158,7 +142,7 @@
       "id": "european-defence-fcas",
       "label": "European Defence / FCAS",
       "status": "stable",
-      "status_line": "FCAS €100B sixth-gen fighter officially cancelled Jun 8–9; Combat Cloud survives; no new bilateral announcement or post-FCAS framework; European air power future unresolved",
+      "status_line": "FCAS €100B sixth-gen fighter officially cancelled Jun 8-9; Combat Cloud survives; no new bilateral announcement or post-FCAS framework; European air power future unresolved",
       "first_seen": "2026-06-14",
       "last_changed": "2026-06-14",
       "expand_if": [
@@ -166,6 +150,21 @@
         "Germany announces F-35 or US-alternative procurement at scale",
         "EU defence ministers joint communiqué on post-FCAS strategy",
         "UK invited into new Franco-German defence cooperation framework"
+      ]
+    },
+    {
+      "id": "ukraine-moscow-drone",
+      "label": "Ukraine — Moscow drone assault",
+      "status": "new",
+      "status_line": "Ukraine's largest-ever drone attack on Moscow Jun 17-18: 555+ drones, Kapotnya oil refinery hit twice, black smoke over capital; Russia claimed 200 drones destroyed on approach; TASS: 'most massive attack on Moscow region in two years'; Zelensky: 'time the war ended'; largely uncovered in UK press due to Iran deal dominating",
+      "first_seen": "2026-06-19",
+      "last_changed": "2026-06-19",
+      "expand_if": [
+        "Russian retaliation against Ukrainian cities significantly escalates",
+        "Trump's Iran focus leads to US weapons supply delay for Ukraine",
+        "Zelensky proposes new ceasefire terms linked to Moscow strikes",
+        "Russia conducts comparable attack on Kyiv infrastructure",
+        "European NATO members respond to Ukraine drone capability demonstration"
       ]
     }
   ],
@@ -274,6 +273,13 @@
       "retired_on": "2026-06-17",
       "retired_because": "8 consecutive stable days since last_changed 2026-06-09; Iran deal emerged without Netanyahu torpedoing it, partially complicating the Netanyahu-veto thesis, but no new post or appearance from Mearsheimer",
       "revive_if": "New post or appearance shifting the argument; Netanyahu publicly opposes Iran MOU; Trump-Netanyahu public confrontation; deal collapses and Netanyahu's opposition is cited"
+    },
+    {
+      "id": "belfast-riots",
+      "label": "Belfast Riots / UK Anti-Immigrant Violence",
+      "retired_on": "2026-06-19",
+      "retired_because": "Riots subsided; story fully absorbed into the Labour leadership contest. Burnham won Makerfield Jun 19; political fallout from riots now tracked under uk-labour-leadership. PSNI confirmed no paramilitary coordination.",
+      "revive_if": "Further severe nights of unrest in Northern Ireland or English cities; PSNI finds paramilitary coordination evidence; violence explicitly cited as factor in Labour leadership campaign"
     }
   ],
   "source_discoveries": [
@@ -356,5 +362,5 @@
       "why_interesting": "Tracks Russia's systematic Rosatom nuclear client-building and infrastructure lock-in across the Global South; documents the pattern that the Iran deal does not reverse"
     }
   ],
-  "last_updated": "2026-06-18"
+  "last_updated": "2026-06-19"
 }
