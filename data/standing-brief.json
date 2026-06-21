@@ -4,13 +4,13 @@
       "id": "ukraine-moscow-drone",
       "label": "Ukraine — Moscow Drone Assault",
       "status": "changed",
-      "status_line": "Russia threatening 'regular coordinated strikes' after second Ukrainian drone wave Jun 20; Zelensky: 'Moscow will burn'; both sides narrating explicit escalation simultaneously; new phase entered",
+      "status_line": "194-drone Moscow strike Jun 18 (largest ever); Kapotnya refinery hit 9mi from Kremlin; Russia threatened 'massive group strikes' and followed through Jun 20 (3 dead, 45 injured Kyiv); both sides in explicit public escalation loop simultaneously",
       "first_seen": "2026-06-19",
       "last_changed": "2026-06-21",
       "expand_if": [
-        "Russia executes threatened coordinated infrastructure strikes on Ukrainian cities",
+        "Russia executes major coordinated infrastructure strike on Ukrainian cities",
         "Trump makes statement linking Iran deal bandwidth to Ukraine weapons supply",
-        "European NATO members invoke Article 4 in response to Ukraine drone capability demonstration",
+        "European NATO members invoke Article 4 in response",
         "Zelensky proposes ceasefire terms linked to Moscow strikes",
         "Russia conducts strike killing more than 50 civilians in single attack"
       ]
@@ -19,23 +19,23 @@
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Jun 22 Bürgenstock talks confirmed canceled; Brent $80.57 (up from $78.72 on deal fragility); 60-day nuclear clock running from Jun 18; MOU full text still private; Lebanon provisions unreleased",
+      "status_line": "Bürgenstock Jun 22 postponed not cancelled; Vance in Switzerland Jun 20, Iranian delegation arrived same day; $300B Gulf coalition reconstruction fund for Iran if MOU honoured; Lebanon provisions still unpublished; 60-day clock from Jun 18; Brent -8.5% week on Hormuz risk unwind",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-21",
       "expand_if": [
-        "Replacement talks scheduled or confirmed",
+        "Bürgenstock II date confirmed",
+        "Lebanon MOU provisions published",
         "Brent breaks above $90 on deal-collapse signals",
         "Iran publicly disputes or pauses the 60-day clock",
-        "Full MOU text released publicly",
-        "Israeli action in Lebanon triggers deal collapse",
-        "Iranian enrichment activity confirmed resumed"
+        "Iranian enrichment activity confirmed resumed",
+        "Israeli action in Lebanon triggers deal collapse"
       ]
     },
     {
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
       "status": "changed",
-      "status_line": "Wikipedia: '2026 Labour Party leadership crisis'; Burnham in Parliament since Jun 19; Starmer publicly confirmed he will fight any challenge; formal filing expected this week; no centrist candidate declared",
+      "status_line": "Burnham secretly crossed 81 MP nomination threshold (20%) as of Jun 20/21; plans to present list to Starmer and push for voluntary resignation; Starmer confirmed he will fight any contest; formal challenge could file any day; no centrist candidate declared",
       "first_seen": "2026-06-03",
       "last_changed": "2026-06-21",
       "expand_if": [
@@ -49,24 +49,40 @@
     {
       "id": "alliance-sahel-states",
       "label": "Alliance of Sahel States",
-      "status": "new",
-      "status_line": "Mali/Niger/Burkina confederation conducting joint airstrikes (confirmed May 2026); Imam Kindo arrested Jun 2026; 3M displaced; JNIM/ISSP insurgency deepening with 'unprecedented tactical sophistication' per ACLED; near-zero Western engagement",
+      "status": "changed",
+      "status_line": "JNIM suicide attack on Niamey airport (AES HQ, Russian advisers, drone unit based there) Jun 18; 13 dead; second airport attack this year; ACLED: 'departure from rural insurgency to coordinated strikes on vital national infrastructure'; AES security premise now under direct material test",
       "first_seen": "2026-06-21",
       "last_changed": "2026-06-21",
       "expand_if": [
-        "Alliance of Sahel States formally announces new bilateral agreements (Russia, China, others)",
-        "ECOWAS or AU imposes sanctions on confederation",
-        "Major JNIM or ISSP attack on capital city (Bamako, Niamey, Ouagadougou)",
-        "UN Security Council resolution on Sahel",
-        "Jihadist corridor reaches coastal West Africa (Côte d'Ivoire, Benin, Togo)",
-        "Wagner/Africa Corps publicly expands presence"
+        "JNIM or ISSP follow-up attack on AES infrastructure",
+        "Alliance of Sahel States formally announces new bilateral agreements (Russia, China)",
+        "ECOWAS or AU imposes sanctions or condemnation",
+        "Major attack on capital city (Bamako, Niamey, Ouagadougou)",
+        "Wagner/Africa Corps publicly expands presence",
+        "Jihadist corridor reaches coastal West Africa"
+      ]
+    },
+    {
+      "id": "southafrica-xenophobia",
+      "label": "South Africa Xenophobia Crisis",
+      "status": "changed",
+      "status_line": "Jun 30 deadline 9 days away; Nigeria/Ghana/Mozambique/Malawi evacuating citizens (262, 1000, 545+ respectively); Ramaphosa accelerating deportations co-opting movement; WHO director-general calls it 'tragic betrayal'; social media disinformation driving mobilisation; trade -22%",
+      "first_seen": "2026-06-17",
+      "last_changed": "2026-06-21",
+      "expand_if": [
+        "June 30 deadline triggers mass violence in major cities",
+        "AU formal condemnation or UNHCR emergency declaration",
+        "Cross-border trade contraction exceeds 30%",
+        "Violence spreads to Johannesburg or Cape Town at scale",
+        "Country recalls ambassador from South Africa",
+        "South African government criminalises or formally endorses movement"
       ]
     },
     {
       "id": "world-cup-2026",
       "label": "World Cup 2026",
       "status": "stable",
-      "status_line": "Jun 21: Belgium v Iran, Spain v Saudi Arabia, Uruguay v Cape Verde, NZ v Egypt; England v Ghana Jun 23 Boston; Fleetwood Mac / nostalgia wave continuing alongside England campaign",
+      "status_line": "Netherlands 5-1 Sweden Jun 21; England v Ghana Jun 23 Boston; Fleetwood Mac / UK nostalgia wave running alongside England campaign; England official goal song 'Chase the Sun' by Planet Funk not charting",
       "first_seen": "2026-06-10",
       "last_changed": "2026-06-18",
       "expand_if": [
@@ -81,13 +97,13 @@
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "stable",
-      "status_line": "No new development Jun 21; Lebanon MOU provisions still unreleased; Katz: no withdrawal; Jun 22 replacement talks (if any) are next trigger; Iran-Hezbollah cash injection pending",
+      "status_line": "Ceasefire renewed Jun 19 (Israeli strikes paused after Iran boycotted Bürgenstock talks); Hezbollah accepted but says Israel still firing; comprehensive talks week of Jun 22; Lebanon MOU provisions still unreleased",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-19",
       "expand_if": [
-        "Lebanon provisions of MOU revealed in full text",
+        "Lebanon provisions of MOU revealed",
         "Major Israeli ground incursion or Hezbollah rocket barrage",
-        "Replacement to Jun 22 talks scheduled and includes Lebanon provisions",
+        "Replacement talks scheduled and include Lebanon provisions",
         "Iran cash injection to Hezbollah confirmed publicly",
         "Hezbollah-Israel full ceasefire formally negotiated"
       ]
@@ -96,7 +112,7 @@
       "id": "ebola-drc-uganda",
       "label": "Ebola Bundibugyo — DRC / Uganda",
       "status": "stable",
-      "status_line": "837 confirmed / 196 deaths DRC as of Jun 15; Uganda 19/2/no new cases since Jun 5; WHO PHEIC declared May 17; no approved Bundibugyo vaccine; rate not declining",
+      "status_line": "837 confirmed / 196 deaths DRC as of Jun 15; Uganda 19/2/no new cases past week; burial team attacked in Mongbwalu Ituri; WHO PHEIC declared May 17; no approved Bundibugyo vaccine; rate not declining",
       "first_seen": "2026-05-25",
       "last_changed": "2026-06-19",
       "expand_if": [
@@ -108,26 +124,10 @@
       ]
     },
     {
-      "id": "southafrica-xenophobia",
-      "label": "South Africa Xenophobia Crisis",
-      "status": "stable",
-      "status_line": "Jun 30 deadline 9 days away; Ramaphosa accelerating deportations; 7 Mozambicans killed Mossel Bay; repatriation flights ongoing Nigeria/Ghana/Malawi/Zimbabwe; cross-border trade -22%",
-      "first_seen": "2026-06-17",
-      "last_changed": "2026-06-17",
-      "expand_if": [
-        "June 30 deadline triggers mass violence",
-        "AU formal condemnation or UNHCR emergency declaration",
-        "Cross-border trade contraction exceeds 30%",
-        "Violence spreads to Johannesburg or Cape Town at scale",
-        "Malawi or Zimbabwe recalls ambassador",
-        "South African government criminalises or formally endorses movement"
-      ]
-    },
-    {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
       "status": "stable",
-      "status_line": "FTSE 10,364 (Fri close); Brent $80.57; 10Y gilt 4.78%; 30Y gilt 5.46%; BoE held at 3.75% Jun 19; political risk premium not yet priced despite Labour leadership crisis",
+      "status_line": "FTSE ~10,364 week close; Brent $80.57 (-8.5% wk on Iran deal Hormuz unwind); 30Y gilt 5.47% (Jun 17); BoE held 3.75% Jun 19; Labour crisis not yet in gilt pricing — gap notable",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-15",
       "expand_if": [
@@ -143,7 +143,7 @@
       "id": "spacex-ipo",
       "label": "SpaceX IPO / Musk Political Economy",
       "status": "stable",
-      "status_line": "SPCX $185; above $180 floor; +37% on $135 IPO close Jun 12; profit-taking stable; no Musk political or regulatory development",
+      "status_line": "SPCX $181.60 Jun 20 (above $180 floor); pulled back from $225.64 ATH Jun 16; +34% on $135 IPO close; no Musk political or regulatory development this week",
       "first_seen": "2026-06-13",
       "last_changed": "2026-06-18",
       "expand_if": [
@@ -160,7 +160,7 @@
       "label": "Colombia Runoff — Jun 21",
       "retired_on": "2026-06-21",
       "retired_because": "Time-bounded event: election day Jun 21. Polls closed 4pm local (~9pm BST). Result not confirmed at digest time; AtlasIntel final poll had De la Espriella 52.4% vs Cepeda 44.4% (8-point lead). Result expected to be known by end of day.",
-      "revive_if": "Electoral dispute, fraud allegation, or result too close to call triggers recount; or winning candidate makes immediate major policy announcement (FARC talks termination, US relations break) warranting tracking"
+      "revive_if": "Electoral dispute, fraud allegation, or result too close to call triggers recount; or winning candidate makes immediate major policy announcement (FARC talks termination, US relations break) warranting tracking. If De la Espriella wins, open new thread on far-right Colombia presidency"
     },
     {
       "id": "european-defence-fcas",
@@ -371,7 +371,13 @@
       "name": "ACLED Conflict Sahel",
       "url": "https://acleddata.com/region/conflict-sahel",
       "found_on": "2026-06-21",
-      "why_interesting": "Real-time conflict event data for Mali/Niger/Burkina; documents JNIM and ISSP tactical evolution with 'unprecedented sophistication' tag — the empirical backbone of the Sahel story"
+      "why_interesting": "Real-time conflict event data for Mali/Niger/Burkina; documents JNIM and ISSP tactical evolution; expert comment on Niamey airport attack is the best structural analysis of the Jun 18 attack"
+    },
+    {
+      "name": "Narges Bajoghli — Johns Hopkins SAIS",
+      "url": "https://sais.jhu.edu/users/nbajoghli1",
+      "found_on": "2026-06-21",
+      "why_interesting": "Argues US analysis systematically misreads Iranian domestic politics by conflating regime weakness with popular opposition; her framing — that the MOU represents Iran's version of a victory — is almost entirely absent from Western coverage of the deal"
     }
   ],
   "last_updated": "2026-06-21"
