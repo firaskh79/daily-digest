@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firas's Digest — 19 June 2026</title>
+<title>Firas's Digest — 21 June 2026</title>
 <style>
   :root {
     --bg:#ffffff; --bg-2:#f6f5f0; --bg-3:#f0ede6;
@@ -20,374 +20,361 @@
     --gray-bg:#F1EFE8; --gray-text:#444441;
     --link:#185FA5;
   }
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme:dark) {
     :root {
-      --bg:#18181a; --bg-2:#222224; --bg-3:#2a2a2d;
-      --text:#e8e8e4; --text-2:#9a9894; --text-3:#5a5956;
-      --border:rgba(255,255,255,0.1); --border-2:rgba(255,255,255,0.18);
-      --purple-bg:#1e1a3a; --purple-text:#9d96f0;
-      --teal-bg:#0e2820; --teal-text:#5dd4a8;
-      --coral-bg:#2a1510; --coral-text:#f09070;
-      --amber-bg:#2a1e08; --amber-text:#f0c070;
-      --blue-bg:#0a1e30; --blue-text:#70b0f0;
-      --green-bg:#111e08; --green-text:#90d060;
-      --gray-bg:#202022; --gray-text:#c0c0bc;
-      --link:#6aabf0;
+      --bg:#0f0f0e; --bg-2:#1c1c1a; --bg-3:#242420;
+      --text:#e8e7e3; --text-2:#9a9894; --text-3:#5a5956;
+      --border:rgba(255,255,255,0.09); --border-2:rgba(255,255,255,0.16);
+      --purple-bg:#1e1a42; --purple-text:#b0aaf8;
+      --teal-bg:#0d2820; --teal-text:#5fd4a8;
+      --coral-bg:#2a1009; --coral-text:#f4a07a;
+      --amber-bg:#261505; --amber-text:#f0bc6e;
+      --blue-bg:#07213a; --blue-text:#72b4f0;
+      --green-bg:#0e2007; --green-text:#8fd45a;
+      --gray-bg:#1c1c1a; --gray-text:#b0aea8;
+      --link:#72b4f0;
     }
   }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{font-size:16px}
-  body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;padding:2rem 1rem;max-width:780px;margin:0 auto}
-  h1{font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.15rem}
-  h2{font-size:1.1rem;font-weight:700;letter-spacing:-0.01em;margin:2rem 0 0.8rem}
-  h3{font-size:0.95rem;font-weight:600;margin:0 0 0.4rem}
-  p{margin-bottom:0.75rem;color:var(--text)}
-  p:last-child{margin-bottom:0}
-  a{color:var(--link);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .date{font-size:0.85rem;color:var(--text-3);margin-bottom:2rem}
-  .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.5rem}
-  .card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.8rem}
-  .card h3{margin-bottom:0.5rem}
-  .thread-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:0.9rem 1.1rem;margin-bottom:0.7rem}
-  .thread-card h3{font-size:0.9rem;margin-bottom:0.35rem;display:flex;align-items:center;gap:0.5rem}
-  .badge{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.15em 0.5em;border-radius:3px}
-  .badge-new{background:var(--purple-bg);color:var(--purple-text)}
-  .badge-changed{background:var(--amber-bg);color:var(--amber-text)}
-  .badge-stable{background:var(--gray-bg);color:var(--gray-text)}
-  .tag{display:inline-block;font-size:0.65rem;font-weight:600;padding:0.1em 0.4em;border-radius:3px;margin-left:0.3rem;vertical-align:middle}
-  .tag.tb{background:var(--teal-bg);color:var(--teal-text)}
-  .markets-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem;margin-bottom:0.8rem}
-  @media(min-width:500px){.markets-grid{grid-template-columns:repeat(4,1fr)}}
-  .market-tile{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.7rem 0.8rem}
-  .market-tile .label{font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.2rem}
-  .market-tile .value{font-size:1.1rem;font-weight:700;color:var(--text)}
-  .market-tile .note{font-size:0.72rem;color:var(--text-2);margin-top:0.15rem}
-  .status-table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:0.5rem}
-  .status-table th{text-align:left;font-size:0.68rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);padding:0.4rem 0.5rem;border-bottom:1px solid var(--border-2)}
-  .status-table td{padding:0.5rem 0.5rem;border-bottom:1px solid var(--border);vertical-align:top}
-  .status-table tr:last-child td{border-bottom:none}
-  .status-table .tl{color:var(--text);font-weight:600}
-  .status-table .sl{color:var(--text-2)}
-  .player-bar{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:0.8rem 1rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem}
-  .player-bar .play-btn{width:36px;height:36px;border-radius:50%;background:var(--text);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem}
-  .player-bar .play-btn:hover{opacity:0.8}
-  .player-bar .pl-meta{flex:1;min-width:0}
-  .player-bar .pl-title{font-size:0.82rem;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .player-bar .pl-sub{font-size:0.72rem;color:var(--text-3)}
-  .player-bar .pl-progress{height:3px;background:var(--border);border-radius:2px;margin-top:0.4rem;position:relative}
-  .player-bar .pl-progress-fill{height:100%;width:0%;background:var(--text);border-radius:2px;transition:width 0.3s linear}
-  footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.4rem}
-  .chart-row{display:flex;align-items:baseline;gap:0.4rem;margin-bottom:0.25rem;font-size:0.85rem}
-  .chart-pos{font-weight:700;color:var(--text);min-width:1.8rem}
-  .chart-chg{font-size:0.72rem;padding:0.05em 0.3em;border-radius:3px;font-weight:600}
-  .chg-up{background:var(--green-bg);color:var(--green-text)}
-  .chg-dn{background:var(--coral-bg);color:var(--coral-text)}
-  .chg-eq{background:var(--gray-bg);color:var(--gray-text)}
-  .chg-new{background:var(--purple-bg);color:var(--purple-text)}
-  .tiktok-row{font-size:0.85rem;margin-bottom:0.35rem;color:var(--text)}
-  .sep{height:1px;background:var(--border);margin:1.5rem 0}
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:var(--font); background:var(--bg); color:var(--text);
+    max-width:780px; margin:0 auto; padding:2rem 1.5rem;
+    line-height:1.68; font-size:16px; padding-bottom:5rem;
+  }
+  header {
+    border-bottom:1px solid var(--border-2); padding-bottom:1.25rem;
+    margin-bottom:2rem; display:flex; justify-content:space-between;
+    align-items:baseline; flex-wrap:wrap; gap:0.5rem;
+  }
+  header h1 { font-size:1.4rem; font-weight:700; letter-spacing:-0.01em; }
+  header .datestamp { color:var(--text-3); font-size:0.875rem; }
+  h2 {
+    font-size:0.72rem; font-weight:600; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--text-3);
+    margin-bottom:1rem; margin-top:2.5rem;
+  }
+  h3 { font-size:1rem; font-weight:650; margin-bottom:0.5rem; color:var(--text); }
+  p { margin-bottom:0.9rem; }
+  p:last-child { margin-bottom:0; }
+  a { color:var(--link); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .lead-item {
+    border-left:3px solid var(--amber-text);
+    padding-left:1.1rem; margin-bottom:1.75rem;
+  }
+  .lead-item h3 { margin-bottom:0.4rem; }
+  .card {
+    background:var(--bg-2); border:1px solid var(--border);
+    border-radius:var(--radius); padding:1.25rem; margin-bottom:1rem;
+  }
+  .badge {
+    display:inline-block; font-size:0.68rem; font-weight:600;
+    letter-spacing:0.05em; text-transform:uppercase;
+    padding:0.18em 0.55em; border-radius:4px;
+    margin-left:0.5rem; vertical-align:middle;
+  }
+  .badge-new { background:var(--purple-bg); color:var(--purple-text); }
+  .badge-changed { background:var(--amber-bg); color:var(--amber-text); }
+  .badge-stable { background:var(--gray-bg); color:var(--gray-text); }
+  .thread-card {
+    background:var(--bg-2); border:1px solid var(--border);
+    border-radius:var(--radius); padding:1.1rem 1.25rem; margin-bottom:0.75rem;
+  }
+  .thread-card h3 { font-size:0.925rem; margin-bottom:0.35rem; }
+  .thread-card .watch-next {
+    font-size:0.8rem; color:var(--text-2); margin-top:0.65rem;
+  }
+  .markets-grid {
+    display:grid; grid-template-columns:repeat(2,1fr);
+    gap:0.75rem; margin-top:0.25rem;
+  }
+  .market-tile {
+    background:var(--bg-2); border:1px solid var(--border);
+    border-radius:var(--radius-sm); padding:0.9rem 1rem;
+  }
+  .market-tile .label { font-size:0.72rem; color:var(--text-3); margin-bottom:0.25rem; }
+  .market-tile .value { font-size:1.25rem; font-weight:650; }
+  .market-tile .sub { font-size:0.74rem; color:var(--text-2); margin-top:0.15rem; }
+  .market-tile .note { font-size:0.72rem; color:var(--amber-text); margin-top:0.3rem; }
+  .chart-row {
+    display:flex; align-items:baseline; padding:0.5rem 0;
+    border-bottom:1px solid var(--border); gap:0.6rem;
+  }
+  .chart-row:last-child { border-bottom:none; }
+  .chart-pos { font-size:0.78rem; color:var(--text-3); width:1.5rem; flex-shrink:0; text-align:right; }
+  .chart-title { color:var(--text-2); }
+  .chart-move { font-size:0.7rem; }
+  .chart-move.stable { color:var(--text-3); }
+  .tag {
+    display:inline-block; font-size:0.62rem; font-weight:600;
+    padding:0.15em 0.5em; border-radius:3px; margin-left:0.3rem;
+  }
+  .tag.tb { background:var(--teal-bg); color:var(--teal-text); }
+  .otf-box {
+    background:var(--purple-bg); border:1px solid rgba(60,52,137,0.15);
+    border-radius:var(--radius); padding:1.25rem;
+  }
+  .otf-box h3 { color:var(--purple-text); margin-bottom:0.5rem; }
+  .status-table { width:100%; border-collapse:collapse; font-size:0.815rem; }
+  .status-table th {
+    text-align:left; color:var(--text-3); font-weight:600;
+    font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em;
+    padding:0.5rem 0.7rem; border-bottom:1px solid var(--border-2);
+  }
+  .status-table td { padding:0.6rem 0.7rem; border-bottom:1px solid var(--border); vertical-align:top; }
+  .status-table tr:last-child td { border-bottom:none; }
+  .status-table .sl { color:var(--text-2); font-size:0.78rem; }
+  footer {
+    margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--border);
+    font-size:0.8rem; color:var(--text-3);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;
+  }
+  #audio-player-bar {
+    position:fixed; bottom:0; left:0; right:0;
+    background:var(--bg-2); border-top:1px solid var(--border-2);
+    padding:0.75rem 1.5rem; display:flex; align-items:center; gap:1rem; z-index:100;
+  }
+  #play-btn {
+    background:var(--text); color:var(--bg); border:none; border-radius:50%;
+    width:36px; height:36px; cursor:pointer; font-size:1rem;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  #audio-label { font-size:0.8rem; color:var(--text-2); }
 </style>
 </head>
 <body>
 
-<h1>Firas's Digest</h1>
-<p class="date">Friday, 19 June 2026</p>
+<header>
+  <h1>Firas's Digest</h1>
+  <span class="datestamp">Sunday, 21 June 2026</span>
+</header>
 
-<div class="player-bar" id="audioPlayer">
-  <button class="play-btn" id="playBtn" onclick="togglePlay()">&#9654;</button>
-  <div class="pl-meta">
-    <div class="pl-title">Listen to today's digest</div>
-    <div class="pl-sub" id="playerSub">~2 min &middot; tap to play</div>
-    <div class="pl-progress"><div class="pl-progress-fill" id="progressFill"></div></div>
-  </div>
+<h2>Today's Signal</h2>
+
+<div class="lead-item">
+  <h3>The war nobody is fully watching</h3>
+  <p>Four days after Ukraine launched its largest-ever drone assault on Moscow — 555 drones, Kapotnya oil refinery hit twice, Zelensky declaring "Moscow will burn if Putin continues" — Russia has formally threatened coordinated, large-scale retaliatory strikes on Ukrainian cities "on a regular basis." This is not rhetorical noise: it signals a move from episodic escalation to sustained infrastructure attrition as Russian doctrine. The story was buried under Iran deal coverage the week it happened, and continues to be undercovered. If Russia follows through with systematic infrastructure strikes before winter, the humanitarian and energy consequences for Ukraine are qualitatively different from the pattern of the last two years.</p>
 </div>
 
-<!-- LEAD -->
-<div class="section-label">Today's Signal</div>
+<div class="lead-item">
+  <h3>The Iran deal loses its next milestone</h3>
+  <p>The June 22 Bürgenstock talks — already postponed from June 19 — appear to have been effectively canceled, with Switzerland's foreign ministry confirming they "would not proceed as planned" and the White House pulling Vance from the trip. Brent has moved from $78.72 to ~$80.57 on deal fragility signals. The 60-day nuclear clock started June 18 regardless and continues ticking, but without a diplomatic mechanism to translate that window into concrete agreements, you have a ceasefire without architecture. Worth noting for today specifically: Iran plays Belgium at the World Cup in Inglewood this afternoon — the Iranian national team, still wearing the Islamic Republic crest, on the field the same weekend their government's nuclear talks with Washington are stalling.</p>
+</div>
+
+<div class="lead-item">
+  <h3>UK Labour: from crisis to constitutional question</h3>
+  <p>Wikipedia has retitled the page. What was a leadership story is now logged as the "2026 Labour Party leadership crisis." Burnham has been an MP since Thursday. Starmer confirmed publicly on Friday he is "ready to face any challenge" — both the correct political posture and confirmation that a challenge is coming. Under Labour rules, 81 MPs must back a challenger to trigger a contest; with 95+ calling for Starmer's departure, the arithmetic is available. The question is now whether Burnham formally files this week, and whether any credible centrist candidate declares to complicate the arithmetic. Without one, this becomes a straight Burnham-Starmer race in a party whose membership is more Burnham-friendly than its parliamentary wing.</p>
+</div>
+
+<h2>Changed Threads</h2>
+
+<div class="thread-card">
+  <h3>Ukraine — Moscow Drone Assault <span class="badge badge-changed">Changed</span></h3>
+  <p>After Ukraine's Jun 17–18 555-drone assault on Moscow hit Kapotnya refinery twice, Russia's Defense Ministry threatened "frequent and massive group strikes" and pledged coordinated retaliation "on a regular basis." A second Ukrainian drone wave struck approaching Moscow on Jun 20; Russia claims ~200 intercepted on approach. Zelensky publicly escalated rhetoric ("Moscow will burn"). Both sides are now explicitly narrating escalation to domestic and international audiences simultaneously — a different dynamic from the last two years of managed escalation.</p>
+  <div class="watch-next"><strong>Watch:</strong> Whether Russia executes its threatened "coordinated regular strikes" on Ukrainian infrastructure this week; any Trump statement on Ukraine weapons supply as his attention stays on Iran; European NATO response to Ukraine's demonstrated long-range capability.</div>
+</div>
+
+<div class="thread-card">
+  <h3>Iran / Hormuz <span class="badge badge-changed">Changed</span></h3>
+  <p>The Jun 22 Bürgenstock follow-up talks are confirmed canceled — Switzerland's foreign ministry said they "would not proceed as planned," Vance's trip pulled. Brent ticked up to ~$80.57 from $78.72. The 60-day nuclear clock started Jun 18 regardless; Iran has not publicly demanded it be paused. Lebanon provisions of the MOU remain unreleased. Full text still not public. Belgium v Iran at the World Cup today adds an odd symbolic footnote: the Islamic Republic's national team competing in North America in the same weekend their deal with Washington stalls.</p>
+  <div class="watch-next"><strong>Watch:</strong> Whether replacement talks are scheduled and how quickly; whether Brent holds below $85 or moves toward $90 on deal-collapse signals; any Iranian statement relinking the 60-day clock to Switzerland.</div>
+</div>
+
+<div class="thread-card">
+  <h3>UK Labour Leadership <span class="badge badge-changed">Changed</span></h3>
+  <p>Wikipedia's page title is now "2026 Labour Party leadership crisis." Burnham has been an MP since Jun 19. Starmer confirmed on Friday he will face any challenge, ending the possibility of a quiet departure. The 81-MP threshold to trigger a contest is arithmetically available; no credible centrist candidate has declared, making this likely a straight Burnham-Starmer contest if formally triggered. The gilt market has not priced in political risk premium yet — that window may close once a formal challenge is filed.</p>
+  <div class="watch-next"><strong>Watch:</strong> Formal leadership challenge filing this week; whether any centrist candidate declares; gilt and sterling reaction once a contest is live; whether the cabinet holds further.</div>
+</div>
+
+<h2>Social &amp; Cultural Layer</h2>
 
 <div class="card">
-  <h3>The ceremony that didn't happen</h3>
-  <p>Today was supposed to be the Burgenstock moment: JD Vance in Switzerland, the 60-day nuclear negotiation clock formally set in motion, the US-Iran MOU moving from digital signatures to physical theater. Instead Vance's plane stayed on the tarmac. Switzerland announced the talks were postponed. Iran's delegation didn't travel, with Al-Mayadeen citing Israel's continuing operations in Lebanon as Iran's stated objection. The White House said Vance was ready but logistics were difficult.</p>
-  <p>This is the FDD counter-frame playing out in real time. The MOU was electronically signed June 14. Hormuz is reopening. A ceasefire is technically in effect. But Tehran has learned, or is demonstrating it always knew, that delay is leverage when the other side wants the deal more. Iran's demand that Washington fix Lebanon before the nuclear talks start is not a logistical objection. It is a test of whether the deal can be used to constrain Israeli operations that were never part of the deal text. The 60-day window started anyway, per Vance. Watch what Iran does with that ambiguity.</p>
-  <p>Brent held at $78.72. The market has decided this is noise, not collapse. That may be right. Or it may be pricing in the deal too early.</p>
-</div>
+  <p>The Apple Music UK chart's top five has been completely frozen for days. All equals signs, no movement. During one of the more turbulent news weeks of the year, the chart looks like this:</p>
 
-<div class="card">
-  <h3>Burnham enters Parliament</h3>
-  <p>Andy Burnham won Makerfield overnight, defeating Reform UK's Robert Kenyon more convincingly than pre-election polling suggested. He is now in Parliament and can formally trigger a Labour leadership contest. A challenge to Starmer is expected within 48 to 72 hours. Starmer could pre-empt it by announcing departure on his own terms, but neither path is comfortable. The question is whether Labour's internal machinery moves faster than its external poll ratings demand.</p>
-  <p>The number that matters is not tonight's margin but YouGov's national figure: Burnham's favourability sits at minus eleven. He is the most popular politician in a deeply unpopular party. Reform leads Labour 42 to 34 nationally. Whoever leads Labour after Starmer inherits that gap, not a blank slate. Watch whether any centre-left candidate emerges to contest Burnham rather than conceding before it starts.</p>
-</div>
-
-<div class="card">
-  <h3>The story that got buried: Ukraine hit Moscow with its largest drone attack ever</h3>
-  <p>On the night of June 17 to 18, while Western attention was fixed on Geneva and then Burgenstock, Ukraine launched what CNN, NBC, and NPR all described as its largest single-night drone attack on Moscow since the war began: over 555 drones targeting more than a dozen Russian regions, with Moscow's Kapotnya oil refinery struck for the second consecutive day. The Moscow mayor confirmed hits. Black smoke over the capital. TASS called it "the most massive drone attack on the Moscow region in two years." Russia claimed its defences destroyed nearly 200 drones on approach to Moscow alone.</p>
-  <p>Zelensky said it is "time the war ended." That phrasing alongside the largest-ever strike on the Russian capital is worth sitting with. Ukraine is not suing for peace. It is demonstrating that it can reach Moscow at scale, and doing so precisely when Washington's attention is elsewhere. The Ukraine thread was retired 48 hours ago. It is back.</p>
-</div>
-
-<div class="sep"></div>
-
-<!-- CHANGED THREADS -->
-<div class="section-label">Changed Threads</div>
-
-<div class="thread-card">
-  <h3><span class="badge badge-changed">changed</span> Iran / Hormuz</h3>
-  <p>Burgenstock ceremony postponed June 19. Vance did not travel; Iran cited Israel's Lebanon operations as precondition. Switzerland confirmed talks delayed. 60-day nuclear negotiation window started June 18 regardless. Hezbollah chief Naim Qassem called the deal a "great victory" and said it could be used to "expel Israel from Lebanon." Brent $78.72, stable. Jun 22 US-Iran talks still on calendar. The full MOU text has not been publicly released.</p>
-  <p><em>Watch:</em> whether Iran sends its delegation to Burgenstock before Jun 22; whether the full 14-point deal text is published; any Israeli military action in Lebanon before the 22nd.</p>
-</div>
-
-<div class="thread-card">
-  <h3><span class="badge badge-changed">changed</span> Israel / Lebanon</h3>
-  <p>Iran's use of Lebanon to delay Burgenstock is the sharpest signal yet that the Lebanon provisions of the MOU are contested rather than settled. Hezbollah's Qassem explicitly linked the deal to Israeli withdrawal, which Israel's defence minister Katz said will not happen. The deal is signed between the US and Iran; Israel and Hezbollah are not parties. Jun 22 talks are the next moment where Lebanon either gets resolved or becomes the fault line that cracks the framework.</p>
-  <p><em>Watch:</em> Jun 22 bilateral US-Iran talks; Israeli military activity in Lebanon before that date; Lebanon provisions ever made public.</p>
-</div>
-
-<div class="thread-card">
-  <h3><span class="badge badge-changed">changed</span> UK Labour Leadership</h3>
-  <p>Burnham won Makerfield. Now in Parliament; formal challenge to Starmer expected within 48-72h. 95+ MPs calling for Starmer's departure. Reform leads Labour 42-34 nationally. YouGov: Burnham national favourability minus 11. No credible centre-left challenger has declared. The Belfast riots thread is retired: that story has been fully absorbed into this one.</p>
-  <p><em>Watch:</em> Burnham's formal filing date; whether a centre-left candidate declares; Starmer's next public statement.</p>
-</div>
-
-<div class="thread-card">
-  <h3><span class="badge badge-changed">changed</span> Ebola &mdash; DRC / Uganda</h3>
-  <p>As of June 17: 837 confirmed cases and 196 deaths in DRC, up from 808 and 192 four days ago. The June 17 report recorded 29 new confirmed cases and four deaths since June 16. Ituri province remains the epicentre with 767 of DRC's confirmed cases across 20 health zones. Uganda holds at 19 confirmed / 2 deaths with no new cases since June 5. The rate is not accelerating sharply but is not declining. No approved Bundibugyo vaccine exists.</p>
-  <p><em>Watch:</em> any case confirmed outside DRC/Uganda; whether DRC's daily rate sustains above 30 cases; CEPI Bundibugyo vaccine timeline update.</p>
-</div>
-
-<div class="thread-card">
-  <h3><span class="badge badge-new">new</span> Ukraine &mdash; Moscow under drone assault</h3>
-  <p>Ukraine's June 17-18 attack was its largest on Moscow by any measure: over 555 drones launched in a single night, Moscow's Kapotnya oil refinery struck for the second consecutive day, black smoke visible over the capital. Russia says defences destroyed nearly 200 drones on approach to Moscow alone. Zelensky framed it as pressure to end the war, not an offer to stop fighting. The timing, while Washington was consumed by the Iran deal, was either coincidental or deliberate. Thread revived from retirement.</p>
-  <p><em>Watch:</em> Russian retaliation scale; whether Trump's Iran focus affects US weapons supply decisions for Ukraine; Zelensky's next statement on terms.</p>
-</div>
-
-<div class="sep"></div>
-
-<!-- CULTURAL LAYER -->
-<div class="section-label">The Social / Cultural Layer</div>
-
-<div class="card">
-  <h3>Fleetwood Mac is flooding the chart, and it's not a coincidence</h3>
-  <p>The UK Apple Music chart today has a pattern that's hard to miss. "Everywhere" jumped twelve places to number 79. "Go Your Own Way" is up four to number 86. "Landslide" entered the chart new at 195. "Little Lies" entered new at 198. "The Chain" holds at 104. Five Fleetwood Mac tracks moving simultaneously in the same direction.</p>
-  <p>The Stranger Things season 5 finale effect started in January 2026 after the December 31 drop, when "Landslide" first entered the UK chart in its 1975 original form. Six months later, new tracks are still entering. The Stranger Things boost should by any normal logic have faded. It hasn't, which suggests something else is sustaining it. "Landslide" and "Everywhere" entering the chart on the same day that Burnham wins Makerfield and Iran's formal peace ceremony fails to materialise is probably not intentional on anyone's part. But it lands differently for it. "Landslide" is a song about standing at a moment of total uncertainty, not knowing which way the seasons will turn. "Everywhere" is euphoric and slightly too good to trust. The combination feels accurate to today.</p>
-  <p>The wider chart tells the same story. Michael Jackson occupies multiple positions. Kings of Leon up twelve. Oasis and Nirvana in the top 200. The Killers' "Mr. Brightside" rising again. The UK chart is saturated with nostalgia at a moment of genuine political and geopolitical transition. Nostalgia is what the chart does when the present feels unresolved.</p>
-  <p>The divergence: you would expect turbulence. What the chart shows instead is comfort-seeking. Olivia Dean<span class="tag tb">UK</span> holds number 1 with "Man I Need." The Chemical Brothers<span class="tag tb">UK</span> sit at 5. Sam Fender and Olivia Dean<span class="tag tb">UK</span> together at 4. The texture is not anxious. It is retrospective, almost sedated. England fans are waiting for the June 23 Panama match and the cultural mood has not spiked yet in either direction.</p>
-  <p>Also worth noting: SIENNA SPIRO<span class="tag tb">UK</span> made two significant jumps today. "Die On This Hill" up eleven to number 83, "Material Lover" to number 48. An emerging UK artist accelerating mid-week usually signals something catching on TikTok. Worth watching.</p>
-
-  <div style="margin-top:1rem">
-    <div class="section-label" style="margin-bottom:0.6rem">Apple Music UK &mdash; Top 5</div>
-    <div class="chart-row"><span class="chart-pos">1</span><span class="chart-chg chg-eq">=</span> Olivia Dean &mdash; Man I Need <span class="tag tb">UK</span></div>
-    <div class="chart-row"><span class="chart-pos">2</span><span class="chart-chg chg-eq">=</span> Drake &mdash; Janice STFU</div>
-    <div class="chart-row"><span class="chart-pos">3</span><span class="chart-chg chg-eq">=</span> Ariana Grande &mdash; hate that i made you love me</div>
-    <div class="chart-row"><span class="chart-pos">4</span><span class="chart-chg chg-eq">=</span> Sam Fender &amp; Olivia Dean &mdash; Rein Me In <span class="tag tb">UK</span></div>
-    <div class="chart-row"><span class="chart-pos">5</span><span class="chart-chg chg-eq">=</span> The Chemical Brothers &mdash; Go <span class="tag tb">UK</span></div>
-
-    <div style="margin-top:0.9rem;border-top:1px solid var(--border);padding-top:0.8rem">
-      <div class="section-label" style="margin-bottom:0.5rem">Notable movers</div>
-      <div class="chart-row"><span class="chart-pos">79</span><span class="chart-chg chg-up">+12</span> Fleetwood Mac &mdash; Everywhere</div>
-      <div class="chart-row"><span class="chart-pos">83</span><span class="chart-chg chg-up">+11</span> SIENNA SPIRO &mdash; Die On This Hill <span class="tag tb">UK</span></div>
-      <div class="chart-row"><span class="chart-pos">86</span><span class="chart-chg chg-up">+4</span> Fleetwood Mac &mdash; Go Your Own Way</div>
-      <div class="chart-row"><span class="chart-pos">121</span><span class="chart-chg chg-up">+26</span> Justin Bieber &mdash; Sorry</div>
-      <div class="chart-row"><span class="chart-pos">195</span><span class="chart-chg chg-new">NEW</span> Fleetwood Mac &mdash; Landslide</div>
-      <div class="chart-row"><span class="chart-pos">198</span><span class="chart-chg chg-new">NEW</span> Fleetwood Mac &mdash; Little Lies</div>
+  <div style="margin:1rem 0 1.25rem;">
+    <div class="chart-row">
+      <span class="chart-pos">1</span>
+      <span><strong>Olivia Dean</strong><span class="tag tb">UK</span> <span class="chart-title">— Man I Need</span></span>
+      <span class="chart-move stable">=</span>
     </div>
-
-    <div style="margin-top:0.9rem;border-top:1px solid var(--border);padding-top:0.8rem">
-      <div class="section-label" style="margin-bottom:0.5rem">UK Twitter / X trends today</div>
-      <div class="tiktok-row"><strong>Moscow</strong> &mdash; Ukraine's largest-ever drone attack on Russia's capital trending; largely absent from UK mainstream press</div>
-      <div class="tiktok-row"><strong>Victor Mu&ntilde;oz</strong> &mdash; Liverpool hijacks Newcastle's move for the &euro;40M Spanish forward from Osasuna; Iraola's first Anfield signing</div>
-      <div class="tiktok-row"><strong>GTA 6</strong> &mdash; Pre-orders open June 25; November 19 console launch confirmed</div>
-      <div class="tiktok-row"><strong>Jamie Vardy</strong> &mdash; Transfer and retirement speculation circulating</div>
-      <div class="tiktok-row"><strong>Piers</strong> &mdash; Media/commentary context; exact trigger unclear</div>
+    <div class="chart-row">
+      <span class="chart-pos">2</span>
+      <span><strong>Drake</strong> <span class="chart-title">— Janice STFU</span></span>
+      <span class="chart-move stable">=</span>
+    </div>
+    <div class="chart-row">
+      <span class="chart-pos">3</span>
+      <span><strong>Ariana Grande</strong> <span class="chart-title">— hate that i made you love me</span></span>
+      <span class="chart-move stable">=</span>
+    </div>
+    <div class="chart-row">
+      <span class="chart-pos">4</span>
+      <span><strong>Sam Fender &amp; Olivia Dean</strong><span class="tag tb">UK</span> <span class="chart-title">— Rein Me In</span></span>
+      <span class="chart-move stable">=</span>
+    </div>
+    <div class="chart-row">
+      <span class="chart-pos">5</span>
+      <span><strong>The Chemical Brothers</strong><span class="tag tb">UK</span> <span class="chart-title">— Go</span></span>
+      <span class="chart-move stable">=</span>
     </div>
   </div>
+
+  <p>The Chemical Brothers at number 5 is worth unpacking. "Go" is a 2015 track that surged 429% on streaming after appearing in Netflix's <em>Apex</em>, a thriller where Taron Egerton plays a man being hunted. Egerton personally wrote to the duo requesting the track; his character plays it on the radio as a countdown before the hunt begins. Audiences are streaming an eleven-year-old song whose context inside the film is: <em>someone is coming for you and the clock is running</em>. That this is the British chart's momentum story during a week of explicit Russian escalation threats and a stalling nuclear deal is either coincidence or mood — and either way it's the right song at a revealing moment.</p>
+
+  <p>Below the frozen top five, Fleetwood Mac is expanding rather than contracting. "Everywhere" climbed to #79 (+12), while "Landslide" and "Little Lies" entered the chart fresh this week as new entries. The Stranger Things S5 and World Cup England effect is producing what might be called comfort classicism: reaching for music that predates the current anxieties. Justin Bieber's "Sorry" (2015) jumped 26 places to #121 — a decade-old apology record being rediscovered by people who were children when it came out. The nostalgia appetite is real and broad.</p>
+
+  <p>The artist to actually watch right now is <a href="https://music.apple.com/gb/search?term=Sienna+Spiro">Sienna Spiro</a><span class="tag tb">UK</span> — a 20-year-old London singer-songwriter with three tracks simultaneously climbing this week: "Material Lover" at #48, "Die On This Hill" up 11 places to #83, "The Visitor" up 11 places to #180. Her debut album, also called <em>The Visitor</em>, drops July 3. She performed at David Attenborough's 100th birthday at the Royal Albert Hall in May. Something is building around her that feels like more than algorithm.</p>
+
+  <p>On TikTok, the clearest signal this week is not a song but a sound type: a track titled "Detox Frequency, Spiritual &amp; Physical Reset, Lower Your Cortisol Level" has generated 324,000 videos across fifteen or more countries. People are — literally, algorithmically — seeking cortisol reduction at exactly the moment the macro picture is generating more cortisol than usual. The Yandel/Zion "Encantadora" remix is also trending heavily across Latin America today, coinciding with Colombia's election. That's two signals of unconscious political processing in the cultural layer.</p>
+
+  <p>The divergence worth naming explicitly: the cultural register is calm, nostalgic, wellness-seeking, and escapist. The macro register is openly escalatory. When these move in opposite directions, the gap closes from one side eventually — either the culture catches up to the news, or the news recedes enough for the mood to justify itself. This week, the news is not receding.</p>
 </div>
 
-<div class="sep"></div>
+<h2>Markets</h2>
 
-<!-- MARKETS -->
-<div class="section-label">Markets</div>
 <div class="markets-grid">
   <div class="market-tile">
     <div class="label">FTSE 100</div>
-    <div class="value">~10,510</div>
-    <div class="note">Flat on open</div>
-  </div>
-  <div class="market-tile">
-    <div class="label">Nasdaq</div>
-    <div class="value">26,517</div>
-    <div class="note">Jun 18 close</div>
+    <div class="value">10,364</div>
+    <div class="sub">Friday close · −0.34%</div>
+    <div class="note">Markets closed Sunday</div>
   </div>
   <div class="market-tile">
     <div class="label">Brent Crude</div>
-    <div class="value">$78.72</div>
-    <div class="note">Deal priced in</div>
+    <div class="value">$80.57</div>
+    <div class="sub">↑ from $78.72 · deal fragility re-priced</div>
+    <div class="note">Jun 22 Switzerland talks canceled</div>
   </div>
   <div class="market-tile">
-    <div class="label">10Y Gilt</div>
-    <div class="value">4.76%</div>
-    <div class="note">Easing; BoE holds</div>
+    <div class="label">UK 10Y Gilt</div>
+    <div class="value">4.78%</div>
+    <div class="sub">BoE held rates at 3.75% Jun 19</div>
+  </div>
+  <div class="market-tile">
+    <div class="label">UK 30Y Gilt</div>
+    <div class="value">5.46%</div>
+    <div class="sub">Jun 18 close</div>
+    <div class="note">No political risk premium yet priced in</div>
   </div>
 </div>
-<p style="font-size:0.8rem;color:var(--text-3)">Brent holding below $80 despite Burgenstock postponement. Market treating today's delay as procedural. BoE held rates; gilt market calm despite domestic political uncertainty. Political risk premium not yet priced into UK assets.</p>
 
-<div class="sep"></div>
+<h2>Outside the Frame</h2>
 
-<!-- OUTSIDE THE FRAME -->
-<div class="section-label">Outside the Frame</div>
-
-<div class="card">
-  <h3>Laos joined a Russian-built rail corridor while Geneva was happening</h3>
-  <p>This week Laos formally joined the OSJD rail corridor linking Southeast Asia to Europe via Central Asia and Russia, infrastructure Russia has been building as a parallel logistics architecture while Western sanctions were supposed to isolate it. A Laos-Russia nuclear cooperation framework, preliminary studies for a nuclear power plant, was also signed the same week. Neither story received meaningful Western coverage. The source to follow is August Whitcraft's <em>The Mekong Memo</em> Substack (<a href="https://www.mekongmemo.com">mekongmemo.com</a>), which has been tracking the Russia-Laos relationship with granular depth that no mainstream outlet has matched. The pattern: Russia quietly locking in Global South infrastructure and energy relationships while Western attention is consumed by Iran. The Geneva framework does not reverse this, and may not even address it.</p>
+<div class="otf-box">
+  <h3>The Alliance of Sahel States — a new thing the West is not watching</h3>
+  <p>Three military juntas — Mali, Niger, and Burkina Faso — formally left ECOWAS in January 2025 and have now constituted the Alliance of Sahel States, with centralized frameworks for diplomacy, defence, and development. In May 2026 they conducted confirmed joint airstrikes as a confederation. In June, Burkina Faso arrested prominent religious leader Imam Mohamed Ishaq Kindo — a sign of how far internal control apparatus is reaching. The UN reports three million internally displaced persons across the three countries. Both JNIM (al-Qaeda-affiliated) and Islamic State Sahel Province are demonstrating what ACLED calls "unprecedented tactical sophistication." Western diplomatic engagement is near-total absence.</p>
+  <p>The frame through which this gets discussed in London — when it gets discussed at all — is "Sahel instability" as a migration driver. That frame misses what's actually happening: a three-state confederation explicitly aligned with Russia (Wagner successor forces remain deployed), systematically breaking from Western institutional frameworks, while the population it governs absorbs the consequences. The <a href="https://www.stimson.org/2026/mali-attacks-aggravating-the-sahel-security-crisis/">Stimson Center's June 2026 briefing</a> and <a href="https://acleddata.com/region/conflict-sahel">ACLED's regional tracker</a> are the honest places to follow this. Neither is a household source, which is part of the problem.</p>
 </div>
 
-<div class="sep"></div>
+<h2>Thread Status</h2>
 
-<!-- STATUS TABLE -->
-<div class="section-label">Active Threads</div>
-<div class="card" style="padding:0.2rem 0;overflow-x:auto">
 <table class="status-table">
   <thead>
     <tr>
       <th>Thread</th>
       <th>Status</th>
-      <th>Current state</th>
-      <th>Changed</th>
+      <th style="min-width:280px;">One-line</th>
+      <th>Last changed</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="tl">Iran / Hormuz</td>
-      <td><span class="badge badge-changed">changed</span></td>
-      <td class="sl">Burgenstock postponed; Vance delayed; Iran using Lebanon leverage; 60-day clock running; Brent $78.72</td>
-      <td class="sl">Jun 19</td>
+      <td><strong>Ukraine — Moscow Drone</strong></td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td class="sl">Russia threatening "regular coordinated strikes" after second Ukrainian drone wave Jun 20; Zelensky: "Moscow will burn"; cycle entered new explicit-escalation phase</td>
+      <td>2026-06-21</td>
     </tr>
     <tr>
-      <td class="tl">Israel / Lebanon</td>
-      <td><span class="badge badge-changed">changed</span></td>
-      <td class="sl">Hezbollah: "great victory"; Iran demanding Israel withdrawal; Jun 22 talks on; Lebanon provisions not public</td>
-      <td class="sl">Jun 19</td>
+      <td><strong>Iran / Hormuz</strong></td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td class="sl">Jun 22 Bürgenstock talks canceled; Brent $80.57 (up from $78.72); 60-day clock running; MOU full text still private; Belgium v Iran at World Cup today</td>
+      <td>2026-06-21</td>
     </tr>
     <tr>
-      <td class="tl">UK Labour Leadership</td>
-      <td><span class="badge badge-changed">changed</span></td>
-      <td class="sl">Burnham won Makerfield; in Parliament; challenge to Starmer expected 48-72h; Reform leads Labour 42-34</td>
-      <td class="sl">Jun 19</td>
+      <td><strong>UK Labour Leadership</strong></td>
+      <td><span class="badge badge-changed">Changed</span></td>
+      <td class="sl">Wikipedia: "2026 Labour Party leadership crisis"; Burnham in Parliament; Starmer publicly preparing to fight challenge; formal filing imminent this week</td>
+      <td>2026-06-21</td>
     </tr>
     <tr>
-      <td class="tl">Ebola &mdash; DRC / Uganda</td>
-      <td><span class="badge badge-changed">changed</span></td>
-      <td class="sl">837/196 DRC (up from 808/192); 29 new cases Jun 17; Uganda 19/2; no approved vaccine</td>
-      <td class="sl">Jun 19</td>
+      <td><strong>Alliance of Sahel States</strong></td>
+      <td><span class="badge badge-new">New</span></td>
+      <td class="sl">Mali/Niger/Burkina confederation; joint airstrikes confirmed May 2026; Imam Kindo arrested Jun 2026; 3M displaced; JNIM/ISSP insurgency deepening; near-zero Western engagement</td>
+      <td>2026-06-21</td>
     </tr>
     <tr>
-      <td class="tl">Ukraine &mdash; Moscow drone assault</td>
-      <td><span class="badge badge-new">new</span></td>
-      <td class="sl">Largest-ever drone attack Jun 17-18; 555+ drones; Kapotnya refinery hit twice; Zelensky: "time the war ended"</td>
-      <td class="sl">Jun 19</td>
+      <td><strong>World Cup 2026</strong></td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td class="sl">No England match today; Belgium v Iran (geopolitically loaded), Spain v Saudi Arabia; England v Ghana Jun 23 in Boston</td>
+      <td>2026-06-18</td>
     </tr>
     <tr>
-      <td class="tl">World Cup 2026</td>
-      <td><span class="badge badge-stable">stable</span></td>
-      <td class="sl">Jun 19: USA v Australia, Scotland v Morocco, Brazil v Haiti, Turkey v Paraguay; England next Jun 23 v Panama</td>
-      <td class="sl">Jun 18</td>
+      <td><strong>Israel / Lebanon</strong></td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td class="sl">No new development Jun 21; Lebanon MOU provisions still unreleased; Katz: no withdrawal; next trigger is Jun 22 replacement talks (if any)</td>
+      <td>2026-06-19</td>
     </tr>
     <tr>
-      <td class="tl">SpaceX IPO</td>
-      <td><span class="badge badge-stable">stable</span></td>
-      <td class="sl">SPCX $185 Jun 19 (range $172-190); above $180 floor; +37% on $135 IPO close; no political development</td>
-      <td class="sl">Jun 18</td>
+      <td><strong>Ebola — DRC / Uganda</strong></td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td class="sl">837 confirmed / 196 deaths DRC as of Jun 15; Uganda 19/2; no new data Jun 21; WHO PHEIC active; no approved Bundibugyo vaccine</td>
+      <td>2026-06-19</td>
     </tr>
     <tr>
-      <td class="tl">South Africa Xenophobia</td>
-      <td><span class="badge badge-stable">stable</span></td>
-      <td class="sl">586+ Nigerians repatriated; Malawian/Kenyan repatriation ongoing; Jun 30 deadline 11 days away</td>
-      <td class="sl">Jun 17</td>
+      <td><strong>South Africa Xenophobia</strong></td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td class="sl">Jun 30 deadline 9 days away; Ramaphosa accelerating deportations; 7 Mozambicans killed Mossel Bay; repatriation flights ongoing Nigeria/Ghana/Malawi/Zimbabwe</td>
+      <td>2026-06-17</td>
     </tr>
     <tr>
-      <td class="tl">UK Economic Stress</td>
-      <td><span class="badge badge-stable">stable</span></td>
-      <td class="sl">FTSE ~10,510; Brent $78.72; 10Y gilt 4.76%; BoE holds; political risk not yet in assets</td>
-      <td class="sl">Jun 15</td>
+      <td><strong>UK Economic Stress</strong></td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td class="sl">FTSE 10,364; Brent $80.57; 10Y gilt 4.78%; 30Y gilt 5.46%; BoE held Jun 19; political risk premium not yet in prices</td>
+      <td>2026-06-15</td>
     </tr>
     <tr>
-      <td class="tl">Colombia Runoff &mdash; Jun 21</td>
-      <td><span class="badge badge-stable">stable</span></td>
-      <td class="sl">De la Espriella ~44% vs Cepeda ~41% first round; Trump endorsed De la Espriella; runoff Sunday</td>
-      <td class="sl">Jun 13</td>
-    </tr>
-    <tr>
-      <td class="tl">European Defence / FCAS</td>
-      <td><span class="badge badge-stable">stable</span></td>
-      <td class="sl">FCAS cancelled Jun 8-9; Combat Cloud survives; no post-FCAS bilateral framework announced</td>
-      <td class="sl">Jun 14</td>
+      <td><strong>SpaceX IPO</strong></td>
+      <td><span class="badge badge-stable">Stable</span></td>
+      <td class="sl">SPCX $185; above $180 floor; profit-taking stable; no Musk political development</td>
+      <td>2026-06-18</td>
     </tr>
   </tbody>
 </table>
-</div>
-<p style="font-size:0.78rem;color:var(--text-3);margin-top:0.6rem"><em>Retired today:</em> Belfast Riots / UK Anti-Immigrant Violence &mdash; riots subsided; story fully absorbed into the Labour leadership contest and tracked under that thread.</p>
 
 <footer>
-  <span>Generated 19 June 2026</span>
+  <span>Generated 21 June 2026</span>
   <a href="https://firaskh79.github.io/daily-digest/">firaskh79.github.io/daily-digest</a>
 </footer>
 
 <script type="text/plain" id="digestAudioScript">
-The day's headline story is the ceremony that didn't happen. Vice President Vance was supposed to fly to Burgenstock in Switzerland today to formally begin sixty days of nuclear negotiations with Iran. Instead, he stayed home. Switzerland announced the talks were postponed. Iran's delegation didn't travel either, reportedly because Israel's ongoing operations in Lebanon remain unresolved. The sixty-day negotiation clock started anyway, per the White House, because the memorandum of understanding was electronically signed last Thursday. What this tells you: Tehran is using Lebanon as leverage against the nuclear track. The full deal text still hasn't been published. And Brent crude held at seventy-eight dollars and seventy-two cents, so the market has decided this is a delay, not a collapse. Watch whether Iran sends anyone to Burgenstock before June twenty-second.
+The story that's been easiest to miss this week is the one between Russia and Ukraine. A few days ago Ukraine launched what it called its largest-ever drone attack on Moscow — over five hundred drones, hitting the city's main oil refinery twice. Russia's defense ministry has now responded by threatening what they called frequent and massive group strikes on Ukraine, coordinated and regular. Zelensky said publicly: if Putin continues, Moscow will burn. That is explicit escalation language from both sides at the same time. The thing to watch over the coming days is whether Russia actually executes on those threats — not a one-off retaliation, but a sustained infrastructure campaign before winter arrives.
 
-The domestic UK story is cleaner: Andy Burnham won the Makerfield by-election overnight, convincingly, over Reform U-K's candidate. He is now in Parliament. A formal leadership challenge to Keir Starmer is expected within forty-eight to seventy-two hours. The number that matters isn't tonight's majority but YouGov's national figure: Burnham's favourability sits at minus eleven. He is the most popular politician in a party trailing Reform by eight points. Whoever leads Labour after Starmer inherits that gap, not a blank slate. Watch whether any centre-left candidate declares before Burnham has the field to himself.
+The Iran deal is also wobbling. The follow-up talks meant to happen this weekend in Switzerland have been called off. Switzerland's foreign ministry confirmed they won't be proceeding, and Washington pulled Vance from the trip. Brent crude ticked back above eighty dollars as markets repriced the deal's fragility. The sixty-day nuclear clock is still running — it started June eighteenth — but without a diplomatic mechanism to translate that into concrete agreements, a clock without architecture is just a countdown. And there's a strange footnote for today: this afternoon Iran is playing Belgium at the World Cup in Los Angeles, still wearing the Islamic Republic crest, while their government's nuclear talks with Washington are stalling. Meanwhile in the United Kingdom, Keir Starmer publicly confirmed on Friday he'll fight any leadership challenge — which is both the right posture and confirmation the challenge is coming.
 
-One more thing, and it's the story almost nobody noticed: the night before last, Ukraine launched its largest-ever drone attack on Moscow, over five hundred and fifty drones in a single night, hitting the Kapotnya oil refinery for the second day running. C-N-N called it the largest attack on the Russian capital since the start of the full-scale war. Zelensky said it's, quote, time the war ended. Ukraine was hitting Moscow at scale on the same night Washington was supposed to be formalising a peace deal in a different country. Neither cancelled the other. But the contrast is worth holding. Watch whether Russia escalates its retaliation against Ukrainian cities in response.
+The Apple Music chart in the United Kingdom has not moved at the top in days — every one of the top five positions shows an equals sign. At the same time, TikTok is being flooded with a sound called Detox Frequency, Lower Your Cortisol Level — three hundred and twenty-four thousand videos across fifteen countries. People are seeking calm during precisely the wrong week for it. The Chemical Brothers are back at number five thanks to a Netflix thriller where the song plays as a countdown before someone is hunted — which is either coincidence or the most on-the-nose cultural mood signal of the summer. And one artist worth keeping an eye on: Sienna Spiro, a twenty-year-old British singer-songwriter, has three tracks simultaneously climbing the chart right now. Her debut album drops July third. Something is building.
 </script>
+
+<div id="audio-player-bar">
+  <button id="play-btn" aria-label="Play digest audio">▶</button>
+  <span id="audio-label">Listen to today's digest (~2 min)</span>
+</div>
 
 <script>
 (function(){
-  var scriptEl = document.getElementById('digestAudioScript');
-  var text = scriptEl ? scriptEl.textContent.trim() : '';
-  var synth = window.speechSynthesis;
-  var utterance = null;
-  var playing = false;
-  var startTime = 0;
-  var estimatedDuration = text.split(/\s+/).length / 2.7 * 1000;
-  var btn = document.getElementById('playBtn');
-  var fill = document.getElementById('progressFill');
-  var sub = document.getElementById('playerSub');
-  var raf;
-
-  function tick(){
-    if(!playing) return;
-    var elapsed = Date.now() - startTime;
-    var pct = Math.min(100, (elapsed / estimatedDuration) * 100);
-    fill.style.width = pct + '%';
-    if(pct < 100) raf = requestAnimationFrame(tick);
-  }
-
-  window.togglePlay = function(){
-    if(!synth) return;
-    if(playing){
-      synth.cancel();
-      playing = false;
-      btn.innerHTML = '&#9654;';
-      sub.textContent = '~2 min · tap to play';
-      cancelAnimationFrame(raf);
-      return;
-    }
-    utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.95;
-    utterance.onend = function(){
-      playing = false;
-      btn.innerHTML = '&#9654;';
-      sub.textContent = '~2 min · tap to play';
-      fill.style.width = '100%';
-      cancelAnimationFrame(raf);
-    };
-    synth.cancel();
-    synth.speak(utterance);
-    playing = true;
-    btn.innerHTML = '&#9646;&#9646;';
-    sub.textContent = 'Playing…';
-    startTime = Date.now();
-    raf = requestAnimationFrame(tick);
-  };
+  const btn=document.getElementById('play-btn');
+  const label=document.getElementById('audio-label');
+  const txt=document.getElementById('digestAudioScript').textContent.trim();
+  let playing=false;
+  btn.addEventListener('click',function(){
+    if(!('speechSynthesis' in window)){label.textContent='Speech not supported';return;}
+    if(playing){window.speechSynthesis.cancel();playing=false;btn.textContent='▶';label.textContent="Listen to today's digest (~2 min)";return;}
+    const u=new SpeechSynthesisUtterance(txt);
+    u.lang='en-GB';u.rate=0.95;
+    u.onstart=function(){playing=true;btn.textContent='⏸';label.textContent='Playing…';};
+    u.onend=function(){playing=false;btn.textContent='▶';label.textContent="Listen to today's digest (~2 min)";};
+    u.onerror=function(){playing=false;btn.textContent='▶';label.textContent='Audio error — try again';};
+    window.speechSynthesis.speak(u);
+  });
 })();
 </script>
 
