@@ -1,77 +1,70 @@
 {
-  "date": "2026-06-21",
-  "mood_of_week": "escapist",
+  "date": "2026-06-28",
+  "mood_of_week": "anxious",
   "macro": {
     "politics": [
       {
-        "headline": "Andy Burnham crosses 81 MP nomination threshold; formal Labour leadership challenge imminent",
-        "tags": ["UK", "Labour", "Burnham", "Starmer"],
+        "headline": "Keir Starmer resigns as Prime Minister 22 Jun; Labour leadership contest opens 9 Jul; Burnham running",
+        "tags": ["uk", "labour", "burnham", "starmer"],
         "sentiment": "turbulent",
         "intensity": 9
       },
       {
-        "headline": "Ukraine 194-drone Moscow attack largest of war; Russia threatens 'massive group strikes'; Kyiv hit Jun 20",
-        "tags": ["Ukraine", "Russia", "escalation"],
-        "sentiment": "escalatory",
-        "intensity": 9
-      },
-      {
-        "headline": "Iran MOU: Bürgenstock technical talks postponed; Vance flies to Switzerland; $300B reconstruction fund detail emerges",
-        "tags": ["Iran", "US", "MOU", "Bürgenstock"],
-        "sentiment": "uncertain",
+        "headline": "Zelenskyy declares formal 40-day SBU operation to compel Russia to end war; 660-drone attack 26 Jun",
+        "tags": ["ukraine", "russia", "escalation", "drones"],
+        "sentiment": "escalating",
         "intensity": 8
       },
       {
-        "headline": "JNIM suicide attack on Niamey airport (AES HQ, Russian advisers) kills 13 — second airport attack this year",
-        "tags": ["Sahel", "JNIM", "Niger", "AES"],
-        "sentiment": "alarming",
-        "intensity": 8
-      },
-      {
-        "headline": "South Africa xenophobia: June 30 deadline 9 days away; Nigeria/Ghana/Mozambique/Malawi evacuating citizens",
-        "tags": ["SouthAfrica", "xenophobia", "migration"],
-        "sentiment": "deteriorating",
+        "headline": "US-Iran roadmap agreed Burgenstock 22 Jun; IAEA invited back; 60-day sanctions waiver; inspection dispute over bombed sites",
+        "tags": ["iran", "us", "hormuz", "nuclear", "iaea"],
+        "sentiment": "cautious-optimism",
         "intensity": 7
       },
       {
-        "headline": "Colombia presidential runoff June 21: De la Espriella vs Cepeda; result pending at digest time",
-        "tags": ["Colombia", "election", "LatinAmerica"],
-        "sentiment": "uncertain",
+        "headline": "De la Espriella wins Colombia runoff 49.66% vs 48.70%; far-right Trump-backed president",
+        "tags": ["colombia", "farright", "latam", "trump"],
+        "sentiment": "polarised",
         "intensity": 6
+      },
+      {
+        "headline": "South Africa xenophobia: Jun 30 deadline today; military deployed; 2+ dead; trade -22%",
+        "tags": ["southafrica", "xenophobia", "migration", "africa"],
+        "sentiment": "tense",
+        "intensity": 7
       }
     ],
     "economics": [
       {
-        "headline": "Brent crude -8.5% on week — largest weekly drop since March 2025; Iran deal Hormuz risk unwind",
-        "tags": ["oil", "Brent", "Iran"],
-        "sentiment": "easing",
+        "headline": "Brent crude falls 10%+ on week to $72 — largest drop since February; Hormuz risk unwind",
+        "tags": ["oil", "brent", "iran", "hormuz"],
+        "sentiment": "relief",
         "intensity": 8
       },
       {
-        "headline": "30Y UK gilt 5.47% unchanged; market not pricing Labour leadership uncertainty",
-        "tags": ["gilts", "UK", "Labour"],
-        "sentiment": "disconnected",
-        "intensity": 7
-      },
-      {
-        "headline": "Nasdaq +2.4% week; 11th winning week in 12; AI/chip rally continuing",
-        "tags": ["Nasdaq", "AI", "tech"],
-        "sentiment": "bullish",
+        "headline": "Nasdaq down 4.6% on week; 5th consecutive losing session; chip stocks lead decline",
+        "tags": ["nasdaq", "tech", "chips", "equities"],
+        "sentiment": "negative",
         "intensity": 6
       },
       {
-        "headline": "SPCX (SpaceX) closed $181.60 Jun 20; above $180 floor; pulled back from $225.64 ATH Jun 16",
-        "tags": ["SpaceX", "SPCX", "IPO"],
-        "sentiment": "consolidating",
-        "intensity": 5
+        "headline": "UK gilt muted after Starmer resignation; 10Y edged to 4.85%, 30Y ~5.50%; sterling $1.32",
+        "tags": ["gilts", "sterling", "uk", "labour"],
+        "sentiment": "stable",
+        "intensity": 4
       }
     ],
     "google_trends_uk": [
-      { "rank": 1, "term": "Burnham Labour leadership", "volume_est": "very high" },
-      { "rank": 2, "term": "World Cup results today", "volume_est": "very high" },
-      { "rank": 3, "term": "Fleetwood Mac", "volume_est": "high" },
-      { "rank": 4, "term": "Moscow drone attack Ukraine", "volume_est": "high" },
-      { "rank": 5, "term": "Colombia election result", "volume_est": "moderate" }
+      { "rank": 1, "term": "Starmer resignation", "volume_est": "very high" },
+      { "rank": 2, "term": "Andy Burnham Labour leader", "volume_est": "very high" },
+      { "rank": 3, "term": "England DR Congo World Cup", "volume_est": "high" },
+      { "rank": 4, "term": "Panama England result", "volume_est": "high" },
+      { "rank": 5, "term": "Ebola France case", "volume_est": "medium" },
+      { "rank": 6, "term": "Ukraine drone attack Russia", "volume_est": "medium" },
+      { "rank": 7, "term": "Iran nuclear deal IAEA", "volume_est": "medium" },
+      { "rank": 8, "term": "South Africa June 30 deadline", "volume_est": "medium" },
+      { "rank": 9, "term": "Peter Murrell sentence SNP", "volume_est": "medium" },
+      { "rank": 10, "term": "De la Espriella Colombia", "volume_est": "low" }
     ],
     "pytrends_uk_live": []
   },
@@ -80,79 +73,80 @@
       "apple_music_uk_top5": [
         {
           "pos": 1, "artist": "Olivia Dean", "title": "Man I Need", "change": 0,
-          "uk_artist": true, "mood_tags": ["nostalgic", "yearning"], "theme_tags": ["romance", "UK-indie"]
+          "uk_artist": true, "mood_tags": ["melancholic", "introspective"], "theme_tags": ["love", "longing"]
         },
         {
           "pos": 2, "artist": "Drake", "title": "Janice STFU", "change": 0,
-          "uk_artist": false, "mood_tags": ["exhausted", "defiant"], "theme_tags": ["internet-fatigue", "vindication"]
+          "uk_artist": false, "mood_tags": ["confrontational", "confident"], "theme_tags": ["rap", "beef"]
         },
         {
           "pos": 3, "artist": "Ariana Grande", "title": "hate that i made you love me", "change": 0,
-          "uk_artist": false, "mood_tags": ["regret", "tender"], "theme_tags": ["breakup", "pop"]
+          "uk_artist": false, "mood_tags": ["melancholic", "confessional"], "theme_tags": ["relationships", "regret"]
         },
         {
           "pos": 4, "artist": "Sam Fender & Olivia Dean", "title": "Rein Me In", "change": 0,
-          "uk_artist": true, "mood_tags": ["melancholic", "intimate"], "theme_tags": ["UK-indie", "collaboration"]
+          "uk_artist": true, "mood_tags": ["bittersweet", "indie"], "theme_tags": ["relationships"]
         },
         {
           "pos": 5, "artist": "The Chemical Brothers", "title": "Go", "change": 0,
-          "uk_artist": true, "mood_tags": ["energised", "propulsive"], "theme_tags": ["film-Apex", "electronic", "World-Cup-adjacent"]
+          "uk_artist": true, "mood_tags": ["euphoric", "propulsive"], "theme_tags": ["electronic", "film-sync", "nostalgia"]
         }
       ],
       "tiktok_sounds": [
         {
-          "title": "Come Closer (feat. Drake)",
-          "artist": "WizKid",
-          "score": 964,
-          "videos": 125000,
-          "mood_tags": ["summer", "celebratory"],
-          "theme_tags": ["World-Cup", "Africa"]
+          "title": "honeybee", "artist": "Olivia Rodrigo", "score": 970, "videos": 507682,
+          "mood_tags": ["sweet", "romantic"], "theme_tags": ["new-release", "pop"]
+        },
+        {
+          "title": "Come Closer (feat. Drake)", "artist": "WizKid", "score": 937, "videos": 276624,
+          "mood_tags": ["smooth", "afrobeats"], "theme_tags": ["afrobeats", "trending-africa"]
         }
       ]
     },
     "tiktok_formats": [
-      { "format": "Detox/cortisol reset ambient sounds (324k videos, +9.6%/day)", "theme_tags": ["wellness", "anxiety-management", "escapism"] },
-      { "format": "WizKid Come Closer dance/lip-sync (125k videos, +18.5%/day)", "theme_tags": ["summer", "World Cup"] }
+      { "format": "nostalgia playlist POV — posting 2005-2015 songs as current", "theme_tags": ["nostalgia", "comfort", "escapist"] },
+      { "format": "World Cup reaction and player edits", "theme_tags": ["worldcup", "football", "england"] }
     ]
   },
   "threads": [
-    { "id": "ukraine-moscow-drone", "status": "changed", "status_line": "194-drone Moscow strike Jun 18 (largest ever); both sides in explicit public escalation loop", "last_changed": "2026-06-21" },
-    { "id": "iran-hormuz", "status": "changed", "status_line": "Bürgenstock postponed not cancelled; Vance in Switzerland; $300B fund detail; Lebanon provisions secret", "last_changed": "2026-06-21" },
-    { "id": "uk-labour-leadership", "status": "changed", "status_line": "Burnham crossed 81 MP threshold; formal challenge imminent; Starmer refusing to go", "last_changed": "2026-06-21" },
-    { "id": "alliance-sahel-states", "status": "changed", "status_line": "JNIM suicide attack Niamey airport (AES HQ) Jun 18; 13 dead; second airport attack this year", "last_changed": "2026-06-21" },
-    { "id": "southafrica-xenophobia", "status": "changed", "status_line": "Jun 30 deadline 9 days; four countries evacuating; Ramaphosa accelerating deportations", "last_changed": "2026-06-21" },
-    { "id": "world-cup-2026", "status": "stable", "status_line": "Group stage ongoing; England v Ghana Jun 23", "last_changed": "2026-06-18" },
-    { "id": "israel-lebanon", "status": "stable", "status_line": "Ceasefire renewed Jun 19; comprehensive talks week of Jun 22", "last_changed": "2026-06-19" },
-    { "id": "ebola-drc-uganda", "status": "stable", "status_line": "837 DRC / 196 deaths; Uganda no new cases past week", "last_changed": "2026-06-19" },
-    { "id": "uk-economic-stress", "status": "stable", "status_line": "Brent -8.5% wk; gilts flat; Labour crisis not priced", "last_changed": "2026-06-15" },
-    { "id": "spacex-ipo", "status": "stable", "status_line": "SPCX $181.60; above $180 floor; pulled back from $225 ATH", "last_changed": "2026-06-18" }
+    { "id": "ukraine-moscow-drone", "status": "changed", "status_line": "660-drone attack 26 Jun; Zelenskyy 40-day operation; Crimea state of emergency", "last_changed": "2026-06-28" },
+    { "id": "iran-hormuz", "status": "changed", "status_line": "Roadmap agreed; IAEA invited; 60-day waiver; Brent $72 -10%; inspection dispute", "last_changed": "2026-06-28" },
+    { "id": "uk-labour-leadership", "status": "changed", "status_line": "Starmer resigned 22 Jun; Burnham running; contest opens 9 Jul", "last_changed": "2026-06-28" },
+    { "id": "alliance-sahel-states", "status": "stable", "status_line": "No follow-up attack post Jun 18 airport", "last_changed": "2026-06-21" },
+    { "id": "southafrica-xenophobia", "status": "changed", "status_line": "Jun 30 deadline today; military deployed; trade -22%", "last_changed": "2026-06-28" },
+    { "id": "world-cup-2026", "status": "changed", "status_line": "England 2-0 Panama; R32 vs DR Congo Wednesday", "last_changed": "2026-06-28" },
+    { "id": "israel-lebanon", "status": "stable", "status_line": "Ceasefire framework tied to Hezbollah disarmament; talks ongoing", "last_changed": "2026-06-19" },
+    { "id": "ebola-drc-uganda", "status": "changed", "status_line": "1,155 cases; France case 24 Jun; 304 deaths", "last_changed": "2026-06-28" },
+    { "id": "uk-economic-stress", "status": "changed", "status_line": "Brent $72; FTSE 10,508; 30Y gilt 5.50%; sterling $1.32", "last_changed": "2026-06-28" },
+    { "id": "spacex-ipo", "status": "changed", "status_line": "SPCX $147 low Jun 23; recovered $153; Nasdaq -4.6% wk", "last_changed": "2026-06-28" },
+    { "id": "colombia-espriella", "status": "new", "status_line": "De la Espriella won 49.66%; far-right, Trump-backed; first far-right Colombian president", "last_changed": "2026-06-28" }
   ],
   "synthesis": {
-    "weekly_theme": "Explicit escalation abroad, domestic collapse at home — and Britain streaming Fleetwood Mac",
-    "mechanism": "The Labour crisis and Ukraine escalation are structurally unconnected, but both share the property of being situations where neither side can back down publicly. Markets have not priced either. The cultural escape into nostalgia is the civilian processing mechanism for a week that offered no resolution on either front.",
+    "weekly_theme": "A week of cascading threshold crossings: Britain's Prime Minister goes, Ukraine crosses to formal escalation, Ebola reaches Europe, Colombia tilts right — and the UK charts fill with Fleetwood Mac.",
+    "mechanism": "Multiple slow-burning crises reached visible thresholds simultaneously (Starmer resignation, Ukraine's 40-day declaration, France Ebola case, South Africa deadline), producing an aggregated sense of disruption that cultural consumption responds to not by engaging with the news but by retreating to comfort — a consistent pattern when ambient stress exceeds processing capacity.",
     "connections": [
       {
-        "macro_event": "Labour leadership crisis — Burnham crossing nomination threshold",
-        "cultural_response": "Fleetwood Mac surge: 6 tracks moving simultaneously, 4 new entries or big movers",
-        "mechanism": "During domestic political instability, UK audiences reach for catalogue music that feels stable and known. Fleetwood Mac catalogue = cultural comfort object during fracture.",
-        "observation": "Six Fleetwood Mac tracks moving simultaneously is not explained by World Cup alone. The band's members don't tour and have no current release. The macro instability is the most plausible additional driver.",
+        "macro_event": "Starmer resignation and Labour leadership vacuum",
+        "cultural_response": "Fleetwood Mac, Ed Sheeran catalogue, Kings of Leon, LINKIN PARK surging on Apple Music UK",
+        "mechanism": "Political uncertainty produces comfort-seeking; UK audiences historically reach for familiar music during periods of institutional instability — the pattern was visible during Brexit and COVID and is repeating here",
+        "observation": "The nostalgia wave is broader than the World Cup alone can explain. Fleetwood Mac appear 5 times in the top 200; Kings of Leon and LINKIN PARK have no obvious tournament hook. The chart looks like what people listen to when the news feels like too much. The divergence is the signal: cascading macro disruption, flat emotional response in consumption.",
         "confidence": "moderate",
-        "signal_type": "reactive"
-      },
-      {
-        "macro_event": "Ukraine-Russia reciprocal escalation and Sahel infrastructure attacks",
-        "cultural_response": "Justin Bieber 'Sorry' +26; Drake 'Janice STFU' at #2 (internet exhaustion anthem)",
-        "mechanism": "Regret and exhaustion as musical themes in a week of unresolvable public conflict. Not a direct causal link but a mood resonance.",
-        "observation": "The two biggest non-World-Cup movers this week are a song named after regret (+26) and a song about surviving endless commentary (#2 stable). Mood is not 'anxious' but 'not-looking-at-it.'",
-        "confidence": "speculative",
         "signal_type": "divergence"
       },
       {
-        "macro_event": "Iran MOU and Hormuz risk unwind",
-        "cultural_response": "No cultural signal; Brent -8.5% is the primary response",
-        "mechanism": "Oil price signal is the clearest market-level response. Cultural layer shows no Iran-specific processing.",
-        "observation": "A deal that may reshape Middle East oil flows for a generation is not registering in social or cultural trends. Absence of signal is itself signal.",
+        "macro_event": "Ukraine 40-day operation — explicit escalation",
+        "cultural_response": "UK Twitter dominated by World Cup, not Ukraine; no protest music or conflict-processing sounds visible",
+        "mechanism": "Ukraine fatigue — after 4+ years of war the UK public has disconnected emotionally from the conflict even as the strategic stakes escalate. The 660-drone attack registered in specialist media but not in cultural trending.",
+        "observation": "The gap between the strategic significance of Zelenskyy's 40-day declaration and its cultural invisibility is itself a data point. Britain is processing this war through fatigue rather than engagement.",
         "confidence": "strong",
+        "signal_type": "divergence"
+      },
+      {
+        "macro_event": "South Africa xenophobia crisis — Jun 30 deadline",
+        "cultural_response": "WizKid 'Come Closer' feat. Drake trending heavily in South Africa on TikTok during the crisis week",
+        "mechanism": "South African TikTok users streaming Afrobeats collaboration during the xenophobia crisis is a specific divergence — music that celebrates African collaboration and pan-continental identity, trending in a country experiencing anti-African violence",
+        "observation": "Speculative but worth noting: the sound that most captures pan-African joy is trending in South Africa during its most anti-African political moment. That gap is either escapism or resistance depending on who is doing the streaming.",
+        "confidence": "speculative",
         "signal_type": "divergence"
       }
     ]

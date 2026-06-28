@@ -2,32 +2,32 @@
   "threads": [
     {
       "id": "ukraine-moscow-drone",
-      "label": "Ukraine — Moscow Drone Assault",
+      "label": "Ukraine — 40-Day Operation",
       "status": "changed",
-      "status_line": "194-drone Moscow strike Jun 18 (largest ever); Kapotnya refinery hit 9mi from Kremlin; Russia threatened 'massive group strikes' and followed through Jun 20 (3 dead, 45 injured Kyiv); both sides in explicit public escalation loop simultaneously",
+      "status_line": "Zelenskyy declared 40-day SBU influence operation 25 Jun to compel Russia to end war; 660-drone attack 26 Jun (one of largest ever) targeting 12 Russian regions and energy infrastructure; Crimea state of emergency; Stanovaya: Putin compelled not dominant — escalation risk elevated",
       "first_seen": "2026-06-19",
-      "last_changed": "2026-06-21",
+      "last_changed": "2026-06-28",
       "expand_if": [
-        "Russia executes major coordinated infrastructure strike on Ukrainian cities",
-        "Trump makes statement linking Iran deal bandwidth to Ukraine weapons supply",
-        "European NATO members invoke Article 4 in response",
-        "Zelensky proposes ceasefire terms linked to Moscow strikes",
-        "Russia conducts strike killing more than 50 civilians in single attack"
+        "Russia executes major coordinated civilian infrastructure strike in retaliation",
+        "NATO Article 4 consultation invoked",
+        "Zelensky proposes ceasefire terms or 40-day operation produces diplomatic back-channel",
+        "Russia conducts strike killing more than 50 civilians in single attack",
+        "Belarus officially drawn into conflict"
       ]
     },
     {
       "id": "iran-hormuz",
       "label": "Iran / Hormuz",
       "status": "changed",
-      "status_line": "Bürgenstock Jun 22 postponed not cancelled; Vance in Switzerland Jun 20, Iranian delegation arrived same day; $300B Gulf coalition reconstruction fund for Iran if MOU honoured; Lebanon provisions still unpublished; 60-day clock from Jun 18; Brent -8.5% week on Hormuz risk unwind",
+      "status_line": "Roadmap agreed 22 Jun; IAEA invited back; 60-day sanctions waiver on oil; Brent $72 (-10% wk on Hormuz risk unwind); inspection dispute over bombed Fordow/Natanz/Isfahan sites — Iran denies US claims of agreement; Lebanon MOU still unreleased; 440kg enriched uranium at 60% unverified",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-21",
+      "last_changed": "2026-06-28",
       "expand_if": [
-        "Bürgenstock II date confirmed",
+        "IAEA inspection modalities publicly announced (or collapsed)",
         "Lebanon MOU provisions published",
         "Brent breaks above $90 on deal-collapse signals",
         "Iran publicly disputes or pauses the 60-day clock",
-        "Iranian enrichment activity confirmed resumed",
+        "Iranian enrichment activity confirmed resumed at bombed sites",
         "Israeli action in Lebanon triggers deal collapse"
       ]
     },
@@ -35,27 +35,27 @@
       "id": "uk-labour-leadership",
       "label": "UK Labour Leadership",
       "status": "changed",
-      "status_line": "Burnham secretly crossed 81 MP nomination threshold (20%) as of Jun 20/21; plans to present list to Starmer and push for voluntary resignation; Starmer confirmed he will fight any contest; formal challenge could file any day; no centrist candidate declared",
+      "status_line": "Starmer resigned 22 Jun; Burnham returned to Parliament same day; contest opens 9 Jul; Burnham running, no centrist declared; gilts muted (10Y ~4.85%, 30Y ~5.50%); sterling $1.32 — political resolution not fresh uncertainty",
       "first_seen": "2026-06-03",
-      "last_changed": "2026-06-21",
+      "last_changed": "2026-06-28",
       "expand_if": [
-        "Formal leadership challenge filed",
-        "Starmer resigns before challenge filed",
-        "Centrist candidate publicly declares",
-        "Major gilt or sterling reaction to political uncertainty",
-        "Cabinet minister resigns specifically citing leadership crisis"
+        "Centrist candidate publicly declares before 9 Jul",
+        "Burnham makes fiscal commitment deviating from current rules",
+        "Major gilt or sterling move on leadership development",
+        "Cabinet minister publicly backs or opposes Burnham",
+        "Result of contest announced"
       ]
     },
     {
       "id": "alliance-sahel-states",
       "label": "Alliance of Sahel States",
-      "status": "changed",
-      "status_line": "JNIM suicide attack on Niamey airport (AES HQ, Russian advisers, drone unit based there) Jun 18; 13 dead; second airport attack this year; ACLED: 'departure from rural insurgency to coordinated strikes on vital national infrastructure'; AES security premise now under direct material test",
+      "status": "stable",
+      "status_line": "No follow-up attack post 18 Jun Niamey airport; JNIM-ISSP competitive dynamic documented; ACLED: departure from rural insurgency to coordinated infrastructure strikes; AES security premise under test but no new incident",
       "first_seen": "2026-06-21",
       "last_changed": "2026-06-21",
       "expand_if": [
-        "JNIM or ISSP follow-up attack on AES infrastructure",
-        "Alliance of Sahel States formally announces new bilateral agreements (Russia, China)",
+        "JNIM or ISSP follow-up attack on AES capital or infrastructure",
+        "Alliance of Sahel States announces new bilateral agreements (Russia, China)",
         "ECOWAS or AU imposes sanctions or condemnation",
         "Major attack on capital city (Bamako, Niamey, Ouagadougou)",
         "Wagner/Africa Corps publicly expands presence",
@@ -66,11 +66,11 @@
       "id": "southafrica-xenophobia",
       "label": "South Africa Xenophobia Crisis",
       "status": "changed",
-      "status_line": "Jun 30 deadline 9 days away; Nigeria/Ghana/Mozambique/Malawi evacuating citizens (262, 1000, 545+ respectively); Ramaphosa accelerating deportations co-opting movement; WHO director-general calls it 'tragic betrayal'; social media disinformation driving mobilisation; trade -22%",
+      "status_line": "Jun 30 deadline today; military deployed to airports and strategic sites; police pre-positioned; 2+ dead in preceding weeks; Nigeria/Ghana/Mozambique/Malawi/Zimbabwe repatriation flights; trade -22%; Ramaphosa co-opting deportations not confronting movement legally",
       "first_seen": "2026-06-17",
-      "last_changed": "2026-06-21",
+      "last_changed": "2026-06-28",
       "expand_if": [
-        "June 30 deadline triggers mass violence in major cities",
+        "Mass violence on or after 30 Jun in major cities",
         "AU formal condemnation or UNHCR emergency declaration",
         "Cross-border trade contraction exceeds 30%",
         "Violence spreads to Johannesburg or Cape Town at scale",
@@ -81,76 +81,91 @@
     {
       "id": "world-cup-2026",
       "label": "World Cup 2026",
-      "status": "stable",
-      "status_line": "Netherlands 5-1 Sweden Jun 21; England v Ghana Jun 23 Boston; Fleetwood Mac / UK nostalgia wave running alongside England campaign; England official goal song 'Chase the Sun' by Planet Funk not charting",
+      "status": "changed",
+      "status_line": "England 2-0 Panama 27 Jun Boston; Bellingham scored, Kane all-time England WC top scorer; top Group L; R32 vs DR Congo Wednesday Atlanta 5pm UK; nostalgia chart wave running alongside campaign",
       "first_seen": "2026-06-10",
-      "last_changed": "2026-06-18",
+      "last_changed": "2026-06-28",
       "expand_if": [
-        "England vs Ghana Jun 23",
-        "England vs Panama Jun 27",
+        "England vs DR Congo R32 result",
         "Major injury to Kane or Bellingham",
         "Cultural flashpoint around tournament",
-        "Iran match generates political incident"
+        "England reach quarter-finals"
       ]
     },
     {
       "id": "israel-lebanon",
       "label": "Israel / Lebanon",
       "status": "stable",
-      "status_line": "Ceasefire renewed Jun 19 (Israeli strikes paused after Iran boycotted Bürgenstock talks); Hezbollah accepted but says Israel still firing; comprehensive talks week of Jun 22; Lebanon MOU provisions still unreleased",
+      "status_line": "Jun 27 analysis: ceasefire framework now explicitly tied to Hezbollah disarmament; comprehensive talks ongoing week of Jun 22; Lebanon MOU provisions still unreleased; Israel-Hezbollah exchange of fire continues at low level",
       "first_seen": "2026-05-22",
       "last_changed": "2026-06-19",
       "expand_if": [
-        "Lebanon provisions of MOU revealed",
+        "Lebanon MOU provisions revealed",
         "Major Israeli ground incursion or Hezbollah rocket barrage",
-        "Replacement talks scheduled and include Lebanon provisions",
+        "Hezbollah formally accepts or rejects disarmament framework",
         "Iran cash injection to Hezbollah confirmed publicly",
         "Hezbollah-Israel full ceasefire formally negotiated"
       ]
     },
     {
       "id": "ebola-drc-uganda",
-      "label": "Ebola Bundibugyo — DRC / Uganda",
-      "status": "stable",
-      "status_line": "837 confirmed / 196 deaths DRC as of Jun 15; Uganda 19/2/no new cases past week; burial team attacked in Mongbwalu Ituri; WHO PHEIC declared May 17; no approved Bundibugyo vaccine; rate not declining",
+      "label": "Ebola Bundibugyo — DRC / France",
+      "status": "changed",
+      "status_line": "1,155 confirmed DRC (from 837 Jun 21); 304 deaths (from 196); France case confirmed 24 Jun = first European case; Uganda clear (no new cases since 5 Jun); no approved Bundibugyo vaccine; WHO rates response 3-4/10; Ituri 1,054 of cases",
       "first_seen": "2026-05-25",
-      "last_changed": "2026-06-19",
+      "last_changed": "2026-06-28",
       "expand_if": [
-        "Cases confirmed outside DRC/Uganda",
-        "WHO raises alert further",
+        "Additional cases confirmed in Europe or other high-income countries",
+        "WHO raises PHEIC to highest level",
         "Vaccine supply or pipeline announcement",
-        "Confirmed case in Burundi, Rwanda, or South Sudan",
-        "Daily rate confirmed above 33 new cases/day sustained"
+        "Confirmed community transmission outside DRC",
+        "Daily rate confirmed above 50 new cases/day sustained"
       ]
     },
     {
       "id": "uk-economic-stress",
       "label": "UK Economic Stress",
-      "status": "stable",
-      "status_line": "FTSE ~10,364 week close; Brent $80.57 (-8.5% wk on Iran deal Hormuz unwind); 30Y gilt 5.47% (Jun 17); BoE held 3.75% Jun 19; Labour crisis not yet in gilt pricing — gap notable",
+      "status": "changed",
+      "status_line": "Brent $72 (-10% wk on Hormuz unwind); FTSE ~10,508; 30Y gilt ~5.50%; sterling $1.32; 10Y gilt ~4.85%; Starmer resignation produced muted market move — gilt-political gap holds",
       "first_seen": "2026-05-22",
-      "last_changed": "2026-06-15",
+      "last_changed": "2026-06-28",
       "expand_if": [
         "Gilt yield spike above 5.8% with upward trajectory",
         "Sterling drops materially on Labour leadership chaos",
         "Energy price cap revision announced",
         "Bank of England emergency action",
-        "Brent above $115 sustained",
-        "Iran deal collapses and Brent spikes back"
+        "Brent above $90 on Iran deal collapse",
+        "Burnham fiscal commitment deviating from current rules moves markets"
       ]
     },
     {
       "id": "spacex-ipo",
-      "label": "SpaceX IPO / Musk Political Economy",
-      "status": "stable",
-      "status_line": "SPCX $181.60 Jun 20 (above $180 floor); pulled back from $225.64 ATH Jun 16; +34% on $135 IPO close; no Musk political or regulatory development this week",
+      "label": "SpaceX IPO / Musk",
+      "status": "changed",
+      "status_line": "SPCX hit $147.11 all-time low 23 Jun (below $180 floor); recovered to ~$153 by week-end; Nasdaq -4.6% wk on chip sell-off; Musk briefly trillionaire on IPO momentum before pullback; no political/regulatory development",
       "first_seen": "2026-06-13",
-      "last_changed": "2026-06-18",
+      "last_changed": "2026-06-28",
       "expand_if": [
-        "SPCX breaks below $180 (meaningful floor test)",
-        "Musk officially declared trillionaire",
+        "SPCX breaks below $147 all-time low",
+        "Musk officially and sustained above trillion-dollar net worth",
         "Starlink or xAI regulatory decision affected by political relationship",
         "Musk makes significant public statement deviating from Trump administration line"
+      ]
+    },
+    {
+      "id": "colombia-espriella",
+      "label": "Colombia — De la Espriella Presidency",
+      "status": "new",
+      "status_line": "Won runoff 49.66% vs 48.70% (much tighter than 8-pt poll lead); far-right, Trump-backed; confirmed 24 Jun; to restore Israel ties, end FARC talks, boost oil/gas, reduce state 40%; first far-right Colombian president; no prior political experience",
+      "first_seen": "2026-06-28",
+      "last_changed": "2026-06-28",
+      "expand_if": [
+        "Cabinet appointments signal specific policy direction",
+        "Formal resumption or termination of FARC peace talks",
+        "Israel relations formally restored or embassy move announced",
+        "Colombia-Venezuela military cooperation on Tren de Aragua",
+        "Economic response to inherited debt headwinds",
+        "US-Colombia formal security cooperation agreement signed"
       ]
     }
   ],
@@ -159,8 +174,8 @@
       "id": "colombia-runoff",
       "label": "Colombia Runoff — Jun 21",
       "retired_on": "2026-06-21",
-      "retired_because": "Time-bounded event: election day Jun 21. Polls closed 4pm local (~9pm BST). Result not confirmed at digest time; AtlasIntel final poll had De la Espriella 52.4% vs Cepeda 44.4% (8-point lead). Result expected to be known by end of day.",
-      "revive_if": "Electoral dispute, fraud allegation, or result too close to call triggers recount; or winning candidate makes immediate major policy announcement (FARC talks termination, US relations break) warranting tracking. If De la Espriella wins, open new thread on far-right Colombia presidency"
+      "retired_because": "Time-bounded event: election day Jun 21. Superseded by colombia-espriella thread opened Jun 28.",
+      "revive_if": "Electoral dispute or fraud allegation. Superseded."
     },
     {
       "id": "european-defence-fcas",
@@ -200,9 +215,9 @@
     {
       "id": "snp-murrell",
       "label": "SNP Crisis / Murrell",
-      "retired_on": "2026-06-02",
-      "retired_because": "7 consecutive stable days since last_changed 2026-05-26; guilty plea entered the public record; no new developments. Sentencing June 23 is a known future event.",
-      "revive_if": "June 23 sentencing produces significant prison term or new allegations emerge in court; Nicola Sturgeon makes public statement; SNP leadership formally challenged"
+      "retired_on": "2026-06-28",
+      "retired_because": "Sentencing delivered 23 Jun — 5 years 3 months for embezzling £400k from SNP. Revive condition was met (significant prison term). Event is now concluded; no new allegations emerged; Sturgeon confirmed no action against her. Story absorbed into background political noise.",
+      "revive_if": "Sturgeon makes significant public statement; appeal launched; new SNP leadership challenge citing Murrell case; Operation Branchform produces further charges"
     },
     {
       "id": "turkey-crackdown",
@@ -378,7 +393,13 @@
       "url": "https://sais.jhu.edu/users/nbajoghli1",
       "found_on": "2026-06-21",
       "why_interesting": "Argues US analysis systematically misreads Iranian domestic politics by conflating regime weakness with popular opposition; her framing — that the MOU represents Iran's version of a victory — is almost entirely absent from Western coverage of the deal"
+    },
+    {
+      "name": "Tatiana Stanovaya — R.Politik / Riddle Russia",
+      "url": "https://r-politik.ru",
+      "found_on": "2026-06-28",
+      "why_interesting": "Moscow-based political analyst; argues Russia's military advantage is dissipating and Putin has almost no escalatory tools left that don't risk catastrophic blowback — 'escalation is the only way to respond to a situation you can't control'; counter-frame to both Western triumphalism and Kremlin maximalism on Ukraine's 40-day operation"
     }
   ],
-  "last_updated": "2026-06-21"
+  "last_updated": "2026-06-28"
 }
